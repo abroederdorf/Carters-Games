@@ -1,0 +1,10 @@
+# Local-only files (never commit)
+local/
+
+# Godot
+.godot/
+*.import
+export_credentials.cfg
+
+# OS
+.DS_Store
