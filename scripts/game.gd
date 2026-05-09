@@ -25,6 +25,7 @@ var game_active: bool = false
 var cast_tween: Tween
 var hook_active: bool = false
 var _difficulty: int = 1
+var _timer_duration: int = 60
 var _predator_timer: Timer
 
 var _pelican: Node2D = null
@@ -49,6 +50,7 @@ func _start_game(duration: float) -> void:
 	game_active = true
 	score = 0
 	fish_caught = 0
+	_timer_duration = int(duration)
 	ui.update_score(score, fish_caught)
 	ui.start_timer(duration)
 
@@ -177,4 +179,5 @@ func _on_time_up() -> void:
 	# Clear predators
 	for p in predator_layer.get_children():
 		p.queue_free()
-	ui.show_end_screen(score, fish_caught)
+	var rank := Leaderboard.save_score(_difficulty, _timer_duration, score, fish_caught)
+	ui.show_end_screen(score, fish_caught, _difficulty, _timer_duration, rank)

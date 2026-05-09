@@ -33,6 +33,10 @@ textures/vram_compression/import_etc2_astc=true
 
 3d/physics_engine="Jolt Physics"
 
+[autoload]
+
+Leaderboard="*res://scripts/leaderboard.gd"
+
 [rendering]
 
 rendering_device/driver.windows="d3d12"
