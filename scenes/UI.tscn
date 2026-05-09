@@ -1,14 +1,211 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuu000000001"]
+[gd_scene load_steps=16 format=3 uid="uid://cuu000000001"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_ui001"]
 
+[sub_resource type="StyleBoxFlat" id="SBF_exit_n"]
+bg_color = Color(0.88, 0.14, 0.14, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.50, 0.05, 0.05, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_exit_p"]
+bg_color = Color(0.65, 0.08, 0.08, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.35, 0.02, 0.02, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_pau_n"]
+bg_color = Color(0.20, 0.42, 0.88, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.08, 0.20, 0.55, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_pau_p"]
+bg_color = Color(0.12, 0.26, 0.62, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.05, 0.12, 0.38, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_play_n"]
+bg_color = Color(0.14, 0.76, 0.26, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+corner_detail = 16
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.05, 0.45, 0.13, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_play_p"]
+bg_color = Color(0.08, 0.52, 0.16, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+corner_detail = 16
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.03, 0.30, 0.08, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_t1_n"]
+bg_color = Color(1.0, 0.54, 0.08, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.62, 0.30, 0.02, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_t1_p"]
+bg_color = Color(0.75, 0.38, 0.04, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.45, 0.20, 0.01, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_t3_n"]
+bg_color = Color(0.18, 0.56, 0.98, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.06, 0.28, 0.68, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_t3_p"]
+bg_color = Color(0.10, 0.36, 0.72, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.04, 0.18, 0.48, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_t5_n"]
+bg_color = Color(0.65, 0.20, 0.92, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.36, 0.08, 0.58, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_t5_p"]
+bg_color = Color(0.45, 0.12, 0.65, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.24, 0.04, 0.40, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_pa_n"]
+bg_color = Color(0.06, 0.72, 0.62, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.02, 0.42, 0.35, 1)
+anti_aliased = true
+
+[sub_resource type="StyleBoxFlat" id="SBF_pa_p"]
+bg_color = Color(0.03, 0.50, 0.42, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.01, 0.28, 0.22, 1)
+anti_aliased = true
+
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_ui001")
 
 [node name="TimerLabel" type="Label" parent="."]
-offset_left = 20.0
+offset_left = 105.0
 offset_top = 20.0
-offset_right = 200.0
+offset_right = 285.0
 offset_bottom = 60.0
 text = "3:00"
 theme_override_font_sizes/font_size = 32
@@ -30,6 +227,95 @@ offset_bottom = 105.0
 horizontal_alignment = 2
 text = "Fish: 0"
 theme_override_font_sizes/font_size = 32
+
+[node name="PauseOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="PauseOverlay"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="PausedLabel" type="Label" parent="PauseOverlay"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -90.0
+horizontal_alignment = 1
+text = "PAUSED"
+theme_override_font_sizes/font_size = 72
+
+[node name="PlayButton" type="Button" parent="PauseOverlay"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -65.0
+offset_right = 75.0
+offset_bottom = 85.0
+text = "▶"
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_play_n")
+theme_override_styles/hover = SubResource("SBF_play_n")
+theme_override_styles/pressed = SubResource("SBF_play_p")
+
+[node name="ExitButton" type="Button" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 85.0
+offset_bottom = 78.0
+text = "X"
+theme_override_font_sizes/font_size = 36
+theme_override_constants/outline_size = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_exit_n")
+theme_override_styles/hover = SubResource("SBF_exit_n")
+theme_override_styles/pressed = SubResource("SBF_exit_p")
+
+[node name="PauseButton" type="Button" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -35.0
+offset_top = 8.0
+offset_right = 35.0
+offset_bottom = 78.0
+text = "▮▮"
+theme_override_font_sizes/font_size = 48
+theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_pau_n")
+theme_override_styles/hover = SubResource("SBF_pau_n")
+theme_override_styles/pressed = SubResource("SBF_pau_p")
 
 [node name="EndScreen" type="Control" parent="."]
 visible = false
@@ -71,9 +357,106 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
+offset_left = -120.0
 offset_top = 60.0
-offset_right = 100.0
-offset_bottom = 110.0
+offset_right = 120.0
+offset_bottom = 120.0
 text = "Play Again"
 theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
+
+[node name="TimerSelectScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="TimerSelectScreen"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.14, 0.32, 0.93)
+
+[node name="TitleLabel" type="Label" parent="TimerSelectScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -350.0
+offset_top = 70.0
+offset_right = 350.0
+offset_bottom = 165.0
+horizontal_alignment = 1
+text = "Gone Fishin'"
+theme_override_font_sizes/font_size = 72
+
+[node name="SubtitleLabel" type="Label" parent="TimerSelectScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -250.0
+offset_top = 175.0
+offset_right = 250.0
+offset_bottom = 235.0
+horizontal_alignment = 1
+text = "How long?"
+theme_override_font_sizes/font_size = 42
+
+[node name="ButtonContainer" type="HBoxContainer" parent="TimerSelectScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -340.0
+offset_top = 290.0
+offset_right = 340.0
+offset_bottom = 490.0
+alignment = 1
+theme_override_constants/separation = 40
+
+[node name="Btn1Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
+custom_minimum_size = Vector2(200, 200)
+text = "1"
+theme_override_font_sizes/font_size = 96
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t1_n")
+theme_override_styles/hover = SubResource("SBF_t1_n")
+theme_override_styles/pressed = SubResource("SBF_t1_p")
+
+[node name="Btn3Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
+custom_minimum_size = Vector2(200, 200)
+text = "3"
+theme_override_font_sizes/font_size = 96
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t3_n")
+theme_override_styles/hover = SubResource("SBF_t3_n")
+theme_override_styles/pressed = SubResource("SBF_t3_p")
+
+[node name="Btn5Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
+custom_minimum_size = Vector2(200, 200)
+text = "5"
+theme_override_font_sizes/font_size = 96
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t5_n")
+theme_override_styles/hover = SubResource("SBF_t5_n")
+theme_override_styles/pressed = SubResource("SBF_t5_p")

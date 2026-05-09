@@ -22,15 +22,15 @@ var hook_active: bool = false
 func _ready() -> void:
 	hook.area_entered.connect(_on_hook_area_entered)
 	ui.time_up.connect(_on_time_up)
+	ui.timer_selected.connect(_start_game)
 	_spawn_fish()
-	_start_game()
 
-func _start_game() -> void:
+func _start_game(duration: float) -> void:
 	game_active = true
 	score = 0
 	fish_caught = 0
 	ui.update_score(score, fish_caught)
-	ui.start_timer(60.0)
+	ui.start_timer(duration)
 
 func _input(event: InputEvent) -> void:
 	if not game_active:
