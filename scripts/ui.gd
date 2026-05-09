@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal time_up
 signal timer_selected(duration: float)
+signal difficulty_selected(difficulty: int)
 
 @onready var score_label: Label = $ScoreLabel
 @onready var fish_label: Label = $FishLabel
@@ -9,6 +10,7 @@ signal timer_selected(duration: float)
 @onready var end_screen: Control = $EndScreen
 @onready var final_score_label: Label = $EndScreen/FinalScoreLabel
 @onready var timer_select_screen: Control = $TimerSelectScreen
+@onready var difficulty_select_screen: Control = $DifficultySelectScreen
 @onready var exit_button: Button = $ExitButton
 @onready var pause_button: Button = $PauseButton
 @onready var pause_overlay: Control = $PauseOverlay
@@ -21,9 +23,17 @@ func _ready() -> void:
 	$TimerSelectScreen/ButtonContainer/Btn1Min.pressed.connect(func(): _on_timer_selected(60.0))
 	$TimerSelectScreen/ButtonContainer/Btn3Min.pressed.connect(func(): _on_timer_selected(180.0))
 	$TimerSelectScreen/ButtonContainer/Btn5Min.pressed.connect(func(): _on_timer_selected(300.0))
+	$DifficultySelectScreen/ButtonContainer/BtnEasy.pressed.connect(func(): _on_difficulty_selected(0))
+	$DifficultySelectScreen/ButtonContainer/BtnMedium.pressed.connect(func(): _on_difficulty_selected(1))
+	$DifficultySelectScreen/ButtonContainer/BtnHard.pressed.connect(func(): _on_difficulty_selected(2))
 	exit_button.pressed.connect(_on_exit_pressed)
 	pause_button.pressed.connect(_on_pause_pressed)
 	$PauseOverlay/PlayButton.pressed.connect(_on_play_pressed)
+
+func _on_difficulty_selected(difficulty: int) -> void:
+	difficulty_select_screen.visible = false
+	timer_select_screen.visible = true
+	difficulty_selected.emit(difficulty)
 
 func _on_timer_selected(duration: float) -> void:
 	timer_select_screen.visible = false

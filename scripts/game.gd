@@ -18,10 +18,12 @@ var fish_caught: int = 0
 var game_active: bool = false
 var cast_tween: Tween
 var hook_active: bool = false
+var _difficulty: int = 1
 
 func _ready() -> void:
 	hook.area_entered.connect(_on_hook_area_entered)
 	ui.time_up.connect(_on_time_up)
+	ui.difficulty_selected.connect(func(d: int) -> void: _difficulty = d)
 	ui.timer_selected.connect(_start_game)
 	_spawn_fish()
 
@@ -87,10 +89,19 @@ func _on_hook_area_entered(area: Area2D) -> void:
 		line_2d.clear_points()
 		_spawn_fish()
 
+func _pick_fish_class():
+	match _difficulty:
+		0:
+			return Fish.FishClass.LARGE
+		1:
+			return [Fish.FishClass.LARGE, Fish.FishClass.MEDIUM].pick_random()
+		_:
+			return [Fish.FishClass.LARGE, Fish.FishClass.MEDIUM, Fish.FishClass.SMALL].pick_random()
+
 func _spawn_fish() -> void:
 	while fish_layer.get_child_count() < MAX_FISH:
 		var fish := FISH_SCENE.instantiate()
-		fish.fish_class = [fish.FishClass.LARGE, fish.FishClass.MEDIUM, fish.FishClass.SMALL].pick_random()
+		fish.fish_class = _pick_fish_class()
 		fish_layer.add_child(fish)
 		fish.caught.connect(func() -> void:
 			await get_tree().create_timer(0.5).timeout
