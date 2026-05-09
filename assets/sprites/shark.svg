@@ -1,0 +1,16 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Scary Shark: Darker gray, open mouth, sharp teeth -->
+  <path d="M20,50 Q60,10 120,40 T180,50 Q140,90 80,85 T20,50" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" />
+  <path d="M120,40 Q130,10 150,20 Q140,30 130,40" fill="#7f8c8d" /> <!-- Fin -->
+  <path d="M180,50 L195,30 L195,70 Z" fill="#7f8c8d" /> <!-- Tail -->
+  
+  <!-- Open Mouth -->
+  <path d="M25,55 Q45,75 70,60 L65,55 Q45,65 30,52 Z" fill="#c0392b" /> 
+  <!-- Sharp Teeth -->
+  <path d="M30,55 L35,62 L40,56 L45,63 L50,57 L55,64 L60,58" fill="none" stroke="white" stroke-width="2" />
+  
+  <!-- Angry Eye -->
+  <circle cx="55" cy="40" r="4" fill="white" />
+  <circle cx="56" cy="40" r="2" fill="black" />
+  <path d="M50,35 L60,38" stroke="black" stroke-width="2" /> <!-- Brow -->
+</svg>

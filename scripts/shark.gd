@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var patrol_speed: float = 120.0
-@export var attack_speed: float = 0.8
+@export var attack_speed: float = 1.6
 @export var attack_interval: float = 5.0
 
 var direction: float = 1.0
