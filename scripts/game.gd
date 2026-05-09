@@ -89,19 +89,11 @@ func _on_hook_area_entered(area: Area2D) -> void:
 		line_2d.clear_points()
 		_spawn_fish()
 
-func _pick_fish_class():
-	match _difficulty:
-		0:
-			return Fish.FishClass.LARGE
-		1:
-			return [Fish.FishClass.LARGE, Fish.FishClass.MEDIUM].pick_random()
-		_:
-			return [Fish.FishClass.LARGE, Fish.FishClass.MEDIUM, Fish.FishClass.SMALL].pick_random()
-
 func _spawn_fish() -> void:
 	while fish_layer.get_child_count() < MAX_FISH:
 		var fish := FISH_SCENE.instantiate()
-		fish.fish_class = _pick_fish_class()
+		fish.fish_class = [Fish.FishClass.LARGE, Fish.FishClass.MEDIUM, Fish.FishClass.SMALL].pick_random()
+		fish.difficulty = _difficulty
 		fish_layer.add_child(fish)
 		fish.caught.connect(func() -> void:
 			await get_tree().create_timer(0.5).timeout
