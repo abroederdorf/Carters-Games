@@ -421,32 +421,57 @@ color = Color(0, 0, 0, 0.7)
 
 [node name="FinalScoreLabel" type="Label" parent="EndScreen"]
 layout_mode = 3
-anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -80.0
-offset_right = 200.0
-offset_bottom = 40.0
+anchor_bottom = 0.0
+offset_left = -300.0
+offset_top = 40.0
+offset_right = 300.0
+offset_bottom = 145.0
 horizontal_alignment = 1
 text = "You caught 0 fish!"
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 40
+
+[node name="HighScoresLabel" type="Label" parent="EndScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -300.0
+offset_top = 158.0
+offset_right = 300.0
+offset_bottom = 208.0
+horizontal_alignment = 1
+text = "High Scores"
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+
+[node name="LeaderboardContainer" type="VBoxContainer" parent="EndScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -320.0
+offset_top = 215.0
+offset_right = 320.0
+offset_bottom = 530.0
+theme_override_constants/separation = 8
 
 [node name="PlayAgainButton" type="Button" parent="EndScreen"]
 layout_mode = 3
-anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = 60.0
-offset_right = 120.0
-offset_bottom = 120.0
+anchor_bottom = 0.0
+offset_left = -130.0
+offset_top = 555.0
+offset_right = 130.0
+offset_bottom = 645.0
 text = "Play Again"
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -454,7 +479,220 @@ theme_override_styles/normal = SubResource("SBF_pa_n")
 theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
 
-[node name="TimerSelectScreen" type="Control" parent="."]
+[node name="MenuScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="MenuScreen"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.14, 0.32, 0.93)
+
+[node name="TitleLabel" type="Label" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -350.0
+offset_top = 45.0
+offset_right = 350.0
+offset_bottom = 120.0
+horizontal_alignment = 1
+text = "Gone Fishin'"
+theme_override_font_sizes/font_size = 60
+
+[node name="DifficultyLabel" type="Label" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -200.0
+offset_top = 132.0
+offset_right = 200.0
+offset_bottom = 160.0
+horizontal_alignment = 1
+text = "Difficulty"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="BtnEasy" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -220.0
+offset_top = 164.0
+offset_right = -90.0
+offset_bottom = 294.0
+text = "Easy"
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_de_n")
+theme_override_styles/hover = SubResource("SBF_de_n")
+theme_override_styles/pressed = SubResource("SBF_de_p")
+
+[node name="BtnMedium" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -65.0
+offset_top = 164.0
+offset_right = 65.0
+offset_bottom = 294.0
+text = "Med"
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_dm_n")
+theme_override_styles/hover = SubResource("SBF_dm_n")
+theme_override_styles/pressed = SubResource("SBF_dm_p")
+
+[node name="BtnHard" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 90.0
+offset_top = 164.0
+offset_right = 220.0
+offset_bottom = 294.0
+text = "Hard"
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_dh_n")
+theme_override_styles/hover = SubResource("SBF_dh_n")
+theme_override_styles/pressed = SubResource("SBF_dh_p")
+
+[node name="TimerLabel" type="Label" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -200.0
+offset_top = 306.0
+offset_right = 200.0
+offset_bottom = 334.0
+horizontal_alignment = 1
+text = "How long?"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="Btn1Min" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -220.0
+offset_top = 338.0
+offset_right = -90.0
+offset_bottom = 468.0
+text = "1"
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t1_n")
+theme_override_styles/hover = SubResource("SBF_t1_n")
+theme_override_styles/pressed = SubResource("SBF_t1_p")
+
+[node name="Btn3Min" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -65.0
+offset_top = 338.0
+offset_right = 65.0
+offset_bottom = 468.0
+text = "3"
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t3_n")
+theme_override_styles/hover = SubResource("SBF_t3_n")
+theme_override_styles/pressed = SubResource("SBF_t3_p")
+
+[node name="Btn5Min" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 90.0
+offset_top = 338.0
+offset_right = 220.0
+offset_bottom = 468.0
+text = "5"
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t5_n")
+theme_override_styles/hover = SubResource("SBF_t5_n")
+theme_override_styles/pressed = SubResource("SBF_t5_p")
+
+[node name="PlayButton" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -200.0
+offset_top = 494.0
+offset_right = 200.0
+offset_bottom = 584.0
+text = "Play!"
+theme_override_font_sizes/font_size = 44
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_play_n")
+theme_override_styles/hover = SubResource("SBF_play_n")
+theme_override_styles/pressed = SubResource("SBF_play_p")
+
+[node name="ScoresButton" type="Button" parent="MenuScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -115.0
+offset_top = 602.0
+offset_right = 115.0
+offset_bottom = 660.0
+text = "High Scores"
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
+
+[node name="LeaderboardScreen" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -463,7 +701,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="TimerSelectScreen"]
+[node name="Background" type="ColorRect" parent="LeaderboardScreen"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -472,142 +710,66 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.04, 0.14, 0.32, 0.93)
 
-[node name="TitleLabel" type="Label" parent="TimerSelectScreen"]
-layout_mode = 3
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -350.0
-offset_top = 70.0
-offset_right = 350.0
-offset_bottom = 165.0
-horizontal_alignment = 1
-text = "Gone Fishin'"
-theme_override_font_sizes/font_size = 72
-
-[node name="SubtitleLabel" type="Label" parent="TimerSelectScreen"]
+[node name="TitleLabel" type="Label" parent="LeaderboardScreen"]
 layout_mode = 3
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
 offset_left = -250.0
-offset_top = 175.0
+offset_top = 28.0
 offset_right = 250.0
-offset_bottom = 235.0
+offset_bottom = 88.0
 horizontal_alignment = 1
-text = "How long?"
-theme_override_font_sizes/font_size = 42
+text = "High Scores"
+theme_override_font_sizes/font_size = 50
 
-[node name="ButtonContainer" type="HBoxContainer" parent="TimerSelectScreen"]
+[node name="BackButton" type="Button" parent="LeaderboardScreen"]
 layout_mode = 3
-anchor_left = 0.5
+anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -340.0
-offset_top = 290.0
-offset_right = 340.0
-offset_bottom = 490.0
-alignment = 1
-theme_override_constants/separation = 40
-
-[node name="Btn1Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
-custom_minimum_size = Vector2(200, 200)
-text = "1"
-theme_override_font_sizes/font_size = 96
+offset_left = 15.0
+offset_top = 20.0
+offset_right = 155.0
+offset_bottom = 72.0
+text = "< Back"
+theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_t1_n")
-theme_override_styles/hover = SubResource("SBF_t1_n")
-theme_override_styles/pressed = SubResource("SBF_t1_p")
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
 
-[node name="Btn3Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
-custom_minimum_size = Vector2(200, 200)
-text = "3"
-theme_override_font_sizes/font_size = 96
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_t3_n")
-theme_override_styles/hover = SubResource("SBF_t3_n")
-theme_override_styles/pressed = SubResource("SBF_t3_p")
-
-[node name="Btn5Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
-custom_minimum_size = Vector2(200, 200)
-text = "5"
-theme_override_font_sizes/font_size = 96
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_t5_n")
-theme_override_styles/hover = SubResource("SBF_t5_n")
-theme_override_styles/pressed = SubResource("SBF_t5_p")
-
-[node name="DifficultySelectScreen" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Background" type="ColorRect" parent="DifficultySelectScreen"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.04, 0.14, 0.32, 0.93)
-
-[node name="TitleLabel" type="Label" parent="DifficultySelectScreen"]
+[node name="DifficultyLabel" type="Label" parent="LeaderboardScreen"]
 layout_mode = 3
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = -350.0
-offset_top = 70.0
-offset_right = 350.0
-offset_bottom = 165.0
+offset_left = -200.0
+offset_top = 104.0
+offset_right = 200.0
+offset_bottom = 132.0
 horizontal_alignment = 1
-text = "Gone Fishin'"
-theme_override_font_sizes/font_size = 72
+text = "Difficulty"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
 
-[node name="SubtitleLabel" type="Label" parent="DifficultySelectScreen"]
+[node name="BtnEasy" type="Button" parent="LeaderboardScreen"]
 layout_mode = 3
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = -250.0
-offset_top = 175.0
-offset_right = 250.0
-offset_bottom = 235.0
-horizontal_alignment = 1
-text = "How tough?"
-theme_override_font_sizes/font_size = 42
-
-[node name="ButtonContainer" type="HBoxContainer" parent="DifficultySelectScreen"]
-layout_mode = 3
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -340.0
-offset_top = 290.0
-offset_right = 340.0
-offset_bottom = 490.0
-alignment = 1
-theme_override_constants/separation = 40
-
-[node name="BtnEasy" type="Button" parent="DifficultySelectScreen/ButtonContainer"]
-custom_minimum_size = Vector2(200, 200)
+offset_left = -155.0
+offset_top = 136.0
+offset_right = -55.0
+offset_bottom = 216.0
 text = "Easy"
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -615,10 +777,18 @@ theme_override_styles/normal = SubResource("SBF_de_n")
 theme_override_styles/hover = SubResource("SBF_de_n")
 theme_override_styles/pressed = SubResource("SBF_de_p")
 
-[node name="BtnMedium" type="Button" parent="DifficultySelectScreen/ButtonContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="BtnMedium" type="Button" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -50.0
+offset_top = 136.0
+offset_right = 50.0
+offset_bottom = 216.0
 text = "Med"
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -626,13 +796,120 @@ theme_override_styles/normal = SubResource("SBF_dm_n")
 theme_override_styles/hover = SubResource("SBF_dm_n")
 theme_override_styles/pressed = SubResource("SBF_dm_p")
 
-[node name="BtnHard" type="Button" parent="DifficultySelectScreen/ButtonContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="BtnHard" type="Button" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 55.0
+offset_top = 136.0
+offset_right = 155.0
+offset_bottom = 216.0
 text = "Hard"
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("SBF_dh_n")
 theme_override_styles/hover = SubResource("SBF_dh_n")
 theme_override_styles/pressed = SubResource("SBF_dh_p")
+
+[node name="TimerLabel" type="Label" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -200.0
+offset_top = 228.0
+offset_right = 200.0
+offset_bottom = 256.0
+horizontal_alignment = 1
+text = "How long?"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="Btn1Min" type="Button" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -155.0
+offset_top = 260.0
+offset_right = -55.0
+offset_bottom = 340.0
+text = "1"
+theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t1_n")
+theme_override_styles/hover = SubResource("SBF_t1_n")
+theme_override_styles/pressed = SubResource("SBF_t1_p")
+
+[node name="Btn3Min" type="Button" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -50.0
+offset_top = 260.0
+offset_right = 50.0
+offset_bottom = 340.0
+text = "3"
+theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t3_n")
+theme_override_styles/hover = SubResource("SBF_t3_n")
+theme_override_styles/pressed = SubResource("SBF_t3_p")
+
+[node name="Btn5Min" type="Button" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 55.0
+offset_top = 260.0
+offset_right = 155.0
+offset_bottom = 340.0
+text = "5"
+theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t5_n")
+theme_override_styles/hover = SubResource("SBF_t5_n")
+theme_override_styles/pressed = SubResource("SBF_t5_p")
+
+[node name="ComboLabel" type="Label" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -300.0
+offset_top = 356.0
+offset_right = 300.0
+offset_bottom = 400.0
+horizontal_alignment = 1
+text = "Easy · 1 min"
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+
+[node name="EntriesContainer" type="VBoxContainer" parent="LeaderboardScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -350.0
+offset_top = 408.0
+offset_right = 350.0
+offset_bottom = 720.0
+theme_override_constants/separation = 10
