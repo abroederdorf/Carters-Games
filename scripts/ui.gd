@@ -23,6 +23,7 @@ func _ready() -> void:
 	$TimerSelectScreen/ButtonContainer/Btn5Min.pressed.connect(func(): _on_timer_selected(300.0))
 	exit_button.pressed.connect(_on_exit_pressed)
 	pause_button.pressed.connect(_on_pause_pressed)
+	$PauseOverlay/PlayButton.pressed.connect(_on_play_pressed)
 
 func _on_timer_selected(duration: float) -> void:
 	timer_select_screen.visible = false
@@ -31,10 +32,14 @@ func _on_timer_selected(duration: float) -> void:
 	timer_selected.emit(duration)
 
 func _on_pause_pressed() -> void:
-	var pausing := not get_tree().paused
-	get_tree().paused = pausing
-	pause_button.text = "Resume" if pausing else "Pause"
-	pause_overlay.visible = pausing
+	get_tree().paused = true
+	pause_button.visible = false
+	pause_overlay.visible = true
+
+func _on_play_pressed() -> void:
+	get_tree().paused = false
+	pause_overlay.visible = false
+	pause_button.visible = true
 
 func _on_exit_pressed() -> void:
 	get_tree().paused = false
@@ -67,6 +72,7 @@ func _update_timer_label() -> void:
 func show_end_screen(score: int, fish: int) -> void:
 	exit_button.visible = false
 	pause_button.visible = false
+	pause_overlay.visible = false
 	end_screen.visible = true
 	final_score_label.text = "%d fish caught!\nScore: %d pts" % [fish, score]
 
