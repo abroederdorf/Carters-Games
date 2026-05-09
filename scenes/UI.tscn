@@ -77,3 +77,62 @@ offset_right = 100.0
 offset_bottom = 110.0
 text = "Play Again"
 theme_override_font_sizes/font_size = 28
+
+[node name="TimerSelectScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="TimerSelectScreen"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.14, 0.32, 0.93)
+
+[node name="TitleLabel" type="Label" parent="TimerSelectScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -300.0
+offset_top = 120.0
+offset_right = 300.0
+offset_bottom = 210.0
+horizontal_alignment = 1
+text = "How long?"
+theme_override_font_sizes/font_size = 64
+
+[node name="ButtonContainer" type="HBoxContainer" parent="TimerSelectScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -100.0
+offset_right = 340.0
+offset_bottom = 100.0
+alignment = 1
+theme_override_constants/separation = 40
+
+[node name="Btn1Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
+custom_minimum_size = Vector2(200, 200)
+text = "1"
+theme_override_font_sizes/font_size = 96
+
+[node name="Btn3Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
+custom_minimum_size = Vector2(200, 200)
+text = "3"
+theme_override_font_sizes/font_size = 96
+
+[node name="Btn5Min" type="Button" parent="TimerSelectScreen/ButtonContainer"]
+custom_minimum_size = Vector2(200, 200)
+text = "5"
+theme_override_font_sizes/font_size = 96
