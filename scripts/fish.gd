@@ -19,12 +19,10 @@ const CLASS_DATA = {
 	FishClass.SMALL:  { "scale": 0.65, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/fish_small.svg", "res://assets/sprites/fish_small_2.svg"] },
 }
 
-const SPEED_MULTIPLIER = [0.65, 1.0, 1.0]
-
 func _ready() -> void:
 	var data: Dictionary = CLASS_DATA[fish_class]
 	scale = Vector2.ONE * data["scale"]
-	speed = randf_range(data["speed_min"], data["speed_max"]) * SPEED_MULTIPLIER[difficulty]
+	speed = randf_range(data["speed_min"], data["speed_max"])
 	points = data["points"]
 
 	$Sprite2D.texture = load(data["textures"].pick_random())
@@ -35,14 +33,14 @@ func _ready() -> void:
 	position.x = -80.0 if direction > 0 else vp.size.x + 80.0
 	$Sprite2D.flip_h = direction > 0
 
-	if difficulty == 2:
+	if difficulty >= 1:
 		velocity_y = randf_range(-60.0, 60.0)
 		_change_timer = randf_range(1.0, 2.5)
 
 func _process(delta: float) -> void:
 	var vp := get_viewport_rect()
 
-	if difficulty == 2:
+	if difficulty >= 1:
 		_change_timer -= delta
 		if _change_timer <= 0.0:
 			_randomize_movement(vp)
@@ -85,4 +83,3 @@ func get_eaten() -> void:
 	tween.tween_property(self, "scale", Vector2.ZERO, 0.2)
 	tween.tween_property(self, "modulate", Color.RED, 0.1)
 	tween.chain().tween_callback(queue_free)
-
