@@ -66,13 +66,23 @@ func _randomize_movement(vp: Rect2) -> void:
 		direction = -direction
 		$Sprite2D.flip_h = direction > 0
 	velocity_y = randf_range(-80.0, 80.0)
-
 func get_caught() -> void:
 	caught.emit()
 	set_process(false)
 
+	# Pop effect
 	var tween := create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(self, "scale", scale * 1.5, 0.1)
 	tween.tween_property(self, "modulate:a", 0.0, 0.1)
 	tween.chain().tween_callback(queue_free)
+
+func get_eaten() -> void:
+	set_process(false)
+	# Shrink effect
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.2)
+	tween.tween_property(self, "modulate", Color.RED, 0.1)
+	tween.chain().tween_callback(queue_free)
+

@@ -1,7 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgame0000001"]
+[gd_scene load_steps=20 format=3 uid="uid://cgame0000001"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_game01"]
 [ext_resource type="PackedScene" uid="uid://cuu000000001" path="res://scenes/UI.tscn" id="2_ui0001"]
+[ext_resource type="Texture2D" uid="uid://sand1" path="res://assets/sprites/sand.svg" id="3_sand"]
+[ext_resource type="Texture2D" uid="uid://rock1" path="res://assets/sprites/rock_gray.svg" id="4_rock"]
+[ext_resource type="Texture2D" uid="uid://sw_g" path="res://assets/sprites/seaweed_green.svg" id="5_sw_green"]
+[ext_resource type="Texture2D" uid="uid://sw_p" path="res://assets/sprites/seaweed_purple.svg" id="6_sw_purple"]
+[ext_resource type="Texture2D" uid="uid://sw_pk" path="res://assets/sprites/seaweed_pink.svg" id="7_sw_pink"]
+[ext_resource type="Script" path="res://scripts/sway.gd" id="8_sway"]
+[ext_resource type="Texture2D" uid="uid://dock1" path="res://assets/sprites/dock.svg" id="9_dock"]
+[ext_resource type="Texture2D" uid="uid://rod1" path="res://assets/sprites/rod.svg" id="10_rod"]
+[ext_resource type="Texture2D" uid="uid://hook1" path="res://assets/sprites/hook.svg" id="11_hook"]
+[ext_resource type="Texture2D" uid="uid://char1" path="res://assets/sprites/character.svg" id="12_char"]
+[ext_resource type="Texture2D" uid="uid://water1" path="res://assets/sprites/water_overlay.svg" id="13_water"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_water"]
 size = Vector2(1280, 450)
@@ -14,46 +25,147 @@ script = ExtResource("1_game01")
 
 [node name="SkyBackground" type="ColorRect" parent="."]
 offset_right = 1280.0
-offset_bottom = 350.0
+offset_bottom = 250.0
 color = Color(0.53, 0.81, 0.98, 1)
 
 [node name="WaterBackground" type="ColorRect" parent="."]
-offset_top = 350.0
+offset_top = 250.0
 offset_right = 1280.0
 offset_bottom = 800.0
 color = Color(0.05, 0.28, 0.58, 1)
 
-[node name="Dock" type="ColorRect" parent="."]
-offset_left = 0.0
-offset_top = 290.0
-offset_right = 200.0
-offset_bottom = 360.0
-color = Color(0.55, 0.35, 0.15, 1)
+[node name="SandBackground" type="ColorRect" parent="."]
+offset_top = 740.0
+offset_right = 1280.0
+offset_bottom = 800.0
+color = Color(1, 0.92549, 0.701961, 1)
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Sand1" type="Sprite2D" parent="Environment"]
+position = Vector2(100, 745)
+scale = Vector2(1.2, 1)
+texture = ExtResource("3_sand")
+
+[node name="Sand2" type="Sprite2D" parent="Environment"]
+position = Vector2(280, 755)
+scale = Vector2(0.8, 0.6)
+texture = ExtResource("3_sand")
+
+[node name="Sand3" type="Sprite2D" parent="Environment"]
+position = Vector2(450, 740)
+scale = Vector2(1.5, 1.2)
+texture = ExtResource("3_sand")
+
+[node name="Sand4" type="Sprite2D" parent="Environment"]
+position = Vector2(620, 750)
+scale = Vector2(1, 0.8)
+texture = ExtResource("3_sand")
+
+[node name="Sand5" type="Sprite2D" parent="Environment"]
+position = Vector2(780, 745)
+scale = Vector2(1.3, 1.1)
+texture = ExtResource("3_sand")
+
+[node name="Sand6" type="Sprite2D" parent="Environment"]
+position = Vector2(920, 755)
+scale = Vector2(0.9, 0.7)
+texture = ExtResource("3_sand")
+
+[node name="Sand7" type="Sprite2D" parent="Environment"]
+position = Vector2(1100, 740)
+scale = Vector2(1.6, 1.3)
+texture = ExtResource("3_sand")
+
+[node name="Sand8" type="Sprite2D" parent="Environment"]
+position = Vector2(1200, 750)
+scale = Vector2(1.1, 0.9)
+texture = ExtResource("3_sand")
+
+[node name="Rock1" type="Sprite2D" parent="Environment"]
+position = Vector2(300, 745)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_rock")
+
+[node name="Rock2" type="Sprite2D" parent="Environment"]
+position = Vector2(950, 755)
+scale = Vector2(-2.2, 2.2)
+texture = ExtResource("4_rock")
+
+[node name="Seaweed1" type="Sprite2D" parent="Environment"]
+position = Vector2(180, 735)
+texture = ExtResource("5_sw_green")
+script = ExtResource("8_sway")
+
+[node name="Seaweed2" type="Sprite2D" parent="Environment"]
+position = Vector2(230, 750)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_sw_purple")
+script = ExtResource("8_sway")
+sway_speed = 1.2
+sway_amount = 0.15
+
+[node name="Seaweed3" type="Sprite2D" parent="Environment"]
+position = Vector2(1050, 730)
+texture = ExtResource("7_sw_pink")
+script = ExtResource("8_sway")
+sway_speed = 0.8
+
+[node name="Seaweed4" type="Sprite2D" parent="Environment"]
+position = Vector2(1120, 750)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_sw_green")
+script = ExtResource("8_sway")
+sway_amount = 0.08
+
+[node name="FishLayer" type="Node2D" parent="."]
+
+[node name="PredatorLayer" type="Node2D" parent="."]
+
+[node name="WaterOverlay" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.3)
+texture_repeat = 2
+position = Vector2(640, 525)
+texture = ExtResource("13_water")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 550)
+
+[node name="Dock" type="Sprite2D" parent="."]
+position = Vector2(90, 260)
+texture = ExtResource("9_dock")
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(70, 205)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_char")
 
 [node name="Water" type="Area2D" parent="."]
-position = Vector2(640, 575)
+position = Vector2(640, 525)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
 shape = SubResource("RectangleShape2D_water")
 
-[node name="FishLayer" type="Node2D" parent="."]
-
 [node name="Rod" type="Node2D" parent="."]
-position = Vector2(80, 310)
+position = Vector2(100, 220)
 
-[node name="RodSprite" type="ColorRect" parent="Rod"]
-offset_top = -5.0
-offset_right = 120.0
-offset_bottom = 5.0
-color = Color(0.4, 0.25, 0.1, 1)
+[node name="RodSprite" type="Sprite2D" parent="Rod"]
+rotation = -0.3
+texture = ExtResource("10_rod")
+centered = false
+offset = Vector2(0, -10)
 
 [node name="Line2D" type="Line2D" parent="Rod"]
-default_color = Color(0.6, 0.4, 0.2, 1)
+points = PackedVector2Array(135, -35, 135, 100)
+default_color = Color(1, 1, 1, 0.8)
 width = 4.0
 
 [node name="Hook" type="Area2D" parent="Rod"]
-position = Vector2(120, -10)
+position = Vector2(135, 100)
 monitoring = false
+
+[node name="HookSprite" type="Sprite2D" parent="Rod/Hook"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_hook")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rod/Hook"]
 shape = SubResource("CircleShape2D_hook")
