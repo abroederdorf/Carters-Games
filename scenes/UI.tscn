@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_ui001"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_ui001")
 
 [node name="TimerLabel" type="Label" parent="."]
-offset_left = 20.0
+offset_left = 75.0
 offset_top = 20.0
-offset_right = 200.0
+offset_right = 255.0
 offset_bottom = 60.0
 text = "3:00"
 theme_override_font_sizes/font_size = 32
@@ -30,6 +31,62 @@ offset_bottom = 105.0
 horizontal_alignment = 2
 text = "Fish: 0"
 theme_override_font_sizes/font_size = 32
+
+[node name="ExitButton" type="Button" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 55.0
+text = "X"
+theme_override_font_sizes/font_size = 26
+
+[node name="PauseButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -65.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 55.0
+text = "Pause"
+theme_override_font_sizes/font_size = 24
+
+[node name="PauseOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="PauseOverlay"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="PausedLabel" type="Label" parent="PauseOverlay"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+horizontal_alignment = 1
+text = "PAUSED"
+theme_override_font_sizes/font_size = 72
 
 [node name="EndScreen" type="Control" parent="."]
 visible = false
@@ -101,24 +158,38 @@ anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = -300.0
-offset_top = 120.0
-offset_right = 300.0
-offset_bottom = 210.0
+offset_left = -350.0
+offset_top = 70.0
+offset_right = 350.0
+offset_bottom = 165.0
+horizontal_alignment = 1
+text = "Gone Fishin'"
+theme_override_font_sizes/font_size = 72
+
+[node name="SubtitleLabel" type="Label" parent="TimerSelectScreen"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -250.0
+offset_top = 175.0
+offset_right = 250.0
+offset_bottom = 235.0
 horizontal_alignment = 1
 text = "How long?"
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 42
 
 [node name="ButtonContainer" type="HBoxContainer" parent="TimerSelectScreen"]
 layout_mode = 3
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.0
 offset_left = -340.0
-offset_top = -100.0
+offset_top = 290.0
 offset_right = 340.0
-offset_bottom = 100.0
+offset_bottom = 490.0
 alignment = 1
 theme_override_constants/separation = 40
 
