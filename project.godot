@@ -16,10 +16,14 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 config/main_scene="res://scenes/Game.tscn"
 
+[autoload]
+
+Leaderboard="*res://scripts/leaderboard.gd"
+
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=800
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -32,10 +36,6 @@ textures/vram_compression/import_etc2_astc=true
 [physics]
 
 3d/physics_engine="Jolt Physics"
-
-[autoload]
-
-Leaderboard="*res://scripts/leaderboard.gd"
 
 [rendering]
 

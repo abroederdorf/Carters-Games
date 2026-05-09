@@ -29,7 +29,10 @@ func _ready() -> void:
 
 	direction = 1.0 if randf() > 0.5 else -1.0
 	var vp := get_viewport_rect()
-	position.y = randf_range(vp.size.y * 0.45, vp.size.y * 0.9)
+	# Ensure fish stay in the water (starts at 250.0)
+	var water_start = 250.0 + 50.0 # Some margin from the top
+	var water_end = vp.size.y - 50.0 # Some margin from the bottom
+	position.y = randf_range(water_start, water_end)
 	position.x = -80.0 if direction > 0 else vp.size.x + 80.0
 	$Sprite2D.flip_h = direction > 0
 
@@ -47,8 +50,8 @@ func _process(delta: float) -> void:
 			_change_timer = randf_range(1.5, 3.5)
 
 		position.y += velocity_y * delta
-		var water_top := vp.size.y * 0.42
-		var water_bottom := vp.size.y * 0.92
+		var water_top := 250.0 + 30.0
+		var water_bottom := vp.size.y - 30.0
 		if position.y < water_top or position.y > water_bottom:
 			velocity_y = -velocity_y
 			position.y = clamp(position.y, water_top, water_bottom)
@@ -76,6 +79,7 @@ func get_caught() -> void:
 	tween.chain().tween_callback(queue_free)
 
 func get_eaten() -> void:
+	caught.emit()
 	set_process(false)
 	# Shrink effect
 	var tween := create_tween()

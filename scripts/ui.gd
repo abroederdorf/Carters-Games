@@ -8,25 +8,25 @@ signal difficulty_selected(difficulty: int)
 @onready var fish_label: Label = $FishLabel
 @onready var timer_label: Label = $TimerLabel
 @onready var end_screen: Control = $EndScreen
-@onready var final_score_label: Label = $EndScreen/FinalScoreLabel
-@onready var high_scores_label: Label = $EndScreen/HighScoresLabel
-@onready var leaderboard_container: VBoxContainer = $EndScreen/LeaderboardContainer
+@onready var final_score_label: Label = $EndScreen/ScrollContainer/CenterContainer/VBoxContainer/FinalScoreLabel
+@onready var high_scores_label: Label = $EndScreen/ScrollContainer/CenterContainer/VBoxContainer/HighScoresLabel
+@onready var leaderboard_container: VBoxContainer = $EndScreen/ScrollContainer/CenterContainer/VBoxContainer/LeaderboardContainer
 @onready var menu_screen: Control = $MenuScreen
-@onready var menu_btn_easy: Button = $MenuScreen/BtnEasy
-@onready var menu_btn_medium: Button = $MenuScreen/BtnMedium
-@onready var menu_btn_hard: Button = $MenuScreen/BtnHard
-@onready var menu_btn_1min: Button = $MenuScreen/Btn1Min
-@onready var menu_btn_3min: Button = $MenuScreen/Btn3Min
-@onready var menu_btn_5min: Button = $MenuScreen/Btn5Min
+@onready var menu_btn_easy: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnEasy
+@onready var menu_btn_medium: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnMedium
+@onready var menu_btn_hard: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnHard
+@onready var menu_btn_1min: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn1Min
+@onready var menu_btn_3min: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn3Min
+@onready var menu_btn_5min: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn5Min
 @onready var lb_screen: Control = $LeaderboardScreen
-@onready var lb_btn_easy: Button = $LeaderboardScreen/BtnEasy
-@onready var lb_btn_medium: Button = $LeaderboardScreen/BtnMedium
-@onready var lb_btn_hard: Button = $LeaderboardScreen/BtnHard
-@onready var lb_btn_1min: Button = $LeaderboardScreen/Btn1Min
-@onready var lb_btn_3min: Button = $LeaderboardScreen/Btn3Min
-@onready var lb_btn_5min: Button = $LeaderboardScreen/Btn5Min
-@onready var lb_entries: VBoxContainer = $LeaderboardScreen/EntriesContainer
-@onready var lb_combo_label: Label = $LeaderboardScreen/ComboLabel
+@onready var lb_btn_easy: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnEasy
+@onready var lb_btn_medium: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnMedium
+@onready var lb_btn_hard: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnHard
+@onready var lb_btn_1min: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn1Min
+@onready var lb_btn_3min: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn3Min
+@onready var lb_btn_5min: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn5Min
+@onready var lb_entries: VBoxContainer = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/EntriesContainer
+@onready var lb_combo_label: Label = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/ComboLabel
 @onready var exit_button: Button = $ExitButton
 @onready var pause_button: Button = $PauseButton
 @onready var pause_overlay: Control = $PauseOverlay
@@ -48,7 +48,7 @@ func _ready() -> void:
 	_lb_difficulty = _selected_difficulty
 	_lb_timer = _selected_timer
 
-	$EndScreen/PlayAgainButton.pressed.connect(_on_play_again_pressed)
+	$EndScreen/ScrollContainer/CenterContainer/VBoxContainer/PlayAgainButton.pressed.connect(_on_play_again_pressed)
 
 	menu_btn_easy.pressed.connect(func(): _set_menu_difficulty(0))
 	menu_btn_medium.pressed.connect(func(): _set_menu_difficulty(1))
@@ -56,8 +56,8 @@ func _ready() -> void:
 	menu_btn_1min.pressed.connect(func(): _set_menu_timer(60))
 	menu_btn_3min.pressed.connect(func(): _set_menu_timer(180))
 	menu_btn_5min.pressed.connect(func(): _set_menu_timer(300))
-	$MenuScreen/PlayButton.pressed.connect(_on_menu_play_pressed)
-	$MenuScreen/ScoresButton.pressed.connect(_on_scores_pressed)
+	$MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection/PlayButton.pressed.connect(_on_menu_play_pressed)
+	$MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection/ScoresButton.pressed.connect(_on_scores_pressed)
 
 	lb_btn_easy.pressed.connect(func(): _set_lb_difficulty(0))
 	lb_btn_medium.pressed.connect(func(): _set_lb_difficulty(1))
@@ -65,7 +65,7 @@ func _ready() -> void:
 	lb_btn_1min.pressed.connect(func(): _set_lb_timer(60))
 	lb_btn_3min.pressed.connect(func(): _set_lb_timer(180))
 	lb_btn_5min.pressed.connect(func(): _set_lb_timer(300))
-	$LeaderboardScreen/BackButton.pressed.connect(_on_lb_back_pressed)
+	$LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/Header/BackButton.pressed.connect(_on_lb_back_pressed)
 
 	exit_button.pressed.connect(_on_exit_pressed)
 	pause_button.pressed.connect(_on_pause_pressed)
