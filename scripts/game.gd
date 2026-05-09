@@ -51,7 +51,12 @@ func _start_game(duration: float) -> void:
 	fish_caught = 0
 	ui.update_score(score, fish_caught)
 	ui.start_timer(duration)
-	
+
+	for fish in fish_layer.get_children():
+		fish.queue_free()
+	await get_tree().process_frame
+	_spawn_fish()
+
 	if _difficulty == 2:
 		_spawn_persistent_predators()
 		_predator_timer.start()
