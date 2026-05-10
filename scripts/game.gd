@@ -293,8 +293,8 @@ func _spawn_math_fish() -> void:
 func _generate_math_problem() -> Dictionary:
 	match _difficulty:
 		0: return _make_problem_easy()
-		1: return _make_problem_medium()
-		2: return _make_problem_hard()
+		1: return _make_problem_hard()
+		2: return _make_problem_medium()
 	return _make_problem_easy()
 
 func _make_problem_easy() -> Dictionary:
