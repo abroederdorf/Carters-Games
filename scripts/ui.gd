@@ -120,6 +120,8 @@ func _ready() -> void:
 	pause_play_button.pressed.connect(_on_play_pressed)
 	mute_button.pressed.connect(_on_mute_pressed)
 
+	menu_btn_spelling.visible = false
+
 	_update_mute_icon()
 	_update_menu_visuals()
 
