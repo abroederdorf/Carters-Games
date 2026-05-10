@@ -1,0 +1,13 @@
+<svg width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Small fish: Lime Green with Dark Green Stripes -->
+  <path d="M5,20 Q15,2 40,15 T58,20 Q50,38 25,35 T5,20" fill="#9ef01a" stroke="#38b000" stroke-width="2" />
+  
+  <!-- Stripes -->
+  <path d="M25,10 L25,30" stroke="#38b000" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M35,15 L35,32" stroke="#38b000" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+
+  <path d="M45,20 Q53,10 58,20 Q53,30 45,20" fill="#ccff33" />
+  <circle cx="18" cy="16" r="3.5" fill="white" />
+  <circle cx="18" cy="16" r="1.8" fill="black" />
+  <path d="M25,6 Q35,0 45,8" fill="#ccff33" stroke="#38b000" stroke-width="1.5" />
+</svg>

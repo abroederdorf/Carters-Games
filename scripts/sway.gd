@@ -11,5 +11,5 @@ func _ready() -> void:
 	if texture:
 		offset.y = -texture.get_height() / 2.0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	rotation = sin(Time.get_ticks_msec() * 0.001 * sway_speed + random_offset) * sway_amount

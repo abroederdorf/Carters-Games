@@ -46,19 +46,21 @@ func trigger_attack() -> bool:
 
 func _perform_swoop(target: Node2D) -> void:
 	is_swooping = true
-	var start_pos = global_position
 	var target_pos = target.global_position
 	
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
 	# Dive
 	tween.tween_property(self, "global_position", target_pos, swoop_speed).set_ease(Tween.EASE_IN)
-	tween.tween_callback(func():
-		if is_instance_valid(target) and target.has_method("get_eaten"):
-			target.get_eaten()
-	)
+	tween.tween_callback(_on_swoop_hit.bind(target))
 	# Recover
 	tween.tween_property(self, "global_position", Vector2(target_pos.x + (direction * 200.0), 100.0), swoop_speed * 1.5).set_ease(Tween.EASE_OUT)
-	tween.tween_callback(func():
-		is_swooping = false
-	)
+	tween.tween_callback(_on_swoop_finished)
+
+func _on_swoop_hit(target) -> void:
+	if is_instance_valid(target) and target.has_method("get_eaten"):
+		AudioManager.play_sfx("bite")
+		target.get_eaten()
+
+func _on_swoop_finished() -> void:
+	is_swooping = false

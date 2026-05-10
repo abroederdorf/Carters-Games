@@ -56,7 +56,6 @@ func trigger_attack() -> bool:
 
 func _perform_attack(target: Node2D) -> void:
 	is_attacking = true
-	var start_pos = global_position
 	var target_pos = target.global_position
 	
 	# Dive
@@ -68,20 +67,24 @@ func _perform_attack(target: Node2D) -> void:
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.tween_property(self, "global_position", target_pos, attack_speed).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_callback(func():
-		if is_instance_valid(target) and target.has_method("get_eaten"):
-			target.get_eaten()
-	)
+	tween.tween_callback(_on_attack_hit.bind(target))
 	# Surface
 	tween.tween_property(self, "global_position", Vector2(target_pos.x + (direction * 150.0), 250.0), attack_speed * 1.5)
-	tween.tween_callback(func():
-		is_attacking = false
-		monitoring = false
-		sprite.texture = preload("res://assets/sprites/shark_fin.svg")
-		sprite.flip_h = direction > 0
-		sprite.scale = Vector2(2.0, 2.0)
-	)
+	tween.tween_callback(_on_attack_finished)
+
+func _on_attack_hit(target) -> void:
+	if is_instance_valid(target) and target.has_method("get_eaten"):
+		AudioManager.play_sfx("bite")
+		target.get_eaten()
+
+func _on_attack_finished() -> void:
+	is_attacking = false
+	monitoring = false
+	sprite.texture = preload("res://assets/sprites/shark_fin.svg")
+	sprite.flip_h = direction > 0
+	sprite.scale = Vector2(2.0, 2.0)
 
 func _on_area_entered(area: Area2D) -> void:
 	if is_attacking and area.has_method("get_eaten"):
+		AudioManager.play_sfx("bite")
 		area.get_eaten()
