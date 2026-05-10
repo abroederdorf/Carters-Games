@@ -489,6 +489,52 @@ horizontal_alignment = 1
 text = "Gone Fishin'"
 theme_override_font_sizes/font_size = 60
 
+[node name="ModeSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ModeLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection"]
+layout_mode = 2
+horizontal_alignment = 1
+text = "Game Mode"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="ModeButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MenuBtnFreePlay" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+text = "Fish"
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
+
+[node name="MenuBtnMath" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+text = "Math"
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t3_n")
+theme_override_styles/hover = SubResource("SBF_t3_n")
+theme_override_styles/pressed = SubResource("SBF_t3_p")
+
+[node name="MenuBtnSpelling" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+text = "ABC"
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t5_n")
+theme_override_styles/hover = SubResource("SBF_t5_n")
+theme_override_styles/pressed = SubResource("SBF_t5_p")
+
 [node name="DifficultySection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
 layout_mode = 2
 theme_override_constants/separation = 10
@@ -685,6 +731,52 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("SBF_pa_n")
 theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+
+[node name="ModeSection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ModeLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection"]
+layout_mode = 2
+horizontal_alignment = 1
+text = "Game Mode"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="ModeButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LBBtnFreePlay" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+text = "Fish"
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
+
+[node name="LBBtnMath" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+text = "Math"
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t3_n")
+theme_override_styles/hover = SubResource("SBF_t3_n")
+theme_override_styles/pressed = SubResource("SBF_t3_p")
+
+[node name="LBBtnSpelling" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+text = "ABC"
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_t5_n")
+theme_override_styles/hover = SubResource("SBF_t5_n")
+theme_override_styles/pressed = SubResource("SBF_t5_p")
 
 [node name="DifficultySection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
 layout_mode = 2
@@ -978,3 +1070,21 @@ focus_mode = 0
 icon = ExtResource("16_sound_on")
 flat = true
 expand_icon = true
+
+[node name="MathProblemLabel" type="Label" parent="."]
+visible = false
+layout_mode = 3
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 100.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+horizontal_alignment = 1
+text = "3 + 4 = ?"
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 0.94, 0.0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3

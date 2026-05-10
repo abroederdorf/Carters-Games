@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Carters-Games-Fishing"
+config/name="Carter's Games"
 run/main_scene="uid://cgame0000001"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/sprites/app_icon.svg"

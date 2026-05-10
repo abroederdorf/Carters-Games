@@ -13,6 +13,10 @@ var points: int
 var velocity_y: float = 0.0
 var _change_timer: float = 0.0
 
+var math_value: int = 0
+var is_correct: bool = false
+var spawn_y: float = -1.0
+
 const CLASS_DATA = {
 	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fish_large.svg", "res://assets/sprites/fish_large_2.svg", "res://assets/sprites/fish_large_3.svg"] },
 	FishClass.MEDIUM: { "scale": 1.0,  "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/fish_medium.svg", "res://assets/sprites/fish_medium_2.svg", "res://assets/sprites/fish_medium_3.svg"] },
@@ -32,13 +36,30 @@ func _ready() -> void:
 	# Ensure fish stay in the water (starts at 250.0)
 	var water_start = 250.0 + 50.0 # Some margin from the top
 	var water_end = vp.size.y - 50.0 # Some margin from the bottom
-	position.y = randf_range(water_start, water_end)
+	position.y = spawn_y if spawn_y >= 0.0 else randf_range(water_start, water_end)
 	position.x = -80.0 if direction > 0 else vp.size.x + 80.0
 	$Sprite2D.flip_h = direction > 0
 
 	if difficulty >= 1:
 		velocity_y = randf_range(-60.0, 60.0)
 		_change_timer = randf_range(1.0, 2.5)
+
+	if math_value > 0:
+		_add_math_label()
+
+func _add_math_label() -> void:
+	var label := Label.new()
+	label.text = str(math_value)
+	label.add_theme_font_size_override("font_size", 28)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.add_theme_color_override("font_color", Color.WHITE)
+	label.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.9))
+	label.add_theme_constant_override("shadow_offset_x", 3)
+	label.add_theme_constant_override("shadow_offset_y", 3)
+	label.size = Vector2(80, 40)
+	label.position = Vector2(-40, -20)
+	add_child(label)
 
 func _process(delta: float) -> void:
 	var vp := get_viewport_rect()

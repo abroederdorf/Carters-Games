@@ -9,8 +9,8 @@ func _ready() -> void:
 	_config = ConfigFile.new()
 	_config.load(SAVE_PATH)
 
-func save_score(difficulty: int, timer_secs: int, score: int, fish: int) -> int:
-	var key := "%d_%d" % [difficulty, timer_secs]
+func save_score(mode: int, difficulty: int, timer_secs: int, score: int, fish: int) -> int:
+	var key := "%d_%d_%d" % [mode, difficulty, timer_secs]
 	var entries: Array = _config.get_value("lb", key, [])
 	var now := Time.get_unix_time_from_system()
 	var new_entry := {"score": score, "fish": fish, "time": now}
@@ -35,14 +35,15 @@ func save_score(difficulty: int, timer_secs: int, score: int, fish: int) -> int:
 	_config.save(SAVE_PATH)
 	return rank
 
-func get_scores(difficulty: int, timer_secs: int) -> Array:
-	return _config.get_value("lb", "%d_%d" % [difficulty, timer_secs], [])
+func get_scores(mode: int, difficulty: int, timer_secs: int) -> Array:
+	return _config.get_value("lb", "%d_%d_%d" % [mode, difficulty, timer_secs], [])
 
 func clear_scores() -> void:
 	_config.erase_section("lb")
 	_config.save(SAVE_PATH)
 
-func save_settings(difficulty: int, timer_secs: int, music: bool = true, sfx: bool = true, mute: bool = false) -> void:
+func save_settings(mode: int, difficulty: int, timer_secs: int, music: bool = true, sfx: bool = true, mute: bool = false) -> void:
+	_config.set_value("settings", "mode", mode)
 	_config.set_value("settings", "difficulty", difficulty)
 	_config.set_value("settings", "timer_secs", timer_secs)
 	_config.set_value("settings", "music", music)
@@ -52,6 +53,7 @@ func save_settings(difficulty: int, timer_secs: int, music: bool = true, sfx: bo
 
 func load_settings() -> Dictionary:
 	return {
+		"mode": _config.get_value("settings", "mode", 0),
 		"difficulty": _config.get_value("settings", "difficulty", 0),
 		"timer_secs": _config.get_value("settings", "timer_secs", 60),
 		"music": _config.get_value("settings", "music", true),
