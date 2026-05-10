@@ -71,8 +71,10 @@ const _TIMER_LABELS := {60: "1 min", 180: "3 min", 300: "5 min"}
 
 func _ready() -> void:
 	var settings := Leaderboard.load_settings()
+	_selected_mode = settings.get("mode", 0)
 	_selected_difficulty = settings.difficulty
 	_selected_timer = settings.timer_secs
+	_lb_mode = _selected_mode
 	_lb_difficulty = _selected_difficulty
 	_lb_timer = _selected_timer
 
@@ -127,7 +129,7 @@ func _update_mute_icon() -> void:
 func _on_mute_pressed() -> void:
 	var is_muted = AudioManager.toggle_mute()
 	_update_mute_icon()
-	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, is_muted)
+	Leaderboard.save_settings(_selected_mode, _selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, is_muted)
 
 func _on_settings_pressed() -> void:
 	var settings := Leaderboard.load_settings()
@@ -139,12 +141,12 @@ func _on_settings_pressed() -> void:
 func _on_settings_back_pressed() -> void:
 	AudioManager.play_sfx("pop")
 	settings_screen.visible = false
-	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
+	Leaderboard.save_settings(_selected_mode, _selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
 
 func _on_audio_toggled(_toggled: bool) -> void:
 	AudioManager.play_sfx("pop")
 	AudioManager.update_settings(music_toggle.button_pressed, sfx_toggle.button_pressed)
-	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
+	Leaderboard.save_settings(_selected_mode, _selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
 
 func _on_reset_lb_pressed() -> void:
 	AudioManager.play_sfx("pop")
@@ -200,7 +202,7 @@ func _on_menu_play_pressed() -> void:
 	menu_screen.visible = false
 	exit_button.visible = true
 	pause_button.visible = true
-	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
+	Leaderboard.save_settings(_selected_mode, _selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
 	mode_selected.emit(_selected_mode)
 	difficulty_selected.emit(_selected_difficulty)
 	timer_selected.emit(float(_selected_timer))

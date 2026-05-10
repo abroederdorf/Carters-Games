@@ -42,7 +42,8 @@ func clear_scores() -> void:
 	_config.erase_section("lb")
 	_config.save(SAVE_PATH)
 
-func save_settings(difficulty: int, timer_secs: int, music: bool = true, sfx: bool = true, mute: bool = false) -> void:
+func save_settings(mode: int, difficulty: int, timer_secs: int, music: bool = true, sfx: bool = true, mute: bool = false) -> void:
+	_config.set_value("settings", "mode", mode)
 	_config.set_value("settings", "difficulty", difficulty)
 	_config.set_value("settings", "timer_secs", timer_secs)
 	_config.set_value("settings", "music", music)
@@ -52,6 +53,7 @@ func save_settings(difficulty: int, timer_secs: int, music: bool = true, sfx: bo
 
 func load_settings() -> Dictionary:
 	return {
+		"mode": _config.get_value("settings", "mode", 0),
 		"difficulty": _config.get_value("settings", "difficulty", 0),
 		"timer_secs": _config.get_value("settings", "timer_secs", 60),
 		"music": _config.get_value("settings", "music", true),
