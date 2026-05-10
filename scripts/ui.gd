@@ -4,36 +4,49 @@ signal time_up
 signal timer_selected(duration: float)
 signal difficulty_selected(difficulty: int)
 
-@onready var score_label: Label = $ScoreLabel
-@onready var fish_label: Label = $FishLabel
-@onready var timer_label: Label = $TimerLabel
-@onready var end_screen: Control = $EndScreen
-@onready var final_score_label: Label = $EndScreen/ScrollContainer/CenterContainer/VBoxContainer/FinalScoreLabel
-@onready var high_scores_label: Label = $EndScreen/ScrollContainer/CenterContainer/VBoxContainer/HighScoresLabel
-@onready var leaderboard_container: VBoxContainer = $EndScreen/ScrollContainer/CenterContainer/VBoxContainer/LeaderboardContainer
-@onready var menu_screen: Control = $MenuScreen
-@onready var menu_btn_easy: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnEasy
-@onready var menu_btn_medium: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnMedium
-@onready var menu_btn_hard: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnHard
-@onready var menu_btn_1min: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn1Min
-@onready var menu_btn_3min: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn3Min
-@onready var menu_btn_5min: Button = $MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn5Min
-@onready var lb_screen: Control = $LeaderboardScreen
-@onready var lb_btn_easy: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnEasy
-@onready var lb_btn_medium: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnMedium
-@onready var lb_btn_hard: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons/BtnHard
-@onready var lb_btn_1min: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn1Min
-@onready var lb_btn_3min: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn3Min
-@onready var lb_btn_5min: Button = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons/Btn5Min
-@onready var lb_entries: VBoxContainer = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/EntriesContainer
-@onready var lb_combo_label: Label = $LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/ComboLabel
-@onready var settings_screen: Control = $SettingsScreen
-@onready var music_toggle: CheckButton = $SettingsScreen/VBoxContainer/AudioSection/MusicToggle
-@onready var sfx_toggle: CheckButton = $SettingsScreen/VBoxContainer/AudioSection/SFXToggle
-@onready var reset_confirm_overlay: Control = $SettingsScreen/ResetConfirmOverlay
-@onready var exit_button: Button = $ExitButton
-@onready var pause_button: Button = $PauseButton
-@onready var pause_overlay: Control = $PauseOverlay
+@onready var score_label: Label = find_child("ScoreLabel")
+@onready var fish_label: Label = find_child("FishLabel")
+@onready var timer_label: Label = find_child("TimerLabel")
+@onready var end_screen: Control = find_child("EndScreen")
+@onready var final_score_label: Label = find_child("FinalScoreLabel")
+@onready var high_scores_label: Label = find_child("HighScoresLabel")
+@onready var leaderboard_container: VBoxContainer = find_child("LeaderboardContainer")
+@onready var menu_screen: Control = find_child("MenuScreen")
+@onready var menu_btn_easy: Button = find_child("MenuBtnEasy")
+@onready var menu_btn_medium: Button = find_child("MenuBtnMedium")
+@onready var menu_btn_hard: Button = find_child("MenuBtnHard")
+@onready var menu_btn_1min: Button = find_child("MenuBtn1Min")
+@onready var menu_btn_3min: Button = find_child("MenuBtn3Min")
+@onready var menu_btn_5min: Button = find_child("MenuBtn5Min")
+@onready var lb_screen: Control = find_child("LeaderboardScreen")
+@onready var lb_btn_easy: Button = find_child("LBBtnEasy")
+@onready var lb_btn_medium: Button = find_child("LBBtnMedium")
+@onready var lb_btn_hard: Button = find_child("LBBtnHard")
+@onready var lb_btn_1min: Button = find_child("LBBtn1Min")
+@onready var lb_btn_3min: Button = find_child("LBBtn3Min")
+@onready var lb_btn_5min: Button = find_child("LBBtn5Min")
+@onready var lb_entries: VBoxContainer = find_child("EntriesContainer")
+@onready var lb_combo_label: Label = find_child("ComboLabel")
+@onready var settings_screen: Control = find_child("SettingsScreen")
+@onready var music_toggle: CheckButton = find_child("MusicToggle")
+@onready var sfx_toggle: CheckButton = find_child("SFXToggle")
+@onready var reset_confirm_overlay: Control = find_child("ResetConfirmOverlay")
+@onready var exit_button: Button = find_child("ExitButton")
+@onready var pause_button: Button = find_child("PauseButton")
+@onready var pause_overlay: Control = find_child("PauseOverlay")
+@onready var mute_button: Button = find_child("MuteButton")
+@onready var play_again_button: Button = find_child("PlayAgainButton")
+@onready var settings_back_button: Button = find_child("SettingsBackButton")
+@onready var reset_lb_button: Button = find_child("ResetLBButton")
+@onready var lb_back_button: Button = find_child("LBBackButton")
+@onready var menu_play_button: Button = find_child("MenuPlayButton")
+@onready var settings_button: Button = find_child("SettingsButton")
+@onready var reset_no_button: Button = find_child("BtnNo")
+@onready var reset_yes_button: Button = find_child("BtnYes")
+@onready var pause_play_button: Button = find_child("PausePlayButton")
+
+var SOUND_ON: Texture2D = load("res://assets/sprites/sound_on_icon.svg")
+var SOUND_OFF: Texture2D = load("res://assets/sprites/sound_off_icon.svg")
 
 var countdown: float = 0.0
 var timer_running: bool = false
@@ -55,7 +68,7 @@ func _ready() -> void:
 	music_toggle.button_pressed = settings.get("music", true)
 	sfx_toggle.button_pressed = settings.get("sfx", true)
 
-	$EndScreen/ScrollContainer/CenterContainer/VBoxContainer/PlayAgainButton.pressed.connect(_on_play_again_pressed)
+	play_again_button.pressed.connect(_on_play_again_pressed)
 
 	menu_btn_easy.pressed.connect(_set_menu_difficulty.bind(0))
 	menu_btn_medium.pressed.connect(_set_menu_difficulty.bind(1))
@@ -63,9 +76,9 @@ func _ready() -> void:
 	menu_btn_1min.pressed.connect(_set_menu_timer.bind(60))
 	menu_btn_3min.pressed.connect(_set_menu_timer.bind(180))
 	menu_btn_5min.pressed.connect(_set_menu_timer.bind(300))
-	$MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection/PlayButton.pressed.connect(_on_menu_play_pressed)
-	$MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection/ScoresButton.pressed.connect(_on_scores_pressed)
-	$MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection/SettingsButton.pressed.connect(_on_settings_pressed)
+	menu_play_button.pressed.connect(_on_menu_play_pressed)
+	find_child("ScoresButton").pressed.connect(_on_scores_pressed)
+	settings_button.pressed.connect(_on_settings_pressed)
 
 	lb_btn_easy.pressed.connect(_set_lb_difficulty.bind(0))
 	lb_btn_medium.pressed.connect(_set_lb_difficulty.bind(1))
@@ -73,21 +86,32 @@ func _ready() -> void:
 	lb_btn_1min.pressed.connect(_set_lb_timer.bind(60))
 	lb_btn_3min.pressed.connect(_set_lb_timer.bind(180))
 	lb_btn_5min.pressed.connect(_set_lb_timer.bind(300))
-	$LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/Header/BackButton.pressed.connect(_on_lb_back_pressed)
+	lb_back_button.pressed.connect(_on_lb_back_pressed)
 	
-	$SettingsScreen/VBoxContainer/BackButton.pressed.connect(_on_settings_back_pressed)
-	$SettingsScreen/VBoxContainer/ResetSection/ResetLBButton.pressed.connect(_on_reset_lb_pressed)
-	$SettingsScreen/ResetConfirmOverlay/Panel/HBox/BtnNo.pressed.connect(_on_reset_cancel_pressed)
-	$SettingsScreen/ResetConfirmOverlay/Panel/HBox/BtnYes.pressed.connect(_on_reset_confirm_pressed)
+	settings_back_button.pressed.connect(_on_settings_back_pressed)
+	reset_lb_button.pressed.connect(_on_reset_lb_pressed)
+	reset_no_button.pressed.connect(_on_reset_cancel_pressed)
+	reset_yes_button.pressed.connect(_on_reset_confirm_pressed)
 	
 	music_toggle.toggled.connect(_on_audio_toggled)
 	sfx_toggle.toggled.connect(_on_audio_toggled)
 
 	exit_button.pressed.connect(_on_exit_pressed)
 	pause_button.pressed.connect(_on_pause_pressed)
-	$PauseOverlay/PlayButton.pressed.connect(_on_play_pressed)
+	pause_play_button.pressed.connect(_on_play_pressed)
+	mute_button.pressed.connect(_on_mute_pressed)
 
+	_update_mute_icon()
 	_update_menu_visuals()
+
+func _update_mute_icon() -> void:
+	mute_button.icon = SOUND_OFF if AudioManager.master_mute else SOUND_ON
+
+func _on_mute_pressed() -> void:
+	var is_muted = AudioManager.toggle_mute()
+	_update_mute_icon()
+	# Save specifically the master_mute state
+	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, is_muted)
 
 func _on_settings_pressed() -> void:
 	var settings := Leaderboard.load_settings()
@@ -100,12 +124,12 @@ func _on_settings_pressed() -> void:
 func _on_settings_back_pressed() -> void:
 	AudioManager.play_sfx("pop")
 	settings_screen.visible = false
-	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed)
+	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
 
 func _on_audio_toggled(_toggled: bool) -> void:
 	AudioManager.play_sfx("pop")
 	AudioManager.update_settings(music_toggle.button_pressed, sfx_toggle.button_pressed)
-	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed)
+	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
 
 func _on_reset_lb_pressed() -> void:
 	AudioManager.play_sfx("pop")
@@ -120,7 +144,7 @@ func _on_reset_confirm_pressed() -> void:
 	reset_confirm_overlay.visible = false
 	Leaderboard.clear_scores()
 	# Optional: show a quick "Cleared!" message or change button text
-	var btn = $SettingsScreen/VBoxContainer/ResetSection/ResetLBButton
+	var btn = reset_lb_button
 	var old_text = btn.text
 	btn.text = "Scores Reset!"
 	btn.disabled = true
@@ -152,7 +176,7 @@ func _on_menu_play_pressed() -> void:
 	menu_screen.visible = false
 	exit_button.visible = true
 	pause_button.visible = true
-	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed)
+	Leaderboard.save_settings(_selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, AudioManager.master_mute)
 	difficulty_selected.emit(_selected_difficulty)
 	timer_selected.emit(float(_selected_timer))
 

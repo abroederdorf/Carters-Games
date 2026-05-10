@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_ui001"]
 
+[ext_resource type="Texture2D" path="res://assets/sprites/close_icon.svg" id="14_close"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pause_icon.svg" id="15_pause"]
+[ext_resource type="Texture2D" path="res://assets/sprites/sound_on_icon.svg" id="16_sound_on"]
+[ext_resource type="Texture2D" path="res://assets/sprites/sound_off_icon.svg" id="17_sound_off"]
+[ext_resource type="Texture2D" path="res://assets/sprites/switch_on.svg" id="18_switch_on"]
+[ext_resource type="Texture2D" path="res://assets/sprites/switch_off.svg" id="19_switch_off"]
+
 [sub_resource type="StyleBoxFlat" id="SBF_exit_n"]
 bg_color = Color(0.88, 0.14, 0.14, 1)
 corner_radius_top_left = 18
@@ -354,7 +361,7 @@ horizontal_alignment = 1
 text = "PAUSED"
 theme_override_font_sizes/font_size = 72
 
-[node name="PlayButton" type="Button" parent="PauseOverlay"]
+[node name="PausePlayButton" type="Button" parent="PauseOverlay"]
 layout_mode = 3
 anchor_left = 0.5
 anchor_top = 0.5
@@ -373,44 +380,6 @@ theme_override_styles/normal = SubResource("SBF_play_n")
 theme_override_styles/hover = SubResource("SBF_play_n")
 theme_override_styles/pressed = SubResource("SBF_play_p")
 
-[node name="ExitButton" type="Button" parent="."]
-visible = false
-offset_left = 15.0
-offset_top = 8.0
-offset_right = 85.0
-offset_bottom = 78.0
-text = "X"
-theme_override_font_sizes/font_size = 36
-theme_override_constants/outline_size = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_exit_n")
-theme_override_styles/hover = SubResource("SBF_exit_n")
-theme_override_styles/pressed = SubResource("SBF_exit_p")
-
-[node name="PauseButton" type="Button" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -35.0
-offset_top = 8.0
-offset_right = 35.0
-offset_bottom = 78.0
-text = "▮▮"
-theme_override_font_sizes/font_size = 48
-theme_override_constants/outline_size = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_pau_n")
-theme_override_styles/hover = SubResource("SBF_pau_n")
-theme_override_styles/pressed = SubResource("SBF_pau_p")
-
 [node name="EndScreen" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -420,7 +389,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="EndScreen"]
+[node name="EndBg" type="ColorRect" parent="EndScreen"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -429,7 +398,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.7)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="EndScreen"]
+[node name="EndScroll" type="ScrollContainer" parent="EndScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -438,35 +407,35 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="EndScreen/ScrollContainer"]
+[node name="EndCenter" type="CenterContainer" parent="EndScreen/EndScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen/ScrollContainer/CenterContainer"]
+[node name="EndVBox" type="VBoxContainer" parent="EndScreen/EndScroll/EndCenter"]
 custom_minimum_size = Vector2(700, 700)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="FinalScoreLabel" type="Label" parent="EndScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="FinalScoreLabel" type="Label" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "You caught 0 fish!"
 theme_override_font_sizes/font_size = 40
 
-[node name="HighScoresLabel" type="Label" parent="EndScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="HighScoresLabel" type="Label" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "High Scores"
 theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
 
-[node name="LeaderboardContainer" type="VBoxContainer" parent="EndScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="LeaderboardContainer" type="VBoxContainer" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PlayAgainButton" type="Button" parent="EndScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="PlayAgainButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
 custom_minimum_size = Vector2(260, 90)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -485,7 +454,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="MenuScreen"]
+[node name="MenuBg" type="ColorRect" parent="MenuScreen"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -494,7 +463,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.04, 0.14, 0.32, 0.93)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MenuScreen"]
+[node name="MenuScroll" type="ScrollContainer" parent="MenuScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -503,40 +472,40 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="MenuScreen/ScrollContainer"]
+[node name="MenuCenter" type="CenterContainer" parent="MenuScreen/MenuScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuScreen/ScrollContainer/CenterContainer"]
+[node name="MenuVBox" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter"]
 custom_minimum_size = Vector2(700, 700)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "Gone Fishin'"
 theme_override_font_sizes/font_size = 60
 
-[node name="DifficultySection" type="VBoxContainer" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="DifficultySection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="DifficultyLabel" type="Label" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection"]
+[node name="DifficultyLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "Difficulty"
 theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
 
-[node name="DifficultyButtons" type="HBoxContainer" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection"]
+[node name="DifficultyButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection"]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="BtnEasy" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons"]
+[node name="MenuBtnEasy" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 text = "Easy"
@@ -546,7 +515,7 @@ theme_override_styles/normal = SubResource("SBF_de_n")
 theme_override_styles/hover = SubResource("SBF_de_n")
 theme_override_styles/pressed = SubResource("SBF_de_p")
 
-[node name="BtnMedium" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons"]
+[node name="MenuBtnMedium" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 text = "Med"
@@ -556,7 +525,7 @@ theme_override_styles/normal = SubResource("SBF_dm_n")
 theme_override_styles/hover = SubResource("SBF_dm_n")
 theme_override_styles/pressed = SubResource("SBF_dm_p")
 
-[node name="BtnHard" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons"]
+[node name="MenuBtnHard" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 text = "Hard"
@@ -566,23 +535,23 @@ theme_override_styles/normal = SubResource("SBF_dh_n")
 theme_override_styles/hover = SubResource("SBF_dh_n")
 theme_override_styles/pressed = SubResource("SBF_dh_p")
 
-[node name="TimerSection" type="VBoxContainer" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="TimerSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="TimerLabel" type="Label" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection"]
+[node name="TimerLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "How long?"
 theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
 
-[node name="TimerButtons" type="HBoxContainer" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection"]
+[node name="TimerButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection"]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Btn1Min" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons"]
+[node name="MenuBtn1Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 text = "1"
@@ -592,7 +561,7 @@ theme_override_styles/normal = SubResource("SBF_t1_n")
 theme_override_styles/hover = SubResource("SBF_t1_n")
 theme_override_styles/pressed = SubResource("SBF_t1_p")
 
-[node name="Btn3Min" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons"]
+[node name="MenuBtn3Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 text = "3"
@@ -602,7 +571,7 @@ theme_override_styles/normal = SubResource("SBF_t3_n")
 theme_override_styles/hover = SubResource("SBF_t3_n")
 theme_override_styles/pressed = SubResource("SBF_t3_p")
 
-[node name="Btn5Min" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons"]
+[node name="MenuBtn5Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 text = "5"
@@ -612,11 +581,11 @@ theme_override_styles/normal = SubResource("SBF_t5_n")
 theme_override_styles/hover = SubResource("SBF_t5_n")
 theme_override_styles/pressed = SubResource("SBF_t5_p")
 
-[node name="ActionsSection" type="VBoxContainer" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="ActionsSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="PlayButton" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection"]
+[node name="MenuPlayButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection"]
 custom_minimum_size = Vector2(400, 90)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -627,7 +596,7 @@ theme_override_styles/normal = SubResource("SBF_play_n")
 theme_override_styles/hover = SubResource("SBF_play_n")
 theme_override_styles/pressed = SubResource("SBF_play_p")
 
-[node name="ScoresButton" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection"]
+[node name="ScoresButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection"]
 custom_minimum_size = Vector2(230, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -638,7 +607,7 @@ theme_override_styles/normal = SubResource("SBF_pa_n")
 theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
 
-[node name="SettingsButton" type="Button" parent="MenuScreen/ScrollContainer/CenterContainer/VBoxContainer/ActionsSection"]
+[node name="SettingsButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection"]
 custom_minimum_size = Vector2(230, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -658,7 +627,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="LeaderboardScreen"]
+[node name="LeaderboardBg" type="ColorRect" parent="LeaderboardScreen"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -667,7 +636,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.04, 0.14, 0.32, 0.93)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="LeaderboardScreen"]
+[node name="LeaderboardScroll" type="ScrollContainer" parent="LeaderboardScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -676,22 +645,22 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="LeaderboardScreen/ScrollContainer"]
+[node name="LeaderboardCenter" type="CenterContainer" parent="LeaderboardScreen/LeaderboardScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LeaderboardScreen/ScrollContainer/CenterContainer"]
+[node name="LeaderboardVBox" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter"]
 custom_minimum_size = Vector2(700, 700)
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Header" type="Control" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="Header" type="Control" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/Header"]
+[node name="TitleLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/Header"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -704,7 +673,7 @@ horizontal_alignment = 1
 text = "High Scores"
 theme_override_font_sizes/font_size = 50
 
-[node name="BackButton" type="Button" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/Header"]
+[node name="LBBackButton" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/Header"]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -717,23 +686,23 @@ theme_override_styles/normal = SubResource("SBF_pa_n")
 theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
 
-[node name="DifficultySection" type="VBoxContainer" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="DifficultySection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="DifficultyLabel" type="Label" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection"]
+[node name="DifficultyLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "Difficulty"
 theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
 
-[node name="DifficultyButtons" type="HBoxContainer" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection"]
+[node name="DifficultyButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="BtnEasy" type="Button" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons"]
+[node name="LBBtnEasy" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons"]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 text = "Easy"
@@ -743,7 +712,7 @@ theme_override_styles/normal = SubResource("SBF_de_n")
 theme_override_styles/hover = SubResource("SBF_de_n")
 theme_override_styles/pressed = SubResource("SBF_de_p")
 
-[node name="BtnMedium" type="Button" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons"]
+[node name="LBBtnMedium" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons"]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 text = "Med"
@@ -753,7 +722,7 @@ theme_override_styles/normal = SubResource("SBF_dm_n")
 theme_override_styles/hover = SubResource("SBF_dm_n")
 theme_override_styles/pressed = SubResource("SBF_dm_p")
 
-[node name="BtnHard" type="Button" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/DifficultySection/DifficultyButtons"]
+[node name="LBBtnHard" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons"]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 text = "Hard"
@@ -763,23 +732,23 @@ theme_override_styles/normal = SubResource("SBF_dh_n")
 theme_override_styles/hover = SubResource("SBF_dh_n")
 theme_override_styles/pressed = SubResource("SBF_dh_p")
 
-[node name="TimerSection" type="VBoxContainer" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="TimerSection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="TimerLabel" type="Label" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection"]
+[node name="TimerLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "How long?"
 theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
 
-[node name="TimerButtons" type="HBoxContainer" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection"]
+[node name="TimerButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Btn1Min" type="Button" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons"]
+[node name="LBBtn1Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons"]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 text = "1"
@@ -789,7 +758,7 @@ theme_override_styles/normal = SubResource("SBF_t1_n")
 theme_override_styles/hover = SubResource("SBF_t1_n")
 theme_override_styles/pressed = SubResource("SBF_t1_p")
 
-[node name="Btn3Min" type="Button" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons"]
+[node name="LBBtn3Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons"]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 text = "3"
@@ -799,7 +768,7 @@ theme_override_styles/normal = SubResource("SBF_t3_n")
 theme_override_styles/hover = SubResource("SBF_t3_n")
 theme_override_styles/pressed = SubResource("SBF_t3_p")
 
-[node name="Btn5Min" type="Button" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer/TimerSection/TimerButtons"]
+[node name="LBBtn5Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons"]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 text = "5"
@@ -809,14 +778,14 @@ theme_override_styles/normal = SubResource("SBF_t5_n")
 theme_override_styles/hover = SubResource("SBF_t5_n")
 theme_override_styles/pressed = SubResource("SBF_t5_p")
 
-[node name="ComboLabel" type="Label" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="ComboLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "Easy · 1 min"
 theme_override_font_sizes/font_size = 30
 theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
 
-[node name="EntriesContainer" type="VBoxContainer" parent="LeaderboardScreen/ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="EntriesContainer" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
@@ -838,7 +807,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.04, 0.14, 0.32, 0.93)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen"]
+[node name="SettingsVBox" type="VBoxContainer" parent="SettingsScreen"]
 layout_mode = 3
 anchor_left = 0.5
 anchor_top = 0.5
@@ -851,51 +820,57 @@ offset_bottom = 250.0
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="SettingsScreen/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="SettingsScreen/SettingsVBox"]
 layout_mode = 2
 horizontal_alignment = 1
 text = "Settings"
 theme_override_font_sizes/font_size = 50
 
-[node name="AudioSection" type="VBoxContainer" parent="SettingsScreen/VBoxContainer"]
+[node name="AudioSection" type="VBoxContainer" parent="SettingsScreen/SettingsVBox"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 
-[node name="MusicToggle" type="CheckButton" parent="SettingsScreen/VBoxContainer/AudioSection"]
-custom_minimum_size = Vector2(0, 60)
+[node name="MusicToggle" type="CheckButton" parent="SettingsScreen/SettingsVBox/AudioSection"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_constants/h_separation = 40
+theme_override_font_sizes/font_size = 48
+theme_override_icons/checked = ExtResource("18_switch_on")
+theme_override_icons/unchecked = ExtResource("19_switch_off")
 button_pressed = true
 text = "Music"
 
-[node name="SFXToggle" type="CheckButton" parent="SettingsScreen/VBoxContainer/AudioSection"]
-custom_minimum_size = Vector2(0, 60)
+[node name="SFXToggle" type="CheckButton" parent="SettingsScreen/SettingsVBox/AudioSection"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_constants/h_separation = 40
+theme_override_font_sizes/font_size = 48
+theme_override_icons/checked = ExtResource("18_switch_on")
+theme_override_icons/unchecked = ExtResource("19_switch_off")
 button_pressed = true
 text = "Sound Effects"
 
-[node name="ResetSection" type="VBoxContainer" parent="SettingsScreen/VBoxContainer"]
+[node name="ResetSection" type="VBoxContainer" parent="SettingsScreen/SettingsVBox"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 20
 
-[node name="ResetLBButton" type="Button" parent="SettingsScreen/VBoxContainer/ResetSection"]
-custom_minimum_size = Vector2(350, 70)
+[node name="ResetLBButton" type="Button" parent="SettingsScreen/SettingsVBox/ResetSection"]
+custom_minimum_size = Vector2(450, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Reset High Scores"
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 36
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("SBF_exit_n")
 theme_override_styles/hover = SubResource("SBF_exit_n")
 theme_override_styles/pressed = SubResource("SBF_exit_p")
 
-[node name="BackButton" type="Button" parent="SettingsScreen/VBoxContainer"]
-custom_minimum_size = Vector2(200, 70)
+[node name="SettingsBackButton" type="Button" parent="SettingsScreen/SettingsVBox"]
+custom_minimum_size = Vector2(250, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("SBF_pa_n")
 theme_override_styles/hover = SubResource("SBF_pa_n")
@@ -963,3 +938,43 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("SBF_exit_n")
 theme_override_styles/hover = SubResource("SBF_exit_n")
 theme_override_styles/pressed = SubResource("SBF_exit_p")
+
+[node name="ExitButton" type="Button" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 95.0
+offset_bottom = 88.0
+focus_mode = 0
+icon = ExtResource("14_close")
+flat = true
+expand_icon = true
+
+[node name="PauseButton" type="Button" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 88.0
+grow_horizontal = 2
+focus_mode = 0
+icon = ExtResource("15_pause")
+flat = true
+expand_icon = true
+
+[node name="MuteButton" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 50.0
+offset_top = 8.0
+offset_right = 130.0
+offset_bottom = 88.0
+grow_horizontal = 2
+focus_mode = 0
+icon = ExtResource("16_sound_on")
+flat = true
+expand_icon = true
