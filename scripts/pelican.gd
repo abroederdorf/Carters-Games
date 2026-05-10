@@ -44,6 +44,11 @@ func trigger_attack() -> bool:
 	_perform_swoop(target)
 	return true
 
+func attack_target(target: Node2D) -> void:
+	if is_swooping:
+		return
+	_perform_swoop(target)
+
 func _perform_swoop(target: Node2D) -> void:
 	is_swooping = true
 	var target_pos = target.global_position
