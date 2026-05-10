@@ -48,6 +48,7 @@ var _game_mode: int = GameMode.FREE_PLAY
 var _math_correct_answer: int = 0
 var _problems_solved: int = 0
 var _math_pelican: Node2D = null
+var _math_round_resetting: bool = false
 
 func _ready() -> void:
 	get_viewport().size_changed.connect(_on_window_resized)
@@ -218,6 +219,7 @@ func _handle_math_catch(area: Area2D) -> void:
 		area.get_caught()
 		_problems_solved += 1
 		ui.update_score(_problems_solved, _problems_solved)
+		_math_round_resetting = true
 		call_deferred("_new_math_round")
 	else:
 		AudioManager.play_sfx("bite")
@@ -227,11 +229,25 @@ func _handle_math_catch(area: Area2D) -> void:
 			area.get_eaten()
 
 func _new_math_round() -> void:
-	await get_tree().process_frame
+	_math_round_resetting = true
 	for fish in fish_layer.get_children():
 		fish.queue_free()
 	await get_tree().process_frame
 	_spawn_math_fish()
+	_math_round_resetting = false
+
+func _on_math_fish_removed() -> void:
+	if not game_active or _game_mode != GameMode.MATH or _math_round_resetting:
+		return
+	call_deferred("_check_math_board")
+
+func _check_math_board() -> void:
+	if _math_round_resetting:
+		return
+	for fish in fish_layer.get_children():
+		if fish.is_correct:
+			return
+	_new_math_round()
 
 func _spawn_fish() -> void:
 	while fish_layer.get_child_count() < _max_fish:
@@ -272,12 +288,13 @@ func _spawn_math_fish() -> void:
 		fish.is_correct = (numbers[i] == problem.answer)
 		fish.spawn_y = y_slots[i]
 		fish_layer.add_child(fish)
+		fish.caught.connect(_on_math_fish_removed)
 
 func _generate_math_problem() -> Dictionary:
 	match _difficulty:
 		0: return _make_problem_easy()
-		1: return _make_problem_medium()
-		2: return _make_problem_hard()
+		1: return _make_problem_hard()
+		2: return _make_problem_medium()
 	return _make_problem_easy()
 
 func _make_problem_easy() -> Dictionary:
