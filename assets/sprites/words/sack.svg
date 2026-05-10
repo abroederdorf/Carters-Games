@@ -1,0 +1,4 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30,30 Q30,20 50,20 Q70,20 70,30 L80,80 Q50,90 20,80 Z" fill="#f4a460" stroke="#333" stroke-width="2" />
+  <text x="50" y="60" font-family="Arial" font-size="12" text-anchor="middle" fill="#333" font-weight="bold">SACK</text>
+</svg>

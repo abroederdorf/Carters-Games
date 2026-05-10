@@ -1,0 +1,10 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sat: Someone sitting on a chair -->
+  <!-- Chair -->
+  <path d="M30,80 L30,40 L70,40 L70,80" fill="none" stroke="#8b4513" stroke-width="3" />
+  <line x1="30" y1="60" x2="70" y2="60" stroke="#8b4513" stroke-width="3" />
+  <!-- Simple Stick Figure Sitting -->
+  <circle cx="50" cy="30" r="8" fill="#ffdbac" />
+  <path d="M50,38 L50,60 L70,65" fill="none" stroke="#000" stroke-width="2" />
+  <path d="M50,50 L65,55" fill="none" stroke="#000" stroke-width="2" />
+</svg>
