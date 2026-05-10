@@ -38,13 +38,21 @@ func save_score(difficulty: int, timer_secs: int, score: int, fish: int) -> int:
 func get_scores(difficulty: int, timer_secs: int) -> Array:
 	return _config.get_value("lb", "%d_%d" % [difficulty, timer_secs], [])
 
-func save_settings(difficulty: int, timer_secs: int) -> void:
+func clear_scores() -> void:
+	_config.erase_section("lb")
+	_config.save(SAVE_PATH)
+
+func save_settings(difficulty: int, timer_secs: int, music: bool = true, sfx: bool = true) -> void:
 	_config.set_value("settings", "difficulty", difficulty)
 	_config.set_value("settings", "timer_secs", timer_secs)
+	_config.set_value("settings", "music", music)
+	_config.set_value("settings", "sfx", sfx)
 	_config.save(SAVE_PATH)
 
 func load_settings() -> Dictionary:
 	return {
 		"difficulty": _config.get_value("settings", "difficulty", 0),
-		"timer_secs": _config.get_value("settings", "timer_secs", 60)
+		"timer_secs": _config.get_value("settings", "timer_secs", 60),
+		"music": _config.get_value("settings", "music", true),
+		"sfx": _config.get_value("settings", "sfx", true)
 	}

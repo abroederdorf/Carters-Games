@@ -14,9 +14,9 @@ var velocity_y: float = 0.0
 var _change_timer: float = 0.0
 
 const CLASS_DATA = {
-	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fish_large.svg", "res://assets/sprites/fish_large_2.svg"] },
-	FishClass.MEDIUM: { "scale": 1.0,  "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/fish_medium.svg", "res://assets/sprites/fish_medium_2.svg"] },
-	FishClass.SMALL:  { "scale": 0.65, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/fish_small.svg", "res://assets/sprites/fish_small_2.svg"] },
+	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fish_large.svg", "res://assets/sprites/fish_large_2.svg", "res://assets/sprites/fish_large_3.svg"] },
+	FishClass.MEDIUM: { "scale": 1.0,  "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/fish_medium.svg", "res://assets/sprites/fish_medium_2.svg", "res://assets/sprites/fish_medium_3.svg"] },
+	FishClass.SMALL:  { "scale": 0.65, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/fish_small.svg", "res://assets/sprites/fish_small_2.svg", "res://assets/sprites/fish_small_3.svg"] },
 }
 
 func _ready() -> void:
@@ -68,6 +68,7 @@ func _randomize_movement(vp: Rect2) -> void:
 		$Sprite2D.flip_h = direction > 0
 	velocity_y = randf_range(-80.0, 80.0)
 func get_caught() -> void:
+	AudioManager.play_sfx("pop")
 	caught.emit()
 	set_process(false)
 
@@ -79,6 +80,7 @@ func get_caught() -> void:
 	tween.chain().tween_callback(queue_free)
 
 func get_eaten() -> void:
+	AudioManager.play_sfx("pop")
 	caught.emit()
 	set_process(false)
 	# Shrink effect

@@ -11,6 +11,7 @@ const SW_G_TEX = preload("res://assets/sprites/seaweed_green.svg")
 const SW_P_TEX = preload("res://assets/sprites/seaweed_purple.svg")
 const SW_PK_TEX = preload("res://assets/sprites/seaweed_pink.svg")
 const SWAY_SCRIPT = preload("res://scripts/sway.gd")
+const CLAM_SCRIPT = preload("res://scripts/clam.gd")
 
 const CAST_DURATION = 0.5
 
@@ -127,7 +128,7 @@ func _cast_to(target_global: Vector2) -> void:
 	if cast_tween:
 		cast_tween.kill()
 	hook_active = false
-	hook.monitoring = false
+	hook.set_deferred("monitoring", false)
 	line_2d.clear_points()
 	hook_sprite.show()
 
@@ -146,8 +147,9 @@ func _cast_to(target_global: Vector2) -> void:
 		0.0, 1.0, CAST_DURATION
 	)
 	cast_tween.tween_callback(func() -> void:
+		AudioManager.play_sfx("splash")
 		hook_active = true
-		hook.monitoring = true
+		hook.set_deferred("monitoring", true)
 	)
 
 func _redraw_line(start: Vector2, control: Vector2, end: Vector2, t_end: float) -> void:
@@ -160,15 +162,16 @@ func _on_hook_area_entered(area: Area2D) -> void:
 	if not hook_active:
 		return
 	if area.has_method("get_caught"):
+		AudioManager.play_sfx("catch")
 		area.get_caught()
 		score += area.points
 		fish_caught += 1
 		ui.update_score(score, fish_caught)
 		hook_active = false
-		hook.monitoring = false
+		hook.set_deferred("monitoring", false)
 		hook_sprite.hide()
 		line_2d.clear_points()
-		_spawn_fish()
+		call_deferred("_spawn_fish")
 
 func _spawn_fish() -> void:
 	while fish_layer.get_child_count() < _max_fish:
@@ -176,15 +179,16 @@ func _spawn_fish() -> void:
 		fish.fish_class = [Fish.FishClass.LARGE, Fish.FishClass.MEDIUM, Fish.FishClass.SMALL].pick_random()
 		fish.difficulty = _difficulty
 		fish_layer.add_child(fish)
-		fish.caught.connect(func() -> void:
-			await get_tree().create_timer(0.5).timeout
-			if is_instance_valid(self) and game_active:
-				_spawn_fish()
-		)
+		fish.caught.connect(_on_fish_caught)
+
+func _on_fish_caught() -> void:
+	await get_tree().create_timer(0.5).timeout
+	if is_instance_valid(self) and game_active:
+		_spawn_fish()
 
 func _on_time_up() -> void:
 	game_active = false
-	hook.monitoring = false
+	hook.set_deferred("monitoring", false)
 	line_2d.clear_points()
 	_predator_timer.stop()
 	# Clear predators
@@ -251,3 +255,12 @@ func _populate_environment() -> void:
 		sw.scale = Vector2.ONE * randf_range(0.7, 1.3)
 		sw.set_script(SWAY_SCRIPT)
 		environment.add_child(sw)
+		
+	# 4. Clams
+	var clam_count = int(width / 600.0) + 1
+	for i in clam_count:
+		var c = Sprite2D.new()
+		c.position = Vector2(i * 600.0 + randf_range(100, 500), 760)
+		c.scale = Vector2.ONE * randf_range(0.8, 1.2)
+		c.set_script(CLAM_SCRIPT)
+		environment.add_child(c)
