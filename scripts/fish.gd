@@ -15,6 +15,7 @@ var _change_timer: float = 0.0
 
 var math_value: int = 0
 var is_correct: bool = false
+var spawn_y: float = -1.0
 
 const CLASS_DATA = {
 	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fish_large.svg", "res://assets/sprites/fish_large_2.svg", "res://assets/sprites/fish_large_3.svg"] },
@@ -35,7 +36,7 @@ func _ready() -> void:
 	# Ensure fish stay in the water (starts at 250.0)
 	var water_start = 250.0 + 50.0 # Some margin from the top
 	var water_end = vp.size.y - 50.0 # Some margin from the bottom
-	position.y = randf_range(water_start, water_end)
+	position.y = spawn_y if spawn_y >= 0.0 else randf_range(water_start, water_end)
 	position.x = -80.0 if direction > 0 else vp.size.x + 80.0
 	$Sprite2D.flip_h = direction > 0
 

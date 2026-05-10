@@ -97,6 +97,7 @@ func _spawn_math_pelican() -> void:
 	predator_layer.add_child(_math_pelican)
 	_math_pelican.setup(fish_layer)
 	_math_pelican.set_process(false)
+	_math_pelican.swoop_speed = 0.4
 	_math_pelican.position = Vector2(get_viewport_rect().size.x / 2.0, -200.0)
 
 func _on_predator_timer_timeout() -> void:
@@ -220,7 +221,7 @@ func _handle_math_catch(area: Area2D) -> void:
 		call_deferred("_new_math_round")
 	else:
 		AudioManager.play_sfx("bite")
-		if is_instance_valid(_math_pelican):
+		if is_instance_valid(_math_pelican) and not _math_pelican.is_swooping:
 			_math_pelican.attack_target(area)
 		else:
 			area.get_eaten()
@@ -254,12 +255,22 @@ func _spawn_math_fish() -> void:
 	var numbers: Array = distractors + [problem.answer]
 	numbers.shuffle()
 
+	var vp := get_viewport_rect()
+	var water_top := 300.0
+	var water_bottom := vp.size.y - 50.0
+	var slot := (water_bottom - water_top) / 6.0
+	var y_slots: Array = []
+	for i in 6:
+		y_slots.append(water_top + slot * i + slot * 0.5 + randf_range(-8.0, 8.0))
+	y_slots.shuffle()
+
 	for i in numbers.size():
 		var fish := FISH_SCENE.instantiate()
 		fish.fish_class = Fish.FishClass.LARGE
 		fish.difficulty = 0
 		fish.math_value = numbers[i]
 		fish.is_correct = (numbers[i] == problem.answer)
+		fish.spawn_y = y_slots[i]
 		fish_layer.add_child(fish)
 
 func _generate_math_problem() -> Dictionary:
