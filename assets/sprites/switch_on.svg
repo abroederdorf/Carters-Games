@@ -1,0 +1,6 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Track -->
+  <rect x="5" y="5" width="110" height="50" rx="25" fill="#4361ee" />
+  <!-- Knob -->
+  <circle cx="90" cy="30" r="20" fill="white" />
+</svg>
