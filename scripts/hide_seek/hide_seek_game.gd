@@ -462,6 +462,44 @@ func _handle_drag(event: InputEventScreenDrag) -> void:
 		_update_canvas_transform()
 
 
+func _handle_mouse_button(event: InputEventMouseButton) -> void:
+	var vp_h := get_viewport_rect().size.y
+	if event.position.y < TOP_BAR_H or event.position.y > vp_h - THUMB_STRIP_H:
+		return
+	match event.button_index:
+		MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				_mouse_panning = true
+				_mouse_press_start = event.position
+				_pan_start_offset = _canvas_offset
+				_pan_start_pos = event.position
+			else:
+				_mouse_panning = false
+				if event.position.distance_to(_mouse_press_start) < TAP_MAX_MOVE:
+					_handle_tap(event.position)
+		MOUSE_BUTTON_WHEEL_UP:
+			_apply_zoom(_canvas_scale * 1.12, event.position - Vector2(0, TOP_BAR_H))
+		MOUSE_BUTTON_WHEEL_DOWN:
+			_apply_zoom(_canvas_scale / 1.12, event.position - Vector2(0, TOP_BAR_H))
+
+
+func _handle_mouse_motion(event: InputEventMouseMotion) -> void:
+	if not _mouse_panning:
+		return
+	_canvas_offset = _pan_start_offset + (event.position - _pan_start_pos)
+	_clamp_offset()
+	_update_canvas_transform()
+
+
+func _apply_zoom(new_scale: float, area_center: Vector2) -> void:
+	new_scale = clamp(new_scale, _min_scale, MAX_SCALE)
+	var canvas_pt := (area_center - _canvas_offset) / _canvas_scale
+	_canvas_scale = new_scale
+	_canvas_offset = area_center - canvas_pt * _canvas_scale
+	_clamp_offset()
+	_update_canvas_transform()
+
+
 func _handle_tap(screen_pos: Vector2) -> void:
 	if not _running or _canvas_area_size == Vector2.ZERO:
 		return
