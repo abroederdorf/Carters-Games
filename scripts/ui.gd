@@ -603,7 +603,7 @@ func flash_slot_wrong(index: int) -> void:
 		return
 	var btn: Button = _spell_slots[index]
 	var style_wrong := _make_slot_style(Color(0.6, 0.05, 0.05, 0.9), Color(1.0, 0.1, 0.1, 1.0))
-	btn.text = "✗"
+	btn.text = "X"
 	btn.add_theme_color_override("font_color", Color.WHITE)
 	btn.add_theme_stylebox_override("normal", style_wrong)
 	btn.add_theme_stylebox_override("hover", style_wrong)
