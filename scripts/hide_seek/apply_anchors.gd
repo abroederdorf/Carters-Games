@@ -34,6 +34,8 @@ func _init():
 			var anchor = HideSeekAnchor.new()
 			anchor.position = Vector2(a_data["x"], a_data["y"])
 			anchor.radius = a_data["radius"]
+			anchor.difficulty = a_data.get("difficulty", 1)
+			anchor.tags = a_data.get("tags", [])
 			scene_data.anchors.append(anchor)
 			
 		var err = ResourceSaver.save(scene_data, scene_res_path)

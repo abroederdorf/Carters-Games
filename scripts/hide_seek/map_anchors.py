@@ -26,12 +26,13 @@ Identify 50 natural-looking anchor points where an object could be hidden (e.g.,
 Rules:
 1. Spread the points across the entire scene (foreground, midground, background).
 2. For each point, provide (X, Y) pixel coordinates where (0,0) is top-left and (1920, 1080) is bottom-right.
-3. For each point, provide a 'Radius' in pixels (typically 25 to 130) that represents how large an object should be at that specific depth/perspective. Objects in the distance should have smaller radii.
-4. Avoid placing anchors too close to each other.
+3. For each point, provide a 'Radius' in pixels (typically 25 to 130).
+4. For each point, provide a list of 'Tags' describing the surface/context. Use: "ground", "sky", "water", "foliage", "structure", "shadow".
+5. For each point, provide a 'Difficulty' (0: Easy, 1: Medium, 2: Hard). Hard points should be small, in shadows, or partially tucked behind something.
 
 Return the result STRICTLY as a JSON array of objects:
 [
-  {"x": 100, "y": 200, "radius": 80},
+  {"x": 100, "y": 200, "radius": 80, "tags": ["ground"], "difficulty": 0},
   ...
 ]
 """

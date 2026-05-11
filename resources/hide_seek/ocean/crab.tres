@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://def1bp8xmxrro"]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_g6fmn"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/crab.png" id="2_2pwxv"]
+[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_g6fmn"]
+[ext_resource type="Texture2D" uid="uid://cwguru0pj732n" path="res://assets/sprites/hide_seek/ocean/crab.png" id="2_2pwxv"]
 
 [resource]
 script = ExtResource("1_g6fmn")
