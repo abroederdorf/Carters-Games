@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_anchor.gd" id="1_aej6v"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/bg.png" id="1_qgp2t"]
 [ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_aej6v"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/checkered_flag.png" id="3_yuy7a"]
@@ -13,6 +14,104 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/trophy.png" id="11_fyy86"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/wrench.png" id="12_s6e2j"]
 [ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_nkli5"]
+
+[sub_resource type="Resource" id="Resource_yuy7a"]
+script = ExtResource("1_aej6v")
+position = Vector2(150, 950)
+radius = 100.0
+
+[sub_resource type="Resource" id="Resource_2qptk"]
+script = ExtResource("1_aej6v")
+position = Vector2(300, 850)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_qahqo"]
+script = ExtResource("1_aej6v")
+position = Vector2(350, 750)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_amrmb"]
+script = ExtResource("1_aej6v")
+position = Vector2(250, 520)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_c8rks"]
+script = ExtResource("1_aej6v")
+position = Vector2(580, 700)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_j6syv"]
+script = ExtResource("1_aej6v")
+position = Vector2(400, 400)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_md801"]
+script = ExtResource("1_aej6v")
+position = Vector2(200, 250)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_m76tm"]
+script = ExtResource("1_aej6v")
+position = Vector2(300, 150)
+
+[sub_resource type="Resource" id="Resource_fyy86"]
+script = ExtResource("1_aej6v")
+position = Vector2(700, 800)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_s6e2j"]
+script = ExtResource("1_aej6v")
+position = Vector2(950, 700)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_nkli5"]
+script = ExtResource("1_aej6v")
+position = Vector2(960, 420)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_b6b8g"]
+script = ExtResource("1_aej6v")
+position = Vector2(960, 310)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_oubqe"]
+script = ExtResource("1_aej6v")
+position = Vector2(1300, 750)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_knhov"]
+script = ExtResource("1_aej6v")
+position = Vector2(1700, 800)
+radius = 85.0
+
+[sub_resource type="Resource" id="Resource_orlmu"]
+script = ExtResource("1_aej6v")
+position = Vector2(1500, 530)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_obhcs"]
+script = ExtResource("1_aej6v")
+position = Vector2(1400, 860)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_mkj52"]
+script = ExtResource("1_aej6v")
+position = Vector2(1750, 950)
+radius = 90.0
+
+[sub_resource type="Resource" id="Resource_32c3v"]
+script = ExtResource("1_aej6v")
+position = Vector2(1600, 150)
+
+[sub_resource type="Resource" id="Resource_x0cdq"]
+script = ExtResource("1_aej6v")
+position = Vector2(1700, 250)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_wy0os"]
+script = ExtResource("1_aej6v")
+position = Vector2(650, 300)
+radius = 40.0
 
 [sub_resource type="Resource" id="Resource_muckm"]
 script = ExtResource("2_aej6v")
@@ -88,3 +187,4 @@ script = ExtResource("13_nkli5")
 scene_name = "monster_truck_jam"
 background_image = ExtResource("1_qgp2t")
 items = Array[ExtResource("2_aej6v")]([SubResource("Resource_muckm"), SubResource("Resource_g3oy2"), SubResource("Resource_t2y43"), SubResource("Resource_uyryk"), SubResource("Resource_67m3h"), SubResource("Resource_7xiq3"), SubResource("Resource_le7dp"), SubResource("Resource_2hjd2"), SubResource("Resource_3cjs7"), SubResource("Resource_uua0w")])
+anchors = Array[ExtResource("1_aej6v")]([SubResource("Resource_yuy7a"), SubResource("Resource_2qptk"), SubResource("Resource_qahqo"), SubResource("Resource_amrmb"), SubResource("Resource_c8rks"), SubResource("Resource_j6syv"), SubResource("Resource_md801"), SubResource("Resource_m76tm"), SubResource("Resource_fyy86"), SubResource("Resource_s6e2j"), SubResource("Resource_nkli5"), SubResource("Resource_b6b8g"), SubResource("Resource_oubqe"), SubResource("Resource_knhov"), SubResource("Resource_orlmu"), SubResource("Resource_obhcs"), SubResource("Resource_mkj52"), SubResource("Resource_32c3v"), SubResource("Resource_x0cdq"), SubResource("Resource_wy0os")])
