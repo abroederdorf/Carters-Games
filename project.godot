@@ -20,6 +20,7 @@ config/main_scene="res://scenes/GameSelect.tscn"
 
 Leaderboard="*res://scripts/leaderboard.gd"
 AudioManager="*res://scripts/audio_manager.gd"
+HideSeekState="*res://scripts/hide_seek/hide_seek_state.gd"
 
 [display]
 
