@@ -17,6 +17,7 @@ var pool_size = 6
 var music_enabled: bool = true
 var sfx_enabled: bool = true
 var master_mute: bool = false
+var spelling_quiet: bool = false
 
 func _ready() -> void:
 	# Essential: Keep playing even when game is paused
@@ -56,11 +57,19 @@ func _start_music() -> void:
 				music_player.play()
 
 func _on_music_finished() -> void:
-	if music_enabled and not master_mute:
+	if music_enabled and not master_mute and not spelling_quiet:
 		music_player.play()
 
+func toggle_spelling_quiet() -> bool:
+	spelling_quiet = !spelling_quiet
+	if spelling_quiet:
+		music_player.stop()
+	elif music_enabled and not master_mute:
+		music_player.play()
+	return spelling_quiet
+
 func play_sfx(sound_name: String) -> void:
-	if not sfx_enabled or master_mute: return
+	if not sfx_enabled or master_mute or spelling_quiet: return
 	
 	var key = sound_name.to_lower()
 	if key == "whoosh" or key == "woosh" or key == "snap": key = "bite"
@@ -76,6 +85,7 @@ func play_sfx(sound_name: String) -> void:
 	# Find first available player
 	for player in sfx_pool:
 		if not player.playing:
+			player.volume_db = 0.0
 			player.stream = streams[key]
 			player.play()
 			return
@@ -92,10 +102,25 @@ func update_settings(music: bool, sfx: bool) -> void:
 
 func toggle_mute() -> bool:
 	master_mute = !master_mute
-	
+
 	if master_mute:
 		music_player.stop()
 	elif music_enabled:
 		music_player.play()
-		
+
 	return master_mute
+
+func play_word(word: String) -> void:
+	if master_mute: return
+	var key := "word_" + word.to_lower()
+	if not streams.has(key):
+		var path := "res://assets/audio/spelling/%s.wav" % word.to_lower()
+		if not FileAccess.file_exists(path):
+			return
+		streams[key] = load(path)
+	for player in sfx_pool:
+		if not player.playing:
+			player.volume_db = 10.0
+			player.stream = streams[key]
+			player.play()
+			return
