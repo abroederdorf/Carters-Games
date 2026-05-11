@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/bg.png" id="1_luueq"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_l6uy3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/dino_egg.png" id="3_o0kys"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/fern.png" id="4_k7gtb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/footprint.png" id="5_drpck"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/fossil.png" id="6_fvl77"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/palm_tree.png" id="7_yg5xi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/pterodactyl.png" id="8_a1ner"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/stegosaurus.png" id="9_852u2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/t_rex.png" id="10_yl3xs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/triceratops.png" id="11_8atkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/volcano.png" id="12_utqgp"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_b784x"]
+
+[sub_resource type="Resource" id="Resource_2v376"]
+script = ExtResource("2_l6uy3")
+item_name = "dino_egg"
+thumbnail = ExtResource("3_o0kys")
+position = Vector2(300, 850)
+
+[sub_resource type="Resource" id="Resource_5qcu8"]
+script = ExtResource("2_l6uy3")
+item_name = "fern"
+thumbnail = ExtResource("4_k7gtb")
+position = Vector2(200, 950)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_y004k"]
+script = ExtResource("2_l6uy3")
+item_name = "footprint"
+thumbnail = ExtResource("5_drpck")
+position = Vector2(1000, 900)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_y71cp"]
+script = ExtResource("2_l6uy3")
+item_name = "fossil"
+thumbnail = ExtResource("6_fvl77")
+position = Vector2(1700, 700)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_ecrqn"]
+script = ExtResource("2_l6uy3")
+item_name = "palm_tree"
+thumbnail = ExtResource("7_yg5xi")
+position = Vector2(500, 500)
+radius = 110.0
+
+[sub_resource type="Resource" id="Resource_smikw"]
+script = ExtResource("2_l6uy3")
+item_name = "pterodactyl"
+thumbnail = ExtResource("8_a1ner")
+position = Vector2(1400, 200)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_j2vcy"]
+script = ExtResource("2_l6uy3")
+item_name = "stegosaurus"
+thumbnail = ExtResource("9_852u2")
+position = Vector2(1200, 600)
+radius = 85.0
+
+[sub_resource type="Resource" id="Resource_1fv5e"]
+script = ExtResource("2_l6uy3")
+item_name = "t_rex"
+thumbnail = ExtResource("10_yl3xs")
+position = Vector2(800, 550)
+radius = 95.0
+
+[sub_resource type="Resource" id="Resource_pu3f4"]
+script = ExtResource("2_l6uy3")
+item_name = "triceratops"
+thumbnail = ExtResource("11_8atkm")
+position = Vector2(150, 750)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_3mbjs"]
+script = ExtResource("2_l6uy3")
+item_name = "volcano"
+thumbnail = ExtResource("12_utqgp")
+position = Vector2(300, 400)
+radius = 120.0
+
+[resource]
+script = ExtResource("13_b784x")
+scene_name = "dinosaur_land"
+background_image = ExtResource("1_luueq")
+items = Array[ExtResource("2_l6uy3")]([SubResource("Resource_2v376"), SubResource("Resource_5qcu8"), SubResource("Resource_y004k"), SubResource("Resource_y71cp"), SubResource("Resource_ecrqn"), SubResource("Resource_smikw"), SubResource("Resource_j2vcy"), SubResource("Resource_1fv5e"), SubResource("Resource_pu3f4"), SubResource("Resource_3mbjs")])

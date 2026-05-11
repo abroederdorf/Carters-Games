@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_5ehth"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/fire_truck.png" id="2_n3ho4"]
+
+[resource]
+script = ExtResource("1_5ehth")
+item_name = "fire_truck"
+thumbnail = ExtResource("2_n3ho4")
+position = Vector2(1500, 500)
+radius = 120.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_bdg38"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/orchid.png" id="2_ktrw6"]
+
+[resource]
+script = ExtResource("1_bdg38")
+item_name = "orchid"
+thumbnail = ExtResource("2_ktrw6")
+position = Vector2(350, 500)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_1gnwp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/gas_can.png" id="2_0qwf6"]
+
+[resource]
+script = ExtResource("1_1gnwp")
+item_name = "gas_can"
+thumbnail = ExtResource("2_0qwf6")
+position = Vector2(500, 950)
+radius = 55.0

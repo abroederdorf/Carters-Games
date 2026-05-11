@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/bg.png" id="1_xjtfx"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_3pcbq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/banana_bunch.png" id="3_vsats"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/binoculars.png" id="4_7h8qs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/butterfly.png" id="5_87j6v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/explorer_hat.png" id="6_v4xi2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/monkey.png" id="7_d076x"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/orchid.png" id="8_o3jcm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/parrot.png" id="9_l8m0n"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/sloth.png" id="10_p8e40"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/snake.png" id="11_keyr2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/tiger.png" id="12_nku0q"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_g6xkm"]
+
+[sub_resource type="Resource" id="Resource_iwvfl"]
+script = ExtResource("2_3pcbq")
+item_name = "banana_bunch"
+thumbnail = ExtResource("3_vsats")
+position = Vector2(150, 100)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_6px0o"]
+script = ExtResource("2_3pcbq")
+item_name = "binoculars"
+thumbnail = ExtResource("4_7h8qs")
+position = Vector2(850, 920)
+
+[sub_resource type="Resource" id="Resource_oup3m"]
+script = ExtResource("2_3pcbq")
+item_name = "butterfly"
+thumbnail = ExtResource("5_87j6v")
+position = Vector2(450, 850)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_0ctb4"]
+script = ExtResource("2_3pcbq")
+item_name = "explorer_hat"
+thumbnail = ExtResource("6_v4xi2")
+position = Vector2(600, 950)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_vixvv"]
+script = ExtResource("2_3pcbq")
+item_name = "monkey"
+thumbnail = ExtResource("7_d076x")
+position = Vector2(1610, 430)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_mo6dx"]
+script = ExtResource("2_3pcbq")
+item_name = "orchid"
+thumbnail = ExtResource("8_o3jcm")
+position = Vector2(350, 500)
+
+[sub_resource type="Resource" id="Resource_kuirr"]
+script = ExtResource("2_3pcbq")
+item_name = "parrot"
+thumbnail = ExtResource("9_l8m0n")
+position = Vector2(700, 150)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_qkxk5"]
+script = ExtResource("2_3pcbq")
+item_name = "sloth"
+thumbnail = ExtResource("10_p8e40")
+position = Vector2(1200, 300)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_eued8"]
+script = ExtResource("2_3pcbq")
+item_name = "snake"
+thumbnail = ExtResource("11_keyr2")
+position = Vector2(380, 400)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_h26qt"]
+script = ExtResource("2_3pcbq")
+item_name = "tiger"
+thumbnail = ExtResource("12_nku0q")
+position = Vector2(1800, 850)
+radius = 90.0
+
+[resource]
+script = ExtResource("13_g6xkm")
+scene_name = "jungle"
+background_image = ExtResource("1_xjtfx")
+items = Array[ExtResource("2_3pcbq")]([SubResource("Resource_iwvfl"), SubResource("Resource_6px0o"), SubResource("Resource_oup3m"), SubResource("Resource_0ctb4"), SubResource("Resource_vixvv"), SubResource("Resource_mo6dx"), SubResource("Resource_kuirr"), SubResource("Resource_qkxk5"), SubResource("Resource_eued8"), SubResource("Resource_h26qt")])

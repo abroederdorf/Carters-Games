@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/bg.png" id="1_ki2g1"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_jhm0m"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/blueprint.png" id="3_kalv6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/bulldozer.png" id="4_xe7ip"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/cement_mixer.png" id="5_jxn57"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/dump_truck.png" id="6_r2vrh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/excavator.png" id="7_t17rq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/hammer.png" id="8_epjw6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/hard_hat.png" id="9_3kc4k"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/safety_vest.png" id="10_tpsdr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/toolbox.png" id="11_5bj6r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/traffic_cone.png" id="12_rwdtu"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_jg0nl"]
+
+[sub_resource type="Resource" id="Resource_eeb5c"]
+script = ExtResource("2_jhm0m")
+item_name = "blueprint"
+thumbnail = ExtResource("3_kalv6")
+position = Vector2(650, 950)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_76pwm"]
+script = ExtResource("2_jhm0m")
+item_name = "bulldozer"
+thumbnail = ExtResource("4_xe7ip")
+position = Vector2(350, 650)
+radius = 85.0
+
+[sub_resource type="Resource" id="Resource_g1331"]
+script = ExtResource("2_jhm0m")
+item_name = "cement_mixer"
+thumbnail = ExtResource("5_jxn57")
+position = Vector2(1400, 700)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_hijml"]
+script = ExtResource("2_jhm0m")
+item_name = "dump_truck"
+thumbnail = ExtResource("6_r2vrh")
+position = Vector2(1800, 850)
+radius = 95.0
+
+[sub_resource type="Resource" id="Resource_52kwr"]
+script = ExtResource("2_jhm0m")
+item_name = "excavator"
+thumbnail = ExtResource("7_t17rq")
+position = Vector2(550, 750)
+radius = 100.0
+
+[sub_resource type="Resource" id="Resource_632i5"]
+script = ExtResource("2_jhm0m")
+item_name = "hammer"
+thumbnail = ExtResource("8_epjw6")
+position = Vector2(120, 930)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_beuw8"]
+script = ExtResource("2_jhm0m")
+item_name = "hard_hat"
+thumbnail = ExtResource("9_3kc4k")
+position = Vector2(1000, 550)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_h1h67"]
+script = ExtResource("2_jhm0m")
+item_name = "safety_vest"
+thumbnail = ExtResource("10_tpsdr")
+position = Vector2(480, 930)
+
+[sub_resource type="Resource" id="Resource_hv65t"]
+script = ExtResource("2_jhm0m")
+item_name = "toolbox"
+thumbnail = ExtResource("11_5bj6r")
+position = Vector2(70, 930)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_dqexr"]
+script = ExtResource("2_jhm0m")
+item_name = "traffic_cone"
+thumbnail = ExtResource("12_rwdtu")
+position = Vector2(380, 930)
+radius = 40.0
+
+[resource]
+script = ExtResource("13_jg0nl")
+scene_name = "construction_site"
+background_image = ExtResource("1_ki2g1")
+items = Array[ExtResource("2_jhm0m")]([SubResource("Resource_eeb5c"), SubResource("Resource_76pwm"), SubResource("Resource_g1331"), SubResource("Resource_hijml"), SubResource("Resource_52kwr"), SubResource("Resource_632i5"), SubResource("Resource_beuw8"), SubResource("Resource_h1h67"), SubResource("Resource_hv65t"), SubResource("Resource_dqexr")])

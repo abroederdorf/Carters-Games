@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/bg.png" id="1_qgp2t"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_aej6v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/checkered_flag.png" id="3_yuy7a"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/crushed_car.png" id="4_2qptk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/flame_decal.png" id="5_qahqo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/gas_can.png" id="6_amrmb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/megaphone.png" id="7_c8rks"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/monster_truck.png" id="8_j6syv"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/mud_splatter.png" id="9_md801"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/tire.png" id="10_m76tm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/trophy.png" id="11_fyy86"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/wrench.png" id="12_s6e2j"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_nkli5"]
+
+[sub_resource type="Resource" id="Resource_muckm"]
+script = ExtResource("2_aej6v")
+item_name = "checkered_flag"
+thumbnail = ExtResource("3_yuy7a")
+position = Vector2(200, 250)
+
+[sub_resource type="Resource" id="Resource_g3oy2"]
+script = ExtResource("2_aej6v")
+item_name = "crushed_car"
+thumbnail = ExtResource("4_2qptk")
+position = Vector2(350, 620)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_t2y43"]
+script = ExtResource("2_aej6v")
+item_name = "flame_decal"
+thumbnail = ExtResource("5_qahqo")
+position = Vector2(200, 680)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_uyryk"]
+script = ExtResource("2_aej6v")
+item_name = "gas_can"
+thumbnail = ExtResource("6_amrmb")
+position = Vector2(500, 950)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_67m3h"]
+script = ExtResource("2_aej6v")
+item_name = "megaphone"
+thumbnail = ExtResource("7_c8rks")
+position = Vector2(1500, 300)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_7xiq3"]
+script = ExtResource("2_aej6v")
+item_name = "monster_truck"
+thumbnail = ExtResource("8_j6syv")
+position = Vector2(110, 400)
+radius = 100.0
+
+[sub_resource type="Resource" id="Resource_le7dp"]
+script = ExtResource("2_aej6v")
+item_name = "mud_splatter"
+thumbnail = ExtResource("9_md801")
+position = Vector2(800, 800)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_2hjd2"]
+script = ExtResource("2_aej6v")
+item_name = "tire"
+thumbnail = ExtResource("10_m76tm")
+position = Vector2(900, 930)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_3cjs7"]
+script = ExtResource("2_aej6v")
+item_name = "trophy"
+thumbnail = ExtResource("11_fyy86")
+position = Vector2(750, 880)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_uua0w"]
+script = ExtResource("2_aej6v")
+item_name = "wrench"
+thumbnail = ExtResource("12_s6e2j")
+position = Vector2(50, 950)
+radius = 40.0
+
+[resource]
+script = ExtResource("13_nkli5")
+scene_name = "monster_truck_jam"
+background_image = ExtResource("1_qgp2t")
+items = Array[ExtResource("2_aej6v")]([SubResource("Resource_muckm"), SubResource("Resource_g3oy2"), SubResource("Resource_t2y43"), SubResource("Resource_uyryk"), SubResource("Resource_67m3h"), SubResource("Resource_7xiq3"), SubResource("Resource_le7dp"), SubResource("Resource_2hjd2"), SubResource("Resource_3cjs7"), SubResource("Resource_uua0w")])
