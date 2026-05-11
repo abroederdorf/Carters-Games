@@ -31,6 +31,10 @@ var _pan_start_offset: Vector2 = Vector2.ZERO
 var _pan_start_pos: Vector2 = Vector2.ZERO
 var _is_pinching: bool = false
 
+# Mouse tracking (desktop testing)
+var _mouse_panning: bool = false
+var _mouse_press_start: Vector2 = Vector2.ZERO
+
 # Node refs
 var _canvas_area: Control
 var _canvas_root: Node2D
@@ -73,6 +77,10 @@ func _input(event: InputEvent) -> void:
 		_handle_touch(event as InputEventScreenTouch)
 	elif event is InputEventScreenDrag:
 		_handle_drag(event as InputEventScreenDrag)
+	elif event is InputEventMouseButton:
+		_handle_mouse_button(event as InputEventMouseButton)
+	elif event is InputEventMouseMotion:
+		_handle_mouse_motion(event as InputEventMouseMotion)
 
 
 # ── UI Construction ────────────────────────────────────────────────────────────
