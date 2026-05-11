@@ -45,6 +45,10 @@ const SPELL_4_PICTURE: Array[String] = [
 	"tone", "tool", "tuck", "vent", "vest", "vine", "wake", "well",
 	"wide", "wine", "wing", "wool", "wore", "yell", "yuck", "zone"
 ]
+const SPELL_2_SIGHT: Array[String] = [
+	"be", "by", "do", "go", "he", "hi", "is", "it", "me", "my",
+	"no", "of", "on", "so", "to", "up", "we"
+]
 const SPELL_3_SIGHT: Array[String] = [
 	"all", "and", "any", "are", "ask", "but", "did", "for", "get",
 	"got", "has", "her", "him", "his", "how", "its", "let", "may",
@@ -324,6 +328,7 @@ func _new_spelling_round() -> void:
 		0:
 			pool = SPELL_3_PICTURE.duplicate()
 			if not AudioManager.master_mute:
+				pool.append_array(SPELL_2_SIGHT)
 				pool.append_array(SPELL_3_SIGHT)
 		1:
 			pool = SPELL_4_PICTURE.duplicate()
