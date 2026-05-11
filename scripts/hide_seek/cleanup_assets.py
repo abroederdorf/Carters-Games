@@ -38,7 +38,7 @@ def main():
         if "bg" in img_path.name:
             continue
             
-        crop_artifact_borders(img_path, border_pixels=5)
+        crop_artifact_borders(img_path, border_pixels=10)
 
 if __name__ == "__main__":
     main()

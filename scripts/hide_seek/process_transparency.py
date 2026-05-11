@@ -4,28 +4,37 @@ from PIL import Image
 
 ASSET_ROOT = Path("assets/sprites/hide_seek")
 
-def make_transparent(image_path, tolerance=20):
+def make_transparent(image_path, tolerance=30):
     """
-    Makes the background of an image transparent using a flood fill from the corners.
-    This preserves white pixels inside the object.
+    Robustly makes the background transparent using a flood fill.
+    Scans the perimeter for seeds to ensure background is hit.
     """
     print(f"Processing: {image_path}")
     img = Image.open(image_path).convert("RGBA")
-    
-    # Use flood fill from the four corners (0,0), (w-1,0), (0,h-1), (w-1,h-1)
-    # Target color is usually white (255,255,255)
     width, height = img.size
-    
-    # We'll use a mask-based approach or ImageDraw.floodfill
     from PIL import ImageDraw
     
-    # Coordinates to start flood fill from
-    seeds = [(0, 0), (width-1, 0), (0, height-1), (width-1, height-1)]
-    
+    # Collect seeds from the entire perimeter
+    seeds = []
+    # Top and bottom edges
+    for x in range(width):
+        seeds.append((x, 0))
+        seeds.append((x, height - 1))
+    # Left and right edges
+    for y in range(1, height - 1):
+        seeds.append((0, y))
+        seeds.append((width - 1, y))
+        
+    # We use a set to track already processed background to avoid redundant fills
+    # However, floodfill is fast enough to just call. 
+    # To be more efficient, we check if the pixel is still whitish before filling.
     for seed in seeds:
         pixel = img.getpixel(seed)
-        # Only start if the corner is actually "whitish"
-        if pixel[0] >= 230 and pixel[1] >= 230 and pixel[2] >= 230:
+        # If it's already transparent, skip
+        if pixel[3] == 0:
+            continue
+        # Only start if the seed is "whitish"
+        if pixel[0] >= 220 and pixel[1] >= 220 and pixel[2] >= 220:
             ImageDraw.floodfill(img, seed, (255, 255, 255, 0), thresh=tolerance)
 
     img.save(image_path)
