@@ -68,6 +68,21 @@ bun, fun, run, sun
 ### -oo family
 boo, goo, moo, zoo
 
+### -ow family (as in cow)
+bow, cow, row, sow
+
+### -ox family
+box, fox
+
+### -aw family
+jaw, paw, saw
+
+### -ay family
+bay, day, hay, ray
+
+### -ee family
+bee, fee, tee
+
 ---
 
 ## 4-Letter Words
@@ -141,6 +156,29 @@ book, cook, look
 ### -ool family
 cool, fool, pool, tool, wool
 
+### -art family
+cart, dart, fart, tart
+
+### -oat family
+boat, coat, goat
+
+### -ail family
+mail, nail, pail, sail, tail
+
+### -ell family
+bell, well, yell
+
+### -est family
+chest, nest, vest
+
+### -ent family
+dent, tent, vent
+
+### -ing family
+king, ring, wing
+
+### -ink family
+pink, rink, sink
 
 ---
 

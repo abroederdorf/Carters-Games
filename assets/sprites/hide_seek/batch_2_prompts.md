@@ -35,11 +35,11 @@
 | Tea Kettle | bright red tea kettle, steam coming from spout |
 | Mixing Bowl | large yellow ceramic bowl, white interior |
 | Spatula | turquoise silicone spatula, wooden handle |
-| Egg Carton | gray cardboard carton, half-dozen white eggs inside |
-| Salt Shaker | glass shaker with silver top, "S" on the front |
+| Jam | round glass jar of red strawberry jam, red checked lid, label on front |
+| Mop | classic yellow string mop with gray mop head, long wooden handle |
 | Chef Hat | tall white pleated chef hat, sitting upright |
 | Oven Mitt | red quilted oven mitt, thumb out, simple pattern |
-| Measuring Cup | clear plastic cup with red volume markings, handle |
+| Cake | pink birthday cake with white frosting and three lit candles on top |
 
 ### Full Scene Prompt (Whisk/Gemini)
 *Children's book illustration of a large, cozy family kitchen. Wooden cabinets, a big island in the center, a stove with pots, a refrigerator with magnets, and a window over the sink. The scene is wide and panoramic (landscape orientation, 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Filled with kitchen details like spices, fruit bowls, towels, and utensils. Homey, warm, and appetizing mood.*

@@ -7,16 +7,16 @@
 
 | Item | Append this |
 | :--- | :--- |
-| Hamster Wheel | circular yellow exercise wheel with a wire stand |
-| Goldfish Bowl | round glass bowl with blue water and one orange fish |
-| Bird Cage | white wire bird cage with a small wooden perch |
-| Dog Bone | large white cartoon dog bone, rounded ends |
-| Cat Toy | small colorful ball with a bell inside and feathers |
-| Pet Carrier | blue plastic crate with a wire door and handle |
-| Food Dish | red ceramic bowl filled with brown kibble |
-| Parrot Perch | wooden stand with a colorful toy hanging from it |
-| Rabbit Hutch | small wooden house with wire mesh and a ramp |
-| Dog Leash | coiled blue nylon leash with a silver clip |
+| Kitten | small orange tabby kitten, big blue eyes, sitting, cute *(existing)* |
+| Puppy | golden retriever puppy, floppy ears, tongue out, sitting *(existing)* |
+| Goldfish Bowl | round glass bowl with blue water and one orange fish *(existing)* |
+| Hamster | fluffy golden hamster, chubby cheeks, tiny paws *(existing)* |
+| Parrot | bright scarlet macaw, red yellow and blue feathers, big beak *(existing)* |
+| Turtle | small green pet turtle on a rock, friendly face *(existing)* |
+| Cat Toy | small colorful ball with a bell inside and feathers *(existing)* |
+| Mice | two small white mice with pink ears and long tails, cute |
+| Bird Cage | round white wire bird cage with a small yellow canary inside |
+| Rabbit | white fluffy bunny with pink ears and a cotton tail, sitting |
 
 ### Full Scene Prompt (Whisk/Gemini)
 *Children's book illustration of a busy pet shop. Rows of fish tanks, bird cages, stacks of pet food bags, and a play area for puppies. Wide panoramic landscape (2:1 ratio), bright saturated colors, flat design, thick black outlines, no text. Filled with store details like toys, treats, and shelves. Friendly and lively mood.*

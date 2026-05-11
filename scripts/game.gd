@@ -16,29 +16,38 @@ const CLAM_SCRIPT = preload("res://scripts/clam.gd")
 const CAST_DURATION = 0.5
 
 const SPELL_3_PICTURE: Array[String] = [
-	"bag", "bat", "bed", "big", "bin", "bit", "boo", "bug", "bun",
-	"can", "cap", "cat", "cub", "dig", "dog", "dot", "fan", "fat",
-	"fed", "fin", "fog", "fun", "goo", "ham", "hat", "hen", "hit",
-	"hog", "hop", "hot", "hug", "jam", "jet", "log", "lot", "man",
+	"bag", "bat", "bay", "bed", "bee", "big", "bin", "bit", "boo",
+	"bow", "box", "bug", "bun", "can", "cap", "cat", "cow", "cub",
+	"day", "dig", "dog", "dot", "fan", "fat", "fed", "fin", "fog",
+	"fox", "fun", "goo", "ham", "hat", "hay", "hen", "hit", "hog",
+	"hop", "hot", "hug", "jam", "jaw", "jet", "log", "lot", "man",
 	"map", "mat", "men", "moo", "mop", "mug", "nap", "net", "not",
-	"pen", "pet", "pig", "pin", "pop", "pot", "ram", "ran", "rat",
-	"red", "rub", "rug", "run", "sat", "sit", "sun", "tag", "tap",
-	"ten", "top", "tub", "van", "wag", "wet", "win", "yam", "zoo"
+	"paw", "pen", "pet", "pig", "pin", "pop", "pot", "ram", "ran",
+	"rat", "ray", "red", "row", "rub", "rug", "run", "sat", "saw",
+	"sit", "sow", "sun", "tag", "tap", "tee", "ten", "top", "tub",
+	"van", "wag", "wet", "win", "yam", "zoo"
 ]
 const SPELL_4_PICTURE: Array[String] = [
-	"back", "bake", "bale", "bike", "bite", "bone", "book", "bore",
-	"buck", "cake", "cane", "cone", "cook", "cool", "cope", "core",
-	"date", "dice", "dine", "dock", "dome", "duck", "face", "fake",
-	"fate", "fine", "fool", "game", "gate", "hide", "hike", "hole",
-	"home", "hope", "hose", "huck", "kick", "kite", "lace", "lake",
-	"lane", "late", "lick", "like", "line", "lock", "lone", "look",
-	"luck", "make", "mane", "mate", "mice", "mine", "mite", "mole",
-	"mope", "more", "muck", "name", "nice", "nine", "nose", "pace",
-	"pack", "pale", "pick", "pine", "pole", "pool", "pose", "puck",
-	"race", "rack", "rake", "rate", "rice", "ride", "rock", "rope",
-	"rose", "sack", "same", "sick", "side", "site", "sock", "some",
-	"sore", "take", "tale", "tick", "tone", "tool", "tuck", "vine",
-	"wake", "wide", "wine", "wool", "wore", "yuck", "zone"
+	"back", "bake", "bale", "bell", "bike", "bite", "boat", "bone",
+	"book", "bore", "buck", "cake", "cane", "cart", "chest", "coat",
+	"cone", "cook", "cool", "cope", "core", "dart", "date", "dent",
+	"dice", "dine", "dock", "dome", "duck", "face", "fake", "fart",
+	"fate", "fine", "fool", "game", "gate", "goat", "hide", "hike",
+	"hole", "home", "hope", "hose", "huck", "kick", "king", "kite",
+	"lace", "lake", "lane", "late", "lick", "like", "line", "lock",
+	"lone", "look", "luck", "mail", "make", "mane", "mate", "mice",
+	"mine", "mite", "mole", "mope", "more", "muck", "nail", "name",
+	"nice", "nine", "nose", "pace", "pack", "pail", "pale", "pick",
+	"pine", "pole", "pool", "pose", "puck", "race", "rack", "rake",
+	"rate", "rice", "ride", "ring", "rink", "rock", "rope", "rose",
+	"sack", "sail", "same", "sick", "side", "sink", "site", "sock",
+	"some", "sore", "tail", "take", "tale", "tart", "tent", "tick",
+	"tone", "tool", "tuck", "vent", "vest", "vine", "wake", "well",
+	"wide", "wine", "wing", "wool", "wore", "yell", "yuck", "zone"
+]
+const SPELL_2_SIGHT: Array[String] = [
+	"be", "by", "do", "go", "he", "hi", "is", "it", "me", "my",
+	"no", "of", "on", "so", "to", "up", "we"
 ]
 const SPELL_3_SIGHT: Array[String] = [
 	"all", "and", "any", "are", "ask", "but", "did", "for", "get",
@@ -319,6 +328,7 @@ func _new_spelling_round() -> void:
 		0:
 			pool = SPELL_3_PICTURE.duplicate()
 			if not AudioManager.master_mute:
+				pool.append_array(SPELL_2_SIGHT)
 				pool.append_array(SPELL_3_SIGHT)
 		1:
 			pool = SPELL_4_PICTURE.duplicate()

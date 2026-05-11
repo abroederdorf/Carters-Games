@@ -7,6 +7,7 @@ var _selected_index: int = -1
 var _updating_ui: bool = false
 
 var _canvas: SceneBuilderCanvas
+var _mode: int = 0 # SceneBuilderCanvas.Mode.ITEMS
 var _scene_name_input: LineEdit
 var _status_label: Label
 var _item_list_container: VBoxContainer
@@ -15,9 +16,12 @@ var _name_input: LineEdit
 var _thumb_preview: TextureRect
 var _radius_slider: HSlider
 var _radius_label: Label
+var _scale_slider: HSlider
+var _scale_label: Label
 
 var _bg_dialog: FileDialog
 var _thumb_dialog: FileDialog
+var _res_dialog: FileDialog
 
 func _ready() -> void:
 	_build_ui()
@@ -48,10 +52,38 @@ func _build_ui() -> void:
 	title.add_theme_font_size_override("font_size", 16)
 	vbox.add_child(title)
 
+	# --- Mode Toggle ---
+	var mode_hbox := HBoxContainer.new()
+	vbox.add_child(mode_hbox)
+	
+	var btn_group := ButtonGroup.new()
+	
+	var items_mode_btn := Button.new()
+	items_mode_btn.text = "Items"
+	items_mode_btn.toggle_mode = true
+	items_mode_btn.button_pressed = true
+	items_mode_btn.button_group = btn_group
+	items_mode_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	items_mode_btn.pressed.connect(_set_mode.bind(SceneBuilderCanvas.Mode.ITEMS))
+	mode_hbox.add_child(items_mode_btn)
+	
+	var anchors_mode_btn := Button.new()
+	anchors_mode_btn.text = "Anchors"
+	anchors_mode_btn.toggle_mode = true
+	anchors_mode_btn.button_group = btn_group
+	anchors_mode_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	anchors_mode_btn.pressed.connect(_set_mode.bind(SceneBuilderCanvas.Mode.ANCHORS))
+	mode_hbox.add_child(anchors_mode_btn)
+
 	var load_bg_btn := Button.new()
 	load_bg_btn.text = "Load Background Image..."
 	load_bg_btn.pressed.connect(_on_load_bg_pressed)
 	vbox.add_child(load_bg_btn)
+	
+	var load_res_btn := Button.new()
+	load_res_btn.text = "Load .tres Theme..."
+	load_res_btn.pressed.connect(_on_load_res_pressed)
+	vbox.add_child(load_res_btn)
 
 	vbox.add_child(HSeparator.new())
 
@@ -120,6 +152,24 @@ func _build_ui() -> void:
 	_radius_label.custom_minimum_size.x = 28
 	rad_hbox.add_child(_radius_label)
 
+	var scale_hbox := HBoxContainer.new()
+	_selected_panel.add_child(scale_hbox)
+	var scale_lbl := Label.new()
+	scale_lbl.text = "Scale:"
+	scale_hbox.add_child(scale_lbl)
+	_scale_slider = HSlider.new()
+	_scale_slider.min_value = 0.2
+	_scale_slider.max_value = 3.0
+	_scale_slider.step = 0.05
+	_scale_slider.value = 1.0
+	_scale_slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_scale_slider.value_changed.connect(_on_scale_changed)
+	scale_hbox.add_child(_scale_slider)
+	_scale_label = Label.new()
+	_scale_label.text = "1.0"
+	_scale_label.custom_minimum_size.x = 28
+	scale_hbox.add_child(_scale_label)
+
 	var del_btn := Button.new()
 	del_btn.text = "Delete Item"
 	del_btn.pressed.connect(_on_delete_pressed)
@@ -169,6 +219,11 @@ func _build_ui() -> void:
 	_thumb_dialog = _make_dialog("Load Thumbnail")
 	_thumb_dialog.file_selected.connect(_on_thumb_file_selected)
 	add_child(_thumb_dialog)
+	
+	_res_dialog = _make_dialog("Load Resource (.tres)")
+	_res_dialog.filters = PackedStringArray(["*.tres ; Resources"])
+	_res_dialog.file_selected.connect(_on_res_file_selected)
+	add_child(_res_dialog)
 
 	_canvas.setup(_scene_data, _selected_index)
 
@@ -181,6 +236,12 @@ func _make_dialog(title: String) -> FileDialog:
 	dlg.current_dir = ProjectSettings.globalize_path("res://assets")
 	dlg.size = Vector2i(800, 500)
 	return dlg
+
+func _set_mode(mode: int) -> void:
+	_mode = mode
+	_deselect()
+	_canvas.set_mode(_mode)
+	_set_status("Switched to %s mode." % ("Items" if _mode == 0 else "Anchors"))
 
 # --- Background loading ---
 
@@ -197,15 +258,37 @@ func _on_bg_file_selected(path: String) -> void:
 	_canvas.fit_background()
 	_set_status("Background loaded.")
 
+func _on_load_res_pressed() -> void:
+	_res_dialog.popup_centered()
+
+func _on_res_file_selected(path: String) -> void:
+	var res = load(path)
+	if not res is HideSeekSceneData:
+		_set_status("Invalid resource type. Expected HideSeekSceneData.")
+		return
+	_scene_data = res
+	_scene_name_input.text = _scene_data.scene_name
+	_deselect()
+	_canvas.setup(_scene_data, _selected_index)
+	_canvas.fit_background()
+	_set_status("Resource loaded: " + path)
+
 # --- Canvas interaction ---
 
 func _on_canvas_empty_tapped(scene_pos: Vector2) -> void:
-	var item := HideSeekItemData.new()
-	item.item_name = "item_%d" % (_scene_data.items.size() + 1)
-	item.position = scene_pos
-	item.radius = 50.0
-	_scene_data.items.append(item)
-	_select_item(_scene_data.items.size() - 1)
+	if _mode == 0: # ITEMS
+		var item := HideSeekItemData.new()
+		item.item_name = "item_%d" % (_scene_data.items.size() + 1)
+		item.position = scene_pos
+		item.radius = 50.0
+		_scene_data.items.append(item)
+		_select_item(_scene_data.items.size() - 1)
+	else: # ANCHORS
+		var anchor := HideSeekAnchor.new()
+		anchor.position = scene_pos
+		anchor.radius = 60.0
+		_scene_data.anchors.append(anchor)
+		_select_item(_scene_data.anchors.size() - 1)
 
 func _on_canvas_item_tapped(index: int) -> void:
 	_select_item(index)
@@ -227,26 +310,49 @@ func _deselect() -> void:
 func _refresh_item_list() -> void:
 	for child in _item_list_container.get_children():
 		child.queue_free()
-	for i in _scene_data.items.size():
-		var item: HideSeekItemData = _scene_data.items[i]
+		
+	var list: Array = _scene_data.items if _mode == 0 else _scene_data.anchors
+	for i in list.size():
+		var obj = list[i]
 		var btn := Button.new()
-		btn.text = "%d. %s" % [i + 1, item.item_name if item.item_name else "(unnamed)"]
+		if _mode == 0:
+			btn.text = "%d. %s" % [i + 1, obj.item_name if obj.item_name else "(unnamed)"]
+		else:
+			btn.text = "Anchor %d" % (i + 1)
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn.flat = (i != _selected_index)
 		btn.pressed.connect(_select_item.bind(i))
 		_item_list_container.add_child(btn)
 
 func _refresh_selected_panel() -> void:
-	if _selected_index < 0 or _selected_index >= _scene_data.items.size():
+	var list: Array = _scene_data.items if _mode == 0 else _scene_data.anchors
+	if _selected_index < 0 or _selected_index >= list.size():
 		_selected_panel.visible = false
 		return
+		
 	_selected_panel.visible = true
-	var item: HideSeekItemData = _scene_data.items[_selected_index]
+	var obj = list[_selected_index]
 	_updating_ui = true
-	_name_input.text = item.item_name
-	_radius_slider.value = item.radius
-	_radius_label.text = str(int(item.radius))
-	_thumb_preview.texture = item.thumbnail
+	
+	if _mode == 0: # ITEMS
+		_name_input.get_parent().visible = true
+		_thumb_preview.get_parent().get_child(1).visible = true # Thumbnail button
+		_thumb_preview.visible = true
+		_scale_slider.get_parent().visible = true
+		_name_input.text = obj.item_name
+		_radius_slider.value = obj.radius
+		_radius_label.text = str(int(obj.radius))
+		_scale_slider.value = obj.scale_multiplier
+		_scale_label.text = "%.2f" % obj.scale_multiplier
+		_thumb_preview.texture = obj.thumbnail
+	else: # ANCHORS
+		_name_input.get_parent().visible = false
+		_thumb_preview.get_parent().get_child(1).visible = false
+		_thumb_preview.visible = false
+		_scale_slider.get_parent().visible = false
+		_radius_slider.value = obj.radius
+		_radius_label.text = str(int(obj.radius))
+		
 	_updating_ui = false
 
 # --- Selected item edits ---
@@ -260,8 +366,16 @@ func _on_item_name_changed(new_text: String) -> void:
 func _on_radius_changed(value: float) -> void:
 	if _updating_ui or _selected_index < 0:
 		return
-	_scene_data.items[_selected_index].radius = value
+	var list: Array = _scene_data.items if _mode == 0 else _scene_data.anchors
+	list[_selected_index].radius = value
 	_radius_label.text = str(int(value))
+	_canvas.setup(_scene_data, _selected_index)
+
+func _on_scale_changed(value: float) -> void:
+	if _updating_ui or _selected_index < 0 or _mode != 0:
+		return
+	_scene_data.items[_selected_index].scale_multiplier = value
+	_scale_label.text = "%.2f" % value
 	_canvas.setup(_scene_data, _selected_index)
 
 func _on_pick_thumb_pressed() -> void:
@@ -282,7 +396,8 @@ func _on_thumb_file_selected(path: String) -> void:
 func _on_delete_pressed() -> void:
 	if _selected_index < 0:
 		return
-	_scene_data.items.remove_at(_selected_index)
+	var list: Array = _scene_data.items if _mode == 0 else _scene_data.anchors
+	list.remove_at(_selected_index)
 	_deselect()
 
 # --- Export ---

@@ -14,6 +14,9 @@ var _elapsed: float = 0.0
 var _running: bool = false
 var _won: bool = false
 
+# Runtime item assignment (anchor info for each item index)
+var _active_item_data: Array[Dictionary] = []
+
 # Canvas transform
 var _canvas_scale: float = 1.0
 var _min_scale: float = 0.5
@@ -58,10 +61,32 @@ func _ready() -> void:
 	if _scene_data == null:
 		get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekMain.tscn")
 		return
+	
+	_assign_items_to_anchors()
+	
 	_found.resize(_scene_data.items.size())
 	_found.fill(false)
 	_build_ui()
 	_setup_canvas()
+
+
+func _assign_items_to_anchors() -> void:
+	_active_item_data.clear()
+	var anchors := _scene_data.anchors.duplicate()
+	anchors.shuffle()
+	
+	for i in _scene_data.items.size():
+		var item := _scene_data.items[i]
+		var data := {"pos": item.position, "radius": item.radius}
+		
+		# If we have enough anchors, use them
+		if i < anchors.size():
+			var anchor: HideSeekAnchor = anchors[i]
+			data["pos"] = anchor.position
+			# Scale radius by item's multiplier
+			data["radius"] = anchor.radius * item.scale_multiplier
+			
+		_active_item_data.append(data)
 
 
 func _process(delta: float) -> void:
@@ -124,15 +149,17 @@ func _build_ui() -> void:
 func _build_item_sprites() -> void:
 	for i in _scene_data.items.size():
 		var item: HideSeekItemData = _scene_data.items[i]
+		var runtime_data: Dictionary = _active_item_data[i]
 		var tex := _get_item_texture(item)
 		var sprite := Sprite2D.new()
 		sprite.centered = true
-		sprite.position = item.position
+		sprite.position = runtime_data["pos"]
 		if tex != null:
 			sprite.texture = tex
 			var max_dim := float(max(tex.get_width(), tex.get_height()))
 			if max_dim > 0.0:
-				sprite.scale = Vector2.ONE * ((item.radius * 2.0) / max_dim)
+				# Scale based on the assigned anchor's radius
+				sprite.scale = Vector2.ONE * ((runtime_data["radius"] * 2.0) / max_dim)
 		_canvas_root.add_child(sprite)
 		_item_sprites.append(sprite)
 
@@ -530,8 +557,8 @@ func _handle_tap(screen_pos: Vector2) -> void:
 	for i in _scene_data.items.size():
 		if _found[i]:
 			continue
-		var item: HideSeekItemData = _scene_data.items[i]
-		if canvas_pos.distance_to(item.position) <= item.radius:
+		var runtime_data: Dictionary = _active_item_data[i]
+		if canvas_pos.distance_to(runtime_data["pos"]) <= runtime_data["radius"]:
 			_on_item_found(i)
 			return
 
@@ -559,7 +586,7 @@ func _on_item_found(index: int) -> void:
 
 
 func _show_found_flash(index: int) -> void:
-	var item: HideSeekItemData = _scene_data.items[index]
+	var runtime_data: Dictionary = _active_item_data[index]
 	var lbl := Label.new()
 	lbl.text = "✓"
 	lbl.add_theme_font_size_override("font_size", 80)
@@ -567,12 +594,12 @@ func _show_found_flash(index: int) -> void:
 	lbl.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.8))
 	lbl.add_theme_constant_override("shadow_offset_x", 2)
 	lbl.add_theme_constant_override("shadow_offset_y", 2)
-	lbl.position = item.position - Vector2(30, 30)
+	lbl.position = runtime_data["pos"] - Vector2(30, 30)
 	_canvas_root.add_child(lbl)
 
 	var tween := create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(lbl, "position", item.position - Vector2(30, 90), 0.7)
+	tween.tween_property(lbl, "position", runtime_data["pos"] - Vector2(30, 90), 0.7)
 	tween.tween_property(lbl, "modulate:a", 0.0, 0.7).set_delay(0.2)
 	tween.chain().tween_callback(lbl.queue_free)
 
@@ -639,16 +666,16 @@ func _on_hint_pressed() -> void:
 
 
 func _show_hint(index: int) -> void:
-	var item: HideSeekItemData = _scene_data.items[index]
+	var runtime_data: Dictionary = _active_item_data[index]
 	var lbl := Label.new()
 	lbl.text = "⭐"
-	var font_sz := int(item.radius * 1.5)
+	var font_sz := int(runtime_data["radius"] * 1.5)
 	lbl.add_theme_font_size_override("font_size", font_sz)
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	var sz := item.radius * 2.0
+	var sz: float = runtime_data["radius"] * 2.0
 	lbl.custom_minimum_size = Vector2(sz, sz)
-	lbl.position = item.position - Vector2(item.radius, item.radius)
+	lbl.position = runtime_data["pos"] - Vector2(runtime_data["radius"], runtime_data["radius"])
 	_canvas_root.add_child(lbl)
 
 	var pulse := create_tween()

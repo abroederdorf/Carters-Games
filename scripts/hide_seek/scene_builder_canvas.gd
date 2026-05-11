@@ -4,10 +4,13 @@ extends Control
 signal item_tapped(index: int)
 signal empty_tapped(scene_pos: Vector2)
 
+enum Mode { ITEMS, ANCHORS }
+
 var _zoom: float = 1.0
 var _offset: Vector2 = Vector2.ZERO
 var _scene_data: HideSeekSceneData
 var _selected_index: int = -1
+var _mode: int = Mode.ITEMS
 
 var _touches: Dictionary = {}
 var _drag_starts: Dictionary = {}
@@ -17,9 +20,15 @@ var _pinch_midpoint: Vector2 = Vector2.ZERO
 
 const TAP_THRESHOLD := 8.0
 
-func setup(scene_data: HideSeekSceneData, selected: int) -> void:
+func setup(scene_data: HideSeekSceneData, selected: int, mode: int = -1) -> void:
 	_scene_data = scene_data
 	_selected_index = selected
+	if mode != -1:
+		_mode = mode
+	queue_redraw()
+
+func set_mode(mode: int) -> void:
+	_mode = mode
 	queue_redraw()
 
 func fit_background() -> void:
@@ -47,15 +56,30 @@ func _draw() -> void:
 
 	if not _scene_data:
 		return
+		
+	# Draw Items
 	for i in _scene_data.items.size():
 		var item: HideSeekItemData = _scene_data.items[i]
 		var sp := _to_screen(item.position)
 		var sr := item.radius * _zoom
-		var is_sel := i == _selected_index
-		draw_circle(sp, sr, Color(1.0, 1.0, 0.0, 0.25) if is_sel else Color(0.0, 1.0, 0.0, 0.2))
-		draw_arc(sp, sr, 0, TAU, 48, Color.YELLOW if is_sel else Color.WHITE, 2.5)
+		var is_sel := (i == _selected_index and _mode == Mode.ITEMS)
+		var color := Color(1.0, 1.0, 0.0) if is_sel else Color(0.0, 1.0, 0.0)
+		draw_circle(sp, sr, color * Color(1, 1, 1, 0.2))
+		draw_arc(sp, sr, 0, TAU, 48, color, 2.5)
 		draw_string(ThemeDB.fallback_font, sp + Vector2(-5, 5), str(i + 1),
 				HORIZONTAL_ALIGNMENT_LEFT, -1, 13, Color.WHITE)
+
+	# Draw Anchors
+	for i in _scene_data.anchors.size():
+		var anchor: HideSeekAnchor = _scene_data.anchors[i]
+		var sp := _to_screen(anchor.position)
+		var sr := anchor.radius * _zoom
+		var is_sel := (i == _selected_index and _mode == Mode.ANCHORS)
+		var color := Color(0.0, 1.0, 1.0) if is_sel else Color(0.2, 0.4, 1.0)
+		draw_circle(sp, sr, color * Color(1, 1, 1, 0.2))
+		draw_arc(sp, sr, 0, TAU, 48, color, 1.5 if not is_sel else 3.0)
+		draw_string(ThemeDB.fallback_font, sp + Vector2(-15, -15), "A%d" % (i + 1),
+				HORIZONTAL_ALIGNMENT_LEFT, -1, 11, color)
 
 func _to_screen(p: Vector2) -> Vector2:
 	return p * _zoom + _offset
@@ -145,9 +169,18 @@ func _handle_tap(screen_pos: Vector2) -> void:
 	if not _scene_data:
 		return
 	var scene_pos := _to_scene(screen_pos)
-	for i in _scene_data.items.size():
-		var item: HideSeekItemData = _scene_data.items[i]
-		if item.position.distance_to(scene_pos) <= item.radius:
-			item_tapped.emit(i)
-			return
+	
+	if _mode == Mode.ITEMS:
+		for i in _scene_data.items.size():
+			var item: HideSeekItemData = _scene_data.items[i]
+			if item.position.distance_to(scene_pos) <= item.radius:
+				item_tapped.emit(i)
+				return
+	else:
+		for i in _scene_data.anchors.size():
+			var anchor: HideSeekAnchor = _scene_data.anchors[i]
+			if anchor.position.distance_to(scene_pos) <= anchor.radius:
+				item_tapped.emit(i)
+				return
+				
 	empty_tapped.emit(scene_pos)
