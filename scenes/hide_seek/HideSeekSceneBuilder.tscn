@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://7w2nm4o4bm0k"]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_builder.gd" id="1_hsbuilder"]
+
+[node name="HideSeekSceneBuilder" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_hsbuilder")
