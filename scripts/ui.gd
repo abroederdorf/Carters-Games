@@ -502,7 +502,9 @@ func show_spelling_hud(word: String, missing_indices: Array, filled: Dictionary,
 	_spell_missing_indices = missing_indices
 	_spell_hud.visible = true
 
-	var img_path := "res://assets/sprites/words/%s.svg" % word.to_lower()
+	var img_path := "res://assets/sprites/words/%s.png" % word.to_lower()
+	if not ResourceLoader.exists(img_path):
+		img_path = "res://assets/sprites/words/%s.svg" % word.to_lower()
 	if ResourceLoader.exists(img_path):
 		_spell_image.texture = load(img_path)
 		_spell_image.visible = true
