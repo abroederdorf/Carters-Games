@@ -18,6 +18,7 @@ var music_enabled: bool = true
 var sfx_enabled: bool = true
 var master_mute: bool = false
 var spelling_quiet: bool = false
+var _web_audio_unlocked: bool = false
 
 func _ready() -> void:
 	# Essential: Keep playing even when game is paused
@@ -44,16 +45,24 @@ func _ready() -> void:
 	# Start the music
 	_start_music()
 
+func _input(_event: InputEvent) -> void:
+	if OS.has_feature("web") and not _web_audio_unlocked:
+		_web_audio_unlocked = true
+		print("Audio: web input unlock fired")
+		if music_enabled and not master_mute and not music_player.playing:
+			music_player.play()
+
 func _start_music() -> void:
-	var path = "res://assets/audio/ocean_bgm.wav"
-	if not FileAccess.file_exists(path):
-		path = "res://assets/audio/ocean_bgm.mp3"
-	
-	if FileAccess.file_exists(path):
-		var stream = load(path)
-		if stream:
-			music_player.stream = stream
-			if music_enabled and not master_mute:
+	var stream = load("res://assets/audio/ocean_bgm.wav") as AudioStream
+	if not stream:
+		stream = load("res://assets/audio/ocean_bgm.mp3") as AudioStream
+	print("Audio: music stream loaded=", stream != null)
+	if stream:
+		music_player.stream = stream
+		if music_enabled and not master_mute:
+			if OS.has_feature("web"):
+				pass
+			else:
 				music_player.play()
 
 func _on_music_finished() -> void:
@@ -69,6 +78,7 @@ func toggle_spelling_quiet() -> bool:
 	return spelling_quiet
 
 func play_sfx(sound_name: String) -> void:
+	print("Audio: play_sfx=", sound_name, " sfx_enabled=", sfx_enabled, " mute=", master_mute)
 	if not sfx_enabled or master_mute or spelling_quiet: return
 	
 	var key = sound_name.to_lower()
@@ -77,10 +87,12 @@ func play_sfx(sound_name: String) -> void:
 	# Load on first use (standard Godot way)
 	if not streams.has(key):
 		var path = sound_files.get(key, "")
-		if path != "" and FileAccess.file_exists(path):
-			streams[key] = load(path)
-		else:
+		if path == "":
 			return
+		var s = load(path) as AudioStream
+		if not s:
+			return
+		streams[key] = s
 
 	# Find first available player
 	for player in sfx_pool:
@@ -115,9 +127,10 @@ func play_word(word: String) -> void:
 	var key := "word_" + word.to_lower()
 	if not streams.has(key):
 		var path := "res://assets/audio/spelling/%s.wav" % word.to_lower()
-		if not FileAccess.file_exists(path):
+		var s = load(path) as AudioStream
+		if not s:
 			return
-		streams[key] = load(path)
+		streams[key] = s
 	for player in sfx_pool:
 		if not player.playing:
 			player.volume_db = 10.0
