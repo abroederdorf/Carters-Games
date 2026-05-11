@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Carter's Games"
-run/main_scene="uid://cgame0000001"
+run/main_scene="res://scenes/GameSelect.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/sprites/app_icon.svg"
-config/main_scene="res://scenes/Game.tscn"
+config/main_scene="res://scenes/GameSelect.tscn"
 
 [autoload]
 

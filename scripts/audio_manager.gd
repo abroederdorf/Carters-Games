@@ -42,28 +42,30 @@ func _ready() -> void:
 	sfx_enabled = settings.get("sfx", true)
 	master_mute = settings.get("master_mute", false)
 	
-	# Start the music
-	_start_music()
+	_load_music_stream()
 
 func _input(_event: InputEvent) -> void:
 	if OS.has_feature("web") and not _web_audio_unlocked:
 		_web_audio_unlocked = true
-		print("Audio: web input unlock fired")
-		if music_enabled and not master_mute and not music_player.playing:
+		if music_player.stream != null and music_enabled and not master_mute and not music_player.playing:
 			music_player.play()
 
-func _start_music() -> void:
+func _load_music_stream() -> void:
 	var stream = load("res://assets/audio/ocean_bgm.wav") as AudioStream
 	if not stream:
 		stream = load("res://assets/audio/ocean_bgm.mp3") as AudioStream
-	print("Audio: music stream loaded=", stream != null)
 	if stream:
 		music_player.stream = stream
-		if music_enabled and not master_mute:
-			if OS.has_feature("web"):
-				pass
-			else:
-				music_player.play()
+
+func start_music() -> void:
+	if music_player.stream == null:
+		_load_music_stream()
+	if music_enabled and not master_mute:
+		if not OS.has_feature("web"):
+			music_player.play()
+
+func stop_music() -> void:
+	music_player.stop()
 
 func _on_music_finished() -> void:
 	if music_enabled and not master_mute and not spelling_quiet:
