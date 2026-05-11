@@ -65,7 +65,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekMain.tscn")
 		return
 
-	var bg_tex_early := load("res://assets/sprites/hide_seek/%s/bg.png" % _scene_name) as Texture2D
+	var bg_tex_early := _scene_data.background_image
 	_bg_size = Vector2(bg_tex_early.get_width(), bg_tex_early.get_height())
 
 	var all_items := _scene_data.items.duplicate()
@@ -145,7 +145,7 @@ func _build_ui() -> void:
 	_canvas_root = Node2D.new()
 	_canvas_area.add_child(_canvas_root)
 
-	var bg_tex := load("res://assets/sprites/hide_seek/%s/bg.png" % _scene_name) as Texture2D
+	var bg_tex := _scene_data.background_image
 	_bg_size = Vector2(bg_tex.get_width(), bg_tex.get_height())
 	var bg_sprite := Sprite2D.new()
 	bg_sprite.texture = bg_tex
