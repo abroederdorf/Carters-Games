@@ -16,6 +16,8 @@ var _change_timer: float = 0.0
 var math_value: int = 0
 var is_correct: bool = false
 var spawn_y: float = -1.0
+var spell_letter: String = ""
+var bounces: bool = false
 
 const CLASS_DATA = {
 	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fish_large.svg", "res://assets/sprites/fish_large_2.svg", "res://assets/sprites/fish_large_3.svg"] },
@@ -46,6 +48,22 @@ func _ready() -> void:
 
 	if math_value > 0:
 		_add_math_label()
+	if spell_letter != "":
+		_add_spell_label()
+
+func _add_spell_label() -> void:
+	var label := Label.new()
+	label.text = spell_letter.to_upper()
+	label.add_theme_font_size_override("font_size", 32)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.add_theme_color_override("font_color", Color.WHITE)
+	label.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.9))
+	label.add_theme_constant_override("shadow_offset_x", 3)
+	label.add_theme_constant_override("shadow_offset_y", 3)
+	label.size = Vector2(60, 40)
+	label.position = Vector2(-30, -20)
+	add_child(label)
 
 func _add_math_label() -> void:
 	var label := Label.new()
@@ -80,8 +98,13 @@ func _process(delta: float) -> void:
 	position.x += speed * direction * delta
 
 	if position.x > vp.size.x + 150.0 or position.x < -150.0:
-		caught.emit()
-		queue_free()
+		if bounces:
+			direction = -direction
+			$Sprite2D.flip_h = direction > 0
+			position.x = clamp(position.x, -140.0, vp.size.x + 140.0)
+		else:
+			caught.emit()
+			queue_free()
 
 func _randomize_movement(vp: Rect2) -> void:
 	if randf() < 0.35 and position.x > 150.0 and position.x < vp.size.x - 150.0:

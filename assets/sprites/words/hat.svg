@@ -1,0 +1,6 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple Cartoon Hat (Top Hat) -->
+  <rect x="25" y="20" width="50" height="50" rx="5" fill="#333" stroke="#000" stroke-width="2" />
+  <rect x="15" y="70" width="70" height="10" rx="5" fill="#333" stroke="#000" stroke-width="2" />
+  <rect x="25" y="60" width="50" height="10" fill="#cc0000" />
+</svg>

@@ -4,6 +4,8 @@ signal time_up
 signal timer_selected(duration: float)
 signal difficulty_selected(difficulty: int)
 signal mode_selected(mode: int)
+signal spelling_slot_tapped(index: int)
+signal spelling_audio_requested
 
 @onready var score_label: Label = find_child("ScoreLabel")
 @onready var fish_label: Label = find_child("FishLabel")
@@ -65,6 +67,16 @@ var _lb_mode: int = 0
 var _lb_difficulty: int = 0
 var _lb_timer: int = 60
 
+var _spell_hud: Control = null
+var _spell_image: TextureRect = null
+var _spell_slots_container: HBoxContainer = null
+var _spell_slots: Array = []
+var _spell_held_display: Label = null
+var _spell_audio_btn: Button = null
+var _spell_quiet_btn: Button = null
+var _spell_current_word: String = ""
+var _spell_missing_indices: Array = []
+
 const _MODE_NAMES := ["Fishing", "Math", "Spelling"]
 const _DIFF_NAMES := ["Easy", "Medium", "Hard"]
 const _TIMER_LABELS := {60: "1 min", 180: "3 min", 300: "5 min"}
@@ -120,10 +132,9 @@ func _ready() -> void:
 	pause_play_button.pressed.connect(_on_play_pressed)
 	mute_button.pressed.connect(_on_mute_pressed)
 
-	menu_btn_spelling.visible = false
-
 	_update_mute_icon()
 	_update_menu_visuals()
+	_build_spelling_hud()
 
 func _update_mute_icon() -> void:
 	mute_button.icon = SOUND_OFF if AudioManager.master_mute else SOUND_ON
@@ -265,8 +276,8 @@ func _refresh_lb_entries() -> void:
 		for i in entries.size():
 			var e: Dictionary = entries[i]
 			var lbl := Label.new()
-			if _lb_mode == 1:
-				lbl.text = "#%d  ·  %d solved" % [i + 1, e.score]
+			if _lb_mode == 1 or _lb_mode == 2:
+				lbl.text = "#%d  ·  %d %s" % [i + 1, e.score, "solved" if _lb_mode == 1 else "words"]
 			else:
 				lbl.text = "#%d  ·  %d pts  ·  %d fish" % [i + 1, e.score, e.fish]
 			lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -296,13 +307,17 @@ func _on_exit_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func update_score(score: int, fish: int) -> void:
-	if _selected_mode == 1:
-		score_label.text = "Solved: %d" % score
-		fish_label.visible = false
-	else:
-		score_label.text = "Score: %d" % score
-		fish_label.visible = true
-		fish_label.text = "Fish: %d" % fish
+	match _selected_mode:
+		1:
+			score_label.text = "Solved: %d" % score
+			fish_label.visible = false
+		2:
+			score_label.text = "Words: %d" % score
+			fish_label.visible = false
+		_:
+			score_label.text = "Score: %d" % score
+			fish_label.visible = true
+			fish_label.text = "Fish: %d" % fish
 
 func show_math_problem(text: String) -> void:
 	if math_problem_label:
@@ -341,6 +356,8 @@ func show_end_screen(score: int, fish: int, difficulty: int, timer_secs: int, ra
 
 	if _selected_mode == 1:
 		final_score_label.text = "%d problems solved!" % score
+	elif _selected_mode == 2:
+		final_score_label.text = "%d words spelled!" % score
 	else:
 		final_score_label.text = "%d fish caught!\nScore: %d pts" % [fish, score]
 
@@ -365,8 +382,8 @@ func show_end_screen(score: int, fish: int, difficulty: int, timer_secs: int, ra
 		for i in entries.size():
 			var e: Dictionary = entries[i]
 			var lbl := Label.new()
-			if _selected_mode == 1:
-				lbl.text = "#%d  ·  %d solved" % [i + 1, e.score]
+			if _selected_mode == 1 or _selected_mode == 2:
+				lbl.text = "#%d  ·  %d %s" % [i + 1, e.score, "solved" if _selected_mode == 1 else "words"]
 			else:
 				lbl.text = "#%d  ·  %d pts  ·  %d fish" % [i + 1, e.score, e.fish]
 			lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -378,3 +395,228 @@ func show_end_screen(score: int, fish: int, difficulty: int, timer_secs: int, ra
 func _on_play_again_pressed() -> void:
 	AudioManager.play_sfx("pop")
 	get_tree().reload_current_scene()
+
+func _make_slot_style(bg: Color, border: Color) -> StyleBoxFlat:
+	var s := StyleBoxFlat.new()
+	s.bg_color = bg
+	s.corner_radius_top_left = 12
+	s.corner_radius_top_right = 12
+	s.corner_radius_bottom_right = 12
+	s.corner_radius_bottom_left = 12
+	s.border_width_left = 3
+	s.border_width_top = 3
+	s.border_width_right = 3
+	s.border_width_bottom = 3
+	s.border_color = border
+	return s
+
+func _build_spelling_hud() -> void:
+	_spell_hud = Control.new()
+	_spell_hud.name = "SpellingHUD"
+	_spell_hud.visible = false
+	_spell_hud.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_spell_hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(_spell_hud)
+
+	# White panel anchored to right edge so it never overlaps center buttons
+	var img_panel := Panel.new()
+	var panel_style := StyleBoxFlat.new()
+	panel_style.bg_color = Color(1.0, 1.0, 1.0, 0.93)
+	panel_style.corner_radius_top_left = 16
+	panel_style.corner_radius_top_right = 16
+	panel_style.corner_radius_bottom_right = 16
+	panel_style.corner_radius_bottom_left = 16
+	panel_style.border_width_left = 2
+	panel_style.border_width_top = 2
+	panel_style.border_width_right = 2
+	panel_style.border_width_bottom = 2
+	panel_style.border_color = Color(0.75, 0.75, 0.75, 1.0)
+	img_panel.add_theme_stylebox_override("panel", panel_style)
+	img_panel.anchor_left = 1.0
+	img_panel.anchor_right = 1.0
+	img_panel.anchor_top = 0.0
+	img_panel.anchor_bottom = 0.0
+	img_panel.offset_left = -370.0
+	img_panel.offset_right = -5.0
+	img_panel.offset_top = 65.0
+	img_panel.offset_bottom = 248.0
+	_spell_hud.add_child(img_panel)
+
+	# Image and buttons are children of the panel using local coordinates
+	_spell_image = TextureRect.new()
+	_spell_image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	_spell_image.position = Vector2(10, 10)
+	_spell_image.size = Vector2(155, 165)
+	img_panel.add_child(_spell_image)
+
+	_spell_slots_container = HBoxContainer.new()
+	_spell_slots_container.add_theme_constant_override("separation", 10)
+	_spell_slots_container.layout_mode = 0
+	_spell_hud.add_child(_spell_slots_container)
+
+	_spell_audio_btn = Button.new()
+	_spell_audio_btn.icon = load("res://assets/sprites/sound_on_icon.svg")
+	_spell_audio_btn.expand_icon = true
+	_spell_audio_btn.flat = true
+	_spell_audio_btn.focus_mode = Control.FOCUS_NONE
+	_spell_audio_btn.position = Vector2(173, 15)
+	_spell_audio_btn.size = Vector2(182, 80)
+	img_panel.add_child(_spell_audio_btn)
+	_spell_audio_btn.pressed.connect(func() -> void: spelling_audio_requested.emit())
+
+	_spell_quiet_btn = Button.new()
+	_spell_quiet_btn.text = "Voice Only"
+	_spell_quiet_btn.add_theme_font_size_override("font_size", 22)
+	_spell_quiet_btn.focus_mode = Control.FOCUS_NONE
+	_spell_quiet_btn.position = Vector2(173, 103)
+	_spell_quiet_btn.size = Vector2(182, 65)
+	img_panel.add_child(_spell_quiet_btn)
+	_update_quiet_btn_style(false)
+	_spell_quiet_btn.pressed.connect(func() -> void:
+		var is_quiet := AudioManager.toggle_spelling_quiet()
+		_update_quiet_btn_style(is_quiet)
+	)
+
+	_spell_held_display = Label.new()
+	_spell_held_display.add_theme_font_size_override("font_size", 56)
+	_spell_held_display.add_theme_color_override("font_color", Color.YELLOW)
+	_spell_held_display.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.9))
+	_spell_held_display.add_theme_constant_override("shadow_offset_x", 3)
+	_spell_held_display.add_theme_constant_override("shadow_offset_y", 3)
+	_spell_held_display.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_spell_held_display.layout_mode = 0
+	_spell_held_display.position = Vector2(340, 118)
+	_spell_held_display.size = Vector2(115, 72)
+	_spell_held_display.visible = false
+	_spell_hud.add_child(_spell_held_display)
+
+func show_spelling_hud(word: String, missing_indices: Array, filled: Dictionary, is_hard: bool) -> void:
+	_spell_current_word = word
+	_spell_missing_indices = missing_indices
+	_spell_hud.visible = true
+
+	var img_path := "res://assets/sprites/words/%s.svg" % word.to_lower()
+	if ResourceLoader.exists(img_path):
+		_spell_image.texture = load(img_path)
+		_spell_image.visible = true
+	else:
+		_spell_image.visible = false
+
+	for child in _spell_slots_container.get_children():
+		child.queue_free()
+	_spell_slots.clear()
+
+	var style_known := _make_slot_style(Color(0.15, 0.20, 0.40, 0.9), Color(0.35, 0.40, 0.65, 1))
+	var style_empty := _make_slot_style(Color(0.08, 0.18, 0.45, 0.9), Color(1.0, 0.85, 0.0, 1))
+	var style_filled := _make_slot_style(Color(0.10, 0.55, 0.18, 0.9), Color(0.05, 0.35, 0.10, 1))
+
+	for i in word.length():
+		var btn := Button.new()
+		btn.custom_minimum_size = Vector2(78, 78)
+		btn.add_theme_font_size_override("font_size", 42)
+		btn.focus_mode = Control.FOCUS_NONE
+
+		if i in missing_indices and not filled.has(i):
+			btn.text = "_"
+			btn.add_theme_color_override("font_color", Color.YELLOW)
+			btn.add_theme_stylebox_override("normal", style_empty)
+			btn.add_theme_stylebox_override("hover", style_empty)
+			btn.add_theme_stylebox_override("pressed", style_empty)
+			if is_hard:
+				btn.pressed.connect(_on_spell_slot_pressed.bind(i))
+			else:
+				btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		else:
+			var letter: String = filled.get(i, word[i].to_upper() if not filled.has(i) else "")
+			if filled.has(i):
+				btn.text = (filled[i] as String).to_upper()
+				btn.add_theme_color_override("font_color", Color.WHITE)
+				btn.add_theme_stylebox_override("normal", style_filled)
+				btn.add_theme_stylebox_override("hover", style_filled)
+				btn.add_theme_stylebox_override("pressed", style_filled)
+			else:
+				btn.text = word[i].to_upper()
+				btn.add_theme_color_override("font_color", Color.WHITE)
+				btn.add_theme_stylebox_override("normal", style_known)
+				btn.add_theme_stylebox_override("hover", style_known)
+				btn.add_theme_stylebox_override("pressed", style_known)
+			btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+		_spell_slots_container.add_child(btn)
+		_spell_slots.append(btn)
+
+	var slot_w := 78
+	var gap := 10
+	var total_w: int = word.length() * slot_w + max(0, word.length() - 1) * gap
+	var center_x := 640.0
+	_spell_slots_container.position = Vector2(center_x - total_w / 2.0, 106.0)
+
+func hide_spelling_hud() -> void:
+	if _spell_hud:
+		_spell_hud.visible = false
+	if AudioManager.spelling_quiet:
+		AudioManager.toggle_spelling_quiet()
+		_update_quiet_btn_style(false)
+
+func _update_quiet_btn_style(is_quiet: bool) -> void:
+	if not _spell_quiet_btn:
+		return
+	var style := _make_slot_style(
+		Color(0.10, 0.55, 0.18, 1.0) if is_quiet else Color(0.20, 0.20, 0.38, 0.9),
+		Color(0.05, 0.35, 0.10, 1.0) if is_quiet else Color(0.38, 0.38, 0.60, 1.0)
+	)
+	_spell_quiet_btn.add_theme_stylebox_override("normal", style)
+	_spell_quiet_btn.add_theme_stylebox_override("hover", style)
+	_spell_quiet_btn.add_theme_stylebox_override("pressed", style)
+	_spell_quiet_btn.add_theme_color_override("font_color", Color.WHITE)
+
+func update_spelling_slots(word: String, missing_indices: Array, filled: Dictionary) -> void:
+	var style_empty := _make_slot_style(Color(0.08, 0.18, 0.45, 0.9), Color(1.0, 0.85, 0.0, 1))
+	var style_filled := _make_slot_style(Color(0.10, 0.55, 0.18, 0.9), Color(0.05, 0.35, 0.10, 1))
+
+	for i in _spell_slots.size():
+		var btn = _spell_slots[i]
+		if i in missing_indices:
+			if filled.has(i):
+				btn.text = (filled[i] as String).to_upper()
+				btn.add_theme_color_override("font_color", Color.WHITE)
+				btn.add_theme_stylebox_override("normal", style_filled)
+				btn.add_theme_stylebox_override("hover", style_filled)
+				btn.add_theme_stylebox_override("pressed", style_filled)
+				btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			else:
+				btn.text = "_"
+				btn.add_theme_color_override("font_color", Color.YELLOW)
+				btn.add_theme_stylebox_override("normal", style_empty)
+
+func show_held_letter(letter: String) -> void:
+	if not _spell_held_display:
+		return
+	if letter == "":
+		_spell_held_display.visible = false
+	else:
+		_spell_held_display.text = letter.to_upper()
+		_spell_held_display.visible = true
+
+func flash_slot_wrong(index: int) -> void:
+	if index >= _spell_slots.size():
+		return
+	var btn: Button = _spell_slots[index]
+	var style_wrong := _make_slot_style(Color(0.6, 0.05, 0.05, 0.9), Color(1.0, 0.1, 0.1, 1.0))
+	btn.text = "✗"
+	btn.add_theme_color_override("font_color", Color.WHITE)
+	btn.add_theme_stylebox_override("normal", style_wrong)
+	btn.add_theme_stylebox_override("hover", style_wrong)
+	btn.add_theme_stylebox_override("pressed", style_wrong)
+	await get_tree().create_timer(0.5).timeout
+	if not is_instance_valid(btn):
+		return
+	var style_empty := _make_slot_style(Color(0.08, 0.18, 0.45, 0.9), Color(1.0, 0.85, 0.0, 1))
+	btn.text = "_"
+	btn.add_theme_color_override("font_color", Color.YELLOW)
+	btn.add_theme_stylebox_override("normal", style_empty)
+	btn.add_theme_stylebox_override("hover", style_empty)
+	btn.add_theme_stylebox_override("pressed", style_empty)
+
+func _on_spell_slot_pressed(index: int) -> void:
+	spelling_slot_tapped.emit(index)
