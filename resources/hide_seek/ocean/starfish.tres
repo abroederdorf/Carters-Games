@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_rt1by"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/starfish.png" id="2_qwghh"]
+
+[resource]
+script = ExtResource("1_rt1by")
+item_name = "starfish"
+thumbnail = ExtResource("2_qwghh")
+position = Vector2(1750, 950)
+radius = 55.0

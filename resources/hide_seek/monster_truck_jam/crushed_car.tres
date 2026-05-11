@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_qisrj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/crushed_car.png" id="2_o75sb"]
+
+[resource]
+script = ExtResource("1_qisrj")
+item_name = "crushed_car"
+thumbnail = ExtResource("2_o75sb")
+position = Vector2(350, 620)
+radius = 75.0

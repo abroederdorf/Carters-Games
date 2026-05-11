@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_kgrid"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/mud_splatter.png" id="2_guslx"]
+
+[resource]
+script = ExtResource("1_kgrid")
+item_name = "mud_splatter"
+thumbnail = ExtResource("2_guslx")
+position = Vector2(800, 800)
+radius = 60.0

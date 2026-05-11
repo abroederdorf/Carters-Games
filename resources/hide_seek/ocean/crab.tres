@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_g6fmn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/crab.png" id="2_2pwxv"]
+
+[resource]
+script = ExtResource("1_g6fmn")
+item_name = "crab"
+thumbnail = ExtResource("2_2pwxv")
+position = Vector2(960, 950)
+radius = 60.0

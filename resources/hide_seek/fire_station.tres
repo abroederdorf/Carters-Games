@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/bg_fast.png" id="1_os4c7"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_dkvht"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/axe.png" id="3_on1gf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/bell.png" id="4_jk1u2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/boots.png" id="5_82yq3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/dalmatian.png" id="6_prvns"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/fire_extinguisher.png" id="7_f1tlo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/fire_truck.png" id="8_605le"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/helmet.png" id="9_v0rb7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/hose_reel.png" id="10_3rtu5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/hydrant.png" id="11_p8w20"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/ladder.png" id="12_aa0vn"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_nyba5"]
+
+[sub_resource type="Resource" id="Resource_5nvjq"]
+script = ExtResource("2_dkvht")
+item_name = "axe"
+thumbnail = ExtResource("3_on1gf")
+position = Vector2(1000, 150)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_acbkq"]
+script = ExtResource("2_dkvht")
+item_name = "bell"
+thumbnail = ExtResource("4_jk1u2")
+position = Vector2(1350, 70)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_undxx"]
+script = ExtResource("2_dkvht")
+item_name = "boots"
+thumbnail = ExtResource("5_82yq3")
+position = Vector2(1900, 950)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_5u626"]
+script = ExtResource("2_dkvht")
+item_name = "dalmatian"
+thumbnail = ExtResource("6_prvns")
+position = Vector2(750, 900)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_pvamn"]
+script = ExtResource("2_dkvht")
+item_name = "fire_extinguisher"
+thumbnail = ExtResource("7_f1tlo")
+position = Vector2(500, 500)
+
+[sub_resource type="Resource" id="Resource_cv0ly"]
+script = ExtResource("2_dkvht")
+item_name = "fire_truck"
+thumbnail = ExtResource("8_605le")
+position = Vector2(1500, 500)
+radius = 120.0
+
+[sub_resource type="Resource" id="Resource_wbocv"]
+script = ExtResource("2_dkvht")
+item_name = "helmet"
+thumbnail = ExtResource("9_v0rb7")
+position = Vector2(1700, 800)
+
+[sub_resource type="Resource" id="Resource_yjrkb"]
+script = ExtResource("2_dkvht")
+item_name = "hose_reel"
+thumbnail = ExtResource("10_3rtu5")
+position = Vector2(300, 850)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_fibxq"]
+script = ExtResource("2_dkvht")
+item_name = "hydrant"
+thumbnail = ExtResource("11_p8w20")
+position = Vector2(50, 950)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_f6wam"]
+script = ExtResource("2_dkvht")
+item_name = "ladder"
+thumbnail = ExtResource("12_aa0vn")
+position = Vector2(1850, 300)
+radius = 90.0
+
+[resource]
+script = ExtResource("13_nyba5")
+scene_name = "fire_station"
+background_image = ExtResource("1_os4c7")
+items = Array[ExtResource("2_dkvht")]([SubResource("Resource_5nvjq"), SubResource("Resource_acbkq"), SubResource("Resource_undxx"), SubResource("Resource_5u626"), SubResource("Resource_pvamn"), SubResource("Resource_cv0ly"), SubResource("Resource_wbocv"), SubResource("Resource_yjrkb"), SubResource("Resource_fibxq"), SubResource("Resource_f6wam")])
