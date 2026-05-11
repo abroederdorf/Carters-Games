@@ -4,6 +4,7 @@
 
 [ext_resource type="Texture2D" path="res://assets/sprites/close_icon.svg" id="14_close"]
 [ext_resource type="Texture2D" path="res://assets/sprites/pause_icon.svg" id="15_pause"]
+[ext_resource type="Texture2D" path="res://assets/sprites/play_icon.svg" id="20_play"]
 [ext_resource type="Texture2D" path="res://assets/sprites/sound_on_icon.svg" id="16_sound_on"]
 [ext_resource type="Texture2D" path="res://assets/sprites/sound_off_icon.svg" id="17_sound_off"]
 [ext_resource type="Texture2D" path="res://assets/sprites/switch_on.svg" id="18_switch_on"]
@@ -371,11 +372,9 @@ offset_left = -75.0
 offset_top = -65.0
 offset_right = 75.0
 offset_bottom = 85.0
-text = "▶"
-theme_override_font_sizes/font_size = 64
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+focus_mode = 0
+icon = ExtResource("20_play")
+expand_icon = true
 theme_override_styles/normal = SubResource("SBF_play_n")
 theme_override_styles/hover = SubResource("SBF_play_n")
 theme_override_styles/pressed = SubResource("SBF_play_p")
@@ -658,6 +657,19 @@ custom_minimum_size = Vector2(230, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
+
+[node name="MenuBackButton" type="Button" parent="MenuScreen"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 62.0
+focus_mode = 0
+text = "< Games"
 theme_override_font_sizes/font_size = 26
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("SBF_pa_n")

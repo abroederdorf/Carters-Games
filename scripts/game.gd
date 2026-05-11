@@ -99,6 +99,7 @@ var _words_completed: int = 0
 func _ready() -> void:
 	get_viewport().size_changed.connect(_on_window_resized)
 	_on_window_resized()
+	AudioManager.start_music()
 
 	hook.area_entered.connect(_on_hook_area_entered)
 	ui.time_up.connect(_on_time_up)
@@ -107,6 +108,10 @@ func _ready() -> void:
 	ui.timer_selected.connect(_start_game)
 	ui.spelling_slot_tapped.connect(_on_spelling_slot_tapped)
 	ui.spelling_audio_requested.connect(func() -> void: AudioManager.play_word(_spell_current_word))
+	ui.back_to_game_select.connect(func() -> void:
+		AudioManager.stop_music()
+		get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
+	)
 
 	_predator_timer = Timer.new()
 	_predator_timer.wait_time = 4.0

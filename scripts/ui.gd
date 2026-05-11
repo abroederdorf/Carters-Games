@@ -6,6 +6,7 @@ signal difficulty_selected(difficulty: int)
 signal mode_selected(mode: int)
 signal spelling_slot_tapped(index: int)
 signal spelling_audio_requested
+signal back_to_game_select
 
 @onready var score_label: Label = find_child("ScoreLabel")
 @onready var fish_label: Label = find_child("FishLabel")
@@ -15,6 +16,7 @@ signal spelling_audio_requested
 @onready var high_scores_label: Label = find_child("HighScoresLabel")
 @onready var leaderboard_container: VBoxContainer = find_child("LeaderboardContainer")
 @onready var menu_screen: Control = find_child("MenuScreen")
+@onready var menu_back_button: Button = find_child("MenuBackButton")
 @onready var menu_btn_free_play: Button = find_child("MenuBtnFreePlay")
 @onready var menu_btn_math: Button = find_child("MenuBtnMath")
 @onready var menu_btn_spelling: Button = find_child("MenuBtnSpelling")
@@ -95,6 +97,7 @@ func _ready() -> void:
 
 	play_again_button.pressed.connect(_on_play_again_pressed)
 
+	menu_back_button.pressed.connect(_on_menu_back_pressed)
 	menu_btn_free_play.pressed.connect(_set_menu_mode.bind(0))
 	menu_btn_math.pressed.connect(_set_menu_mode.bind(1))
 	menu_btn_spelling.pressed.connect(_set_menu_mode.bind(2))
@@ -143,6 +146,10 @@ func _on_mute_pressed() -> void:
 	var is_muted = AudioManager.toggle_mute()
 	_update_mute_icon()
 	Leaderboard.save_settings(_selected_mode, _selected_difficulty, _selected_timer, music_toggle.button_pressed, sfx_toggle.button_pressed, is_muted)
+
+func _on_menu_back_pressed() -> void:
+	AudioManager.play_sfx("pop")
+	back_to_game_select.emit()
 
 func _on_settings_pressed() -> void:
 	var settings := Leaderboard.load_settings()
