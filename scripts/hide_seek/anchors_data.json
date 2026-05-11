@@ -3,7 +3,7 @@
     {
       "x": 100,
       "y": 150,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "sky"
       ],
@@ -12,7 +12,7 @@
     {
       "x": 400,
       "y": 100,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "sky"
       ],
@@ -21,7 +21,7 @@
     {
       "x": 700,
       "y": 110,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -30,7 +30,7 @@
     {
       "x": 1050,
       "y": 130,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "sky"
       ],
@@ -39,7 +39,7 @@
     {
       "x": 270,
       "y": 150,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground",
         "structure"
@@ -49,7 +49,7 @@
     {
       "x": 520,
       "y": 140,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "ground",
         "structure"
@@ -59,7 +59,7 @@
     {
       "x": 880,
       "y": 145,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground",
         "structure"
@@ -69,7 +69,7 @@
     {
       "x": 1200,
       "y": 200,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "structure"
       ],
@@ -78,7 +78,7 @@
     {
       "x": 150,
       "y": 250,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "shadow"
@@ -88,7 +88,7 @@
     {
       "x": 750,
       "y": 240,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage",
         "shadow"
@@ -98,7 +98,7 @@
     {
       "x": 690,
       "y": 390,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "water"
       ],
@@ -107,7 +107,7 @@
     {
       "x": 450,
       "y": 400,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water"
       ],
@@ -116,7 +116,7 @@
     {
       "x": 930,
       "y": 380,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water"
       ],
@@ -125,7 +125,7 @@
     {
       "x": 350,
       "y": 360,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -134,7 +134,7 @@
     {
       "x": 1010,
       "y": 360,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -143,7 +143,7 @@
     {
       "x": 400,
       "y": 300,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -152,7 +152,7 @@
     {
       "x": 550,
       "y": 330,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -161,7 +161,7 @@
     {
       "x": 700,
       "y": 300,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground"
       ],
@@ -170,7 +170,7 @@
     {
       "x": 900,
       "y": 300,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "shadow"
@@ -180,7 +180,7 @@
     {
       "x": 1000,
       "y": 250,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -189,7 +189,7 @@
     {
       "x": 200,
       "y": 500,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "foliage"
       ],
@@ -198,7 +198,7 @@
     {
       "x": 300,
       "y": 600,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground",
         "foliage"
@@ -208,7 +208,7 @@
     {
       "x": 150,
       "y": 650,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "ground",
         "structure"
@@ -218,7 +218,7 @@
     {
       "x": 50,
       "y": 700,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage",
         "shadow"
@@ -228,7 +228,7 @@
     {
       "x": 380,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -237,7 +237,7 @@
     {
       "x": 200,
       "y": 400,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "shadow"
@@ -247,7 +247,7 @@
     {
       "x": 450,
       "y": 470,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -256,7 +256,7 @@
     {
       "x": 500,
       "y": 650,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground",
         "foliage"
@@ -266,7 +266,7 @@
     {
       "x": 350,
       "y": 700,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "ground",
         "foliage"
@@ -276,7 +276,7 @@
     {
       "x": 50,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "shadow"
@@ -286,7 +286,7 @@
     {
       "x": 1050,
       "y": 600,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -295,7 +295,7 @@
     {
       "x": 1200,
       "y": 650,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "ground",
         "foliage"
@@ -305,7 +305,7 @@
     {
       "x": 1350,
       "y": 700,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage",
         "shadow"
@@ -315,7 +315,7 @@
     {
       "x": 950,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -324,7 +324,7 @@
     {
       "x": 800,
       "y": 550,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -333,7 +333,7 @@
     {
       "x": 800,
       "y": 600,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water",
         "shadow"
@@ -343,7 +343,7 @@
     {
       "x": 700,
       "y": 580,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water",
         "ground"
@@ -353,7 +353,7 @@
     {
       "x": 650,
       "y": 650,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground",
         "foliage"
@@ -363,7 +363,7 @@
     {
       "x": 1100,
       "y": 500,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -372,7 +372,7 @@
     {
       "x": 1300,
       "y": 550,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "foliage"
       ],
@@ -381,7 +381,7 @@
     {
       "x": 1300,
       "y": 400,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "shadow"
@@ -391,7 +391,7 @@
     {
       "x": 900,
       "y": 480,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "shadow"
@@ -401,7 +401,7 @@
     {
       "x": 600,
       "y": 450,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -409,8 +409,8 @@
     },
     {
       "x": 750,
-      "y": 720,
-      "radius": 35,
+      "y": 700,
+      "radius": 43,
       "tags": [
         "foliage",
         "shadow"
@@ -419,8 +419,8 @@
     },
     {
       "x": 1150,
-      "y": 730,
-      "radius": 30,
+      "y": 700,
+      "radius": 37,
       "tags": [
         "ground",
         "shadow"
@@ -430,7 +430,7 @@
     {
       "x": 250,
       "y": 350,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -439,7 +439,7 @@
     {
       "x": 450,
       "y": 200,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "shadow"
@@ -449,7 +449,7 @@
     {
       "x": 1000,
       "y": 430,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -458,7 +458,7 @@
     {
       "x": 1250,
       "y": 480,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -467,7 +467,7 @@
     {
       "x": 750,
       "y": 500,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -478,7 +478,7 @@
     {
       "x": 70,
       "y": 700,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -486,8 +486,8 @@
     },
     {
       "x": 150,
-      "y": 720,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -496,7 +496,7 @@
     {
       "x": 200,
       "y": 650,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "shadow"
@@ -506,7 +506,7 @@
     {
       "x": 30,
       "y": 620,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "shadow"
@@ -516,7 +516,7 @@
     {
       "x": 180,
       "y": 560,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -525,7 +525,7 @@
     {
       "x": 250,
       "y": 580,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -534,7 +534,7 @@
     {
       "x": 100,
       "y": 520,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -543,7 +543,7 @@
     {
       "x": 280,
       "y": 480,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure",
         "shadow"
@@ -553,7 +553,7 @@
     {
       "x": 180,
       "y": 450,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -562,7 +562,7 @@
     {
       "x": 350,
       "y": 440,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -571,7 +571,7 @@
     {
       "x": 80,
       "y": 380,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "shadow"
@@ -581,7 +581,7 @@
     {
       "x": 190,
       "y": 340,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water"
       ],
@@ -590,7 +590,7 @@
     {
       "x": 250,
       "y": 280,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure",
         "shadow"
@@ -600,7 +600,7 @@
     {
       "x": 400,
       "y": 200,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water",
         "sky"
@@ -610,7 +610,7 @@
     {
       "x": 480,
       "y": 700,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -619,7 +619,7 @@
     {
       "x": 550,
       "y": 680,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground",
         "shadow"
@@ -629,7 +629,7 @@
     {
       "x": 500,
       "y": 600,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -638,7 +638,7 @@
     {
       "x": 670,
       "y": 620,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -647,7 +647,7 @@
     {
       "x": 580,
       "y": 500,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -656,7 +656,7 @@
     {
       "x": 450,
       "y": 540,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -665,7 +665,7 @@
     {
       "x": 700,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground",
         "shadow"
@@ -675,7 +675,7 @@
     {
       "x": 700,
       "y": 400,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water"
       ],
@@ -684,7 +684,7 @@
     {
       "x": 600,
       "y": 300,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water",
         "sky"
@@ -694,7 +694,7 @@
     {
       "x": 750,
       "y": 250,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water",
         "sky"
@@ -704,7 +704,7 @@
     {
       "x": 800,
       "y": 150,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water",
         "sky"
@@ -713,8 +713,8 @@
     },
     {
       "x": 1350,
-      "y": 720,
-      "radius": 25,
+      "y": 700,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -723,7 +723,7 @@
     {
       "x": 1200,
       "y": 700,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -731,8 +731,8 @@
     },
     {
       "x": 1100,
-      "y": 730,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "structure",
         "shadow"
@@ -742,7 +742,7 @@
     {
       "x": 1050,
       "y": 650,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -751,7 +751,7 @@
     {
       "x": 1250,
       "y": 600,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "shadow"
@@ -761,7 +761,7 @@
     {
       "x": 980,
       "y": 580,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -770,7 +770,7 @@
     {
       "x": 1300,
       "y": 520,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "shadow"
@@ -780,7 +780,7 @@
     {
       "x": 900,
       "y": 500,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -789,7 +789,7 @@
     {
       "x": 1100,
       "y": 480,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -798,7 +798,7 @@
     {
       "x": 950,
       "y": 420,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -807,7 +807,7 @@
     {
       "x": 1200,
       "y": 380,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water"
       ],
@@ -816,7 +816,7 @@
     {
       "x": 1000,
       "y": 300,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure",
         "shadow"
@@ -826,7 +826,7 @@
     {
       "x": 1250,
       "y": 200,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water",
         "sky"
@@ -835,8 +835,8 @@
     },
     {
       "x": 700,
-      "y": 750,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -844,8 +844,8 @@
     },
     {
       "x": 300,
-      "y": 750,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -853,8 +853,8 @@
     },
     {
       "x": 1100,
-      "y": 750,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -863,7 +863,7 @@
     {
       "x": 850,
       "y": 680,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -872,7 +872,7 @@
     {
       "x": 400,
       "y": 600,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "shadow"
       ],
@@ -881,7 +881,7 @@
     {
       "x": 900,
       "y": 600,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "shadow"
       ],
@@ -890,7 +890,7 @@
     {
       "x": 500,
       "y": 450,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water"
       ],
@@ -899,7 +899,7 @@
     {
       "x": 950,
       "y": 450,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water"
       ],
@@ -908,7 +908,7 @@
     {
       "x": 150,
       "y": 250,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water"
       ],
@@ -917,7 +917,7 @@
     {
       "x": 1300,
       "y": 250,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water"
       ],
@@ -926,7 +926,7 @@
     {
       "x": 700,
       "y": 50,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water",
         "sky"
@@ -936,7 +936,7 @@
     {
       "x": 100,
       "y": 100,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water",
         "sky"
@@ -948,7 +948,7 @@
     {
       "x": 100,
       "y": 680,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "shadow"
@@ -958,7 +958,7 @@
     {
       "x": 150,
       "y": 500,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "structure"
@@ -968,7 +968,7 @@
     {
       "x": 200,
       "y": 700,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "ground",
         "structure",
@@ -978,8 +978,8 @@
     },
     {
       "x": 50,
-      "y": 720,
-      "radius": 25,
+      "y": 700,
+      "radius": 31,
       "tags": [
         "foliage",
         "ground"
@@ -989,7 +989,7 @@
     {
       "x": 250,
       "y": 300,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -998,7 +998,7 @@
     {
       "x": 80,
       "y": 200,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -1007,7 +1007,7 @@
     {
       "x": 180,
       "y": 400,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -1016,7 +1016,7 @@
     {
       "x": 300,
       "y": 650,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground",
         "structure"
@@ -1026,7 +1026,7 @@
     {
       "x": 350,
       "y": 600,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -1035,7 +1035,7 @@
     {
       "x": 20,
       "y": 580,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -1044,7 +1044,7 @@
     {
       "x": 10,
       "y": 400,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -1053,7 +1053,7 @@
     {
       "x": 400,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -1062,7 +1062,7 @@
     {
       "x": 450,
       "y": 680,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water",
         "ground"
@@ -1071,8 +1071,8 @@
     },
     {
       "x": 400,
-      "y": 720,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "water"
       ],
@@ -1081,7 +1081,7 @@
     {
       "x": 550,
       "y": 700,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water",
         "ground"
@@ -1091,7 +1091,7 @@
     {
       "x": 380,
       "y": 640,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "ground"
@@ -1101,7 +1101,7 @@
     {
       "x": 470,
       "y": 600,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "ground",
@@ -1112,7 +1112,7 @@
     {
       "x": 500,
       "y": 450,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "structure"
@@ -1122,7 +1122,7 @@
     {
       "x": 550,
       "y": 250,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "structure"
@@ -1132,7 +1132,7 @@
     {
       "x": 490,
       "y": 350,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -1141,7 +1141,7 @@
     {
       "x": 480,
       "y": 500,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water",
         "foliage"
@@ -1151,7 +1151,7 @@
     {
       "x": 500,
       "y": 350,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water"
       ],
@@ -1160,7 +1160,7 @@
     {
       "x": 450,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "water"
@@ -1170,7 +1170,7 @@
     {
       "x": 600,
       "y": 650,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "ground"
@@ -1180,7 +1180,7 @@
     {
       "x": 640,
       "y": 480,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "structure"
@@ -1190,7 +1190,7 @@
     {
       "x": 700,
       "y": 200,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -1199,7 +1199,7 @@
     {
       "x": 620,
       "y": 580,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "ground"
@@ -1209,7 +1209,7 @@
     {
       "x": 650,
       "y": 680,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water",
         "ground"
@@ -1218,8 +1218,8 @@
     },
     {
       "x": 750,
-      "y": 710,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "water"
       ],
@@ -1228,7 +1228,7 @@
     {
       "x": 700,
       "y": 650,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground",
         "shadow"
@@ -1238,7 +1238,7 @@
     {
       "x": 700,
       "y": 550,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -1247,7 +1247,7 @@
     {
       "x": 850,
       "y": 150,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage",
         "sky"
@@ -1257,7 +1257,7 @@
     {
       "x": 800,
       "y": 400,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "shadow"
@@ -1267,7 +1267,7 @@
     {
       "x": 1120,
       "y": 390,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "shadow"
@@ -1277,7 +1277,7 @@
     {
       "x": 1150,
       "y": 550,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "shadow"
@@ -1287,7 +1287,7 @@
     {
       "x": 1050,
       "y": 250,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "structure"
@@ -1297,7 +1297,7 @@
     {
       "x": 1200,
       "y": 480,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "structure"
@@ -1307,7 +1307,7 @@
     {
       "x": 1280,
       "y": 690,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "ground",
         "structure",
@@ -1318,7 +1318,7 @@
     {
       "x": 1000,
       "y": 700,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "ground"
@@ -1328,7 +1328,7 @@
     {
       "x": 1350,
       "y": 650,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "ground"
@@ -1338,7 +1338,7 @@
     {
       "x": 950,
       "y": 500,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "water",
         "foliage"
@@ -1348,7 +1348,7 @@
     {
       "x": 980,
       "y": 350,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water"
       ],
@@ -1357,7 +1357,7 @@
     {
       "x": 900,
       "y": 580,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage",
         "water"
@@ -1367,7 +1367,7 @@
     {
       "x": 1380,
       "y": 580,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -1375,8 +1375,8 @@
     },
     {
       "x": 1300,
-      "y": 740,
-      "radius": 30,
+      "y": 700,
+      "radius": 37,
       "tags": [
         "foliage",
         "ground"
@@ -1386,7 +1386,7 @@
     {
       "x": 1320,
       "y": 600,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "ground"
@@ -1396,7 +1396,7 @@
     {
       "x": 1300,
       "y": 450,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "foliage",
         "shadow"
@@ -1406,7 +1406,7 @@
     {
       "x": 400,
       "y": 100,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "sky"
       ],
@@ -1415,7 +1415,7 @@
     {
       "x": 700,
       "y": 80,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "sky"
       ],
@@ -1424,7 +1424,7 @@
     {
       "x": 1000,
       "y": 100,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "sky"
       ],
@@ -1435,7 +1435,7 @@
     {
       "x": 295,
       "y": 290,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1444,7 +1444,7 @@
     {
       "x": 250,
       "y": 360,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -1453,7 +1453,7 @@
     {
       "x": 240,
       "y": 395,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -1462,15 +1462,6 @@
     {
       "x": 380,
       "y": 420,
-      "radius": 20,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 150,
-      "y": 470,
       "radius": 25,
       "tags": [
         "ground"
@@ -1479,8 +1470,17 @@
     },
     {
       "x": 150,
+      "y": 470,
+      "radius": 31,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 150,
       "y": 500,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground",
         "shadow"
@@ -1490,7 +1490,7 @@
     {
       "x": 200,
       "y": 310,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -1499,7 +1499,7 @@
     {
       "x": 300,
       "y": 100,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "sky"
       ],
@@ -1508,7 +1508,7 @@
     {
       "x": 450,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -1517,7 +1517,7 @@
     {
       "x": 480,
       "y": 470,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -1526,7 +1526,7 @@
     {
       "x": 520,
       "y": 600,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure",
         "shadow"
@@ -1536,7 +1536,7 @@
     {
       "x": 750,
       "y": 120,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "sky"
       ],
@@ -1545,7 +1545,7 @@
     {
       "x": 650,
       "y": 50,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "sky"
       ],
@@ -1554,7 +1554,7 @@
     {
       "x": 580,
       "y": 500,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -1563,7 +1563,7 @@
     {
       "x": 660,
       "y": 580,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -1572,7 +1572,7 @@
     {
       "x": 430,
       "y": 610,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1581,7 +1581,7 @@
     {
       "x": 730,
       "y": 610,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1590,7 +1590,7 @@
     {
       "x": 600,
       "y": 680,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground"
       ],
@@ -1599,7 +1599,7 @@
     {
       "x": 350,
       "y": 700,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground"
       ],
@@ -1607,8 +1607,8 @@
     },
     {
       "x": 350,
-      "y": 720,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground",
         "shadow"
@@ -1618,7 +1618,7 @@
     {
       "x": 600,
       "y": 630,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -1627,7 +1627,7 @@
     {
       "x": 700,
       "y": 610,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -1636,7 +1636,7 @@
     {
       "x": 450,
       "y": 420,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -1645,7 +1645,7 @@
     {
       "x": 470,
       "y": 370,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -1654,7 +1654,7 @@
     {
       "x": 520,
       "y": 270,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -1663,7 +1663,7 @@
     {
       "x": 520,
       "y": 530,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1672,7 +1672,7 @@
     {
       "x": 520,
       "y": 510,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -1681,7 +1681,7 @@
     {
       "x": 1150,
       "y": 260,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -1690,7 +1690,7 @@
     {
       "x": 1180,
       "y": 340,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -1699,7 +1699,7 @@
     {
       "x": 1250,
       "y": 420,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -1708,7 +1708,7 @@
     {
       "x": 1300,
       "y": 480,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -1717,7 +1717,7 @@
     {
       "x": 1050,
       "y": 480,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -1726,7 +1726,7 @@
     {
       "x": 1050,
       "y": 500,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground",
         "shadow"
@@ -1736,7 +1736,7 @@
     {
       "x": 270,
       "y": 680,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1745,7 +1745,7 @@
     {
       "x": 250,
       "y": 660,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -1754,7 +1754,7 @@
     {
       "x": 360,
       "y": 690,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -1763,7 +1763,7 @@
     {
       "x": 1000,
       "y": 700,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -1771,8 +1771,8 @@
     },
     {
       "x": 1000,
-      "y": 720,
-      "radius": 15,
+      "y": 700,
+      "radius": 18,
       "tags": [
         "ground",
         "shadow"
@@ -1782,7 +1782,7 @@
     {
       "x": 1200,
       "y": 620,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -1791,7 +1791,7 @@
     {
       "x": 1250,
       "y": 680,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1800,7 +1800,7 @@
     {
       "x": 1300,
       "y": 700,
-      "radius": 8,
+      "radius": 10,
       "tags": [
         "structure"
       ],
@@ -1808,8 +1808,8 @@
     },
     {
       "x": 1350,
-      "y": 740,
-      "radius": 25,
+      "y": 700,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -1817,8 +1817,8 @@
     },
     {
       "x": 1150,
-      "y": 750,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -1827,7 +1827,7 @@
     {
       "x": 1300,
       "y": 80,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "sky"
       ],
@@ -1836,7 +1836,7 @@
     {
       "x": 1100,
       "y": 50,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "sky"
       ],
@@ -1845,7 +1845,7 @@
     {
       "x": 1020,
       "y": 400,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1854,7 +1854,7 @@
     {
       "x": 1080,
       "y": 550,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -1863,7 +1863,7 @@
     {
       "x": 870,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -1872,7 +1872,7 @@
     {
       "x": 900,
       "y": 520,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -1881,7 +1881,7 @@
     {
       "x": 820,
       "y": 580,
-      "radius": 12,
+      "radius": 15,
       "tags": [
         "structure"
       ],
@@ -1892,7 +1892,7 @@
     {
       "x": 90,
       "y": 470,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -1901,7 +1901,7 @@
     {
       "x": 120,
       "y": 290,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -1910,7 +1910,7 @@
     {
       "x": 375,
       "y": 495,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -1919,7 +1919,7 @@
     {
       "x": 390,
       "y": 525,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "shadow"
@@ -1929,7 +1929,7 @@
     {
       "x": 290,
       "y": 410,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -1938,7 +1938,7 @@
     {
       "x": 190,
       "y": 680,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -1946,8 +1946,8 @@
     },
     {
       "x": 100,
-      "y": 750,
-      "radius": 10,
+      "y": 700,
+      "radius": 12,
       "tags": [
         "ground",
         "structure"
@@ -1956,8 +1956,8 @@
     },
     {
       "x": 600,
-      "y": 730,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -1965,8 +1965,8 @@
     },
     {
       "x": 550,
-      "y": 755,
-      "radius": 15,
+      "y": 700,
+      "radius": 18,
       "tags": [
         "ground",
         "structure"
@@ -1976,7 +1976,7 @@
     {
       "x": 370,
       "y": 575,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -1985,7 +1985,7 @@
     {
       "x": 340,
       "y": 700,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -1994,7 +1994,7 @@
     {
       "x": 345,
       "y": 620,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2003,7 +2003,7 @@
     {
       "x": 490,
       "y": 640,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2012,7 +2012,7 @@
     {
       "x": 390,
       "y": 310,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "shadow"
@@ -2022,7 +2022,7 @@
     {
       "x": 660,
       "y": 250,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -2031,7 +2031,7 @@
     {
       "x": 750,
       "y": 270,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2040,7 +2040,7 @@
     {
       "x": 680,
       "y": 470,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -2049,7 +2049,7 @@
     {
       "x": 1040,
       "y": 600,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2058,7 +2058,7 @@
     {
       "x": 940,
       "y": 610,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -2067,7 +2067,7 @@
     {
       "x": 1050,
       "y": 700,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground",
         "shadow"
@@ -2076,8 +2076,8 @@
     },
     {
       "x": 1250,
-      "y": 710,
-      "radius": 25,
+      "y": 700,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -2086,7 +2086,7 @@
     {
       "x": 1080,
       "y": 620,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2095,7 +2095,7 @@
     {
       "x": 1085,
       "y": 490,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2104,7 +2104,7 @@
     {
       "x": 1140,
       "y": 410,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2113,7 +2113,7 @@
     {
       "x": 1100,
       "y": 560,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2122,7 +2122,7 @@
     {
       "x": 1380,
       "y": 500,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -2131,7 +2131,7 @@
     {
       "x": 1310,
       "y": 360,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "shadow"
@@ -2141,7 +2141,7 @@
     {
       "x": 710,
       "y": 390,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2150,7 +2150,7 @@
     {
       "x": 640,
       "y": 360,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -2158,8 +2158,8 @@
     },
     {
       "x": 600,
-      "y": 755,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground",
         "shadow",
@@ -2170,7 +2170,7 @@
     {
       "x": 700,
       "y": 690,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "ground"
       ],
@@ -2178,8 +2178,8 @@
     },
     {
       "x": 710,
-      "y": 740,
-      "radius": 15,
+      "y": 700,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -2188,7 +2188,7 @@
     {
       "x": 600,
       "y": 700,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2197,7 +2197,7 @@
     {
       "x": 570,
       "y": 620,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2206,7 +2206,7 @@
     {
       "x": 780,
       "y": 570,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground"
       ],
@@ -2215,7 +2215,7 @@
     {
       "x": 420,
       "y": 590,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure",
         "shadow"
@@ -2225,7 +2225,7 @@
     {
       "x": 290,
       "y": 610,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -2234,7 +2234,7 @@
     {
       "x": 210,
       "y": 380,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2243,7 +2243,7 @@
     {
       "x": 250,
       "y": 300,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -2252,7 +2252,7 @@
     {
       "x": 70,
       "y": 240,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2260,8 +2260,8 @@
     },
     {
       "x": 150,
-      "y": 720,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2269,8 +2269,8 @@
     },
     {
       "x": 450,
-      "y": 740,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground",
         "shadow"
@@ -2280,7 +2280,7 @@
     {
       "x": 420,
       "y": 560,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -2289,7 +2289,7 @@
     {
       "x": 390,
       "y": 670,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "ground"
       ],
@@ -2298,7 +2298,7 @@
     {
       "x": 1140,
       "y": 460,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2307,7 +2307,7 @@
     {
       "x": 1220,
       "y": 415,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -2316,7 +2316,7 @@
     {
       "x": 1300,
       "y": 620,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -2325,7 +2325,7 @@
     {
       "x": 550,
       "y": 180,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -2334,7 +2334,7 @@
     {
       "x": 450,
       "y": 480,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground",
         "shadow",
@@ -2345,7 +2345,7 @@
     {
       "x": 710,
       "y": 420,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -2356,7 +2356,7 @@
     {
       "x": 230,
       "y": 560,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -2365,7 +2365,7 @@
     {
       "x": 100,
       "y": 700,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "ground"
       ],
@@ -2374,7 +2374,7 @@
     {
       "x": 200,
       "y": 650,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage",
         "ground"
@@ -2384,7 +2384,7 @@
     {
       "x": 350,
       "y": 590,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2393,7 +2393,7 @@
     {
       "x": 180,
       "y": 440,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "foliage"
       ],
@@ -2402,7 +2402,7 @@
     {
       "x": 230,
       "y": 320,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -2411,7 +2411,7 @@
     {
       "x": 280,
       "y": 400,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "structure"
       ],
@@ -2420,7 +2420,7 @@
     {
       "x": 280,
       "y": 150,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "sky",
         "structure"
@@ -2430,7 +2430,7 @@
     {
       "x": 180,
       "y": 140,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2439,7 +2439,7 @@
     {
       "x": 400,
       "y": 480,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "foliage"
       ],
@@ -2448,7 +2448,7 @@
     {
       "x": 440,
       "y": 620,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -2457,7 +2457,7 @@
     {
       "x": 550,
       "y": 640,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2466,7 +2466,7 @@
     {
       "x": 700,
       "y": 500,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "water"
       ],
@@ -2474,8 +2474,8 @@
     },
     {
       "x": 470,
-      "y": 720,
-      "radius": 25,
+      "y": 700,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -2483,8 +2483,8 @@
     },
     {
       "x": 820,
-      "y": 710,
-      "radius": 25,
+      "y": 700,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -2493,7 +2493,7 @@
     {
       "x": 710,
       "y": 620,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -2502,7 +2502,7 @@
     {
       "x": 600,
       "y": 580,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -2511,7 +2511,7 @@
     {
       "x": 580,
       "y": 450,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "foliage"
       ],
@@ -2520,7 +2520,7 @@
     {
       "x": 620,
       "y": 390,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -2529,7 +2529,7 @@
     {
       "x": 550,
       "y": 340,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -2538,7 +2538,7 @@
     {
       "x": 560,
       "y": 140,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "sky",
         "structure"
@@ -2548,7 +2548,7 @@
     {
       "x": 450,
       "y": 350,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -2557,7 +2557,7 @@
     {
       "x": 600,
       "y": 290,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "sky"
       ],
@@ -2566,7 +2566,7 @@
     {
       "x": 750,
       "y": 200,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2575,7 +2575,7 @@
     {
       "x": 800,
       "y": 100,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2584,7 +2584,7 @@
     {
       "x": 840,
       "y": 350,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -2593,7 +2593,7 @@
     {
       "x": 850,
       "y": 150,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "sky",
         "structure"
@@ -2603,7 +2603,7 @@
     {
       "x": 930,
       "y": 440,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "foliage"
       ],
@@ -2612,7 +2612,7 @@
     {
       "x": 980,
       "y": 320,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -2621,7 +2621,7 @@
     {
       "x": 900,
       "y": 490,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "foliage"
       ],
@@ -2630,7 +2630,7 @@
     {
       "x": 970,
       "y": 600,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -2639,7 +2639,7 @@
     {
       "x": 1050,
       "y": 550,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2648,7 +2648,7 @@
     {
       "x": 1100,
       "y": 690,
-      "radius": 45,
+      "radius": 56,
       "tags": [
         "ground"
       ],
@@ -2657,7 +2657,7 @@
     {
       "x": 1300,
       "y": 600,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage",
         "ground"
@@ -2666,8 +2666,8 @@
     },
     {
       "x": 1200,
-      "y": 740,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2676,7 +2676,7 @@
     {
       "x": 1150,
       "y": 480,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "foliage"
       ],
@@ -2685,7 +2685,7 @@
     {
       "x": 1200,
       "y": 340,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "foliage"
       ],
@@ -2694,7 +2694,7 @@
     {
       "x": 1250,
       "y": 220,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "sky"
       ],
@@ -2703,7 +2703,7 @@
     {
       "x": 1100,
       "y": 350,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -2712,7 +2712,7 @@
     {
       "x": 1300,
       "y": 100,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2721,7 +2721,7 @@
     {
       "x": 340,
       "y": 650,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2730,7 +2730,7 @@
     {
       "x": 150,
       "y": 620,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground",
         "shadow"
@@ -2740,7 +2740,7 @@
     {
       "x": 480,
       "y": 690,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "foliage",
         "ground"
@@ -2750,7 +2750,7 @@
     {
       "x": 690,
       "y": 660,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "water"
       ],
@@ -2759,7 +2759,7 @@
     {
       "x": 1020,
       "y": 620,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -2768,7 +2768,7 @@
     {
       "x": 1000,
       "y": 400,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "foliage"
       ],
@@ -2777,7 +2777,7 @@
     {
       "x": 290,
       "y": 300,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -2786,7 +2786,7 @@
     {
       "x": 1300,
       "y": 450,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "foliage"
       ],
@@ -2795,7 +2795,7 @@
     {
       "x": 350,
       "y": 280,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2804,7 +2804,7 @@
     {
       "x": 25,
       "y": 630,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -2815,7 +2815,7 @@
     {
       "x": 180,
       "y": 310,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -2824,7 +2824,7 @@
     {
       "x": 90,
       "y": 190,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2833,7 +2833,7 @@
     {
       "x": 100,
       "y": 110,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2842,7 +2842,7 @@
     {
       "x": 290,
       "y": 390,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "sky"
@@ -2852,7 +2852,7 @@
     {
       "x": 230,
       "y": 390,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "structure"
       ],
@@ -2861,7 +2861,7 @@
     {
       "x": 350,
       "y": 550,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "ground"
       ],
@@ -2870,7 +2870,7 @@
     {
       "x": 270,
       "y": 690,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "structure"
       ],
@@ -2878,8 +2878,8 @@
     },
     {
       "x": 150,
-      "y": 720,
-      "radius": 30,
+      "y": 700,
+      "radius": 37,
       "tags": [
         "ground",
         "shadow"
@@ -2888,8 +2888,8 @@
     },
     {
       "x": 70,
-      "y": 750,
-      "radius": 30,
+      "y": 700,
+      "radius": 37,
       "tags": [
         "structure",
         "ground"
@@ -2898,8 +2898,8 @@
     },
     {
       "x": 250,
-      "y": 750,
-      "radius": 35,
+      "y": 700,
+      "radius": 43,
       "tags": [
         "structure",
         "ground"
@@ -2908,8 +2908,8 @@
     },
     {
       "x": 300,
-      "y": 740,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "structure",
         "ground"
@@ -2919,7 +2919,7 @@
     {
       "x": 480,
       "y": 440,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -2928,7 +2928,7 @@
     {
       "x": 450,
       "y": 560,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -2937,7 +2937,7 @@
     {
       "x": 460,
       "y": 640,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -2946,7 +2946,7 @@
     {
       "x": 600,
       "y": 550,
-      "radius": 40,
+      "radius": 50,
       "tags": [
         "ground"
       ],
@@ -2955,7 +2955,7 @@
     {
       "x": 650,
       "y": 500,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -2964,7 +2964,7 @@
     {
       "x": 680,
       "y": 400,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "sky"
@@ -2974,7 +2974,7 @@
     {
       "x": 420,
       "y": 130,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2983,7 +2983,7 @@
     {
       "x": 750,
       "y": 100,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -2992,7 +2992,7 @@
     {
       "x": 580,
       "y": 690,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -3000,8 +3000,8 @@
     },
     {
       "x": 480,
-      "y": 740,
-      "radius": 40,
+      "y": 700,
+      "radius": 50,
       "tags": [
         "ground"
       ],
@@ -3009,8 +3009,8 @@
     },
     {
       "x": 580,
-      "y": 750,
-      "radius": 35,
+      "y": 700,
+      "radius": 43,
       "tags": [
         "structure",
         "ground"
@@ -3019,8 +3019,8 @@
     },
     {
       "x": 480,
-      "y": 750,
-      "radius": 30,
+      "y": 700,
+      "radius": 37,
       "tags": [
         "structure",
         "ground"
@@ -3029,8 +3029,8 @@
     },
     {
       "x": 420,
-      "y": 750,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "structure",
         "ground"
@@ -3040,7 +3040,7 @@
     {
       "x": 950,
       "y": 310,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3049,7 +3049,7 @@
     {
       "x": 1000,
       "y": 190,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -3058,7 +3058,7 @@
     {
       "x": 1200,
       "y": 110,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "sky"
       ],
@@ -3067,7 +3067,7 @@
     {
       "x": 880,
       "y": 480,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -3076,7 +3076,7 @@
     {
       "x": 780,
       "y": 550,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -3085,7 +3085,7 @@
     {
       "x": 1150,
       "y": 640,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure"
       ],
@@ -3093,8 +3093,8 @@
     },
     {
       "x": 1230,
-      "y": 740,
-      "radius": 40,
+      "y": 700,
+      "radius": 50,
       "tags": [
         "structure",
         "ground"
@@ -3103,8 +3103,8 @@
     },
     {
       "x": 1000,
-      "y": 740,
-      "radius": 30,
+      "y": 700,
+      "radius": 37,
       "tags": [
         "structure",
         "ground"
@@ -3113,8 +3113,8 @@
     },
     {
       "x": 1350,
-      "y": 750,
-      "radius": 35,
+      "y": 700,
+      "radius": 43,
       "tags": [
         "structure",
         "ground"
@@ -3123,8 +3123,8 @@
     },
     {
       "x": 900,
-      "y": 750,
-      "radius": 40,
+      "y": 700,
+      "radius": 50,
       "tags": [
         "ground"
       ],
@@ -3133,7 +3133,7 @@
     {
       "x": 750,
       "y": 700,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -3141,8 +3141,8 @@
     },
     {
       "x": 650,
-      "y": 730,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground",
         "shadow"
@@ -3152,7 +3152,7 @@
     {
       "x": 510,
       "y": 370,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3161,7 +3161,7 @@
     {
       "x": 1350,
       "y": 500,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure"
       ],
@@ -3170,7 +3170,7 @@
     {
       "x": 570,
       "y": 200,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "sky"
       ],
@@ -3179,7 +3179,7 @@
     {
       "x": 900,
       "y": 220,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "sky"
       ],
@@ -3188,7 +3188,7 @@
     {
       "x": 400,
       "y": 690,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure",
         "ground"
@@ -3197,8 +3197,8 @@
     },
     {
       "x": 100,
-      "y": 760,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground",
         "shadow"
@@ -3208,7 +3208,7 @@
     {
       "x": 35,
       "y": 590,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "structure",
         "ground"
@@ -3218,7 +3218,7 @@
     {
       "x": 180,
       "y": 600,
-      "radius": 35,
+      "radius": 43,
       "tags": [
         "ground"
       ],
@@ -3227,7 +3227,7 @@
     {
       "x": 400,
       "y": 500,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "structure",
         "sky"
@@ -3237,7 +3237,7 @@
     {
       "x": 520,
       "y": 600,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3246,7 +3246,7 @@
     {
       "x": 820,
       "y": 620,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3255,7 +3255,7 @@
     {
       "x": 360,
       "y": 660,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "ground"
@@ -3265,7 +3265,7 @@
     {
       "x": 1300,
       "y": 670,
-      "radius": 30,
+      "radius": 37,
       "tags": [
         "ground"
       ],
@@ -3274,7 +3274,7 @@
     {
       "x": 170,
       "y": 150,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3285,7 +3285,7 @@
     {
       "x": 160,
       "y": 110,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3294,7 +3294,7 @@
     {
       "x": 350,
       "y": 100,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "sky"
       ],
@@ -3303,7 +3303,7 @@
     {
       "x": 150,
       "y": 240,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -3312,7 +3312,7 @@
     {
       "x": 230,
       "y": 390,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3321,7 +3321,7 @@
     {
       "x": 600,
       "y": 280,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -3330,7 +3330,7 @@
     {
       "x": 800,
       "y": 120,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "sky"
       ],
@@ -3339,7 +3339,7 @@
     {
       "x": 950,
       "y": 390,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3348,7 +3348,7 @@
     {
       "x": 1040,
       "y": 240,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -3357,7 +3357,7 @@
     {
       "x": 1170,
       "y": 110,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3366,7 +3366,7 @@
     {
       "x": 1300,
       "y": 150,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "sky"
       ],
@@ -3375,7 +3375,7 @@
     {
       "x": 250,
       "y": 440,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3384,7 +3384,7 @@
     {
       "x": 220,
       "y": 500,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "ground",
         "shadow"
@@ -3394,7 +3394,7 @@
     {
       "x": 320,
       "y": 370,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3403,7 +3403,7 @@
     {
       "x": 330,
       "y": 470,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -3412,7 +3412,7 @@
     {
       "x": 200,
       "y": 580,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -3421,7 +3421,7 @@
     {
       "x": 310,
       "y": 620,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3430,7 +3430,7 @@
     {
       "x": 270,
       "y": 680,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "ground",
         "shadow"
@@ -3440,7 +3440,7 @@
     {
       "x": 420,
       "y": 580,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3449,7 +3449,7 @@
     {
       "x": 560,
       "y": 640,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3457,8 +3457,8 @@
     },
     {
       "x": 80,
-      "y": 710,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "structure",
         "ground"
@@ -3467,8 +3467,8 @@
     },
     {
       "x": 250,
-      "y": 730,
-      "radius": 15,
+      "y": 700,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -3477,7 +3477,7 @@
     {
       "x": 100,
       "y": 670,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure",
         "ground"
@@ -3486,8 +3486,8 @@
     },
     {
       "x": 350,
-      "y": 740,
-      "radius": 20,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -3495,8 +3495,8 @@
     },
     {
       "x": 200,
-      "y": 740,
-      "radius": 10,
+      "y": 700,
+      "radius": 12,
       "tags": [
         "ground"
       ],
@@ -3505,7 +3505,7 @@
     {
       "x": 390,
       "y": 520,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "structure"
       ],
@@ -3514,7 +3514,7 @@
     {
       "x": 520,
       "y": 500,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3523,7 +3523,7 @@
     {
       "x": 550,
       "y": 580,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "ground",
         "shadow"
@@ -3533,7 +3533,7 @@
     {
       "x": 600,
       "y": 470,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3542,7 +3542,7 @@
     {
       "x": 450,
       "y": 550,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -3551,7 +3551,7 @@
     {
       "x": 450,
       "y": 650,
-      "radius": 25,
+      "radius": 31,
       "tags": [
         "ground"
       ],
@@ -3560,7 +3560,7 @@
     {
       "x": 660,
       "y": 580,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3569,7 +3569,7 @@
     {
       "x": 750,
       "y": 590,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -3578,7 +3578,7 @@
     {
       "x": 720,
       "y": 650,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -3587,7 +3587,7 @@
     {
       "x": 500,
       "y": 630,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground",
         "structure"
@@ -3597,7 +3597,7 @@
     {
       "x": 680,
       "y": 680,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "ground",
         "structure"
@@ -3607,7 +3607,7 @@
     {
       "x": 920,
       "y": 420,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3616,7 +3616,7 @@
     {
       "x": 1050,
       "y": 480,
-      "radius": 10,
+      "radius": 12,
       "tags": [
         "ground",
         "shadow"
@@ -3626,7 +3626,7 @@
     {
       "x": 1100,
       "y": 440,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "structure"
       ],
@@ -3635,7 +3635,7 @@
     {
       "x": 1000,
       "y": 460,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "ground"
       ],
@@ -3644,7 +3644,7 @@
     {
       "x": 1150,
       "y": 550,
-      "radius": 15,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -3653,7 +3653,7 @@
     {
       "x": 1250,
       "y": 540,
-      "radius": 8,
+      "radius": 10,
       "tags": [
         "ground"
       ],
@@ -3662,7 +3662,7 @@
     {
       "x": 1250,
       "y": 660,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "ground"
@@ -3671,8 +3671,8 @@
     },
     {
       "x": 1200,
-      "y": 710,
-      "radius": 15,
+      "y": 700,
+      "radius": 18,
       "tags": [
         "structure",
         "ground"
@@ -3681,8 +3681,8 @@
     },
     {
       "x": 1050,
-      "y": 730,
-      "radius": 10,
+      "y": 700,
+      "radius": 12,
       "tags": [
         "structure",
         "ground"
@@ -3691,8 +3691,8 @@
     },
     {
       "x": 1300,
-      "y": 730,
-      "radius": 15,
+      "y": 700,
+      "radius": 18,
       "tags": [
         "ground"
       ],
@@ -3701,7 +3701,7 @@
     {
       "x": 1350,
       "y": 700,
-      "radius": 20,
+      "radius": 25,
       "tags": [
         "structure",
         "ground"
@@ -3710,8 +3710,8 @@
     },
     {
       "x": 950,
-      "y": 710,
-      "radius": 15,
+      "y": 700,
+      "radius": 18,
       "tags": [
         "ground",
         "structure"
@@ -3720,8 +3720,8 @@
     },
     {
       "x": 1150,
-      "y": 740,
-      "radius": 10,
+      "y": 700,
+      "radius": 12,
       "tags": [
         "ground"
       ],
@@ -3729,8 +3729,8 @@
     },
     {
       "x": 850,
-      "y": 750,
-      "radius": 8,
+      "y": 700,
+      "radius": 10,
       "tags": [
         "ground"
       ],
@@ -3738,8 +3738,8 @@
     },
     {
       "x": 650,
-      "y": 740,
-      "radius": 8,
+      "y": 700,
+      "radius": 10,
       "tags": [
         "ground",
         "structure"

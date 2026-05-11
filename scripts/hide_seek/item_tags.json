@@ -242,10 +242,6 @@
     ]
   },
   "construction_site": {
-    "safety_vest": [
-      "ground",
-      "structure"
-    ],
     "dump_truck": [
       "ground"
     ],
@@ -276,6 +272,14 @@
     ],
     "excavator": [
       "ground"
+    ],
+    "ladder": [
+      "structure",
+      "ground"
+    ],
+    "safety_vest": [
+      "ground",
+      "structure"
     ]
   },
   "monster_truck_jam": {

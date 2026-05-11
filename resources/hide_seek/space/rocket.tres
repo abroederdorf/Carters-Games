@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://0x3ntskjjs4u"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_qp3dw"]
-[ext_resource type="Texture2D" uid="uid://bxalbdiy84wnm" path="res://assets/sprites/hide_seek/space/rocket.png" id="2_2y0d6"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_qp3dw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/rocket.png" id="2_2y0d6"]
 
 [resource]
 script = ExtResource("1_qp3dw")

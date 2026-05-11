@@ -656,7 +656,7 @@ func _handle_tap(screen_pos: Vector2) -> void:
 func _on_item_found(index: int) -> void:
 	_found[index] = true
 	_found_count += 1
-	AudioManager.play_sfx("catch")
+	AudioManager.play_sfx("pop")
 
 	var card := _thumb_nodes[index]
 	(card.get_child(1) as CanvasItem).visible = true  # green overlay
