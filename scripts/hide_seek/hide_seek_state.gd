@@ -22,10 +22,10 @@ func _ready() -> void:
 func _load() -> void:
 	if FileAccess.file_exists(SAVE_PATH):
 		var f := FileAccess.open(SAVE_PATH, FileAccess.READ)
-		var parsed = JSON.parse_string(f.get_as_text())
+		var parsed: Variant = JSON.parse_string(f.get_as_text())
 		f.close()
 		if parsed is Dictionary:
-			_progress = parsed
+			_progress = parsed as Dictionary
 	_ensure_defaults()
 
 func _ensure_defaults() -> void:
@@ -33,7 +33,8 @@ func _ensure_defaults() -> void:
 		var sname := SCENE_ORDER[i]
 		if not _progress.has(sname):
 			_progress[sname] = {"stars": 0, "completed": false, "unlocked": i == 0}
-	_progress[SCENE_ORDER[0]]["unlocked"] = true
+	var first: Dictionary = _progress[SCENE_ORDER[0]]
+	first["unlocked"] = true
 
 func save() -> void:
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -41,20 +42,31 @@ func save() -> void:
 	f.close()
 
 func is_unlocked(sname: String) -> bool:
-	return _progress.get(sname, {}).get("unlocked", false)
+	if not _progress.has(sname):
+		return false
+	var entry: Dictionary = _progress[sname]
+	return entry.get("unlocked", false)
 
 func is_completed(sname: String) -> bool:
-	return _progress.get(sname, {}).get("completed", false)
+	if not _progress.has(sname):
+		return false
+	var entry: Dictionary = _progress[sname]
+	return entry.get("completed", false)
 
 func get_stars(sname: String) -> int:
-	return _progress.get(sname, {}).get("stars", 0)
+	if not _progress.has(sname):
+		return 0
+	var entry: Dictionary = _progress[sname]
+	return entry.get("stars", 0)
 
 func complete_scene(sname: String, stars: int) -> void:
 	if not _progress.has(sname):
 		return
-	_progress[sname]["stars"] = max(_progress[sname].get("stars", 0), stars)
-	_progress[sname]["completed"] = true
+	var entry: Dictionary = _progress[sname]
+	entry["stars"] = max(entry.get("stars", 0), stars)
+	entry["completed"] = true
 	var idx := SCENE_ORDER.find(sname)
 	if idx >= 0 and idx + 1 < SCENE_ORDER.size():
-		_progress[SCENE_ORDER[idx + 1]]["unlocked"] = true
+		var next: Dictionary = _progress[SCENE_ORDER[idx + 1]]
+		next["unlocked"] = true
 	save()
