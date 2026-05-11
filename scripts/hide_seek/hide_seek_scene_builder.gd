@@ -18,6 +18,8 @@ var _radius_slider: HSlider
 var _radius_label: Label
 var _scale_slider: HSlider
 var _scale_label: Label
+var _tags_input: LineEdit
+var _difficulty_option: OptionButton
 
 var _bg_dialog: FileDialog
 var _thumb_dialog: FileDialog
@@ -169,6 +171,32 @@ func _build_ui() -> void:
 	_scale_label.text = "1.0"
 	_scale_label.custom_minimum_size.x = 28
 	scale_hbox.add_child(_scale_label)
+
+	# Tags row
+	var tags_hbox := HBoxContainer.new()
+	_selected_panel.add_child(tags_hbox)
+	var tags_lbl := Label.new()
+	tags_lbl.text = "Tags:"
+	tags_hbox.add_child(tags_lbl)
+	_tags_input = LineEdit.new()
+	_tags_input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_tags_input.placeholder_text = "ground, sky..."
+	_tags_input.text_changed.connect(_on_tags_changed)
+	tags_hbox.add_child(_tags_input)
+
+	# Difficulty row
+	var diff_hbox := HBoxContainer.new()
+	_selected_panel.add_child(diff_hbox)
+	var diff_lbl := Label.new()
+	diff_lbl.text = "Diff:"
+	diff_hbox.add_child(diff_lbl)
+	_difficulty_option = OptionButton.new()
+	_difficulty_option.add_item("Easy", 0)
+	_difficulty_option.add_item("Medium", 1)
+	_difficulty_option.add_item("Hard", 2)
+	_difficulty_option.item_selected.connect(_on_difficulty_selected)
+	_difficulty_option.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	diff_hbox.add_child(_difficulty_option)
 
 	var del_btn := Button.new()
 	del_btn.text = "Delete Item"
@@ -339,19 +367,26 @@ func _refresh_selected_panel() -> void:
 		_thumb_preview.get_parent().get_child(1).visible = true # Thumbnail button
 		_thumb_preview.visible = true
 		_scale_slider.get_parent().visible = true
+		_tags_input.get_parent().visible = true
+		_difficulty_option.get_parent().visible = false
 		_name_input.text = obj.item_name
 		_radius_slider.value = obj.radius
 		_radius_label.text = str(int(obj.radius))
 		_scale_slider.value = obj.scale_multiplier
 		_scale_label.text = "%.2f" % obj.scale_multiplier
 		_thumb_preview.texture = obj.thumbnail
+		_tags_input.text = ", ".join(obj.tags)
 	else: # ANCHORS
 		_name_input.get_parent().visible = false
 		_thumb_preview.get_parent().get_child(1).visible = false
 		_thumb_preview.visible = false
 		_scale_slider.get_parent().visible = false
+		_tags_input.get_parent().visible = true
+		_difficulty_option.get_parent().visible = true
 		_radius_slider.value = obj.radius
 		_radius_label.text = str(int(obj.radius))
+		_tags_input.text = ", ".join(obj.tags)
+		_difficulty_option.selected = obj.difficulty
 		
 	_updating_ui = false
 
@@ -377,6 +412,23 @@ func _on_scale_changed(value: float) -> void:
 	_scene_data.items[_selected_index].scale_multiplier = value
 	_scale_label.text = "%.2f" % value
 	_canvas.setup(_scene_data, _selected_index)
+
+func _on_tags_changed(new_text: String) -> void:
+	if _updating_ui or _selected_index < 0:
+		return
+	var list: Array = _scene_data.items if _mode == 0 else _scene_data.anchors
+	var tags_list: Array[String] = []
+	for t in new_text.split(","):
+		var cleaned = t.strip_edges()
+		if not cleaned.is_empty():
+			tags_list.append(cleaned)
+	list[_selected_index].tags = tags_list
+
+func _on_difficulty_selected(index: int) -> void:
+	if _updating_ui or _selected_index < 0 or _mode != 1:
+		return
+	_scene_data.anchors[_selected_index].difficulty = index
+	_set_status("Anchor %d set to %s" % [_selected_index + 1, _difficulty_option.get_item_text(index)])
 
 func _on_pick_thumb_pressed() -> void:
 	_thumb_dialog.popup_centered()

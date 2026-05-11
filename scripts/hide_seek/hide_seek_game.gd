@@ -82,22 +82,81 @@ func _ready() -> void:
 
 func _assign_items_to_anchors() -> void:
 	_active_item_data.clear()
-	var anchors := _scene_data.anchors.duplicate()
-	anchors = anchors.filter(func(a: HideSeekAnchor) -> bool:
-		return a.position.x >= 0.0 and a.position.x <= _bg_size.x \
-			and a.position.y >= 0.0 and a.position.y <= _bg_size.y
-	)
-	anchors.shuffle()
-
+	
+	# 1. Filter and separate anchors by difficulty
+	var standard_anchors: Array[HideSeekAnchor] = []
+	var hard_anchors: Array[HideSeekAnchor] = []
+	
+	for a in _scene_data.anchors:
+		if a.position.x < 0.0 or a.position.x > _bg_size.x \
+			or a.position.y < 0.0 or a.position.y > _bg_size.y:
+			continue
+			
+		if a.difficulty >= 2:
+			hard_anchors.append(a)
+		else:
+			standard_anchors.append(a)
+	
+	standard_anchors.shuffle()
+	hard_anchors.shuffle()
+	
+	# 2. Select the pool for this session (Target: _active_items.size())
+	var session_anchors: Array[HideSeekAnchor] = []
+	
+	# Aim for 2 hard anchors if available
+	var hard_count = min(2, hard_anchors.size())
+	for i in hard_count:
+		session_anchors.append(hard_anchors.pop_back())
+		
+	# Fill the rest with standard anchors
+	var needed = _active_items.size() - session_anchors.size()
+	for i in min(needed, standard_anchors.size()):
+		session_anchors.append(standard_anchors.pop_back())
+	
+	session_anchors.shuffle()
+	
+	# 3. Match items to anchors via tags
+	var used_anchors: Array[bool] = []
+	used_anchors.resize(session_anchors.size())
+	used_anchors.fill(false)
+	
 	for i in _active_items.size():
 		var item := _active_items[i]
+		var assigned_anchor: HideSeekAnchor = null
+		
+		# Try to find a matching tagged anchor
+		for j in session_anchors.size():
+			if used_anchors[j]: continue
+			var anchor = session_anchors[j]
+			
+			var has_match = false
+			if item.tags.is_empty() or anchor.tags.is_empty():
+				has_match = true # Fallback if no tags defined
+			else:
+				for t in item.tags:
+					if t in anchor.tags:
+						has_match = true
+						break
+			
+			if has_match:
+				assigned_anchor = anchor
+				used_anchors[j] = true
+				break
+		
+		# Fallback: if no match found, pick any unused session anchor
+		if assigned_anchor == null:
+			for j in session_anchors.size():
+				if not used_anchors[j]:
+					assigned_anchor = session_anchors[j]
+					used_anchors[j] = true
+					break
+		
+		# Final result
 		var data := {"pos": item.position, "radius": item.radius}
-
-		if i < anchors.size():
-			var anchor: HideSeekAnchor = anchors[i]
-			data["pos"] = anchor.position
-			data["radius"] = anchor.radius * item.scale_multiplier
-
+		if assigned_anchor != null:
+			data["pos"] = assigned_anchor.position
+			data["radius"] = assigned_anchor.radius * item.scale_multiplier
+			
 		_active_item_data.append(data)
 
 

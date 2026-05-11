@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://bo8awwflb3rt6"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_ykar6"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_ykar6"]
 
 [resource]
 script = ExtResource("1_ykar6")
 item_name = "hiker"
 position = Vector2(1100, 650)
 radius = 70.0
+tags = Array[String](["ground"])

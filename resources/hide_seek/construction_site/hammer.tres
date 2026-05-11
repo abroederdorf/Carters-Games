@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://c6g4mqt85dmib"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_ym2br"]
-[ext_resource type="Texture2D" uid="uid://blp7tprmesg6g" path="res://assets/sprites/hide_seek/construction_site/hammer.png" id="2_pvt3j"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_ym2br"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/hammer.png" id="2_pvt3j"]
 
 [resource]
 script = ExtResource("1_ym2br")
@@ -9,3 +9,4 @@ item_name = "hammer"
 thumbnail = ExtResource("2_pvt3j")
 position = Vector2(120, 930)
 radius = 40.0
+tags = Array[String](["ground", "structure"])

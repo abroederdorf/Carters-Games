@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://bibb1xallk2fo"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_fkli0"]
-[ext_resource type="Texture2D" uid="uid://bjqv5umdkvnvv" path="res://assets/sprites/hide_seek/jungle/monkey.png" id="2_3vxth"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_fkli0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/monkey.png" id="2_3vxth"]
 
 [resource]
 script = ExtResource("1_fkli0")
@@ -9,3 +9,4 @@ item_name = "monkey"
 thumbnail = ExtResource("2_3vxth")
 position = Vector2(1610, 430)
 radius = 75.0
+tags = Array[String](["foliage", "ground"])

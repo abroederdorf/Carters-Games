@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://dqi5a7seehu7o"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_px8ma"]
-[ext_resource type="Texture2D" uid="uid://chlmsjkds2mrg" path="res://assets/sprites/hide_seek/fire_station/ladder.png" id="2_421xi"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_px8ma"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/ladder.png" id="2_421xi"]
 
 [resource]
 script = ExtResource("1_px8ma")
@@ -9,3 +9,4 @@ item_name = "ladder"
 thumbnail = ExtResource("2_421xi")
 position = Vector2(1850, 300)
 radius = 90.0
+tags = Array[String](["ground", "structure"])

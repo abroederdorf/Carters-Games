@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://ywlvb3y5xavd"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_m3ccl"]
-[ext_resource type="Texture2D" uid="uid://cx8yvgo8gou7t" path="res://assets/sprites/hide_seek/space/astronaut.png" id="2_bncnx"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_m3ccl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/astronaut.png" id="2_bncnx"]
 
 [resource]
 script = ExtResource("1_m3ccl")
@@ -9,3 +9,4 @@ item_name = "astronaut"
 thumbnail = ExtResource("2_bncnx")
 position = Vector2(1100, 500)
 radius = 75.0
+tags = Array[String](["ground", "structure"])

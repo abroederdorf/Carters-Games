@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://djodj4cm0i1ra"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_qajr5"]
-[ext_resource type="Texture2D" uid="uid://5o0kfdq18ui4" path="res://assets/sprites/hide_seek/fire_station/bell.png" id="2_vdur6"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_qajr5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/fire_station/bell.png" id="2_vdur6"]
 
 [resource]
 script = ExtResource("1_qajr5")
@@ -9,3 +9,4 @@ item_name = "bell"
 thumbnail = ExtResource("2_vdur6")
 position = Vector2(1350, 70)
 radius = 45.0
+tags = Array[String](["structure"])

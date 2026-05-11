@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://dkaikh4brg6mf"]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_moq0r"]
-[ext_resource type="Texture2D" uid="uid://juewca25bh3a" path="res://assets/sprites/hide_seek/space/flying_saucer.png" id="2_mnqnl"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_moq0r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/flying_saucer.png" id="2_mnqnl"]
 
 [resource]
 script = ExtResource("1_moq0r")
@@ -9,3 +9,4 @@ item_name = "flying_saucer"
 thumbnail = ExtResource("2_mnqnl")
 position = Vector2(300, 100)
 radius = 90.0
+tags = Array[String](["sky"])
