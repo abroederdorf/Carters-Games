@@ -4,24 +4,30 @@ from PIL import Image
 
 ASSET_ROOT = Path("assets/sprites/hide_seek")
 
-def make_transparent(image_path, threshold=240):
+def make_transparent(image_path, tolerance=20):
     """
-    Makes the white background of an image transparent.
-    threshold: Any pixel where R, G, and B are all above this value will be made transparent.
+    Makes the background of an image transparent using a flood fill from the corners.
+    This preserves white pixels inside the object.
     """
     print(f"Processing: {image_path}")
     img = Image.open(image_path).convert("RGBA")
-    datas = img.getdata()
+    
+    # Use flood fill from the four corners (0,0), (w-1,0), (0,h-1), (w-1,h-1)
+    # Target color is usually white (255,255,255)
+    width, height = img.size
+    
+    # We'll use a mask-based approach or ImageDraw.floodfill
+    from PIL import ImageDraw
+    
+    # Coordinates to start flood fill from
+    seeds = [(0, 0), (width-1, 0), (0, height-1), (width-1, height-1)]
+    
+    for seed in seeds:
+        pixel = img.getpixel(seed)
+        # Only start if the corner is actually "whitish"
+        if pixel[0] >= 230 and pixel[1] >= 230 and pixel[2] >= 230:
+            ImageDraw.floodfill(img, seed, (255, 255, 255, 0), thresh=tolerance)
 
-    new_data = []
-    for item in datas:
-        # Check if pixel is "white enough"
-        if item[0] >= threshold and item[1] >= threshold and item[2] >= threshold:
-            new_data.append((255, 255, 255, 0))
-        else:
-            new_data.append(item)
-
-    img.putdata(new_data)
     img.save(image_path)
 
 def main():

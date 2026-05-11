@@ -100,7 +100,7 @@ func _assign_items_to_anchors() -> void:
 	standard_anchors.shuffle()
 	hard_anchors.shuffle()
 	
-	# 2. Select the pool for this session (Target: _active_items.size())
+	# 2. Select the pool for this session (Target: more than items.size to allow matching)
 	var session_anchors: Array[HideSeekAnchor] = []
 	
 	# Aim for 2 hard anchors if available
@@ -108,10 +108,12 @@ func _assign_items_to_anchors() -> void:
 	for i in hard_count:
 		session_anchors.append(hard_anchors.pop_back())
 		
-	# Fill the rest with standard anchors
-	var needed = _active_items.size() - session_anchors.size()
-	for i in min(needed, standard_anchors.size()):
-		session_anchors.append(standard_anchors.pop_back())
+	# Fill with standard anchors to give the matcher breathing room
+	# (We pick 20 anchors for 10 items to ensure tag matching works)
+	var needed = min(20, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
+	for i in needed:
+		if not standard_anchors.is_empty():
+			session_anchors.append(standard_anchors.pop_back())
 	
 	session_anchors.shuffle()
 	
@@ -124,26 +126,37 @@ func _assign_items_to_anchors() -> void:
 		var item := _active_items[i]
 		var assigned_anchor: HideSeekAnchor = null
 		
-		# Try to find a matching tagged anchor
-		for j in session_anchors.size():
-			if used_anchors[j]: continue
-			var anchor = session_anchors[j]
-			
-			var has_match = false
-			if item.tags.is_empty() or anchor.tags.is_empty():
-				has_match = true # Fallback if no tags defined
-			else:
+		# PASS 1: Strict Tag Matching
+		if not item.tags.is_empty():
+			for j in session_anchors.size():
+				if used_anchors[j]: continue
+				var anchor = session_anchors[j]
+				
 				for t in item.tags:
 					if t in anchor.tags:
-						has_match = true
+						assigned_anchor = anchor
+						used_anchors[j] = true
 						break
-			
-			if has_match:
+				if assigned_anchor: break
+		
+		# PASS 2: Fallback for generic items or no tag match
+		if assigned_anchor == null:
+			for j in session_anchors.size():
+				if used_anchors[j]: continue
+				var anchor = session_anchors[j]
+				
+				# Avoid putting ground items in the sky/water if possible
+				var is_sky_water = ("sky" in anchor.tags or "water" in anchor.tags)
+				var is_ground_item = ("ground" in item.tags)
+				
+				if is_ground_item and is_sky_water:
+					continue # Try to find a better spot
+					
 				assigned_anchor = anchor
 				used_anchors[j] = true
 				break
-		
-		# Fallback: if no match found, pick any unused session anchor
+				
+		# PASS 3: Absolute fallback (ran out of good spots)
 		if assigned_anchor == null:
 			for j in session_anchors.size():
 				if not used_anchors[j]:
