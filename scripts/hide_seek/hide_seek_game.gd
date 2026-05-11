@@ -37,6 +37,7 @@ var _canvas_root: Node2D
 var _timer_label: Label
 var _hint_stars_label: Label
 var _thumb_nodes: Array[Control] = []
+var _item_sprites: Array[Sprite2D] = []
 var _win_overlay: Control
 var _win_stars_label: Label
 var _win_time_label: Label
@@ -101,10 +102,27 @@ func _build_ui() -> void:
 	bg_sprite.texture = bg_tex
 	bg_sprite.centered = false
 	_canvas_root.add_child(bg_sprite)
+	_build_item_sprites()
 
 	_build_top_bar()
 	_build_thumb_strip()
 	_build_win_overlay()
+
+
+func _build_item_sprites() -> void:
+	for i in _scene_data.items.size():
+		var item: HideSeekItemData = _scene_data.items[i]
+		var tex := _get_item_texture(item)
+		var sprite := Sprite2D.new()
+		sprite.centered = true
+		sprite.position = item.position
+		if tex != null:
+			sprite.texture = tex
+			var max_dim := float(max(tex.get_width(), tex.get_height()))
+			if max_dim > 0.0:
+				sprite.scale = Vector2.ONE * ((item.radius * 2.0) / max_dim)
+		_canvas_root.add_child(sprite)
+		_item_sprites.append(sprite)
 
 
 func _build_top_bar() -> void:
@@ -459,6 +477,11 @@ func _on_item_found(index: int) -> void:
 	var card := _thumb_nodes[index]
 	(card.get_child(1) as CanvasItem).visible = true  # green overlay
 	(card.get_child(2) as CanvasItem).visible = true  # check label
+
+	# Fade the canvas sprite out
+	var sprite := _item_sprites[index]
+	var fade := create_tween()
+	fade.tween_property(sprite, "modulate:a", 0.0, 0.4)
 
 	_show_found_flash(index)
 
