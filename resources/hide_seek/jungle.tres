@@ -17,328 +17,321 @@
 
 [sub_resource type="Resource" id="Resource_3pcbq"]
 script = ExtResource("1_3pcbq")
-position = Vector2(150, 950)
-radius = 90.0
+position = Vector2(100, 680)
+radius = 30.0
 difficulty = 0
-tags = Array[String](["foliage"])
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_vsats"]
 script = ExtResource("1_3pcbq")
-position = Vector2(350, 900)
-radius = 70.0
-tags = Array[String](["ground", "structure", "shadow"])
+position = Vector2(150, 500)
+radius = 20.0
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_7h8qs"]
 script = ExtResource("1_3pcbq")
-position = Vector2(270, 780)
-radius = 60.0
-tags = Array[String](["structure", "shadow"])
+position = Vector2(200, 700)
+radius = 35.0
+tags = Array[String](["ground", "structure", "foliage"])
 
 [sub_resource type="Resource" id="Resource_87j6v"]
 script = ExtResource("1_3pcbq")
-position = Vector2(550, 980)
-radius = 80.0
-difficulty = 0
+position = Vector2(50, 720)
+radius = 25.0
 tags = Array[String](["foliage", "ground"])
 
 [sub_resource type="Resource" id="Resource_v4xi2"]
 script = ExtResource("1_3pcbq")
-position = Vector2(620, 850)
-difficulty = 0
-tags = Array[String](["water", "ground"])
+position = Vector2(250, 300)
+radius = 20.0
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_d076x"]
 script = ExtResource("1_3pcbq")
-position = Vector2(480, 780)
-radius = 40.0
-tags = Array[String](["foliage", "ground"])
+position = Vector2(80, 200)
+radius = 25.0
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_o3jcm"]
 script = ExtResource("1_3pcbq")
-position = Vector2(220, 650)
-radius = 60.0
+position = Vector2(180, 400)
+radius = 25.0
 difficulty = 0
-tags = Array[String](["foliage", "structure"])
+tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_l8m0n"]
 script = ExtResource("1_3pcbq")
-position = Vector2(50, 800)
-radius = 70.0
-difficulty = 0
-tags = Array[String](["foliage"])
+position = Vector2(300, 650)
+radius = 30.0
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_p8e40"]
 script = ExtResource("1_3pcbq")
-position = Vector2(750, 930)
-radius = 70.0
+position = Vector2(350, 600)
+radius = 30.0
 difficulty = 0
-tags = Array[String](["water"])
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_keyr2"]
 script = ExtResource("1_3pcbq")
-position = Vector2(700, 700)
-radius = 90.0
-difficulty = 0
+position = Vector2(20, 580)
+radius = 25.0
 tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_nku0q"]
 script = ExtResource("1_3pcbq")
-position = Vector2(450, 650)
-radius = 60.0
-tags = Array[String](["structure", "foliage", "shadow"])
+position = Vector2(10, 400)
+radius = 20.0
+difficulty = 2
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_g6xkm"]
 script = ExtResource("1_3pcbq")
-position = Vector2(780, 550)
-tags = Array[String](["water", "shadow"])
+position = Vector2(400, 550)
+radius = 25.0
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_6ff2o"]
 script = ExtResource("1_3pcbq")
-position = Vector2(700, 480)
-radius = 45.0
-tags = Array[String](["structure", "water"])
+position = Vector2(450, 680)
+radius = 25.0
+difficulty = 0
+tags = Array[String](["water", "ground"])
 
 [sub_resource type="Resource" id="Resource_yfcmh"]
 script = ExtResource("1_3pcbq")
-position = Vector2(280, 450)
-radius = 55.0
-tags = Array[String](["foliage", "structure"])
+position = Vector2(400, 720)
+radius = 20.0
+tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_3dr3w"]
 script = ExtResource("1_3pcbq")
-position = Vector2(450, 500)
-radius = 40.0
-tags = Array[String](["structure"])
+position = Vector2(550, 700)
+radius = 20.0
+tags = Array[String](["water", "ground"])
 
 [sub_resource type="Resource" id="Resource_gmh0m"]
 script = ExtResource("1_3pcbq")
-position = Vector2(600, 380)
-radius = 70.0
-difficulty = 0
-tags = Array[String](["foliage"])
+position = Vector2(380, 640)
+radius = 20.0
+tags = Array[String](["foliage", "ground"])
 
 [sub_resource type="Resource" id="Resource_kobma"]
 script = ExtResource("1_3pcbq")
-position = Vector2(400, 150)
-radius = 80.0
-difficulty = 0
-tags = Array[String](["sky"])
+position = Vector2(470, 600)
+radius = 30.0
+tags = Array[String](["structure", "ground", "foliage"])
 
 [sub_resource type="Resource" id="Resource_fd8qk"]
 script = ExtResource("1_3pcbq")
-position = Vector2(250, 120)
-radius = 90.0
-difficulty = 0
-tags = Array[String](["foliage"])
+position = Vector2(500, 450)
+radius = 20.0
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_nwhku"]
 script = ExtResource("1_3pcbq")
-position = Vector2(500, 200)
-radius = 35.0
+position = Vector2(550, 250)
+radius = 25.0
+difficulty = 0
 tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_sqvke"]
 script = ExtResource("1_3pcbq")
-position = Vector2(150, 300)
-radius = 60.0
-difficulty = 0
-tags = Array[String](["foliage", "structure"])
+position = Vector2(490, 350)
+radius = 20.0
+difficulty = 2
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_tf27u"]
 script = ExtResource("1_3pcbq")
-position = Vector2(850, 750)
-radius = 60.0
-tags = Array[String](["ground", "foliage"])
+position = Vector2(480, 500)
+radius = 30.0
+tags = Array[String](["water", "foliage"])
 
 [sub_resource type="Resource" id="Resource_gb4mm"]
 script = ExtResource("1_3pcbq")
-position = Vector2(960, 700)
-radius = 80.0
-difficulty = 0
+position = Vector2(500, 350)
+radius = 25.0
 tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_l33lq"]
 script = ExtResource("1_3pcbq")
-position = Vector2(900, 580)
-radius = 60.0
-tags = Array[String](["structure", "foliage"])
+position = Vector2(450, 550)
+radius = 25.0
+difficulty = 2
+tags = Array[String](["foliage", "water"])
 
 [sub_resource type="Resource" id="Resource_qj4a1"]
 script = ExtResource("1_3pcbq")
-position = Vector2(930, 450)
-tags = Array[String](["structure"])
+position = Vector2(600, 650)
+radius = 30.0
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_e1lae"]
 script = ExtResource("1_3pcbq")
-position = Vector2(920, 300)
-radius = 70.0
-difficulty = 0
-tags = Array[String](["foliage"])
+position = Vector2(640, 480)
+radius = 20.0
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_1ilek"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1250, 400)
-radius = 55.0
-tags = Array[String](["structure", "water"])
+position = Vector2(700, 200)
+radius = 30.0
+difficulty = 2
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_nsk2p"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1280, 500)
-radius = 60.0
-tags = Array[String](["water", "shadow"])
+position = Vector2(620, 580)
+radius = 20.0
+tags = Array[String](["foliage", "ground"])
 
 [sub_resource type="Resource" id="Resource_6f3oe"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1100, 720)
-radius = 80.0
+position = Vector2(650, 680)
+radius = 25.0
 difficulty = 0
-tags = Array[String](["foliage"])
+tags = Array[String](["water", "ground"])
 
 [sub_resource type="Resource" id="Resource_c6v3n"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1050, 800)
-difficulty = 0
-tags = Array[String](["water", "ground"])
+position = Vector2(750, 710)
+radius = 20.0
+tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_tv8qj"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1650, 600)
-radius = 60.0
-difficulty = 0
-tags = Array[String](["foliage", "structure"])
+position = Vector2(700, 650)
+radius = 20.0
+difficulty = 2
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_6mpbi"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1720, 450)
-radius = 60.0
-tags = Array[String](["structure", "shadow"])
+position = Vector2(700, 550)
+radius = 30.0
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_1aylc"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1680, 670)
-radius = 60.0
-tags = Array[String](["structure", "shadow"])
+position = Vector2(850, 150)
+radius = 30.0
+tags = Array[String](["foliage", "sky"])
 
 [sub_resource type="Resource" id="Resource_ccolp"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1550, 900)
-radius = 70.0
-tags = Array[String](["ground", "structure", "shadow"])
+position = Vector2(800, 400)
+radius = 25.0
+difficulty = 2
+tags = Array[String](["foliage", "shadow"])
 
 [sub_resource type="Resource" id="Resource_l4xtg"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1750, 950)
-radius = 90.0
+position = Vector2(1120, 390)
+radius = 30.0
 difficulty = 0
-tags = Array[String](["foliage"])
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_hrfoh"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1700, 820)
-radius = 40.0
-tags = Array[String](["foliage", "ground"])
+position = Vector2(1150, 550)
+radius = 30.0
+difficulty = 0
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_0mn6i"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1850, 800)
-radius = 70.0
-difficulty = 0
-tags = Array[String](["foliage"])
+position = Vector2(1050, 250)
+radius = 20.0
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_sp71v"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1380, 350)
-radius = 70.0
-difficulty = 0
-tags = Array[String](["foliage"])
+position = Vector2(1200, 480)
+radius = 20.0
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_0bvra"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1600, 150)
-radius = 80.0
-difficulty = 0
-tags = Array[String](["sky"])
+position = Vector2(1280, 690)
+radius = 35.0
+tags = Array[String](["ground", "structure", "foliage"])
 
 [sub_resource type="Resource" id="Resource_c3dy2"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1700, 120)
-radius = 90.0
-difficulty = 0
-tags = Array[String](["foliage"])
+position = Vector2(1000, 700)
+radius = 25.0
+difficulty = 2
+tags = Array[String](["foliage", "ground"])
 
 [sub_resource type="Resource" id="Resource_k6px4"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1800, 300)
-radius = 60.0
-difficulty = 0
-tags = Array[String](["foliage", "structure"])
+position = Vector2(1350, 650)
+radius = 20.0
+tags = Array[String](["foliage", "ground"])
 
 [sub_resource type="Resource" id="Resource_l7f3g"]
 script = ExtResource("1_3pcbq")
-position = Vector2(200, 550)
-radius = 40.0
-difficulty = 2
-tags = Array[String](["structure", "shadow"])
+position = Vector2(950, 500)
+radius = 30.0
+tags = Array[String](["water", "foliage"])
 
 [sub_resource type="Resource" id="Resource_hcumu"]
 script = ExtResource("1_3pcbq")
-position = Vector2(400, 950)
-radius = 35.0
-difficulty = 2
-tags = Array[String](["ground", "shadow"])
+position = Vector2(980, 350)
+radius = 25.0
+tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_ytw4x"]
 script = ExtResource("1_3pcbq")
-position = Vector2(650, 800)
-radius = 30.0
-tags = Array[String](["water", "ground"])
+position = Vector2(900, 580)
+radius = 25.0
+difficulty = 2
+tags = Array[String](["foliage", "water"])
 
 [sub_resource type="Resource" id="Resource_qfo2t"]
 script = ExtResource("1_3pcbq")
-position = Vector2(520, 550)
-radius = 30.0
-difficulty = 2
-tags = Array[String](["structure", "foliage", "shadow"])
+position = Vector2(1380, 580)
+radius = 25.0
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_xkps7"]
 script = ExtResource("1_3pcbq")
-position = Vector2(680, 620)
-radius = 45.0
-difficulty = 2
-tags = Array[String](["foliage", "shadow"])
+position = Vector2(1300, 740)
+radius = 30.0
+tags = Array[String](["foliage", "ground"])
 
 [sub_resource type="Resource" id="Resource_sxyee"]
 script = ExtResource("1_3pcbq")
-position = Vector2(960, 80)
-radius = 25.0
-tags = Array[String](["sky"])
+position = Vector2(1320, 600)
+radius = 20.0
+difficulty = 0
+tags = Array[String](["foliage", "ground"])
 
 [sub_resource type="Resource" id="Resource_ds88c"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1700, 580)
-radius = 40.0
+position = Vector2(1300, 450)
+radius = 20.0
 difficulty = 2
-tags = Array[String](["structure", "shadow"])
+tags = Array[String](["foliage", "shadow"])
 
 [sub_resource type="Resource" id="Resource_3fnvg"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1500, 950)
-radius = 35.0
-difficulty = 2
-tags = Array[String](["ground", "shadow"])
+position = Vector2(400, 100)
+radius = 25.0
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_2ufli"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1150, 850)
-radius = 30.0
-tags = Array[String](["water", "ground"])
+position = Vector2(700, 80)
+radius = 25.0
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_0ohqo"]
 script = ExtResource("1_3pcbq")
-position = Vector2(1200, 650)
-radius = 45.0
-difficulty = 2
-tags = Array[String](["foliage", "shadow"])
+position = Vector2(1000, 100)
+radius = 25.0
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_iwvfl"]
 script = ExtResource("2_3pcbq")

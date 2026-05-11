@@ -1,18 +1,75 @@
 {
   "mountains": [
     {
-      "x": 250,
-      "y": 120,
-      "radius": 40,
+      "x": 100,
+      "y": 150,
+      "radius": 20,
       "tags": [
         "sky"
       ],
       "difficulty": 0
     },
     {
-      "x": 450,
+      "x": 400,
+      "y": 100,
+      "radius": 25,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 700,
+      "y": 110,
+      "radius": 30,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1050,
+      "y": 130,
+      "radius": 20,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 270,
       "y": 150,
-      "radius": 60,
+      "radius": 30,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 520,
+      "y": 140,
+      "radius": 35,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 880,
+      "y": 145,
+      "radius": 25,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1200,
+      "y": 200,
+      "radius": 40,
       "tags": [
         "structure"
       ],
@@ -21,16 +78,918 @@
     {
       "x": 150,
       "y": 250,
-      "radius": 50,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 750,
+      "y": 240,
+      "radius": 30,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 690,
+      "y": 390,
+      "radius": 40,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 450,
+      "y": 400,
+      "radius": 30,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 930,
+      "y": 380,
+      "radius": 25,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 350,
+      "y": 360,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1010,
+      "y": 360,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 400,
+      "y": 300,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 550,
+      "y": 330,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 300,
+      "radius": 30,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 900,
+      "y": 300,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1000,
+      "y": 250,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 200,
+      "y": 500,
+      "radius": 35,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 300,
+      "y": 600,
+      "radius": 30,
+      "tags": [
+        "ground",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 150,
+      "y": 650,
+      "radius": 40,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 50,
+      "y": 700,
+      "radius": 30,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 380,
+      "y": 550,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 200,
+      "y": 400,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 450,
+      "y": 470,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 500,
+      "y": 650,
+      "radius": 30,
+      "tags": [
+        "ground",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 350,
+      "y": 700,
+      "radius": 35,
+      "tags": [
+        "ground",
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 50,
+      "y": 550,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1050,
+      "y": 600,
+      "radius": 30,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1200,
+      "y": 650,
+      "radius": 40,
+      "tags": [
+        "ground",
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1350,
+      "y": 700,
+      "radius": 30,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 950,
+      "y": 550,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 800,
+      "y": 550,
+      "radius": 30,
       "tags": [
         "structure"
       ],
       "difficulty": 1
     },
     {
-      "x": 380,
-      "y": 270,
-      "radius": 70,
+      "x": 800,
+      "y": 600,
+      "radius": 25,
+      "tags": [
+        "water",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 700,
+      "y": 580,
+      "radius": 20,
+      "tags": [
+        "water",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 650,
+      "y": 650,
+      "radius": 30,
+      "tags": [
+        "ground",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1100,
+      "y": 500,
+      "radius": 25,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1300,
+      "y": 550,
+      "radius": 35,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1300,
+      "y": 400,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 900,
+      "y": 480,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 600,
+      "y": 450,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 750,
+      "y": 720,
+      "radius": 35,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1150,
+      "y": 730,
+      "radius": 30,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 250,
+      "y": 350,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 450,
+      "y": 200,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1000,
+      "y": 430,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1250,
+      "y": 480,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 750,
+      "y": 500,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    }
+  ],
+  "ocean": [
+    {
+      "x": 70,
+      "y": 700,
+      "radius": 25,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 150,
+      "y": 720,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 200,
+      "y": 650,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 30,
+      "y": 620,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 180,
+      "y": 560,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 250,
+      "y": 580,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 100,
+      "y": 520,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 280,
+      "y": 480,
+      "radius": 25,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 180,
+      "y": 450,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 350,
+      "y": 440,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 80,
+      "y": 380,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 190,
+      "y": 340,
+      "radius": 20,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 250,
+      "y": 280,
+      "radius": 25,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 400,
+      "y": 200,
+      "radius": 30,
+      "tags": [
+        "water",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 480,
+      "y": 700,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 550,
+      "y": 680,
+      "radius": 15,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 500,
+      "y": 600,
+      "radius": 25,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 670,
+      "y": 620,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 580,
+      "y": 500,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 450,
+      "y": 540,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 550,
+      "radius": 25,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 400,
+      "radius": 30,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 600,
+      "y": 300,
+      "radius": 20,
+      "tags": [
+        "water",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 750,
+      "y": 250,
+      "radius": 25,
+      "tags": [
+        "water",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 800,
+      "y": 150,
+      "radius": 30,
+      "tags": [
+        "water",
+        "sky"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1350,
+      "y": 720,
+      "radius": 25,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1200,
+      "y": 700,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1100,
+      "y": 730,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1050,
+      "y": 650,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1250,
+      "y": 600,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 980,
+      "y": 580,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1300,
+      "y": 520,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 900,
+      "y": 500,
+      "radius": 25,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1100,
+      "y": 480,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 950,
+      "y": 420,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1200,
+      "y": 380,
+      "radius": 20,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1000,
+      "y": 300,
+      "radius": 25,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1250,
+      "y": 200,
+      "radius": 30,
+      "tags": [
+        "water",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 750,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 300,
+      "y": 750,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1100,
+      "y": 750,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 850,
+      "y": 680,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 400,
+      "y": 600,
+      "radius": 20,
+      "tags": [
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 900,
+      "y": 600,
+      "radius": 20,
+      "tags": [
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 500,
+      "y": 450,
+      "radius": 25,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 950,
+      "y": 450,
+      "radius": 25,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 150,
+      "y": 250,
+      "radius": 20,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1300,
+      "y": 250,
+      "radius": 20,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 700,
+      "y": 50,
+      "radius": 30,
+      "tags": [
+        "water",
+        "sky"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 100,
+      "y": 100,
+      "radius": 30,
+      "tags": [
+        "water",
+        "sky"
+      ],
+      "difficulty": 2
+    }
+  ],
+  "jungle": [
+    {
+      "x": 100,
+      "y": 680,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 150,
+      "y": 500,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 200,
+      "y": 700,
+      "radius": 35,
+      "tags": [
+        "ground",
+        "structure",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 50,
+      "y": 720,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 250,
+      "y": 300,
+      "radius": 20,
       "tags": [
         "foliage"
       ],
@@ -38,599 +997,377 @@
     },
     {
       "x": 80,
-      "y": 350,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 950,
-      "y": 100,
-      "radius": 50,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 750,
-      "y": 190,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1100,
-      "y": 250,
-      "radius": 60,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 600,
-      "y": 300,
-      "radius": 70,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 900,
-      "y": 350,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1700,
-      "y": 150,
-      "radius": 40,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1250,
       "y": 200,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1500,
-      "y": 300,
-      "radius": 70,
+      "radius": 25,
       "tags": [
         "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1700,
-      "y": 400,
-      "radius": 90,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1850,
-      "y": 450,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 280,
-      "y": 500,
-      "radius": 80,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 550,
-      "radius": 70,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 150,
-      "y": 600,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 500,
-      "y": 490,
-      "radius": 50,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 350,
-      "y": 650,
-      "radius": 50,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 800,
-      "y": 600,
-      "radius": 100,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 700,
-      "y": 570,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 950,
-      "y": 580,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1050,
-      "y": 590,
-      "radius": 50,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 650,
-      "y": 630,
-      "radius": 80,
-      "tags": [
-        "water",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1450,
-      "y": 650,
-      "radius": 80,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1300,
-      "y": 680,
-      "radius": 60,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1200,
-      "y": 750,
-      "radius": 50,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1650,
-      "y": 600,
-      "radius": 50,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1500,
-      "y": 500,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 100,
-      "y": 850,
-      "radius": 90,
-      "tags": [
-        "ground",
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 250,
-      "y": 900,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 800,
-      "radius": 70,
-      "tags": [
-        "ground"
       ],
       "difficulty": 1
     },
     {
       "x": 180,
-      "y": 750,
-      "radius": 60,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 350,
-      "y": 950,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 800,
-      "y": 900,
-      "radius": 100,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 850,
-      "y": 800,
-      "radius": 100,
+      "y": 400,
+      "radius": 25,
       "tags": [
         "structure"
       ],
       "difficulty": 0
     },
     {
-      "x": 700,
-      "y": 980,
-      "radius": 80,
-      "tags": [
-        "structure",
-        "water"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 600,
-      "y": 850,
-      "radius": 70,
-      "tags": [
-        "water",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 950,
-      "y": 850,
-      "radius": 50,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1600,
-      "y": 1000,
-      "radius": 120,
+      "x": 300,
+      "y": 650,
+      "radius": 30,
       "tags": [
         "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 350,
+      "y": 600,
+      "radius": 30,
+      "tags": [
         "foliage"
       ],
       "difficulty": 0
     },
     {
-      "x": 1400,
-      "y": 900,
-      "radius": 80,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1800,
-      "y": 950,
-      "radius": 70,
+      "x": 20,
+      "y": 580,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
       "difficulty": 1
     },
     {
-      "x": 1750,
-      "y": 850,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1500,
-      "y": 800,
-      "radius": 50,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1000,
-      "y": 950,
-      "radius": 90,
+      "x": 10,
+      "y": 400,
+      "radius": 20,
       "tags": [
         "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1150,
-      "y": 1000,
-      "radius": 70,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1300,
-      "y": 1000,
-      "radius": 90,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1900,
-      "y": 900,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 50,
-      "y": 1000,
-      "radius": 120,
-      "tags": [
-        "ground",
-        "foliage"
-      ],
-      "difficulty": 0
-    }
-  ],
-  "ocean": [
-    {
-      "x": 100,
-      "y": 1000,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 250,
-      "y": 950,
-      "radius": 50,
-      "tags": [
-        "foliage",
-        "shadow"
       ],
       "difficulty": 2
     },
     {
       "x": 400,
-      "y": 1000,
-      "radius": 80,
+      "y": 550,
+      "radius": 25,
       "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 450,
+      "y": 680,
+      "radius": 25,
+      "tags": [
+        "water",
         "ground"
       ],
       "difficulty": 0
     },
     {
-      "x": 200,
-      "y": 800,
-      "radius": 60,
+      "x": 400,
+      "y": 720,
+      "radius": 20,
       "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 350,
-      "y": 700,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 220,
-      "y": 620,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 450,
-      "y": 760,
-      "radius": 50,
-      "tags": [
-        "foliage"
+        "water"
       ],
       "difficulty": 1
     },
     {
       "x": 550,
-      "y": 820,
-      "radius": 50,
+      "y": 700,
+      "radius": 20,
       "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 580,
-      "y": 980,
-      "radius": 35,
-      "tags": [
+        "water",
         "ground"
       ],
       "difficulty": 1
     },
     {
       "x": 380,
-      "y": 880,
-      "radius": 45,
+      "y": 640,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 470,
+      "y": 600,
+      "radius": 30,
       "tags": [
         "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1800,
-      "y": 1000,
-      "radius": 70,
-      "tags": [
+        "ground",
         "foliage"
       ],
-      "difficulty": 0
+      "difficulty": 1
     },
     {
-      "x": 1700,
-      "y": 920,
-      "radius": 50,
+      "x": 500,
+      "y": 450,
+      "radius": 20,
       "tags": [
         "foliage",
-        "shadow"
+        "structure"
       ],
       "difficulty": 1
     },
     {
-      "x": 1200,
-      "y": 960,
-      "radius": 80,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1350,
-      "y": 940,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1550,
-      "y": 850,
-      "radius": 50,
+      "x": 550,
+      "y": 250,
+      "radius": 25,
       "tags": [
         "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1650,
-      "y": 750,
-      "radius": 70,
-      "tags": [
         "structure"
       ],
       "difficulty": 0
     },
     {
-      "x": 1750,
-      "y": 800,
-      "radius": 60,
+      "x": 490,
+      "y": 350,
+      "radius": 20,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 480,
+      "y": 500,
+      "radius": 30,
+      "tags": [
+        "water",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 500,
+      "y": 350,
+      "radius": 25,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 450,
+      "y": 550,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "water"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 600,
+      "y": 650,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 640,
+      "y": 480,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 200,
+      "radius": 30,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 620,
+      "y": 580,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 650,
+      "y": 680,
+      "radius": 25,
+      "tags": [
+        "water",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 750,
+      "y": 710,
+      "radius": 20,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 650,
+      "radius": 20,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 700,
+      "y": 550,
+      "radius": 30,
       "tags": [
         "foliage"
       ],
       "difficulty": 1
     },
     {
-      "x": 1450,
+      "x": 850,
+      "y": 150,
+      "radius": 30,
+      "tags": [
+        "foliage",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 800,
+      "y": 400,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1120,
+      "y": 390,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1150,
+      "y": 550,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1050,
+      "y": 250,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1200,
+      "y": 480,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1280,
+      "y": 690,
+      "radius": 35,
+      "tags": [
+        "ground",
+        "structure",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1000,
       "y": 700,
-      "radius": 55,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1350,
+      "y": 650,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 950,
+      "y": 500,
+      "radius": 30,
+      "tags": [
+        "water",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 980,
+      "y": 350,
+      "radius": 25,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 900,
+      "y": 580,
+      "radius": 25,
+      "tags": [
+        "foliage",
+        "water"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1380,
+      "y": 580,
+      "radius": 25,
       "tags": [
         "foliage"
       ],
@@ -638,8 +1375,28 @@
     },
     {
       "x": 1300,
-      "y": 800,
-      "radius": 45,
+      "y": 740,
+      "radius": 30,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1320,
+      "y": 600,
+      "radius": 20,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1300,
+      "y": 450,
+      "radius": 20,
       "tags": [
         "foliage",
         "shadow"
@@ -647,18 +1404,129 @@
       "difficulty": 2
     },
     {
-      "x": 880,
-      "y": 780,
-      "radius": 60,
+      "x": 400,
+      "y": 100,
+      "radius": 25,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 80,
+      "radius": 25,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1000,
+      "y": 100,
+      "radius": 25,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 1
+    }
+  ],
+  "space": [
+    {
+      "x": 295,
+      "y": 290,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 250,
+      "y": 360,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 240,
+      "y": 395,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 380,
+      "y": 420,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 150,
+      "y": 470,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 150,
+      "y": 500,
+      "radius": 15,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 200,
+      "y": 310,
+      "radius": 20,
       "tags": [
         "ground"
       ],
       "difficulty": 0
     },
     {
-      "x": 1050,
-      "y": 820,
-      "radius": 60,
+      "x": 300,
+      "y": 100,
+      "radius": 10,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 450,
+      "y": 550,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 480,
+      "y": 470,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 520,
+      "y": 600,
+      "radius": 15,
       "tags": [
         "structure",
         "shadow"
@@ -666,9 +1534,227 @@
       "difficulty": 2
     },
     {
+      "x": 750,
+      "y": 120,
+      "radius": 40,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 650,
+      "y": 50,
+      "radius": 10,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 580,
+      "y": 500,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 660,
+      "y": 580,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 430,
+      "y": 610,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 730,
+      "y": 610,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 600,
+      "y": 680,
+      "radius": 30,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 350,
+      "y": 700,
+      "radius": 30,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 350,
+      "y": 720,
+      "radius": 20,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 600,
+      "y": 630,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 610,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 450,
+      "y": 420,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 470,
+      "y": 370,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 520,
+      "y": 270,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 520,
+      "y": 530,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 520,
+      "y": 510,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
       "x": 1150,
-      "y": 780,
-      "radius": 50,
+      "y": 260,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1180,
+      "y": 340,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1250,
+      "y": 420,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1300,
+      "y": 480,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1050,
+      "y": 480,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1050,
+      "y": 500,
+      "radius": 15,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 270,
+      "y": 680,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 250,
+      "y": 660,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 360,
+      "y": 690,
+      "radius": 10,
       "tags": [
         "structure"
       ],
@@ -676,84 +1762,27 @@
     },
     {
       "x": 1000,
-      "y": 800,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 150,
-      "y": 550,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 300,
-      "y": 600,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 950,
-      "y": 650,
-      "radius": 80,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 600,
-      "y": 600,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 750,
-      "y": 680,
-      "radius": 40,
+      "y": 700,
+      "radius": 25,
       "tags": [
         "ground"
       ],
       "difficulty": 1
     },
     {
-      "x": 480,
-      "y": 500,
-      "radius": 50,
+      "x": 1000,
+      "y": 720,
+      "radius": 15,
       "tags": [
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1100,
-      "y": 680,
-      "radius": 45,
-      "tags": [
-        "foliage",
+        "ground",
         "shadow"
       ],
       "difficulty": 2
     },
     {
-      "x": 700,
-      "y": 650,
-      "radius": 60,
+      "x": 1200,
+      "y": 620,
+      "radius": 30,
       "tags": [
         "structure"
       ],
@@ -761,917 +1790,89 @@
     },
     {
       "x": 1250,
-      "y": 650,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 500,
-      "y": 600,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 960,
-      "y": 400,
-      "radius": 90,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 150,
-      "radius": 80,
-      "tags": [
-        "water",
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1500,
-      "y": 100,
-      "radius": 80,
-      "tags": [
-        "water",
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 100,
-      "y": 400,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1800,
-      "y": 400,
-      "radius": 60,
+      "y": 680,
+      "radius": 20,
       "tags": [
         "structure"
       ],
       "difficulty": 1
     },
     {
-      "x": 1650,
-      "y": 450,
-      "radius": 40,
+      "x": 1300,
+      "y": 700,
+      "radius": 8,
       "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 700,
-      "y": 550,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 960,
-      "y": 250,
-      "radius": 100,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 200,
-      "y": 300,
-      "radius": 70,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1700,
-      "y": 300,
-      "radius": 70,
-      "tags": [
-        "water"
+        "structure"
       ],
       "difficulty": 1
     },
     {
       "x": 1350,
-      "y": 550,
-      "radius": 40,
+      "y": 740,
+      "radius": 25,
       "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 850,
-      "y": 500,
-      "radius": 30,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 50,
-      "y": 700,
-      "radius": 35,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1880,
-      "y": 900,
-      "radius": 30,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1600,
-      "y": 950,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 400,
-      "y": 450,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 350,
-      "y": 450,
-      "radius": 30,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 1
-    }
-  ],
-  "jungle": [
-    {
-      "x": 150,
-      "y": 950,
-      "radius": 90,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 350,
-      "y": 900,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 270,
-      "y": 780,
-      "radius": 60,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 550,
-      "y": 980,
-      "radius": 80,
-      "tags": [
-        "foliage",
         "ground"
       ],
       "difficulty": 0
     },
     {
-      "x": 620,
-      "y": 850,
-      "radius": 50,
+      "x": 1150,
+      "y": 750,
+      "radius": 20,
       "tags": [
-        "water",
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 480,
-      "y": 780,
-      "radius": 40,
-      "tags": [
-        "foliage",
         "ground"
       ],
       "difficulty": 1
     },
     {
-      "x": 220,
-      "y": 650,
-      "radius": 60,
-      "tags": [
-        "foliage",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 50,
-      "y": 800,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 750,
-      "y": 930,
-      "radius": 70,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 700,
-      "y": 700,
-      "radius": 90,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 450,
-      "y": 650,
-      "radius": 60,
-      "tags": [
-        "structure",
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 780,
-      "y": 550,
-      "radius": 50,
-      "tags": [
-        "water",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 700,
-      "y": 480,
-      "radius": 45,
-      "tags": [
-        "structure",
-        "water"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 280,
-      "y": 450,
-      "radius": 55,
-      "tags": [
-        "foliage",
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 450,
-      "y": 500,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 600,
-      "y": 380,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 150,
-      "radius": 80,
+      "x": 1300,
+      "y": 80,
+      "radius": 10,
       "tags": [
         "sky"
       ],
       "difficulty": 0
     },
     {
-      "x": 250,
-      "y": 120,
-      "radius": 90,
+      "x": 1100,
+      "y": 50,
+      "radius": 10,
       "tags": [
-        "foliage"
+        "sky"
       ],
       "difficulty": 0
     },
     {
-      "x": 500,
-      "y": 200,
-      "radius": 35,
+      "x": 1020,
+      "y": 400,
+      "radius": 20,
       "tags": [
-        "foliage",
         "structure"
       ],
       "difficulty": 1
     },
     {
-      "x": 150,
-      "y": 300,
-      "radius": 60,
+      "x": 1080,
+      "y": 550,
+      "radius": 20,
       "tags": [
-        "foliage",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 850,
-      "y": 750,
-      "radius": 60,
-      "tags": [
-        "ground",
-        "foliage"
+        "ground"
       ],
       "difficulty": 1
     },
     {
-      "x": 960,
-      "y": 700,
-      "radius": 80,
+      "x": 870,
+      "y": 550,
+      "radius": 25,
       "tags": [
-        "water"
+        "structure"
       ],
       "difficulty": 0
     },
     {
       "x": 900,
-      "y": 580,
-      "radius": 60,
-      "tags": [
-        "structure",
-        "foliage"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 930,
-      "y": 450,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 920,
-      "y": 300,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1250,
-      "y": 400,
-      "radius": 55,
-      "tags": [
-        "structure",
-        "water"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1280,
-      "y": 500,
-      "radius": 60,
-      "tags": [
-        "water",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1100,
-      "y": 720,
-      "radius": 80,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1050,
-      "y": 800,
-      "radius": 50,
-      "tags": [
-        "water",
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1650,
-      "y": 600,
-      "radius": 60,
-      "tags": [
-        "foliage",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1720,
-      "y": 450,
-      "radius": 60,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1680,
-      "y": 670,
-      "radius": 60,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1550,
-      "y": 900,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1750,
-      "y": 950,
-      "radius": 90,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1700,
-      "y": 820,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1850,
-      "y": 800,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1380,
-      "y": 350,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1600,
-      "y": 150,
-      "radius": 80,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1700,
-      "y": 120,
-      "radius": 90,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1800,
-      "y": 300,
-      "radius": 60,
-      "tags": [
-        "foliage",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 200,
-      "y": 550,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 400,
-      "y": 950,
-      "radius": 35,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 650,
-      "y": 800,
-      "radius": 30,
-      "tags": [
-        "water",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 520,
-      "y": 550,
-      "radius": 30,
-      "tags": [
-        "structure",
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 680,
-      "y": 620,
-      "radius": 45,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 960,
-      "y": 80,
-      "radius": 25,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1700,
-      "y": 580,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1500,
-      "y": 950,
-      "radius": 35,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1150,
-      "y": 850,
-      "radius": 30,
-      "tags": [
-        "water",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1200,
-      "y": 650,
-      "radius": 45,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    }
-  ],
-  "space": [
-    {
-      "x": 350,
-      "y": 190,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 470,
-      "y": 220,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 200,
-      "y": 300,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 270,
-      "y": 400,
-      "radius": 50,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 360,
-      "y": 330,
-      "radius": 25,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 400,
-      "y": 330,
-      "radius": 25,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 360,
-      "y": 270,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 180,
-      "y": 550,
-      "radius": 80,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 170,
-      "y": 700,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 350,
-      "y": 680,
-      "radius": 40,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 170,
-      "y": 950,
-      "radius": 100,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 880,
-      "radius": 100,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 520,
-      "y": 500,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 550,
-      "y": 590,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 600,
-      "y": 650,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 700,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 360,
-      "y": 710,
-      "radius": 25,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 270,
-      "y": 790,
-      "radius": 35,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 330,
-      "y": 830,
-      "radius": 25,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 400,
-      "y": 820,
-      "radius": 25,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 100,
-      "y": 100,
-      "radius": 80,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 600,
-      "y": 80,
-      "radius": 80,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 960,
-      "y": 150,
-      "radius": 60,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 630,
-      "y": 280,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 600,
-      "y": 390,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 770,
-      "y": 550,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 700,
-      "y": 580,
-      "radius": 40,
+      "y": 520,
+      "radius": 15,
       "tags": [
         "structure"
       ],
@@ -1679,236 +1880,65 @@
     },
     {
       "x": 820,
-      "y": 620,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 700,
-      "y": 670,
-      "radius": 30,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 580,
-      "y": 690,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 580,
-      "y": 750,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 950,
       "y": 580,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 900,
-      "y": 610,
-      "radius": 30,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 870,
-      "y": 490,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1080,
-      "y": 480,
-      "radius": 40,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1150,
-      "y": 550,
-      "radius": 80,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1550,
-      "y": 450,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1470,
-      "y": 460,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1600,
-      "y": 280,
-      "radius": 25,
+      "radius": 12,
       "tags": [
         "structure"
       ],
       "difficulty": 2
-    },
-    {
-      "x": 1350,
-      "y": 300,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1300,
-      "y": 400,
-      "radius": 30,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1700,
-      "y": 120,
-      "radius": 80,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1700,
-      "y": 700,
-      "radius": 100,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1800,
-      "y": 950,
-      "radius": 100,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1500,
-      "y": 880,
-      "radius": 50,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1750,
-      "y": 700,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1700,
-      "y": 800,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1300,
-      "y": 750,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1200,
-      "y": 850,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1100,
-      "y": 700,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
     }
   ],
   "fire_station": [
     {
-      "x": 300,
-      "y": 780,
-      "radius": 60,
+      "x": 90,
+      "y": 470,
+      "radius": 10,
       "tags": [
-        "ground",
-        "shadow",
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 120,
+      "y": 290,
+      "radius": 15,
+      "tags": [
         "structure"
       ],
       "difficulty": 1
     },
     {
-      "x": 220,
-      "y": 890,
-      "radius": 50,
+      "x": 375,
+      "y": 495,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 390,
+      "y": 525,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 290,
+      "y": 410,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 190,
+      "y": 680,
+      "radius": 25,
       "tags": [
         "structure"
       ],
@@ -1916,1559 +1946,55 @@
     },
     {
       "x": 100,
-      "y": 990,
-      "radius": 30,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 450,
-      "y": 990,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 320,
-      "y": 680,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 360,
-      "y": 580,
-      "radius": 35,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 400,
-      "y": 800,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 670,
-      "y": 980,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 860,
-      "y": 990,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1150,
-      "y": 820,
-      "radius": 60,
+      "y": 750,
+      "radius": 10,
       "tags": [
         "ground",
-        "shadow",
         "structure"
       ],
       "difficulty": 1
-    },
-    {
-      "x": 1300,
-      "y": 900,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1650,
-      "y": 990,
-      "radius": 40,
-      "tags": [
-        "shadow",
-        "ground"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1400,
-      "y": 700,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1550,
-      "y": 780,
-      "radius": 50,
-      "tags": [
-        "ground",
-        "shadow",
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 270,
-      "y": 730,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 360,
-      "y": 500,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 460,
-      "y": 860,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
     },
     {
       "x": 600,
-      "y": 770,
-      "radius": 35,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 500,
-      "y": 630,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 500,
-      "y": 480,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 780,
-      "y": 860,
-      "radius": 40,
+      "y": 730,
+      "radius": 20,
       "tags": [
         "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 500,
-      "y": 890,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1000,
-      "y": 450,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 900,
-      "y": 400,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1050,
-      "y": 580,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1050,
-      "y": 480,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1350,
-      "y": 650,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1600,
-      "y": 680,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1350,
-      "y": 830,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1450,
-      "y": 950,
-      "radius": 50,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1400,
-      "y": 550,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1680,
-      "y": 600,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 150,
-      "y": 200,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 200,
-      "y": 300,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 200,
-      "y": 500,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 450,
-      "y": 370,
-      "radius": 30,
-      "tags": [
-        "structure"
       ],
       "difficulty": 1
     },
     {
       "x": 550,
-      "y": 350,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 500,
-      "y": 420,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1000,
-      "y": 180,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 800,
-      "y": 180,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1000,
-      "y": 300,
-      "radius": 25,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1300,
-      "y": 300,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1480,
-      "y": 400,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1700,
-      "y": 300,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1450,
-      "y": 520,
-      "radius": 30,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 600,
-      "y": 820,
-      "radius": 40,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 460,
-      "y": 720,
-      "radius": 25,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 360,
-      "y": 540,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 190,
-      "y": 710,
-      "radius": 25,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 800,
-      "y": 680,
-      "radius": 35,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    }
-  ],
-  "dinosaur_land": [
-    {
-      "x": 190,
-      "y": 880,
-      "radius": 70,
-      "tags": [
-        "structure",
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 380,
-      "y": 790,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 260,
-      "y": 940,
-      "radius": 50,
-      "tags": [
-        "foliage",
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 340,
-      "y": 690,
-      "radius": 45,
+      "y": 755,
+      "radius": 15,
       "tags": [
         "ground",
         "structure"
       ],
-      "difficulty": 1
-    },
-    {
-      "x": 670,
-      "y": 880,
-      "radius": 65,
-      "tags": [
-        "ground"
-      ],
       "difficulty": 0
-    },
-    {
-      "x": 500,
-      "y": 740,
-      "radius": 35,
-      "tags": [
-        "structure",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 140,
-      "y": 950,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 520,
-      "y": 950,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1750,
-      "y": 900,
-      "radius": 80,
-      "tags": [
-        "structure",
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 900,
-      "y": 770,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1100,
-      "y": 700,
-      "radius": 55,
-      "tags": [
-        "water",
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1350,
-      "y": 840,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1040,
-      "y": 880,
-      "radius": 30,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1680,
-      "y": 820,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1500,
-      "y": 970,
-      "radius": 45,
-      "tags": [
-        "foliage",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 280,
-      "y": 830,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 450,
-      "y": 830,
-      "radius": 50,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1140,
-      "y": 600,
-      "radius": 70,
-      "tags": [
-        "water"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1530,
-      "y": 840,
-      "radius": 60,
-      "tags": [
-        "foliage",
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 500,
-      "y": 680,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 340,
-      "y": 640,
-      "radius": 60,
-      "tags": [
-        "foliage",
-        "structure",
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 260,
-      "y": 460,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 550,
-      "y": 560,
-      "radius": 80,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1470,
-      "y": 640,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 740,
-      "y": 550,
-      "radius": 40,
-      "tags": [
-        "foliage",
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1500,
-      "y": 470,
-      "radius": 60,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 900,
-      "y": 500,
-      "radius": 70,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1260,
-      "y": 610,
-      "radius": 60,
-      "tags": [
-        "foliage",
-        "structure",
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1650,
-      "y": 720,
-      "radius": 55,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 800,
-      "y": 680,
-      "radius": 35,
-      "tags": [
-        "structure",
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 400,
-      "y": 520,
-      "radius": 70,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1360,
-      "y": 560,
-      "radius": 50,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1780,
-      "y": 560,
-      "radius": 60,
-      "tags": [
-        "foliage"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1000,
-      "y": 520,
-      "radius": 45,
-      "tags": [
-        "foliage",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 200,
-      "y": 580,
-      "radius": 50,
-      "tags": [
-        "foliage",
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 260,
-      "y": 420,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 320,
-      "y": 190,
-      "radius": 100,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 670,
-      "y": 340,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "water"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1080,
-      "y": 360,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1800,
-      "y": 200,
-      "radius": 100,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1700,
-      "y": 140,
-      "radius": 60,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1500,
-      "y": 260,
-      "radius": 70,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 740,
-      "y": 160,
-      "radius": 90,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1300,
-      "y": 400,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 950,
-      "y": 440,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 160,
-      "y": 140,
-      "radius": 70,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 450,
-      "radius": 60,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 920,
-      "y": 260,
-      "radius": 60,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 500,
-      "y": 100,
-      "radius": 80,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1100,
-      "y": 120,
-      "radius": 50,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 1
-    }
-  ],
-  "construction_site": [
-    {
-      "x": 300,
-      "y": 290,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 430,
-      "y": 420,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 150,
-      "y": 150,
-      "radius": 70,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 100,
-      "radius": 60,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 250,
-      "y": 480,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 160,
-      "y": 500,
-      "radius": 35,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 280,
-      "y": 690,
-      "radius": 45,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1480,
-      "y": 270,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1700,
-      "y": 230,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1000,
-      "y": 120,
-      "radius": 80,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1250,
-      "y": 200,
-      "radius": 70,
-      "tags": [
-        "sky"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1820,
-      "y": 500,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1780,
-      "y": 570,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 120,
-      "y": 880,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 120,
-      "y": 930,
-      "radius": 40,
-      "tags": [
-        "ground",
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 300,
-      "y": 930,
-      "radius": 60,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 250,
-      "y": 970,
-      "radius": 30,
-      "tags": [
-        "ground",
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 180,
-      "y": 770,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 280,
-      "y": 720,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 420,
-      "y": 830,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 300,
-      "y": 870,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 450,
-      "y": 730,
-      "radius": 70,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 380,
-      "y": 780,
-      "radius": 40,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 400,
-      "y": 900,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 480,
-      "y": 980,
-      "radius": 35,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1050,
-      "y": 910,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1030,
-      "y": 970,
-      "radius": 30,
-      "tags": [
-        "ground",
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 800,
-      "y": 930,
-      "radius": 80,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 710,
-      "y": 960,
-      "radius": 30,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 930,
-      "y": 970,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1180,
-      "y": 860,
-      "radius": 70,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1250,
-      "y": 960,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1560,
-      "y": 710,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1400,
-      "y": 830,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1500,
-      "y": 860,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1450,
-      "y": 730,
-      "radius": 70,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1380,
-      "y": 780,
-      "radius": 40,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 630,
-      "y": 610,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 700,
-      "y": 680,
-      "radius": 35,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 880,
-      "y": 610,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 700,
-      "y": 550,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 920,
-      "y": 550,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 700,
-      "y": 640,
-      "radius": 70,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 880,
-      "y": 780,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 780,
-      "y": 810,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 600,
-      "y": 780,
-      "radius": 35,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 500,
-      "y": 680,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 580,
-      "y": 780,
-      "radius": 45,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 600,
-      "y": 720,
-      "radius": 70,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 800,
-      "y": 730,
-      "radius": 40,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 1
-    }
-  ],
-  "monster_truck_jam": [
-    {
-      "x": 290,
-      "y": 390,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 230,
-      "y": 480,
-      "radius": 40,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 300,
-      "y": 520,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
     },
     {
       "x": 370,
-      "y": 570,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 440,
-      "y": 680,
-      "radius": 80,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 400,
-      "y": 670,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 280,
-      "y": 710,
-      "radius": 50,
+      "y": 575,
+      "radius": 15,
       "tags": [
         "structure"
       ],
       "difficulty": 1
     },
     {
-      "x": 630,
-      "y": 790,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 470,
-      "y": 770,
-      "radius": 30,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 150,
-      "y": 850,
-      "radius": 100,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 200,
-      "y": 930,
-      "radius": 50,
+      "x": 340,
+      "y": 700,
+      "radius": 15,
       "tags": [
         "ground"
       ],
       "difficulty": 1
     },
     {
-      "x": 120,
-      "y": 990,
-      "radius": 35,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 380,
-      "y": 800,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 280,
-      "y": 750,
-      "radius": 30,
-      "tags": [
-        "ground",
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 350,
-      "y": 990,
+      "x": 345,
+      "y": 620,
       "radius": 25,
-      "tags": [
-        "ground",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 630,
-      "y": 600,
-      "radius": 70,
       "tags": [
         "structure"
       ],
@@ -3476,73 +2002,63 @@
     },
     {
       "x": 490,
-      "y": 630,
-      "radius": 60,
+      "y": 640,
+      "radius": 20,
       "tags": [
-        "structure"
+        "ground"
       ],
       "difficulty": 1
     },
     {
-      "x": 550,
-      "y": 680,
-      "radius": 30,
+      "x": 390,
+      "y": 310,
+      "radius": 20,
       "tags": [
-        "ground",
+        "structure",
         "shadow"
       ],
       "difficulty": 2
     },
     {
-      "x": 500,
-      "y": 760,
-      "radius": 100,
+      "x": 660,
+      "y": 250,
+      "radius": 20,
       "tags": [
-        "ground"
+        "structure"
       ],
       "difficulty": 0
     },
     {
-      "x": 630,
-      "y": 730,
-      "radius": 40,
+      "x": 750,
+      "y": 270,
+      "radius": 25,
       "tags": [
-        "ground"
+        "structure"
       ],
       "difficulty": 1
     },
     {
-      "x": 780,
-      "y": 680,
-      "radius": 70,
+      "x": 680,
+      "y": 470,
+      "radius": 20,
       "tags": [
-        "ground"
+        "structure"
       ],
       "difficulty": 0
     },
     {
-      "x": 700,
-      "y": 970,
-      "radius": 30,
+      "x": 1040,
+      "y": 600,
+      "radius": 25,
       "tags": [
-        "ground"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 850,
-      "y": 910,
-      "radius": 30,
-      "tags": [
-        "ground",
         "structure"
       ],
-      "difficulty": 2
+      "difficulty": 1
     },
     {
-      "x": 920,
-      "y": 620,
-      "radius": 70,
+      "x": 940,
+      "y": 610,
+      "radius": 20,
       "tags": [
         "structure"
       ],
@@ -3551,159 +2067,165 @@
     {
       "x": 1050,
       "y": 700,
-      "radius": 40,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 2
-    },
-    {
-      "x": 1050,
-      "y": 800,
-      "radius": 90,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1320,
-      "y": 660,
-      "radius": 80,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1500,
-      "y": 390,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1600,
-      "y": 480,
-      "radius": 50,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1500,
-      "y": 520,
-      "radius": 50,
-      "tags": [
-        "structure",
-        "shadow"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1700,
-      "y": 650,
-      "radius": 70,
-      "tags": [
-        "ground",
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 1680,
-      "y": 720,
       "radius": 30,
       "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1250,
+      "y": 710,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1080,
+      "y": 620,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1085,
+      "y": 490,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1140,
+      "y": 410,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1100,
+      "y": 560,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1380,
+      "y": 500,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1310,
+      "y": 360,
+      "radius": 20,
+      "tags": [
         "structure",
         "shadow"
       ],
       "difficulty": 2
     },
     {
-      "x": 1400,
-      "y": 900,
-      "radius": 60,
+      "x": 710,
+      "y": 390,
+      "radius": 25,
       "tags": [
-        "ground"
+        "structure"
       ],
       "difficulty": 0
     },
     {
-      "x": 1600,
-      "y": 900,
-      "radius": 60,
+      "x": 640,
+      "y": 360,
+      "radius": 15,
       "tags": [
-        "ground"
+        "structure"
       ],
-      "difficulty": 0
+      "difficulty": 1
     },
     {
-      "x": 1800,
-      "y": 980,
-      "radius": 40,
+      "x": 600,
+      "y": 755,
+      "radius": 20,
       "tags": [
         "ground",
-        "structure",
-        "shadow"
+        "shadow",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 690,
+      "radius": 10,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 710,
+      "y": 740,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 600,
+      "y": 700,
+      "radius": 10,
+      "tags": [
+        "structure"
       ],
       "difficulty": 2
     },
     {
-      "x": 1700,
-      "y": 950,
-      "radius": 40,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 1200,
-      "y": 950,
-      "radius": 60,
-      "tags": [
-        "ground"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 300,
-      "y": 600,
-      "radius": 70,
+      "x": 570,
+      "y": 620,
+      "radius": 10,
       "tags": [
         "structure"
       ],
-      "difficulty": 0
+      "difficulty": 2
     },
     {
-      "x": 350,
-      "y": 480,
-      "radius": 80,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 100,
-      "y": 390,
+      "x": 780,
+      "y": 570,
       "radius": 30,
       "tags": [
-        "structure"
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 420,
+      "y": 590,
+      "radius": 25,
+      "tags": [
+        "structure",
+        "shadow"
       ],
       "difficulty": 1
     },
     {
-      "x": 180,
-      "y": 320,
-      "radius": 40,
+      "x": 290,
+      "y": 610,
+      "radius": 15,
       "tags": [
         "structure"
       ],
@@ -3711,25 +2233,184 @@
     },
     {
       "x": 210,
-      "y": 180,
-      "radius": 50,
+      "y": 380,
+      "radius": 10,
       "tags": [
         "structure"
       ],
-      "difficulty": 1
+      "difficulty": 0
     },
     {
-      "x": 240,
-      "y": 120,
-      "radius": 25,
+      "x": 250,
+      "y": 300,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 70,
+      "y": 240,
+      "radius": 10,
       "tags": [
         "structure"
       ],
       "difficulty": 2
     },
     {
-      "x": 220,
-      "y": 280,
+      "x": 150,
+      "y": 720,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 450,
+      "y": 740,
+      "radius": 20,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 420,
+      "y": 560,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 390,
+      "y": 670,
+      "radius": 10,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1140,
+      "y": 460,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1220,
+      "y": 415,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1300,
+      "y": 620,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 550,
+      "y": 180,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 450,
+      "y": 480,
+      "radius": 15,
+      "tags": [
+        "ground",
+        "shadow",
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 710,
+      "y": 420,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    }
+  ],
+  "dinosaur_land": [
+    {
+      "x": 230,
+      "y": 560,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 100,
+      "y": 700,
+      "radius": 40,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 200,
+      "y": 650,
+      "radius": 30,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 350,
+      "y": 590,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 180,
+      "y": 440,
+      "radius": 15,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 230,
+      "y": 320,
+      "radius": 30,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 280,
+      "y": 400,
       "radius": 40,
       "tags": [
         "structure"
@@ -3737,9 +2418,19 @@
       "difficulty": 1
     },
     {
-      "x": 100,
-      "y": 200,
-      "radius": 100,
+      "x": 280,
+      "y": 150,
+      "radius": 40,
+      "tags": [
+        "sky",
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 180,
+      "y": 140,
+      "radius": 30,
       "tags": [
         "sky"
       ],
@@ -3747,8 +2438,135 @@
     },
     {
       "x": 400,
-      "y": 90,
-      "radius": 60,
+      "y": 480,
+      "radius": 35,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 440,
+      "y": 620,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 550,
+      "y": 640,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 700,
+      "y": 500,
+      "radius": 20,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 470,
+      "y": 720,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 820,
+      "y": 710,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 710,
+      "y": 620,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 600,
+      "y": 580,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 580,
+      "y": 450,
+      "radius": 15,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 620,
+      "y": 390,
+      "radius": 30,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 550,
+      "y": 340,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 560,
+      "y": 140,
+      "radius": 40,
+      "tags": [
+        "sky",
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 450,
+      "y": 350,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 600,
+      "y": 290,
+      "radius": 35,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 750,
+      "y": 200,
+      "radius": 30,
       "tags": [
         "sky"
       ],
@@ -3756,36 +2574,1174 @@
     },
     {
       "x": 800,
-      "y": 500,
-      "radius": 90,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 0
-    },
-    {
-      "x": 980,
-      "y": 310,
-      "radius": 60,
-      "tags": [
-        "structure"
-      ],
-      "difficulty": 1
-    },
-    {
-      "x": 960,
       "y": 100,
-      "radius": 120,
+      "radius": 30,
       "tags": [
         "sky"
       ],
       "difficulty": 0
     },
     {
-      "x": 1080,
-      "y": 170,
+      "x": 840,
+      "y": 350,
       "radius": 30,
       "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 850,
+      "y": 150,
+      "radius": 40,
+      "tags": [
+        "sky",
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 930,
+      "y": 440,
+      "radius": 15,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 980,
+      "y": 320,
+      "radius": 30,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 900,
+      "y": 490,
+      "radius": 35,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 970,
+      "y": 600,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1050,
+      "y": 550,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1100,
+      "y": 690,
+      "radius": 45,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1300,
+      "y": 600,
+      "radius": 30,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1200,
+      "y": 740,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1150,
+      "y": 480,
+      "radius": 15,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1200,
+      "y": 340,
+      "radius": 35,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1250,
+      "y": 220,
+      "radius": 35,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1100,
+      "y": 350,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1300,
+      "y": 100,
+      "radius": 30,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 340,
+      "y": 650,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 150,
+      "y": 620,
+      "radius": 20,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 480,
+      "y": 690,
+      "radius": 15,
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 690,
+      "y": 660,
+      "radius": 25,
+      "tags": [
+        "water"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1020,
+      "y": 620,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1000,
+      "y": 400,
+      "radius": 25,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 290,
+      "y": 300,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1300,
+      "y": 450,
+      "radius": 30,
+      "tags": [
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 350,
+      "y": 280,
+      "radius": 30,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 25,
+      "y": 630,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 2
+    }
+  ],
+  "construction_site": [
+    {
+      "x": 180,
+      "y": 310,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 90,
+      "y": 190,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 100,
+      "y": 110,
+      "radius": 30,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 290,
+      "y": 390,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 230,
+      "y": 390,
+      "radius": 35,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 350,
+      "y": 550,
+      "radius": 40,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 270,
+      "y": 690,
+      "radius": 35,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 150,
+      "y": 720,
+      "radius": 30,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 70,
+      "y": 750,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 250,
+      "y": 750,
+      "radius": 35,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 300,
+      "y": 740,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 480,
+      "y": 440,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 450,
+      "y": 560,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 460,
+      "y": 640,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 600,
+      "y": 550,
+      "radius": 40,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 650,
+      "y": 500,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 680,
+      "y": 400,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 420,
+      "y": 130,
+      "radius": 30,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 750,
+      "y": 100,
+      "radius": 30,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 580,
+      "y": 690,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 480,
+      "y": 740,
+      "radius": 40,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 580,
+      "y": 750,
+      "radius": 35,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 480,
+      "y": 750,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 420,
+      "y": 750,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 950,
+      "y": 310,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1000,
+      "y": 190,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1200,
+      "y": 110,
+      "radius": 30,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 880,
+      "y": 480,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 780,
+      "y": 550,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1150,
+      "y": 640,
+      "radius": 25,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1230,
+      "y": 740,
+      "radius": 40,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1000,
+      "y": 740,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1350,
+      "y": 750,
+      "radius": 35,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 900,
+      "y": 750,
+      "radius": 40,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 750,
+      "y": 700,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 650,
+      "y": 730,
+      "radius": 20,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 510,
+      "y": 370,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1350,
+      "y": 500,
+      "radius": 30,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 570,
+      "y": 200,
+      "radius": 20,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 900,
+      "y": 220,
+      "radius": 20,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 400,
+      "y": 690,
+      "radius": 15,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 100,
+      "y": 760,
+      "radius": 20,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 35,
+      "y": 590,
+      "radius": 25,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 180,
+      "y": 600,
+      "radius": 35,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 400,
+      "y": 500,
+      "radius": 30,
+      "tags": [
+        "structure",
+        "sky"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 520,
+      "y": 600,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 820,
+      "y": 620,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 360,
+      "y": 660,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1300,
+      "y": 670,
+      "radius": 30,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 170,
+      "y": 150,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    }
+  ],
+  "monster_truck_jam": [
+    {
+      "x": 160,
+      "y": 110,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 350,
+      "y": 100,
+      "radius": 25,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 150,
+      "y": 240,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 230,
+      "y": 390,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 600,
+      "y": 280,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 800,
+      "y": 120,
+      "radius": 25,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 950,
+      "y": 390,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1040,
+      "y": 240,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1170,
+      "y": 110,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1300,
+      "y": 150,
+      "radius": 25,
+      "tags": [
+        "sky"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 250,
+      "y": 440,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 220,
+      "y": 500,
+      "radius": 10,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 320,
+      "y": 370,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 330,
+      "y": 470,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 200,
+      "y": 580,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 310,
+      "y": 620,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 270,
+      "y": 680,
+      "radius": 10,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 420,
+      "y": 580,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 560,
+      "y": 640,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 80,
+      "y": 710,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 250,
+      "y": 730,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 100,
+      "y": 670,
+      "radius": 15,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 350,
+      "y": 740,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 200,
+      "y": 740,
+      "radius": 10,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 390,
+      "y": 520,
+      "radius": 10,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 520,
+      "y": 500,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 550,
+      "y": 580,
+      "radius": 10,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 600,
+      "y": 470,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 450,
+      "y": 550,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 450,
+      "y": 650,
+      "radius": 25,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 660,
+      "y": 580,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 750,
+      "y": 590,
+      "radius": 20,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 720,
+      "y": 650,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 500,
+      "y": 630,
+      "radius": 15,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 680,
+      "y": 680,
+      "radius": 10,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 920,
+      "y": 420,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1050,
+      "y": 480,
+      "radius": 10,
+      "tags": [
+        "ground",
+        "shadow"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1100,
+      "y": 440,
+      "radius": 15,
+      "tags": [
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1000,
+      "y": 460,
+      "radius": 20,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1150,
+      "y": 550,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1250,
+      "y": 540,
+      "radius": 8,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 1250,
+      "y": 660,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1200,
+      "y": 710,
+      "radius": 15,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1050,
+      "y": 730,
+      "radius": 10,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1300,
+      "y": 730,
+      "radius": 15,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 1350,
+      "y": 700,
+      "radius": 20,
+      "tags": [
+        "structure",
+        "ground"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 950,
+      "y": 710,
+      "radius": 15,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 0
+    },
+    {
+      "x": 1150,
+      "y": 740,
+      "radius": 10,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 1
+    },
+    {
+      "x": 850,
+      "y": 750,
+      "radius": 8,
+      "tags": [
+        "ground"
+      ],
+      "difficulty": 2
+    },
+    {
+      "x": 650,
+      "y": 740,
+      "radius": 8,
+      "tags": [
+        "ground",
         "structure"
       ],
       "difficulty": 2

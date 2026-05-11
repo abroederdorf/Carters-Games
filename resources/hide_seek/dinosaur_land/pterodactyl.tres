@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://dk4o7pc6yh6cd"]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_p8ton"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/pterodactyl.png" id="2_xk3ax"]
+[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_p8ton"]
+[ext_resource type="Texture2D" uid="uid://cy80182k78vu7" path="res://assets/sprites/hide_seek/dinosaur_land/pterodactyl.png" id="2_xk3ax"]
 
 [resource]
 script = ExtResource("1_p8ton")

@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3 uid="uid://c04gwwkeg8py3"]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_cv5fe"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/tire.png" id="2_0ryj7"]
+[ext_resource type="Script" uid="uid://bfvxoml60n80k" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_cv5fe"]
+[ext_resource type="Texture2D" uid="uid://bbpv6aax8lk1p" path="res://assets/sprites/hide_seek/monster_truck_jam/tire.png" id="2_0ryj7"]
 
 [resource]
 script = ExtResource("1_cv5fe")

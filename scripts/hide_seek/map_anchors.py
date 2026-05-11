@@ -21,24 +21,25 @@ PROMPT = """
 You are a game designer placing anchor points for a 'Find the Hidden Object' game.
 Look at this background image for a children's game.
 
-Identify 50 natural-looking anchor points where an object could be hidden (e.g., on a shelf, behind a rock, in a tree, on a cloud, on the floor, in a window, on a ledge).
+Identify 50 natural-looking anchor points where an object could be hidden.
+Image Dimensions: {width} x {height}
 
 Rules:
-1. Spread the points across the entire scene (foreground, midground, background).
-2. For each point, provide (X, Y) pixel coordinates where (0,0) is top-left and (1920, 1080) is bottom-right.
-3. For each point, provide a 'Radius' in pixels (typically 25 to 130).
-4. For each point, provide a list of 'Tags' describing the surface/context. Use: "ground", "sky", "water", "foliage", "structure", "shadow".
-5. For each point, provide a 'Difficulty' (0: Easy, 1: Medium, 2: Hard). Hard points should be small, in shadows, or partially tucked behind something.
+1. Spread the points across the entire scene.
+2. Provide (X, Y) pixel coordinates where (0,0) is top-left and ({width}, {height}) is bottom-right.
+3. For each point, provide a 'Radius' in pixels.
+4. Provide 'Tags': "ground", "sky", "water", "foliage", "structure", "shadow".
+5. Provide 'Difficulty' (0: Easy, 1: Medium, 2: Hard).
 
-Return the result STRICTLY as a JSON array of objects:
-[
-  {"x": 100, "y": 200, "radius": 80, "tags": ["ground"], "difficulty": 0},
-  ...
-]
+Return result STRICTLY as JSON array:
+[{{"x": X, "y": Y, "radius": R, "tags": [T], "difficulty": D}}]
 """
 
 def get_anchors_for_image(image_path):
     print(f"Analyzing: {image_path}")
+    
+    img = Image.open(image_path)
+    width, height = img.size
     
     with open(image_path, "rb") as f:
         image_bytes = f.read()
@@ -46,7 +47,7 @@ def get_anchors_for_image(image_path):
     response = client.models.generate_content(
         model=VISION_MODEL,
         contents=[
-            PROMPT,
+            PROMPT.format(width=width, height=height),
             types.Part.from_bytes(data=image_bytes, mime_type="image/png")
         ]
     )
