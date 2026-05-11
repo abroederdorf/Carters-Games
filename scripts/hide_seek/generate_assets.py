@@ -280,9 +280,21 @@ def generate_image(prompt, output_path, aspect_ratio="1:1"):
         
         if response.generated_images:
             image_bytes = response.generated_images[0].image.image_bytes
-            image = Image.open(io.BytesIO(image_bytes))
+            image = Image.open(io.BytesIO(image_bytes)).convert("RGBA")
+            
+            # Make white background transparent for items
+            if aspect_ratio == "1:1":
+                datas = image.getdata()
+                new_data = []
+                for item in datas:
+                    if item[0] >= 240 and item[1] >= 240 and item[2] >= 240:
+                        new_data.append((255, 255, 255, 0))
+                    else:
+                        new_data.append(item)
+                image.putdata(new_data)
+                
             image.save(output_path)
-            print(f"  Successfully saved.")
+            print(f"  Successfully saved (with transparency).")
             return True
         else:
             print(f"  No images generated for {output_path.name}")
