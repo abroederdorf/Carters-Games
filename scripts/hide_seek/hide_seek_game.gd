@@ -87,9 +87,13 @@ func _assign_items_to_anchors() -> void:
 	var standard_anchors: Array[HideSeekAnchor] = []
 	var hard_anchors: Array[HideSeekAnchor] = []
 	
+	# Margin to prevent items from being cut off at edges
+	var margin_x := _bg_size.x * 0.05
+	var margin_y := _bg_size.y * 0.05
+	
 	for a in _scene_data.anchors:
-		if a.position.x < 0.0 or a.position.x > _bg_size.x \
-			or a.position.y < 0.0 or a.position.y > _bg_size.y:
+		if a.position.x < margin_x or a.position.x > _bg_size.x - margin_x \
+			or a.position.y < margin_y or a.position.y > _bg_size.y - margin_y:
 			continue
 			
 		if a.difficulty >= 2:
