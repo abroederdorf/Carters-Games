@@ -6,8 +6,11 @@ const THUMB_SIZE := 110.0
 const MAX_SCALE := 3.5
 const TAP_MAX_MOVE := 20.0
 
+const MAX_ITEMS := 10
+
 var _scene_name: String
 var _scene_data: HideSeekSceneData
+var _active_items: Array[HideSeekItemData] = []
 var _found: Array[bool] = []
 var _found_count: int = 0
 var _elapsed: float = 0.0
@@ -61,10 +64,17 @@ func _ready() -> void:
 	if _scene_data == null:
 		get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekMain.tscn")
 		return
-	
+
+	var bg_tex_early := load("res://assets/sprites/hide_seek/%s/bg.png" % _scene_name) as Texture2D
+	_bg_size = Vector2(bg_tex_early.get_width(), bg_tex_early.get_height())
+
+	var all_items := _scene_data.items.duplicate()
+	all_items.shuffle()
+	_active_items = all_items.slice(0, min(MAX_ITEMS, all_items.size()))
+
 	_assign_items_to_anchors()
-	
-	_found.resize(_scene_data.items.size())
+
+	_found.resize(_active_items.size())
 	_found.fill(false)
 	_build_ui()
 	_setup_canvas()
@@ -73,19 +83,21 @@ func _ready() -> void:
 func _assign_items_to_anchors() -> void:
 	_active_item_data.clear()
 	var anchors := _scene_data.anchors.duplicate()
+	anchors = anchors.filter(func(a: HideSeekAnchor) -> bool:
+		return a.position.x >= 0.0 and a.position.x <= _bg_size.x \
+			and a.position.y >= 0.0 and a.position.y <= _bg_size.y
+	)
 	anchors.shuffle()
-	
-	for i in _scene_data.items.size():
-		var item := _scene_data.items[i]
+
+	for i in _active_items.size():
+		var item := _active_items[i]
 		var data := {"pos": item.position, "radius": item.radius}
-		
-		# If we have enough anchors, use them
+
 		if i < anchors.size():
 			var anchor: HideSeekAnchor = anchors[i]
 			data["pos"] = anchor.position
-			# Scale radius by item's multiplier
 			data["radius"] = anchor.radius * item.scale_multiplier
-			
+
 		_active_item_data.append(data)
 
 
@@ -147,8 +159,8 @@ func _build_ui() -> void:
 
 
 func _build_item_sprites() -> void:
-	for i in _scene_data.items.size():
-		var item: HideSeekItemData = _scene_data.items[i]
+	for i in _active_items.size():
+		var item: HideSeekItemData = _active_items[i]
 		var runtime_data: Dictionary = _active_item_data[i]
 		var tex := _get_item_texture(item)
 		var sprite := Sprite2D.new()
@@ -266,8 +278,8 @@ func _build_thumb_strip() -> void:
 	hbox.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	scroll.add_child(hbox)
 
-	for i in _scene_data.items.size():
-		var item: HideSeekItemData = _scene_data.items[i]
+	for i in _active_items.size():
+		var item: HideSeekItemData = _active_items[i]
 		var card := _make_thumb_card(item)
 		_thumb_nodes.append(card)
 		hbox.add_child(card)
@@ -554,7 +566,7 @@ func _handle_tap(screen_pos: Vector2) -> void:
 	if area_pos.y < 0 or area_pos.y > _canvas_area_size.y:
 		return
 	var canvas_pos := (area_pos - _canvas_offset) / _canvas_scale
-	for i in _scene_data.items.size():
+	for i in _active_items.size():
 		if _found[i]:
 			continue
 		var runtime_data: Dictionary = _active_item_data[i]
@@ -581,7 +593,7 @@ func _on_item_found(index: int) -> void:
 
 	_show_found_flash(index)
 
-	if _found_count >= _scene_data.items.size():
+	if _found_count >= _active_items.size():
 		_on_win()
 
 
@@ -605,7 +617,7 @@ func _show_found_flash(index: int) -> void:
 
 
 func _calculate_stars() -> int:
-	var n := _scene_data.items.size()
+	var n := _active_items.size()
 	if _elapsed < n * 10.0:
 		return 3
 	elif _elapsed < n * 20.0:
@@ -653,7 +665,7 @@ func _on_hint_pressed() -> void:
 	if HideSeekState.hint_stars <= 0 or _won:
 		return
 	var unfound: Array[int] = []
-	for i in _scene_data.items.size():
+	for i in _active_items.size():
 		if not _found[i]:
 			unfound.append(i)
 	if unfound.is_empty():
