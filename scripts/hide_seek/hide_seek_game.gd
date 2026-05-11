@@ -81,6 +81,10 @@ func _input(event: InputEvent) -> void:
 		_handle_mouse_button(event as InputEventMouseButton)
 	elif event is InputEventMouseMotion:
 		_handle_mouse_motion(event as InputEventMouseMotion)
+	elif event is InputEventPanGesture:
+		_handle_pan_gesture(event as InputEventPanGesture)
+	elif event is InputEventMagnifyGesture:
+		_handle_magnify_gesture(event as InputEventMagnifyGesture)
 
 
 # ── UI Construction ────────────────────────────────────────────────────────────
@@ -489,6 +493,22 @@ func _handle_mouse_motion(event: InputEventMouseMotion) -> void:
 	_canvas_offset = _pan_start_offset + (event.position - _pan_start_pos)
 	_clamp_offset()
 	_update_canvas_transform()
+
+
+func _handle_pan_gesture(event: InputEventPanGesture) -> void:
+	var vp_h := get_viewport_rect().size.y
+	if event.position.y < TOP_BAR_H or event.position.y > vp_h - THUMB_STRIP_H:
+		return
+	_canvas_offset -= event.delta * 4.0
+	_clamp_offset()
+	_update_canvas_transform()
+
+
+func _handle_magnify_gesture(event: InputEventMagnifyGesture) -> void:
+	var vp_h := get_viewport_rect().size.y
+	if event.position.y < TOP_BAR_H or event.position.y > vp_h - THUMB_STRIP_H:
+		return
+	_apply_zoom(_canvas_scale * event.factor, event.position - Vector2(0, TOP_BAR_H))
 
 
 func _apply_zoom(new_scale: float, area_center: Vector2) -> void:
