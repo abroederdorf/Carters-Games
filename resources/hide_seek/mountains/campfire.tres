@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_xn3wn"]
+
+[resource]
+script = ExtResource("1_xn3wn")
+item_name = "campfire"
+position = Vector2(1320, 840)
+radius = 60.0

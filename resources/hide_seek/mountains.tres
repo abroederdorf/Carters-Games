@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="1_etyn5"]
+[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="2_x2g0y"]
+
+[sub_resource type="Resource" id="Resource_hvhfx"]
+script = ExtResource("1_etyn5")
+item_name = "bear"
+position = Vector2(240, 720)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_i5rdp"]
+script = ExtResource("1_etyn5")
+item_name = "tent"
+position = Vector2(1450, 810)
+radius = 90.0
+
+[sub_resource type="Resource" id="Resource_18wfi"]
+script = ExtResource("1_etyn5")
+item_name = "campfire"
+position = Vector2(1320, 840)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_jk8sd"]
+script = ExtResource("1_etyn5")
+item_name = "fish"
+position = Vector2(880, 920)
+
+[sub_resource type="Resource" id="Resource_n4sd5"]
+script = ExtResource("1_etyn5")
+item_name = "climber"
+position = Vector2(1680, 320)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_o0p02"]
+script = ExtResource("1_etyn5")
+item_name = "skier"
+position = Vector2(450, 210)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_2sytg"]
+script = ExtResource("1_etyn5")
+item_name = "hiker"
+position = Vector2(1100, 650)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_2joip"]
+script = ExtResource("1_etyn5")
+item_name = "tree"
+position = Vector2(600, 580)
+radius = 100.0
+
+[sub_resource type="Resource" id="Resource_w07y3"]
+script = ExtResource("1_etyn5")
+item_name = "flowers"
+position = Vector2(1250, 950)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_t78fm"]
+script = ExtResource("1_etyn5")
+item_name = "birds"
+position = Vector2(960, 150)
+
+[sub_resource type="Resource" id="Resource_8tfio"]
+script = ExtResource("1_etyn5")
+item_name = "backpack"
+position = Vector2(1020, 680)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_ihd2p"]
+script = ExtResource("1_etyn5")
+item_name = "deer"
+position = Vector2(1750, 780)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_v7v8y"]
+script = ExtResource("1_etyn5")
+item_name = "cave"
+position = Vector2(180, 450)
+radius = 110.0
+
+[sub_resource type="Resource" id="Resource_o2avm"]
+script = ExtResource("1_etyn5")
+item_name = "rock"
+position = Vector2(1550, 960)
+radius = 65.0
+
+[resource]
+script = ExtResource("2_x2g0y")
+scene_name = "mountains"
+items = Array[ExtResource("1_etyn5")]([SubResource("Resource_hvhfx"), SubResource("Resource_i5rdp"), SubResource("Resource_18wfi"), SubResource("Resource_jk8sd"), SubResource("Resource_n4sd5"), SubResource("Resource_o0p02"), SubResource("Resource_2sytg"), SubResource("Resource_2joip"), SubResource("Resource_w07y3"), SubResource("Resource_t78fm"), SubResource("Resource_8tfio"), SubResource("Resource_ihd2p"), SubResource("Resource_v7v8y"), SubResource("Resource_o2avm")])
