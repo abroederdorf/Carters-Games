@@ -21,12 +21,12 @@ PROMPT = """
 You are a game designer placing anchor points for a 'Find the Hidden Object' game.
 Look at this background image for a children's game.
 
-Identify 20 natural-looking anchor points where an object could be hidden (e.g., on a shelf, behind a rock, in a tree, on a cloud, on the floor).
+Identify 50 natural-looking anchor points where an object could be hidden (e.g., on a shelf, behind a rock, in a tree, on a cloud, on the floor, in a window, on a ledge).
 
 Rules:
 1. Spread the points across the entire scene (foreground, midground, background).
 2. For each point, provide (X, Y) pixel coordinates where (0,0) is top-left and (1920, 1080) is bottom-right.
-3. For each point, provide a 'Radius' in pixels (typically 30 to 120) that represents how large an object should be at that specific depth/perspective. Objects in the distance should have smaller radii.
+3. For each point, provide a 'Radius' in pixels (typically 25 to 130) that represents how large an object should be at that specific depth/perspective. Objects in the distance should have smaller radii.
 4. Avoid placing anchors too close to each other.
 
 Return the result STRICTLY as a JSON array of objects:

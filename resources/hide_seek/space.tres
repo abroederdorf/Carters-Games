@@ -15,104 +15,247 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/star.png" id="12_2816f"]
 [ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_r0x86"]
 
+[sub_resource type="Resource" id="Resource_6masw"]
+script = ExtResource("1_6masw")
+position = Vector2(200, 1000)
+radius = 100.0
+
 [sub_resource type="Resource" id="Resource_35o43"]
 script = ExtResource("1_6masw")
-position = Vector2(960, 200)
-radius = 35.0
+position = Vector2(400, 950)
+radius = 95.0
 
 [sub_resource type="Resource" id="Resource_n6757"]
 script = ExtResource("1_6masw")
-position = Vector2(250, 350)
-radius = 40.0
+position = Vector2(470, 840)
+radius = 85.0
 
 [sub_resource type="Resource" id="Resource_tn0dk"]
 script = ExtResource("1_6masw")
-position = Vector2(1750, 280)
+position = Vector2(400, 800)
+radius = 80.0
 
 [sub_resource type="Resource" id="Resource_3lktu"]
 script = ExtResource("1_6masw")
-position = Vector2(1600, 380)
-radius = 55.0
+position = Vector2(700, 900)
+radius = 90.0
 
 [sub_resource type="Resource" id="Resource_jo1yg"]
 script = ExtResource("1_6masw")
-position = Vector2(700, 300)
-radius = 45.0
+position = Vector2(1000, 980)
+radius = 100.0
 
 [sub_resource type="Resource" id="Resource_neo6q"]
 script = ExtResource("1_6masw")
-position = Vector2(400, 620)
-radius = 80.0
+position = Vector2(1150, 900)
+radius = 90.0
 
 [sub_resource type="Resource" id="Resource_0mjkf"]
 script = ExtResource("1_6masw")
-position = Vector2(200, 500)
-radius = 60.0
+position = Vector2(1300, 850)
+radius = 90.0
 
 [sub_resource type="Resource" id="Resource_ord07"]
 script = ExtResource("1_6masw")
-position = Vector2(500, 450)
-radius = 70.0
+position = Vector2(1600, 950)
+radius = 100.0
 
 [sub_resource type="Resource" id="Resource_2yi5l"]
 script = ExtResource("1_6masw")
-position = Vector2(650, 780)
-radius = 75.0
+position = Vector2(1800, 800)
+radius = 95.0
 
 [sub_resource type="Resource" id="Resource_2816f"]
 script = ExtResource("1_6masw")
-position = Vector2(1350, 630)
+position = Vector2(350, 600)
 radius = 80.0
 
 [sub_resource type="Resource" id="Resource_r0x86"]
 script = ExtResource("1_6masw")
-position = Vector2(1050, 550)
-radius = 70.0
+position = Vector2(550, 600)
+radius = 80.0
 
 [sub_resource type="Resource" id="Resource_v2ols"]
 script = ExtResource("1_6masw")
-position = Vector2(1700, 580)
+position = Vector2(450, 520)
 radius = 70.0
 
 [sub_resource type="Resource" id="Resource_11y5d"]
 script = ExtResource("1_6masw")
-position = Vector2(660, 570)
-radius = 70.0
+position = Vector2(250, 680)
+radius = 75.0
 
 [sub_resource type="Resource" id="Resource_o14d4"]
 script = ExtResource("1_6masw")
-position = Vector2(1250, 720)
-radius = 70.0
+position = Vector2(650, 690)
+radius = 75.0
 
 [sub_resource type="Resource" id="Resource_6lcey"]
 script = ExtResource("1_6masw")
-position = Vector2(350, 870)
-radius = 90.0
+position = Vector2(620, 670)
+radius = 60.0
 
 [sub_resource type="Resource" id="Resource_4v0kh"]
 script = ExtResource("1_6masw")
-position = Vector2(250, 1000)
-radius = 110.0
+position = Vector2(500, 750)
+radius = 85.0
 
 [sub_resource type="Resource" id="Resource_pfpbq"]
 script = ExtResource("1_6masw")
-position = Vector2(800, 1000)
-radius = 110.0
+position = Vector2(750, 690)
+radius = 70.0
 
 [sub_resource type="Resource" id="Resource_30132"]
 script = ExtResource("1_6masw")
-position = Vector2(1600, 950)
-radius = 110.0
+position = Vector2(950, 600)
+radius = 65.0
 
 [sub_resource type="Resource" id="Resource_p1eey"]
 script = ExtResource("1_6masw")
-position = Vector2(1800, 800)
-radius = 100.0
+position = Vector2(1150, 550)
+radius = 60.0
 
 [sub_resource type="Resource" id="Resource_aj6v3"]
 script = ExtResource("1_6masw")
-position = Vector2(550, 950)
-radius = 105.0
+position = Vector2(900, 700)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_4cosr"]
+script = ExtResource("1_6masw")
+position = Vector2(870, 560)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_nxx8f"]
+script = ExtResource("1_6masw")
+position = Vector2(870, 500)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_bfovd"]
+script = ExtResource("1_6masw")
+position = Vector2(870, 650)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_ubray"]
+script = ExtResource("1_6masw")
+position = Vector2(950, 480)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_yvum3"]
+script = ExtResource("1_6masw")
+position = Vector2(1150, 480)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_lukn1"]
+script = ExtResource("1_6masw")
+position = Vector2(1050, 400)
+
+[sub_resource type="Resource" id="Resource_wk3u1"]
+script = ExtResource("1_6masw")
+position = Vector2(900, 600)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_w4l67"]
+script = ExtResource("1_6masw")
+position = Vector2(1200, 600)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_h05da"]
+script = ExtResource("1_6masw")
+position = Vector2(1600, 620)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_n11k3"]
+script = ExtResource("1_6masw")
+position = Vector2(1700, 500)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_lqkwl"]
+script = ExtResource("1_6masw")
+position = Vector2(1700, 700)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_t844o"]
+script = ExtResource("1_6masw")
+position = Vector2(1500, 750)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_f17ue"]
+script = ExtResource("1_6masw")
+position = Vector2(1750, 750)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_b5k81"]
+script = ExtResource("1_6masw")
+position = Vector2(250, 250)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_7bmfu"]
+script = ExtResource("1_6masw")
+position = Vector2(250, 390)
+
+[sub_resource type="Resource" id="Resource_to7lx"]
+script = ExtResource("1_6masw")
+position = Vector2(100, 400)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_3eo8j"]
+script = ExtResource("1_6masw")
+position = Vector2(350, 450)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_55ti1"]
+script = ExtResource("1_6masw")
+position = Vector2(470, 250)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_kdvqr"]
+script = ExtResource("1_6masw")
+position = Vector2(470, 380)
+
+[sub_resource type="Resource" id="Resource_f0eg5"]
+script = ExtResource("1_6masw")
+position = Vector2(350, 350)
+
+[sub_resource type="Resource" id="Resource_276y7"]
+script = ExtResource("1_6masw")
+position = Vector2(600, 380)
+
+[sub_resource type="Resource" id="Resource_v4etc"]
+script = ExtResource("1_6masw")
+position = Vector2(1400, 250)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_aejqb"]
+script = ExtResource("1_6masw")
+position = Vector2(1400, 380)
+
+[sub_resource type="Resource" id="Resource_alvsa"]
+script = ExtResource("1_6masw")
+position = Vector2(1250, 350)
+
+[sub_resource type="Resource" id="Resource_comkh"]
+script = ExtResource("1_6masw")
+position = Vector2(1700, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_3iwrc"]
+script = ExtResource("1_6masw")
+position = Vector2(1750, 350)
+radius = 45.0
+
+[sub_resource type="Resource" id="Resource_r4k03"]
+script = ExtResource("1_6masw")
+position = Vector2(1800, 450)
+
+[sub_resource type="Resource" id="Resource_s3e8u"]
+script = ExtResource("1_6masw")
+position = Vector2(1600, 500)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_iwe0k"]
+script = ExtResource("1_6masw")
+position = Vector2(1100, 100)
+radius = 40.0
 
 [sub_resource type="Resource" id="Resource_cgdy0"]
 script = ExtResource("2_6masw")
@@ -188,4 +331,4 @@ script = ExtResource("13_r0x86")
 scene_name = "space"
 background_image = ExtResource("1_y6kf6")
 items = Array[ExtResource("2_6masw")]([SubResource("Resource_cgdy0"), SubResource("Resource_ksl1o"), SubResource("Resource_nxuhb"), SubResource("Resource_1knwk"), SubResource("Resource_kb7nb"), SubResource("Resource_clkxf"), SubResource("Resource_xfgwq"), SubResource("Resource_h47oq"), SubResource("Resource_idvb0"), SubResource("Resource_t5y3c")])
-anchors = Array[ExtResource("1_6masw")]([SubResource("Resource_35o43"), SubResource("Resource_n6757"), SubResource("Resource_tn0dk"), SubResource("Resource_3lktu"), SubResource("Resource_jo1yg"), SubResource("Resource_neo6q"), SubResource("Resource_0mjkf"), SubResource("Resource_ord07"), SubResource("Resource_2yi5l"), SubResource("Resource_2816f"), SubResource("Resource_r0x86"), SubResource("Resource_v2ols"), SubResource("Resource_11y5d"), SubResource("Resource_o14d4"), SubResource("Resource_6lcey"), SubResource("Resource_4v0kh"), SubResource("Resource_pfpbq"), SubResource("Resource_30132"), SubResource("Resource_p1eey"), SubResource("Resource_aj6v3")])
+anchors = Array[ExtResource("1_6masw")]([SubResource("Resource_6masw"), SubResource("Resource_35o43"), SubResource("Resource_n6757"), SubResource("Resource_tn0dk"), SubResource("Resource_3lktu"), SubResource("Resource_jo1yg"), SubResource("Resource_neo6q"), SubResource("Resource_0mjkf"), SubResource("Resource_ord07"), SubResource("Resource_2yi5l"), SubResource("Resource_2816f"), SubResource("Resource_r0x86"), SubResource("Resource_v2ols"), SubResource("Resource_11y5d"), SubResource("Resource_o14d4"), SubResource("Resource_6lcey"), SubResource("Resource_4v0kh"), SubResource("Resource_pfpbq"), SubResource("Resource_30132"), SubResource("Resource_p1eey"), SubResource("Resource_aj6v3"), SubResource("Resource_4cosr"), SubResource("Resource_nxx8f"), SubResource("Resource_bfovd"), SubResource("Resource_ubray"), SubResource("Resource_yvum3"), SubResource("Resource_lukn1"), SubResource("Resource_wk3u1"), SubResource("Resource_w4l67"), SubResource("Resource_h05da"), SubResource("Resource_n11k3"), SubResource("Resource_lqkwl"), SubResource("Resource_t844o"), SubResource("Resource_f17ue"), SubResource("Resource_b5k81"), SubResource("Resource_7bmfu"), SubResource("Resource_to7lx"), SubResource("Resource_3eo8j"), SubResource("Resource_55ti1"), SubResource("Resource_kdvqr"), SubResource("Resource_f0eg5"), SubResource("Resource_276y7"), SubResource("Resource_v4etc"), SubResource("Resource_aejqb"), SubResource("Resource_alvsa"), SubResource("Resource_comkh"), SubResource("Resource_3iwrc"), SubResource("Resource_r4k03"), SubResource("Resource_s3e8u"), SubResource("Resource_iwe0k")])

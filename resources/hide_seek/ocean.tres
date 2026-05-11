@@ -15,103 +15,252 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/treasure_chest.png" id="12_7fur4"]
 [ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_cea2s"]
 
+[sub_resource type="Resource" id="Resource_7ybr1"]
+script = ExtResource("1_7ybr1")
+position = Vector2(100, 1000)
+radius = 110.0
+
 [sub_resource type="Resource" id="Resource_dsbya"]
 script = ExtResource("1_7ybr1")
-position = Vector2(120, 950)
-radius = 110.0
+position = Vector2(250, 980)
+radius = 100.0
 
 [sub_resource type="Resource" id="Resource_y5tek"]
 script = ExtResource("1_7ybr1")
-position = Vector2(350, 880)
-radius = 100.0
+position = Vector2(320, 1040)
+radius = 120.0
 
 [sub_resource type="Resource" id="Resource_m0xuj"]
 script = ExtResource("1_7ybr1")
-position = Vector2(520, 990)
-radius = 90.0
+position = Vector2(180, 880)
+radius = 95.0
 
 [sub_resource type="Resource" id="Resource_7q5ok"]
 script = ExtResource("1_7ybr1")
-position = Vector2(230, 670)
-radius = 80.0
+position = Vector2(220, 920)
+radius = 100.0
 
 [sub_resource type="Resource" id="Resource_e1a3l"]
 script = ExtResource("1_7ybr1")
-position = Vector2(480, 720)
-radius = 75.0
+position = Vector2(200, 780)
+radius = 95.0
 
 [sub_resource type="Resource" id="Resource_qkan6"]
 script = ExtResource("1_7ybr1")
-position = Vector2(180, 520)
-radius = 70.0
+position = Vector2(380, 900)
+radius = 90.0
 
 [sub_resource type="Resource" id="Resource_mvkld"]
 script = ExtResource("1_7ybr1")
-position = Vector2(750, 800)
-radius = 85.0
+position = Vector2(230, 700)
+radius = 80.0
 
 [sub_resource type="Resource" id="Resource_h707h"]
 script = ExtResource("1_7ybr1")
-position = Vector2(950, 720)
-radius = 70.0
+position = Vector2(420, 780)
+radius = 85.0
 
 [sub_resource type="Resource" id="Resource_1rjdm"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1400, 740)
-radius = 80.0
+position = Vector2(550, 1030)
+radius = 110.0
 
 [sub_resource type="Resource" id="Resource_7fur4"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1680, 620)
-radius = 75.0
+position = Vector2(480, 980)
+radius = 100.0
 
 [sub_resource type="Resource" id="Resource_cea2s"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1850, 900)
-radius = 110.0
+position = Vector2(700, 920)
+radius = 95.0
 
 [sub_resource type="Resource" id="Resource_eoa7p"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1720, 820)
-radius = 100.0
+position = Vector2(800, 1050)
+radius = 115.0
 
 [sub_resource type="Resource" id="Resource_mngqu"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1100, 660)
-radius = 70.0
+position = Vector2(600, 880)
+radius = 90.0
 
 [sub_resource type="Resource" id="Resource_8q7i1"]
 script = ExtResource("1_7ybr1")
-position = Vector2(400, 560)
-radius = 60.0
+position = Vector2(850, 900)
+radius = 90.0
 
 [sub_resource type="Resource" id="Resource_5owyg"]
 script = ExtResource("1_7ybr1")
-position = Vector2(280, 380)
+position = Vector2(600, 780)
+radius = 80.0
 
 [sub_resource type="Resource" id="Resource_pg6qf"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1600, 400)
+position = Vector2(520, 820)
+radius = 85.0
 
 [sub_resource type="Resource" id="Resource_3dcrc"]
 script = ExtResource("1_7ybr1")
-position = Vector2(980, 490)
-radius = 45.0
+position = Vector2(1700, 1000)
+radius = 110.0
 
 [sub_resource type="Resource" id="Resource_k4vlh"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1250, 350)
-radius = 55.0
+position = Vector2(1820, 1040)
+radius = 120.0
 
 [sub_resource type="Resource" id="Resource_d5gp6"]
 script = ExtResource("1_7ybr1")
-position = Vector2(550, 200)
-radius = 40.0
+position = Vector2(1650, 950)
+radius = 100.0
 
 [sub_resource type="Resource" id="Resource_xibpu"]
 script = ExtResource("1_7ybr1")
-position = Vector2(1450, 100)
-radius = 40.0
+position = Vector2(1780, 880)
+radius = 95.0
+
+[sub_resource type="Resource" id="Resource_vmnkk"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1600, 880)
+radius = 95.0
+
+[sub_resource type="Resource" id="Resource_lfndg"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1500, 990)
+radius = 100.0
+
+[sub_resource type="Resource" id="Resource_lt4lt"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1520, 1050)
+radius = 110.0
+
+[sub_resource type="Resource" id="Resource_yah1p"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1200, 880)
+radius = 90.0
+
+[sub_resource type="Resource" id="Resource_27mvt"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1380, 910)
+radius = 95.0
+
+[sub_resource type="Resource" id="Resource_txywc"]
+script = ExtResource("1_7ybr1")
+position = Vector2(350, 680)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_027mw"]
+script = ExtResource("1_7ybr1")
+position = Vector2(450, 600)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_q2tmb"]
+script = ExtResource("1_7ybr1")
+position = Vector2(280, 550)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_ew7u7"]
+script = ExtResource("1_7ybr1")
+position = Vector2(400, 750)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_bsi2m"]
+script = ExtResource("1_7ybr1")
+position = Vector2(180, 620)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_mpx15"]
+script = ExtResource("1_7ybr1")
+position = Vector2(380, 520)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_5d8wu"]
+script = ExtResource("1_7ybr1")
+position = Vector2(450, 700)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_7y5ih"]
+script = ExtResource("1_7ybr1")
+position = Vector2(900, 750)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_dpr1x"]
+script = ExtResource("1_7ybr1")
+position = Vector2(800, 700)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_bpsio"]
+script = ExtResource("1_7ybr1")
+position = Vector2(950, 850)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_q7an4"]
+script = ExtResource("1_7ybr1")
+position = Vector2(750, 790)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_12m8n"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1100, 720)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_fkvia"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1200, 680)
+radius = 55.0
+
+[sub_resource type="Resource" id="Resource_812rr"]
+script = ExtResource("1_7ybr1")
+position = Vector2(950, 790)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_sr6n4"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1450, 680)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_n0dst"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1350, 600)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_mplq5"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1600, 550)
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_o5fsf"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1500, 750)
+radius = 70.0
+
+[sub_resource type="Resource" id="Resource_85rhe"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1700, 620)
+radius = 75.0
+
+[sub_resource type="Resource" id="Resource_bqmjh"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1300, 520)
+radius = 65.0
+
+[sub_resource type="Resource" id="Resource_h0ms1"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1450, 700)
+radius = 80.0
+
+[sub_resource type="Resource" id="Resource_hru7m"]
+script = ExtResource("1_7ybr1")
+position = Vector2(150, 480)
+
+[sub_resource type="Resource" id="Resource_e75ph"]
+script = ExtResource("1_7ybr1")
+position = Vector2(1750, 480)
+
+[sub_resource type="Resource" id="Resource_3wka0"]
+script = ExtResource("1_7ybr1")
+position = Vector2(960, 650)
 
 [sub_resource type="Resource" id="Resource_gbaxu"]
 script = ExtResource("2_7ybr1")
@@ -187,4 +336,4 @@ script = ExtResource("13_cea2s")
 scene_name = "ocean"
 background_image = ExtResource("1_vy286")
 items = Array[ExtResource("2_7ybr1")]([SubResource("Resource_gbaxu"), SubResource("Resource_7ehpn"), SubResource("Resource_55xwc"), SubResource("Resource_mbu66"), SubResource("Resource_aijxs"), SubResource("Resource_tx2cy"), SubResource("Resource_eijqu"), SubResource("Resource_bk2gw"), SubResource("Resource_p82pl"), SubResource("Resource_m870r")])
-anchors = Array[ExtResource("1_7ybr1")]([SubResource("Resource_dsbya"), SubResource("Resource_y5tek"), SubResource("Resource_m0xuj"), SubResource("Resource_7q5ok"), SubResource("Resource_e1a3l"), SubResource("Resource_qkan6"), SubResource("Resource_mvkld"), SubResource("Resource_h707h"), SubResource("Resource_1rjdm"), SubResource("Resource_7fur4"), SubResource("Resource_cea2s"), SubResource("Resource_eoa7p"), SubResource("Resource_mngqu"), SubResource("Resource_8q7i1"), SubResource("Resource_5owyg"), SubResource("Resource_pg6qf"), SubResource("Resource_3dcrc"), SubResource("Resource_k4vlh"), SubResource("Resource_d5gp6"), SubResource("Resource_xibpu")])
+anchors = Array[ExtResource("1_7ybr1")]([SubResource("Resource_7ybr1"), SubResource("Resource_dsbya"), SubResource("Resource_y5tek"), SubResource("Resource_m0xuj"), SubResource("Resource_7q5ok"), SubResource("Resource_e1a3l"), SubResource("Resource_qkan6"), SubResource("Resource_mvkld"), SubResource("Resource_h707h"), SubResource("Resource_1rjdm"), SubResource("Resource_7fur4"), SubResource("Resource_cea2s"), SubResource("Resource_eoa7p"), SubResource("Resource_mngqu"), SubResource("Resource_8q7i1"), SubResource("Resource_5owyg"), SubResource("Resource_pg6qf"), SubResource("Resource_3dcrc"), SubResource("Resource_k4vlh"), SubResource("Resource_d5gp6"), SubResource("Resource_xibpu"), SubResource("Resource_vmnkk"), SubResource("Resource_lfndg"), SubResource("Resource_lt4lt"), SubResource("Resource_yah1p"), SubResource("Resource_27mvt"), SubResource("Resource_txywc"), SubResource("Resource_027mw"), SubResource("Resource_q2tmb"), SubResource("Resource_ew7u7"), SubResource("Resource_bsi2m"), SubResource("Resource_mpx15"), SubResource("Resource_5d8wu"), SubResource("Resource_7y5ih"), SubResource("Resource_dpr1x"), SubResource("Resource_bpsio"), SubResource("Resource_q7an4"), SubResource("Resource_12m8n"), SubResource("Resource_fkvia"), SubResource("Resource_812rr"), SubResource("Resource_sr6n4"), SubResource("Resource_n0dst"), SubResource("Resource_mplq5"), SubResource("Resource_o5fsf"), SubResource("Resource_85rhe"), SubResource("Resource_bqmjh"), SubResource("Resource_h0ms1"), SubResource("Resource_hru7m"), SubResource("Resource_e75ph"), SubResource("Resource_3wka0")])
