@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 		_update_timer()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if _won:
 		return
 	if event is InputEventScreenTouch:
@@ -388,6 +388,9 @@ func _clamp_offset() -> void:
 # ── Input Handling ─────────────────────────────────────────────────────────────
 
 func _handle_touch(event: InputEventScreenTouch) -> void:
+	var vp_h := get_viewport_rect().size.y
+	if event.position.y < TOP_BAR_H or event.position.y > vp_h - THUMB_STRIP_H:
+		return
 	if event.pressed:
 		_touches[event.index] = {"pos": event.position, "start": event.position}
 		if _touches.size() == 2:
