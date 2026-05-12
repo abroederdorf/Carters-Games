@@ -109,7 +109,7 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 	var hard_count := min(2, hard_anchors.size())
 	for i in hard_count:
 		session_anchors.append(hard_anchors.pop_back())
-	var needed := min(20, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
+	var needed: int = min(20, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
 	for i in needed:
 		if not standard_anchors.is_empty():
 			session_anchors.append(standard_anchors.pop_back())
