@@ -170,7 +170,7 @@ func _load_json(path: String) -> Dictionary:
 	if not file:
 		print("No JSON found at %s — skipping." % path)
 		return {}
-	var result := JSON.parse_string(file.get_as_text())
+	var result: Variant = JSON.parse_string(file.get_as_text())
 	file.close()
 	if result is Dictionary:
 		return result
