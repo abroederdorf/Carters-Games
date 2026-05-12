@@ -147,8 +147,8 @@ func _assign_items_to_anchors() -> void:
 		if assigned_anchor == null:
 			for j in session_anchors.size():
 				if used_anchors[j]: continue
-				var anchor = session_anchors[j]
-				
+				var anchor: HideSeekAnchor = session_anchors[j]
+
 				var anchor_has_water := "water" in anchor.tags
 				var anchor_has_sky := "sky" in anchor.tags
 				var item_needs_water := "water" in item.tags
