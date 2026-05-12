@@ -8,6 +8,10 @@ const DEFAULT_RADIUS := 60.0
 
 const BG_NAMES := ["bg.png", "bg_fast.png", "bg_standard.png"]
 
+const THEMES_JSON := "res://assets/data/hide_seek/themes.json"
+const SHARED_SPRITES := "res://assets/sprites/hide_seek/shared"
+
+var _theme_data: Dictionary = {}
 var _anchor_data: Dictionary = {}
 var _tag_data: Dictionary = {}
 var _created := 0
@@ -18,11 +22,17 @@ var _skipped := 0
 func _init() -> void:
 	print("=== sync_resources: starting ===")
 
+	_theme_data = _load_json(THEMES_JSON)
+	if _theme_data.is_empty() or not _theme_data.has("themes"):
+		push_error("Themes master index not found or invalid.")
+		quit()
+		return
+
 	_anchor_data = _load_json(ANCHORS_JSON)
 	_tag_data = _load_json(TAGS_JSON)
 
-	var themes := _discover_themes()
-	print("Found %d themes." % themes.size())
+	var themes = _theme_data["themes"].keys()
+	print("Found %d themes in master index." % themes.size())
 
 	for theme in themes:
 		_sync_theme(theme)
@@ -34,32 +44,14 @@ func _init() -> void:
 # ── Theme Discovery ────────────────────────────────────────────────────────────
 
 func _discover_themes() -> Array[String]:
-	var themes: Array[String] = []
-	var dir := DirAccess.open(SPRITES_ROOT)
-	if not dir:
-		push_error("Cannot open sprites root: " + SPRITES_ROOT)
-		return themes
-	
-	dir.list_dir_begin()
-	var entry := dir.get_next()
-	while entry != "":
-		if dir.current_is_dir() and not entry.begins_with(".") and entry != "shared":
-			var found_bg := false
-			for bg_name in BG_NAMES:
-				if FileAccess.file_exists("%s/%s/%s" % [SPRITES_ROOT, entry, bg_name]):
-					found_bg = true
-					break
-			if found_bg:
-				themes.append(entry)
-		entry = dir.get_next()
-	dir.list_dir_end()
-	themes.sort()
-	return themes
+	# Now using the master index keys
+	return []
 
 
 # ── Per-Theme Sync ─────────────────────────────────────────────────────────────
 
 func _sync_theme(theme: String) -> void:
+	var data: Dictionary = _theme_data["themes"][theme]
 	var scene_path := "%s/%s.tres" % [RESOURCES_ROOT, theme]
 	var scene_data: HideSeekSceneData
 	var is_new := false
@@ -76,15 +68,20 @@ func _sync_theme(theme: String) -> void:
 		scene_data.scene_name = theme
 		
 		# Find appropriate background
+		var bg_found := false
 		for bg_name in BG_NAMES:
 			var bg_path := "%s/%s/%s" % [SPRITES_ROOT, theme, bg_name]
 			if FileAccess.file_exists(bg_path):
 				scene_data.background_image = load(bg_path)
+				bg_found = true
 				break
+		
+		if not bg_found:
+			push_warning("[%s] Background image not found." % theme)
 		
 		_ensure_dir("%s/%s" % [RESOURCES_ROOT, theme])
 
-	_sync_items(scene_data, theme)
+	_sync_items(scene_data, theme, data.get("items", []))
 	_apply_anchors(scene_data, theme)
 	_apply_tags(scene_data, theme)
 	
@@ -107,9 +104,8 @@ func _sync_theme(theme: String) -> void:
 
 # ── Item Sync ──────────────────────────────────────────────────────────────────
 
-func _sync_items(scene_data: HideSeekSceneData, theme: String) -> void:
+func _sync_items(scene_data: HideSeekSceneData, theme: String, items_list: Array) -> void:
 	var sprite_dir := "%s/%s" % [SPRITES_ROOT, theme]
-	var item_names := _discover_items(sprite_dir)
 
 	# Index existing items by name for fast lookup
 	var existing: Dictionary = {}
@@ -118,7 +114,8 @@ func _sync_items(scene_data: HideSeekSceneData, theme: String) -> void:
 
 	var synced_items: Array[HideSeekItemData] = []
 
-	for item_name in item_names:
+	for i_data in items_list:
+		var item_name: String = i_data["name"]
 		var item: HideSeekItemData
 		if existing.has(item_name):
 			item = existing[item_name]
@@ -128,9 +125,17 @@ func _sync_items(scene_data: HideSeekSceneData, theme: String) -> void:
 			item.position = Vector2.ZERO
 			item.radius = DEFAULT_RADIUS
 
-		# Always refresh thumbnail from sprite
-		var thumb_path := "%s/%s.png" % [sprite_dir, item_name]
-		item.thumbnail = load(thumb_path)
+		# Refresh thumbnail from sprite (local or shared)
+		var thumb_path: String
+		if i_data.has("shared"):
+			thumb_path = "%s/%s.png" % [SHARED_SPRITES, i_data["shared"]]
+		else:
+			thumb_path = "%s/%s.png" % [sprite_dir, item_name]
+		
+		if ResourceLoader.exists(thumb_path):
+			item.thumbnail = load(thumb_path)
+		else:
+			push_warning("[%s] Thumbnail not found: %s" % [theme, thumb_path])
 		
 		synced_items.append(item)
 
@@ -138,25 +143,8 @@ func _sync_items(scene_data: HideSeekSceneData, theme: String) -> void:
 
 
 func _discover_items(sprite_dir: String) -> Array[String]:
-	var names: Array[String] = []
-	var dir := DirAccess.open(sprite_dir)
-	if not dir:
-		return names
-	dir.list_dir_begin()
-	var entry := dir.get_next()
-	while entry != "":
-		var is_bg := false
-		for bg_name in BG_NAMES:
-			if entry == bg_name:
-				is_bg = true
-				break
-				
-		if not dir.current_is_dir() and entry.ends_with(".png") and not is_bg:
-			names.append(entry.get_basename())
-		entry = dir.get_next()
-	dir.list_dir_end()
-	names.sort()
-	return names
+	# Now using the master index items list
+	return []
 
 
 # ── Anchor Application ─────────────────────────────────────────────────────────
