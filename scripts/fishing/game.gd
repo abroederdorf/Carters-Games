@@ -341,6 +341,7 @@ func _new_spelling_round() -> void:
 				pool.append_array(SPELL_3_SIGHT)
 				pool.append_array(SPELL_4_SIGHT)
 
+	pool.erase(_spell_current_word)
 	_spell_current_word = pool.pick_random()
 
 	var word_len := _spell_current_word.length()

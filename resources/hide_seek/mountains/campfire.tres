@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_xn3wn"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_s6u3e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/campfire.png" id="2_01y0h"]
 
 [resource]
-script = ExtResource("1_xn3wn")
+script = ExtResource("1_s6u3e")
 item_name = "campfire"
+thumbnail = ExtResource("2_01y0h")
 position = Vector2(1320, 840)
 radius = 60.0
 tags = Array[String](["ground"])

@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_k4syt"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_npdd8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/tree.png" id="2_djgta"]
 
 [resource]
-script = ExtResource("1_k4syt")
+script = ExtResource("1_npdd8")
 item_name = "tree"
+thumbnail = ExtResource("2_djgta")
 position = Vector2(600, 580)
 radius = 100.0
 tags = Array[String](["foliage", "ground"])

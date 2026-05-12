@@ -1,45 +1,31 @@
 import os
 import time
 import io
+import json
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 from google import genai
 from google.genai import types
 from PIL import Image
 
 # --- Configuration ---
-API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
+API_KEY = os.environ.get("GEMINI_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 MODEL_NAME = "imagen-4.0-fast-generate-001"
 
 SHARED_ROOT = Path("assets/sprites/hide_seek/shared")
-SHARED_ROOT.mkdir(parents=True, exist_ok=True)
+
+THEMES_JSON = Path("assets/data/hide_seek/themes.json")
 
 # --- Refined Prefixes ---
-# Use this for items that ARE people (Hiker, Skier, etc.)
 CHARACTER_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
-
-# Use this for items that are OBJECTS (Binoculars, Hammer, etc.)
 OBJECT_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, isolated object only, no people, no characters, no background, no shadows, no text, "
 
-# --- Shared Items Library ---
-SHARED_ITEMS = {
-    "binoculars": {"desc": "black and blue binoculars with a thin neck strap", "type": "object"},
-    "hammer": {"desc": "metal claw hammer with a brown wooden handle", "type": "object"},
-    "wrench": {"desc": "silver adjustable wrench, metallic look", "type": "object"},
-    "tire": {"desc": "single black rubber tire with deep treads", "type": "object"},
-    "popcorn": {"desc": "red and white striped bucket overflowing with buttered popcorn", "type": "object"},
-    "trophy": {"desc": "large gold trophy cup with two handles, shiny", "type": "object"},
-    "backpack": {"desc": "bright red hiking backpack with side pockets and straps", "type": "object"},
-    "fire_hydrant": {"desc": "bright red street fire hydrant, three-way valves", "type": "object"},
-    "tricycle": {"desc": "small green three-wheeled bike for a child", "type": "object"},
-    "bicycle": {"desc": "red bike with a silver bell and a basket", "type": "object"},
-    "tent": {"desc": "small orange camping tent, triangular, front flap open", "type": "object"},
-    "toolbox": {"desc": "red metal toolbox with a silver handle on top", "type": "object"},
-    "megaphone": {"desc": "red plastic megaphone with a handle", "type": "object"},
-    "gas_can": {"desc": "red plastic gasoline container with a black spout", "type": "object"},
-    "flashlight": {"desc": "silver flashlight with a bright yellow beam", "type": "object"},
-    "camera": {"desc": "small black digital camera with a lens", "type": "object"}
-}
+def load_master_index():
+    with open(THEMES_JSON, "r") as f:
+        return json.load(f)
 
 def generate_image(prompt, output_path, model):
     print(f"Generating Shared: {output_path.name}...")
@@ -64,7 +50,11 @@ def generate_image(prompt, output_path, model):
     return False
 
 def main():
-    for item_name, data in SHARED_ITEMS.items():
+    SHARED_ROOT.mkdir(parents=True, exist_ok=True)
+    index = load_master_index()
+    shared_items = index["shared"]
+    
+    for item_name, data in shared_items.items():
         output_path = SHARED_ROOT / f"{item_name}.png"
         if output_path.exists():
             continue

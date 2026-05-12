@@ -1,5 +1,6 @@
 # Local-only files (never commit)
 local/
+.env
 
 # Godot
 .godot/

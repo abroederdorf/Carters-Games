@@ -1,11 +1,14 @@
 import os
 import json
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 from google import genai
 from google.genai import types
 
 # --- Configuration ---
-API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
+API_KEY = os.environ.get("GEMINI_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 TAG_MODEL = "gemini-2.5-flash"
 
@@ -32,25 +35,29 @@ Example:
 {{"bird": ["sky", "foliage"], "rock": ["ground"]}}
 """
 
+THEMES_JSON = Path("assets/data/hide_seek/themes.json")
+
+def load_master_index():
+    with open(THEMES_JSON, "r") as f:
+        return json.load(f)
+
 def main():
-    themes = [
-        "mountains", "ocean", "jungle", "space", 
-        "fire_station", "dinosaur_land", "construction_site", "monster_truck_jam"
-    ]
+    index = load_master_index()
+    themes = index["themes"]
     
     all_item_tags = {}
     
-    for theme in themes:
-        theme_dir = ASSET_ROOT / theme
-        items = [f.stem for f in theme_dir.glob("*.png") if not f.name.startswith("bg")]
-        
+    for theme_name, theme_data in themes.items():
+        items = []
+        for item in theme_data["items"]:
+            items.append(item["name"])
+            
         if not items:
             continue
             
-        print(f"Tagging items for: {theme}")
+        print(f"Tagging items for: {theme_name}")
         
-        formatted_prompt = PROMPT.format(theme=theme, items=", ".join(items))
-        
+        formatted_prompt = PROMPT.format(theme=theme_name, items=", ".join(items))
         response = client.models.generate_content(
             model=TAG_MODEL,
             contents=formatted_prompt
@@ -64,10 +71,10 @@ def main():
             
         try:
             tags = json.loads(text.strip())
-            all_item_tags[theme] = tags
+            all_item_tags[theme_name] = tags
             print(f"  Tagged {len(tags)} items.")
         except Exception as e:
-            print(f"  Error parsing JSON for {theme}: {e}")
+            print(f"  Error parsing JSON for {theme_name}: {e}")
             
     with open("assets/data/hide_seek/item_tags.json", "w") as f:
         json.dump(all_item_tags, f, indent=2)

@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_rrvu8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/bg.png" id="2_l2qdg"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_fy28n"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/hamster.png" id="4_h0hqb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/kitten.png" id="5_ixu86"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/puppy.png" id="6_nvm4j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/goldfish_bowl.png" id="7_kidle"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/parrot.png" id="8_xm8uj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/cat_toy.png" id="9_5tggg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/turtle.png" id="10_b8lo7"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="11_3qst8"]
+
+[sub_resource type="Resource" id="Resource_4m2hc"]
+script = ExtResource("3_fy28n")
+item_name = "hamster"
+thumbnail = ExtResource("4_h0hqb")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_6mbwm"]
+script = ExtResource("3_fy28n")
+item_name = "kitten"
+thumbnail = ExtResource("5_ixu86")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_nftij"]
+script = ExtResource("3_fy28n")
+item_name = "puppy"
+thumbnail = ExtResource("6_nvm4j")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_40rc3"]
+script = ExtResource("3_fy28n")
+item_name = "goldfish_bowl"
+thumbnail = ExtResource("7_kidle")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_ypefm"]
+script = ExtResource("3_fy28n")
+item_name = "parrot"
+thumbnail = ExtResource("8_xm8uj")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_baw7t"]
+script = ExtResource("3_fy28n")
+item_name = "bunny"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_6jwgf"]
+script = ExtResource("3_fy28n")
+item_name = "cat_toy"
+thumbnail = ExtResource("9_5tggg")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_upmls"]
+script = ExtResource("3_fy28n")
+item_name = "guinea_pig"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_2r2td"]
+script = ExtResource("3_fy28n")
+item_name = "turtle"
+thumbnail = ExtResource("10_b8lo7")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_qrf28"]
+script = ExtResource("3_fy28n")
+item_name = "lizard"
+radius = 60.0
+
+[resource]
+script = ExtResource("11_3qst8")
+scene_name = "pet_shop"
+background_image = ExtResource("2_l2qdg")
+items = Array[ExtResource("3_fy28n")]([SubResource("Resource_4m2hc"), SubResource("Resource_6mbwm"), SubResource("Resource_nftij"), SubResource("Resource_40rc3"), SubResource("Resource_ypefm"), SubResource("Resource_baw7t"), SubResource("Resource_6jwgf"), SubResource("Resource_upmls"), SubResource("Resource_2r2td"), SubResource("Resource_qrf28")])
