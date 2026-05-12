@@ -202,7 +202,7 @@ func _handle_drag(event: InputEventScreenDrag) -> void:
 		var p1: Vector2 = _touches[ids[1]]["pos"]
 		var new_dist := p0.distance_to(p1)
 		if _pinch_start_dist > 0.0:
-			var new_scale := clamp(
+			var new_scale: float = clamp(
 				_pinch_start_scale * (new_dist / _pinch_start_dist),
 				_min_scale, MAX_SCALE
 			)
