@@ -9,3 +9,4 @@ item_name = "hammer"
 thumbnail = ExtResource("2_pvt3j")
 position = Vector2(120, 930)
 radius = 40.0
+tags = Array[String](["ground", "structure"])

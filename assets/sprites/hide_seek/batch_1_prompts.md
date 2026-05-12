@@ -41,6 +41,13 @@
 | Orchid | exotic pink and white tropical flower, large petals |
 | Sloth | smiling sloth hanging from a branch, slow and cozy |
 
+**Variety extras (additional items for scene depth):**
+
+| Item | Append this |
+| :--- | :--- |
+| Bug | bright tropical beetle, round shiny body, yellow and black stripes, six legs |
+| Vine | thick looping green jungle vine with a few broad leaves, hanging downward |
+
 ### Full Scene Prompt (Whisk/Gemini)
 *Children's book illustration of a dense, lush jungle canopy. Tall mahogany trees with vines, giant ferns, misty waterfalls in the background, a small stream flowing through. The scene is wide and panoramic (landscape orientation, 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every corner is filled with leaves, colorful flowers, hidden hollows, and twisted roots. Tropical, lively, and mysterious mood.*
 

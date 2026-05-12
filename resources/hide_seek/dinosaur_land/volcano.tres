@@ -9,3 +9,4 @@ item_name = "volcano"
 thumbnail = ExtResource("2_dbq24")
 position = Vector2(300, 400)
 radius = 120.0
+tags = Array[String](["ground"])

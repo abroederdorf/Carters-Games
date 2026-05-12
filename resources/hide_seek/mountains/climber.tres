@@ -7,3 +7,4 @@ script = ExtResource("1_buyv2")
 item_name = "climber"
 position = Vector2(1680, 320)
 radius = 70.0
+tags = Array[String](["ground"])

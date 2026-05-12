@@ -5,3 +5,5 @@ extends Resource
 @export var thumbnail: Texture2D
 @export var position: Vector2 = Vector2.ZERO
 @export var radius: float = 50.0
+@export var scale_multiplier: float = 1.0
+@export var tags: Array[String] = []

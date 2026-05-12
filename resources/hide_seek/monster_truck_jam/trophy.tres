@@ -9,3 +9,4 @@ item_name = "trophy"
 thumbnail = ExtResource("2_miw2s")
 position = Vector2(750, 880)
 radius = 55.0
+tags = Array[String](["structure"])

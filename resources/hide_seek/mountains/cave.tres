@@ -7,3 +7,4 @@ script = ExtResource("1_rvakp")
 item_name = "cave"
 position = Vector2(180, 450)
 radius = 110.0
+tags = Array[String](["ground"])

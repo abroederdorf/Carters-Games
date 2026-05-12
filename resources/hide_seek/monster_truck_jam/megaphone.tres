@@ -9,3 +9,4 @@ item_name = "megaphone"
 thumbnail = ExtResource("2_5lq8m")
 position = Vector2(1500, 300)
 radius = 40.0
+tags = Array[String](["structure", "ground"])

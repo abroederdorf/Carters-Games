@@ -9,3 +9,4 @@ item_name = "pterodactyl"
 thumbnail = ExtResource("2_xk3ax")
 position = Vector2(1400, 200)
 radius = 75.0
+tags = Array[String](["sky"])

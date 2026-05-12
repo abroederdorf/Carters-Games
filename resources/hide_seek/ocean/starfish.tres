@@ -9,3 +9,4 @@ item_name = "starfish"
 thumbnail = ExtResource("2_qwghh")
 position = Vector2(1750, 950)
 radius = 55.0
+tags = Array[String](["ground"])

@@ -9,3 +9,4 @@ item_name = "bulldozer"
 thumbnail = ExtResource("2_qajox")
 position = Vector2(350, 650)
 radius = 85.0
+tags = Array[String](["ground"])

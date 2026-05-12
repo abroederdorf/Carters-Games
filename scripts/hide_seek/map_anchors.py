@@ -1,0 +1,103 @@
+import os
+import json
+import time
+import io
+import base64
+from pathlib import Path
+from google import genai
+from google.genai import types
+from PIL import Image
+
+# --- Configuration ---
+API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
+client = genai.Client(api_key=API_KEY)
+# We use Gemini 2.5 Flash for its strong vision capabilities
+VISION_MODEL = "gemini-2.5-flash"
+
+ASSET_ROOT = Path("assets/sprites/hide_seek")
+RESOURCE_ROOT = Path("resources/hide_seek")
+
+PROMPT = """
+You are a game designer placing anchor points for a 'Find the Hidden Object' game.
+Look at this background image for a children's game.
+
+Identify 50 natural-looking anchor points where an object could be hidden.
+Image Dimensions: {width} x {height}
+
+Rules:
+1. Spread the points across the entire scene.
+2. Provide (X, Y) pixel coordinates where (0,0) is top-left and ({width}, {height}) is bottom-right.
+3. For each point, provide a 'Radius' in pixels.
+4. Provide 'Tags': "ground", "sky", "water", "foliage", "structure", "shadow".
+5. Provide 'Difficulty' (0: Easy, 1: Medium, 2: Hard).
+
+Return result STRICTLY as JSON array:
+[{{"x": X, "y": Y, "radius": R, "tags": [T], "difficulty": D}}]
+"""
+
+def get_anchors_for_image(image_path):
+    print(f"Analyzing: {image_path}")
+    
+    img = Image.open(image_path)
+    width, height = img.size
+    
+    with open(image_path, "rb") as f:
+        image_bytes = f.read()
+
+    response = client.models.generate_content(
+        model=VISION_MODEL,
+        contents=[
+            PROMPT.format(width=width, height=height),
+            types.Part.from_bytes(data=image_bytes, mime_type="image/png")
+        ]
+    )
+    
+    text = response.text
+    # Extract JSON if there's any markdown wrapping
+    if "```json" in text:
+        text = text.split("```json")[1].split("```")[0]
+    elif "```" in text:
+        text = text.split("```")[1].split("```")[0]
+        
+    try:
+        return json.loads(text.strip())
+    except Exception as e:
+        print(f"Error parsing JSON for {image_path}: {e}")
+        print("Raw response:", text)
+        return None
+
+def update_godot_resource(theme_name, anchors):
+    # This function will generate the GDScript to update the resources
+    # For now, we'll just print the data or save it to a JSON for the GDScript to read.
+    pass
+
+def main():
+    themes = [
+        "mountains", "ocean", "jungle", "space", 
+        "fire_station", "dinosaur_land", "construction_site", "monster_truck_jam"
+    ]
+    
+    all_anchors = {}
+    
+    for theme in themes:
+        theme_dir = ASSET_ROOT / theme
+        bg_path = theme_dir / "bg.png"
+        if not bg_path.exists():
+            bg_path = theme_dir / "bg_fast.png"
+        
+        if not bg_path.exists():
+            print(f"Background not found for {theme}")
+            continue
+            
+        anchors = get_anchors_for_image(bg_path)
+        if anchors:
+            all_anchors[theme] = anchors
+            print(f"  Found {len(anchors)} anchors for {theme}")
+            
+    # Save to a temporary JSON file for Godot to ingest
+    with open("scripts/hide_seek/anchors_data.json", "w") as f:
+        json.dump(all_anchors, f, indent=2)
+    print("\nSaved anchor data to scripts/hide_seek/anchors_data.json")
+
+if __name__ == "__main__":
+    main()

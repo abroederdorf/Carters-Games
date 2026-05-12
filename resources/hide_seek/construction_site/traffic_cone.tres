@@ -9,3 +9,4 @@ item_name = "traffic_cone"
 thumbnail = ExtResource("2_b0e1y")
 position = Vector2(380, 930)
 radius = 40.0
+tags = Array[String](["ground"])

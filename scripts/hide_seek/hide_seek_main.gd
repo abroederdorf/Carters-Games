@@ -105,6 +105,9 @@ func _make_card(scene_name: String) -> Button:
 
 	# Background scene image
 	var bg_path := "res://assets/sprites/hide_seek/%s/bg.png" % scene_name
+	if not ResourceLoader.exists(bg_path):
+		bg_path = "res://assets/sprites/hide_seek/%s/bg_fast.png" % scene_name
+		
 	if ResourceLoader.exists(bg_path):
 		var tex_rect := TextureRect.new()
 		tex_rect.texture = load(bg_path)

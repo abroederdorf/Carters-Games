@@ -7,3 +7,4 @@ script = ExtResource("1_xn3wn")
 item_name = "campfire"
 position = Vector2(1320, 840)
 radius = 60.0
+tags = Array[String](["ground"])

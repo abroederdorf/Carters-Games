@@ -9,3 +9,4 @@ item_name = "submarine"
 thumbnail = ExtResource("2_pyc6k")
 position = Vector2(1400, 250)
 radius = 85.0
+tags = Array[String](["water", "ground"])

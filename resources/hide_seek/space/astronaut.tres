@@ -9,3 +9,4 @@ item_name = "astronaut"
 thumbnail = ExtResource("2_bncnx")
 position = Vector2(1100, 500)
 radius = 75.0
+tags = Array[String](["ground", "structure"])

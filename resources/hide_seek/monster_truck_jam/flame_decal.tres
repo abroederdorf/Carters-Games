@@ -9,3 +9,4 @@ item_name = "flame_decal"
 thumbnail = ExtResource("2_mrejq")
 position = Vector2(200, 680)
 radius = 45.0
+tags = Array[String](["structure"])

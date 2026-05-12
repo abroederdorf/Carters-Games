@@ -9,3 +9,4 @@ item_name = "rocket"
 thumbnail = ExtResource("2_2y0d6")
 position = Vector2(1700, 300)
 radius = 100.0
+tags = Array[String](["sky", "ground"])

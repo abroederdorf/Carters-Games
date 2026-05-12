@@ -7,3 +7,4 @@ script = ExtResource("1_k4syt")
 item_name = "tree"
 position = Vector2(600, 580)
 radius = 100.0
+tags = Array[String](["foliage", "ground"])

@@ -43,6 +43,7 @@ TARGETS = {
             "hammer": "metal claw hammer with a wooden handle, simple",
             "blueprint": "rolled-up blue paper with white architectural lines",
             "toolbox": "red metal toolbox with a silver handle on top",
+            "ladder": {"shared": "ladder"},
             "safety_vest": "bright neon orange vest with reflective silver stripes"
         }
     },

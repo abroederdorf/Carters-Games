@@ -6,13 +6,19 @@ const THUMB_SIZE := 110.0
 const MAX_SCALE := 3.5
 const TAP_MAX_MOVE := 20.0
 
+const MAX_ITEMS := 10
+
 var _scene_name: String
 var _scene_data: HideSeekSceneData
+var _active_items: Array[HideSeekItemData] = []
 var _found: Array[bool] = []
 var _found_count: int = 0
 var _elapsed: float = 0.0
 var _running: bool = false
 var _won: bool = false
+
+# Runtime item assignment (anchor info for each item index)
+var _active_item_data: Array[Dictionary] = []
 
 # Canvas transform
 var _canvas_scale: float = 1.0
@@ -58,10 +64,117 @@ func _ready() -> void:
 	if _scene_data == null:
 		get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekMain.tscn")
 		return
-	_found.resize(_scene_data.items.size())
+
+	var bg_tex_early := _scene_data.background_image
+	_bg_size = Vector2(bg_tex_early.get_width(), bg_tex_early.get_height())
+
+	var all_items := _scene_data.items.duplicate()
+	all_items.shuffle()
+	_active_items = all_items.slice(0, min(MAX_ITEMS, all_items.size()))
+
+	_assign_items_to_anchors()
+
+	_found.resize(_active_items.size())
 	_found.fill(false)
 	_build_ui()
 	_setup_canvas()
+
+
+func _assign_items_to_anchors() -> void:
+	_active_item_data.clear()
+	
+	# 1. Filter and separate anchors by difficulty
+	var standard_anchors: Array[HideSeekAnchor] = []
+	var hard_anchors: Array[HideSeekAnchor] = []
+	
+	# Margin to prevent items from being cut off at edges
+	var margin_x := _bg_size.x * 0.05
+	var margin_y := _bg_size.y * 0.05
+	
+	for a in _scene_data.anchors:
+		if a.position.x < margin_x or a.position.x > _bg_size.x - margin_x \
+			or a.position.y < margin_y or a.position.y > _bg_size.y - margin_y:
+			continue
+			
+		if a.difficulty >= 2:
+			hard_anchors.append(a)
+		else:
+			standard_anchors.append(a)
+	
+	standard_anchors.shuffle()
+	hard_anchors.shuffle()
+	
+	# 2. Select the pool for this session (Target: more than items.size to allow matching)
+	var session_anchors: Array[HideSeekAnchor] = []
+	
+	# Aim for 2 hard anchors if available
+	var hard_count = min(2, hard_anchors.size())
+	for i in hard_count:
+		session_anchors.append(hard_anchors.pop_back())
+		
+	# Fill with standard anchors to give the matcher breathing room
+	# (We pick 20 anchors for 10 items to ensure tag matching works)
+	var needed = min(20, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
+	for i in needed:
+		if not standard_anchors.is_empty():
+			session_anchors.append(standard_anchors.pop_back())
+	
+	session_anchors.shuffle()
+	
+	# 3. Match items to anchors via tags
+	var used_anchors: Array[bool] = []
+	used_anchors.resize(session_anchors.size())
+	used_anchors.fill(false)
+	
+	for i in _active_items.size():
+		var item := _active_items[i]
+		var assigned_anchor: HideSeekAnchor = null
+		
+		# PASS 1: Strict Tag Matching
+		if not item.tags.is_empty():
+			for j in session_anchors.size():
+				if used_anchors[j]: continue
+				var anchor = session_anchors[j]
+				
+				for t in item.tags:
+					if t in anchor.tags:
+						assigned_anchor = anchor
+						used_anchors[j] = true
+						break
+				if assigned_anchor: break
+		
+		# PASS 2: Fallback for generic items or no tag match
+		if assigned_anchor == null:
+			for j in session_anchors.size():
+				if used_anchors[j]: continue
+				var anchor = session_anchors[j]
+				
+				# Avoid putting ground items in the sky/water if possible
+				var is_sky_water = ("sky" in anchor.tags or "water" in anchor.tags)
+				var is_ground_item = ("ground" in item.tags)
+				
+				if is_ground_item and is_sky_water:
+					continue # Try to find a better spot
+					
+				assigned_anchor = anchor
+				used_anchors[j] = true
+				break
+				
+		# PASS 3: Absolute fallback (ran out of good spots)
+		if assigned_anchor == null:
+			for j in session_anchors.size():
+				if not used_anchors[j]:
+					assigned_anchor = session_anchors[j]
+					used_anchors[j] = true
+					break
+		
+		# Final result
+		var data := {"pos": item.position, "radius": item.radius}
+		if assigned_anchor != null:
+			data["pos"] = assigned_anchor.position
+			data["radius"] = assigned_anchor.radius * item.scale_multiplier
+			
+		_active_item_data.append(data)
 
 
 func _process(delta: float) -> void:
@@ -108,7 +221,7 @@ func _build_ui() -> void:
 	_canvas_root = Node2D.new()
 	_canvas_area.add_child(_canvas_root)
 
-	var bg_tex := load("res://assets/sprites/hide_seek/%s/bg.png" % _scene_name) as Texture2D
+	var bg_tex := _scene_data.background_image
 	_bg_size = Vector2(bg_tex.get_width(), bg_tex.get_height())
 	var bg_sprite := Sprite2D.new()
 	bg_sprite.texture = bg_tex
@@ -122,17 +235,19 @@ func _build_ui() -> void:
 
 
 func _build_item_sprites() -> void:
-	for i in _scene_data.items.size():
-		var item: HideSeekItemData = _scene_data.items[i]
+	for i in _active_items.size():
+		var item: HideSeekItemData = _active_items[i]
+		var runtime_data: Dictionary = _active_item_data[i]
 		var tex := _get_item_texture(item)
 		var sprite := Sprite2D.new()
 		sprite.centered = true
-		sprite.position = item.position
+		sprite.position = runtime_data["pos"]
 		if tex != null:
 			sprite.texture = tex
 			var max_dim := float(max(tex.get_width(), tex.get_height()))
 			if max_dim > 0.0:
-				sprite.scale = Vector2.ONE * ((item.radius * 2.0) / max_dim)
+				# Scale based on the assigned anchor's radius
+				sprite.scale = Vector2.ONE * ((runtime_data["radius"] * 2.0) / max_dim)
 		_canvas_root.add_child(sprite)
 		_item_sprites.append(sprite)
 
@@ -239,8 +354,8 @@ func _build_thumb_strip() -> void:
 	hbox.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	scroll.add_child(hbox)
 
-	for i in _scene_data.items.size():
-		var item: HideSeekItemData = _scene_data.items[i]
+	for i in _active_items.size():
+		var item: HideSeekItemData = _active_items[i]
 		var card := _make_thumb_card(item)
 		_thumb_nodes.append(card)
 		hbox.add_child(card)
@@ -527,11 +642,11 @@ func _handle_tap(screen_pos: Vector2) -> void:
 	if area_pos.y < 0 or area_pos.y > _canvas_area_size.y:
 		return
 	var canvas_pos := (area_pos - _canvas_offset) / _canvas_scale
-	for i in _scene_data.items.size():
+	for i in _active_items.size():
 		if _found[i]:
 			continue
-		var item: HideSeekItemData = _scene_data.items[i]
-		if canvas_pos.distance_to(item.position) <= item.radius:
+		var runtime_data: Dictionary = _active_item_data[i]
+		if canvas_pos.distance_to(runtime_data["pos"]) <= runtime_data["radius"]:
 			_on_item_found(i)
 			return
 
@@ -541,7 +656,7 @@ func _handle_tap(screen_pos: Vector2) -> void:
 func _on_item_found(index: int) -> void:
 	_found[index] = true
 	_found_count += 1
-	AudioManager.play_sfx("catch")
+	AudioManager.play_sfx("pop")
 
 	var card := _thumb_nodes[index]
 	(card.get_child(1) as CanvasItem).visible = true  # green overlay
@@ -554,12 +669,12 @@ func _on_item_found(index: int) -> void:
 
 	_show_found_flash(index)
 
-	if _found_count >= _scene_data.items.size():
+	if _found_count >= _active_items.size():
 		_on_win()
 
 
 func _show_found_flash(index: int) -> void:
-	var item: HideSeekItemData = _scene_data.items[index]
+	var runtime_data: Dictionary = _active_item_data[index]
 	var lbl := Label.new()
 	lbl.text = "✓"
 	lbl.add_theme_font_size_override("font_size", 80)
@@ -567,18 +682,18 @@ func _show_found_flash(index: int) -> void:
 	lbl.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.8))
 	lbl.add_theme_constant_override("shadow_offset_x", 2)
 	lbl.add_theme_constant_override("shadow_offset_y", 2)
-	lbl.position = item.position - Vector2(30, 30)
+	lbl.position = runtime_data["pos"] - Vector2(30, 30)
 	_canvas_root.add_child(lbl)
 
 	var tween := create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(lbl, "position", item.position - Vector2(30, 90), 0.7)
+	tween.tween_property(lbl, "position", runtime_data["pos"] - Vector2(30, 90), 0.7)
 	tween.tween_property(lbl, "modulate:a", 0.0, 0.7).set_delay(0.2)
 	tween.chain().tween_callback(lbl.queue_free)
 
 
 func _calculate_stars() -> int:
-	var n := _scene_data.items.size()
+	var n := _active_items.size()
 	if _elapsed < n * 10.0:
 		return 3
 	elif _elapsed < n * 20.0:
@@ -626,7 +741,7 @@ func _on_hint_pressed() -> void:
 	if HideSeekState.hint_stars <= 0 or _won:
 		return
 	var unfound: Array[int] = []
-	for i in _scene_data.items.size():
+	for i in _active_items.size():
 		if not _found[i]:
 			unfound.append(i)
 	if unfound.is_empty():
@@ -639,16 +754,16 @@ func _on_hint_pressed() -> void:
 
 
 func _show_hint(index: int) -> void:
-	var item: HideSeekItemData = _scene_data.items[index]
+	var runtime_data: Dictionary = _active_item_data[index]
 	var lbl := Label.new()
 	lbl.text = "⭐"
-	var font_sz := int(item.radius * 1.5)
+	var font_sz := int(runtime_data["radius"] * 1.5)
 	lbl.add_theme_font_size_override("font_size", font_sz)
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	var sz := item.radius * 2.0
+	var sz: float = runtime_data["radius"] * 2.0
 	lbl.custom_minimum_size = Vector2(sz, sz)
-	lbl.position = item.position - Vector2(item.radius, item.radius)
+	lbl.position = runtime_data["pos"] - Vector2(runtime_data["radius"], runtime_data["radius"])
 	_canvas_root.add_child(lbl)
 
 	var pulse := create_tween()

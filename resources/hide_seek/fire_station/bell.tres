@@ -9,3 +9,4 @@ item_name = "bell"
 thumbnail = ExtResource("2_vdur6")
 position = Vector2(1350, 70)
 radius = 45.0
+tags = Array[String](["structure"])

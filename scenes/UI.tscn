@@ -1,309 +1,244 @@
-[gd_scene load_steps=22 format=3 uid="uid://cuu000000001"]
+[gd_scene format=3 uid="uid://cuu000000001"]
 
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_ui001"]
-
-[ext_resource type="Texture2D" path="res://assets/sprites/close_icon.svg" id="14_close"]
-[ext_resource type="Texture2D" path="res://assets/sprites/pause_icon.svg" id="15_pause"]
-[ext_resource type="Texture2D" path="res://assets/sprites/play_icon.svg" id="20_play"]
-[ext_resource type="Texture2D" path="res://assets/sprites/sound_on_icon.svg" id="16_sound_on"]
-[ext_resource type="Texture2D" path="res://assets/sprites/sound_off_icon.svg" id="17_sound_off"]
-[ext_resource type="Texture2D" path="res://assets/sprites/switch_on.svg" id="18_switch_on"]
-[ext_resource type="Texture2D" path="res://assets/sprites/switch_off.svg" id="19_switch_off"]
-
-[sub_resource type="StyleBoxFlat" id="SBF_exit_n"]
-bg_color = Color(0.88, 0.14, 0.14, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.50, 0.05, 0.05, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_exit_p"]
-bg_color = Color(0.65, 0.08, 0.08, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.35, 0.02, 0.02, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_pau_n"]
-bg_color = Color(0.20, 0.42, 0.88, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.08, 0.20, 0.55, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_pau_p"]
-bg_color = Color(0.12, 0.26, 0.62, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.05, 0.12, 0.38, 1)
-anti_aliased = true
+[ext_resource type="Script" uid="uid://cge4yimkq7ovu" path="res://scripts/ui.gd" id="1_ui001"]
+[ext_resource type="Texture2D" uid="uid://dfs65n8287m4o" path="res://assets/sprites/close_icon.svg" id="14_close"]
+[ext_resource type="Texture2D" uid="uid://b161sm1g8rcto" path="res://assets/sprites/pause_icon.svg" id="15_pause"]
+[ext_resource type="Texture2D" uid="uid://doxk5bg0bn7p3" path="res://assets/sprites/sound_on_icon.svg" id="16_sound_on"]
+[ext_resource type="Texture2D" uid="uid://d1gw5rgvcccob" path="res://assets/sprites/switch_on.svg" id="18_switch_on"]
+[ext_resource type="Texture2D" uid="uid://b5k22ruv0ks8" path="res://assets/sprites/switch_off.svg" id="19_switch_off"]
+[ext_resource type="Texture2D" uid="uid://cbdrkefxpb003" path="res://assets/sprites/play_icon.svg" id="20_play"]
 
 [sub_resource type="StyleBoxFlat" id="SBF_play_n"]
 bg_color = Color(0.14, 0.76, 0.26, 1)
-corner_radius_top_left = 75
-corner_radius_top_right = 75
-corner_radius_bottom_right = 75
-corner_radius_bottom_left = 75
-corner_detail = 16
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.05, 0.45, 0.13, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_play_p"]
-bg_color = Color(0.08, 0.52, 0.16, 1)
 corner_radius_top_left = 75
 corner_radius_top_right = 75
 corner_radius_bottom_right = 75
 corner_radius_bottom_left = 75
 corner_detail = 16
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.03, 0.30, 0.08, 1)
-anti_aliased = true
 
-[sub_resource type="StyleBoxFlat" id="SBF_t1_n"]
-bg_color = Color(1.0, 0.54, 0.08, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
+[sub_resource type="StyleBoxFlat" id="SBF_play_p"]
+bg_color = Color(0.08, 0.52, 0.16, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.62, 0.30, 0.02, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_t1_p"]
-bg_color = Color(0.75, 0.38, 0.04, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.45, 0.20, 0.01, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_t3_n"]
-bg_color = Color(0.18, 0.56, 0.98, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.06, 0.28, 0.68, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_t3_p"]
-bg_color = Color(0.10, 0.36, 0.72, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.04, 0.18, 0.48, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_t5_n"]
-bg_color = Color(0.65, 0.20, 0.92, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.36, 0.08, 0.58, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_t5_p"]
-bg_color = Color(0.45, 0.12, 0.65, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.24, 0.04, 0.40, 1)
-anti_aliased = true
+border_color = Color(0.03, 0.3, 0.08, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+corner_detail = 16
 
 [sub_resource type="StyleBoxFlat" id="SBF_pa_n"]
 bg_color = Color(0.06, 0.72, 0.62, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 8
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.02, 0.42, 0.35, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_pa_p"]
-bg_color = Color(0.03, 0.50, 0.42, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="SBF_pa_p"]
+bg_color = Color(0.03, 0.5, 0.42, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.01, 0.28, 0.22, 1)
-anti_aliased = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="SBF_de_n"]
-bg_color = Color(0.14, 0.76, 0.26, 1)
+[sub_resource type="StyleBoxFlat" id="SBF_t3_n"]
+bg_color = Color(0.18, 0.56, 0.98, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.06, 0.28, 0.68, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="SBF_t3_p"]
+bg_color = Color(0.1, 0.36, 0.72, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.04, 0.18, 0.48, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="SBF_t5_n"]
+bg_color = Color(0.65, 0.2, 0.92, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.36, 0.08, 0.58, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="SBF_t5_p"]
+bg_color = Color(0.45, 0.12, 0.65, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.24, 0.04, 0.4, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="SBF_de_n"]
+bg_color = Color(0.14, 0.76, 0.26, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.05, 0.45, 0.13, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_de_p"]
-bg_color = Color(0.08, 0.52, 0.16, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="SBF_de_p"]
+bg_color = Color(0.08, 0.52, 0.16, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.03, 0.30, 0.08, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_dm_n"]
-bg_color = Color(0.95, 0.78, 0.05, 1)
+border_color = Color(0.03, 0.3, 0.08, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="SBF_dm_n"]
+bg_color = Color(0.95, 0.78, 0.05, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.58, 0.45, 0.01, 1)
-anti_aliased = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxFlat" id="SBF_dm_p"]
 bg_color = Color(0.72, 0.58, 0.02, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.40, 0.30, 0.01, 1)
-anti_aliased = true
+border_color = Color(0.4, 0.3, 0.01, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxFlat" id="SBF_dh_n"]
 bg_color = Color(0.88, 0.14, 0.14, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 8
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.50, 0.05, 0.05, 1)
-anti_aliased = true
-
-[sub_resource type="StyleBoxFlat" id="SBF_dh_p"]
-bg_color = Color(0.65, 0.08, 0.08, 1)
+border_color = Color(0.5, 0.05, 0.05, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="SBF_dh_p"]
+bg_color = Color(0.65, 0.08, 0.08, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.35, 0.02, 0.02, 1)
-anti_aliased = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
-[node name="UI" type="CanvasLayer"]
+[sub_resource type="StyleBoxFlat" id="SBF_t1_n"]
+bg_color = Color(1, 0.54, 0.08, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.62, 0.3, 0.02, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="SBF_t1_p"]
+bg_color = Color(0.75, 0.38, 0.04, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.45, 0.2, 0.01, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="SBF_exit_n"]
+bg_color = Color(0.88, 0.14, 0.14, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.5, 0.05, 0.05, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="SBF_exit_p"]
+bg_color = Color(0.65, 0.08, 0.08, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.35, 0.02, 0.02, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[node name="UI" type="CanvasLayer" unique_id=178297215]
 process_mode = 3
 script = ExtResource("1_ui001")
 
-[node name="TimerLabel" type="Label" parent="."]
+[node name="TimerLabel" type="Label" parent="." unique_id=758410321]
 offset_left = 105.0
 offset_top = 20.0
 offset_right = 285.0
 offset_bottom = 60.0
-text = "3:00"
 theme_override_font_sizes/font_size = 32
+text = "3:00"
 
-[node name="ScoreLabel" type="Label" parent="."]
-layout_mode = 3
+[node name="ScoreLabel" type="Label" parent="." unique_id=483874505]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -312,12 +247,11 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 60.0
 grow_horizontal = 0
-horizontal_alignment = 2
-text = "Score: 0"
 theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+horizontal_alignment = 2
 
-[node name="FishLabel" type="Label" parent="."]
-layout_mode = 3
+[node name="FishLabel" type="Label" parent="." unique_id=731738719]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -326,11 +260,11 @@ offset_top = 65.0
 offset_right = -20.0
 offset_bottom = 105.0
 grow_horizontal = 0
-horizontal_alignment = 2
-text = "Fish: 0"
 theme_override_font_sizes/font_size = 32
+text = "Fish: 0"
+horizontal_alignment = 2
 
-[node name="PauseOverlay" type="Control" parent="."]
+[node name="PauseOverlay" type="Control" parent="." unique_id=32382741]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -339,8 +273,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="PauseOverlay"]
-layout_mode = 3
+[node name="Background" type="ColorRect" parent="PauseOverlay" unique_id=375930039]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -348,8 +282,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.55)
 
-[node name="PausedLabel" type="Label" parent="PauseOverlay"]
-layout_mode = 3
+[node name="PausedLabel" type="Label" parent="PauseOverlay" unique_id=317707865]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -358,12 +293,15 @@ offset_left = -200.0
 offset_top = -200.0
 offset_right = 200.0
 offset_bottom = -90.0
-horizontal_alignment = 1
-text = "PAUSED"
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 72
+text = "PAUSED"
+horizontal_alignment = 1
 
-[node name="PausePlayButton" type="Button" parent="PauseOverlay"]
-layout_mode = 3
+[node name="PausePlayButton" type="Button" parent="PauseOverlay" unique_id=2121311759]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -372,14 +310,16 @@ offset_left = -75.0
 offset_top = -65.0
 offset_right = 75.0
 offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 0
+theme_override_styles/normal = SubResource("SBF_play_n")
+theme_override_styles/pressed = SubResource("SBF_play_p")
+theme_override_styles/hover = SubResource("SBF_play_n")
 icon = ExtResource("20_play")
 expand_icon = true
-theme_override_styles/normal = SubResource("SBF_play_n")
-theme_override_styles/hover = SubResource("SBF_play_n")
-theme_override_styles/pressed = SubResource("SBF_play_p")
 
-[node name="EndScreen" type="Control" parent="."]
+[node name="EndScreen" type="Control" parent="." unique_id=1549663982]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -388,8 +328,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndBg" type="ColorRect" parent="EndScreen"]
-layout_mode = 3
+[node name="EndBg" type="ColorRect" parent="EndScreen" unique_id=422141195]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -397,7 +337,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.7)
 
-[node name="EndScroll" type="ScrollContainer" parent="EndScreen"]
+[node name="EndScroll" type="ScrollContainer" parent="EndScreen" unique_id=484177245]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -406,46 +346,46 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="EndCenter" type="CenterContainer" parent="EndScreen/EndScroll"]
+[node name="EndCenter" type="CenterContainer" parent="EndScreen/EndScroll" unique_id=1777814263]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EndVBox" type="VBoxContainer" parent="EndScreen/EndScroll/EndCenter"]
+[node name="EndVBox" type="VBoxContainer" parent="EndScreen/EndScroll/EndCenter" unique_id=683276424]
 custom_minimum_size = Vector2(700, 700)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="FinalScoreLabel" type="Label" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
+[node name="FinalScoreLabel" type="Label" parent="EndScreen/EndScroll/EndCenter/EndVBox" unique_id=2067194931]
 layout_mode = 2
-horizontal_alignment = 1
-text = "You caught 0 fish!"
 theme_override_font_sizes/font_size = 40
-
-[node name="HighScoresLabel" type="Label" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
-layout_mode = 2
+text = "You caught 0 fish!"
 horizontal_alignment = 1
-text = "High Scores"
-theme_override_font_sizes/font_size = 28
-theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
 
-[node name="LeaderboardContainer" type="VBoxContainer" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
+[node name="HighScoresLabel" type="Label" parent="EndScreen/EndScroll/EndCenter/EndVBox" unique_id=710603591]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 28
+text = "High Scores"
+horizontal_alignment = 1
+
+[node name="LeaderboardContainer" type="VBoxContainer" parent="EndScreen/EndScroll/EndCenter/EndVBox" unique_id=406794838]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PlayAgainButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox"]
+[node name="PlayAgainButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox" unique_id=2114689853]
 custom_minimum_size = Vector2(260, 90)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Play Again"
-theme_override_font_sizes/font_size = 32
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+text = "Play Again"
 
-[node name="MenuScreen" type="Control" parent="."]
+[node name="MenuScreen" type="Control" parent="." unique_id=559396739]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -453,8 +393,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuBg" type="ColorRect" parent="MenuScreen"]
-layout_mode = 3
+[node name="MenuBg" type="ColorRect" parent="MenuScreen" unique_id=930522053]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -462,7 +402,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.04, 0.14, 0.32, 0.93)
 
-[node name="MenuScroll" type="ScrollContainer" parent="MenuScreen"]
+[node name="MenuScroll" type="ScrollContainer" parent="MenuScreen" unique_id=185878060]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -471,212 +411,213 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="MenuCenter" type="CenterContainer" parent="MenuScreen/MenuScroll"]
+[node name="MenuCenter" type="CenterContainer" parent="MenuScreen/MenuScroll" unique_id=1486988795]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MenuVBox" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter"]
+[node name="MenuVBox" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter" unique_id=541806871]
 custom_minimum_size = Vector2(700, 700)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
+[node name="TitleLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox" unique_id=666722234]
 layout_mode = 2
-horizontal_alignment = 1
-text = "Gone Fishin'"
 theme_override_font_sizes/font_size = 60
+text = "Gone Fishin'"
+horizontal_alignment = 1
 
-[node name="ModeSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
+[node name="ModeSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox" unique_id=840181852]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ModeLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection"]
+[node name="ModeLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection" unique_id=221255219]
 layout_mode = 2
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 24
 text = "Game Mode"
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+horizontal_alignment = 1
 
-[node name="ModeButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection"]
+[node name="ModeButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection" unique_id=1518746393]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="MenuBtnFreePlay" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons"]
+[node name="MenuBtnFreePlay" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons" unique_id=1038225713]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-text = "Fish"
-theme_override_font_sizes/font_size = 36
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+text = "Fish"
 
-[node name="MenuBtnMath" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons"]
+[node name="MenuBtnMath" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons" unique_id=401718823]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("SBF_t3_n")
+theme_override_styles/pressed = SubResource("SBF_t3_p")
+theme_override_styles/hover = SubResource("SBF_t3_n")
 text = "Math"
-theme_override_font_sizes/font_size = 36
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_t3_n")
-theme_override_styles/hover = SubResource("SBF_t3_n")
-theme_override_styles/pressed = SubResource("SBF_t3_p")
 
-[node name="MenuBtnSpelling" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons"]
+[node name="MenuBtnSpelling" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons" unique_id=1848184351]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("SBF_t5_n")
+theme_override_styles/pressed = SubResource("SBF_t5_p")
+theme_override_styles/hover = SubResource("SBF_t5_n")
 text = "ABC"
-theme_override_font_sizes/font_size = 36
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_t5_n")
-theme_override_styles/hover = SubResource("SBF_t5_n")
-theme_override_styles/pressed = SubResource("SBF_t5_p")
 
-[node name="DifficultySection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
+[node name="DifficultySection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox" unique_id=1309912857]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="DifficultyLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection"]
+[node name="DifficultyLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection" unique_id=1081668438]
 layout_mode = 2
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 24
 text = "Difficulty"
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+horizontal_alignment = 1
 
-[node name="DifficultyButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection"]
+[node name="DifficultyButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection" unique_id=1683492466]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="MenuBtnEasy" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons"]
+[node name="MenuBtnEasy" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons" unique_id=1202398736]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-text = "Easy"
-theme_override_font_sizes/font_size = 40
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("SBF_de_n")
-theme_override_styles/hover = SubResource("SBF_de_n")
 theme_override_styles/pressed = SubResource("SBF_de_p")
+theme_override_styles/hover = SubResource("SBF_de_n")
+text = "Easy"
 
-[node name="MenuBtnMedium" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons"]
+[node name="MenuBtnMedium" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons" unique_id=1311492832]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-text = "Med"
-theme_override_font_sizes/font_size = 40
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("SBF_dm_n")
-theme_override_styles/hover = SubResource("SBF_dm_n")
 theme_override_styles/pressed = SubResource("SBF_dm_p")
+theme_override_styles/hover = SubResource("SBF_dm_n")
+text = "Med"
 
-[node name="MenuBtnHard" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons"]
+[node name="MenuBtnHard" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection/DifficultyButtons" unique_id=1649445023]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-text = "Hard"
-theme_override_font_sizes/font_size = 40
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("SBF_dh_n")
-theme_override_styles/hover = SubResource("SBF_dh_n")
 theme_override_styles/pressed = SubResource("SBF_dh_p")
+theme_override_styles/hover = SubResource("SBF_dh_n")
+text = "Hard"
 
-[node name="TimerSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
+[node name="TimerSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox" unique_id=1574979261]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="TimerLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection"]
+[node name="TimerLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection" unique_id=1043658449]
 layout_mode = 2
-horizontal_alignment = 1
-text = "How long?"
-theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 24
+text = "How long?"
+horizontal_alignment = 1
 
-[node name="TimerButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection"]
+[node name="TimerButtons" type="HBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection" unique_id=445069227]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="MenuBtn1Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons"]
+[node name="MenuBtn1Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons" unique_id=595029165]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-text = "1"
-theme_override_font_sizes/font_size = 64
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("SBF_t1_n")
-theme_override_styles/hover = SubResource("SBF_t1_n")
 theme_override_styles/pressed = SubResource("SBF_t1_p")
+theme_override_styles/hover = SubResource("SBF_t1_n")
+text = "1"
 
-[node name="MenuBtn3Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons"]
+[node name="MenuBtn3Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons" unique_id=480440630]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-text = "3"
-theme_override_font_sizes/font_size = 64
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("SBF_t3_n")
-theme_override_styles/hover = SubResource("SBF_t3_n")
 theme_override_styles/pressed = SubResource("SBF_t3_p")
+theme_override_styles/hover = SubResource("SBF_t3_n")
+text = "3"
 
-[node name="MenuBtn5Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons"]
+[node name="MenuBtn5Min" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection/TimerButtons" unique_id=24626558]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-text = "5"
-theme_override_font_sizes/font_size = 64
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("SBF_t5_n")
-theme_override_styles/hover = SubResource("SBF_t5_n")
 theme_override_styles/pressed = SubResource("SBF_t5_p")
+theme_override_styles/hover = SubResource("SBF_t5_n")
+text = "5"
 
-[node name="ActionsSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox"]
+[node name="ActionsSection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox" unique_id=693617447]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="MenuPlayButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection"]
+[node name="MenuPlayButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection" unique_id=1331211453]
 custom_minimum_size = Vector2(400, 90)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Play!"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 44
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("SBF_play_n")
-theme_override_styles/hover = SubResource("SBF_play_n")
 theme_override_styles/pressed = SubResource("SBF_play_p")
+theme_override_styles/hover = SubResource("SBF_play_n")
+text = "Play!"
 
-[node name="ScoresButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection"]
+[node name="ScoresButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection" unique_id=1302322485]
 custom_minimum_size = Vector2(230, 60)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
 text = "High Scores"
-theme_override_font_sizes/font_size = 26
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
-theme_override_styles/pressed = SubResource("SBF_pa_p")
 
-[node name="SettingsButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection"]
+[node name="SettingsButton" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ActionsSection" unique_id=161495770]
 custom_minimum_size = Vector2(230, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Settings"
-theme_override_font_sizes/font_size = 26
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+text = "Settings"
 
-[node name="MenuBackButton" type="Button" parent="MenuScreen"]
+[node name="MenuBackButton" type="Button" parent="MenuScreen" unique_id=1388951885]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 150.0
 offset_bottom = 62.0
 focus_mode = 0
-text = "< Games"
-theme_override_font_sizes/font_size = 26
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+text = "< Games"
 
-[node name="LeaderboardScreen" type="Control" parent="."]
+[node name="LeaderboardScreen" type="Control" parent="." unique_id=1575597842]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -685,8 +626,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LeaderboardBg" type="ColorRect" parent="LeaderboardScreen"]
-layout_mode = 3
+[node name="LeaderboardBg" type="ColorRect" parent="LeaderboardScreen" unique_id=1205379613]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -694,7 +635,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.04, 0.14, 0.32, 0.93)
 
-[node name="LeaderboardScroll" type="ScrollContainer" parent="LeaderboardScreen"]
+[node name="LeaderboardScroll" type="ScrollContainer" parent="LeaderboardScreen" unique_id=227028501]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -703,22 +644,22 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="LeaderboardCenter" type="CenterContainer" parent="LeaderboardScreen/LeaderboardScroll"]
+[node name="LeaderboardCenter" type="CenterContainer" parent="LeaderboardScreen/LeaderboardScroll" unique_id=1977805457]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LeaderboardVBox" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter"]
+[node name="LeaderboardVBox" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter" unique_id=215679110]
 custom_minimum_size = Vector2(700, 700)
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Header" type="Control" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
+[node name="Header" type="Control" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=515415255]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/Header"]
+[node name="TitleLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/Header" unique_id=819923631]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -727,173 +668,171 @@ offset_left = -250.0
 offset_right = 250.0
 offset_bottom = 60.0
 grow_horizontal = 2
-horizontal_alignment = 1
-text = "High Scores"
 theme_override_font_sizes/font_size = 50
+text = "High Scores"
+horizontal_alignment = 1
 
-[node name="LBBackButton" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/Header"]
+[node name="LBBackButton" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/Header" unique_id=1207763722]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
 offset_right = 140.0
 offset_bottom = 52.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("SBF_pa_n")
+theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
 text = "< Back"
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
-theme_override_styles/pressed = SubResource("SBF_pa_p")
 
-[node name="ModeSection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
+[node name="ModeSection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=1893023403]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="ModeLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection"]
+[node name="ModeLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection" unique_id=1245198557]
 layout_mode = 2
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 24
 text = "Game Mode"
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+horizontal_alignment = 1
 
-[node name="ModeButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection"]
+[node name="ModeButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection" unique_id=37389299]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="LBBtnFreePlay" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons"]
+[node name="LBBtnFreePlay" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons" unique_id=1433281459]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-text = "Fish"
-theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+text = "Fish"
 
-[node name="LBBtnMath" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons"]
+[node name="LBBtnMath" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons" unique_id=682675772]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("SBF_t3_n")
+theme_override_styles/pressed = SubResource("SBF_t3_p")
+theme_override_styles/hover = SubResource("SBF_t3_n")
 text = "Math"
-theme_override_font_sizes/font_size = 28
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_t3_n")
-theme_override_styles/hover = SubResource("SBF_t3_n")
-theme_override_styles/pressed = SubResource("SBF_t3_p")
 
-[node name="LBBtnSpelling" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons"]
+[node name="LBBtnSpelling" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons" unique_id=987246122]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("SBF_t5_n")
+theme_override_styles/pressed = SubResource("SBF_t5_p")
+theme_override_styles/hover = SubResource("SBF_t5_n")
 text = "ABC"
-theme_override_font_sizes/font_size = 28
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("SBF_t5_n")
-theme_override_styles/hover = SubResource("SBF_t5_n")
-theme_override_styles/pressed = SubResource("SBF_t5_p")
 
-[node name="DifficultySection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
+[node name="DifficultySection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=744231410]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="DifficultyLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection"]
+[node name="DifficultyLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection" unique_id=2118960223]
 layout_mode = 2
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 24
 text = "Difficulty"
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+horizontal_alignment = 1
 
-[node name="DifficultyButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection"]
+[node name="DifficultyButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection" unique_id=2075629946]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="LBBtnEasy" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons"]
+[node name="LBBtnEasy" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons" unique_id=1539244725]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-text = "Easy"
-theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("SBF_de_n")
-theme_override_styles/hover = SubResource("SBF_de_n")
 theme_override_styles/pressed = SubResource("SBF_de_p")
+theme_override_styles/hover = SubResource("SBF_de_n")
+text = "Easy"
 
-[node name="LBBtnMedium" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons"]
+[node name="LBBtnMedium" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons" unique_id=1846361899]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-text = "Med"
-theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("SBF_dm_n")
-theme_override_styles/hover = SubResource("SBF_dm_n")
 theme_override_styles/pressed = SubResource("SBF_dm_p")
+theme_override_styles/hover = SubResource("SBF_dm_n")
+text = "Med"
 
-[node name="LBBtnHard" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons"]
+[node name="LBBtnHard" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection/DifficultyButtons" unique_id=1159018671]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-text = "Hard"
-theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("SBF_dh_n")
-theme_override_styles/hover = SubResource("SBF_dh_n")
 theme_override_styles/pressed = SubResource("SBF_dh_p")
+theme_override_styles/hover = SubResource("SBF_dh_n")
+text = "Hard"
 
-[node name="TimerSection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
+[node name="TimerSection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=116963847]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="TimerLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection"]
+[node name="TimerLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection" unique_id=1285450632]
 layout_mode = 2
-horizontal_alignment = 1
-text = "How long?"
-theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 24
+text = "How long?"
+horizontal_alignment = 1
 
-[node name="TimerButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection"]
+[node name="TimerButtons" type="HBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection" unique_id=230103432]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="LBBtn1Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons"]
+[node name="LBBtn1Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons" unique_id=486875967]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-text = "1"
-theme_override_font_sizes/font_size = 42
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("SBF_t1_n")
-theme_override_styles/hover = SubResource("SBF_t1_n")
 theme_override_styles/pressed = SubResource("SBF_t1_p")
+theme_override_styles/hover = SubResource("SBF_t1_n")
+text = "1"
 
-[node name="LBBtn3Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons"]
+[node name="LBBtn3Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons" unique_id=444171178]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-text = "3"
-theme_override_font_sizes/font_size = 42
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("SBF_t3_n")
-theme_override_styles/hover = SubResource("SBF_t3_n")
 theme_override_styles/pressed = SubResource("SBF_t3_p")
+theme_override_styles/hover = SubResource("SBF_t3_n")
+text = "3"
 
-[node name="LBBtn5Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons"]
+[node name="LBBtn5Min" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection/TimerButtons" unique_id=646269412]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-text = "5"
-theme_override_font_sizes/font_size = 42
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("SBF_t5_n")
-theme_override_styles/hover = SubResource("SBF_t5_n")
 theme_override_styles/pressed = SubResource("SBF_t5_p")
+theme_override_styles/hover = SubResource("SBF_t5_n")
+text = "5"
 
-[node name="ComboLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
+[node name="ComboLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=1159473362]
 layout_mode = 2
-horizontal_alignment = 1
-text = "Easy · 1 min"
-theme_override_font_sizes/font_size = 30
 theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 30
+text = "Easy · 1 min"
+horizontal_alignment = 1
 
-[node name="EntriesContainer" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox"]
+[node name="EntriesContainer" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=1995733447]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="SettingsScreen" type="Control" parent="."]
+[node name="SettingsScreen" type="Control" parent="." unique_id=187392203]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -902,8 +841,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="SettingsScreen"]
-layout_mode = 3
+[node name="Background" type="ColorRect" parent="SettingsScreen" unique_id=772556816]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -911,8 +850,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.04, 0.14, 0.32, 0.93)
 
-[node name="SettingsVBox" type="VBoxContainer" parent="SettingsScreen"]
-layout_mode = 3
+[node name="SettingsVBox" type="VBoxContainer" parent="SettingsScreen" unique_id=884858344]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -921,20 +861,22 @@ offset_left = -300.0
 offset_top = -250.0
 offset_right = 300.0
 offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="SettingsScreen/SettingsVBox"]
+[node name="TitleLabel" type="Label" parent="SettingsScreen/SettingsVBox" unique_id=1321968353]
 layout_mode = 2
-horizontal_alignment = 1
-text = "Settings"
 theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
 
-[node name="AudioSection" type="VBoxContainer" parent="SettingsScreen/SettingsVBox"]
+[node name="AudioSection" type="VBoxContainer" parent="SettingsScreen/SettingsVBox" unique_id=1983195018]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="MusicToggle" type="CheckButton" parent="SettingsScreen/SettingsVBox/AudioSection"]
+[node name="MusicToggle" type="CheckButton" parent="SettingsScreen/SettingsVBox/AudioSection" unique_id=1958911799]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/h_separation = 40
@@ -944,7 +886,7 @@ theme_override_icons/unchecked = ExtResource("19_switch_off")
 button_pressed = true
 text = "Music"
 
-[node name="SFXToggle" type="CheckButton" parent="SettingsScreen/SettingsVBox/AudioSection"]
+[node name="SFXToggle" type="CheckButton" parent="SettingsScreen/SettingsVBox/AudioSection" unique_id=734261536]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/h_separation = 40
@@ -954,33 +896,33 @@ theme_override_icons/unchecked = ExtResource("19_switch_off")
 button_pressed = true
 text = "Sound Effects"
 
-[node name="ResetSection" type="VBoxContainer" parent="SettingsScreen/SettingsVBox"]
+[node name="ResetSection" type="VBoxContainer" parent="SettingsScreen/SettingsVBox" unique_id=1951225536]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ResetLBButton" type="Button" parent="SettingsScreen/SettingsVBox/ResetSection"]
+[node name="ResetLBButton" type="Button" parent="SettingsScreen/SettingsVBox/ResetSection" unique_id=920812964]
 custom_minimum_size = Vector2(450, 90)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Reset High Scores"
-theme_override_font_sizes/font_size = 36
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("SBF_exit_n")
-theme_override_styles/hover = SubResource("SBF_exit_n")
 theme_override_styles/pressed = SubResource("SBF_exit_p")
+theme_override_styles/hover = SubResource("SBF_exit_n")
+text = "Reset High Scores"
 
-[node name="SettingsBackButton" type="Button" parent="SettingsScreen/SettingsVBox"]
+[node name="SettingsBackButton" type="Button" parent="SettingsScreen/SettingsVBox" unique_id=431431013]
 custom_minimum_size = Vector2(250, 90)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Back"
-theme_override_font_sizes/font_size = 40
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+text = "Back"
 
-[node name="ResetConfirmOverlay" type="Control" parent="SettingsScreen"]
+[node name="ResetConfirmOverlay" type="Control" parent="SettingsScreen" unique_id=1143915323]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -989,7 +931,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OverlayBg" type="ColorRect" parent="SettingsScreen/ResetConfirmOverlay"]
+[node name="OverlayBg" type="ColorRect" parent="SettingsScreen/ResetConfirmOverlay" unique_id=849399086]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -998,7 +940,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.85)
 
-[node name="Panel" type="VBoxContainer" parent="SettingsScreen/ResetConfirmOverlay"]
+[node name="Panel" type="VBoxContainer" parent="SettingsScreen/ResetConfirmOverlay" unique_id=1457684901]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1014,36 +956,36 @@ grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="WarnLabel" type="Label" parent="SettingsScreen/ResetConfirmOverlay/Panel"]
+[node name="WarnLabel" type="Label" parent="SettingsScreen/ResetConfirmOverlay/Panel" unique_id=1396955544]
 layout_mode = 2
-text = "Delete all high scores?"
 theme_override_font_sizes/font_size = 36
+text = "Delete all high scores?"
 horizontal_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="SettingsScreen/ResetConfirmOverlay/Panel"]
+[node name="HBox" type="HBoxContainer" parent="SettingsScreen/ResetConfirmOverlay/Panel" unique_id=1360070375]
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="BtnNo" type="Button" parent="SettingsScreen/ResetConfirmOverlay/Panel/HBox"]
+[node name="BtnNo" type="Button" parent="SettingsScreen/ResetConfirmOverlay/Panel/HBox" unique_id=1064933560]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
-text = "No"
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/hover = SubResource("SBF_pa_n")
 theme_override_styles/pressed = SubResource("SBF_pa_p")
+theme_override_styles/hover = SubResource("SBF_pa_n")
+text = "No"
 
-[node name="BtnYes" type="Button" parent="SettingsScreen/ResetConfirmOverlay/Panel/HBox"]
+[node name="BtnYes" type="Button" parent="SettingsScreen/ResetConfirmOverlay/Panel/HBox" unique_id=252893018]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
-text = "Yes"
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("SBF_exit_n")
-theme_override_styles/hover = SubResource("SBF_exit_n")
 theme_override_styles/pressed = SubResource("SBF_exit_p")
+theme_override_styles/hover = SubResource("SBF_exit_n")
+text = "Yes"
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="." unique_id=1378285587]
 visible = false
 offset_left = 15.0
 offset_top = 8.0
@@ -1054,7 +996,7 @@ icon = ExtResource("14_close")
 flat = true
 expand_icon = true
 
-[node name="PauseButton" type="Button" parent="."]
+[node name="PauseButton" type="Button" parent="." unique_id=459362430]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -1069,7 +1011,7 @@ icon = ExtResource("15_pause")
 flat = true
 expand_icon = true
 
-[node name="MuteButton" type="Button" parent="."]
+[node name="MuteButton" type="Button" parent="." unique_id=598035644]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1083,9 +1025,9 @@ icon = ExtResource("16_sound_on")
 flat = true
 expand_icon = true
 
-[node name="MathProblemLabel" type="Label" parent="."]
+[node name="MathProblemLabel" type="Label" parent="." unique_id=1928438162]
 visible = false
-layout_mode = 3
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -250.0
@@ -1093,10 +1035,10 @@ offset_top = 100.0
 offset_right = 250.0
 offset_bottom = 180.0
 grow_horizontal = 2
-horizontal_alignment = 1
-text = "3 + 4 = ?"
-theme_override_font_sizes/font_size = 64
-theme_override_colors/font_color = Color(1, 0.94, 0.0, 1)
+theme_override_colors/font_color = Color(1, 0.94, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 64
+text = "3 + 4 = ?"
+horizontal_alignment = 1

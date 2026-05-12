@@ -6,3 +6,4 @@
 script = ExtResource("1_gs4cc")
 item_name = "fish"
 position = Vector2(880, 920)
+tags = Array[String](["water"])

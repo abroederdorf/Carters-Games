@@ -1,0 +1,323 @@
+{
+  "mountains": {
+    "tent": [
+      "ground",
+      "structure"
+    ],
+    "skier": [
+      "ground"
+    ],
+    "deer": [
+      "ground",
+      "foliage"
+    ],
+    "flowers": [
+      "foliage",
+      "ground"
+    ],
+    "campfire": [
+      "ground"
+    ],
+    "backpack": [
+      "ground"
+    ],
+    "rock": [
+      "ground"
+    ],
+    "cave": [
+      "ground"
+    ],
+    "tree": [
+      "foliage",
+      "ground"
+    ],
+    "hiker": [
+      "ground"
+    ],
+    "birds": [
+      "sky",
+      "foliage"
+    ],
+    "bear": [
+      "ground",
+      "foliage"
+    ],
+    "fish": [
+      "water"
+    ],
+    "climber": [
+      "ground"
+    ]
+  },
+  "ocean": {
+    "seahorse": [
+      "foliage",
+      "water"
+    ],
+    "starfish": [
+      "ground"
+    ],
+    "sea_turtle": [
+      "water",
+      "ground"
+    ],
+    "treasure_chest": [
+      "ground",
+      "structure"
+    ],
+    "shark": [
+      "water"
+    ],
+    "clownfish": [
+      "foliage",
+      "water"
+    ],
+    "submarine": [
+      "water",
+      "ground"
+    ],
+    "jellyfish": [
+      "water"
+    ],
+    "crab": [
+      "ground"
+    ],
+    "anchor": [
+      "ground",
+      "structure"
+    ]
+  },
+  "jungle": {
+    "parrot": [
+      "sky",
+      "foliage"
+    ],
+    "banana_bunch": [
+      "foliage"
+    ],
+    "orchid": [
+      "foliage",
+      "ground"
+    ],
+    "tiger": [
+      "ground"
+    ],
+    "butterfly": [
+      "sky",
+      "foliage"
+    ],
+    "binoculars": [
+      "structure"
+    ],
+    "sloth": [
+      "foliage"
+    ],
+    "monkey": [
+      "foliage",
+      "ground"
+    ],
+    "explorer_hat": [
+      "structure"
+    ],
+    "snake": [
+      "ground",
+      "foliage"
+    ]
+  },
+  "space": {
+    "astronaut": [
+      "ground",
+      "structure"
+    ],
+    "flying_saucer": [
+      "sky"
+    ],
+    "crater": [
+      "ground"
+    ],
+    "moon_rover": [
+      "ground"
+    ],
+    "rocket": [
+      "sky",
+      "ground"
+    ],
+    "alien": [
+      "ground",
+      "structure"
+    ],
+    "star": [
+      "sky"
+    ],
+    "space_helmet": [
+      "ground",
+      "structure"
+    ],
+    "saturn": [
+      "sky"
+    ],
+    "ray_gun": [
+      "ground",
+      "structure"
+    ]
+  },
+  "fire_station": {
+    "dalmatian": [
+      "ground",
+      "structure"
+    ],
+    "boots": [
+      "ground",
+      "structure"
+    ],
+    "bell": [
+      "structure"
+    ],
+    "fire_truck": [
+      "ground",
+      "structure"
+    ],
+    "ladder": [
+      "ground",
+      "structure"
+    ],
+    "truck_fast": [
+      "ground",
+      "structure"
+    ],
+    "hose_reel": [
+      "ground",
+      "structure"
+    ],
+    "axe": [
+      "ground",
+      "structure"
+    ],
+    "fire_extinguisher": [
+      "ground",
+      "structure"
+    ],
+    "helmet": [
+      "ground",
+      "structure"
+    ],
+    "hydrant": [
+      "ground",
+      "structure"
+    ]
+  },
+  "dinosaur_land": {
+    "palm_tree": [
+      "foliage",
+      "ground"
+    ],
+    "fern": [
+      "foliage",
+      "ground"
+    ],
+    "footprint": [
+      "ground"
+    ],
+    "t_rex": [
+      "ground"
+    ],
+    "stegosaurus": [
+      "ground"
+    ],
+    "dino_egg": [
+      "ground",
+      "foliage"
+    ],
+    "volcano": [
+      "ground"
+    ],
+    "fossil": [
+      "ground"
+    ],
+    "pterodactyl": [
+      "sky"
+    ],
+    "triceratops": [
+      "ground"
+    ]
+  },
+  "construction_site": {
+    "dump_truck": [
+      "ground"
+    ],
+    "blueprint": [
+      "ground",
+      "structure"
+    ],
+    "hard_hat": [
+      "ground",
+      "structure"
+    ],
+    "traffic_cone": [
+      "ground"
+    ],
+    "toolbox": [
+      "ground",
+      "structure"
+    ],
+    "cement_mixer": [
+      "ground"
+    ],
+    "hammer": [
+      "ground",
+      "structure"
+    ],
+    "bulldozer": [
+      "ground"
+    ],
+    "excavator": [
+      "ground"
+    ],
+    "ladder": [
+      "structure",
+      "ground"
+    ],
+    "safety_vest": [
+      "ground",
+      "structure"
+    ]
+  },
+  "monster_truck_jam": {
+    "trophy": [
+      "structure"
+    ],
+    "crushed_car": [
+      "ground"
+    ],
+    "flame_decal": [
+      "structure"
+    ],
+    "tire": [
+      "ground",
+      "structure"
+    ],
+    "megaphone": [
+      "structure",
+      "ground"
+    ],
+    "gas_can": [
+      "ground",
+      "structure"
+    ],
+    "monster_truck": [
+      "ground",
+      "structure"
+    ],
+    "checkered_flag": [
+      "structure"
+    ],
+    "wrench": [
+      "structure",
+      "ground"
+    ],
+    "mud_splatter": [
+      "ground",
+      "structure"
+    ]
+  }
+}

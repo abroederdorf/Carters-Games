@@ -9,3 +9,4 @@ item_name = "anchor"
 thumbnail = ExtResource("2_fq1jv")
 position = Vector2(250, 200)
 radius = 70.0
+tags = Array[String](["ground", "structure"])

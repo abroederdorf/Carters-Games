@@ -4,24 +4,39 @@ from PIL import Image
 
 ASSET_ROOT = Path("assets/sprites/hide_seek")
 
-def make_transparent(image_path, threshold=240):
+def make_transparent(image_path, tolerance=30):
     """
-    Makes the white background of an image transparent.
-    threshold: Any pixel where R, G, and B are all above this value will be made transparent.
+    Robustly makes the background transparent using a flood fill.
+    Scans the perimeter for seeds to ensure background is hit.
     """
     print(f"Processing: {image_path}")
     img = Image.open(image_path).convert("RGBA")
-    datas = img.getdata()
+    width, height = img.size
+    from PIL import ImageDraw
+    
+    # Collect seeds from the entire perimeter
+    seeds = []
+    # Top and bottom edges
+    for x in range(width):
+        seeds.append((x, 0))
+        seeds.append((x, height - 1))
+    # Left and right edges
+    for y in range(1, height - 1):
+        seeds.append((0, y))
+        seeds.append((width - 1, y))
+        
+    # We use a set to track already processed background to avoid redundant fills
+    # However, floodfill is fast enough to just call. 
+    # To be more efficient, we check if the pixel is still whitish before filling.
+    for seed in seeds:
+        pixel = img.getpixel(seed)
+        # If it's already transparent, skip
+        if pixel[3] == 0:
+            continue
+        # Only start if the seed is "whitish"
+        if pixel[0] >= 220 and pixel[1] >= 220 and pixel[2] >= 220:
+            ImageDraw.floodfill(img, seed, (255, 255, 255, 0), thresh=tolerance)
 
-    new_data = []
-    for item in datas:
-        # Check if pixel is "white enough"
-        if item[0] >= threshold and item[1] >= threshold and item[2] >= threshold:
-            new_data.append((255, 255, 255, 0))
-        else:
-            new_data.append(item)
-
-    img.putdata(new_data)
     img.save(image_path)
 
 def main():

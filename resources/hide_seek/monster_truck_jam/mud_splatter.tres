@@ -9,3 +9,4 @@ item_name = "mud_splatter"
 thumbnail = ExtResource("2_guslx")
 position = Vector2(800, 800)
 radius = 60.0
+tags = Array[String](["ground", "structure"])

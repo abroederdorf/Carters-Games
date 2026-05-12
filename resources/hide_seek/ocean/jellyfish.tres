@@ -9,3 +9,4 @@ item_name = "jellyfish"
 thumbnail = ExtResource("2_v1n71")
 position = Vector2(1600, 400)
 radius = 80.0
+tags = Array[String](["water"])

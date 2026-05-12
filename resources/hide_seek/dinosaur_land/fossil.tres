@@ -9,3 +9,4 @@ item_name = "fossil"
 thumbnail = ExtResource("2_ii78i")
 position = Vector2(1700, 700)
 radius = 55.0
+tags = Array[String](["ground"])

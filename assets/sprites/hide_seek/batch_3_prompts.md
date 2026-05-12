@@ -12,7 +12,7 @@
 | Giraffe | tall yellow giraffe with brown spots, long neck |
 | Penguin | small tuxedo-colored penguin, orange beak and feet |
 | Zebra | black and white striped zebra, standing, side view |
-| Zoo Map | colorful paper map with animal icons and paths |
+| Bear Cub | small fluffy brown bear cub, round ears, big eyes, sitting |
 | Ice Cream Cart | white cart with a colorful umbrella and pictures of popsicles |
 | Flamingo | pink flamingo standing on one leg, curved neck |
 | Gorilla | large dark gray gorilla sitting, friendly expression |
@@ -55,13 +55,13 @@
 | :--- | :--- |
 | Fishing Rod | brown rod with a silver reel and a line hanging |
 | Tackle Box | green plastic box, open to show small colorful lures |
-| Rowboat | small red wooden boat with two oars inside |
+| Boat | small red wooden rowboat with two oars inside |
 | Frog | bright green frog sitting on a lily pad, big eyes |
 | Dragonfly | small blue dragonfly with translucent wings |
 | Fishing Net | wooden handle with a mesh net, triangular shape |
 | Bobber | red and white circular fishing float, bobbing in water |
-| Canoe | long orange canoe, two paddles, sitting on the shore |
-| Cattails | cluster of brown cattail plants with green leaves |
+| Log | mossy brown log floating on water, rounded ends, algae patches |
+| Dock | short weathered wooden dock with a few planks, extending over water |
 | Duck | mother duck with three small yellow ducklings |
 
 ### Full Scene Prompt (Whisk/Gemini)
@@ -101,14 +101,14 @@
 | :--- | :--- |
 | Barn | large red barn with a white roof and "X" doors |
 | Tractor | bright green tractor with big black wheels |
-| Scarecrow | straw-filled man in a flannel shirt and hat |
+| Goat | white goat with small curved horns and a beard, friendly expression |
 | Pig | cute pink pig, curly tail, muddy patches |
 | Cow | black and white spotted cow, chewing grass |
 | Rooster | colorful rooster with a bright red comb, crowing |
 | Hay Bale | large yellow rectangular block of dried grass |
-| Pitchfork | wooden handle with three sharp metal tines |
-| Chicken Coop | small wooden hut with a wire fence and a ramp |
-| Vegetable Basket | wicker basket overflowing with carrots and corn |
+| Rake | brown garden rake, wide metal tines, long wooden handle |
+| Fart | cartoon green stink cloud with wavy lines, cute and silly |
+| Hen | small brown hen with a red comb, sitting in a nesting pose |
 
 ### Full Scene Prompt (Whisk/Gemini)
 *Children's book illustration of a busy, traditional farmyard. Rolling green hills, a vegetable patch, a fenced-in pasture, and the farmhouse in the background. The scene is wide and panoramic (landscape orientation, 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Packed with farm details like mud puddles, grain sacks, butterflies, and a weather vane. Rustic, cozy, and hardworking mood.*

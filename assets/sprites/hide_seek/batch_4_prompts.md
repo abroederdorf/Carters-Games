@@ -79,13 +79,13 @@
 | Shopping Cart | silver wire cart with four red wheels and a handle |
 | Banana | single bright yellow banana, slightly curved, small brown tip |
 | Milk Carton | white and blue carton with a simple cow icon on the side |
-| Egg Carton | gray cardboard carton with six white eggs inside |
+| Ham | pink oval ham with a decorative red bow, classic deli display style |
 | Cereal Box | bright red box with a bowl of colorful loops on front |
 | Apple | shiny red apple with a small green leaf and stem |
 | Bread | loaf of sliced white bread in a clear plastic bag |
-| Basket | red plastic handheld shopping basket with silver handles |
+| Yam | plump orange sweet potato, slightly curved with rough bumpy skin |
 | Scanner | black handheld barcode scanner, small red laser window |
-| Juice Bottle | clear bottle with orange juice and a green straw |
+| Rice | white bag of rice with a blue label, a small bowl of white rice beside it |
 
 ### Full Scene Prompt (Whisk/Gemini)
 *Children's book illustration of a busy grocery store aisle. Shelves packed with colorful cereal boxes, fruit displays, a checkout counter, and shopping carts. Wide panoramic landscape (2:1 ratio), bright saturated colors, flat design, thick black outlines, no text. Packed with store details like price tags, signs, and floor patterns. Busy and lively mood.*

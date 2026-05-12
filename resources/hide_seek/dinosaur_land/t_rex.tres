@@ -9,3 +9,4 @@ item_name = "t_rex"
 thumbnail = ExtResource("2_kfqwm")
 position = Vector2(800, 550)
 radius = 95.0
+tags = Array[String](["ground"])

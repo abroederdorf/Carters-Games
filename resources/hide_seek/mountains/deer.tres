@@ -7,3 +7,4 @@ script = ExtResource("1_k8hk8")
 item_name = "deer"
 position = Vector2(1750, 780)
 radius = 80.0
+tags = Array[String](["ground", "foliage"])

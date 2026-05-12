@@ -9,3 +9,4 @@ item_name = "sea_turtle"
 thumbnail = ExtResource("2_xkciv")
 position = Vector2(600, 350)
 radius = 90.0
+tags = Array[String](["water", "ground"])

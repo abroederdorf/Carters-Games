@@ -226,6 +226,7 @@ THEMES = {
             "rooster": {"desc": "colorful rooster with red comb, crowing", "type": "character"},
             "hay_bale": {"desc": "large yellow block of dried grass", "type": "object"},
             "pitchfork": {"desc": "wooden handle, three metal tines", "type": "object"},
+            "ladder": {"shared": "ladder"},
             "chicken_coop": {"desc": "small wooden hut with wire fence", "type": "object"},
             "vegetable_basket": {"desc": "wicker basket with carrots and corn", "type": "object"}
         }
@@ -255,6 +256,7 @@ THEMES = {
             "pencil": {"desc": "thick yellow carpenter's pencil, flat", "type": "object"},
             "clamp": {"desc": "black and orange bar clamp, screw", "type": "object"},
             "birdhouse": {"desc": "small wooden birdhouse, round hole", "type": "object"},
+            "ladder": {"shared": "ladder"},
             "paintbrush": {"desc": "wide brush, red handle, tan bristles", "type": "object"},
             "screwdriver": {"desc": "blue handled flat-head screwdriver", "type": "object"},
             "safety_goggles": {"desc": "clear plastic goggles, black strap", "type": "object"}

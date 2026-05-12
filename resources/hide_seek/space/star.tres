@@ -9,3 +9,4 @@ item_name = "star"
 thumbnail = ExtResource("2_qp0x2")
 position = Vector2(1000, 50)
 radius = 35.0
+tags = Array[String](["sky"])

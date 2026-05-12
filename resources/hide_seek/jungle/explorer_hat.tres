@@ -9,3 +9,4 @@ item_name = "explorer_hat"
 thumbnail = ExtResource("2_npqvq")
 position = Vector2(600, 950)
 radius = 55.0
+tags = Array[String](["structure"])

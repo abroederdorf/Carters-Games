@@ -124,11 +124,11 @@
 | :--- | :--- |
 | Mailbox | blue standing mailbox with a red flag raised up |
 | Bicycle | red bike with a silver bell and a wicker basket |
-| Dog House | small brown house with a red roof and a nameplate |
+| Van | boxy blue delivery van, two windows on side, round headlights |
 | Fire Hydrant | bright red street hydrant, three-way valves |
 | Street Lamp | tall black pole with a glowing glass top and bulb |
 | Picket Fence | section of white wooden picket fence, simple |
-| Flower Pot | orange clay pot with yellow and purple daisies |
+| Rose | single red rose with green stem and two small leaves |
 | Tricycle | small green three-wheeled bike for a child |
 | Mail Truck | white truck with a blue and red stripe on the side |
 | Trash Can | silver metal bin with a lid and two handles |

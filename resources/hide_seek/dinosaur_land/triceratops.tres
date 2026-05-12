@@ -9,3 +9,4 @@ item_name = "triceratops"
 thumbnail = ExtResource("2_lf8t4")
 position = Vector2(150, 750)
 radius = 80.0
+tags = Array[String](["ground"])

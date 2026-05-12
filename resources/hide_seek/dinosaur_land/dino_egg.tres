@@ -8,3 +8,4 @@ script = ExtResource("1_7uxyo")
 item_name = "dino_egg"
 thumbnail = ExtResource("2_vih75")
 position = Vector2(300, 850)
+tags = Array[String](["ground", "foliage"])

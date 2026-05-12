@@ -9,3 +9,4 @@ item_name = "wrench"
 thumbnail = ExtResource("2_7e2ve")
 position = Vector2(50, 950)
 radius = 40.0
+tags = Array[String](["structure", "ground"])
