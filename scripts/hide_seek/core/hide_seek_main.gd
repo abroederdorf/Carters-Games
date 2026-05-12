@@ -50,7 +50,7 @@ func _build_ui() -> void:
 	vbox.add_child(header)
 
 	var back_btn := Button.new()
-	back_btn.text = "← Back"
+	back_btn.text = "Back"
 	back_btn.custom_minimum_size = Vector2(180, 70)
 	back_btn.add_theme_font_size_override("font_size", 34)
 	back_btn.focus_mode = Control.FOCUS_NONE
@@ -141,7 +141,7 @@ func _make_card(scene_name: String) -> Button:
 	var star_lbl := Label.new()
 	var star_str := ""
 	for i in 3:
-		star_str += "★" if i < stars else "☆"
+		star_str += "*" if i < stars else "-"
 	star_lbl.text = star_str
 	star_lbl.add_theme_font_size_override("font_size", 30)
 	star_lbl.add_theme_color_override("font_color", Color(1.0, 0.85, 0.1, 1))
@@ -159,14 +159,13 @@ func _make_card(scene_name: String) -> Button:
 		lock_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		btn.add_child(lock_overlay)
 
-		var lock_lbl := Label.new()
-		lock_lbl.text = "🔒"
-		lock_lbl.add_theme_font_size_override("font_size", 72)
-		lock_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		lock_lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-		lock_lbl.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		lock_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		btn.add_child(lock_lbl)
+		var lock_icon := TextureRect.new()
+		lock_icon.texture = preload("res://assets/sprites/words/lock.svg")
+		lock_icon.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
+		lock_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		lock_icon.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		lock_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		btn.add_child(lock_icon)
 
 		btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else:

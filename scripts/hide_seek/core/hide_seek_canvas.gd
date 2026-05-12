@@ -97,7 +97,7 @@ func fade_item(index: int) -> void:
 
 func show_flash_at(pos: Vector2) -> void:
 	var lbl := Label.new()
-	lbl.text = "✓"
+	lbl.text = "+"
 	lbl.add_theme_font_size_override("font_size", 80)
 	lbl.add_theme_color_override("font_color", Color(0.2, 1.0, 0.2, 1))
 	lbl.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.8))
@@ -115,7 +115,7 @@ func show_flash_at(pos: Vector2) -> void:
 
 func show_hint_at(pos: Vector2, radius: float) -> void:
 	var lbl := Label.new()
-	lbl.text = "⭐"
+	lbl.text = "*"
 	lbl.add_theme_font_size_override("font_size", int(radius * 1.5))
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER

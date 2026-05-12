@@ -42,13 +42,13 @@ func update_timer(elapsed: float) -> void:
 
 
 func update_hint_label(hint_stars: int) -> void:
-	_hint_stars_label.text = "%d ★ avail." % hint_stars
+	_hint_stars_label.text = "%d avail." % hint_stars
 
 
 func show_win(stars: int, elapsed: float, has_next: bool) -> void:
 	var star_str := ""
 	for i in 3:
-		star_str += "★" if i < stars else "☆"
+		star_str += "*" if i < stars else "-"
 	_win_stars_label.text = star_str
 
 	var mins := int(elapsed) / 60
@@ -86,7 +86,7 @@ func _build_top_bar(parent: Control) -> void:
 	hbox.add_child(pad_l)
 
 	var back_btn := Button.new()
-	back_btn.text = "← Back"
+	back_btn.text = "Back"
 	back_btn.custom_minimum_size = Vector2(160, 58)
 	back_btn.add_theme_font_size_override("font_size", 28)
 	back_btn.focus_mode = Control.FOCUS_NONE
@@ -115,7 +115,7 @@ func _build_top_bar(parent: Control) -> void:
 	hbox.add_child(hint_vbox)
 
 	var hint_btn := Button.new()
-	hint_btn.text = "💡 Hint"
+	hint_btn.text = "Hint"
 	hint_btn.custom_minimum_size = Vector2(150, 44)
 	hint_btn.add_theme_font_size_override("font_size", 26)
 	hint_btn.focus_mode = Control.FOCUS_NONE
@@ -203,7 +203,7 @@ func _make_thumb_card(item: HideSeekItemData) -> Control:
 	panel.add_child(check_bg)
 
 	var check_lbl := Label.new()
-	check_lbl.text = "✓"
+	check_lbl.text = "+"
 	check_lbl.add_theme_font_size_override("font_size", 52)
 	check_lbl.add_theme_color_override("font_color", Color.WHITE)
 	check_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -261,7 +261,7 @@ func _build_win_overlay(parent: Control) -> void:
 	vbox.add_child(btn_row)
 
 	var home_btn := Button.new()
-	home_btn.text = "🏠 Home"
+	home_btn.text = "Home"
 	home_btn.custom_minimum_size = Vector2(210, 74)
 	home_btn.add_theme_font_size_override("font_size", 34)
 	home_btn.focus_mode = Control.FOCUS_NONE
@@ -269,7 +269,7 @@ func _build_win_overlay(parent: Control) -> void:
 	btn_row.add_child(home_btn)
 
 	var replay_btn := Button.new()
-	replay_btn.text = "↺ Replay"
+	replay_btn.text = "Replay"
 	replay_btn.custom_minimum_size = Vector2(210, 74)
 	replay_btn.add_theme_font_size_override("font_size", 34)
 	replay_btn.focus_mode = Control.FOCUS_NONE
@@ -277,7 +277,7 @@ func _build_win_overlay(parent: Control) -> void:
 	btn_row.add_child(replay_btn)
 
 	_win_next_btn = Button.new()
-	_win_next_btn.text = "Next →"
+	_win_next_btn.text = "Next"
 	_win_next_btn.custom_minimum_size = Vector2(210, 74)
 	_win_next_btn.add_theme_font_size_override("font_size", 34)
 	_win_next_btn.focus_mode = Control.FOCUS_NONE
