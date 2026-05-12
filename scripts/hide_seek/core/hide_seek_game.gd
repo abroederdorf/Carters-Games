@@ -106,7 +106,7 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 	hard_anchors.shuffle()
 
 	var session_anchors: Array[HideSeekAnchor] = []
-	var hard_count := min(2, hard_anchors.size())
+	var hard_count: int = min(2, hard_anchors.size())
 	for i in hard_count:
 		session_anchors.append(hard_anchors.pop_back())
 	var needed: int = min(20, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
