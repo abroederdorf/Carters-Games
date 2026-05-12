@@ -6,6 +6,8 @@ const ANCHORS_JSON := "res://assets/data/hide_seek/anchors_data.json"
 const TAGS_JSON := "res://assets/data/hide_seek/item_tags.json"
 const DEFAULT_RADIUS := 60.0
 
+const BG_NAMES := ["bg.png", "bg_fast.png", "bg_standard.png"]
+
 var _anchor_data: Dictionary = {}
 var _tag_data: Dictionary = {}
 var _created := 0
@@ -37,12 +39,17 @@ func _discover_themes() -> Array[String]:
 	if not dir:
 		push_error("Cannot open sprites root: " + SPRITES_ROOT)
 		return themes
+	
 	dir.list_dir_begin()
 	var entry := dir.get_next()
 	while entry != "":
 		if dir.current_is_dir() and not entry.begins_with(".") and entry != "shared":
-			var bg := "%s/%s/bg.png" % [SPRITES_ROOT, entry]
-			if ResourceLoader.exists(bg):
+			var found_bg := false
+			for bg_name in BG_NAMES:
+				if FileAccess.file_exists("%s/%s/%s" % [SPRITES_ROOT, entry, bg_name]):
+					found_bg = true
+					break
+			if found_bg:
 				themes.append(entry)
 		entry = dir.get_next()
 	dir.list_dir_end()
@@ -55,6 +62,7 @@ func _discover_themes() -> Array[String]:
 func _sync_theme(theme: String) -> void:
 	var scene_path := "%s/%s.tres" % [RESOURCES_ROOT, theme]
 	var scene_data: HideSeekSceneData
+	var is_new := false
 
 	if ResourceLoader.exists(scene_path):
 		scene_data = load(scene_path) as HideSeekSceneData
@@ -63,22 +71,35 @@ func _sync_theme(theme: String) -> void:
 			_skipped += 1
 			return
 	else:
+		is_new = true
 		scene_data = HideSeekSceneData.new()
 		scene_data.scene_name = theme
-		scene_data.background_image = load("%s/%s/bg.png" % [SPRITES_ROOT, theme])
+		
+		# Find appropriate background
+		for bg_name in BG_NAMES:
+			var bg_path := "%s/%s/%s" % [SPRITES_ROOT, theme, bg_name]
+			if FileAccess.file_exists(bg_path):
+				scene_data.background_image = load(bg_path)
+				break
+		
 		_ensure_dir("%s/%s" % [RESOURCES_ROOT, theme])
 
 	_sync_items(scene_data, theme)
 	_apply_anchors(scene_data, theme)
 	_apply_tags(scene_data, theme)
+	
+	# Final save for items (now with tags applied)
+	for item in scene_data.items:
+		var item_path := "%s/%s/%s.tres" % [RESOURCES_ROOT, theme, item.item_name]
+		ResourceSaver.save(item, item_path)
 
 	var err := ResourceSaver.save(scene_data, scene_path)
 	if err == OK:
 		print("[%s] OK (%d items, %d anchors)" % [theme, scene_data.items.size(), scene_data.anchors.size()])
-		if ResourceLoader.exists(scene_path):
-			_updated += 1
-		else:
+		if is_new:
 			_created += 1
+		else:
+			_updated += 1
 	else:
 		push_error("[%s] Failed to save scene resource: %d" % [theme, err])
 		_skipped += 1
@@ -110,11 +131,7 @@ func _sync_items(scene_data: HideSeekSceneData, theme: String) -> void:
 		# Always refresh thumbnail from sprite
 		var thumb_path := "%s/%s.png" % [sprite_dir, item_name]
 		item.thumbnail = load(thumb_path)
-
-		# Save individual item resource
-		var item_path := "%s/%s/%s.tres" % [RESOURCES_ROOT, theme, item_name]
-		ResourceSaver.save(item, item_path)
-
+		
 		synced_items.append(item)
 
 	scene_data.items = synced_items
@@ -128,7 +145,13 @@ func _discover_items(sprite_dir: String) -> Array[String]:
 	dir.list_dir_begin()
 	var entry := dir.get_next()
 	while entry != "":
-		if not dir.current_is_dir() and entry.ends_with(".png") and entry != "bg.png":
+		var is_bg := false
+		for bg_name in BG_NAMES:
+			if entry == bg_name:
+				is_bg = true
+				break
+				
+		if not dir.current_is_dir() and entry.ends_with(".png") and not is_bg:
 			names.append(entry.get_basename())
 		entry = dir.get_next()
 	dir.list_dir_end()
