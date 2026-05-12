@@ -352,7 +352,9 @@ func _new_spelling_round() -> void:
 			_spell_missing_indices.append(i)
 
 	ui.show_spelling_hud(_spell_current_word, _spell_missing_indices, _spell_filled, _difficulty == 2)
-	AudioManager.play_word(_spell_current_word)
+	await get_tree().create_timer(0.5).timeout
+	if game_active and _game_mode == GameMode.SPELLING:
+		AudioManager.play_word(_spell_current_word)
 
 	for fish in fish_layer.get_children():
 		fish.queue_free()
