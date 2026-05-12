@@ -29,7 +29,8 @@ if __name__ == "__main__":
     items = [
         "assets/sprites/hide_seek/mountains/hiker.png",
         "assets/sprites/hide_seek/mountains/climber.png",
-        "assets/sprites/hide_seek/fire_station/ladder.png"
+        "assets/sprites/hide_seek/fire_station/ladder.png",
+        "assets/sprites/hide_seek/construction_site/excavator.png"
     ]
     for item in items:
         if os.path.exists(item):
