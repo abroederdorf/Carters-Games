@@ -1,5 +1,8 @@
 extends Control
 
+const HideSeekCanvas = preload("res://scripts/hide_seek/core/hide_seek_canvas.gd")
+const HideSeekUI = preload("res://scripts/hide_seek/core/hide_seek_ui.gd")
+
 const MAX_ITEMS := 10
 
 var _scene_name: String
