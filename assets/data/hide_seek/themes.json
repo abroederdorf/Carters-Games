@@ -15,7 +15,8 @@
     "megaphone": {"desc": "red plastic megaphone with a handle", "type": "object"},
     "gas_can": {"desc": "red plastic gasoline container with a black spout", "type": "object"},
     "flashlight": {"desc": "silver flashlight with a bright yellow beam", "type": "object"},
-    "camera": {"desc": "small black digital camera with a lens", "type": "object"}
+    "camera": {"desc": "small black digital camera with a lens", "type": "object"},
+    "ladder": {"desc": "tall wooden stepladder, fully extended, side view", "type": "object"}
   },
   "themes": {
     "mountains": {

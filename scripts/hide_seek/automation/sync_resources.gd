@@ -31,7 +31,7 @@ func _init() -> void:
 	_anchor_data = _load_json(ANCHORS_JSON)
 	_tag_data = _load_json(TAGS_JSON)
 
-	var themes = _theme_data["themes"].keys()
+	var themes: Array = _theme_data["themes"].keys()
 	print("Found %d themes in master index." % themes.size())
 
 	for theme in themes:
@@ -39,13 +39,6 @@ func _init() -> void:
 
 	print("=== Done. created=%d  updated=%d  skipped=%d ===" % [_created, _updated, _skipped])
 	quit()
-
-
-# ── Theme Discovery ────────────────────────────────────────────────────────────
-
-func _discover_themes() -> Array[String]:
-	# Now using the master index keys
-	return []
 
 
 # ── Per-Theme Sync ─────────────────────────────────────────────────────────────
@@ -66,20 +59,18 @@ func _sync_theme(theme: String) -> void:
 		is_new = true
 		scene_data = HideSeekSceneData.new()
 		scene_data.scene_name = theme
-		
-		# Find appropriate background
-		var bg_found := false
-		for bg_name in BG_NAMES:
-			var bg_path := "%s/%s/%s" % [SPRITES_ROOT, theme, bg_name]
-			if FileAccess.file_exists(bg_path):
-				scene_data.background_image = load(bg_path)
-				bg_found = true
-				break
-		
-		if not bg_found:
-			push_warning("[%s] Background image not found." % theme)
-		
 		_ensure_dir("%s/%s" % [RESOURCES_ROOT, theme])
+
+	# Always refresh background so changes to bg assets are picked up
+	var bg_found := false
+	for bg_name in BG_NAMES:
+		var bg_path := "%s/%s/%s" % [SPRITES_ROOT, theme, bg_name]
+		if FileAccess.file_exists(bg_path):
+			scene_data.background_image = load(bg_path)
+			bg_found = true
+			break
+	if not bg_found:
+		push_warning("[%s] Background image not found." % theme)
 
 	_sync_items(scene_data, theme, data.get("items", []))
 	_apply_anchors(scene_data, theme)
@@ -142,11 +133,6 @@ func _sync_items(scene_data: HideSeekSceneData, theme: String, items_list: Array
 	scene_data.items = synced_items
 
 
-func _discover_items(sprite_dir: String) -> Array[String]:
-	# Now using the master index items list
-	return []
-
-
 # ── Anchor Application ─────────────────────────────────────────────────────────
 
 func _apply_anchors(scene_data: HideSeekSceneData, theme: String) -> void:
@@ -175,9 +161,6 @@ func _apply_tags(scene_data: HideSeekSceneData, theme: String) -> void:
 		item.tags.clear()
 		for t in theme_tags[item.item_name]:
 			item.tags.append(str(t))
-		var item_path := "%s/%s/%s.tres" % [RESOURCES_ROOT, theme, item.item_name]
-		if ResourceLoader.exists(item_path):
-			ResourceSaver.save(item, item_path)
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
