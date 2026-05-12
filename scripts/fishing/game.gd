@@ -1,17 +1,17 @@
 extends Node2D
 
-const FISH_SCENE = preload("res://scenes/Fish.tscn")
-const PELICAN_SCENE = preload("res://scenes/Pelican.tscn")
-const SHARK_SCENE = preload("res://scenes/Shark.tscn")
-const OCTOPUS_SCENE = preload("res://scenes/Octopus.tscn")
+const FISH_SCENE = preload("res://scenes/fishing/fish.tscn")
+const PELICAN_SCENE = preload("res://scenes/fishing/pelican.tscn")
+const SHARK_SCENE = preload("res://scenes/fishing/shark.tscn")
+const OCTOPUS_SCENE = preload("res://scenes/fishing/octopus.tscn")
 
 const SAND_TEX = preload("res://assets/sprites/sand.svg")
 const ROCK_TEX = preload("res://assets/sprites/rock_gray.svg")
 const SW_G_TEX = preload("res://assets/sprites/seaweed_green.svg")
 const SW_P_TEX = preload("res://assets/sprites/seaweed_purple.svg")
 const SW_PK_TEX = preload("res://assets/sprites/seaweed_pink.svg")
-const SWAY_SCRIPT = preload("res://scripts/sway.gd")
-const CLAM_SCRIPT = preload("res://scripts/clam.gd")
+const SWAY_SCRIPT = preload("res://scripts/fishing/sway.gd")
+const CLAM_SCRIPT = preload("res://scripts/fishing/clam.gd")
 
 const CAST_DURATION = 0.5
 

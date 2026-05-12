@@ -95,9 +95,9 @@ def main():
             print(f"  Found {len(anchors)} anchors for {theme}")
             
     # Save to a temporary JSON file for Godot to ingest
-    with open("scripts/hide_seek/anchors_data.json", "w") as f:
+    with open("assets/data/hide_seek/anchors_data.json", "w") as f:
         json.dump(all_anchors, f, indent=2)
-    print("\nSaved anchor data to scripts/hide_seek/anchors_data.json")
+    print("\nSaved anchor data to assets/data/hide_seek/anchors_data.json")
 
 if __name__ == "__main__":
     main()

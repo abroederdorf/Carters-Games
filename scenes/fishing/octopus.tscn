@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cocto01"]
 
-[ext_resource type="Script" uid="uid://bfhij6nk0keh2" path="res://scripts/octopus.gd" id="1_oct"]
+[ext_resource type="Script" uid="uid://bfhij6nk0keh2" path="res://scripts/fishing/octopus.gd" id="1_oct"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oct"]
 radius = 60.0

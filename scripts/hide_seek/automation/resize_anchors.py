@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-JSON_PATH = Path("scripts/hide_seek/anchors_data.json")
+JSON_PATH = Path("assets/data/hide_seek/anchors_data.json")
 
 def resize_anchors(scale=1.25):
     if not JSON_PATH.exists():

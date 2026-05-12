@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfish00000001"]
 
-[ext_resource type="Script" uid="uid://bvebyp5iy5img" path="res://scripts/fish.gd" id="1_fish01"]
+[ext_resource type="Script" uid="uid://bvebyp5iy5img" path="res://scripts/fishing/fish.gd" id="1_fish01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(80, 40)

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_anchor.gd" id="1_7ybr1"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_7ybr1"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/bg.png" id="1_vy286"]
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_7ybr1"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_7ybr1"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/anchor.png" id="3_dsbya"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/clownfish.png" id="4_y5tek"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/crab.png" id="5_m0xuj"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/starfish.png" id="10_h707h"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/submarine.png" id="11_1rjdm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/treasure_chest.png" id="12_7fur4"]
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_cea2s"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="13_cea2s"]
 
 [sub_resource type="Resource" id="Resource_7ybr1"]
 script = ExtResource("1_7ybr1")

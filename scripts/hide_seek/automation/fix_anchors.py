@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-JSON_PATH = Path("scripts/hide_seek/anchors_data.json")
+JSON_PATH = Path("assets/data/hide_seek/anchors_data.json")
 MAX_Y = 700
 
 def fix_anchors():

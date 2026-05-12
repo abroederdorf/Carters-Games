@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgame0000001"]
 
-[ext_resource type="Script" uid="uid://d1v2qlw2ytwjp" path="res://scripts/game.gd" id="1_game01"]
-[ext_resource type="PackedScene" uid="uid://cuu000000001" path="res://scenes/UI.tscn" id="2_ui0001"]
+[ext_resource type="Script" uid="uid://d1v2qlw2ytwjp" path="res://scripts/fishing/game.gd" id="1_game01"]
+[ext_resource type="PackedScene" uid="uid://cuu000000001" path="res://scenes/fishing/ui.tscn" id="2_ui0001"]
 [ext_resource type="Texture2D" uid="uid://csu8h3o3ifsv2" path="res://assets/sprites/dock.svg" id="9_dock"]
 [ext_resource type="Texture2D" uid="uid://cnu748xnomxwr" path="res://assets/sprites/rod.svg" id="10_rod"]
 [ext_resource type="Texture2D" uid="uid://b1q5o5b2tl8ow" path="res://assets/sprites/hook.svg" id="11_hook"]

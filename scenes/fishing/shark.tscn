@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cshark01"]
 
-[ext_resource type="Script" uid="uid://bdpyuq2fyfgop" path="res://scripts/shark.gd" id="1_sha"]
+[ext_resource type="Script" uid="uid://bdpyuq2fyfgop" path="res://scripts/fishing/shark.gd" id="1_sha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sha"]
 size = Vector2(160, 60)

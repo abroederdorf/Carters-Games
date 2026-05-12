@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuu000000001"]
 
-[ext_resource type="Script" uid="uid://cge4yimkq7ovu" path="res://scripts/ui.gd" id="1_ui001"]
+[ext_resource type="Script" uid="uid://cge4yimkq7ovu" path="res://scripts/fishing/ui.gd" id="1_ui001"]
 [ext_resource type="Texture2D" uid="uid://dfs65n8287m4o" path="res://assets/sprites/close_icon.svg" id="14_close"]
 [ext_resource type="Texture2D" uid="uid://b161sm1g8rcto" path="res://assets/sprites/pause_icon.svg" id="15_pause"]
 [ext_resource type="Texture2D" uid="uid://doxk5bg0bn7p3" path="res://assets/sprites/sound_on_icon.svg" id="16_sound_on"]

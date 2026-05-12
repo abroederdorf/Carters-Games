@@ -69,9 +69,9 @@ def main():
         except Exception as e:
             print(f"  Error parsing JSON for {theme}: {e}")
             
-    with open("scripts/hide_seek/item_tags.json", "w") as f:
+    with open("assets/data/hide_seek/item_tags.json", "w") as f:
         json.dump(all_item_tags, f, indent=2)
-    print("\nSaved item tags to scripts/hide_seek/item_tags.json")
+    print("\nSaved item tags to assets/data/hide_seek/item_tags.json")
 
 if __name__ == "__main__":
     main()

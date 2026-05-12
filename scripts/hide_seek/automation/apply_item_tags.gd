@@ -1,7 +1,7 @@
 extends SceneTree
 
 func _init():
-	var file = FileAccess.open("res://scripts/hide_seek/item_tags.json", FileAccess.READ)
+	var file = FileAccess.open("res://assets/data/hide_seek/item_tags.json", FileAccess.READ)
 	if not file:
 		print("Could not find item_tags.json")
 		quit()
