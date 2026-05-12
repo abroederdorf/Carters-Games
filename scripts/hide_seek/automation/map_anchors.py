@@ -1,15 +1,12 @@
 import os
 import json
-import time
-import io
-import base64
 from pathlib import Path
 from google import genai
 from google.genai import types
 from PIL import Image
 
 # --- Configuration ---
-API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
+API_KEY = os.environ.get("GEMINI_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 # We use Gemini 2.5 Flash for its strong vision capabilities
 VISION_MODEL = "gemini-2.5-flash"
@@ -66,11 +63,6 @@ def get_anchors_for_image(image_path):
         print("Raw response:", text)
         return None
 
-def update_godot_resource(theme_name, anchors):
-    # This function will generate the GDScript to update the resources
-    # For now, we'll just print the data or save it to a JSON for the GDScript to read.
-    pass
-
 THEMES_JSON = Path("assets/data/hide_seek/themes.json")
 
 def load_master_index():
@@ -84,7 +76,7 @@ def main():
     all_anchors = {}
     
     for theme in themes:
-...        theme_dir = ASSET_ROOT / theme
+        theme_dir = ASSET_ROOT / theme
         bg_path = theme_dir / "bg.png"
         if not bg_path.exists():
             bg_path = theme_dir / "bg_fast.png"

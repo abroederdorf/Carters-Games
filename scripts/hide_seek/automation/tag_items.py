@@ -5,7 +5,7 @@ from google import genai
 from google.genai import types
 
 # --- Configuration ---
-API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
+API_KEY = os.environ.get("GEMINI_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 TAG_MODEL = "gemini-2.5-flash"
 
@@ -55,7 +55,6 @@ def main():
         print(f"Tagging items for: {theme_name}")
         
         formatted_prompt = PROMPT.format(theme=theme_name, items=", ".join(items))
-...        
         response = client.models.generate_content(
             model=TAG_MODEL,
             contents=formatted_prompt
@@ -69,10 +68,10 @@ def main():
             
         try:
             tags = json.loads(text.strip())
-            all_item_tags[theme] = tags
+            all_item_tags[theme_name] = tags
             print(f"  Tagged {len(tags)} items.")
         except Exception as e:
-            print(f"  Error parsing JSON for {theme}: {e}")
+            print(f"  Error parsing JSON for {theme_name}: {e}")
             
     with open("assets/data/hide_seek/item_tags.json", "w") as f:
         json.dump(all_item_tags, f, indent=2)

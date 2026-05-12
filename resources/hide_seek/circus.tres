@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_ruyex"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/circus/bg.png" id="2_5ni3d"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_1cb7y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/circus/clown_nose.png" id="4_ykxht"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/circus/top_hat.png" id="5_yccyl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/circus/unicycle.png" id="6_nftap"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/popcorn.png" id="7_sy12f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/megaphone.png" id="8_q336s"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="9_nb472"]
+
+[sub_resource type="Resource" id="Resource_wtinu"]
+script = ExtResource("3_1cb7y")
+item_name = "clown_nose"
+thumbnail = ExtResource("4_ykxht")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_h62pl"]
+script = ExtResource("3_1cb7y")
+item_name = "top_hat"
+thumbnail = ExtResource("5_yccyl")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_laeqv"]
+script = ExtResource("3_1cb7y")
+item_name = "unicycle"
+thumbnail = ExtResource("6_nftap")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_hbu70"]
+script = ExtResource("3_1cb7y")
+item_name = "trapeze"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_2vaqb"]
+script = ExtResource("3_1cb7y")
+item_name = "aerial_hoop"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_jnl6s"]
+script = ExtResource("3_1cb7y")
+item_name = "lion"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_jor35"]
+script = ExtResource("3_1cb7y")
+item_name = "popcorn"
+thumbnail = ExtResource("7_sy12f")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_y6ccw"]
+script = ExtResource("3_1cb7y")
+item_name = "megaphone"
+thumbnail = ExtResource("8_q336s")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_xb24x"]
+script = ExtResource("3_1cb7y")
+item_name = "cotton_candy"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_4xnej"]
+script = ExtResource("3_1cb7y")
+item_name = "juggling_club"
+radius = 60.0
+
+[resource]
+script = ExtResource("9_nb472")
+scene_name = "circus"
+background_image = ExtResource("2_5ni3d")
+items = Array[ExtResource("3_1cb7y")]([SubResource("Resource_wtinu"), SubResource("Resource_h62pl"), SubResource("Resource_laeqv"), SubResource("Resource_hbu70"), SubResource("Resource_2vaqb"), SubResource("Resource_jnl6s"), SubResource("Resource_jor35"), SubResource("Resource_y6ccw"), SubResource("Resource_xb24x"), SubResource("Resource_4xnej")])

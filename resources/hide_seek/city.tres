@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_aqa3e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/bg.png" id="2_xx6hk"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_gynth"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/fire_hydrant.png" id="4_3d1ab"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bicycle.png" id="5_xq4rq"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="6_8n7fg"]
+
+[sub_resource type="Resource" id="Resource_f6tlr"]
+script = ExtResource("3_gynth")
+item_name = "taxi"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_3rx8s"]
+script = ExtResource("3_gynth")
+item_name = "stop_sign"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_xrqow"]
+script = ExtResource("3_gynth")
+item_name = "traffic_light"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_0dtrj"]
+script = ExtResource("3_gynth")
+item_name = "skyscraper"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_r2ism"]
+script = ExtResource("3_gynth")
+item_name = "fire_hydrant"
+thumbnail = ExtResource("4_3d1ab")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_2usmf"]
+script = ExtResource("3_gynth")
+item_name = "trash_can"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_pvq21"]
+script = ExtResource("3_gynth")
+item_name = "bus"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_cs3k2"]
+script = ExtResource("3_gynth")
+item_name = "bicycle"
+thumbnail = ExtResource("5_xq4rq")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_27y4o"]
+script = ExtResource("3_gynth")
+item_name = "subway_sign"
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_uhjwj"]
+script = ExtResource("3_gynth")
+item_name = "newsstand"
+radius = 60.0
+
+[resource]
+script = ExtResource("6_8n7fg")
+scene_name = "city"
+background_image = ExtResource("2_xx6hk")
+items = Array[ExtResource("3_gynth")]([SubResource("Resource_f6tlr"), SubResource("Resource_3rx8s"), SubResource("Resource_xrqow"), SubResource("Resource_0dtrj"), SubResource("Resource_r2ism"), SubResource("Resource_2usmf"), SubResource("Resource_pvq21"), SubResource("Resource_cs3k2"), SubResource("Resource_27y4o"), SubResource("Resource_uhjwj")])

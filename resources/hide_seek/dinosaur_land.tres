@@ -337,6 +337,38 @@ radius = 18.0
 difficulty = 2
 tags = Array[String](["ground"])
 
+[sub_resource type="Resource" id="Resource_1fv5e"]
+script = ExtResource("2_l6uy3")
+item_name = "t_rex"
+thumbnail = ExtResource("10_yl3xs")
+position = Vector2(800, 550)
+radius = 95.0
+tags = Array[String](["ground"])
+
+[sub_resource type="Resource" id="Resource_pu3f4"]
+script = ExtResource("2_l6uy3")
+item_name = "triceratops"
+thumbnail = ExtResource("11_8atkm")
+position = Vector2(150, 750)
+radius = 80.0
+tags = Array[String](["ground"])
+
+[sub_resource type="Resource" id="Resource_j2vcy"]
+script = ExtResource("2_l6uy3")
+item_name = "stegosaurus"
+thumbnail = ExtResource("9_852u2")
+position = Vector2(1200, 600)
+radius = 85.0
+tags = Array[String](["ground"])
+
+[sub_resource type="Resource" id="Resource_smikw"]
+script = ExtResource("2_l6uy3")
+item_name = "pterodactyl"
+thumbnail = ExtResource("8_a1ner")
+position = Vector2(1400, 200)
+radius = 75.0
+tags = Array[String](["sky"])
+
 [sub_resource type="Resource" id="Resource_2v376"]
 script = ExtResource("2_l6uy3")
 item_name = "dino_egg"
@@ -344,20 +376,12 @@ thumbnail = ExtResource("3_o0kys")
 position = Vector2(300, 850)
 tags = Array[String](["ground", "foliage"])
 
-[sub_resource type="Resource" id="Resource_5qcu8"]
+[sub_resource type="Resource" id="Resource_3mbjs"]
 script = ExtResource("2_l6uy3")
-item_name = "fern"
-thumbnail = ExtResource("4_k7gtb")
-position = Vector2(200, 950)
-radius = 65.0
-tags = Array[String](["foliage", "ground"])
-
-[sub_resource type="Resource" id="Resource_y004k"]
-script = ExtResource("2_l6uy3")
-item_name = "footprint"
-thumbnail = ExtResource("5_drpck")
-position = Vector2(1000, 900)
-radius = 60.0
+item_name = "volcano"
+thumbnail = ExtResource("12_utqgp")
+position = Vector2(300, 400)
+radius = 120.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_y71cp"]
@@ -376,49 +400,25 @@ position = Vector2(500, 500)
 radius = 110.0
 tags = Array[String](["foliage", "ground"])
 
-[sub_resource type="Resource" id="Resource_smikw"]
+[sub_resource type="Resource" id="Resource_5qcu8"]
 script = ExtResource("2_l6uy3")
-item_name = "pterodactyl"
-thumbnail = ExtResource("8_a1ner")
-position = Vector2(1400, 200)
-radius = 75.0
-tags = Array[String](["sky"])
+item_name = "fern"
+thumbnail = ExtResource("4_k7gtb")
+position = Vector2(200, 950)
+radius = 65.0
+tags = Array[String](["foliage", "ground"])
 
-[sub_resource type="Resource" id="Resource_j2vcy"]
+[sub_resource type="Resource" id="Resource_y004k"]
 script = ExtResource("2_l6uy3")
-item_name = "stegosaurus"
-thumbnail = ExtResource("9_852u2")
-position = Vector2(1200, 600)
-radius = 85.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_1fv5e"]
-script = ExtResource("2_l6uy3")
-item_name = "t_rex"
-thumbnail = ExtResource("10_yl3xs")
-position = Vector2(800, 550)
-radius = 95.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_pu3f4"]
-script = ExtResource("2_l6uy3")
-item_name = "triceratops"
-thumbnail = ExtResource("11_8atkm")
-position = Vector2(150, 750)
-radius = 80.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_3mbjs"]
-script = ExtResource("2_l6uy3")
-item_name = "volcano"
-thumbnail = ExtResource("12_utqgp")
-position = Vector2(300, 400)
-radius = 120.0
+item_name = "footprint"
+thumbnail = ExtResource("5_drpck")
+position = Vector2(1000, 900)
+radius = 60.0
 tags = Array[String](["ground"])
 
 [resource]
 script = ExtResource("13_b784x")
 scene_name = "dinosaur_land"
 background_image = ExtResource("1_luueq")
-items = Array[ExtResource("2_l6uy3")]([SubResource("Resource_2v376"), SubResource("Resource_5qcu8"), SubResource("Resource_y004k"), SubResource("Resource_y71cp"), SubResource("Resource_ecrqn"), SubResource("Resource_smikw"), SubResource("Resource_j2vcy"), SubResource("Resource_1fv5e"), SubResource("Resource_pu3f4"), SubResource("Resource_3mbjs")])
+items = Array[ExtResource("2_l6uy3")]([SubResource("Resource_1fv5e"), SubResource("Resource_pu3f4"), SubResource("Resource_j2vcy"), SubResource("Resource_smikw"), SubResource("Resource_2v376"), SubResource("Resource_3mbjs"), SubResource("Resource_y71cp"), SubResource("Resource_ecrqn"), SubResource("Resource_5qcu8"), SubResource("Resource_y004k")])
 anchors = Array[ExtResource("1_l6uy3")]([SubResource("Resource_l6uy3"), SubResource("Resource_o0kys"), SubResource("Resource_k7gtb"), SubResource("Resource_drpck"), SubResource("Resource_fvl77"), SubResource("Resource_yg5xi"), SubResource("Resource_a1ner"), SubResource("Resource_852u2"), SubResource("Resource_yl3xs"), SubResource("Resource_8atkm"), SubResource("Resource_utqgp"), SubResource("Resource_b784x"), SubResource("Resource_6rmkd"), SubResource("Resource_7c7oc"), SubResource("Resource_n6glk"), SubResource("Resource_5qtmp"), SubResource("Resource_tnx0t"), SubResource("Resource_dfjgr"), SubResource("Resource_iv4f8"), SubResource("Resource_jcjkh"), SubResource("Resource_6to7n"), SubResource("Resource_5whuh"), SubResource("Resource_ideth"), SubResource("Resource_woqon"), SubResource("Resource_iytmm"), SubResource("Resource_bttxd"), SubResource("Resource_l6p12"), SubResource("Resource_c1n8j"), SubResource("Resource_n5wa6"), SubResource("Resource_qhuvl"), SubResource("Resource_qhkds"), SubResource("Resource_8c5dk"), SubResource("Resource_ujbfc"), SubResource("Resource_fviom"), SubResource("Resource_1jdg5"), SubResource("Resource_ir2on"), SubResource("Resource_76mrb"), SubResource("Resource_0lkry"), SubResource("Resource_3m4ld"), SubResource("Resource_ns12q"), SubResource("Resource_sxuhk"), SubResource("Resource_41n58"), SubResource("Resource_qbebh"), SubResource("Resource_p8ltp"), SubResource("Resource_ny0yo"), SubResource("Resource_2nxv7"), SubResource("Resource_gf7xj"), SubResource("Resource_0ajql"), SubResource("Resource_e8wio"), SubResource("Resource_dh01o")])

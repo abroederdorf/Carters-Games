@@ -339,14 +339,6 @@ radius = 15.0
 difficulty = 2
 tags = Array[String](["structure"])
 
-[sub_resource type="Resource" id="Resource_cgdy0"]
-script = ExtResource("2_6masw")
-item_name = "alien"
-thumbnail = ExtResource("3_35o43")
-position = Vector2(1800, 750)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
-
 [sub_resource type="Resource" id="Resource_ksl1o"]
 script = ExtResource("2_6masw")
 item_name = "astronaut"
@@ -355,36 +347,12 @@ position = Vector2(1100, 500)
 radius = 75.0
 tags = Array[String](["ground", "structure"])
 
-[sub_resource type="Resource" id="Resource_nxuhb"]
+[sub_resource type="Resource" id="Resource_cgdy0"]
 script = ExtResource("2_6masw")
-item_name = "crater"
-thumbnail = ExtResource("5_tn0dk")
-position = Vector2(150, 950)
-radius = 80.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_1knwk"]
-script = ExtResource("2_6masw")
-item_name = "flying_saucer"
-thumbnail = ExtResource("6_3lktu")
-position = Vector2(300, 100)
-radius = 90.0
-tags = Array[String](["sky"])
-
-[sub_resource type="Resource" id="Resource_kb7nb"]
-script = ExtResource("2_6masw")
-item_name = "moon_rover"
-thumbnail = ExtResource("7_jo1yg")
-position = Vector2(500, 750)
-radius = 85.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_clkxf"]
-script = ExtResource("2_6masw")
-item_name = "ray_gun"
-thumbnail = ExtResource("8_neo6q")
-position = Vector2(800, 700)
-radius = 45.0
+item_name = "alien"
+thumbnail = ExtResource("3_35o43")
+position = Vector2(1800, 750)
+radius = 60.0
 tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_xfgwq"]
@@ -395,6 +363,14 @@ position = Vector2(1700, 300)
 radius = 100.0
 tags = Array[String](["sky", "ground"])
 
+[sub_resource type="Resource" id="Resource_kb7nb"]
+script = ExtResource("2_6masw")
+item_name = "moon_rover"
+thumbnail = ExtResource("7_jo1yg")
+position = Vector2(500, 750)
+radius = 85.0
+tags = Array[String](["ground"])
+
 [sub_resource type="Resource" id="Resource_h47oq"]
 script = ExtResource("2_6masw")
 item_name = "saturn"
@@ -402,13 +378,6 @@ thumbnail = ExtResource("10_ord07")
 position = Vector2(1600, 100)
 radius = 80.0
 tags = Array[String](["sky"])
-
-[sub_resource type="Resource" id="Resource_idvb0"]
-script = ExtResource("2_6masw")
-item_name = "space_helmet"
-thumbnail = ExtResource("11_2yi5l")
-position = Vector2(1300, 700)
-tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_t5y3c"]
 script = ExtResource("2_6masw")
@@ -418,9 +387,40 @@ position = Vector2(1000, 50)
 radius = 35.0
 tags = Array[String](["sky"])
 
+[sub_resource type="Resource" id="Resource_1knwk"]
+script = ExtResource("2_6masw")
+item_name = "flying_saucer"
+thumbnail = ExtResource("6_3lktu")
+position = Vector2(300, 100)
+radius = 90.0
+tags = Array[String](["sky"])
+
+[sub_resource type="Resource" id="Resource_idvb0"]
+script = ExtResource("2_6masw")
+item_name = "space_helmet"
+thumbnail = ExtResource("11_2yi5l")
+position = Vector2(1300, 700)
+tags = Array[String](["ground", "structure"])
+
+[sub_resource type="Resource" id="Resource_clkxf"]
+script = ExtResource("2_6masw")
+item_name = "ray_gun"
+thumbnail = ExtResource("8_neo6q")
+position = Vector2(800, 700)
+radius = 45.0
+tags = Array[String](["ground", "structure"])
+
+[sub_resource type="Resource" id="Resource_nxuhb"]
+script = ExtResource("2_6masw")
+item_name = "crater"
+thumbnail = ExtResource("5_tn0dk")
+position = Vector2(150, 950)
+radius = 80.0
+tags = Array[String](["ground"])
+
 [resource]
 script = ExtResource("13_r0x86")
 scene_name = "space"
 background_image = ExtResource("1_y6kf6")
-items = Array[ExtResource("2_6masw")]([SubResource("Resource_cgdy0"), SubResource("Resource_ksl1o"), SubResource("Resource_nxuhb"), SubResource("Resource_1knwk"), SubResource("Resource_kb7nb"), SubResource("Resource_clkxf"), SubResource("Resource_xfgwq"), SubResource("Resource_h47oq"), SubResource("Resource_idvb0"), SubResource("Resource_t5y3c")])
+items = Array[ExtResource("2_6masw")]([SubResource("Resource_ksl1o"), SubResource("Resource_cgdy0"), SubResource("Resource_xfgwq"), SubResource("Resource_kb7nb"), SubResource("Resource_h47oq"), SubResource("Resource_t5y3c"), SubResource("Resource_1knwk"), SubResource("Resource_idvb0"), SubResource("Resource_clkxf"), SubResource("Resource_nxuhb")])
 anchors = Array[ExtResource("1_6masw")]([SubResource("Resource_6masw"), SubResource("Resource_35o43"), SubResource("Resource_n6757"), SubResource("Resource_tn0dk"), SubResource("Resource_3lktu"), SubResource("Resource_jo1yg"), SubResource("Resource_neo6q"), SubResource("Resource_0mjkf"), SubResource("Resource_ord07"), SubResource("Resource_2yi5l"), SubResource("Resource_2816f"), SubResource("Resource_r0x86"), SubResource("Resource_v2ols"), SubResource("Resource_11y5d"), SubResource("Resource_o14d4"), SubResource("Resource_6lcey"), SubResource("Resource_4v0kh"), SubResource("Resource_pfpbq"), SubResource("Resource_30132"), SubResource("Resource_p1eey"), SubResource("Resource_aj6v3"), SubResource("Resource_4cosr"), SubResource("Resource_nxx8f"), SubResource("Resource_bfovd"), SubResource("Resource_ubray"), SubResource("Resource_yvum3"), SubResource("Resource_lukn1"), SubResource("Resource_wk3u1"), SubResource("Resource_w4l67"), SubResource("Resource_h05da"), SubResource("Resource_n11k3"), SubResource("Resource_lqkwl"), SubResource("Resource_t844o"), SubResource("Resource_f17ue"), SubResource("Resource_b5k81"), SubResource("Resource_7bmfu"), SubResource("Resource_to7lx"), SubResource("Resource_3eo8j"), SubResource("Resource_55ti1"), SubResource("Resource_kdvqr"), SubResource("Resource_f0eg5"), SubResource("Resource_276y7"), SubResource("Resource_v4etc"), SubResource("Resource_aejqb"), SubResource("Resource_alvsa"), SubResource("Resource_comkh"), SubResource("Resource_3iwrc"), SubResource("Resource_r4k03"), SubResource("Resource_s3e8u"), SubResource("Resource_iwe0k")])

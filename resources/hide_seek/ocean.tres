@@ -341,6 +341,70 @@ radius = 37.0
 difficulty = 2
 tags = Array[String](["water", "sky"])
 
+[sub_resource type="Resource" id="Resource_eijqu"]
+script = ExtResource("2_7ybr1")
+item_name = "shark"
+thumbnail = ExtResource("9_mvkld")
+position = Vector2(1000, 200)
+radius = 100.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_55xwc"]
+script = ExtResource("2_7ybr1")
+item_name = "crab"
+thumbnail = ExtResource("5_m0xuj")
+position = Vector2(960, 950)
+radius = 60.0
+tags = Array[String](["ground"])
+
+[sub_resource type="Resource" id="Resource_tx2cy"]
+script = ExtResource("2_7ybr1")
+item_name = "seahorse"
+thumbnail = ExtResource("8_qkan6")
+position = Vector2(380, 850)
+radius = 45.0
+tags = Array[String](["foliage", "water"])
+
+[sub_resource type="Resource" id="Resource_m870r"]
+script = ExtResource("2_7ybr1")
+item_name = "treasure_chest"
+thumbnail = ExtResource("12_7fur4")
+position = Vector2(1550, 800)
+radius = 75.0
+tags = Array[String](["ground", "structure"])
+
+[sub_resource type="Resource" id="Resource_mbu66"]
+script = ExtResource("2_7ybr1")
+item_name = "jellyfish"
+thumbnail = ExtResource("6_7q5ok")
+position = Vector2(1600, 400)
+radius = 80.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_p82pl"]
+script = ExtResource("2_7ybr1")
+item_name = "submarine"
+thumbnail = ExtResource("11_1rjdm")
+position = Vector2(1400, 250)
+radius = 85.0
+tags = Array[String](["water", "ground"])
+
+[sub_resource type="Resource" id="Resource_bk2gw"]
+script = ExtResource("2_7ybr1")
+item_name = "starfish"
+thumbnail = ExtResource("10_h707h")
+position = Vector2(1750, 950)
+radius = 55.0
+tags = Array[String](["ground"])
+
+[sub_resource type="Resource" id="Resource_aijxs"]
+script = ExtResource("2_7ybr1")
+item_name = "sea_turtle"
+thumbnail = ExtResource("7_e1a3l")
+position = Vector2(600, 350)
+radius = 90.0
+tags = Array[String](["water", "ground"])
+
 [sub_resource type="Resource" id="Resource_gbaxu"]
 script = ExtResource("2_7ybr1")
 item_name = "anchor"
@@ -356,73 +420,9 @@ thumbnail = ExtResource("4_y5tek")
 position = Vector2(120, 680)
 tags = Array[String](["foliage", "water"])
 
-[sub_resource type="Resource" id="Resource_55xwc"]
-script = ExtResource("2_7ybr1")
-item_name = "crab"
-thumbnail = ExtResource("5_m0xuj")
-position = Vector2(960, 950)
-radius = 60.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_mbu66"]
-script = ExtResource("2_7ybr1")
-item_name = "jellyfish"
-thumbnail = ExtResource("6_7q5ok")
-position = Vector2(1600, 400)
-radius = 80.0
-tags = Array[String](["water"])
-
-[sub_resource type="Resource" id="Resource_aijxs"]
-script = ExtResource("2_7ybr1")
-item_name = "sea_turtle"
-thumbnail = ExtResource("7_e1a3l")
-position = Vector2(600, 350)
-radius = 90.0
-tags = Array[String](["water", "ground"])
-
-[sub_resource type="Resource" id="Resource_tx2cy"]
-script = ExtResource("2_7ybr1")
-item_name = "seahorse"
-thumbnail = ExtResource("8_qkan6")
-position = Vector2(380, 850)
-radius = 45.0
-tags = Array[String](["foliage", "water"])
-
-[sub_resource type="Resource" id="Resource_eijqu"]
-script = ExtResource("2_7ybr1")
-item_name = "shark"
-thumbnail = ExtResource("9_mvkld")
-position = Vector2(1000, 200)
-radius = 100.0
-tags = Array[String](["water"])
-
-[sub_resource type="Resource" id="Resource_bk2gw"]
-script = ExtResource("2_7ybr1")
-item_name = "starfish"
-thumbnail = ExtResource("10_h707h")
-position = Vector2(1750, 950)
-radius = 55.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_p82pl"]
-script = ExtResource("2_7ybr1")
-item_name = "submarine"
-thumbnail = ExtResource("11_1rjdm")
-position = Vector2(1400, 250)
-radius = 85.0
-tags = Array[String](["water", "ground"])
-
-[sub_resource type="Resource" id="Resource_m870r"]
-script = ExtResource("2_7ybr1")
-item_name = "treasure_chest"
-thumbnail = ExtResource("12_7fur4")
-position = Vector2(1550, 800)
-radius = 75.0
-tags = Array[String](["ground", "structure"])
-
 [resource]
 script = ExtResource("13_cea2s")
 scene_name = "ocean"
 background_image = ExtResource("1_vy286")
-items = Array[ExtResource("2_7ybr1")]([SubResource("Resource_gbaxu"), SubResource("Resource_7ehpn"), SubResource("Resource_55xwc"), SubResource("Resource_mbu66"), SubResource("Resource_aijxs"), SubResource("Resource_tx2cy"), SubResource("Resource_eijqu"), SubResource("Resource_bk2gw"), SubResource("Resource_p82pl"), SubResource("Resource_m870r")])
+items = Array[ExtResource("2_7ybr1")]([SubResource("Resource_eijqu"), SubResource("Resource_55xwc"), SubResource("Resource_tx2cy"), SubResource("Resource_m870r"), SubResource("Resource_mbu66"), SubResource("Resource_p82pl"), SubResource("Resource_bk2gw"), SubResource("Resource_aijxs"), SubResource("Resource_gbaxu"), SubResource("Resource_7ehpn")])
 anchors = Array[ExtResource("1_7ybr1")]([SubResource("Resource_7ybr1"), SubResource("Resource_dsbya"), SubResource("Resource_y5tek"), SubResource("Resource_m0xuj"), SubResource("Resource_7q5ok"), SubResource("Resource_e1a3l"), SubResource("Resource_qkan6"), SubResource("Resource_mvkld"), SubResource("Resource_h707h"), SubResource("Resource_1rjdm"), SubResource("Resource_7fur4"), SubResource("Resource_cea2s"), SubResource("Resource_eoa7p"), SubResource("Resource_mngqu"), SubResource("Resource_8q7i1"), SubResource("Resource_5owyg"), SubResource("Resource_pg6qf"), SubResource("Resource_3dcrc"), SubResource("Resource_k4vlh"), SubResource("Resource_d5gp6"), SubResource("Resource_xibpu"), SubResource("Resource_vmnkk"), SubResource("Resource_lfndg"), SubResource("Resource_lt4lt"), SubResource("Resource_yah1p"), SubResource("Resource_27mvt"), SubResource("Resource_txywc"), SubResource("Resource_027mw"), SubResource("Resource_q2tmb"), SubResource("Resource_ew7u7"), SubResource("Resource_bsi2m"), SubResource("Resource_mpx15"), SubResource("Resource_5d8wu"), SubResource("Resource_7y5ih"), SubResource("Resource_dpr1x"), SubResource("Resource_bpsio"), SubResource("Resource_q7an4"), SubResource("Resource_12m8n"), SubResource("Resource_fkvia"), SubResource("Resource_812rr"), SubResource("Resource_sr6n4"), SubResource("Resource_n0dst"), SubResource("Resource_mplq5"), SubResource("Resource_o5fsf"), SubResource("Resource_85rhe"), SubResource("Resource_bqmjh"), SubResource("Resource_h0ms1"), SubResource("Resource_hru7m"), SubResource("Resource_e75ph"), SubResource("Resource_3wka0")])

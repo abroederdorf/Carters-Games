@@ -8,12 +8,11 @@ from google.genai import types
 from PIL import Image
 
 # --- Configuration ---
-API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
+API_KEY = os.environ.get("GEMINI_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 MODEL_NAME = "imagen-4.0-fast-generate-001"
 
 SHARED_ROOT = Path("assets/sprites/hide_seek/shared")
-SHARED_ROOT.mkdir(parents=True, exist_ok=True)
 
 THEMES_JSON = Path("assets/data/hide_seek/themes.json")
 
@@ -48,6 +47,7 @@ def generate_image(prompt, output_path, model):
     return False
 
 def main():
+    SHARED_ROOT.mkdir(parents=True, exist_ok=True)
     index = load_master_index()
     shared_items = index["shared"]
     
