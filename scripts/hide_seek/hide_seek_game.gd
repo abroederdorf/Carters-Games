@@ -149,12 +149,15 @@ func _assign_items_to_anchors() -> void:
 				if used_anchors[j]: continue
 				var anchor = session_anchors[j]
 				
-				# Avoid putting ground items in the sky/water if possible
-				var is_sky_water = ("sky" in anchor.tags or "water" in anchor.tags)
-				var is_ground_item = ("ground" in item.tags)
-				
-				if is_ground_item and is_sky_water:
-					continue # Try to find a better spot
+				var anchor_has_water := "water" in anchor.tags
+				var anchor_has_sky := "sky" in anchor.tags
+				var item_needs_water := "water" in item.tags
+				var item_needs_sky := "sky" in item.tags
+				var item_is_ground := "ground" in item.tags and not item_needs_sky and not item_needs_water
+
+				if item_is_ground and (anchor_has_sky or anchor_has_water): continue
+				if item_needs_water and not anchor_has_water: continue
+				if item_needs_sky and not anchor_has_sky: continue
 					
 				assigned_anchor = anchor
 				used_anchors[j] = true
