@@ -5,13 +5,23 @@ const PELICAN_SCENE = preload("res://scenes/fishing/pelican.tscn")
 const SHARK_SCENE = preload("res://scenes/fishing/shark.tscn")
 const OCTOPUS_SCENE = preload("res://scenes/fishing/octopus.tscn")
 
-const SAND_TEX = preload("res://assets/sprites/sand.svg")
-const ROCK_TEX = preload("res://assets/sprites/rock_gray.svg")
-const SW_G_TEX = preload("res://assets/sprites/seaweed_green.svg")
-const SW_P_TEX = preload("res://assets/sprites/seaweed_purple.svg")
-const SW_PK_TEX = preload("res://assets/sprites/seaweed_pink.svg")
+const SAND_TEX = preload("res://assets/sprites/fishing/rock_gray.png")
+const ROCK_TEX = preload("res://assets/sprites/fishing/rock_gray.png")
+const SW_G_TEX = preload("res://assets/sprites/fishing/seaweed_green.png")
+const SW_P_TEX = preload("res://assets/sprites/fishing/seaweed_purple.png")
+const SW_PK_TEX = preload("res://assets/sprites/fishing/seaweed_pink.png")
 const SWAY_SCRIPT = preload("res://scripts/fishing/sway.gd")
 const CLAM_SCRIPT = preload("res://scripts/fishing/clam.gd")
+
+const FISH_TEXTURES = [
+	"res://assets/sprites/fishing/fish_angel.png",
+	"res://assets/sprites/fishing/fish_beta.png",
+	"res://assets/sprites/fishing/fish_catfish.png",
+	"res://assets/sprites/fishing/fish_puffer.png",
+	"res://assets/sprites/fishing/fish_rainbow.png",
+	"res://assets/sprites/fishing/fish_sunfish.png",
+	"res://assets/sprites/fishing/fish_tetra.png"
+]
 
 const CAST_DURATION = 0.5
 
@@ -680,6 +690,22 @@ func _populate_environment() -> void:
 
 	var sw_count = int(width / 100.0) + 2
 	var sw_textures = [SW_G_TEX, SW_P_TEX, SW_PK_TEX]
+	for i in sw_count:
+		var sw = Sprite2D.new()
+		sw.texture = sw_textures.pick_random()
+		sw.position = Vector2(i * 100.0 + randf_range(-30, 30), 740 + randf_range(-10, 15))
+		sw.scale = Vector2.ONE * randf_range(0.7, 1.3)
+		sw.set_script(SWAY_SCRIPT)
+		environment.add_child(sw)
+
+	var clam_count = int(width / 600.0) + 1
+	for i in clam_count:
+		var c = Sprite2D.new()
+		c.position = Vector2(i * 600.0 + randf_range(100, 500), 760)
+		c.scale = Vector2.ONE * randf_range(0.8, 1.2)
+		c.set_script(CLAM_SCRIPT)
+		environment.add_child(c)
+es = [SW_G_TEX, SW_P_TEX, SW_PK_TEX]
 	for i in sw_count:
 		var sw = Sprite2D.new()
 		sw.texture = sw_textures.pick_random()

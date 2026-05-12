@@ -80,11 +80,13 @@ func _on_attack_hit(target) -> void:
 func _on_attack_finished() -> void:
 	is_attacking = false
 	monitoring = false
-	sprite.texture = preload("res://assets/sprites/shark_fin.svg")
+	sprite.texture = preload("res://assets/sprites/fishing/shark.png")
 	sprite.flip_h = direction > 0
-	sprite.scale = Vector2(2.0, 2.0)
+	sprite.scale = Vector2(0.8, 0.8)
 
 func _on_area_entered(area: Area2D) -> void:
 	if is_attacking and area.has_method("get_eaten"):
 		AudioManager.play_sfx("bite")
+		area.get_eaten()
+"bite")
 		area.get_eaten()

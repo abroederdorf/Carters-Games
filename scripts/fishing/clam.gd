@@ -1,7 +1,8 @@
 extends Sprite2D
 
-const CLAM_CLOSED = preload("res://assets/sprites/clam_closed.svg")
-const CLAM_OPEN = preload("res://assets/sprites/clam_open.svg")
+const TEX_CLOSED = preload("res://assets/sprites/fishing/clam_closed.png")
+const TEX_OPEN = preload("res://assets/sprites/fishing/clam_open.png")
+
 const BUBBLE_TEX = preload("res://assets/sprites/bubble.svg")
 
 @export var open_duration: float = 2.0

@@ -20,9 +20,9 @@ var spell_letter: String = ""
 var bounces: bool = false
 
 const CLASS_DATA = {
-	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fish_large.svg", "res://assets/sprites/fish_large_2.svg", "res://assets/sprites/fish_large_3.svg"] },
-	FishClass.MEDIUM: { "scale": 1.0,  "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/fish_medium.svg", "res://assets/sprites/fish_medium_2.svg", "res://assets/sprites/fish_medium_3.svg"] },
-	FishClass.SMALL:  { "scale": 0.65, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/fish_small.svg", "res://assets/sprites/fish_small_2.svg", "res://assets/sprites/fish_small_3.svg"] },
+	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fishing/fish_rainbow.png", "res://assets/sprites/fishing/fish_sunfish.png", "res://assets/sprites/fishing/fish_angel.png"] },
+	FishClass.MEDIUM: { "scale": 1.0,  "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/fishing/fish_beta.png", "res://assets/sprites/fishing/fish_puffer.png"] },
+	FishClass.SMALL:  { "scale": 0.65, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/fishing/fish_tetra.png", "res://assets/sprites/fishing/fish_catfish.png"] },
 }
 
 func _ready() -> void:
