@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cshark01"]
+
+[ext_resource type="Script" uid="uid://bdpyuq2fyfgop" path="res://scripts/fishing/shark.gd" id="1_sha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sha"]
+size = Vector2(160, 60)
+
+[node name="Shark" type="Area2D" unique_id=45131931]
+script = ExtResource("1_sha")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641849032]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2015045633]
+shape = SubResource("RectangleShape2D_sha")

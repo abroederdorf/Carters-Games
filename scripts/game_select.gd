@@ -138,7 +138,7 @@ func _make_game_card(title: String, icon: Texture2D, color: Color, border: Color
 
 func _on_fishing_pressed() -> void:
 	AudioManager.play_sfx("pop")
-	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://scenes/fishing/game.tscn")
 
 func _on_find_it_pressed() -> void:
 	AudioManager.play_sfx("pop")

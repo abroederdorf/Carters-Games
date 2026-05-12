@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_anchor.gd" id="1_aej6v"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_aej6v"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/bg.png" id="1_qgp2t"]
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_item_data.gd" id="2_aej6v"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_aej6v"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/checkered_flag.png" id="3_yuy7a"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/crushed_car.png" id="4_2qptk"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/flame_decal.png" id="5_qahqo"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/tire.png" id="10_m76tm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/trophy.png" id="11_fyy86"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/wrench.png" id="12_s6e2j"]
-[ext_resource type="Script" path="res://scripts/hide_seek/hide_seek_scene_data.gd" id="13_nkli5"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="13_nkli5"]
 
 [sub_resource type="Resource" id="Resource_aej6v"]
 script = ExtResource("1_aej6v")

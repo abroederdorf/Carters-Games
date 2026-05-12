@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cpelican01"]
-
-[ext_resource type="Script" uid="uid://c3b5xuvoubypi" path="res://scripts/pelican.gd" id="1_pel"]
-
-[node name="Pelican" type="Sprite2D" unique_id=153051576]
-script = ExtResource("1_pel")

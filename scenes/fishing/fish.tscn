@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cfish00000001"]
+
+[ext_resource type="Script" uid="uid://bvebyp5iy5img" path="res://scripts/fishing/fish.gd" id="1_fish01"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(80, 40)
+
+[node name="Fish" type="Area2D" unique_id=1743447079]
+script = ExtResource("1_fish01")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=390990113]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=633335975]
+shape = SubResource("RectangleShape2D_1")
