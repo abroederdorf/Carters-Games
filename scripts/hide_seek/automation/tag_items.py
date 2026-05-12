@@ -32,25 +32,30 @@ Example:
 {{"bird": ["sky", "foliage"], "rock": ["ground"]}}
 """
 
+THEMES_JSON = Path("assets/data/hide_seek/themes.json")
+
+def load_master_index():
+    with open(THEMES_JSON, "r") as f:
+        return json.load(f)
+
 def main():
-    themes = [
-        "mountains", "ocean", "jungle", "space", 
-        "fire_station", "dinosaur_land", "construction_site", "monster_truck_jam"
-    ]
+    index = load_master_index()
+    themes = index["themes"]
     
     all_item_tags = {}
     
-    for theme in themes:
-        theme_dir = ASSET_ROOT / theme
-        items = [f.stem for f in theme_dir.glob("*.png") if not f.name.startswith("bg")]
-        
+    for theme_name, theme_data in themes.items():
+        items = []
+        for item in theme_data["items"]:
+            items.append(item["name"])
+            
         if not items:
             continue
             
-        print(f"Tagging items for: {theme}")
+        print(f"Tagging items for: {theme_name}")
         
-        formatted_prompt = PROMPT.format(theme=theme, items=", ".join(items))
-        
+        formatted_prompt = PROMPT.format(theme=theme_name, items=", ".join(items))
+...        
         response = client.models.generate_content(
             model=TAG_MODEL,
             contents=formatted_prompt

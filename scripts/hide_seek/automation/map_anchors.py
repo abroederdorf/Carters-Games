@@ -71,16 +71,20 @@ def update_godot_resource(theme_name, anchors):
     # For now, we'll just print the data or save it to a JSON for the GDScript to read.
     pass
 
+THEMES_JSON = Path("assets/data/hide_seek/themes.json")
+
+def load_master_index():
+    with open(THEMES_JSON, "r") as f:
+        return json.load(f)
+
 def main():
-    themes = [
-        "mountains", "ocean", "jungle", "space", 
-        "fire_station", "dinosaur_land", "construction_site", "monster_truck_jam"
-    ]
+    index = load_master_index()
+    themes = index["themes"].keys()
     
     all_anchors = {}
     
     for theme in themes:
-        theme_dir = ASSET_ROOT / theme
+...        theme_dir = ASSET_ROOT / theme
         bg_path = theme_dir / "bg.png"
         if not bg_path.exists():
             bg_path = theme_dir / "bg_fast.png"
