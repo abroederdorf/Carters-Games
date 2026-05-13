@@ -15,8 +15,9 @@ API_KEY = os.environ.get("GEMINI_API_KEY", "")
 MODEL_NAME = "imagen-4.0-fast-generate-001"
 client = genai.Client(api_key=API_KEY)
 
-CHARACTER_PREFIX = "Isolated full view, white background, centered, "
-OBJECT_PREFIX = "Isolated full view, white background, centered, "
+# Refined prefixes from main, keeping the consistent STYLE_SUFFIX from local for art direction
+CHARACTER_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
+OBJECT_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, isolated object only, no people, no characters, no background, no shadows, no text, "
 
 STYLE_SUFFIX = ", simple flat vector design, thick black outlines, bright saturated colors, friendly cartoon style, no people, no background, no shadows, no text."
 
@@ -26,6 +27,7 @@ HS_ASSET_ROOT = Path("assets/sprites/hide_seek")
 def load_json(path: Path) -> dict:
     with open(path, "r") as f:
         return json.load(f)
+
 
 def _make_transparent(image: Image.Image) -> None:
     width, height = image.size
@@ -37,6 +39,7 @@ def _make_transparent(image: Image.Image) -> None:
         # Target white-ish pixels
         if pixel[3] > 0 and pixel[0] >= 235 and pixel[1] >= 235 and pixel[2] >= 235:
             ImageDraw.floodfill(image, seed, (255, 255, 255, 0), thresh=30)
+
 
 def generate_image(prompt: str, output_path: Path, aspect_ratio: str = "1:1", transparent_bg: bool = True) -> bool:
     print(f"Generating: {output_path}...")
@@ -91,6 +94,7 @@ def run_manifest(manifest_path: Path) -> None:
     
     print(f"\nBatch of {len(to_generate)} complete. Please review before generating more.")
 
+
 def run_hide_seek(themes_json: Path = HS_THEMES_JSON, asset_root: Path = HS_ASSET_ROOT) -> None:
     """Hide & Seek mode: generates backgrounds + items from themes.json."""
     index = load_json(themes_json)
@@ -125,6 +129,7 @@ def run_hide_seek(themes_json: Path = HS_THEMES_JSON, asset_root: Path = HS_ASSE
             
             if generate_image(bg_prompt, bg_path, aspect_ratio="16:9", transparent_bg=False):
                 time.sleep(5)
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate game assets using Imagen")
