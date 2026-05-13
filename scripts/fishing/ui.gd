@@ -584,7 +584,12 @@ func show_end_screen(score: int, fish: int, difficulty: int, timer_secs: int, ra
 
 func _on_play_again_pressed() -> void:
 	AudioManager.play_sfx("pop")
-	get_tree().reload_current_scene()
+	end_screen.visible = false
+	exit_button.visible = true
+	pause_button.visible = true
+	mode_selected.emit(_selected_mode)
+	difficulty_selected.emit(_selected_difficulty)
+	timer_selected.emit(float(_selected_timer))
 
 func _on_end_home_pressed() -> void:
 	AudioManager.play_sfx("pop")
