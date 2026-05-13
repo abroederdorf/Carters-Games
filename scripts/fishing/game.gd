@@ -5,12 +5,6 @@ const PELICAN_SCENE = preload("res://scenes/fishing/pelican.tscn")
 const SHARK_SCENE = preload("res://scenes/fishing/shark.tscn")
 const OCTOPUS_SCENE = preload("res://scenes/fishing/octopus.tscn")
 
-const SAND_TEX = preload("res://assets/sprites/fishing/rock_gray.png")
-const ROCK_TEX = preload("res://assets/sprites/fishing/rock_gray.png")
-const SW_G_TEX = preload("res://assets/sprites/fishing/seaweed_green.png")
-const SW_P_TEX = preload("res://assets/sprites/fishing/seaweed_purple.png")
-const SW_PK_TEX = preload("res://assets/sprites/fishing/seaweed_pink.png")
-const SWAY_SCRIPT = preload("res://scripts/fishing/sway.gd")
 const CLAM_SCRIPT = preload("res://scripts/fishing/clam.gd")
 
 const FISH_TEXTURES = [
@@ -20,7 +14,9 @@ const FISH_TEXTURES = [
 	"res://assets/sprites/fishing/fish_puffer.png",
 	"res://assets/sprites/fishing/fish_rainbow.png",
 	"res://assets/sprites/fishing/fish_sunfish.png",
-	"res://assets/sprites/fishing/fish_tetra.png"
+	"res://assets/sprites/fishing/fish_tetra.png",
+	"res://assets/sprites/fishing/fish_butterfly.png",
+	"res://assets/sprites/fishing/fish_sword.png"
 ]
 
 const CAST_DURATION = 0.5
@@ -86,7 +82,7 @@ enum GameMode { FREE_PLAY, MATH, SPELLING }
 @onready var ui = $UI
 
 @export var rod_tip_offset: Vector2 = Vector2(135, -35)
-@export var water_y_start: float = 250.0
+@export var water_y_start: float = 400.0
 
 var score: int = 0
 var fish_caught: int = 0
@@ -388,8 +384,8 @@ func _spawn_spelling_fish() -> void:
 	all_letters.shuffle()
 
 	var vp := get_viewport_rect()
-	var water_top := 300.0
-	var water_bottom := vp.size.y - 50.0
+	var water_top := water_y_start + 50.0
+	var water_bottom := vp.size.y - 125.0
 	var slot_size := (water_bottom - water_top) / float(_max_fish)
 	var y_slots: Array[float] = []
 	for i in _max_fish:
@@ -404,6 +400,7 @@ func _spawn_spelling_fish() -> void:
 		fish.is_correct = all_letters[i] in correct_letters
 		fish.bounces = true
 		fish.spawn_y = y_slots[i]
+		fish.water_y = water_y_start
 		fish_layer.add_child(fish)
 
 func _respawn_spelling_letter(letter: String) -> void:
@@ -414,7 +411,8 @@ func _respawn_spelling_letter(letter: String) -> void:
 	fish.is_correct = true
 	fish.bounces = true
 	var vp := get_viewport_rect()
-	fish.spawn_y = randf_range(310.0, vp.size.y - 100.0)
+	fish.spawn_y = randf_range(water_y_start + 50.0, vp.size.y - 125.0)
+	fish.water_y = water_y_start
 	fish_layer.add_child(fish)
 
 func _handle_spelling_catch(area: Area2D) -> void:
@@ -521,6 +519,7 @@ func _spawn_fish() -> void:
 		var fish := FISH_SCENE.instantiate()
 		fish.fish_class = [Fish.FishClass.LARGE, Fish.FishClass.MEDIUM, Fish.FishClass.SMALL].pick_random()
 		fish.difficulty = _difficulty
+		fish.water_y = water_y_start
 		fish_layer.add_child(fish)
 		fish.caught.connect(_on_fish_caught)
 
@@ -539,8 +538,8 @@ func _spawn_math_fish() -> void:
 	numbers.shuffle()
 
 	var vp := get_viewport_rect()
-	var water_top := 300.0
-	var water_bottom := vp.size.y - 50.0
+	var water_top := water_y_start + 50.0
+	var water_bottom := vp.size.y - 125.0
 	var slot := (water_bottom - water_top) / 6.0
 	var y_slots: Array = []
 	for i in 6:
@@ -554,6 +553,7 @@ func _spawn_math_fish() -> void:
 		fish.math_value = numbers[i]
 		fish.is_correct = (numbers[i] == problem.answer)
 		fish.spawn_y = y_slots[i]
+		fish.water_y = water_y_start
 		fish_layer.add_child(fish)
 		fish.caught.connect(_on_math_fish_removed)
 
@@ -649,7 +649,7 @@ func _on_window_resized() -> void:
 		environment.position.y = size.y - 800.0
 		_populate_environment()
 
-	var water_area = size.x * (size.y - 250.0)
+	var water_area = size.x * (size.y - water_y_start)
 	if _game_mode == GameMode.MATH or _game_mode == GameMode.SPELLING:
 		_max_fish = 8 if (_game_mode == GameMode.SPELLING and _difficulty == 2) else 6
 	else:
@@ -670,54 +670,15 @@ func _populate_environment() -> void:
 
 	var width = get_viewport_rect().size.x
 
-	var sand_count = int(width / 150.0) + 2
-	for i in sand_count:
-		var s = Sprite2D.new()
-		s.texture = SAND_TEX
-		s.position = Vector2(i * 150.0 + randf_range(-50, 50), 745 + randf_range(-10, 10))
-		s.scale = Vector2(randf_range(0.8, 1.6), randf_range(0.6, 1.3))
-		environment.add_child(s)
-
 	var rock_count = int(width / 400.0) + 1
 	for i in rock_count:
-		var r = Sprite2D.new()
-		r.texture = ROCK_TEX
-		r.position = Vector2(i * 400.0 + randf_range(50, 350), 750 + randf_range(-5, 15))
-		r.scale = Vector2.ONE * randf_range(1.5, 2.5)
-		if randf() > 0.5: r.scale.x *= -1
-		environment.add_child(r)
-		_rock_positions.append(r.position + environment.position)
-
-	var sw_count = int(width / 100.0) + 2
-	var sw_textures = [SW_G_TEX, SW_P_TEX, SW_PK_TEX]
-	for i in sw_count:
-		var sw = Sprite2D.new()
-		sw.texture = sw_textures.pick_random()
-		sw.position = Vector2(i * 100.0 + randf_range(-30, 30), 740 + randf_range(-10, 15))
-		sw.scale = Vector2.ONE * randf_range(0.7, 1.3)
-		sw.set_script(SWAY_SCRIPT)
-		environment.add_child(sw)
+		var pos = Vector2(i * 400.0 + randf_range(50, 350), 750 + randf_range(-5, 15))
+		_rock_positions.append(pos + environment.position)
 
 	var clam_count = int(width / 600.0) + 1
 	for i in clam_count:
 		var c = Sprite2D.new()
 		c.position = Vector2(i * 600.0 + randf_range(100, 500), 760)
-		c.scale = Vector2.ONE * randf_range(0.8, 1.2)
-		c.set_script(CLAM_SCRIPT)
-		environment.add_child(c)
-es = [SW_G_TEX, SW_P_TEX, SW_PK_TEX]
-	for i in sw_count:
-		var sw = Sprite2D.new()
-		sw.texture = sw_textures.pick_random()
-		sw.position = Vector2(i * 100.0 + randf_range(-30, 30), 740 + randf_range(-10, 15))
-		sw.scale = Vector2.ONE * randf_range(0.7, 1.3)
-		sw.set_script(SWAY_SCRIPT)
-		environment.add_child(sw)
-
-	var clam_count = int(width / 600.0) + 1
-	for i in clam_count:
-		var c = Sprite2D.new()
-		c.position = Vector2(i * 600.0 + randf_range(100, 500), 760)
-		c.scale = Vector2.ONE * randf_range(0.8, 1.2)
+		c.scale = Vector2.ONE * randf_range(0.14, 0.21)
 		c.set_script(CLAM_SCRIPT)
 		environment.add_child(c)

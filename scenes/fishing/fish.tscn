@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bvebyp5iy5img" path="res://scripts/fishing/fish.gd" id="1_fish01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(80, 40)
+size = Vector2(400, 200)
 
 [node name="Fish" type="Area2D" unique_id=1743447079]
 script = ExtResource("1_fish01")

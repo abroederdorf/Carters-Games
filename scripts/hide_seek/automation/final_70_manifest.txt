@@ -1,0 +1,80 @@
+# Final 70-Image Manifest for Carters Games Refresh
+# Style: Children's book illustration, flat design, bright saturated colors, thick black outlines, friendly/cartoonish mood.
+
+[GONE_FISHIN_CORE - 23 Items]
+fishing_bg: Children's book illustration of a wide, panoramic lake scene for a fishing game. A calm blue lake in the foreground with gentle ripples, a small wooden dock on the left, grassy banks with wildflowers, and rolling green hills under a bright blue sky. 2:1 aspect ratio.
+fish_small_red: cute small red fish, simple round shape, friendly expression, yellow stripes, side view
+fish_small_blue: cute small blue fish, simple round shape, friendly expression, white dots, side view
+fish_small_yellow: cute small yellow fish, simple round shape, friendly expression, orange wavy lines, side view
+fish_medium_green: cute medium-sized green fish, friendly expression, purple horizontal stripes, side view
+fish_medium_orange: cute medium-sized orange fish, friendly expression, blue vertical bars, side view
+fish_medium_purple: cute medium-sized purple fish, friendly expression, pink star pattern, side view
+fish_large_rainbow: cute large colorful rainbow fish, friendly expression, shimmering scale pattern, side view
+fish_large_gold: cute large golden-yellow fish, friendly expression, thick orange outlines on scales, side view
+fish_large_teal: cute large teal fish, friendly expression, dark blue spotted pattern, side view
+shark: cute slightly mischievous blue shark, friendly smile, dorsal fin visible, simple cartoon shapes, side view
+pelican: cute white pelican bird, large orange beak with a pouch, friendly expression, wings tucked, side view
+octopus: cute purple octopus, large friendly eyes, eight curled tentacles, simple round head, side view
+clam_closed: simple pink seashell clam, tightly closed, rounded ridges
+clam_open: simple pink seashell clam, wide open, a small shiny white pearl visible inside
+seaweed_green: single stalk of bright green seaweed, wavy flowing shape
+seaweed_purple: single stalk of bright purple seaweed, wavy flowing shape
+seaweed_pink: single stalk of bright pink seaweed, wavy flowing shape
+fishing_dock: simple wooden fishing pier/dock made of planks, two wooden pilings, side view perspective
+rock_gray: single large rounded gray river rock, simple and clean
+fishing_child: cute child sitting and holding a fishing rod, happy expression, simple cartoon clothing, side view
+fishing_rod: simple wooden fishing rod with a thin line hanging down, small reel attached
+fishing_hook: simple shiny silver metal fishing hook, curved J-shape
+
+[UNIVERSAL_UI_PACK - 12 Items]
+ui_home: bright red rounded button with a simple white house icon
+ui_play: bright green rounded button with a simple white play triangle icon
+ui_pause: bright orange rounded button with two simple white vertical pause bars
+ui_settings: bright blue rounded button with a simple white gear icon
+ui_close: bright red rounded button with a simple white X icon
+ui_next: bright green rounded button with a simple white right-facing arrow icon
+ui_replay: bright orange rounded button with a simple white circular refresh arrow icon
+ui_sound_on: bright yellow rounded button with a simple white speaker icon
+ui_sound_off: bright yellow rounded button with a simple white speaker muted icon with a slash
+ui_check: vibrant green check mark icon, bold and clean
+ui_lock: simple silver padlock, closed, clean metallic look
+ui_star: bright golden yellow five-pointed star, shiny and clean
+
+[FIND_IT_COMPLETION - 18 Items]
+pet_bunny: small white rabbit with long ears, sitting down
+pet_guinea_pig: round brown and white guinea pig
+pet_lizard: bright green gecko clinging to a branch
+circus_trapeze: simple horizontal bar hanging from two long ropes
+circus_aerial_hoop: large metal ring for aerial acrobatics
+circus_lion: sitting male lion with a large mane, friendly expression
+circus_cotton_candy: pink fluffy cloud of candy on a paper cone
+circus_juggling_club: three colorful juggling pins grouped together
+city_taxi: bright yellow city taxi cab with a TAXI sign on roof
+city_stop_sign: red octagonal sign with white STOP text
+city_traffic_light: black pole with red, yellow, and green lights
+city_skyscraper: tall blue glass building with many small windows
+city_trash_can: silver metal bin with a lid
+city_bus: long bright red city bus, simple shapes
+city_subway_sign: white sign with a large blue M letter
+city_newsstand: small green box with a glass window and magazines
+dino_regrow: prehistoric jungle with volcanoes and dinosaurs. Towering ferns, steaming vents, distant erupting volcano. Filling the foreground with lush foliage.
+jungle_regrow: dense lush jungle canopy. Tall mahogany trees with vibrant vines, exotic pink and orange flowers, colorful birds in the background.
+
+[DECOY_REFRESH_PACK - 17 Items]
+decoy_butterfly: large bright blue morpho butterfly, symmetrical wings
+decoy_beetle: small shiny red ladybug with black spots
+decoy_mushroom: small red mushroom with white spots, cute round cap
+decoy_log: brown fallen tree log with textured bark
+decoy_fern: large green prehistoric fern leaf, patterned
+decoy_flower_cluster: small bunch of purple and yellow wildflowers
+decoy_rock_mossy: rounded gray rock with patches of green moss
+decoy_caterpillar: cute fuzzy green caterpillar with orange spots
+decoy_beehive: simple yellow honeycomb hive hanging from a branch
+decoy_cone: orange and white striped traffic cone
+decoy_oil_drum: blue metal barrel, simple and clean
+decoy_toolbox: red metal toolbox, closed
+decoy_hammer: simple silver hammer with a wooden handle
+decoy_tire_stack: three black tires stacked on top of each other
+decoy_sign_post: wooden post with two blank arrow signs
+decoy_bird_nest: simple brown twig nest with two blue eggs
+decoy_pigeon: cute gray city pigeon, standing view

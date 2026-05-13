@@ -12,7 +12,7 @@ var _is_open: bool = false
 var _timer: Timer
 
 func _ready() -> void:
-	texture = CLAM_CLOSED
+	texture = TEX_CLOSED
 	_timer = Timer.new()
 	_timer.wait_time = randf_range(1.0, closed_duration)
 	_timer.one_shot = true
@@ -23,11 +23,11 @@ func _ready() -> void:
 func _toggle_clam() -> void:
 	_is_open = !_is_open
 	if _is_open:
-		texture = CLAM_OPEN
+		texture = TEX_OPEN
 		_timer.wait_time = open_duration
 		_spawn_bubbles()
 	else:
-		texture = CLAM_CLOSED
+		texture = TEX_CLOSED
 		_timer.wait_time = randf_range(2.0, closed_duration)
 	
 	_timer.start()
