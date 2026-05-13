@@ -70,17 +70,24 @@ func _build_ui() -> void:
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.add_theme_color_override("font_color", Color(0.04, 0.12, 0.28, 1))
-	title.add_theme_color_override("font_outline_color", Color.WHITE)
-	title.add_theme_constant_override("outline_size", 8)
-	title.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.4))
-	title.add_theme_constant_override("shadow_offset_x", 3)
-	title.add_theme_constant_override("shadow_offset_y", 4)
-	title.add_theme_constant_override("shadow_outline_size", 4)
 	header.add_child(title)
 
 	var pad_r := Control.new()
 	pad_r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	header.add_child(pad_r)
+
+	var mute_btn := Button.new()
+	mute_btn.flat = true
+	mute_btn.expand_icon = true
+	mute_btn.icon = load("res://assets/sprites/ui/button_mute.png") if AudioManager.master_mute else load("res://assets/sprites/ui/button_sound.png")
+	mute_btn.custom_minimum_size = Vector2(80, 80)
+	mute_btn.focus_mode = Control.FOCUS_NONE
+	mute_btn.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	mute_btn.pressed.connect(func() -> void:
+		AudioManager.toggle_mute()
+		mute_btn.icon = load("res://assets/sprites/ui/button_mute.png") if AudioManager.master_mute else load("res://assets/sprites/ui/button_sound.png")
+	)
+	header.add_child(mute_btn)
 
 	# ── Scene grid: two rows of four ────────────────────────────────────────
 	for row in 2:

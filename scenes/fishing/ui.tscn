@@ -397,12 +397,12 @@ size_flags_horizontal = 4
 alignment = 1
 theme_override_constants/separation = 40
 
-[node name="PlayAgainButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox/EndButtonRow" unique_id=2114689853]
+[node name="EndHomeButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox/EndButtonRow" unique_id=1992345678]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 focus_mode = 0
 
-[node name="EndHomeButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox/EndButtonRow" unique_id=1992345678]
+[node name="PlayAgainButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox/EndButtonRow" unique_id=2114689853]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 focus_mode = 0
@@ -1033,9 +1033,9 @@ expand_icon = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -90.0
+offset_left = -290.0
 offset_top = 8.0
-offset_right = -10.0
+offset_right = -210.0
 offset_bottom = 88.0
 grow_horizontal = 0
 focus_mode = 0

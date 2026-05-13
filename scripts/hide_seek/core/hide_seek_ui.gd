@@ -18,6 +18,7 @@ var _win_overlay: Control
 var _win_stars_label: Label
 var _win_time_label: Label
 var _win_next_btn: TextureButton
+var _mute_btn: TextureButton
 
 var _texture_fn: Callable
 
@@ -43,6 +44,15 @@ func update_timer(elapsed: float) -> void:
 
 func update_hint_label(hint_stars: int) -> void:
 	_hint_stars_label.text = "%d" % hint_stars
+
+func _on_mute_pressed() -> void:
+	AudioManager.toggle_mute()
+	_update_mute_icon()
+
+func _update_mute_icon() -> void:
+	if _mute_btn == null:
+		return
+	_mute_btn.texture_normal = load("res://assets/sprites/ui/button_mute.png") if AudioManager.master_mute else load("res://assets/sprites/ui/button_sound.png")
 
 
 func show_win(stars: int, elapsed: float, has_next: bool) -> void:
@@ -117,13 +127,41 @@ func _build_top_bar(parent: Control) -> void:
 	spacer_r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	hbox.add_child(spacer_r)
 
+	_mute_btn = TextureButton.new()
+	_mute_btn.ignore_texture_size = true
+	_mute_btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+	_mute_btn.custom_minimum_size = Vector2(70, 70)
+	_mute_btn.focus_mode = Control.FOCUS_NONE
+	_mute_btn.pressed.connect(_on_mute_pressed)
+	hbox.add_child(_mute_btn)
+	_update_mute_icon()
+
+	var pad_r := Control.new()
+	pad_r.custom_minimum_size.x = 20
+	hbox.add_child(pad_r)
+
+	# Hint stars pinned to bottom right
 	var hint_hbox := HBoxContainer.new()
 	hint_hbox.alignment = BoxContainer.ALIGNMENT_CENTER
-	hbox.add_child(hint_hbox)
+	hint_hbox.anchor_left = 1.0
+	hint_hbox.anchor_top = 1.0
+	hint_hbox.anchor_right = 1.0
+	hint_hbox.anchor_bottom = 1.0
+	hint_hbox.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+	hint_hbox.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	hint_hbox.offset_left = -160.0
+	hint_hbox.offset_top = -90.0
+	hint_hbox.offset_right = -10.0
+	hint_hbox.offset_bottom = -10.0
+	hint_hbox.z_index = 20
+	parent.add_child(hint_hbox)
 
 	_hint_stars_label = Label.new()
-	_hint_stars_label.add_theme_font_size_override("font_size", 28)
+	_hint_stars_label.add_theme_font_size_override("font_size", 36)
 	_hint_stars_label.add_theme_color_override("font_color", Color(1.0, 0.9, 0.2, 1))
+	_hint_stars_label.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.7))
+	_hint_stars_label.add_theme_constant_override("shadow_offset_x", 2)
+	_hint_stars_label.add_theme_constant_override("shadow_offset_y", 2)
 	hint_hbox.add_child(_hint_stars_label)
 
 	var hint_btn := TextureButton.new()
@@ -134,10 +172,6 @@ func _build_top_bar(parent: Control) -> void:
 	hint_btn.focus_mode = Control.FOCUS_NONE
 	hint_btn.pressed.connect(func(): hint_pressed.emit())
 	hint_hbox.add_child(hint_btn)
-
-	var pad_r := Control.new()
-	pad_r.custom_minimum_size.x = 20
-	hbox.add_child(pad_r)
 
 
 func _build_thumb_strip(parent: Control, items: Array[HideSeekItemData]) -> void:

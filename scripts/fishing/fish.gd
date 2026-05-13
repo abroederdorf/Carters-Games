@@ -82,8 +82,8 @@ func _ready() -> void:
 	
 	if math_value != -1 or spell_letter != "":
 		$Sprite2D.scale = Vector2.ONE * 1.2
-	elif is_high_res:
-		$Sprite2D.scale = Vector2.ONE * 0.25
+	elif "fish_sword" in tex_path:
+		$Sprite2D.scale = Vector2.ONE * 1.3
 	else:
 		$Sprite2D.scale = Vector2.ONE * 1.0
 	
