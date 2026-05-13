@@ -96,21 +96,20 @@ func fade_item(index: int) -> void:
 
 
 func show_flash_at(pos: Vector2) -> void:
-	var lbl := Label.new()
-	lbl.text = "+"
-	lbl.add_theme_font_size_override("font_size", 80)
-	lbl.add_theme_color_override("font_color", Color(0.2, 1.0, 0.2, 1))
-	lbl.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.8))
-	lbl.add_theme_constant_override("shadow_offset_x", 2)
-	lbl.add_theme_constant_override("shadow_offset_y", 2)
-	lbl.position = pos - Vector2(30, 30)
-	_canvas_root.add_child(lbl)
+	var img := TextureRect.new()
+	img.texture = preload("res://assets/sprites/ui/checkmark.png")
+	img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	img.custom_minimum_size = Vector2(80, 80)
+	img.size = Vector2(80, 80)
+	img.position = pos - Vector2(40, 40)
+	_canvas_root.add_child(img)
 
 	var tween := get_tree().create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(lbl, "position", pos - Vector2(30, 90), 0.7)
-	tween.tween_property(lbl, "modulate:a", 0.0, 0.7).set_delay(0.2)
-	tween.chain().tween_callback(lbl.queue_free)
+	tween.tween_property(img, "position", pos - Vector2(40, 100), 0.7)
+	tween.tween_property(img, "modulate:a", 0.0, 0.7).set_delay(0.2)
+	tween.chain().tween_callback(img.queue_free)
 
 
 func show_hint_at(pos: Vector2, radius: float) -> void:

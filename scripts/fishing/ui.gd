@@ -47,6 +47,7 @@ signal back_to_game_select
 @onready var pause_overlay: Control = find_child("PauseOverlay")
 @onready var mute_button: Button = find_child("MuteButton")
 @onready var play_again_button: Button = find_child("PlayAgainButton")
+@onready var end_home_button: Button = find_child("EndHomeButton")
 @onready var settings_back_button: Button = find_child("SettingsBackButton")
 @onready var reset_lb_button: Button = find_child("ResetLBButton")
 @onready var lb_back_button: Button = find_child("LBBackButton")
@@ -93,7 +94,84 @@ func _ready() -> void:
 	music_toggle.button_pressed = settings.get("music", true)
 	sfx_toggle.button_pressed = settings.get("sfx", true)
 
+	# Assign icons — flat + centered, no text
+	for btn in [pause_button, pause_play_button, exit_button, play_again_button,
+			end_home_button, settings_button, menu_back_button, settings_back_button,
+			lb_back_button, menu_play_button]:
+		btn.flat = true
+		btn.expand_icon = true
+		btn.text = ""
+		btn.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+	# Assign specialized icons for mode selection
+	for btn in [menu_btn_free_play, menu_btn_math, menu_btn_spelling,
+			menu_btn_easy, menu_btn_medium, menu_btn_hard,
+			menu_btn_1min, menu_btn_3min, menu_btn_5min,
+			lb_btn_free_play, lb_btn_math, lb_btn_spelling,
+			lb_btn_easy, lb_btn_medium, lb_btn_hard,
+			lb_btn_1min, lb_btn_3min, lb_btn_5min]:
+		_apply_choice_style(btn)
+		btn.text = ""
+
+	menu_btn_free_play.icon = load("res://assets/sprites/fishing/mode_fish.png")
+	lb_btn_free_play.icon = menu_btn_free_play.icon
+	menu_btn_math.icon = load("res://assets/sprites/fishing/mode_math.png")
+	lb_btn_math.icon = menu_btn_math.icon
+	menu_btn_spelling.icon = load("res://assets/sprites/fishing/mode_spelling.png")
+	lb_btn_spelling.icon = menu_btn_spelling.icon
+
+	menu_btn_easy.icon = load("res://assets/sprites/fishing/difficulty_easy.png")
+	lb_btn_easy.icon = menu_btn_easy.icon
+	menu_btn_medium.icon = load("res://assets/sprites/fishing/difficulty_medium.png")
+	lb_btn_medium.icon = menu_btn_medium.icon
+	menu_btn_hard.icon = load("res://assets/sprites/fishing/difficulty_hard.png")
+	lb_btn_hard.icon = menu_btn_hard.icon
+
+	# Assign text AFTER the clearing loop
+	for btn in [menu_btn_easy, lb_btn_easy]: btn.text = "Easy"
+	for btn in [menu_btn_medium, lb_btn_medium]: btn.text = "Med"
+	for btn in [menu_btn_hard, lb_btn_hard]: btn.text = "Hard"
+
+	# Apply text styling to difficulty buttons
+	for btn in [menu_btn_easy, menu_btn_medium, menu_btn_hard, lb_btn_easy, lb_btn_medium, lb_btn_hard]:
+		btn.add_theme_font_size_override("font_size", 34)
+		btn.add_theme_color_override("font_outline_color", Color.BLACK)
+		btn.add_theme_constant_override("outline_size", 12)
+		btn.vertical_icon_alignment = VERTICAL_ALIGNMENT_CENTER
+
+	var timer_icon = load("res://assets/sprites/fishing/timer.png")
+	for btn in [menu_btn_1min, menu_btn_3min, menu_btn_5min, lb_btn_1min, lb_btn_3min, lb_btn_5min]:
+		btn.icon = timer_icon
+		btn.add_theme_font_size_override("font_size", 44)
+		btn.add_theme_color_override("font_outline_color", Color.BLACK)
+		btn.add_theme_constant_override("outline_size", 14)
+		# Clear existing labels if we are just using the text property
+		if btn.name.contains("1Min"): btn.text = "1"
+		if btn.name.contains("3Min"): btn.text = "3"
+		if btn.name.contains("5Min"): btn.text = "5"
+
+	pause_button.icon = load("res://assets/sprites/ui/button_pause.png")
+	pause_play_button.icon = load("res://assets/sprites/ui/button_play.png")
+	exit_button.icon = load("res://assets/sprites/ui/button_home.png")
+	play_again_button.icon = load("res://assets/sprites/ui/button_replay.png")
+	end_home_button.icon = load("res://assets/sprites/ui/button_home.png")
+	settings_button.icon = load("res://assets/sprites/ui/button_settings.png")
+	menu_back_button.icon = load("res://assets/sprites/ui/button_back.png")
+	settings_back_button.icon = load("res://assets/sprites/ui/button_back.png")
+	lb_back_button.icon = load("res://assets/sprites/ui/button_back.png")
+	menu_play_button.icon = load("res://assets/sprites/ui/button_play.png")
+
+	var menu_bg_img := TextureRect.new()
+	menu_bg_img.texture = preload("res://assets/icons/screen_settings.png")
+	menu_bg_img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	menu_bg_img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	menu_bg_img.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	menu_screen.add_child(menu_bg_img)
+	menu_screen.move_child(menu_bg_img, 0)
+	menu_screen.find_child("MenuBg").hide()
+
 	play_again_button.pressed.connect(_on_play_again_pressed)
+	end_home_button.pressed.connect(_on_end_home_pressed)
 
 	menu_back_button.pressed.connect(_on_menu_back_pressed)
 	menu_btn_free_play.pressed.connect(_set_menu_mode.bind(0))
@@ -177,7 +255,8 @@ func _build_math_hud() -> void:
 		math_problem_label.show()
 
 func _update_mute_icon() -> void:
-	mute_button.icon = load("res://assets/sprites/sound_off_icon.svg") if AudioManager.master_mute else load("res://assets/sprites/sound_on_icon.svg")
+	mute_button.icon = load("res://assets/sprites/ui/button_mute.png") if AudioManager.master_mute else load("res://assets/sprites/ui/button_sound.png")
+	mute_button.expand_icon = true
 
 func _on_mute_pressed() -> void:
 	var is_muted = AudioManager.toggle_mute()
@@ -240,19 +319,61 @@ func _set_menu_timer(t: int) -> void:
 	_selected_timer = t
 	_update_menu_visuals()
 
+func _apply_choice_style(btn: Button) -> void:
+	var style_normal := _make_slot_style(Color(1, 1, 1, 0.15), Color(0.2, 0.6, 1.0, 0.6))
+	var style_hover := _make_slot_style(Color(1, 1, 1, 0.25), Color(0.2, 0.7, 1.0, 0.8))
+	var style_pressed := _make_slot_style(Color(0.2, 0.6, 1.0, 0.3), Color(1.0, 0.85, 0.0, 1.0))
+	
+	btn.add_theme_stylebox_override("normal", style_normal)
+	btn.add_theme_stylebox_override("hover", style_hover)
+	btn.add_theme_stylebox_override("pressed", style_pressed)
+	btn.add_theme_stylebox_override("focus", style_hover)
+	
+	btn.flat = false
+	btn.expand_icon = true
+	btn.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	btn.vertical_icon_alignment = VERTICAL_ALIGNMENT_CENTER
+	# Force a reasonable icon size if the button doesn't have a fixed size
+	# This helps normalize images with different internal aspect ratios
+	btn.custom_minimum_size = Vector2(120, 120)
+
 func _update_menu_visuals() -> void:
+	var style_selected := _make_slot_style(Color(1, 1, 1, 0.4), Color(1.0, 0.85, 0.0, 1.0))
+	style_selected.border_width_left = 6
+	style_selected.border_width_top = 6
+	style_selected.border_width_right = 6
+	style_selected.border_width_bottom = 6
+
 	var mode_btns := [menu_btn_free_play, menu_btn_math, menu_btn_spelling]
 	for i in mode_btns.size():
-		mode_btns[i].modulate = Color(1, 1, 1, 1) if i == _selected_mode else Color(0.5, 0.5, 0.5, 0.8)
+		var btn = mode_btns[i]
+		if i == _selected_mode:
+			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.modulate = Color(1, 1, 1, 1)
+		else:
+			_apply_choice_style(btn)
+			btn.modulate = Color(1, 1, 1, 0.8)
 
 	var diff_btns := [menu_btn_easy, menu_btn_medium, menu_btn_hard]
 	for i in diff_btns.size():
-		diff_btns[i].modulate = Color(1, 1, 1, 1) if i == _selected_difficulty else Color(0.5, 0.5, 0.5, 0.8)
+		var btn = diff_btns[i]
+		if i == _selected_difficulty:
+			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.modulate = Color(1, 1, 1, 1)
+		else:
+			_apply_choice_style(btn)
+			btn.modulate = Color(1, 1, 1, 0.8)
 
 	var timer_btns := [menu_btn_1min, menu_btn_3min, menu_btn_5min]
 	var timer_vals := [60, 180, 300]
 	for i in timer_btns.size():
-		timer_btns[i].modulate = Color(1, 1, 1, 1) if timer_vals[i] == _selected_timer else Color(0.5, 0.5, 0.5, 0.8)
+		var btn = timer_btns[i]
+		if timer_vals[i] == _selected_timer:
+			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.modulate = Color(1, 1, 1, 1)
+		else:
+			_apply_choice_style(btn)
+			btn.modulate = Color(1, 1, 1, 0.8)
 
 func _on_menu_play_pressed() -> void:
 	AudioManager.play_sfx("pop")
@@ -289,18 +410,42 @@ func _set_lb_timer(t: int) -> void:
 	_refresh_lb_entries()
 
 func _update_lb_visuals() -> void:
+	var style_selected := _make_slot_style(Color(1, 1, 1, 0.4), Color(1.0, 0.85, 0.0, 1.0))
+	style_selected.border_width_left = 6
+	style_selected.border_width_top = 6
+	style_selected.border_width_right = 6
+	style_selected.border_width_bottom = 6
+
 	var mode_btns := [lb_btn_free_play, lb_btn_math, lb_btn_spelling]
 	for i in mode_btns.size():
-		mode_btns[i].modulate = Color(1, 1, 1, 1) if i == _lb_mode else Color(0.5, 0.5, 0.5, 0.8)
+		var btn = mode_btns[i]
+		if i == _lb_mode:
+			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.modulate = Color(1, 1, 1, 1)
+		else:
+			_apply_choice_style(btn)
+			btn.modulate = Color(1, 1, 1, 0.8)
 
 	var diff_btns := [lb_btn_easy, lb_btn_medium, lb_btn_hard]
 	for i in diff_btns.size():
-		diff_btns[i].modulate = Color(1, 1, 1, 1) if i == _lb_difficulty else Color(0.5, 0.5, 0.5, 0.8)
+		var btn = diff_btns[i]
+		if i == _lb_difficulty:
+			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.modulate = Color(1, 1, 1, 1)
+		else:
+			_apply_choice_style(btn)
+			btn.modulate = Color(1, 1, 1, 0.8)
 
 	var timer_btns := [lb_btn_1min, lb_btn_3min, lb_btn_5min]
 	var timer_vals := [60, 180, 300]
 	for i in timer_btns.size():
-		timer_btns[i].modulate = Color(1, 1, 1, 1) if timer_vals[i] == _lb_timer else Color(0.5, 0.5, 0.5, 0.8)
+		var btn = timer_btns[i]
+		if timer_vals[i] == _lb_timer:
+			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.modulate = Color(1, 1, 1, 1)
+		else:
+			_apply_choice_style(btn)
+			btn.modulate = Color(1, 1, 1, 0.8)
 
 func _refresh_lb_entries() -> void:
 	lb_combo_label.text = "%s · %s · %s" % [_MODE_NAMES[_lb_mode], _DIFF_NAMES[_lb_difficulty], _TIMER_LABELS[_lb_timer]]
@@ -428,7 +573,7 @@ func show_end_screen(score: int, fish: int, difficulty: int, timer_secs: int, ra
 			var e: Dictionary = entries[i]
 			var lbl := Label.new()
 			if _selected_mode == 1 or _selected_mode == 2:
-				lbl.text = "#%d  ·  %d %s" % [i + 1, e.score, "solved" if _selected_mode == 1 else "words"]
+				lbl.text = "#%d  ·  %d %s" % [i + 1, e.score, "solved" if _lb_mode == 1 else "words"]
 			else:
 				lbl.text = "#%d  ·  %d pts  ·  %d fish" % [i + 1, e.score, e.fish]
 			lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -441,17 +586,21 @@ func _on_play_again_pressed() -> void:
 	AudioManager.play_sfx("pop")
 	get_tree().reload_current_scene()
 
+func _on_end_home_pressed() -> void:
+	AudioManager.play_sfx("pop")
+	back_to_game_select.emit()
+
 func _make_slot_style(bg: Color, border: Color) -> StyleBoxFlat:
 	var s := StyleBoxFlat.new()
 	s.bg_color = bg
-	s.corner_radius_top_left = 12
-	s.corner_radius_top_right = 12
-	s.corner_radius_bottom_right = 12
-	s.corner_radius_bottom_left = 12
-	s.border_width_left = 3
-	s.border_width_top = 3
-	s.border_width_right = 3
-	s.border_width_bottom = 3
+	s.corner_radius_top_left = 24
+	s.corner_radius_top_right = 24
+	s.corner_radius_bottom_right = 24
+	s.corner_radius_bottom_left = 24
+	s.border_width_left = 4
+	s.border_width_top = 4
+	s.border_width_right = 4
+	s.border_width_bottom = 4
 	s.border_color = border
 	return s
 
@@ -500,7 +649,7 @@ func _build_spelling_hud() -> void:
 	_spell_hud.add_child(_spell_slots_container)
 
 	_spell_audio_btn = Button.new()
-	_spell_audio_btn.icon = load("res://assets/sprites/sound_on_icon.svg")
+	_spell_audio_btn.icon = load("res://assets/sprites/ui/button_sound.png")
 	_spell_audio_btn.expand_icon = true
 	_spell_audio_btn.flat = true
 	_spell_audio_btn.focus_mode = Control.FOCUS_NONE
@@ -510,8 +659,9 @@ func _build_spelling_hud() -> void:
 	_spell_audio_btn.pressed.connect(func() -> void: spelling_audio_requested.emit())
 
 	_spell_quiet_btn = Button.new()
-	_spell_quiet_btn.text = "Voice Only"
-	_spell_quiet_btn.add_theme_font_size_override("font_size", 22)
+	_spell_quiet_btn.icon = load("res://assets/sprites/ui/button_voice_only.png")
+	_spell_quiet_btn.expand_icon = true
+	_spell_quiet_btn.flat = true
 	_spell_quiet_btn.focus_mode = Control.FOCUS_NONE
 	_spell_quiet_btn.position = Vector2(173, 103)
 	_spell_quiet_btn.size = Vector2(182, 65)

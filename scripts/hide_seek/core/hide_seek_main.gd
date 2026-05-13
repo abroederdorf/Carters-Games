@@ -27,9 +27,11 @@ func _ready() -> void:
 	_build_ui()
 
 func _build_ui() -> void:
-	var bg := ColorRect.new()
+	var bg := TextureRect.new()
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	bg.color = Color(0.05, 0.18, 0.08, 1)
+	bg.texture = preload("res://assets/icons/screen_settings.png")
+	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	add_child(bg)
 
 	var margin := MarginContainer.new()
@@ -63,12 +65,16 @@ func _build_ui() -> void:
 
 	var title := Label.new()
 	title.text = "Find It!"
-	title.add_theme_font_size_override("font_size", 64)
-	title.add_theme_color_override("font_color", Color.WHITE)
-	title.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.5))
-	title.add_theme_constant_override("shadow_offset_x", 2)
-	title.add_theme_constant_override("shadow_offset_y", 2)
+	title.add_theme_font_size_override("font_size", 72)
+	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.add_theme_color_override("font_color", Color(0.04, 0.12, 0.28, 1))
+	title.add_theme_color_override("font_outline_color", Color.WHITE)
+	title.add_theme_constant_override("outline_size", 8)
+	title.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.4))
+	title.add_theme_constant_override("shadow_offset_x", 3)
+	title.add_theme_constant_override("shadow_offset_y", 4)
+	title.add_theme_constant_override("shadow_outline_size", 4)
 	header.add_child(title)
 
 	var pad_r := Control.new()
