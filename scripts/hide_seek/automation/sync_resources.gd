@@ -6,7 +6,19 @@ const ANCHORS_JSON := "res://assets/data/hide_seek/anchors_data.json"
 const TAGS_JSON := "res://assets/data/hide_seek/item_tags.json"
 const DEFAULT_RADIUS := 60.0
 
-const BG_NAMES := ["bg.png", "bg_fast.png", "bg_standard.png"]
+const BG_NAMES := [
+	"bg.png",
+	"bg_fast.png",
+	"bg_standard.png",
+	"bg_mountain.png",
+	"bg_ocean.png",
+	"bg_jungle.png",
+	"bg_space.png",
+	"bg_dinosaur.png",
+	"bg_fire_station.png",
+	"bg_monster_jam.png",
+	"bg_construction.png"
+]
 
 const THEMES_JSON := "res://assets/data/hide_seek/themes.json"
 const SHARED_SPRITES := "res://assets/sprites/hide_seek/shared"

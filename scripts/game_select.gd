@@ -1,9 +1,10 @@
 extends Control
 
+const SPLASH_BG = preload("res://assets/icons/splash_screen.png")
 const GONE_FISHIN_ICON = preload("res://assets/icons/Gone-Fishin_Icon.png")
 const FIND_IT_ICON = preload("res://assets/icons/Find-It_Icon.png")
-const SOUND_ON = preload("res://assets/sprites/sound_on_icon.svg")
-const SOUND_OFF = preload("res://assets/sprites/sound_off_icon.svg")
+const SOUND_ON = preload("res://assets/sprites/ui/button_sound.png")
+const SOUND_OFF = preload("res://assets/sprites/ui/button_mute.png")
 
 var _mute_btn: Button
 
@@ -12,9 +13,11 @@ func _ready() -> void:
 	_build_ui()
 
 func _build_ui() -> void:
-	var bg := ColorRect.new()
+	var bg := TextureRect.new()
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	bg.color = Color(0.04, 0.12, 0.28, 1)
+	bg.texture = SPLASH_BG
+	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	add_child(bg)
 
 	var center := CenterContainer.new()
@@ -28,12 +31,15 @@ func _build_ui() -> void:
 
 	var title := Label.new()
 	title.text = "Carter's Games"
-	title.add_theme_font_size_override("font_size", 72)
+	title.add_theme_font_size_override("font_size", 80)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_color_override("font_color", Color.WHITE)
-	title.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.6))
-	title.add_theme_constant_override("shadow_offset_x", 3)
-	title.add_theme_constant_override("shadow_offset_y", 3)
+	title.add_theme_color_override("font_color", Color(0.04, 0.12, 0.28, 1))
+	title.add_theme_color_override("font_shadow_color", Color.WHITE)
+	title.add_theme_constant_override("shadow_offset_x", 0)
+	title.add_theme_constant_override("shadow_offset_y", 0)
+	title.add_theme_constant_override("shadow_outline_size", 6)
+	title.add_theme_color_override("font_outline_color", Color.WHITE)
+	title.add_theme_constant_override("outline_size", 8)
 	vbox.add_child(title)
 
 	var hbox := HBoxContainer.new()

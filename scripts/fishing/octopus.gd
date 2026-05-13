@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var move_interval: float = 8.0
-@export var lunge_speed: float = 0.4
+@export var lunge_speed: float = 1.5
 var rock_positions: Array[Vector2] = []
 var current_rock_index: int = -1
 var is_lunging: bool = false
@@ -10,7 +10,7 @@ var _fish_layer: Node2D = null
 
 func _ready() -> void:
 	$Sprite2D.texture = preload("res://assets/sprites/fishing/octopus.png")
-	$Sprite2D.scale = Vector2.ONE * 0.15
+	$Sprite2D.scale = Vector2.ONE * 0.12
 
 	
 	var timer := Timer.new()
@@ -36,6 +36,7 @@ func _scurry_to_next_rock() -> void:
 		global_position = rock_positions[next_index]
 		current_rock_index = next_index
 	else:
+		$Sprite2D.flip_h = rock_positions[next_index].x > global_position.x
 		current_rock_index = next_index
 		var tween := create_tween()
 		tween.tween_property(self, "global_position", rock_positions[next_index], 1.5).set_trans(Tween.TRANS_SINE)
@@ -47,7 +48,7 @@ func trigger_attack() -> bool:
 	var fishes = _fish_layer.get_children()
 	var valid_targets = []
 	for f in fishes:
-		if global_position.distance_to(f.global_position) < 300.0:
+		if global_position.distance_to(f.global_position) < 800.0:
 			valid_targets.append(f)
 			
 	if valid_targets.is_empty():

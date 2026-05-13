@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @export var fly_speed: float = 150.0
-@export var swoop_speed: float = 1.2
+@export var swoop_speed: float = 2.2
 @export var swoop_interval: float = 4.0
 
 var direction: float = 1.0
@@ -11,13 +11,13 @@ var _fish_layer: Node2D = null
 
 func _ready() -> void:
 	texture = preload("res://assets/sprites/fishing/pelican.png")
-	scale = Vector2.ONE * 0.15
+	scale = Vector2.ONE * 0.07875
 
 	var vp := get_viewport_rect()
 	direction = 1.0 if randf() > 0.5 else -1.0
 	position.x = -100.0 if direction > 0 else vp.size.x + 100.0
 	position.y = 100.0
-	flip_h = direction > 0 # Faces left by default, flip if moving right
+	flip_h = direction < 0 # Faces left by default, flip if moving right
 
 func setup(fish_layer: Node2D) -> void:
 	_fish_layer = fish_layer
@@ -53,9 +53,11 @@ func attack_target(target: Node2D) -> void:
 func _perform_swoop(target: Node2D) -> void:
 	is_swooping = true
 	var target_pos = target.global_position
-	
+	flip_h = target_pos.x < position.x
+
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(self, "scale", Vector2.ONE * 0.0945, 0.3).set_ease(Tween.EASE_OUT)
 	# Dive
 	tween.tween_property(self, "global_position", target_pos, swoop_speed).set_ease(Tween.EASE_IN)
 	tween.tween_callback(_on_swoop_hit.bind(target))
@@ -70,3 +72,6 @@ func _on_swoop_hit(target) -> void:
 
 func _on_swoop_finished() -> void:
 	is_swooping = false
+	flip_h = direction < 0
+	var tween := create_tween()
+	tween.tween_property(self, "scale", Vector2.ONE * 0.07875, 0.4).set_ease(Tween.EASE_IN_OUT)

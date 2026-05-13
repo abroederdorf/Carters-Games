@@ -7,9 +7,14 @@ We are automating the creation of a 45-scene "Find the Hidden Object" game for A
 - **Model:** `imagen-4.0-fast-generate-001` (Fast, $0.02/image) via Google GenAI API.
 - **Backgrounds:** 16:9 aspect ratio, panoramic landscape.
 - **Items:** 1:1 aspect ratio.
+- **Surgical Prompting Pattern:** Always follow the **[Isolated] -> [Object/Orientation] -> [Style]** structure to prevent the AI from generating full scenes or incorrect perspectives.
+    - **Isolated:** Always start with `Isolated on white background`.
+    - **Orientation:** If a specific angle is needed (e.g. for game overlays), specify `perfect side profile` or `flat side view`.
+    - **Object:** Describe the core subject (e.g. `simple oval-shaped red fish, no whiskers, solid color body with no patterns`).
+    - **Style:** Always end with `thick black outlines, flat design, children's book illustration`.
 - **Prompts:** 
-    - **Object Prefix:** Stricter prompt to ensure isolated objects on white backgrounds (no people).
-    - **Character Prefix:** Used for people or animals (Hiker, Bear, etc.).
+    - **Object Prefix:** Stricter prompt following the surgical pattern to ensure isolated objects (no people).
+    - **Character Prefix:** Used for people or animals while maintaining the surgical structure.
 - **Shared Library:** Reusable items (Hammer, Popcorn, etc.) are stored in `assets/sprites/hide_seek/shared/` and skipped during theme generation to save credits.
 
 ### 2. Vision Mapping

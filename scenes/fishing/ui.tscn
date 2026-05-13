@@ -226,6 +226,17 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
+[sub_resource type="StyleBoxFlat" id="SBF_hud_bg"]
+bg_color = Color(0.7, 0.88, 1.0, 0.82)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+
 [node name="UI" type="CanvasLayer" unique_id=178297215]
 process_mode = 3
 script = ExtResource("1_ui001")
@@ -235,7 +246,9 @@ offset_left = 105.0
 offset_top = 20.0
 offset_right = 285.0
 offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("SBF_hud_bg")
 text = "3:00"
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=483874505]
@@ -247,7 +260,9 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 60.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("SBF_hud_bg")
 text = "Score: 0"
 horizontal_alignment = 2
 
@@ -260,7 +275,9 @@ offset_top = 65.0
 offset_right = -20.0
 offset_bottom = 105.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("SBF_hud_bg")
 text = "Fish: 0"
 horizontal_alignment = 2
 
@@ -374,16 +391,21 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PlayAgainButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox" unique_id=2114689853]
-custom_minimum_size = Vector2(260, 90)
+[node name="EndButtonRow" type="HBoxContainer" parent="EndScreen/EndScroll/EndCenter/EndVBox" unique_id=1881234501]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/pressed = SubResource("SBF_pa_p")
-theme_override_styles/hover = SubResource("SBF_pa_n")
-text = "Play Again"
+alignment = 1
+theme_override_constants/separation = 40
+
+[node name="EndHomeButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox/EndButtonRow" unique_id=1992345678]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+focus_mode = 0
+
+[node name="PlayAgainButton" type="Button" parent="EndScreen/EndScroll/EndCenter/EndVBox/EndButtonRow" unique_id=2114689853]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+focus_mode = 0
 
 [node name="MenuScreen" type="Control" parent="." unique_id=559396739]
 layout_mode = 3
@@ -424,6 +446,7 @@ alignment = 1
 
 [node name="TitleLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox" unique_id=666722234]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 60
 text = "Gone Fishin'"
 horizontal_alignment = 1
@@ -434,7 +457,7 @@ theme_override_constants/separation = 10
 
 [node name="ModeLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection" unique_id=221255219]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 24
 text = "Game Mode"
 horizontal_alignment = 1
@@ -480,7 +503,7 @@ theme_override_constants/separation = 10
 
 [node name="DifficultyLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/DifficultySection" unique_id=1081668438]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 24
 text = "Difficulty"
 horizontal_alignment = 1
@@ -526,7 +549,7 @@ theme_override_constants/separation = 10
 
 [node name="TimerLabel" type="Label" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/TimerSection" unique_id=1043658449]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 24
 text = "How long?"
 horizontal_alignment = 1
@@ -672,24 +695,13 @@ theme_override_font_sizes/font_size = 50
 text = "High Scores"
 horizontal_alignment = 1
 
-[node name="LBBackButton" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/Header" unique_id=1207763722]
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 52.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("SBF_pa_n")
-theme_override_styles/pressed = SubResource("SBF_pa_p")
-theme_override_styles/hover = SubResource("SBF_pa_n")
-text = "< Back"
-
 [node name="ModeSection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=1893023403]
 layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="ModeLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection" unique_id=1245198557]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 24
 text = "Game Mode"
 horizontal_alignment = 1
@@ -735,7 +747,7 @@ theme_override_constants/separation = 5
 
 [node name="DifficultyLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/DifficultySection" unique_id=2118960223]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 24
 text = "Difficulty"
 horizontal_alignment = 1
@@ -781,7 +793,7 @@ theme_override_constants/separation = 5
 
 [node name="TimerLabel" type="Label" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/TimerSection" unique_id=1285450632]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_colors/font_color = Color(0.04, 0.12, 0.28, 1)
 theme_override_font_sizes/font_size = 24
 text = "How long?"
 horizontal_alignment = 1
@@ -831,6 +843,12 @@ horizontal_alignment = 1
 [node name="EntriesContainer" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=1995733447]
 layout_mode = 2
 theme_override_constants/separation = 10
+
+[node name="LBBackButton" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=1207763722]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
 
 [node name="SettingsScreen" type="Control" parent="." unique_id=187392203]
 visible = false
@@ -1012,14 +1030,14 @@ flat = true
 expand_icon = true
 
 [node name="MuteButton" type="Button" parent="." unique_id=598035644]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 50.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -290.0
 offset_top = 8.0
-offset_right = 130.0
+offset_right = -210.0
 offset_bottom = 88.0
-grow_horizontal = 2
+grow_horizontal = 0
 focus_mode = 0
 icon = ExtResource("16_sound_on")
 flat = true

@@ -162,10 +162,10 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 					used_anchors[j] = true
 					break
 
-		var data := {"pos": item.position, "radius": item.radius}
+		var data := {"pos": item.position, "radius": item.radius * 2.5}
 		if assigned_anchor != null:
 			data["pos"] = assigned_anchor.position
-			data["radius"] = assigned_anchor.radius * item.scale_multiplier
+			data["radius"] = assigned_anchor.radius * item.scale_multiplier * 2.5
 		_active_item_data.append(data)
 
 
@@ -241,7 +241,7 @@ func _on_back_pressed() -> void:
 
 func _on_home_pressed() -> void:
 	AudioManager.play_sfx("pop")
-	get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
+	get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekMain.tscn")
 
 
 func _on_replay_pressed() -> void:

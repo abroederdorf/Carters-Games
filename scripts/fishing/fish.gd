@@ -12,6 +12,7 @@ var direction: float
 var points: int
 var velocity_y: float = 0.0
 var _change_timer: float = 0.0
+var _number_label: Label = null
 
 var math_value: int = -1:
 	set(v):
@@ -79,14 +80,12 @@ func _ready() -> void:
 	
 	$Sprite2D.texture = load(tex_path)
 	
-	# High-res PNGs are 10x larger than the old SVGs.
-	# We want them to end up at the 'base_scale' size.
-	if is_high_res:
-		# If the swordfish is too small, 0.1 was too much. 
-		# Let's try 0.25 (which is 1/4 the raw PNG size)
-		$Sprite2D.scale = Vector2.ONE * 0.25
+	if math_value != -1 or spell_letter != "":
+		$Sprite2D.scale = Vector2.ONE * 1.2
+	elif "fish_sword" in tex_path:
+		$Sprite2D.scale = Vector2.ONE * 1.3
 	else:
-		$Sprite2D.scale = Vector2.ONE * 1.0 
+		$Sprite2D.scale = Vector2.ONE * 1.0
 	
 	# The Area2D itself gets the 'base_scale' (Large: 0.4, Medium: 0.25, Small: 0.16)
 	scale = Vector2.ONE * base_scale
@@ -131,8 +130,10 @@ func _setup_labels() -> void:
 	
 	# Size and position
 	label.custom_minimum_size = Vector2(200, 150)
-	label.position = Vector2(-100, -75)
-	
+	label.position.y = -75
+	_number_label = label
+	_update_label_position()
+
 	add_child(label)
 	label.z_index = 10
 	label.show()
@@ -164,10 +165,17 @@ func _process(delta: float) -> void:
 			caught.emit()
 			queue_free()
 
+func _update_label_position() -> void:
+	if _number_label == null:
+		return
+	var offset_x = 30.0 if direction > 0 else -30.0
+	_number_label.position.x = offset_x - 100.0
+
 func _randomize_movement(vp: Rect2) -> void:
 	if randf() < 0.35 and position.x > 150.0 and position.x < vp.size.x - 150.0:
 		direction = -direction
 		$Sprite2D.flip_h = (direction > 0) != _faces_right
+		_update_label_position()
 	velocity_y = randf_range(-80.0, 80.0)
 func get_caught() -> void:
 	AudioManager.play_sfx("pop")
