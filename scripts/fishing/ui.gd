@@ -709,8 +709,8 @@ func show_spelling_hud(word: String, missing_indices: Array, filled: Dictionary,
 
 	for i in word.length():
 		var btn := Button.new()
-		btn.custom_minimum_size = Vector2(78, 78)
-		btn.add_theme_font_size_override("font_size", 42)
+		btn.custom_minimum_size = Vector2(100, 100)
+		btn.add_theme_font_size_override("font_size", 54)
 		btn.focus_mode = Control.FOCUS_NONE
 
 		if i in missing_indices and not filled.has(i):
@@ -742,7 +742,7 @@ func show_spelling_hud(word: String, missing_indices: Array, filled: Dictionary,
 		_spell_slots_container.add_child(btn)
 		_spell_slots.append(btn)
 
-	var slot_w := 78
+	var slot_w := 100
 	var gap := 10
 	var total_w: int = word.length() * slot_w + max(0, word.length() - 1) * gap
 	var center_x := 940.0 # Shifted further right from 740.0
