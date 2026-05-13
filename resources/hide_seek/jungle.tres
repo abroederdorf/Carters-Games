@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_3pcbq"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/bg.png" id="1_xjtfx"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/bg_jungle.png" id="1_xjtfx"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_3pcbq"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/banana_bunch.png" id="3_vsats"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/butterfly.png" id="5_87j6v"]

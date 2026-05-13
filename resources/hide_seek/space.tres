@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_6masw"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/bg.png" id="1_y6kf6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/bg_space.png" id="1_y6kf6"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_6masw"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/alien.png" id="3_35o43"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/astronaut.png" id="4_n6757"]

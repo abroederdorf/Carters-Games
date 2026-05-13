@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_aej6v"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/bg.png" id="1_qgp2t"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/bg_monster_jam.png" id="1_qgp2t"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_aej6v"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/checkered_flag.png" id="3_yuy7a"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/crushed_car.png" id="4_2qptk"]

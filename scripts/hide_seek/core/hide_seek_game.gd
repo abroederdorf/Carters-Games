@@ -162,10 +162,10 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 					used_anchors[j] = true
 					break
 
-		var data := {"pos": item.position, "radius": item.radius}
+		var data := {"pos": item.position, "radius": item.radius * 2.5}
 		if assigned_anchor != null:
 			data["pos"] = assigned_anchor.position
-			data["radius"] = assigned_anchor.radius * item.scale_multiplier
+			data["radius"] = assigned_anchor.radius * item.scale_multiplier * 2.5
 		_active_item_data.append(data)
 
 

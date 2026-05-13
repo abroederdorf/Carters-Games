@@ -18,25 +18,34 @@ ASSET_ROOT = Path("assets/sprites/hide_seek")
 RESOURCE_ROOT = Path("resources/hide_seek")
 
 PROMPT = """
-You are a game designer placing anchor points for a 'Find the Hidden Object' game.
+You are a game designer for a 'Find the Hidden Object' game. 
 Look at this background image for a children's game.
 
-Identify 50 natural-looking anchor points where an object could be hidden.
+Task 1: Anchor Points
+Identify 50 natural-looking anchor points where an object could be hidden. 
 Image Dimensions: {width} x {height}
-
 Rules:
-1. Spread the points across the entire scene.
-2. Provide (X, Y) pixel coordinates where (0,0) is top-left and ({width}, {height}) is bottom-right.
-3. For each point, provide a 'Radius' in pixels.
-4. Provide 'Tags': "ground", "sky", "water", "foliage", "structure", "shadow".
-5. Provide 'Difficulty' (0: Easy, 1: Medium, 2: Hard).
+- Spread points across the entire scene (corners, middle, background, foreground).
+- Provide (X, Y) pixel coordinates where (0,0) is top-left.
+- Provide a 'Radius' (R) in pixels for the touch area.
+- Tags: "ground", "sky", "water", "foliage", "structure", "shadow".
+- Difficulty: 0 (Easy/Visible), 1 (Medium/Partial cover), 2 (Hard/Very hidden).
 
-Return result STRICTLY as JSON array:
-[{{"x": X, "y": Y, "radius": R, "tags": [T], "difficulty": D}}]
+Task 2: Item Suggestions
+Suggest 15 items to hide in this specific scene.
+- "In Scene" (7-8 items): Items that are actually part of the background art (e.g. if there is a specific rock or flower in the image).
+- "Thematic" (7-8 items): Items that fit the theme but are NOT in the image (e.g. a 'compass' in a jungle).
+- Provide a short visual 'desc' for each, optimized for image generation.
+
+Return result STRICTLY as JSON object:
+{{
+  "anchors": [{{"x": X, "y": Y, "radius": R, "tags": [T], "difficulty": D}}],
+  "items": [{{"name": "slug", "desc": "description", "type": "in_scene"|"thematic"}}]
+}}
 """
 
-def get_anchors_for_image(image_path):
-    print(f"Analyzing: {image_path}")
+def get_analysis_for_image(image_path):
+    print(f"Analyzing: {image_path.name}")
     
     img = Image.open(image_path)
     width, height = img.size
@@ -44,59 +53,100 @@ def get_anchors_for_image(image_path):
     with open(image_path, "rb") as f:
         image_bytes = f.read()
 
-    response = client.models.generate_content(
-        model=VISION_MODEL,
-        contents=[
-            PROMPT.format(width=width, height=height),
-            types.Part.from_bytes(data=image_bytes, mime_type="image/png")
-        ]
-    )
-    
-    text = response.text
-    # Extract JSON if there's any markdown wrapping
-    if "```json" in text:
-        text = text.split("```json")[1].split("```")[0]
-    elif "```" in text:
-        text = text.split("```")[1].split("```")[0]
-        
     try:
+        response = client.models.generate_content(
+            model=VISION_MODEL,
+            contents=[
+                PROMPT.format(width=width, height=height),
+                types.Part.from_bytes(data=image_bytes, mime_type="image/png")
+            ]
+        )
+        
+        text = response.text
+        if "```json" in text:
+            text = text.split("```json")[1].split("```")[0]
+        elif "```" in text:
+            text = text.split("```")[1].split("```")[0]
+            
         return json.loads(text.strip())
     except Exception as e:
-        print(f"Error parsing JSON for {image_path}: {e}")
-        print("Raw response:", text)
+        print(f"  Error: {e}")
         return None
 
 THEMES_JSON = Path("assets/data/hide_seek/themes.json")
-
-def load_master_index():
-    with open(THEMES_JSON, "r") as f:
-        return json.load(f)
+ANCHORS_JSON = Path("assets/data/hide_seek/anchors_data.json")
+SUGGESTIONS_JSON = Path("assets/data/hide_seek/item_suggestions.json")
 
 def main():
-    index = load_master_index()
+    with open(THEMES_JSON, "r") as f:
+        index = json.load(f)
+    
     themes = index["themes"].keys()
     
+    # Load existing data to merge
     all_anchors = {}
-    
+    if ANCHORS_JSON.exists():
+        with open(ANCHORS_JSON, "r") as f:
+            all_anchors = json.load(f)
+            
+    all_suggestions = {}
+    if SUGGESTIONS_JSON.exists():
+        with open(SUGGESTIONS_JSON, "r") as f:
+            all_suggestions = json.load(f)
+
     for theme in themes:
+        print(f"Checking theme: {theme}")
         theme_dir = ASSET_ROOT / theme
-        bg_path = theme_dir / "bg.png"
-        if not bg_path.exists():
-            bg_path = theme_dir / "bg_fast.png"
         
-        if not bg_path.exists():
-            print(f"Background not found for {theme}")
+        # Look for the best background
+        bg_path = None
+        possible_names = [
+            f"bg_{theme}.png",
+            f"bg_{theme.replace('_land', '')}.png",
+            f"bg_{theme.replace('_jam', '')}.png",
+            f"bg_{theme.replace('monster_truck_jam', 'monster_jam')}.png",
+            f"bg_{theme.replace('mountains', 'mountain')}.png",
+            f"bg_{theme.replace('_site', '')}.png",
+            "bg.png",
+            "bg_fast.png"
+        ]
+        
+        for name in possible_names:
+            p = theme_dir / name
+            if p.exists():
+                bg_path = p
+                print(f"  Found background: {name}")
+                break
+        
+        # Final fallback: Look for any png starting with bg_
+        if not bg_path:
+            for p in theme_dir.glob("bg_*.png"):
+                bg_path = p
+                print(f"  Found background via glob: {p.name}")
+                break
+        
+        if not bg_path:
+            print(f"  No background found for {theme}")
             continue
+        
+        target_themes = ["mountains", "ocean", "jungle", "space", "dinosaur_land", "fire_station", "monster_truck_jam", "construction_site"]
+        if theme not in target_themes:
+            print(f"  Theme {theme} not in target list, skipping.")
+            continue
+
+        result = get_analysis_for_image(bg_path)
+        if result:
+            all_anchors[theme] = result.get("anchors", [])
+            all_suggestions[theme] = result.get("items", [])
+            print(f"  Captured {len(all_anchors[theme])} anchors and {len(all_suggestions[theme])} suggestions.")
             
-        anchors = get_anchors_for_image(bg_path)
-        if anchors:
-            all_anchors[theme] = anchors
-            print(f"  Found {len(anchors)} anchors for {theme}")
-            
-    # Save to a temporary JSON file for Godot to ingest
-    with open("assets/data/hide_seek/anchors_data.json", "w") as f:
-        json.dump(all_anchors, f, indent=2)
-    print("\nSaved anchor data to assets/data/hide_seek/anchors_data.json")
+            # Save incrementally
+            with open(ANCHORS_JSON, "w") as f:
+                json.dump(all_anchors, f, indent=2)
+            with open(SUGGESTIONS_JSON, "w") as f:
+                json.dump(all_suggestions, f, indent=2)
+
+    print("\nProcessing complete.")
 
 if __name__ == "__main__":
     main()

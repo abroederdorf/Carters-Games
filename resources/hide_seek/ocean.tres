@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_7ybr1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/bg.png" id="1_vy286"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/bg_ocean.png" id="1_vy286"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_7ybr1"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/anchor.png" id="3_dsbya"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/clownfish.png" id="4_y5tek"]
