@@ -11,7 +11,7 @@ var _fish_layer: Node2D = null
 
 func _ready() -> void:
 	texture = preload("res://assets/sprites/fishing/pelican.png")
-	scale = Vector2.ONE * 0.07875
+	scale = Vector2.ONE * 0.15
 
 	var vp := get_viewport_rect()
 	direction = 1.0 if randf() > 0.5 else -1.0
@@ -57,7 +57,7 @@ func _perform_swoop(target: Node2D) -> void:
 
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(self, "scale", Vector2.ONE * 0.0945, 0.3).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2.ONE * 0.18, 0.3).set_ease(Tween.EASE_OUT)
 	# Dive
 	tween.tween_property(self, "global_position", target_pos, swoop_speed).set_ease(Tween.EASE_IN)
 	tween.tween_callback(_on_swoop_hit.bind(target))
@@ -74,4 +74,4 @@ func _on_swoop_finished() -> void:
 	is_swooping = false
 	flip_h = direction < 0
 	var tween := create_tween()
-	tween.tween_property(self, "scale", Vector2.ONE * 0.07875, 0.4).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "scale", Vector2.ONE * 0.15, 0.4).set_ease(Tween.EASE_IN_OUT)

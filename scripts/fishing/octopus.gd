@@ -10,7 +10,7 @@ var _fish_layer: Node2D = null
 
 func _ready() -> void:
 	$Sprite2D.texture = preload("res://assets/sprites/fishing/octopus.png")
-	$Sprite2D.scale = Vector2.ONE * 0.12
+	$Sprite2D.scale = Vector2.ONE * 0.15
 
 	
 	var timer := Timer.new()
