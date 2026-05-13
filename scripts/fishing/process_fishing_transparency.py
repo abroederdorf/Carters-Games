@@ -46,15 +46,18 @@ def make_transparent(image_path, tolerance=50):
 
     # 2. Secondary Pass: Internal Holes
     # For "isolated on white" assets, any remaining very-white pixels are likely background holes
-    data = img.getdata()
-    new_data = []
-    for item in data:
-        # If it's extremely white and not yet transparent, clear it
-        if item[3] > 0 and item[0] >= 245 and item[1] >= 245 and item[2] >= 245:
-            new_data.append((255, 255, 255, 0))
-        else:
-            new_data.append(item)
-    img.putdata(new_data)
+    # SKIP for assets that have intentionally white details (eyes, bodies, etc.)
+    EXCLUDE_KEYWORDS = ["fish", "shark", "pelican", "octopus"]
+    if all(kw not in str(image_path) for kw in EXCLUDE_KEYWORDS):
+        data = img.getdata()
+        new_data = []
+        for item in data:
+            # If it's extremely white and not yet transparent, clear it
+            if item[3] > 0 and item[0] >= 245 and item[1] >= 245 and item[2] >= 245:
+                new_data.append((255, 255, 255, 0))
+            else:
+                new_data.append(item)
+        img.putdata(new_data)
 
     # 3. Autocrop and Center with Alpha Thresholding
     alpha = img.getchannel('A')
