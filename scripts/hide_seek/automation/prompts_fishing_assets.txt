@@ -41,3 +41,6 @@ button_play: bright green rounded rectangular button with a simple white "Play" 
 button_pause: bright orange rounded rectangular button with two simple white vertical pause bars, thick outlines
 button_settings: bright blue rounded rectangular button with a simple white gear icon, thick outlines
 button_home: bright red rounded rectangular button with a simple white house icon, thick outlines
+button_close: bright red rounded rectangular button with a simple white "X" icon, thick outlines
+button_sound_on: bright yellow rounded rectangular button with a simple white "Speaker" icon, thick outlines
+button_sound_off: bright yellow rounded rectangular button with a simple white "Speaker Muted" icon with a diagonal slash, thick outlines

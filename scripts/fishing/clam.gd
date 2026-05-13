@@ -1,7 +1,8 @@
 extends Sprite2D
 
-const CLAM_CLOSED = preload("res://assets/sprites/clam_closed.svg")
-const CLAM_OPEN = preload("res://assets/sprites/clam_open.svg")
+const TEX_CLOSED = preload("res://assets/sprites/fishing/clam_closed.png")
+const TEX_OPEN = preload("res://assets/sprites/fishing/clam_open.png")
+
 const BUBBLE_TEX = preload("res://assets/sprites/bubble.svg")
 
 @export var open_duration: float = 2.0
@@ -11,7 +12,7 @@ var _is_open: bool = false
 var _timer: Timer
 
 func _ready() -> void:
-	texture = CLAM_CLOSED
+	texture = TEX_CLOSED
 	_timer = Timer.new()
 	_timer.wait_time = randf_range(1.0, closed_duration)
 	_timer.one_shot = true
@@ -22,11 +23,11 @@ func _ready() -> void:
 func _toggle_clam() -> void:
 	_is_open = !_is_open
 	if _is_open:
-		texture = CLAM_OPEN
+		texture = TEX_OPEN
 		_timer.wait_time = open_duration
 		_spawn_bubbles()
 	else:
-		texture = CLAM_CLOSED
+		texture = TEX_CLOSED
 		_timer.wait_time = randf_range(2.0, closed_duration)
 	
 	_timer.start()

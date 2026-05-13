@@ -10,13 +10,14 @@ var _swoop_timer: float = 0.0
 var _fish_layer: Node2D = null
 
 func _ready() -> void:
-	texture = preload("res://assets/sprites/pelican.svg")
+	texture = preload("res://assets/sprites/fishing/pelican.png")
+	scale = Vector2.ONE * 0.15
+
 	var vp := get_viewport_rect()
 	direction = 1.0 if randf() > 0.5 else -1.0
 	position.x = -100.0 if direction > 0 else vp.size.x + 100.0
 	position.y = 100.0
-	flip_h = direction < 0
-	_swoop_timer = randf_range(2.0, swoop_interval)
+	flip_h = direction > 0 # Faces left by default, flip if moving right
 
 func setup(fish_layer: Node2D) -> void:
 	_fish_layer = fish_layer

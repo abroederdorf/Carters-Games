@@ -13,20 +13,17 @@ var _fish_layer: Node2D = null
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
-	sprite.texture = preload("res://assets/sprites/shark_fin.svg")
-	sprite.scale = Vector2(2.0, 2.0)
+	sprite.texture = preload("res://assets/sprites/fishing/shark.png")
+	sprite.scale = Vector2.ONE * 0.15
 	
 	var vp := get_viewport_rect()
 	direction = 1.0 if randf() > 0.5 else -1.0
 	position.x = randf_range(200, vp.size.x - 200)
 	position.y = 250.0 # Surface
-	sprite.flip_h = direction > 0 # SVG faces left, flip to face right
+	sprite.flip_h = direction > 0 # PNG faces left, flip if moving right
 	
 	_attack_timer = randf_range(2.0, attack_interval)
 	monitoring = false
-
-func setup(fish_layer: Node2D) -> void:
-	_fish_layer = fish_layer
 
 func _process(delta: float) -> void:
 	if is_attacking:
@@ -58,10 +55,8 @@ func _perform_attack(target: Node2D) -> void:
 	is_attacking = true
 	var target_pos = target.global_position
 	
-	# Dive
-	sprite.texture = preload("res://assets/sprites/shark.svg")
+	# Attack state
 	sprite.flip_h = direction > 0
-	sprite.scale = Vector2(2.0, 2.0)
 	monitoring = true
 	
 	var tween := create_tween()
@@ -80,9 +75,7 @@ func _on_attack_hit(target) -> void:
 func _on_attack_finished() -> void:
 	is_attacking = false
 	monitoring = false
-	sprite.texture = preload("res://assets/sprites/shark_fin.svg")
 	sprite.flip_h = direction > 0
-	sprite.scale = Vector2(2.0, 2.0)
 
 func _on_area_entered(area: Area2D) -> void:
 	if is_attacking and area.has_method("get_eaten"):

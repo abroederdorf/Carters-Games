@@ -6,13 +6,17 @@ from google import genai
 from google.genai import types
 from PIL import Image
 
-# --- Configuration ---
-API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.environ.get("GEMINI_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 MODEL_NAME = "imagen-4.0-fast-generate-001"
 
 ASSET_ROOT = Path("assets/sprites/hide_seek")
-ITEM_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
+CHARACTER_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
+OBJECT_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, isolated object only, no people, no characters, no background, no shadows, no text, "
+STYLE_SUFFIX = "Bright saturated colors, flat design, thick black outlines, friendly cartoon style, clean shapes, no gradients, no text."
 
 # --- New 15 Themes ---
 TARGETS = {
@@ -271,13 +275,27 @@ def main():
     for theme_name, data in TARGETS.items():
         theme_dir = ASSET_ROOT / theme_name
         theme_dir.mkdir(parents=True, exist_ok=True)
-        generate_image(data['scene'], theme_dir / "bg.png", MODEL_NAME, aspect_ratio="16:9")
-        time.sleep(5)
+        
+        # 1. Generate Items First
+        item_list = []
         for item_name, item_desc in data['items'].items():
             item_path = theme_dir / f"{item_name}.png"
-            if item_path.exists(): continue
-            success = generate_image(ITEM_PREFIX + item_desc, item_path, MODEL_NAME)
-            if success: time.sleep(5)
+            if not item_path.exists():
+                prompt = f"{OBJECT_PREFIX}{item_desc}. {STYLE_SUFFIX}"
+                success = generate_image(prompt, item_path, MODEL_NAME)
+                if success: 
+                    item_list.append(item_name)
+                    time.sleep(5)
+            else:
+                item_list.append(item_name)
+
+        # 2. Generate Background with Context
+        bg_path = theme_dir / "bg.png"
+        if not bg_path.exists():
+            item_context = ", ".join(item_list[:5])
+            bg_prompt = f"{data['scene']}. {STYLE_SUFFIX} The environment should feature natural hiding spots and a color palette that perfectly matches the following objects: {item_context}."
+            generate_image(bg_prompt, bg_path, MODEL_NAME, aspect_ratio="16:9")
+            time.sleep(5)
 
 if __name__ == "__main__":
     main()

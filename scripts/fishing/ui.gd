@@ -56,9 +56,7 @@ signal back_to_game_select
 @onready var reset_yes_button: Button = find_child("BtnYes")
 @onready var pause_play_button: Button = find_child("PausePlayButton")
 @onready var math_problem_label: Label = find_child("MathProblemLabel")
-
-var SOUND_ON: Texture2D = load("res://assets/sprites/sound_on_icon.svg")
-var SOUND_OFF: Texture2D = load("res://assets/sprites/sound_off_icon.svg")
+var _math_problem_panel: Panel = null
 
 var countdown: float = 0.0
 var timer_running: bool = false
@@ -135,12 +133,51 @@ func _ready() -> void:
 	pause_play_button.pressed.connect(_on_play_pressed)
 	mute_button.pressed.connect(_on_mute_pressed)
 
+	_build_math_hud()
+	_build_spelling_hud()
 	_update_mute_icon()
 	_update_menu_visuals()
-	_build_spelling_hud()
+
+func _build_math_hud() -> void:
+	if _math_problem_panel: return
+	
+	_math_problem_panel = Panel.new()
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(1.0, 1.0, 1.0, 0.9)
+	style.corner_radius_top_left = 20
+	style.corner_radius_top_right = 20
+	style.corner_radius_bottom_right = 20
+	style.corner_radius_bottom_left = 20
+	style.border_width_left = 4
+	style.border_width_top = 4
+	style.border_width_right = 4
+	style.border_width_bottom = 4
+	style.border_color = Color(0.2, 0.6, 1.0, 1.0) # Friendly blue border
+	
+	_math_problem_panel.add_theme_stylebox_override("panel", style)
+	_math_problem_panel.custom_minimum_size = Vector2(400, 100)
+	_math_problem_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	_math_problem_panel.offset_top = 100
+	_math_problem_panel.visible = false
+	add_child(_math_problem_panel)
+	
+	# Move the existing label into the panel if it exists
+	if math_problem_label:
+		if math_problem_label.get_parent():
+			math_problem_label.get_parent().remove_child(math_problem_label)
+		_math_problem_panel.add_child(math_problem_label)
+		
+		# Reset internal label properties for the new container
+		math_problem_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		math_problem_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		math_problem_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		math_problem_label.add_theme_color_override("font_color", Color.BLACK)
+		math_problem_label.add_theme_font_size_override("font_size", 64)
+		math_problem_label.text = "" # Start empty
+		math_problem_label.show()
 
 func _update_mute_icon() -> void:
-	mute_button.icon = SOUND_OFF if AudioManager.master_mute else SOUND_ON
+	mute_button.icon = load("res://assets/sprites/sound_off_icon.svg") if AudioManager.master_mute else load("res://assets/sprites/sound_on_icon.svg")
 
 func _on_mute_pressed() -> void:
 	var is_muted = AudioManager.toggle_mute()
@@ -327,13 +364,14 @@ func update_score(score: int, fish: int) -> void:
 			fish_label.text = "Fish: %d" % fish
 
 func show_math_problem(text: String) -> void:
-	if math_problem_label:
+	if _math_problem_panel:
 		math_problem_label.text = text
-		math_problem_label.visible = true
+		math_problem_label.show()
+		_math_problem_panel.visible = true
 
 func hide_math_problem() -> void:
-	if math_problem_label:
-		math_problem_label.visible = false
+	if _math_problem_panel:
+		_math_problem_panel.visible = false
 
 func start_timer(seconds: float) -> void:
 	countdown = seconds
@@ -557,7 +595,7 @@ func show_spelling_hud(word: String, missing_indices: Array, filled: Dictionary,
 	var slot_w := 78
 	var gap := 10
 	var total_w: int = word.length() * slot_w + max(0, word.length() - 1) * gap
-	var center_x := 640.0
+	var center_x := 940.0 # Shifted further right from 740.0
 	_spell_slots_container.position = Vector2(center_x - total_w / 2.0, 106.0)
 
 func hide_spelling_hud() -> void:
