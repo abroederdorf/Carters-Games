@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://cuu000000001"]
 
 [ext_resource type="Script" uid="uid://cge4yimkq7ovu" path="res://scripts/fishing/ui.gd" id="1_ui001"]
-[ext_resource type="Texture2D" uid="uid://dfs65n8287m4o" path="res://assets/sprites/close_icon.svg" id="14_close"]
-[ext_resource type="Texture2D" uid="uid://b161sm1g8rcto" path="res://assets/sprites/pause_icon.svg" id="15_pause"]
-[ext_resource type="Texture2D" uid="uid://doxk5bg0bn7p3" path="res://assets/sprites/sound_on_icon.svg" id="16_sound_on"]
-[ext_resource type="Texture2D" uid="uid://d1gw5rgvcccob" path="res://assets/sprites/switch_on.svg" id="18_switch_on"]
-[ext_resource type="Texture2D" uid="uid://b5k22ruv0ks8" path="res://assets/sprites/switch_off.svg" id="19_switch_off"]
-[ext_resource type="Texture2D" uid="uid://cbdrkefxpb003" path="res://assets/sprites/play_icon.svg" id="20_play"]
+[ext_resource type="Texture2D" uid="uid://d1gw5rgvcccob" path="res://assets/sprites/ui/switch_on.svg" id="18_switch_on"]
+[ext_resource type="Texture2D" uid="uid://b5k22ruv0ks8" path="res://assets/sprites/ui/switch_off.svg" id="19_switch_off"]
 
 [sub_resource type="StyleBoxFlat" id="SBF_play_n"]
 bg_color = Color(0.14, 0.76, 0.26, 1)
@@ -333,7 +329,6 @@ focus_mode = 0
 theme_override_styles/normal = SubResource("SBF_play_n")
 theme_override_styles/pressed = SubResource("SBF_play_p")
 theme_override_styles/hover = SubResource("SBF_play_n")
-icon = ExtResource("20_play")
 expand_icon = true
 
 [node name="EndScreen" type="Control" parent="." unique_id=1549663982]
@@ -1010,7 +1005,6 @@ offset_top = 8.0
 offset_right = 95.0
 offset_bottom = 88.0
 focus_mode = 0
-icon = ExtResource("14_close")
 flat = true
 expand_icon = true
 
@@ -1025,7 +1019,6 @@ offset_right = 40.0
 offset_bottom = 88.0
 grow_horizontal = 2
 focus_mode = 0
-icon = ExtResource("15_pause")
 flat = true
 expand_icon = true
 
@@ -1039,7 +1032,6 @@ offset_right = -210.0
 offset_bottom = 88.0
 grow_horizontal = 0
 focus_mode = 0
-icon = ExtResource("16_sound_on")
 flat = true
 expand_icon = true
 
