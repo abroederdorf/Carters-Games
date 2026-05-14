@@ -15,24 +15,27 @@ TAG_MODEL = "gemini-2.5-flash"
 ASSET_ROOT = Path("assets/sprites/hide_seek")
 
 PROMPT = """
-You are a game designer. Categorize these game items with appropriate tags for logical placement in a scene.
+You are a game designer. Categorize these game items with appropriate tags and sizing for logical placement in a scene.
 
 Available Tags:
-- "ground": For items that sit on the floor, rocks, or dirt.
-- "sky": For items that fly, float, or are in the air.
-- "water": For items that belong in or on water (fish, anchors, boats).
-- "foliage": For items that belong in trees, bushes, or flowers.
-- "structure": For items that sit on buildings, shelves, or man-made objects.
+- "ground": sits on floor, dirt, or rocks
+- "sky": flies, floats, or lives in the air
+- "water": belongs in or on water
+- "foliage": lives in trees or bushes
+- "structure": sits on walls, shelves, or man-made surfaces
+- "shadow": tucked in dark or obscured areas
+
+Rules:
+1. Return a JSON object where keys are item names.
+2. Value is an object: {{"tags": [list], "base_scale": float, "preferred_anchors": []}}
+3. base_scale: 0.3 (tiny, e.g. bug/coin), 0.6 (small, e.g. camera/shoe), 1.0 (standard, e.g. bucket/dog), 2.0 (large, e.g. tent/bike), 3.0 (huge, e.g. car/boulder).
+4. preferred_anchors: Leave as empty array [] for now.
 
 Theme: {theme}
 Items: {items}
 
-Rules:
-1. Return a JSON object where keys are item names and values are lists of 1-2 relevant tags.
-2. If an item could fit in multiple (e.g. ground and structure), list both.
-
 Example:
-{{"bird": ["sky", "foliage"], "rock": ["ground"]}}
+{{"bird": {{"tags": ["sky", "foliage"], "base_scale": 0.5, "preferred_anchors": []}}}}
 """
 
 THEMES_JSON = Path("assets/data/hide_seek/themes.json")

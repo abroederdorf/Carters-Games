@@ -29,24 +29,27 @@ Spatial Distribution Rules (MANDATORY):
 1. Imagine the image divided into a 5x4 grid (20 equal cells).
 2. You MUST place at least 2 anchor points in every single cell of that grid.
 3. This ensures points are spread into the far corners, edges, and 'empty' areas, not just clustered in the center.
-4. The remaining 10 points should be placed in the most visually complex areas.
 
 Data Rules:
-- Provide (X, Y) pixel coordinates where (0,0) is top-left.
-- Provide a 'Radius' (R) in pixels for the touch area (usually 20-50px).
-- Tags: "ground", "sky", "water", "foliage", "structure", "shadow".
-- Difficulty: 0 (Easy/Visible), 1 (Medium/Partial cover), 2 (Hard/Very hidden).
+- id: A unique incrementing integer (0-49).
+- x, y: Pixel coordinates where (0,0) is top-left.
+- radius: Radius (R) in pixels for the touch area (20-60px).
+- tags: Use 1-2 of: "ground", "sky", "water", "foliage", "structure", "shadow".
+- difficulty: 0 (Easy), 1 (Medium), 2 (Hard).
 
 Task 2: Item Suggestions
 Suggest 15 items to hide in this specific scene.
-- "In Scene" (7-8 items): Items that are actually part of the background art (e.g. if there is a specific rock or flower in the image).
-- "Thematic" (7-8 items): Items that fit the theme but are NOT in the image (e.g. a 'compass' in a jungle).
-- Provide a short visual 'desc' for each, optimized for image generation.
+- For each item, provide:
+  - name: slug (e.g. "red_bucket")
+  - desc: visual description for image generation.
+  - type: "in_scene" or "thematic".
+  - tags: 1-2 tags matching the anchor tag types (e.g. ["ground_flat", "structure_wall"]).
+  - base_scale: A float representing relative size (0.5 for a bug, 1.0 for a bucket, 3.0 for a car).
 
 Return result STRICTLY as JSON object:
 {{
-  "anchors": [{{"x": X, "y": Y, "radius": R, "tags": [T], "difficulty": D}}],
-  "items": [{{"name": "slug", "desc": "description", "type": "in_scene"|"thematic"}}]
+  "anchors": [{{"id": ID, "x": X, "y": Y, "radius": R, "tags": [T], "difficulty": D}}],
+  "items": [{{"name": "slug", "desc": "description", "type": "T", "tags": [T], "base_scale": S}}]
 }}
 """
 
