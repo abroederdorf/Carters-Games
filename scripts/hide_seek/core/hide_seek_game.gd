@@ -186,28 +186,16 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 		if assigned_anchor != null:
 			used_anchors[assigned_anchor.id] = true
 			data["pos"] = assigned_anchor.position
-			
-			# SIZING LOGIC
-			# 1. Base scale from item
+
 			var scale := item.base_scale
-			
-			# 2. Depth Scaling: Lower Y (closer to bottom) = Larger
-			# Assume horizon is at 30% height
-			var horizon_y := bg_size.y * 0.3
-			var depth_range := bg_size.y - horizon_y
-			var depth_factor := (assigned_anchor.position.y - horizon_y) / depth_range
-			depth_factor = clamp(depth_factor, 0.5, 1.5) # Scale from 50% to 150%
-			
-			scale *= depth_factor
-			
-			# 3. Fit to Anchor: If anchor radius is small, downscale to fit
+
+			# Fit to anchor: downscale if item would exceed the anchor's space
 			var max_radius := assigned_anchor.radius * 2.0
-			var item_radius := 60.0 * scale # 60 is a baseline sprite radius
-			
+			var item_radius := 60.0 * scale
 			if item_radius > max_radius:
 				scale *= (max_radius / item_radius)
-			
-			data["radius"] = 60.0 * scale * 1.5 # 1.5 padding for touch area
+
+			data["radius"] = 60.0 * scale * 1.5
 			data["scale"] = scale
 		
 		_active_item_data.append(data)
