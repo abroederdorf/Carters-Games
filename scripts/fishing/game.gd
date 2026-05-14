@@ -125,7 +125,7 @@ func _ready() -> void:
 	ui.spelling_audio_requested.connect(func() -> void: AudioManager.play_word(_spell_current_word))
 	ui.back_to_game_select.connect(func() -> void:
 		AudioManager.stop_music()
-		get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
+		get_tree().change_scene_to_file("res://scenes/fishing/game.tscn")
 	)
 
 	_predator_timer = Timer.new()
