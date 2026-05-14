@@ -41,6 +41,12 @@ func _scurry_to_next_rock() -> void:
 		var tween := create_tween()
 		tween.tween_property(self, "global_position", rock_positions[next_index], 1.5).set_trans(Tween.TRANS_SINE)
 
+func attack_target(target: Node2D) -> void:
+	if is_lunging or lunge_cooldown:
+		target.get_eaten()
+		return
+	_perform_lunge(target)
+
 func trigger_attack() -> bool:
 	if is_lunging or lunge_cooldown or not _fish_layer:
 		return false

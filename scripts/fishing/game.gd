@@ -102,7 +102,7 @@ var _max_fish: int = 5
 var _game_mode: int = GameMode.FREE_PLAY
 var _math_correct_answer: int = 0
 var _problems_solved: int = 0
-var _math_pelican: Node2D = null
+var _math_octopus: Node2D = null
 var _math_round_resetting: bool = false
 
 var _spell_current_word: String = ""
@@ -125,7 +125,7 @@ func _ready() -> void:
 	ui.spelling_audio_requested.connect(func() -> void: AudioManager.play_word(_spell_current_word))
 	ui.back_to_game_select.connect(func() -> void:
 		AudioManager.stop_music()
-		get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
+		get_tree().change_scene_to_file("res://scenes/fishing/game.tscn")
 	)
 
 	_predator_timer = Timer.new()
@@ -153,10 +153,10 @@ func _start_game(duration: float) -> void:
 	if _game_mode == GameMode.MATH:
 		_max_fish = 6
 		_spawn_math_fish()
-		_spawn_math_pelican()
+		_spawn_math_octopus()
 	elif _game_mode == GameMode.SPELLING:
 		_max_fish = 8 if _difficulty == 2 else 6
-		_spawn_math_pelican()
+		_spawn_math_octopus()
 		_new_spelling_round()
 	else:
 		_spawn_fish()
@@ -164,15 +164,13 @@ func _start_game(duration: float) -> void:
 			_spawn_persistent_predators()
 			_predator_timer.start()
 
-func _spawn_math_pelican() -> void:
-	if is_instance_valid(_math_pelican):
-		_math_pelican.queue_free()
-	_math_pelican = PELICAN_SCENE.instantiate()
-	predator_layer.add_child(_math_pelican)
-	_math_pelican.setup(fish_layer)
-	_math_pelican.set_process(false)
-	_math_pelican.swoop_speed = 0.4
-	_math_pelican.position = Vector2(get_viewport_rect().size.x / 2.0, -200.0)
+func _spawn_math_octopus() -> void:
+	if is_instance_valid(_math_octopus):
+		_math_octopus.queue_free()
+	_math_octopus = OCTOPUS_SCENE.instantiate()
+	predator_layer.add_child(_math_octopus)
+	_math_octopus.lunge_speed = 0.6
+	_math_octopus.setup(_rock_positions, fish_layer)
 
 func _on_predator_timer_timeout() -> void:
 	if not game_active or _difficulty != 2:
@@ -298,8 +296,8 @@ func _handle_math_catch(area: Area2D) -> void:
 		call_deferred("_new_math_round")
 	else:
 		AudioManager.play_sfx("bite")
-		if is_instance_valid(_math_pelican) and not _math_pelican.is_swooping:
-			_math_pelican.attack_target(area)
+		if is_instance_valid(_math_octopus):
+			_math_octopus.attack_target(area)
 		else:
 			area.get_eaten()
 
@@ -442,8 +440,8 @@ func _handle_spelling_catch(area: Area2D) -> void:
 			area.get_caught()
 			ui.show_held_letter(_spell_held_letter)
 	else:
-		if is_instance_valid(_math_pelican) and not _math_pelican.is_swooping:
-			_math_pelican.attack_target(area)
+		if is_instance_valid(_math_octopus):
+			_math_octopus.attack_target(area)
 		else:
 			area.get_eaten()
 
@@ -632,7 +630,7 @@ func _on_time_up() -> void:
 	ui.hide_spelling_hud()
 	for p in predator_layer.get_children():
 		p.queue_free()
-	_math_pelican = null
+	_math_octopus = null
 	if _game_mode == GameMode.MATH:
 		var rank := Leaderboard.save_score(_game_mode, _difficulty, _timer_duration, _problems_solved, _problems_solved)
 		ui.show_end_screen(_problems_solved, _problems_solved, _difficulty, _timer_duration, rank)
