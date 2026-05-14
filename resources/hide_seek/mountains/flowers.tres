@@ -7,6 +7,5 @@
 script = ExtResource("1_gs65e")
 item_name = "flowers"
 thumbnail = ExtResource("2_insnd")
-position = Vector2(1250, 950)
-radius = 55.0
+radius = 60.0
 tags = Array[String](["foliage", "ground"])

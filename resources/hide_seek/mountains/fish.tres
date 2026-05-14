@@ -7,5 +7,5 @@
 script = ExtResource("1_wh4ig")
 item_name = "fish"
 thumbnail = ExtResource("2_ebcbx")
-position = Vector2(880, 920)
+radius = 60.0
 tags = Array[String](["water"])

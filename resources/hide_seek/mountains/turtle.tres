@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_770hp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/turtle.png" id="2_hd2wl"]
+
+[resource]
+script = ExtResource("1_770hp")
+item_name = "turtle"
+thumbnail = ExtResource("2_hd2wl")
+radius = 60.0

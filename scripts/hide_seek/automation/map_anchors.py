@@ -22,12 +22,18 @@ You are a game designer for a 'Find the Hidden Object' game.
 Look at this background image for a children's game.
 
 Task 1: Anchor Points
-Identify 50 natural-looking anchor points where an object could be hidden. 
+Identify exactly 50 natural-looking anchor points where an object could be hidden. 
 Image Dimensions: {width} x {height}
-Rules:
-- Spread points across the entire scene (corners, middle, background, foreground).
+
+Spatial Distribution Rules (MANDATORY):
+1. Imagine the image divided into a 5x4 grid (20 equal cells).
+2. You MUST place at least 2 anchor points in every single cell of that grid.
+3. This ensures points are spread into the far corners, edges, and 'empty' areas, not just clustered in the center.
+4. The remaining 10 points should be placed in the most visually complex areas.
+
+Data Rules:
 - Provide (X, Y) pixel coordinates where (0,0) is top-left.
-- Provide a 'Radius' (R) in pixels for the touch area.
+- Provide a 'Radius' (R) in pixels for the touch area (usually 20-50px).
 - Tags: "ground", "sky", "water", "foliage", "structure", "shadow".
 - Difficulty: 0 (Easy/Visible), 1 (Medium/Partial cover), 2 (Hard/Very hidden).
 

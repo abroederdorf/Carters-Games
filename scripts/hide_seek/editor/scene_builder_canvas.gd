@@ -11,6 +11,7 @@ var _offset: Vector2 = Vector2.ZERO
 var _scene_data: HideSeekSceneData
 var _selected_index: int = -1
 var _mode: int = Mode.ITEMS
+var _is_dragging_item: bool = false
 
 var _touches: Dictionary = {}
 var _drag_starts: Dictionary = {}
@@ -20,15 +21,20 @@ var _pinch_midpoint: Vector2 = Vector2.ZERO
 
 const TAP_THRESHOLD := 8.0
 
+func _ready() -> void:
+	resized.connect(fit_background)
+
 func setup(scene_data: HideSeekSceneData, selected: int, mode: int = -1) -> void:
 	_scene_data = scene_data
 	_selected_index = selected
 	if mode != -1:
 		_mode = mode
+	_is_dragging_item = false
 	queue_redraw()
 
 func set_mode(mode: int) -> void:
 	_mode = mode
+	_is_dragging_item = false
 	queue_redraw()
 
 func fit_background() -> void:
@@ -147,15 +153,30 @@ func _on_mouse_button(event: InputEventMouseButton) -> void:
 		if event.pressed:
 			_touches[-1] = event.position
 			_drag_starts[-1] = event.position
+			
+			# Check if we clicked on the CURRENTLY SELECTED item to start a drag
+			if _scene_data and _selected_index != -1:
+				var scene_pos := _to_scene(event.position)
+				var list: Array = _scene_data.items if _mode == Mode.ITEMS else _scene_data.anchors
+				if _selected_index < list.size():
+					var obj = list[_selected_index]
+					if obj.position.distance_to(scene_pos) <= obj.radius:
+						_is_dragging_item = true
 		else:
-			if -1 in _drag_starts and event.position.distance_to(_drag_starts[-1]) < TAP_THRESHOLD:
+			if not _is_dragging_item and -1 in _drag_starts and event.position.distance_to(_drag_starts[-1]) < TAP_THRESHOLD:
 				_handle_tap(event.position)
 			_touches.erase(-1)
 			_drag_starts.erase(-1)
+			_is_dragging_item = false
 
 func _on_mouse_motion(event: InputEventMouseMotion) -> void:
 	if -1 in _touches and (event.button_mask & MOUSE_BUTTON_MASK_LEFT):
-		_offset += event.relative
+		if _is_dragging_item:
+			var list: Array = _scene_data.items if _mode == Mode.ITEMS else _scene_data.anchors
+			var obj = list[_selected_index]
+			obj.position += event.relative / _zoom
+		else:
+			_offset += event.relative
 		_touches[-1] = event.position
 		queue_redraw()
 

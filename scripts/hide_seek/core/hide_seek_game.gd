@@ -3,14 +3,15 @@ extends Control
 const HideSeekCanvas = preload("res://scripts/hide_seek/core/hide_seek_canvas.gd")
 const HideSeekUI = preload("res://scripts/hide_seek/core/hide_seek_ui.gd")
 
-const MAX_ITEMS := 10
+const TARGET_COUNT := 10
+const DECOY_COUNT := 5
 
 var _scene_name: String
 var _scene_data: HideSeekSceneData
 var _active_items: Array[HideSeekItemData] = []
 var _active_item_data: Array[Dictionary] = []
 var _found: Array[bool] = []
-var _found_count: int = 0
+var _found_targets_count: int = 0
 var _elapsed: float = 0.0
 var _running: bool = false
 var _won: bool = false
@@ -36,7 +37,11 @@ func _ready() -> void:
 
 	var all_items := _scene_data.items.duplicate()
 	all_items.shuffle()
-	_active_items = all_items.slice(0, min(MAX_ITEMS, all_items.size()))
+	
+	# Pick total pool (Targets + Decoys)
+	var total_to_pick := TARGET_COUNT + DECOY_COUNT
+	_active_items = all_items.slice(0, min(total_to_pick, all_items.size()))
+	
 	_assign_items_to_anchors(bg_size)
 	_found.resize(_active_items.size())
 	_found.fill(false)
@@ -63,7 +68,11 @@ func _ready() -> void:
 
 	_ui = HideSeekUI.new()
 	add_child(_ui)
-	_ui.build(self, _active_items, _get_item_texture)
+	
+	# Only pass the TARGETS to the UI for the thumbnail strip
+	var targets_only := _active_items.slice(0, min(TARGET_COUNT, _active_items.size()))
+	_ui.build(self, targets_only, _get_item_texture)
+	
 	_ui.update_hint_label(HideSeekState.hint_stars)
 	_ui.back_pressed.connect(_on_back_pressed)
 	_ui.home_pressed.connect(_on_home_pressed)
@@ -109,7 +118,9 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 	var hard_count: int = min(2, hard_anchors.size())
 	for i in hard_count:
 		session_anchors.append(hard_anchors.pop_back())
-	var needed: int = min(20, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
+	
+	# We need up to 25-30 anchors to comfortably place 15 items
+	var needed: int = min(30, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
 	for i in needed:
 		if not standard_anchors.is_empty():
 			session_anchors.append(standard_anchors.pop_back())
@@ -185,17 +196,20 @@ func _on_canvas_tapped(canvas_pos: Vector2) -> void:
 
 func _on_item_found(index: int) -> void:
 	_found[index] = true
-	_found_count += 1
 	AudioManager.play_sfx("pop")
-	_ui.mark_found(index)
 	_canvas.fade_item(index)
 	_canvas.show_flash_at(_active_item_data[index]["pos"])
-	if _found_count >= _active_items.size():
-		_on_win()
+	
+	# Only items within TARGET_COUNT range count towards victory/UI
+	if index < TARGET_COUNT:
+		_found_targets_count += 1
+		_ui.mark_found(index)
+		if _found_targets_count >= min(TARGET_COUNT, _active_items.size()):
+			_on_win()
 
 
 func _calculate_stars() -> int:
-	var n := _active_items.size()
+	var n: int = min(TARGET_COUNT, _active_items.size())
 	if _elapsed < n * 10.0:
 		return 3
 	elif _elapsed < n * 20.0:
@@ -218,17 +232,17 @@ func _on_win() -> void:
 func _on_hint_pressed() -> void:
 	if HideSeekState.hint_stars <= 0 or _won:
 		return
-	var unfound: Array[int] = []
-	for i in _active_items.size():
+	var unfound_targets: Array[int] = []
+	for i in min(TARGET_COUNT, _active_items.size()):
 		if not _found[i]:
-			unfound.append(i)
-	if unfound.is_empty():
+			unfound_targets.append(i)
+	if unfound_targets.is_empty():
 		return
-	unfound.shuffle()
+	unfound_targets.shuffle()
 	HideSeekState.hint_stars -= 1
 	HideSeekState.save()
 	_ui.update_hint_label(HideSeekState.hint_stars)
-	var idx := unfound[0]
+	var idx := unfound_targets[0]
 	_canvas.show_hint_at(_active_item_data[idx]["pos"], _active_item_data[idx]["radius"])
 
 

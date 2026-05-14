@@ -85,8 +85,13 @@ func _sync_theme(theme: String) -> void:
 		push_warning("[%s] Background image not found." % theme)
 
 	_sync_items(scene_data, theme, data.get("items", []))
-	_apply_anchors(scene_data, theme)
-	_apply_tags(scene_data, theme)
+
+	# Check for manual edit protection
+	if scene_data.has_meta("is_manual_edit") and scene_data.get_meta("is_manual_edit") == true:
+		print("[%s] PROTECTED: Skipping anchor/tag sync due to manual edit flag." % theme)
+	else:
+		_apply_anchors(scene_data, theme)
+		_apply_tags(scene_data, theme)
 	
 	# Final save for items (now with tags applied)
 	for item in scene_data.items:

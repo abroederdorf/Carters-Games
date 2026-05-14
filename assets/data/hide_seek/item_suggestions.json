@@ -2,621 +2,691 @@
   "mountains": [
     {
       "name": "Mountain Goat",
-      "desc": "A white mountain goat standing on a rocky cliff, with small horns, facing left.",
+      "desc": "A white mountain goat standing, with small horns.",
+      "prompt": "Isolated on white background, white mountain goat standing, small horns, friendly expression, thick black outlines, flat design, children's book illustration.",
       "type": "in_scene"
     },
     {
       "name": "Bald Eagle",
-      "desc": "A majestic bald eagle soaring in the sky with spread wings, flying towards the right.",
+      "desc": "A majestic bald eagle soaring with spread wings.",
+      "prompt": "Isolated on white background, bald eagle soaring with spread wings, flying right, thick black outlines, flat design, children's book illustration.",
       "type": "in_scene"
     },
     {
-      "name": "Mouse",
-      "desc": "A small grey mouse sitting on a large fallen log, looking to the right.",
+      "name": "Deer",
+      "desc": "A brown deer standing, with small antlers.",
+      "prompt": "Isolated on white background, brown deer standing, white spots on back, small antlers, thick black outlines, flat design, children's book illustration.",
       "type": "in_scene"
     },
     {
-      "name": "Drone",
-      "desc": "A white quadcopter drone hovering over the river, with its propellers visible.",
+      "name": "Bunny",
+      "desc": "A cute small brown bunny sitting.",
+      "prompt": "Isolated on white background, cute small brown bunny sitting, long ears, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Bush",
+      "desc": "A simple green leafy bush.",
+      "prompt": "Isolated on white background, simple green leafy bush, rounded shape, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Turtle",
+      "desc": "A small green turtle with a patterned shell.",
+      "prompt": "Isolated on white background, small green turtle with a patterned shell, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Butterfly",
+      "desc": "A bright orange monarch butterfly with wings spread.",
+      "prompt": "Isolated on white background, bright orange monarch butterfly, wings spread open, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Ant",
+      "desc": "A small black ant.",
+      "prompt": "Isolated on white background, small black ant, simple segments, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Ladybug",
+      "desc": "A tiny red ladybug with black spots.",
+      "prompt": "Isolated on white background, tiny red ladybug, black spots, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Mushroom",
+      "desc": "A small, red-capped mushroom.",
+      "prompt": "Isolated on white background, small red-capped mushroom, thick black outlines, flat design, children's book illustration.",
       "type": "in_scene"
     },
     {
       "name": "Hiking Boot",
-      "desc": "A sturdy brown leather hiking boot with red laces, worn and muddy, on the ground.",
-      "type": "in_scene"
+      "desc": "A sturdy brown leather hiking boot with red laces.",
+      "prompt": "Isolated on white background, single sturdy brown leather hiking boot, red laces, thick black outlines, flat design, children's book illustration.",
+      "type": "thematic"
+    },
+    {
+      "name": "Trekking Pole",
+      "desc": "A silver trekking pole with a black handle.",
+      "prompt": "Isolated on white background, silver trekking pole with a black handle and wrist strap, thick black outlines, flat design, children's book illustration.",
+      "type": "thematic"
     },
     {
       "name": "Binoculars",
-      "desc": "A pair of dark grey binoculars with black straps, lying open on the ground.",
-      "type": "in_scene"
-    },
-    {
-      "name": "Smiling Moon",
-      "desc": "A crescent moon with a happy face, glowing softly against a colorful aurora sky.",
-      "type": "in_scene"
-    },
-    {
-      "name": "Rock Climber's Helmet",
-      "desc": "An orange safety helmet worn by a rock climber, attached to their gear.",
-      "type": "in_scene"
+      "desc": "A pair of black and grey binoculars.",
+      "prompt": "Isolated on white background, black and grey binoculars, thick black outlines, flat design, children's book illustration.",
+      "type": "thematic"
     },
     {
       "name": "Compass",
-      "desc": "A vintage brass compass with a spinning needle, pointing North, lying on a map.",
-      "type": "thematic"
-    },
-    {
-      "name": "Water Bottle",
-      "desc": "A shiny blue metal water bottle with a carabiner clip, standing upright.",
-      "type": "thematic"
-    },
-    {
-      "name": "Flashlight",
-      "desc": "A black and silver LED flashlight, with a focused beam of light, turned on.",
+      "desc": "A small, round brass compass with a spinning needle.",
+      "prompt": "Isolated on white background, small round brass compass, spinning needle, thick black outlines, flat design, children's book illustration.",
       "type": "thematic"
     },
     {
       "name": "Map",
-      "desc": "A rolled-up paper map of a mountain trail, tied with a string or leather strap.",
+      "desc": "A rolled-up paper map, tied with a string.",
+      "prompt": "Isolated on white background, creased brown paper map, partially unfolded, thick black outlines, flat design, children's book illustration.",
       "type": "thematic"
     },
     {
-      "name": "Fishing Rod",
-      "desc": "A long green fishing rod with a reel and a line dangling, resting on the ground.",
+      "name": "Tent",
+      "desc": "A small blue dome tent.",
+      "prompt": "Isolated on white background, small blue dome tent, yellow zipper detail, thick black outlines, flat design, children's book illustration.",
       "type": "thematic"
     },
     {
-      "name": "Pinecone",
-      "desc": "A brown, textured pinecone with open scales, fallen on the forest floor.",
+      "name": "Backpack",
+      "desc": "A large blue hiking backpack.",
+      "prompt": "Isolated on white background, large blue hiking backpack, brown straps and yellow buckles, thick black outlines, flat design, children's book illustration.",
       "type": "thematic"
     },
     {
-      "name": "Camp Mug",
-      "desc": "A classic enamel camp mug, white with a blue rim, filled with a warm drink.",
+      "name": "First Aid Kit",
+      "desc": "A small red zippered first aid kit.",
+      "prompt": "Isolated on white background, small red zippered first aid kit, white cross symbol on front, thick black outlines, flat design, children's book illustration.",
       "type": "thematic"
+    },
+    {
+      "name": "Rock Climbing Rope",
+      "desc": "A coiled orange and brown climbing rope.",
+      "prompt": "Isolated on white background, coiled orange and brown climbing rope, thick black outlines, flat design, children's book illustration.",
+      "type": "thematic"
+    },
+    {
+      "name": "Water Bottle",
+      "desc": "A bright blue metal water bottle.",
+      "prompt": "Isolated on white background, bright blue metal water bottle, silver carabiner clip, thick black outlines, flat design, children's book illustration.",
+      "type": "thematic"
+    },
+    {
+      "name": "Flashlight",
+      "desc": "A black and silver LED flashlight.",
+      "prompt": "Isolated on white background, black and silver LED flashlight, yellow glowing beam, thick black outlines, flat design, children's book illustration.",
+      "type": "thematic"
+    },
+    {
+      "name": "Owl",
+      "desc": "A wise brown owl perched.",
+      "prompt": "Isolated on white background, wise brown owl perched, large yellow eyes, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Rock Climber",
+      "desc": "A person in a climbing pose.",
+      "prompt": "Isolated on white background, profile view, person in a climbing pose, wearing an orange climbing helmet and a black safety harness, no background, no rocks, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Hiker",
+      "desc": "A person hiking with a backpack and gear.",
+      "prompt": "Isolated on white background, person in a bright green hiking jacket and a wide-brimmed hat, wearing a blue backpack and brown hiking boots, walking, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Skier",
+      "desc": "A person in a skiing pose.",
+      "prompt": "Isolated on white background, side view, person in a bright blue ski suit and goggles, holding ski poles in a skiing pose, no snow, no background, thick black outlines, flat design, children's book illustration.",
+      "type": "in_scene"
     }
   ],
   "ocean": [
     {
-      "name": "Diving Helmet",
-      "desc": "An old, brass diving helmet with a round glass window and air tubes, resting on the seabed.",
-      "type": "in_scene"
-    },
-    {
       "name": "Orange Starfish",
-      "desc": "A vibrant orange starfish with five arms and distinct bumps, resting on the seabed.",
+      "desc": "A bright orange starfish with five arms and a textured surface.",
       "type": "in_scene"
     },
     {
-      "name": "Open Treasure Chest",
-      "desc": "A wooden treasure chest with its lid open, overflowing with shiny gold coins and colorful gems.",
+      "name": "Spiral Seashell",
+      "desc": "A large, intricately coiled seashell with brown and cream stripes.",
       "type": "in_scene"
     },
     {
-      "name": "Conch Shell",
-      "desc": "A large, spiral conch shell with intricate pink and white patterns, partially buried in sand.",
-      "type": "in_scene"
-    },
-    {
-      "name": "Yellow Seahorse",
-      "desc": "A small, bright yellow seahorse with a curly tail, clinging to purple coral.",
+      "name": "Gold Coin",
+      "desc": "A shiny, round gold coin, possibly with an antique emblem.",
       "type": "in_scene"
     },
     {
       "name": "Blue Crab",
-      "desc": "A small, light blue crab with large pincers, peeking out from behind a pink coral.",
+      "desc": "A vibrant blue crab with strong claws and small eyes.",
       "type": "in_scene"
     },
     {
-      "name": "Purple Jellyfish",
-      "desc": "A translucent, bell-shaped jellyfish with long, flowing purple tentacles, drifting in the water.",
+      "name": "Pink Jellyfish",
+      "desc": "A translucent pink jellyfish with long, flowing tentacles and a bell-shaped body.",
       "type": "in_scene"
     },
     {
-      "name": "Red Octopus",
-      "desc": "A large, friendly-looking red octopus with big eyes, partially hidden in a cave opening.",
+      "name": "Moray Eel",
+      "desc": "A long, slender yellow moray eel peeking from a coral crevice.",
       "type": "in_scene"
     },
     {
-      "name": "Brass Compass",
-      "desc": "An antique brass mariner's compass with a detailed face and spinning needle, slightly tarnished.",
+      "name": "Diving Helmet",
+      "desc": "A large, old-fashioned brass diving helmet with round windows.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Toy Submarine",
+      "desc": "A small, friendly yellow submarine with a periscope and portholes.",
       "type": "thematic"
     },
     {
       "name": "Message in a Bottle",
-      "desc": "A clear glass bottle with a rolled-up parchment scroll inside, corked, with a few barnacles.",
+      "desc": "An old glass bottle with a cork stopper, containing a rolled-up scroll, with barnacles.",
       "type": "thematic"
     },
     {
-      "name": "Golden Key",
-      "desc": "An ornate, antique golden key with a decorative handle, shimmering softly on the sand.",
+      "name": "Pirate Map",
+      "desc": "A weathered, rolled-up treasure map tied with a red ribbon, showing islands and an 'X'.",
       "type": "thematic"
     },
     {
-      "name": "Pirate Hook",
-      "desc": "A rusty, curved iron pirate's hook hand with a worn wooden handle, lying on the seabed.",
+      "name": "Diver's Goggles",
+      "desc": "Classic oval-shaped diving goggles with a clear lens and a black strap.",
       "type": "thematic"
     },
     {
-      "name": "Brass Spyglass",
-      "desc": "A shiny, collapsible brass spyglass, extended slightly to reveal a lens, resting vertically.",
+      "name": "Broken Compass",
+      "desc": "A brass compass, half-buried in sand, with a cracked glass and a broken needle.",
       "type": "thematic"
     },
     {
-      "name": "Iridescent Pearl",
-      "desc": "A large, perfectly round, iridescent white pearl, glowing softly on a shell.",
+      "name": "Open Oyster with Pearl",
+      "desc": "A large grey oyster shell, slightly ajar, revealing a shimmering white pearl inside.",
       "type": "thematic"
     },
     {
-      "name": "Sea Turtle Egg",
-      "desc": "A small, round, off-white sea turtle egg, partially covered by sand or small pebbles near coral.",
+      "name": "Small Golden Trident",
+      "desc": "A miniature golden trident, gleaming softly, with three sharp prongs.",
+      "type": "thematic"
+    },
+    {
+      "name": "Mermaid's Locket",
+      "desc": "A beautiful heart-shaped locket made of mother-of-pearl, adorned with a tiny seashell.",
       "type": "thematic"
     }
   ],
   "jungle": [
     {
-      "name": "red beetle",
-      "desc": "A small, bright red beetle with black spots, seen from above, cartoon style.",
+      "name": "Ladybug",
+      "desc": "A small, round, red insect with black spots on its back.",
       "type": "in_scene"
     },
     {
-      "name": "purple flower",
-      "desc": "A five-petaled purple jungle flower with a yellow center, cartoon style.",
+      "name": "Mushroom Cluster",
+      "desc": "A group of small, brown-capped mushrooms growing on a mossy log.",
       "type": "in_scene"
     },
     {
-      "name": "blue butterfly",
-      "desc": "A small, vibrant blue butterfly with intricate wing patterns, cartoon style.",
+      "name": "Blue Butterfly",
+      "desc": "A vibrant blue butterfly with delicate wings, fluttering near flowers.",
       "type": "in_scene"
     },
     {
-      "name": "green lizard",
-      "desc": "A small, bright green lizard with black eyes, cartoon style, side profile.",
+      "name": "Green Beetle",
+      "desc": "A shiny emerald green beetle with hard wing cases, perched on a leaf.",
       "type": "in_scene"
     },
     {
-      "name": "small gray rock",
-      "desc": "A smooth, oval-shaped small gray river rock, cartoon style.",
+      "name": "Centipede",
+      "desc": "A segmented, long reddish-brown centipede with many legs, crawling on a log.",
       "type": "in_scene"
     },
     {
-      "name": "brown beetle",
-      "desc": "A small, rounded brown beetle with segmented body and tiny legs, cartoon style.",
+      "name": "Orange Lizard",
+      "desc": "A small, colorful lizard with an orange body and blue-striped tail, on a green leaf.",
       "type": "in_scene"
     },
     {
-      "name": "green-yellow tropical fruit",
-      "desc": "A cluster of three oval-shaped tropical fruits, one green and two yellow, cartoon style.",
+      "name": "Snail",
+      "desc": "A tiny brown snail with a spiral shell, slowly moving on a green leaf.",
       "type": "in_scene"
     },
     {
-      "name": "vibrant pink flower",
-      "desc": "A vibrant pink tropical flower with a large pistil, cartoon style.",
+      "name": "Ant",
+      "desc": "A small, reddish-brown ant with six legs, on a dirt path.",
       "type": "in_scene"
     },
     {
-      "name": "compass",
-      "desc": "An old brass explorer's compass with a spinning needle, cartoon style.",
+      "name": "Magnifying Glass",
+      "desc": "A classic magnifying glass with a wooden handle and clear glass lens.",
       "type": "thematic"
     },
     {
-      "name": "binoculars",
-      "desc": "A pair of green and black explorer's binoculars, cartoon style.",
+      "name": "Explorer's Hat",
+      "desc": "A light beige safari hat, made of canvas with a wide brim.",
       "type": "thematic"
     },
     {
-      "name": "map scroll",
-      "desc": "A rolled-up treasure map scroll tied with a red ribbon, cartoon style.",
+      "name": "Binoculars",
+      "desc": "A pair of black binoculars with a neck strap, for viewing distant wildlife.",
       "type": "thematic"
     },
     {
-      "name": "water canteen",
-      "desc": "A rustic metal water canteen with a canvas cover and strap, cartoon style.",
+      "name": "Compass",
+      "desc": "A brass-cased compass with a clear glass top, pointing north.",
       "type": "thematic"
     },
     {
-      "name": "magnifying glass",
-      "desc": "A wooden-handled magnifying glass, perfect for bug hunting, cartoon style.",
+      "name": "Water Bottle",
+      "desc": "A metal water bottle, olive green, with a screw cap.",
       "type": "thematic"
     },
     {
-      "name": "ancient coin",
-      "desc": "A shiny gold ancient jungle-themed coin with an animal emblem, cartoon style.",
+      "name": "Field Notebook",
+      "desc": "A small, worn leather-bound notebook with a pencil tucked inside.",
       "type": "thematic"
     },
     {
-      "name": "feather quill",
-      "desc": "A colorful macaw feather shaped into a quill pen, cartoon style.",
+      "name": "Map Scroll",
+      "desc": "An old, rolled-up parchment map tied with a red ribbon, showing jungle paths.",
       "type": "thematic"
     }
   ],
   "space": [
     {
-      "name": "Smiling Purple Alien",
-      "desc": "A happy purple alien with six tentacles holding green leaves.",
+      "name": "Purple Alien",
+      "desc": "A friendly, smiling purple alien with six tentacles holding small green plants, standing on a platform.",
       "type": "in_scene"
     },
     {
-      "name": "Mini Orange Rocket",
-      "desc": "A small white rocket with an orange nose cone and fins, standing upright.",
+      "name": "Red Rocket",
+      "desc": "A small, white and red rocket with an orange flame coming from its base, standing on a launch pad.",
       "type": "in_scene"
     },
     {
-      "name": "Blue 'E' Crate",
-      "desc": "A large blue cargo crate with a white letter 'E' printed on its side.",
+      "name": "Star-shaped Planet",
+      "desc": "A happy yellow star-shaped planet with a smiling face, floating in space.",
       "type": "in_scene"
     },
     {
-      "name": "Happy Pink Star",
-      "desc": "A smiling, five-pointed pink star with small eyes and a mouth.",
+      "name": "Blue Crate",
+      "desc": "A rectangular blue metal storage crate with a large white 'E' on its side.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Satellite Dish",
+      "desc": "A grey, round satellite dish with an antenna, mounted on top of a lunar base structure.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Red-suited Astronaut",
+      "desc": "A human astronaut wearing a full red suit and helmet, walking on a lunar platform.",
       "type": "in_scene"
     },
     {
       "name": "Planet Earth",
-      "desc": "A large blue planet with white clouds and landmasses, resembling Earth.",
+      "desc": "The blue and green planet Earth, floating prominently in the dark space sky.",
       "type": "in_scene"
     },
     {
-      "name": "Red Walking Robot",
-      "desc": "A small robot with a red body, square head, and small wheels, walking.",
+      "name": "Snailshell Plant",
+      "desc": "A plant with a pink spiral snail shell shape, growing inside one of the clear domes.",
       "type": "in_scene"
     },
     {
-      "name": "Pink Dome Mushroom",
-      "desc": "A vibrant pink mushroom with a wide cap, growing inside a biodome.",
-      "type": "in_scene"
-    },
-    {
-      "name": "Orbital Space Station",
-      "desc": "A long, modular space station with numerous solar panels, orbiting.",
-      "type": "in_scene"
-    },
-    {
-      "name": "Moon Rock Sample",
-      "desc": "A small, irregular grey rock with subtle sparkles, a typical lunar sample.",
+      "name": "Alien Coin",
+      "desc": "A shiny, silver coin with an alien head embossed on it, with futuristic symbols.",
       "type": "thematic"
     },
     {
-      "name": "Cosmic Gem",
-      "desc": "A glowing, multifaceted crystal with soft pulsing rainbow colors.",
+      "name": "Space Key",
+      "desc": "A metallic key with a star-shaped head, designed for a futuristic space lock.",
       "type": "thematic"
     },
     {
-      "name": "Astronaut Helmet",
-      "desc": "A classic white astronaut helmet with a clear, reflective visor.",
+      "name": "Glow Stick",
+      "desc": "A neon green glowing stick, used for illumination in dark space environments.",
       "type": "thematic"
     },
     {
-      "name": "Alien Tech Wrench",
-      "desc": "A futuristic, oddly shaped wrench with glowing green tips, for alien machinery.",
+      "name": "Meteorite Fragment",
+      "desc": "A small, jagged grey rock fragment with sparkling specks, recently fallen from space.",
       "type": "thematic"
     },
     {
-      "name": "Space Food Pouch",
-      "desc": "A silvery, metallic foil pouch with a colorful label, containing rehydratable space food.",
+      "name": "Robot Blueprint",
+      "desc": "A rolled-up scroll of paper with technical drawings and schematics for a robot.",
       "type": "thematic"
     },
     {
-      "name": "Mini Satellite Model",
-      "desc": "A small, toy-like model of an orbiting satellite with tiny solar panels and an antenna.",
+      "name": "Cosmic Flower",
+      "desc": "A vibrant, iridescent flower with petals that shimmer like a nebula, alien in origin.",
       "type": "thematic"
     },
     {
-      "name": "Ancient Star Map",
-      "desc": "An ancient, rolled-up scroll made of unknown material, showing a complex star chart.",
-      "type": "thematic"
-    },
-    {
-      "name": "Comet Fragment",
-      "desc": "A small, icy shard with a faint luminous trail, a fragment from a comet.",
+      "name": "Lunar Map",
+      "desc": "A folded map showing craters, bases, and routes on the moon's surface.",
       "type": "thematic"
     }
   ],
   "fire_station": [
     {
-      "name": "Axe",
-      "desc": "A red and silver fireman's axe with a wooden handle.",
-      "type": "in_scene"
-    },
-    {
       "name": "Fire Extinguisher",
-      "desc": "A red cylindrical fire extinguisher with a black nozzle and handle.",
+      "desc": "A bright red fire extinguisher, standing upright.",
       "type": "in_scene"
     },
     {
-      "name": "Fire Helmet",
-      "desc": "A red, yellow, black, or white firefighter's helmet with a visor.",
+      "name": "Fire Helmet (Red)",
+      "desc": "A classic red firefighter helmet with a visor.",
       "type": "in_scene"
     },
     {
-      "name": "Fire Boot",
-      "desc": "A pair of black and yellow rubber firefighter boots.",
+      "name": "Fire Hose (Coiled)",
+      "desc": "A segment of thick, red fire hose, tightly coiled on the floor.",
       "type": "in_scene"
     },
     {
-      "name": "Hose Reel",
-      "desc": "A large red hose coiled on a floor with a white nozzle.",
+      "name": "Spanner Wrench",
+      "desc": "A shiny silver spanner wrench, lying flat on the floor.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Ladder (Metal)",
+      "desc": "A section of a silver metal ladder with several rungs.",
       "type": "in_scene"
     },
     {
       "name": "Dalmatian Dog",
-      "desc": "A white dog with black spots, sitting or playing.",
+      "desc": "A playful white dalmatian dog with black spots, sitting or playing.",
       "type": "in_scene"
     },
     {
-      "name": "Chainsaw",
-      "desc": "A red and grey power chainsaw with a long blade.",
+      "name": "Hazmat Suit",
+      "desc": "A bright yellow full-body hazmat suit, worn by a person working with equipment.",
       "type": "in_scene"
     },
     {
-      "name": "Wrench",
-      "desc": "A large grey open-ended wrench lying on the floor.",
+      "name": "Axe (Fireman's)",
+      "desc": "A traditional fireman's axe with a red head and a wooden handle.",
       "type": "in_scene"
     },
     {
-      "name": "Whistle",
-      "desc": "A small silver metallic whistle with a black lanyard.",
+      "name": "Megaphone",
+      "desc": "A red and white megaphone, with a wide speaker and a handle.",
       "type": "thematic"
     },
     {
       "name": "Walkie-Talkie",
-      "desc": "A black two-way radio with an antenna and push-to-talk button.",
+      "desc": "A black walkie-talkie with an antenna and push-to-talk button.",
       "type": "thematic"
     },
     {
-      "name": "First Aid Pouch",
-      "desc": "A small red canvas first aid pouch with a white cross symbol.",
+      "name": "First Aid Kit (Small)",
+      "desc": "A small, white first aid kit box with a red cross symbol.",
       "type": "thematic"
     },
     {
-      "name": "Firefighter Badge",
-      "desc": "A shiny gold star-shaped firefighter's badge.",
+      "name": "Whistle (Silver)",
+      "desc": "A shiny silver metal whistle, possibly with a lanyard.",
       "type": "thematic"
     },
     {
-      "name": "City Map",
-      "desc": "A rolled-up paper map of a city, tied with a string.",
+      "name": "Flashlight (Heavy Duty)",
+      "desc": "A large, rugged, black and yellow flashlight.",
       "type": "thematic"
     },
     {
-      "name": "Safety Goggles",
-      "desc": "Clear plastic safety goggles with an adjustable strap.",
+      "name": "Fire Bell (Handheld)",
+      "desc": "A small, brass handheld fire bell with a wooden handle.",
       "type": "thematic"
     },
     {
-      "name": "Flashlight",
-      "desc": "A large heavy-duty black flashlight with a bright beam.",
+      "name": "Hydrant Wrench",
+      "desc": "A specialized wrench used to open fire hydrants, heavy and metallic.",
       "type": "thematic"
     }
   ],
   "dinosaur_land": [
     {
-      "name": "Tiny Red Mushroom",
-      "desc": "A small, red-capped mushroom with white spots, nestled in the grass.",
+      "name": "Mushroom",
+      "desc": "A red-capped mushroom with a white stalk, growing on the ground.",
       "type": "in_scene"
     },
     {
-      "name": "Small Blue Fish",
-      "desc": "A cartoon-style blue fish with fins, swimming in the pond.",
+      "name": "Fish",
+      "desc": "A small, silver fish swimming in the blue pond.",
       "type": "in_scene"
     },
     {
-      "name": "Green Frog",
-      "desc": "A bright green cartoon frog, peeking from the water or grass.",
+      "name": "Frog",
+      "desc": "A bright green frog with large eyes, sitting near the water.",
       "type": "in_scene"
     },
     {
-      "name": "Pink Flower",
-      "desc": "A large, stylized pink flower with yellow stamens, blooming near foliage.",
+      "name": "Crystal",
+      "desc": "A sharp, translucent blue or turquoise crystal shard.",
       "type": "in_scene"
     },
     {
-      "name": "Orange Beetle",
-      "desc": "A small, round orange beetle with black spots, crawling on the ground.",
+      "name": "Beetle",
+      "desc": "A small, round orange-brown beetle with segmented body.",
       "type": "in_scene"
     },
     {
-      "name": "Light Blue Crystal",
-      "desc": "A shimmering, light blue crystal shard, standing upright near rocks.",
-      "type": "in_scene"
-    },
-    {
-      "name": "Centipede",
-      "desc": "A long, segmented orange centipede, crawling on a fern leaf.",
-      "type": "in_scene"
-    },
-    {
-      "name": "Dark Grey Pebble",
-      "desc": "A smooth, oval-shaped dark grey pebble, submerged in the water.",
+      "name": "Pterodactyl",
+      "desc": "A small, brown pterodactyl with outstretched wings, flying in the sky.",
       "type": "in_scene"
     },
     {
       "name": "Dinosaur Egg",
-      "desc": "A large, mottled green dinosaur egg, partially cracked.",
-      "type": "thematic"
+      "desc": "A pale, speckled dinosaur egg nestled on the ground, partially hidden.",
+      "type": "in_scene"
     },
     {
-      "name": "Ancient Compass",
-      "desc": "An old, brass-cased compass with a cracked glass face.",
+      "name": "Centipede",
+      "desc": "A long, segmented orange centipede with many legs, crawling on foliage.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Dinosaur Footprint",
+      "desc": "A fossilized three-toed dinosaur footprint impressed in the mud.",
       "type": "thematic"
     },
     {
       "name": "Volcano Rock",
-      "desc": "A jagged piece of black volcanic rock, spewing a tiny wisp of smoke.",
+      "desc": "A dark, jagged volcanic rock with small craters and rough texture.",
       "type": "thematic"
     },
     {
       "name": "Amber with Insect",
-      "desc": "A droplet of golden amber, perfectly preserving a small prehistoric insect.",
+      "desc": "A golden piece of translucent amber with a tiny prehistoric insect trapped inside.",
       "type": "thematic"
     },
     {
-      "name": "Pterodactyl Feather",
-      "desc": "A single, large brown feather, dropped by a flying pterodactyl.",
+      "name": "Flint Arrowhead",
+      "desc": "A sharp, gray flint arrowhead, chipped precisely for hunting.",
       "type": "thematic"
     },
     {
-      "name": "Fossilized Leaf",
-      "desc": "A stone impression of an ancient fern leaf.",
+      "name": "Unfurling Fern Frond",
+      "desc": "A tightly curled, young green fern frond slowly unrolling its new leaf.",
       "type": "thematic"
     },
     {
-      "name": "Cave Painting Fragment",
-      "desc": "A small rock fragment with a simple, red-ochre drawing of a dinosaur.",
+      "name": "Fossilized Shell",
+      "desc": "A spiraled, gray fossilized ammonite shell with distinct ridges.",
+      "type": "thematic"
+    },
+    {
+      "name": "Meteorite Shard",
+      "desc": "A small, dark grey meteorite shard with a metallic sheen and irregular shape.",
       "type": "thematic"
     }
   ],
   "construction_site": [
     {
       "name": "Hard Hat",
-      "desc": "Yellow safety hard hat, clean and new.",
+      "desc": "A yellow construction hard hat, often worn by workers.",
       "type": "in_scene"
     },
     {
-      "name": "Spanner",
-      "desc": "Silver spanner or wrench, lying flat.",
+      "name": "Wrench",
+      "desc": "A metallic wrench, used for tightening bolts.",
       "type": "in_scene"
     },
     {
       "name": "Traffic Cone",
-      "desc": "Orange traffic cone, with white stripe, standing upright.",
+      "desc": "An orange and white striped traffic cone.",
       "type": "in_scene"
     },
     {
       "name": "Brick",
-      "desc": "Single reddish-orange brick, rectangular.",
+      "desc": "A reddish-orange rectangular building brick.",
       "type": "in_scene"
     },
     {
       "name": "Shovel",
-      "desc": "Small hand shovel, with a brown handle and silver blade.",
+      "desc": "A spade shovel with a handle, typically used for digging.",
+      "type": "in_scene"
+    },
+    {
+      "name": "Water Bottle",
+      "desc": "A clear plastic water bottle with a blue cap.",
       "type": "in_scene"
     },
     {
       "name": "Concrete Pipe",
-      "desc": "Segment of grey concrete pipe, small size.",
+      "desc": "A large grey concrete pipe segment.",
       "type": "in_scene"
     },
     {
-      "name": "Hammer",
-      "desc": "Red handled claw hammer, metal head.",
+      "name": "Helicopter",
+      "desc": "A small blue and white police or utility helicopter.",
       "type": "in_scene"
     },
     {
-      "name": "Blueprint",
-      "desc": "Rolled-up architectural blueprint scroll, tied with a ribbon.",
+      "name": "Blueprint Scroll",
+      "desc": "A rolled-up blueprint scroll, showing building plans.",
+      "type": "thematic"
+    },
+    {
+      "name": "Lunch Pail",
+      "desc": "A classic metal lunch pail or box.",
+      "type": "thematic"
+    },
+    {
+      "name": "Tape Measure",
+      "desc": "A yellow retractable tape measure.",
       "type": "thematic"
     },
     {
       "name": "Safety Goggles",
-      "desc": "Clear safety goggles, with a black frame.",
+      "desc": "Clear plastic safety goggles.",
+      "type": "thematic"
+    },
+    {
+      "name": "Spirit Level",
+      "desc": "A rectangular spirit level with a green bubble, used for checking horizontality.",
+      "type": "thematic"
+    },
+    {
+      "name": "Tool Belt",
+      "desc": "A brown leather tool belt with various pockets.",
       "type": "thematic"
     },
     {
       "name": "Walkie-Talkie",
-      "desc": "Black walkie-talkie radio with an antenna, ready for use.",
-      "type": "thematic"
-    },
-    {
-      "name": "Lunchbox",
-      "desc": "Metal lunchbox, plain silver, with a handle.",
-      "type": "thematic"
-    },
-    {
-      "name": "Measuring Tape",
-      "desc": "Yellow retractable measuring tape, handheld.",
-      "type": "thematic"
-    },
-    {
-      "name": "Drill",
-      "desc": "Cordless power drill, black and yellow, with a silver bit.",
-      "type": "thematic"
-    },
-    {
-      "name": "Work Gloves",
-      "desc": "Pair of yellow and blue work gloves, slightly worn.",
-      "type": "thematic"
-    },
-    {
-      "name": "Compass",
-      "desc": "Small, round brass compass, vintage style.",
+      "desc": "A black two-way radio or walkie-talkie.",
       "type": "thematic"
     }
   ],
   "monster_truck_jam": [
     {
-      "name": "Wrench",
-      "desc": "A silver open-ended wrench lying flat on the muddy ground.",
+      "name": "Car Door",
+      "desc": "A crumpled, light blue car door, detached from a vehicle, lying in the mud.",
       "type": "in_scene"
     },
     {
       "name": "Oil Barrel",
-      "desc": "A green, overturned oil barrel with faint labels on a mud mound.",
+      "desc": "A rusty metal barrel, brown with a yellow label, lying on its side in the mud.",
       "type": "in_scene"
     },
     {
       "name": "Traffic Cone",
-      "desc": "A bright orange traffic cone, slightly dirty, standing upright.",
+      "desc": "A bright orange plastic traffic cone, slightly dirty with mud.",
       "type": "in_scene"
     },
     {
-      "name": "Blue Hubcap",
-      "desc": "A round, blue hubcap, detached from a car, lying in the mud.",
+      "name": "Wrench",
+      "desc": "A silver metal wrench, covered in a bit of mud, lying on the ground.",
       "type": "in_scene"
     },
     {
-      "name": "Checkered Flag (Small)",
-      "desc": "A small black and white checkered flag stuck in a mud puddle.",
+      "name": "Gold Trophy",
+      "desc": "A shining gold trophy with two handles, sitting on a black base.",
       "type": "in_scene"
     },
     {
-      "name": "Red Canister",
-      "desc": "A rectangular, red metal fuel canister with a black cap.",
+      "name": "Checkered Flag",
+      "desc": "A black and white checkered racing flag, waving on a pole.",
       "type": "in_scene"
     },
     {
-      "name": "Silver Trophy",
-      "desc": "A small, shiny silver trophy with two handles, on a black base.",
+      "name": "Large Tire",
+      "desc": "A massive, black rubber monster truck tire, with deep treads, partially buried in mud.",
       "type": "in_scene"
     },
     {
-      "name": "Bird",
-      "desc": "A small, silhouetted bird flying in the distant sky.",
+      "name": "Stadium Spotlight",
+      "desc": "A large rectangular stadium spotlight array with many bright circular lights, mounted on a high metal structure.",
       "type": "in_scene"
-    },
-    {
-      "name": "Spark Plug",
-      "desc": "A small, metallic spark plug with a white ceramic insulator.",
-      "type": "thematic"
     },
     {
       "name": "Racing Helmet",
-      "desc": "A miniature white racing helmet with a clear visor.",
+      "desc": "A sturdy racing helmet, possibly with a visor, in a bright color like red or orange.",
       "type": "thematic"
     },
     {
-      "name": "Golden Medal",
-      "desc": "A shiny gold medal with a red and white striped ribbon.",
+      "name": "Binoculars",
+      "desc": "A pair of black binoculars, with lenses, used for viewing distant objects.",
       "type": "thematic"
     },
     {
-      "name": "Truck Key",
-      "desc": "A single silver car key with a black plastic top and remote button.",
+      "name": "Winner's Medal",
+      "desc": "A gold medal on a red, white, and blue ribbon, indicating first place.",
       "type": "thematic"
     },
     {
-      "name": "Flashlight",
-      "desc": "A small, silver-colored flashlight with a bright beam.",
+      "name": "Muddy Boot",
+      "desc": "A sturdy, dark brown work boot, caked with splatters of mud.",
       "type": "thematic"
     },
     {
-      "name": "Stopwatch",
-      "desc": "A vintage silver stopwatch with a clear glass face and black numbers.",
+      "name": "Toy Monster Truck",
+      "desc": "A small, colorful toy monster truck with oversized wheels, resembling the trucks in the arena.",
       "type": "thematic"
     },
     {
-      "name": "Grease Gun",
-      "desc": "A hand-held, metallic grease gun with a curved nozzle.",
+      "name": "Car Key",
+      "desc": "A single metal car key with a black plastic head, possibly on a small keyring.",
+      "type": "thematic"
+    },
+    {
+      "name": "Race Schedule Clipboard",
+      "desc": "A brown wooden clipboard holding a sheet of paper with a race schedule printed on it, with a pen clipped on top.",
       "type": "thematic"
     }
   ]

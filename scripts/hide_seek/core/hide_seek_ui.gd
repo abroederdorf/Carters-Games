@@ -216,7 +216,7 @@ func _make_thumb_card(item: HideSeekItemData) -> Control:
 	panel.custom_minimum_size = Vector2(THUMB_SIZE, THUMB_SIZE)
 
 	var style := StyleBoxFlat.new()
-	style.bg_color = Color(1, 1, 1, 0.15)
+	style.bg_color = Color(0.9, 0.9, 0.9, 1.0) # Light off-white for high contrast
 	style.corner_radius_top_left = 12
 	style.corner_radius_top_right = 12
 	style.corner_radius_bottom_right = 12
