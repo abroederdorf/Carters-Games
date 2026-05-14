@@ -7,6 +7,5 @@
 script = ExtResource("1_npdd8")
 item_name = "tree"
 thumbnail = ExtResource("2_djgta")
-position = Vector2(600, 580)
-radius = 100.0
+radius = 60.0
 tags = Array[String](["foliage", "ground"])

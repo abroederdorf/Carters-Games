@@ -7,6 +7,5 @@
 script = ExtResource("1_moq0r")
 item_name = "flying_saucer"
 thumbnail = ExtResource("2_mnqnl")
-position = Vector2(300, 100)
-radius = 90.0
+radius = 60.0
 tags = Array[String](["sky"])

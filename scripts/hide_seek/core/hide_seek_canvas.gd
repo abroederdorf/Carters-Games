@@ -112,6 +112,37 @@ func show_flash_at(pos: Vector2) -> void:
 	tween.chain().tween_callback(img.queue_free)
 
 
+func show_wrong_at(pos: Vector2) -> void:
+	var img := TextureRect.new()
+	img.texture = preload("res://assets/sprites/ui/xmark.png")
+	img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	img.custom_minimum_size = Vector2(80, 80)
+	img.size = Vector2(80, 80)
+	img.position = pos - Vector2(40, 40)
+	img.modulate = Color(1, 0.2, 0.2, 1)
+	_canvas_root.add_child(img)
+
+	var penalty := Label.new()
+	penalty.text = "+5s"
+	penalty.add_theme_font_size_override("font_size", 36)
+	penalty.add_theme_color_override("font_color", Color(1, 0.2, 0.2, 1))
+	penalty.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.7))
+	penalty.add_theme_constant_override("shadow_offset_x", 2)
+	penalty.add_theme_constant_override("shadow_offset_y", 2)
+	penalty.position = pos + Vector2(10, -60)
+	_canvas_root.add_child(penalty)
+
+	var tween := get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(img, "position", pos - Vector2(40, 100), 0.7)
+	tween.tween_property(img, "modulate:a", 0.0, 0.7).set_delay(0.2)
+	tween.tween_property(penalty, "position", pos + Vector2(10, -120), 0.7)
+	tween.tween_property(penalty, "modulate:a", 0.0, 0.7).set_delay(0.2)
+	tween.chain().tween_callback(img.queue_free)
+	tween.chain().tween_callback(penalty.queue_free)
+
+
 func show_hint_at(pos: Vector2, radius: float) -> void:
 	var lbl := Label.new()
 	lbl.text = "*"

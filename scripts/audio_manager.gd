@@ -5,7 +5,8 @@ var sound_files = {
 	"splash": "res://assets/audio/splash.mp3",
 	"catch": "res://assets/audio/catch.mp3",
 	"pop": "res://assets/audio/pop.mp3",
-	"bite": "res://assets/audio/bite.mp3"
+	"bite": "res://assets/audio/bite.mp3",
+	"wrong": "res://assets/audio/sound_buzzer.mp3"
 }
 
 var streams = {}

@@ -1,426 +1,480 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
-[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_6masw"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/bg_space.png" id="1_y6kf6"]
-[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_6masw"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/alien.png" id="3_35o43"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/astronaut.png" id="4_n6757"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/crater.png" id="5_tn0dk"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/flying_saucer.png" id="6_3lktu"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/moon_rover.png" id="7_jo1yg"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/ray_gun.png" id="8_neo6q"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/rocket.png" id="9_0mjkf"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/saturn.png" id="10_ord07"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/space_helmet.png" id="11_2yi5l"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/star.png" id="12_2816f"]
-[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="13_r0x86"]
-
-[sub_resource type="Resource" id="Resource_6masw"]
-script = ExtResource("1_6masw")
-position = Vector2(295, 290)
-radius = 25.0
-difficulty = 0
-tags = Array[String](["structure"])
-
-[sub_resource type="Resource" id="Resource_35o43"]
-script = ExtResource("1_6masw")
-position = Vector2(250, 360)
-radius = 31.0
-difficulty = 0
-tags = Array[String](["structure"])
-
-[sub_resource type="Resource" id="Resource_n6757"]
-script = ExtResource("1_6masw")
-position = Vector2(240, 395)
-radius = 12.0
-tags = Array[String](["structure"])
-
-[sub_resource type="Resource" id="Resource_tn0dk"]
-script = ExtResource("1_6masw")
-position = Vector2(380, 420)
-radius = 25.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_3lktu"]
-script = ExtResource("1_6masw")
-position = Vector2(150, 470)
-radius = 31.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_jo1yg"]
-script = ExtResource("1_6masw")
-position = Vector2(150, 500)
-radius = 18.0
-difficulty = 2
-tags = Array[String](["ground", "shadow"])
-
-[sub_resource type="Resource" id="Resource_neo6q"]
-script = ExtResource("1_6masw")
-position = Vector2(200, 310)
-radius = 25.0
-difficulty = 0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_0mjkf"]
-script = ExtResource("1_6masw")
-position = Vector2(300, 100)
-radius = 12.0
-difficulty = 0
-tags = Array[String](["sky"])
-
-[sub_resource type="Resource" id="Resource_ord07"]
-script = ExtResource("1_6masw")
-position = Vector2(450, 550)
-radius = 31.0
-difficulty = 0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_2yi5l"]
-script = ExtResource("1_6masw")
-position = Vector2(480, 470)
-radius = 25.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_2816f"]
-script = ExtResource("1_6masw")
-position = Vector2(520, 600)
-radius = 18.0
-difficulty = 2
-tags = Array[String](["structure", "shadow"])
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_2816f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/bg_space.png" id="2_r0x86"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_cgdy0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/alien.png" id="4_ksl1o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/rocket.png" id="5_nxuhb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/moon_rover.png" id="6_1knwk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/saturn.png" id="7_kb7nb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/comet.png" id="8_2816f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/flying_saucer.png" id="9_xfgwq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/space_helmet.png" id="10_h47oq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/ray_gun.png" id="11_idvb0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/crater.png" id="12_t5y3c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/satellite_dish.png" id="13_v2ols"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/blue_crate.png" id="14_11y5d"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/purple_alien.png" id="15_o14d4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/orbiting_satellite.png" id="16_6lcey"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/robot.png" id="17_4v0kh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/flying_rocket.png" id="18_pfpbq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/air_canister.png" id="19_30132"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/shooting_star.png" id="20_p1eey"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/toolbox.png" id="21_aj6v3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flashlight.png" id="22_4cosr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/wrench.png" id="23_nxx8f"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="24_bfovd"]
 
 [sub_resource type="Resource" id="Resource_r0x86"]
-script = ExtResource("1_6masw")
-position = Vector2(750, 120)
+script = ExtResource("1_2816f")
+position = Vector2(250, 120)
+radius = 30.0
 difficulty = 0
 tags = Array[String](["sky"])
+
+[sub_resource type="Resource" id="Resource_cgdy0"]
+script = ExtResource("1_2816f")
+position = Vector2(180, 320)
+radius = 40.0
+tags = Array[String](["structure", "shadow"])
+
+[sub_resource type="Resource" id="Resource_ksl1o"]
+script = ExtResource("1_2816f")
+position = Vector2(800, 80)
+radius = 30.0
+difficulty = 0
+tags = Array[String](["sky"])
+
+[sub_resource type="Resource" id="Resource_nxuhb"]
+script = ExtResource("1_2816f")
+position = Vector2(650, 350)
+radius = 45.0
+tags = Array[String](["structure"])
+
+[sub_resource type="Resource" id="Resource_1knwk"]
+script = ExtResource("1_2816f")
+position = Vector2(1350, 220)
+radius = 35.0
+difficulty = 0
+tags = Array[String](["sky"])
+
+[sub_resource type="Resource" id="Resource_kb7nb"]
+script = ExtResource("1_2816f")
+position = Vector2(1550, 300)
+radius = 40.0
+tags = Array[String](["structure", "foliage"])
+
+[sub_resource type="Resource" id="Resource_clkxf"]
+script = ExtResource("1_2816f")
+position = Vector2(1800, 200)
+radius = 45.0
+tags = Array[String](["sky", "structure"])
+
+[sub_resource type="Resource" id="Resource_xfgwq"]
+script = ExtResource("1_2816f")
+position = Vector2(2050, 90)
+radius = 30.0
+difficulty = 0
+tags = Array[String](["sky"])
+
+[sub_resource type="Resource" id="Resource_h47oq"]
+script = ExtResource("1_2816f")
+position = Vector2(2500, 180)
+radius = 40.0
+tags = Array[String](["structure"])
+
+[sub_resource type="Resource" id="Resource_idvb0"]
+script = ExtResource("1_2816f")
+position = Vector2(2680, 320)
+radius = 30.0
+difficulty = 0
+tags = Array[String](["sky"])
+
+[sub_resource type="Resource" id="Resource_t5y3c"]
+script = ExtResource("1_2816f")
+position = Vector2(80, 520)
+radius = 40.0
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_v2ols"]
-script = ExtResource("1_6masw")
-position = Vector2(650, 50)
-radius = 12.0
+script = ExtResource("1_2816f")
+position = Vector2(420, 620)
+radius = 35.0
 difficulty = 0
-tags = Array[String](["sky"])
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_11y5d"]
-script = ExtResource("1_6masw")
-position = Vector2(580, 500)
-radius = 37.0
-difficulty = 0
+script = ExtResource("1_2816f")
+position = Vector2(700, 580)
+radius = 45.0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_o14d4"]
-script = ExtResource("1_6masw")
-position = Vector2(660, 580)
-radius = 18.0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(980, 480)
+radius = 40.0
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_6lcey"]
-script = ExtResource("1_6masw")
-position = Vector2(430, 610)
-radius = 25.0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(1250, 680)
+radius = 30.0
+difficulty = 0
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_4v0kh"]
-script = ExtResource("1_6masw")
-position = Vector2(730, 610)
-radius = 25.0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(1480, 570)
+radius = 45.0
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_pfpbq"]
-script = ExtResource("1_6masw")
-position = Vector2(600, 680)
-radius = 37.0
+script = ExtResource("1_2816f")
+position = Vector2(1850, 720)
+radius = 35.0
 difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_30132"]
-script = ExtResource("1_6masw")
-position = Vector2(350, 700)
-radius = 37.0
-tags = Array[String](["ground"])
+script = ExtResource("1_2816f")
+position = Vector2(2050, 520)
+radius = 40.0
+tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_p1eey"]
-script = ExtResource("1_6masw")
-position = Vector2(350, 700)
-radius = 25.0
-difficulty = 2
-tags = Array[String](["ground", "shadow"])
+script = ExtResource("1_2816f")
+position = Vector2(2350, 630)
+radius = 30.0
+difficulty = 0
+tags = Array[String](["ground", "crater"])
 
 [sub_resource type="Resource" id="Resource_aj6v3"]
-script = ExtResource("1_6masw")
-position = Vector2(600, 630)
-radius = 12.0
+script = ExtResource("1_2816f")
+position = Vector2(2580, 720)
+radius = 40.0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_4cosr"]
-script = ExtResource("1_6masw")
-position = Vector2(700, 610)
-radius = 18.0
-difficulty = 0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(280, 920)
+difficulty = 2
+tags = Array[String](["foliage", "structure"])
 
 [sub_resource type="Resource" id="Resource_nxx8f"]
-script = ExtResource("1_6masw")
-position = Vector2(450, 420)
-radius = 25.0
-tags = Array[String](["ground"])
+script = ExtResource("1_2816f")
+position = Vector2(520, 820)
+radius = 40.0
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_bfovd"]
-script = ExtResource("1_6masw")
-position = Vector2(470, 370)
-radius = 31.0
+script = ExtResource("1_2816f")
+position = Vector2(750, 970)
+radius = 30.0
+difficulty = 0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_ubray"]
-script = ExtResource("1_6masw")
-position = Vector2(520, 270)
-radius = 37.0
-difficulty = 0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(920, 880)
+radius = 45.0
+tags = Array[String](["ground", "crater"])
 
 [sub_resource type="Resource" id="Resource_yvum3"]
-script = ExtResource("1_6masw")
-position = Vector2(520, 530)
-radius = 25.0
+script = ExtResource("1_2816f")
+position = Vector2(1320, 930)
+radius = 40.0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_lukn1"]
-script = ExtResource("1_6masw")
-position = Vector2(520, 510)
-radius = 18.0
+script = ExtResource("1_2816f")
+position = Vector2(1580, 830)
+radius = 30.0
+difficulty = 0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_wk3u1"]
-script = ExtResource("1_6masw")
-position = Vector2(1150, 260)
-radius = 12.0
-difficulty = 0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(1850, 980)
+radius = 45.0
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_w4l67"]
-script = ExtResource("1_6masw")
-position = Vector2(1180, 340)
-radius = 18.0
+script = ExtResource("1_2816f")
+position = Vector2(2020, 870)
+radius = 35.0
+difficulty = 0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_h05da"]
-script = ExtResource("1_6masw")
-position = Vector2(1250, 420)
-radius = 31.0
-difficulty = 0
+script = ExtResource("1_2816f")
+position = Vector2(2420, 830)
+radius = 40.0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_n11k3"]
-script = ExtResource("1_6masw")
-position = Vector2(1300, 480)
-radius = 31.0
+script = ExtResource("1_2816f")
+position = Vector2(2620, 920)
+radius = 30.0
+difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_lqkwl"]
-script = ExtResource("1_6masw")
-position = Vector2(1050, 480)
-radius = 25.0
-tags = Array[String](["ground"])
+script = ExtResource("1_2816f")
+position = Vector2(180, 1320)
+radius = 40.0
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_t844o"]
-script = ExtResource("1_6masw")
-position = Vector2(1050, 500)
-radius = 18.0
-difficulty = 2
-tags = Array[String](["ground", "shadow"])
+script = ExtResource("1_2816f")
+position = Vector2(380, 1420)
+radius = 35.0
+difficulty = 0
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_f17ue"]
-script = ExtResource("1_6masw")
-position = Vector2(270, 680)
-radius = 25.0
-difficulty = 0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(720, 1280)
+difficulty = 2
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_b5k81"]
-script = ExtResource("1_6masw")
-position = Vector2(250, 660)
-radius = 12.0
+script = ExtResource("1_2816f")
+position = Vector2(980, 1380)
+radius = 40.0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_7bmfu"]
-script = ExtResource("1_6masw")
-position = Vector2(360, 690)
-radius = 12.0
-tags = Array[String](["structure"])
+script = ExtResource("1_2816f")
+position = Vector2(1350, 1480)
+radius = 45.0
+difficulty = 2
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_to7lx"]
-script = ExtResource("1_6masw")
-position = Vector2(1000, 700)
-radius = 31.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_3eo8j"]
-script = ExtResource("1_6masw")
-position = Vector2(1000, 700)
-radius = 18.0
-difficulty = 2
-tags = Array[String](["ground", "shadow"])
-
-[sub_resource type="Resource" id="Resource_55ti1"]
-script = ExtResource("1_6masw")
-position = Vector2(1200, 620)
-radius = 37.0
+script = ExtResource("1_2816f")
+position = Vector2(1520, 1220)
+radius = 30.0
 difficulty = 0
 tags = Array[String](["structure"])
 
+[sub_resource type="Resource" id="Resource_3eo8j"]
+script = ExtResource("1_2816f")
+position = Vector2(1880, 1320)
+radius = 40.0
+tags = Array[String](["structure"])
+
+[sub_resource type="Resource" id="Resource_55ti1"]
+script = ExtResource("1_2816f")
+position = Vector2(2080, 1420)
+radius = 35.0
+tags = Array[String](["structure", "shadow"])
+
 [sub_resource type="Resource" id="Resource_kdvqr"]
-script = ExtResource("1_6masw")
-position = Vector2(1250, 680)
-radius = 25.0
+script = ExtResource("1_2816f")
+position = Vector2(2450, 1220)
+difficulty = 2
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_f0eg5"]
-script = ExtResource("1_6masw")
-position = Vector2(1300, 700)
-radius = 10.0
+script = ExtResource("1_2816f")
+position = Vector2(2680, 1480)
+radius = 40.0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_276y7"]
-script = ExtResource("1_6masw")
-position = Vector2(1350, 700)
-radius = 31.0
-difficulty = 0
-tags = Array[String](["ground"])
+script = ExtResource("1_2816f")
+position = Vector2(100, 100)
+radius = 35.0
+tags = Array[String](["sky", "structure"])
 
 [sub_resource type="Resource" id="Resource_v4etc"]
-script = ExtResource("1_6masw")
-position = Vector2(1150, 700)
-radius = 25.0
-tags = Array[String](["ground"])
+script = ExtResource("1_2816f")
+position = Vector2(620, 420)
+radius = 40.0
+difficulty = 2
+tags = Array[String](["structure", "shadow", "ground"])
 
 [sub_resource type="Resource" id="Resource_aejqb"]
-script = ExtResource("1_6masw")
-position = Vector2(1300, 80)
-radius = 12.0
-difficulty = 0
-tags = Array[String](["sky"])
+script = ExtResource("1_2816f")
+position = Vector2(1050, 1020)
+difficulty = 2
+tags = Array[String](["structure", "shadow"])
 
 [sub_resource type="Resource" id="Resource_alvsa"]
-script = ExtResource("1_6masw")
-position = Vector2(1100, 50)
-radius = 12.0
-difficulty = 0
-tags = Array[String](["sky"])
-
-[sub_resource type="Resource" id="Resource_comkh"]
-script = ExtResource("1_6masw")
-position = Vector2(1020, 400)
-radius = 25.0
-tags = Array[String](["structure"])
-
-[sub_resource type="Resource" id="Resource_3iwrc"]
-script = ExtResource("1_6masw")
-position = Vector2(1080, 550)
-radius = 25.0
-tags = Array[String](["ground"])
-
-[sub_resource type="Resource" id="Resource_r4k03"]
-script = ExtResource("1_6masw")
-position = Vector2(870, 550)
-radius = 31.0
-difficulty = 0
-tags = Array[String](["structure"])
-
-[sub_resource type="Resource" id="Resource_s3e8u"]
-script = ExtResource("1_6masw")
-position = Vector2(900, 520)
-radius = 18.0
-tags = Array[String](["structure"])
-
-[sub_resource type="Resource" id="Resource_iwe0k"]
-script = ExtResource("1_6masw")
-position = Vector2(820, 580)
-radius = 15.0
+script = ExtResource("1_2816f")
+position = Vector2(1420, 1070)
+radius = 45.0
 difficulty = 2
 tags = Array[String](["structure"])
 
-[sub_resource type="Resource" id="Resource_ksl1o"]
-script = ExtResource("2_6masw")
-item_name = "astronaut"
-thumbnail = ExtResource("4_n6757")
-position = Vector2(1100, 500)
-radius = 75.0
-tags = Array[String](["ground", "structure"])
+[sub_resource type="Resource" id="Resource_comkh"]
+script = ExtResource("1_2816f")
+position = Vector2(1720, 1120)
+difficulty = 2
+tags = Array[String](["structure", "shadow"])
 
-[sub_resource type="Resource" id="Resource_cgdy0"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_3iwrc"]
+script = ExtResource("1_2816f")
+position = Vector2(2220, 1020)
+radius = 40.0
+tags = Array[String](["structure", "shadow"])
+
+[sub_resource type="Resource" id="Resource_r4k03"]
+script = ExtResource("1_2816f")
+position = Vector2(2320, 770)
+radius = 35.0
+tags = Array[String](["structure"])
+
+[sub_resource type="Resource" id="Resource_s3e8u"]
+script = ExtResource("1_2816f")
+position = Vector2(870, 1120)
+difficulty = 2
+tags = Array[String](["foliage", "structure"])
+
+[sub_resource type="Resource" id="Resource_al51h"]
+script = ExtResource("1_2816f")
+position = Vector2(1180, 1330)
+radius = 45.0
+difficulty = 2
+tags = Array[String](["structure"])
+
+[sub_resource type="Resource" id="Resource_3qvrs"]
+script = ExtResource("1_2816f")
+position = Vector2(2180, 1280)
+difficulty = 2
+tags = Array[String](["structure", "shadow"])
+
+[sub_resource type="Resource" id="Resource_dcgck"]
+script = ExtResource("3_cgdy0")
 item_name = "alien"
-thumbnail = ExtResource("3_35o43")
-position = Vector2(1800, 750)
+thumbnail = ExtResource("4_ksl1o")
 radius = 60.0
 tags = Array[String](["ground", "structure"])
 
-[sub_resource type="Resource" id="Resource_xfgwq"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_siud4"]
+script = ExtResource("3_cgdy0")
 item_name = "rocket"
-thumbnail = ExtResource("9_0mjkf")
-position = Vector2(1700, 300)
-radius = 100.0
+thumbnail = ExtResource("5_nxuhb")
+radius = 60.0
 tags = Array[String](["sky", "ground"])
 
-[sub_resource type="Resource" id="Resource_kb7nb"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_xvm5o"]
+script = ExtResource("3_cgdy0")
 item_name = "moon_rover"
-thumbnail = ExtResource("7_jo1yg")
-position = Vector2(500, 750)
-radius = 85.0
+thumbnail = ExtResource("6_1knwk")
+radius = 60.0
 tags = Array[String](["ground"])
 
-[sub_resource type="Resource" id="Resource_h47oq"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_d06we"]
+script = ExtResource("3_cgdy0")
 item_name = "saturn"
-thumbnail = ExtResource("10_ord07")
-position = Vector2(1600, 100)
-radius = 80.0
+thumbnail = ExtResource("7_kb7nb")
+radius = 60.0
 tags = Array[String](["sky"])
 
-[sub_resource type="Resource" id="Resource_t5y3c"]
-script = ExtResource("2_6masw")
-item_name = "star"
-thumbnail = ExtResource("12_2816f")
-position = Vector2(1000, 50)
-radius = 35.0
-tags = Array[String](["sky"])
+[sub_resource type="Resource" id="Resource_iwe0k"]
+script = ExtResource("3_cgdy0")
+item_name = "comet"
+thumbnail = ExtResource("8_2816f")
+radius = 60.0
 
-[sub_resource type="Resource" id="Resource_1knwk"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_hxhrv"]
+script = ExtResource("3_cgdy0")
 item_name = "flying_saucer"
-thumbnail = ExtResource("6_3lktu")
-position = Vector2(300, 100)
-radius = 90.0
+thumbnail = ExtResource("9_xfgwq")
+radius = 60.0
 tags = Array[String](["sky"])
 
-[sub_resource type="Resource" id="Resource_idvb0"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_mbccf"]
+script = ExtResource("3_cgdy0")
 item_name = "space_helmet"
-thumbnail = ExtResource("11_2yi5l")
-position = Vector2(1300, 700)
+thumbnail = ExtResource("10_h47oq")
+radius = 60.0
 tags = Array[String](["ground", "structure"])
 
-[sub_resource type="Resource" id="Resource_clkxf"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_uyhw1"]
+script = ExtResource("3_cgdy0")
 item_name = "ray_gun"
-thumbnail = ExtResource("8_neo6q")
-position = Vector2(800, 700)
-radius = 45.0
+thumbnail = ExtResource("11_idvb0")
+radius = 60.0
 tags = Array[String](["ground", "structure"])
 
-[sub_resource type="Resource" id="Resource_nxuhb"]
-script = ExtResource("2_6masw")
+[sub_resource type="Resource" id="Resource_fpp7e"]
+script = ExtResource("3_cgdy0")
 item_name = "crater"
-thumbnail = ExtResource("5_tn0dk")
-position = Vector2(150, 950)
-radius = 80.0
+thumbnail = ExtResource("12_t5y3c")
+radius = 60.0
 tags = Array[String](["ground"])
+
+[sub_resource type="Resource" id="Resource_k73rq"]
+script = ExtResource("3_cgdy0")
+item_name = "satellite_dish"
+thumbnail = ExtResource("13_v2ols")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_iwvsh"]
+script = ExtResource("3_cgdy0")
+item_name = "blue_crate"
+thumbnail = ExtResource("14_11y5d")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_r4fb6"]
+script = ExtResource("3_cgdy0")
+item_name = "purple_alien"
+thumbnail = ExtResource("15_o14d4")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_jaqcl"]
+script = ExtResource("3_cgdy0")
+item_name = "orbiting_satellite"
+thumbnail = ExtResource("16_6lcey")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_b0mb0"]
+script = ExtResource("3_cgdy0")
+item_name = "robot"
+thumbnail = ExtResource("17_4v0kh")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_y5krw"]
+script = ExtResource("3_cgdy0")
+item_name = "flying_rocket"
+thumbnail = ExtResource("18_pfpbq")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_xukuv"]
+script = ExtResource("3_cgdy0")
+item_name = "air_canister"
+thumbnail = ExtResource("19_30132")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_uv3tn"]
+script = ExtResource("3_cgdy0")
+item_name = "shooting_star"
+thumbnail = ExtResource("20_p1eey")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_0q5dd"]
+script = ExtResource("3_cgdy0")
+item_name = "toolbox"
+thumbnail = ExtResource("21_aj6v3")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_a8fsx"]
+script = ExtResource("3_cgdy0")
+item_name = "flashlight"
+thumbnail = ExtResource("22_4cosr")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_6510m"]
+script = ExtResource("3_cgdy0")
+item_name = "wrench"
+thumbnail = ExtResource("23_nxx8f")
+radius = 60.0
 
 [resource]
-script = ExtResource("13_r0x86")
+script = ExtResource("24_bfovd")
 scene_name = "space"
-background_image = ExtResource("1_y6kf6")
-items = Array[ExtResource("2_6masw")]([SubResource("Resource_ksl1o"), SubResource("Resource_cgdy0"), SubResource("Resource_xfgwq"), SubResource("Resource_kb7nb"), SubResource("Resource_h47oq"), SubResource("Resource_t5y3c"), SubResource("Resource_1knwk"), SubResource("Resource_idvb0"), SubResource("Resource_clkxf"), SubResource("Resource_nxuhb")])
-anchors = Array[ExtResource("1_6masw")]([SubResource("Resource_6masw"), SubResource("Resource_35o43"), SubResource("Resource_n6757"), SubResource("Resource_tn0dk"), SubResource("Resource_3lktu"), SubResource("Resource_jo1yg"), SubResource("Resource_neo6q"), SubResource("Resource_0mjkf"), SubResource("Resource_ord07"), SubResource("Resource_2yi5l"), SubResource("Resource_2816f"), SubResource("Resource_r0x86"), SubResource("Resource_v2ols"), SubResource("Resource_11y5d"), SubResource("Resource_o14d4"), SubResource("Resource_6lcey"), SubResource("Resource_4v0kh"), SubResource("Resource_pfpbq"), SubResource("Resource_30132"), SubResource("Resource_p1eey"), SubResource("Resource_aj6v3"), SubResource("Resource_4cosr"), SubResource("Resource_nxx8f"), SubResource("Resource_bfovd"), SubResource("Resource_ubray"), SubResource("Resource_yvum3"), SubResource("Resource_lukn1"), SubResource("Resource_wk3u1"), SubResource("Resource_w4l67"), SubResource("Resource_h05da"), SubResource("Resource_n11k3"), SubResource("Resource_lqkwl"), SubResource("Resource_t844o"), SubResource("Resource_f17ue"), SubResource("Resource_b5k81"), SubResource("Resource_7bmfu"), SubResource("Resource_to7lx"), SubResource("Resource_3eo8j"), SubResource("Resource_55ti1"), SubResource("Resource_kdvqr"), SubResource("Resource_f0eg5"), SubResource("Resource_276y7"), SubResource("Resource_v4etc"), SubResource("Resource_aejqb"), SubResource("Resource_alvsa"), SubResource("Resource_comkh"), SubResource("Resource_3iwrc"), SubResource("Resource_r4k03"), SubResource("Resource_s3e8u"), SubResource("Resource_iwe0k")])
+background_image = ExtResource("2_r0x86")
+items = Array[ExtResource("3_cgdy0")]([SubResource("Resource_dcgck"), SubResource("Resource_siud4"), SubResource("Resource_xvm5o"), SubResource("Resource_d06we"), SubResource("Resource_iwe0k"), SubResource("Resource_hxhrv"), SubResource("Resource_mbccf"), SubResource("Resource_uyhw1"), SubResource("Resource_fpp7e"), SubResource("Resource_k73rq"), SubResource("Resource_iwvsh"), SubResource("Resource_r4fb6"), SubResource("Resource_jaqcl"), SubResource("Resource_b0mb0"), SubResource("Resource_y5krw"), SubResource("Resource_xukuv"), SubResource("Resource_uv3tn"), SubResource("Resource_0q5dd"), SubResource("Resource_a8fsx"), SubResource("Resource_6510m")])
+anchors = Array[ExtResource("1_2816f")]([SubResource("Resource_r0x86"), SubResource("Resource_cgdy0"), SubResource("Resource_ksl1o"), SubResource("Resource_nxuhb"), SubResource("Resource_1knwk"), SubResource("Resource_kb7nb"), SubResource("Resource_clkxf"), SubResource("Resource_xfgwq"), SubResource("Resource_h47oq"), SubResource("Resource_idvb0"), SubResource("Resource_t5y3c"), SubResource("Resource_v2ols"), SubResource("Resource_11y5d"), SubResource("Resource_o14d4"), SubResource("Resource_6lcey"), SubResource("Resource_4v0kh"), SubResource("Resource_pfpbq"), SubResource("Resource_30132"), SubResource("Resource_p1eey"), SubResource("Resource_aj6v3"), SubResource("Resource_4cosr"), SubResource("Resource_nxx8f"), SubResource("Resource_bfovd"), SubResource("Resource_ubray"), SubResource("Resource_yvum3"), SubResource("Resource_lukn1"), SubResource("Resource_wk3u1"), SubResource("Resource_w4l67"), SubResource("Resource_h05da"), SubResource("Resource_n11k3"), SubResource("Resource_lqkwl"), SubResource("Resource_t844o"), SubResource("Resource_f17ue"), SubResource("Resource_b5k81"), SubResource("Resource_7bmfu"), SubResource("Resource_to7lx"), SubResource("Resource_3eo8j"), SubResource("Resource_55ti1"), SubResource("Resource_kdvqr"), SubResource("Resource_f0eg5"), SubResource("Resource_276y7"), SubResource("Resource_v4etc"), SubResource("Resource_aejqb"), SubResource("Resource_alvsa"), SubResource("Resource_comkh"), SubResource("Resource_3iwrc"), SubResource("Resource_r4k03"), SubResource("Resource_s3e8u"), SubResource("Resource_al51h"), SubResource("Resource_3qvrs")])

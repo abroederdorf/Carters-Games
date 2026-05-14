@@ -1,8 +1,0 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <!-- Circular Background -->
-  <circle cx="32" cy="32" r="30" fill="#6c757d" stroke="#495057" stroke-width="4" />
-  <!-- Speaker Icon -->
-  <path d="M15,22 L15,42 L25,42 L38,52 L38,12 L25,22 Z" fill="white" opacity="0.6" />
-  <!-- Mute X -->
-  <path d="M45,25 L58,39 M58,25 L45,39" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" />
-</svg>

@@ -7,6 +7,5 @@
 script = ExtResource("1_sxphc")
 item_name = "skier"
 thumbnail = ExtResource("2_gkeva")
-position = Vector2(450, 210)
-radius = 75.0
+radius = 60.0
 tags = Array[String](["ground"])

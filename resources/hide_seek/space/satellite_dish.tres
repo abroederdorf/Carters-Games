@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_ix06w"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/satellite_dish.png" id="2_1d432"]
+
+[resource]
+script = ExtResource("1_ix06w")
+item_name = "satellite_dish"
+thumbnail = ExtResource("2_1d432")
+radius = 60.0

@@ -1,6 +1,6 @@
 extends Control
 
-const PANEL_WIDTH := 300
+const PANEL_WIDTH := 240
 
 var _scene_data: HideSeekSceneData = HideSeekSceneData.new()
 var _selected_index: int = -1
@@ -8,6 +8,7 @@ var _updating_ui: bool = false
 
 var _canvas: SceneBuilderCanvas
 var _mode: int = 0 # SceneBuilderCanvas.Mode.ITEMS
+var _side_panel: Control
 var _scene_name_input: LineEdit
 var _status_label: Label
 var _item_list_container: VBoxContainer
@@ -26,6 +27,8 @@ var _thumb_dialog: FileDialog
 var _res_dialog: FileDialog
 
 func _ready() -> void:
+	# Retina/4K scaling: 2.0 is standard for Mac Retina
+	get_window().content_scale_factor = 2.0
 	_build_ui()
 
 func _build_ui() -> void:
@@ -36,22 +39,28 @@ func _build_ui() -> void:
 	add_child(hbox)
 
 	# --- Side panel ---
-	var panel := PanelContainer.new()
-	panel.custom_minimum_size.x = PANEL_WIDTH
-	hbox.add_child(panel)
+	_side_panel = PanelContainer.new()
+	_side_panel.custom_minimum_size.x = PANEL_WIDTH
+	hbox.add_child(_side_panel)
+
+	var outer_scroll := ScrollContainer.new()
+	outer_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_side_panel.add_child(outer_scroll)
 
 	var margin := MarginContainer.new()
 	for side in ["left", "right", "top", "bottom"]:
 		margin.add_theme_constant_override("margin_" + side, 8)
-	panel.add_child(margin)
+	margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	outer_scroll.add_child(margin)
 
 	var vbox := VBoxContainer.new()
 	vbox.add_theme_constant_override("separation", 6)
+	vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	margin.add_child(vbox)
 
 	var title := Label.new()
 	title.text = "Hide & Seek Builder"
-	title.add_theme_font_size_override("font_size", 16)
+	title.add_theme_font_size_override("font_size", 14)
 	vbox.add_child(title)
 
 	# --- Mode Toggle ---
@@ -87,10 +96,16 @@ func _build_ui() -> void:
 	load_res_btn.pressed.connect(_on_load_res_pressed)
 	vbox.add_child(load_res_btn)
 
+	var fit_btn := Button.new()
+	fit_btn.text = "Fit Image to Screen"
+	fit_btn.pressed.connect(func(): _canvas.fit_background())
+	vbox.add_child(fit_btn)
+
 	vbox.add_child(HSeparator.new())
 
 	var items_lbl := Label.new()
 	items_lbl.text = "Items  (tap canvas to place)"
+	items_lbl.add_theme_font_size_override("font_size", 12)
 	vbox.add_child(items_lbl)
 
 	var scroll := ScrollContainer.new()
@@ -227,17 +242,30 @@ func _build_ui() -> void:
 
 	_status_label = Label.new()
 	_status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_status_label.add_theme_font_size_override("font_size", 11)
+	_status_label.add_theme_font_size_override("font_size", 9)
 	_status_label.add_theme_color_override("font_color", Color(0.7, 0.9, 0.7))
 	vbox.add_child(_status_label)
 
 	# --- Canvas ---
+	var canvas_vbox := VBoxContainer.new()
+	canvas_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	canvas_vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	hbox.add_child(canvas_vbox)
+
+	var toolbar := HBoxContainer.new()
+	canvas_vbox.add_child(toolbar)
+
+	var toggle_btn := Button.new()
+	toggle_btn.text = "Toggle Sidebar"
+	toggle_btn.pressed.connect(func(): _side_panel.visible = not _side_panel.visible)
+	toolbar.add_child(toggle_btn)
+
 	_canvas = SceneBuilderCanvas.new()
 	_canvas.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_canvas.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	_canvas.item_tapped.connect(_on_canvas_item_tapped)
 	_canvas.empty_tapped.connect(_on_canvas_empty_tapped)
-	hbox.add_child(_canvas)
+	canvas_vbox.add_child(_canvas)
 
 	# File dialogs
 	_bg_dialog = _make_dialog("Load Background Image")
@@ -464,6 +492,8 @@ func _on_export_pressed() -> void:
 		return
 
 	_scene_data.scene_name = scene_id
+	# Flag this scene as manually edited so automation doesn't overwrite it
+	_scene_data.set_meta("is_manual_edit", true)
 
 	var save_path := "res://resources/hide_seek/%s.tres" % scene_id
 	var err := ResourceSaver.save(_scene_data, save_path)

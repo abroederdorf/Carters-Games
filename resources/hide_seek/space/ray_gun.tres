@@ -7,6 +7,5 @@
 script = ExtResource("1_m2t0d")
 item_name = "ray_gun"
 thumbnail = ExtResource("2_0sgh6")
-position = Vector2(800, 700)
-radius = 45.0
+radius = 60.0
 tags = Array[String](["ground", "structure"])

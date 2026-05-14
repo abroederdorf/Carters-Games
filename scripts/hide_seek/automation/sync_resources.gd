@@ -43,8 +43,23 @@ func _init() -> void:
 	_anchor_data = _load_json(ANCHORS_JSON)
 	_tag_data = _load_json(TAGS_JSON)
 
-	var themes: Array = _theme_data["themes"].keys()
-	print("Found %d themes in master index." % themes.size())
+	var target_theme := ""
+	var args := OS.get_cmdline_user_args()
+	for i in range(args.size()):
+		if args[i] == "--theme" and i + 1 < args.size():
+			target_theme = args[i+1]
+
+	var themes: Array
+	if target_theme != "":
+		if not _theme_data["themes"].has(target_theme):
+			push_error("Theme '%s' not found in master index." % target_theme)
+			quit()
+			return
+		themes = [target_theme]
+		print("Targeting single theme: %s" % target_theme)
+	else:
+		themes = _theme_data["themes"].keys()
+		print("Found %d themes in master index (Global Sync)." % themes.size())
 
 	for theme in themes:
 		_sync_theme(theme)
@@ -85,8 +100,13 @@ func _sync_theme(theme: String) -> void:
 		push_warning("[%s] Background image not found." % theme)
 
 	_sync_items(scene_data, theme, data.get("items", []))
-	_apply_anchors(scene_data, theme)
-	_apply_tags(scene_data, theme)
+
+	# Check for manual edit protection
+	if scene_data.has_meta("is_manual_edit") and scene_data.get_meta("is_manual_edit") == true:
+		print("[%s] PROTECTED: Skipping anchor/tag sync due to manual edit flag." % theme)
+	else:
+		_apply_anchors(scene_data, theme)
+		_apply_tags(scene_data, theme)
 	
 	# Final save for items (now with tags applied)
 	for item in scene_data.items:

@@ -73,6 +73,7 @@ var _spell_image: TextureRect = null
 var _spell_slots_container: HBoxContainer = null
 var _spell_slots: Array = []
 var _spell_held_display: Label = null
+var _spell_held_panel: Panel = null
 var _spell_audio_btn: Button = null
 var _spell_quiet_btn: Button = null
 var _spell_current_word: String = ""
@@ -677,6 +678,25 @@ func _build_spelling_hud() -> void:
 		_update_quiet_btn_style(is_quiet)
 	)
 
+	_spell_held_panel = Panel.new()
+	var held_style := StyleBoxFlat.new()
+	held_style.bg_color = Color(0.04, 0.18, 0.48, 0.88)
+	held_style.corner_radius_top_left = 16
+	held_style.corner_radius_top_right = 16
+	held_style.corner_radius_bottom_right = 16
+	held_style.corner_radius_bottom_left = 16
+	held_style.border_width_left = 3
+	held_style.border_width_top = 3
+	held_style.border_width_right = 3
+	held_style.border_width_bottom = 3
+	held_style.border_color = Color(0.4, 0.75, 1.0, 0.9)
+	_spell_held_panel.add_theme_stylebox_override("panel", held_style)
+	_spell_held_panel.layout_mode = 0
+	_spell_held_panel.position = Vector2(882, 310)
+	_spell_held_panel.size = Vector2(115, 80)
+	_spell_held_panel.visible = false
+	_spell_hud.add_child(_spell_held_panel)
+
 	_spell_held_display = Label.new()
 	_spell_held_display.add_theme_font_size_override("font_size", 56)
 	_spell_held_display.add_theme_color_override("font_color", Color.YELLOW)
@@ -685,8 +705,8 @@ func _build_spelling_hud() -> void:
 	_spell_held_display.add_theme_constant_override("shadow_offset_y", 3)
 	_spell_held_display.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_spell_held_display.layout_mode = 0
-	_spell_held_display.position = Vector2(340, 118)
-	_spell_held_display.size = Vector2(115, 72)
+	_spell_held_display.position = Vector2(882, 310)
+	_spell_held_display.size = Vector2(115, 80)
 	_spell_held_display.visible = false
 	_spell_hud.add_child(_spell_held_display)
 
@@ -750,8 +770,11 @@ func show_spelling_hud(word: String, missing_indices: Array, filled: Dictionary,
 	var slot_w := 100
 	var gap := 10
 	var total_w: int = word.length() * slot_w + max(0, word.length() - 1) * gap
-	var center_x := 940.0 # Shifted further right from 740.0
+	var center_x := 940.0
 	_spell_slots_container.position = Vector2(center_x - total_w / 2.0, 106.0)
+	var held_x := center_x - _spell_held_display.size.x / 2.0
+	_spell_held_display.position = Vector2(held_x, 310.0)
+	_spell_held_panel.position = Vector2(held_x, 310.0)
 
 func hide_spelling_hud() -> void:
 	if _spell_hud:
@@ -796,9 +819,11 @@ func show_held_letter(letter: String) -> void:
 		return
 	if letter == "":
 		_spell_held_display.visible = false
+		_spell_held_panel.visible = false
 	else:
 		_spell_held_display.text = letter.to_upper()
 		_spell_held_display.visible = true
+		_spell_held_panel.visible = true
 
 func flash_slot_wrong(index: int) -> void:
 	if index >= _spell_slots.size():
