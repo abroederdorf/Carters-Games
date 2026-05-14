@@ -400,8 +400,8 @@ func _refresh_selected_panel() -> void:
 		_name_input.text = obj.item_name
 		_radius_slider.value = obj.radius
 		_radius_label.text = str(int(obj.radius))
-		_scale_slider.value = obj.scale_multiplier
-		_scale_label.text = "%.2f" % obj.scale_multiplier
+		_scale_slider.value = obj.base_scale
+		_scale_label.text = "%.2f" % obj.base_scale
 		_thumb_preview.texture = obj.thumbnail
 		_tags_input.text = ", ".join(obj.tags)
 	else: # ANCHORS
@@ -437,7 +437,7 @@ func _on_radius_changed(value: float) -> void:
 func _on_scale_changed(value: float) -> void:
 	if _updating_ui or _selected_index < 0 or _mode != 0:
 		return
-	_scene_data.items[_selected_index].scale_multiplier = value
+	_scene_data.items[_selected_index].base_scale = value
 	_scale_label.text = "%.2f" % value
 	_canvas.setup(_scene_data, _selected_index)
 

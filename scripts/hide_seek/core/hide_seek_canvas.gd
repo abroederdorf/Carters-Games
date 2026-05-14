@@ -75,15 +75,15 @@ func get_canvas_root() -> Node2D:
 	return _canvas_root
 
 
-func add_item_sprite(pos: Vector2, radius: float, texture: Texture2D) -> void:
+func add_item_sprite(pos: Vector2, visual_scale: float, texture: Texture2D) -> void:
 	var sprite := Sprite2D.new()
 	sprite.centered = true
 	sprite.position = pos
 	if texture != null:
 		sprite.texture = texture
-		var max_dim := float(max(texture.get_width(), texture.get_height()))
-		if max_dim > 0.0:
-			sprite.scale = Vector2.ONE * ((radius * 2.0) / max_dim)
+		# 60.0 is our baseline sprite radius (120px diameter)
+		# We scale based on the requested visual_scale
+		sprite.scale = Vector2.ONE * visual_scale
 	_canvas_root.add_child(sprite)
 	_item_sprites.append(sprite)
 

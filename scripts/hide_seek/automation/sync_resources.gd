@@ -171,14 +171,17 @@ func _apply_anchors(scene_data: HideSeekSceneData, theme: String) -> void:
 	if not _anchor_data.has(theme):
 		return
 	scene_data.anchors.clear()
+	var idx := 0
 	for a_data in _anchor_data[theme]:
 		var anchor := HideSeekAnchor.new()
+		anchor.id = a_data.get("id", idx) # Fallback to index if no ID provided
 		anchor.position = Vector2(a_data["x"], a_data["y"])
 		anchor.radius = a_data["radius"]
 		anchor.difficulty = a_data.get("difficulty", 1)
 		for t in a_data.get("tags", []):
 			anchor.tags.append(str(t))
 		scene_data.anchors.append(anchor)
+		idx += 1
 
 
 # ── Tag Application ────────────────────────────────────────────────────────────
@@ -188,10 +191,22 @@ func _apply_tags(scene_data: HideSeekSceneData, theme: String) -> void:
 		return
 	var theme_tags: Dictionary = _tag_data[theme]
 	for item in scene_data.items:
-		if not theme_tags.has(item.item_name):
+		var item_info = theme_tags.get(item.item_name, {})
+		
+		# Handle both simple list of tags and expanded dictionary
+		var tags: Array = []
+		if item_info is Array:
+			tags = item_info
+		elif item_info is Dictionary:
+			tags = item_info.get("tags", [])
+			item.base_scale = item_info.get("base_scale", 1.0)
+			item.preferred_anchors = item_info.get("preferred_anchors", [])
+
+		if tags.is_empty() and not item_info is Dictionary:
 			continue
+			
 		item.tags.clear()
-		for t in theme_tags[item.item_name]:
+		for t in tags:
 			item.tags.append(str(t))
 
 

@@ -65,7 +65,7 @@ func _ready() -> void:
 	for i in _active_items.size():
 		var item: HideSeekItemData = _active_items[i]
 		var d: Dictionary = _active_item_data[i]
-		_canvas.add_item_sprite(d["pos"], d["radius"], _get_item_texture(item))
+		_canvas.add_item_sprite(d["pos"], d.get("scale", 1.0), _get_item_texture(item))
 
 	_ui = HideSeekUI.new()
 	add_child(_ui)
@@ -100,84 +100,116 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 
 	var margin_x := bg_size.x * 0.05
 	var margin_y := bg_size.y * 0.05
-	var standard_anchors: Array[HideSeekAnchor] = []
-	var hard_anchors: Array[HideSeekAnchor] = []
+	var available_anchors: Array[HideSeekAnchor] = []
 
 	for a in _scene_data.anchors:
+		# Filter out anchors too close to edges
 		if a.position.x < margin_x or a.position.x > bg_size.x - margin_x \
 				or a.position.y < margin_y or a.position.y > bg_size.y - margin_y:
 			continue
-		if a.difficulty >= 2:
-			hard_anchors.append(a)
-		else:
-			standard_anchors.append(a)
+		available_anchors.append(a)
 
-	standard_anchors.shuffle()
-	hard_anchors.shuffle()
+	available_anchors.shuffle()
 
-	var session_anchors: Array[HideSeekAnchor] = []
-	var hard_count: int = min(2, hard_anchors.size())
-	for i in hard_count:
-		session_anchors.append(hard_anchors.pop_back())
-	
-	# We need up to 25-30 anchors to comfortably place 15 items
-	var needed: int = min(30, standard_anchors.size() + session_anchors.size()) - session_anchors.size()
-	for i in needed:
-		if not standard_anchors.is_empty():
-			session_anchors.append(standard_anchors.pop_back())
-	session_anchors.shuffle()
-
-	var used_anchors: Array[bool] = []
-	used_anchors.resize(session_anchors.size())
-	used_anchors.fill(false)
+	var used_anchors: Dictionary = {} # anchor_id -> bool
 
 	for i in _active_items.size():
 		var item := _active_items[i]
 		var assigned_anchor: HideSeekAnchor = null
 
-		# PASS 1: Strict Tag Matching
-		if not item.tags.is_empty():
-			for j in session_anchors.size():
-				if used_anchors[j]: continue
-				var anchor: HideSeekAnchor = session_anchors[j]
-				for t in item.tags:
-					if t in anchor.tags:
-						assigned_anchor = anchor
-						used_anchors[j] = true
+		# PASS 0: Preferred Anchors (Manual override)
+		if not item.preferred_anchors.is_empty():
+			for preferred_id in item.preferred_anchors:
+				# Find anchor with this ID
+				for a in available_anchors:
+					if a.id == preferred_id and not used_anchors.has(a.id):
+						assigned_anchor = a
 						break
 				if assigned_anchor: break
 
-		# PASS 2: Bidirectional soft matching
-		if assigned_anchor == null:
-			for j in session_anchors.size():
-				if used_anchors[j]: continue
-				var anchor: HideSeekAnchor = session_anchors[j]
-				var anchor_has_water := "water" in anchor.tags
-				var anchor_has_sky := "sky" in anchor.tags
-				var item_needs_water := "water" in item.tags
-				var item_needs_sky := "sky" in item.tags
-				var item_is_ground := "ground" in item.tags and not item_needs_sky and not item_needs_water
-
-				if item_is_ground and (anchor_has_sky or anchor_has_water): continue
-				if item_needs_water and not anchor_has_water: continue
-				if item_needs_sky and not anchor_has_sky: continue
-
-				assigned_anchor = anchor
-				used_anchors[j] = true
-				break
-
-		# PASS 3: Absolute fallback
-		if assigned_anchor == null:
-			for j in session_anchors.size():
-				if not used_anchors[j]:
-					assigned_anchor = session_anchors[j]
-					used_anchors[j] = true
+		# PASS 1: Strict Tag Matching
+		if assigned_anchor == null and not item.tags.is_empty():
+			for anchor in available_anchors:
+				if used_anchors.has(anchor.id): continue
+				
+				# Check if any item tag matches any anchor tag
+				var match_found := false
+				for t in item.tags:
+					if t in anchor.tags:
+						match_found = true
+						break
+				
+				if match_found:
+					# Additional check: prevent ground items in sky/water unless explicitly tagged
+					var is_sky := "sky" in anchor.tags
+					var is_water := "water" in anchor.tags
+					var item_likes_sky := "sky" in item.tags
+					var item_likes_water := "water" in item.tags
+					
+					if is_sky and not item_likes_sky: continue
+					if is_water and not item_likes_water: continue
+					
+					assigned_anchor = anchor
 					break
 
-		var data := {"pos": item.position, "radius": item.radius * 2.5}
+		# PASS 2: Soft Matching (Generic ground items)
+		if assigned_anchor == null:
+			for anchor in available_anchors:
+				if used_anchors.has(anchor.id): continue
+				
+				var is_special := "sky" in anchor.tags or "water" in anchor.tags
+				if not is_special:
+					assigned_anchor = anchor
+					break
+
+		# PASS 3: Environment-aware fallback (sky/water exclusion, ignores specific tags)
+		if assigned_anchor == null:
+			for anchor in available_anchors:
+				if used_anchors.has(anchor.id): continue
+				var is_sky := "sky" in anchor.tags
+				var is_water := "water" in anchor.tags
+				var item_likes_sky := "sky" in item.tags
+				var item_likes_water := "water" in item.tags
+				if is_sky and not item_likes_sky: continue
+				if is_water and not item_likes_water: continue
+				assigned_anchor = anchor
+				break
+
+		# PASS 4: Absolute last resort (no restrictions)
+		if assigned_anchor == null:
+			for anchor in available_anchors:
+				if not used_anchors.has(anchor.id):
+					assigned_anchor = anchor
+					break
+
+		var data := {"pos": Vector2.ZERO, "radius": 50.0}
 		if assigned_anchor != null:
+			used_anchors[assigned_anchor.id] = true
 			data["pos"] = assigned_anchor.position
-			data["radius"] = assigned_anchor.radius * item.scale_multiplier * 2.5
+			
+			# SIZING LOGIC
+			# 1. Base scale from item
+			var scale := item.base_scale
+			
+			# 2. Depth Scaling: Lower Y (closer to bottom) = Larger
+			# Assume horizon is at 30% height
+			var horizon_y := bg_size.y * 0.3
+			var depth_range := bg_size.y - horizon_y
+			var depth_factor := (assigned_anchor.position.y - horizon_y) / depth_range
+			depth_factor = clamp(depth_factor, 0.5, 1.5) # Scale from 50% to 150%
+			
+			scale *= depth_factor
+			
+			# 3. Fit to Anchor: If anchor radius is small, downscale to fit
+			var max_radius := assigned_anchor.radius * 2.0
+			var item_radius := 60.0 * scale # 60 is a baseline sprite radius
+			
+			if item_radius > max_radius:
+				scale *= (max_radius / item_radius)
+			
+			data["radius"] = 60.0 * scale * 1.5 # 1.5 padding for touch area
+			data["scale"] = scale
+		
 		_active_item_data.append(data)
 
 
