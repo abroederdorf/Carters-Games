@@ -126,7 +126,7 @@ func _make_game_card(title: String, icon: Texture2D, color: Color, border: Color
 	var img := TextureRect.new()
 	img.texture = icon
 	img.custom_minimum_size = Vector2(160, 160)
-	img.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	img.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	img.mouse_filter = Control.MOUSE_FILTER_IGNORE

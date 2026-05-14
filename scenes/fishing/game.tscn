@@ -18,15 +18,10 @@ script = ExtResource("1_game01")
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=547835801]
 layer = -1
 
-[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=2041832067]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="Background" type="Sprite2D" parent="BackgroundLayer" unique_id=2041832067]
+position = Vector2(960, 540)
+scale = Vector2(0.698, 0.703)
 texture = ExtResource("14_bg")
-stretch_mode = 6
 
 [node name="Environment" type="Node2D" parent="." unique_id=1071737500]
 
