@@ -13,6 +13,16 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/binoculars.png" id="11_3pcbq"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/snake.png" id="11_keyr2"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/tiger.png" id="12_nku0q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/ant.png" id="14_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/dragonfly.png" id="15_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/ladybug.png" id="16_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/backpack.png" id="17_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/camera.png" id="18_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/mushroom.png" id="19_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/turtle.png" id="20_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bush.png" id="21_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/water_bottle.png" id="22_g6xkm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/first_aid_kit.png" id="23_g6xkm"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="13_g6xkm"]
 
 [sub_resource type="Resource" id="Resource_3pcbq"]
@@ -410,9 +420,89 @@ position = Vector2(1200, 300)
 radius = 80.0
 tags = Array[String](["foliage"])
 
+[sub_resource type="Resource" id="Resource_ant01"]
+script = ExtResource("2_3pcbq")
+item_name = "ant"
+thumbnail = ExtResource("14_g6xkm")
+position = Vector2(900, 1100)
+radius = 30.0
+tags = Array[String](["ground", "foliage"])
+
+[sub_resource type="Resource" id="Resource_drag1"]
+script = ExtResource("2_3pcbq")
+item_name = "dragonfly"
+thumbnail = ExtResource("15_g6xkm")
+position = Vector2(1500, 200)
+radius = 40.0
+tags = Array[String](["sky", "foliage"])
+
+[sub_resource type="Resource" id="Resource_lady1"]
+script = ExtResource("2_3pcbq")
+item_name = "ladybug"
+thumbnail = ExtResource("16_g6xkm")
+position = Vector2(2000, 650)
+radius = 30.0
+tags = Array[String](["foliage", "ground"])
+
+[sub_resource type="Resource" id="Resource_bkpk1"]
+script = ExtResource("2_3pcbq")
+item_name = "backpack"
+thumbnail = ExtResource("17_g6xkm")
+position = Vector2(300, 900)
+radius = 60.0
+tags = Array[String](["ground", "structure"])
+
+[sub_resource type="Resource" id="Resource_cam01"]
+script = ExtResource("2_3pcbq")
+item_name = "camera"
+thumbnail = ExtResource("18_g6xkm")
+position = Vector2(750, 400)
+radius = 45.0
+tags = Array[String](["ground", "structure"])
+
+[sub_resource type="Resource" id="Resource_mush1"]
+script = ExtResource("2_3pcbq")
+item_name = "mushroom"
+thumbnail = ExtResource("19_g6xkm")
+position = Vector2(1100, 1000)
+radius = 35.0
+tags = Array[String](["ground", "foliage"])
+
+[sub_resource type="Resource" id="Resource_turt1"]
+script = ExtResource("2_3pcbq")
+item_name = "turtle"
+thumbnail = ExtResource("20_g6xkm")
+position = Vector2(1600, 1100)
+radius = 50.0
+tags = Array[String](["ground", "water"])
+
+[sub_resource type="Resource" id="Resource_bush1"]
+script = ExtResource("2_3pcbq")
+item_name = "bush"
+thumbnail = ExtResource("21_g6xkm")
+position = Vector2(2100, 800)
+radius = 55.0
+tags = Array[String](["ground", "foliage"])
+
+[sub_resource type="Resource" id="Resource_wtbt1"]
+script = ExtResource("2_3pcbq")
+item_name = "water_bottle"
+thumbnail = ExtResource("22_g6xkm")
+position = Vector2(2400, 950)
+radius = 35.0
+tags = Array[String](["ground", "structure"])
+
+[sub_resource type="Resource" id="Resource_fak01"]
+script = ExtResource("2_3pcbq")
+item_name = "first_aid_kit"
+thumbnail = ExtResource("23_g6xkm")
+position = Vector2(2700, 700)
+radius = 40.0
+tags = Array[String](["ground", "structure"])
+
 [resource]
 script = ExtResource("13_g6xkm")
 scene_name = "jungle"
 background_image = ExtResource("1_xjtfx")
-items = Array[ExtResource("2_3pcbq")]([SubResource("Resource_vixvv"), SubResource("Resource_kuirr"), SubResource("Resource_h26qt"), SubResource("Resource_eued8"), SubResource("Resource_oup3m"), SubResource("Resource_iwvfl"), SubResource("Resource_0ctb4"), SubResource("Resource_6px0o"), SubResource("Resource_mo6dx"), SubResource("Resource_qkxk5")])
+items = Array[ExtResource("2_3pcbq")]([SubResource("Resource_vixvv"), SubResource("Resource_kuirr"), SubResource("Resource_h26qt"), SubResource("Resource_eued8"), SubResource("Resource_oup3m"), SubResource("Resource_iwvfl"), SubResource("Resource_0ctb4"), SubResource("Resource_6px0o"), SubResource("Resource_mo6dx"), SubResource("Resource_qkxk5"), SubResource("Resource_ant01"), SubResource("Resource_drag1"), SubResource("Resource_lady1"), SubResource("Resource_bkpk1"), SubResource("Resource_cam01"), SubResource("Resource_mush1"), SubResource("Resource_turt1"), SubResource("Resource_bush1"), SubResource("Resource_wtbt1"), SubResource("Resource_fak01")])
 anchors = Array[ExtResource("1_3pcbq")]([SubResource("Resource_3pcbq"), SubResource("Resource_vsats"), SubResource("Resource_7h8qs"), SubResource("Resource_87j6v"), SubResource("Resource_v4xi2"), SubResource("Resource_d076x"), SubResource("Resource_o3jcm"), SubResource("Resource_l8m0n"), SubResource("Resource_p8e40"), SubResource("Resource_keyr2"), SubResource("Resource_nku0q"), SubResource("Resource_g6xkm"), SubResource("Resource_6ff2o"), SubResource("Resource_yfcmh"), SubResource("Resource_3dr3w"), SubResource("Resource_gmh0m"), SubResource("Resource_kobma"), SubResource("Resource_fd8qk"), SubResource("Resource_nwhku"), SubResource("Resource_sqvke"), SubResource("Resource_tf27u"), SubResource("Resource_gb4mm"), SubResource("Resource_l33lq"), SubResource("Resource_qj4a1"), SubResource("Resource_e1lae"), SubResource("Resource_1ilek"), SubResource("Resource_nsk2p"), SubResource("Resource_6f3oe"), SubResource("Resource_c6v3n"), SubResource("Resource_tv8qj"), SubResource("Resource_6mpbi"), SubResource("Resource_1aylc"), SubResource("Resource_ccolp"), SubResource("Resource_l4xtg"), SubResource("Resource_hrfoh"), SubResource("Resource_0mn6i"), SubResource("Resource_sp71v"), SubResource("Resource_0bvra"), SubResource("Resource_c3dy2"), SubResource("Resource_k6px4"), SubResource("Resource_l7f3g"), SubResource("Resource_hcumu"), SubResource("Resource_ytw4x"), SubResource("Resource_qfo2t"), SubResource("Resource_xkps7"), SubResource("Resource_sxyee"), SubResource("Resource_ds88c"), SubResource("Resource_3fnvg"), SubResource("Resource_2ufli"), SubResource("Resource_0ohqo")])

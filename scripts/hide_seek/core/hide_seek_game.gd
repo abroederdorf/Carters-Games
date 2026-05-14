@@ -4,7 +4,7 @@ const HideSeekCanvas = preload("res://scripts/hide_seek/core/hide_seek_canvas.gd
 const HideSeekUI = preload("res://scripts/hide_seek/core/hide_seek_ui.gd")
 
 const TARGET_COUNT := 10
-const DECOY_COUNT := 5
+var _decoy_count: int
 
 var _scene_name: String
 var _scene_data: HideSeekSceneData
@@ -35,11 +35,12 @@ func _ready() -> void:
 	var bg_tex := _scene_data.background_image
 	var bg_size := Vector2(bg_tex.get_width(), bg_tex.get_height())
 
+	_decoy_count = randi_range(5, 10)
+
 	var all_items := _scene_data.items.duplicate()
 	all_items.shuffle()
-	
-	# Pick total pool (Targets + Decoys)
-	var total_to_pick := TARGET_COUNT + DECOY_COUNT
+
+	var total_to_pick := TARGET_COUNT + _decoy_count
 	_active_items = all_items.slice(0, min(total_to_pick, all_items.size()))
 	
 	_assign_items_to_anchors(bg_size)
@@ -196,16 +197,20 @@ func _on_canvas_tapped(canvas_pos: Vector2) -> void:
 
 func _on_item_found(index: int) -> void:
 	_found[index] = true
-	AudioManager.play_sfx("pop")
 	_canvas.fade_item(index)
+
+	if index >= TARGET_COUNT:
+		AudioManager.play_sfx("wrong")
+		_elapsed += 5.0
+		_canvas.show_wrong_at(_active_item_data[index]["pos"])
+		return
+
+	AudioManager.play_sfx("pop")
 	_canvas.show_flash_at(_active_item_data[index]["pos"])
-	
-	# Only items within TARGET_COUNT range count towards victory/UI
-	if index < TARGET_COUNT:
-		_found_targets_count += 1
-		_ui.mark_found(index)
-		if _found_targets_count >= min(TARGET_COUNT, _active_items.size()):
-			_on_win()
+	_found_targets_count += 1
+	_ui.mark_found(index)
+	if _found_targets_count >= min(TARGET_COUNT, _active_items.size()):
+		_on_win()
 
 
 func _calculate_stars() -> int:

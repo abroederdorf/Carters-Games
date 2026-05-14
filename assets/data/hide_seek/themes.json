@@ -95,7 +95,17 @@
         {"name": "explorer_hat", "desc": "tan pith helmet, brown strap, sitting flat", "type": "object", "tags": ["ground", "structure"]},
         {"name": "binoculars", "shared": "binoculars"},
         {"name": "orchid", "desc": "exotic pink and white tropical flower", "type": "object", "tags": ["ground", "foliage"]},
-        {"name": "sloth", "desc": "smiling sloth hanging from a branch", "type": "character", "tags": ["foliage"]}
+        {"name": "sloth", "desc": "smiling sloth hanging from a branch", "type": "character", "tags": ["foliage"]},
+        {"name": "ant", "shared": "ant"},
+        {"name": "dragonfly", "shared": "dragonfly"},
+        {"name": "ladybug", "shared": "ladybug"},
+        {"name": "backpack", "shared": "backpack"},
+        {"name": "camera", "shared": "camera"},
+        {"name": "mushroom", "shared": "mushroom"},
+        {"name": "turtle", "shared": "turtle"},
+        {"name": "bush", "shared": "bush"},
+        {"name": "water_bottle", "shared": "water_bottle"},
+        {"name": "first_aid_kit", "shared": "first_aid_kit"}
       ]
     },
     "space": {
