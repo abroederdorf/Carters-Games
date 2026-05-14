@@ -80,6 +80,8 @@ func complete_scene(sname: String, stars: int) -> void:
 		hint_stars += stars
 	elif stars > prev_stars:
 		hint_stars += stars - prev_stars
+	elif prev_stars == 3:
+		hint_stars += 1
 	var idx := SCENE_ORDER.find(sname)
 	if idx >= 0 and idx + 1 < SCENE_ORDER.size():
 		var next: Dictionary = _progress[SCENE_ORDER[idx + 1]]

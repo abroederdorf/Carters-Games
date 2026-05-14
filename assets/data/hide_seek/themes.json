@@ -29,7 +29,8 @@
     "bush": {"desc": "simple green leafy bush", "type": "object", "tags": ["ground", "foliage"]},
     "eagle": {"desc": "majestic bald eagle", "type": "character", "tags": ["sky"]},
     "owl": {"desc": "wise brown owl", "type": "character", "tags": ["sky", "foliage"]},
-    "bunny": {"desc": "cute small brown bunny", "type": "character", "tags": ["ground", "foliage"]}
+    "bunny": {"desc": "cute small brown bunny", "type": "character", "tags": ["ground", "foliage"]},
+    "dragonfly": {"desc": "blue dragonfly with translucent wings", "type": "character", "tags": ["sky", "water", "foliage"]}
   },
   "themes": {
     "mountains": {
@@ -37,6 +38,7 @@
       "items": [
         {"name": "bear", "desc": "cute brown bear sitting upright, friendly expression", "type": "character", "tags": ["ground"]},
         {"name": "tent", "shared": "tent"},
+        {"name": "dragonfly", "shared": "dragonfly"},
         {"name": "campfire", "desc": "small campfire with orange and yellow flames, logs underneath", "type": "object", "tags": ["ground"]},
         {"name": "fish", "desc": "single trout fish, blue and silver with pink stripe", "type": "object", "tags": ["water"]},
         {"name": "rock_climber", "desc": "person in a climbing pose", "type": "character", "tags": ["structure", "shadow"]},

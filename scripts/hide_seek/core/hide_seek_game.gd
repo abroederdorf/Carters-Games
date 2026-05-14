@@ -210,9 +210,9 @@ func _on_item_found(index: int) -> void:
 
 func _calculate_stars() -> int:
 	var n: int = min(TARGET_COUNT, _active_items.size())
-	if _elapsed < n * 10.0:
+	if _elapsed < n * 5.0:
 		return 3
-	elif _elapsed < n * 20.0:
+	elif _elapsed < n * 15.0:
 		return 2
 	return 1
 
