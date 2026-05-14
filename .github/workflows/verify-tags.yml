@@ -1,0 +1,25 @@
+name: Verify Hide & Seek Tags
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/data/hide_seek/**'
+      - 'scripts/hide_seek/automation/verify_tags.py'
+  pull_request:
+    paths:
+      - 'assets/data/hide_seek/**'
+      - 'scripts/hide_seek/automation/verify_tags.py'
+
+jobs:
+  verify-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify item tags match scene anchors
+        run: python scripts/hide_seek/automation/verify_tags.py
