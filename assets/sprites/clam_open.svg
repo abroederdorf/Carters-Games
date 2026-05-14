@@ -1,8 +1,0 @@
-<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-  <!-- Open Clam: Inside is soft pink -->
-  <path d="M10,30 Q30,45 50,30 L55,10 Q30,-5 5,10 Z" fill="#f4a261" stroke="#264653" stroke-width="2" />
-  <path d="M10,30 Q30,45 50,30 L55,50 Q30,65 5,50 Z" fill="#e9c46a" stroke="#264653" stroke-width="2" />
-  <!-- Pearl -->
-  <circle cx="30" cy="35" r="5" fill="white" />
-  <circle cx="30" cy="35" r="4" fill="#fefae0" opacity="0.5" />
-</svg>

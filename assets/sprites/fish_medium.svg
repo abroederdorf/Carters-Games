@@ -1,8 +1,0 @@
-<svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-  <!-- Medium fish: Vibrant Orange/Green -->
-  <path d="M15,40 Q40,10 80,30 T110,40 Q90,65 50,70 T15,40" fill="#ff7b00" stroke="#944000" stroke-width="3" />
-  <path d="M90,40 Q105,25 115,40 Q105,55 90,40" fill="#ffb700" />
-  <circle cx="40" cy="35" r="5" fill="white" />
-  <circle cx="40" cy="35" r="2.5" fill="black" />
-  <path d="M50,20 Q60,10 70,25" fill="none" stroke="#ffb700" stroke-width="3" stroke-linecap="round" />
-</svg>

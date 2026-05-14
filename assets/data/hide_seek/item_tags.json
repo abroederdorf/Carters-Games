@@ -47,6 +47,10 @@
     ],
     "climber": [
       "ground"
+    ],
+    "compass": [
+      "ground",
+      "structure"
     ]
   },
   "ocean": {
@@ -120,6 +124,26 @@
       "structure"
     ],
     "snake": [
+      "ground",
+      "foliage"
+    ],
+    "compass": [
+      "ground",
+      "structure"
+    ],
+    "centipede": [
+      "ground",
+      "foliage"
+    ],
+    "lizard_orange": [
+      "ground",
+      "foliage"
+    ],
+    "snail": [
+      "ground",
+      "foliage"
+    ],
+    "beetle_green": [
       "ground",
       "foliage"
     ]

@@ -30,7 +30,10 @@
     "eagle": {"desc": "majestic bald eagle", "type": "character", "tags": ["sky"]},
     "owl": {"desc": "wise brown owl", "type": "character", "tags": ["sky", "foliage"]},
     "bunny": {"desc": "cute small brown bunny", "type": "character", "tags": ["ground", "foliage"]},
-    "dragonfly": {"desc": "blue dragonfly with translucent wings", "type": "character", "tags": ["sky", "water", "foliage"]}
+    "dragonfly": {"desc": "blue dragonfly with translucent wings", "type": "character", "tags": ["sky", "water", "foliage"]},
+    "compass": {"desc": "classic brass compass with a spinning needle, indicating North", "type": "object", "tags": ["ground", "structure"]},
+    "palm_tree": {"desc": "tall palm tree with a curved trunk and large drooping fronds", "type": "object", "tags": ["foliage"]},
+    "fern": {"desc": "large green jungle fern with patterned leaves", "type": "object", "tags": ["foliage", "ground"]}
   },
   "themes": {
     "mountains": {
@@ -65,7 +68,8 @@
         {"name": "first_aid_kit", "shared": "first_aid_kit"},
         {"name": "climbing_rope", "shared": "climbing_rope"},
         {"name": "water_bottle", "shared": "water_bottle"},
-        {"name": "flashlight", "shared": "flashlight_modern"}
+        {"name": "flashlight", "shared": "flashlight_modern"},
+        {"name": "compass", "shared": "compass"}
       ]
     },
     "ocean": {
@@ -80,7 +84,18 @@
         {"name": "starfish", "desc": "orange starfish, textured surface, smiling", "type": "character", "tags": ["ground", "water"]},
         {"name": "sea_turtle", "desc": "green sea turtle, patterned shell, swimming pose", "type": "character", "tags": ["water"]},
         {"name": "anchor", "desc": "old gray iron anchor, thick rope wrapped around it", "type": "object", "tags": ["ground", "water"]},
-        {"name": "clownfish", "desc": "orange and white striped fish, small and round", "type": "character", "tags": ["water", "foliage"]}
+        {"name": "clownfish", "desc": "orange and white striped fish, small and round", "type": "character", "tags": ["water", "foliage"]},
+        {"name": "diving_helmet", "desc": "vintage brass diving helmet with glass portholes", "type": "object", "tags": ["ground", "water"]},
+        {"name": "fish_angel", "desc": "graceful angelfish with long fins and vibrant patterns", "type": "character", "tags": ["water"]},
+        {"name": "fish_beta", "desc": "fancy betta fish with flowing colorful fins", "type": "character", "tags": ["water"]},
+        {"name": "fish_butterfly", "desc": "bright yellow and white butterfly fish with black spots", "type": "character", "tags": ["water", "foliage"]},
+        {"name": "fish_puffer", "desc": "round pufferfish with small spikes and a cute face", "type": "character", "tags": ["water"]},
+        {"name": "fish_rainbow", "desc": "shimmering fish with multi-colored scales", "type": "character", "tags": ["water"]},
+        {"name": "gold_coin", "desc": "shiny round gold coin with an embossed sun symbol", "type": "object", "tags": ["ground", "water"]},
+        {"name": "golden_trident", "desc": "small golden trident with three sharp prongs", "type": "object", "tags": ["ground", "water"]},
+        {"name": "moray_eel", "desc": "slender yellow moray eel peeking out", "type": "character", "tags": ["structure", "water"]},
+        {"name": "octopus", "desc": "large purple octopus with many tentacles and big eyes", "type": "character", "tags": ["ground", "structure", "water"]},
+        {"name": "seashell", "desc": "large spiral conch seashell with pearlescent stripes", "type": "object", "tags": ["ground", "water"]}
       ]
     },
     "jungle": {
@@ -105,22 +120,39 @@
         {"name": "turtle", "shared": "turtle"},
         {"name": "bush", "shared": "bush"},
         {"name": "water_bottle", "shared": "water_bottle"},
-        {"name": "first_aid_kit", "shared": "first_aid_kit"}
+        {"name": "first_aid_kit", "shared": "first_aid_kit"},
+        {"name": "palm_tree", "shared": "palm_tree"},
+        {"name": "fern", "shared": "fern"},
+        {"name": "compass", "shared": "compass"},
+        {"name": "centipede", "desc": "long segmented reddish-brown centipede, many legs", "type": "character", "tags": ["ground", "foliage"]},
+        {"name": "lizard_orange", "desc": "small orange lizard with a blue-striped tail", "type": "character", "tags": ["ground", "foliage"]},
+        {"name": "snail", "desc": "tiny brown snail with a spiral shell", "type": "character", "tags": ["ground", "foliage"]},
+        {"name": "beetle_green", "desc": "shiny emerald green beetle, hard wing cases", "type": "character", "tags": ["ground", "foliage"]}
       ]
     },
     "space": {
       "scene": "Children's book illustration of a busy futuristic moon base. Gray lunar surface with craters, black star-filled sky with Earth in distance, glass-domed habitats. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
       "items": [
-        {"name": "astronaut", "desc": "person in a white spacesuit, gold visor, waving", "type": "character", "tags": ["ground", "structure"]},
         {"name": "alien", "desc": "small green alien, three eyes, antenna, waving", "type": "character", "tags": ["ground", "structure", "shadow"]},
         {"name": "rocket", "desc": "red and white rocket ship, pointy nose", "type": "object", "tags": ["sky", "structure"]},
         {"name": "moon_rover", "desc": "white buggy with big wheels, antenna", "type": "object", "tags": ["ground", "structure"]},
         {"name": "saturn", "desc": "planet with rings, yellow and orange, tilted", "type": "object", "tags": ["sky"]},
-        {"name": "star", "desc": "bright yellow five-pointed star, glowing effect", "type": "object", "tags": ["sky"]},
+        {"name": "comet", "desc": "jagged rocky comet with a bright colorful dust trail", "type": "object", "tags": ["sky"]},
         {"name": "flying_saucer", "desc": "silver UFO, glass dome, green lights", "type": "object", "tags": ["sky"]},
         {"name": "space_helmet", "desc": "white helmet with blue visor, sitting upright", "type": "object", "tags": ["ground", "structure"]},
         {"name": "ray_gun", "desc": "retro ray gun, silver with red rings", "type": "object", "tags": ["ground", "structure"]},
-        {"name": "crater", "desc": "round gray moon crater, shadows inside", "type": "object", "tags": ["ground"]}
+        {"name": "crater", "desc": "round gray moon crater, shadows inside", "type": "object", "tags": ["ground"]},
+        {"name": "satellite_dish", "desc": "grey circular satellite dish with an antenna", "type": "object", "tags": ["structure", "ground"]},
+        {"name": "blue_crate", "desc": "rectangular blue metal storage crate with a white 'E'", "type": "object", "tags": ["ground", "structure"]},
+        {"name": "purple_alien", "desc": "friendly smiling purple alien with tentacles", "type": "character", "tags": ["ground", "structure"]},
+        {"name": "orbiting_satellite", "desc": "high-tech satellite with blue solar panels", "type": "object", "tags": ["sky"]},
+        {"name": "robot", "desc": "cute small boxy robot with wheels and digital face", "type": "character", "tags": ["ground", "structure"]},
+        {"name": "flying_rocket", "desc": "red and white rocket ship with orange flame trail", "type": "object", "tags": ["sky"]},
+        {"name": "air_canister", "desc": "white metallic oxygen tank with blue stripes", "type": "object", "tags": ["ground", "structure"]},
+        {"name": "shooting_star", "desc": "bright yellow star with a long trailing tail", "type": "object", "tags": ["sky"]},
+        {"name": "toolbox", "shared": "toolbox"},
+        {"name": "flashlight", "shared": "flashlight"},
+        {"name": "wrench", "shared": "wrench"}
       ]
     },
     "fire_station": {

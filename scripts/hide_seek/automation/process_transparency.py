@@ -37,6 +37,12 @@ def make_transparent(image_path, tolerance=30):
         if pixel[0] >= 220 and pixel[1] >= 220 and pixel[2] >= 220:
             ImageDraw.floodfill(img, seed, (255, 255, 255, 0), thresh=tolerance)
 
+    # Autocrop
+    bbox = img.getbbox()
+    if bbox:
+        img = img.crop(bbox)
+        print(f"  Autocropped to: {img.size}")
+
     img.save(image_path)
 
 def main():

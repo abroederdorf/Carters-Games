@@ -139,10 +139,19 @@ def main() -> None:
     )
     parser.add_argument("--themes", type=Path, default=HS_THEMES_JSON, help="H&S themes.json path")
     parser.add_argument("--asset-root", type=Path, default=HS_ASSET_ROOT, help="H&S asset output root")
+    parser.add_argument("--theme", type=str, help="Target a specific theme from themes.json")
     args = parser.parse_args()
 
     if args.manifest:
         run_manifest(args.manifest)
+    elif args.theme:
+        # Filter themes.json to just one theme
+        index = load_json(args.themes)
+        if args.theme not in index["themes"]:
+            print(f"Error: Theme '{args.theme}' not found.")
+            return
+        single_index = {"themes": {args.theme: index["themes"][args.theme]}}
+        run_hide_seek(single_index, args.asset_root)
     else:
         run_hide_seek(args.themes, args.asset_root)
 

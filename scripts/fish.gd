@@ -18,10 +18,28 @@ var spawn_y: float = -1.0
 var spell_letter: String = ""
 var bounces: bool = false
 
+const FISH_TEXTURES = [
+	"res://assets/sprites/fishing/fish_angel.png",
+	"res://assets/sprites/fishing/fish_beta.png",
+	"res://assets/sprites/fishing/fish_butterfly.png",
+	"res://assets/sprites/fishing/fish_catfish.png",
+	"res://assets/sprites/fishing/fish_plain_green.png",
+	"res://assets/sprites/fishing/fish_plain_orange.png",
+	"res://assets/sprites/fishing/fish_plain_purple.png",
+	"res://assets/sprites/fishing/fish_plain_red.png",
+	"res://assets/sprites/fishing/fish_plain_white.png",
+	"res://assets/sprites/fishing/fish_plain_yellow.png",
+	"res://assets/sprites/fishing/fish_puffer.png",
+	"res://assets/sprites/fishing/fish_rainbow.png",
+	"res://assets/sprites/fishing/fish_sunfish.png",
+	"res://assets/sprites/fishing/fish_sword.png",
+	"res://assets/sprites/fishing/fish_tetra.png",
+]
+
 const CLASS_DATA = {
-	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fish_large.svg", "res://assets/sprites/fish_large_2.svg", "res://assets/sprites/fish_large_3.svg"] },
-	FishClass.MEDIUM: { "scale": 1.0,  "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/fish_medium.svg", "res://assets/sprites/fish_medium_2.svg", "res://assets/sprites/fish_medium_3.svg"] },
-	FishClass.SMALL:  { "scale": 0.65, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/fish_small.svg", "res://assets/sprites/fish_small_2.svg", "res://assets/sprites/fish_small_3.svg"] },
+	FishClass.LARGE:  { "scale": 1.5,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1 },
+	FishClass.MEDIUM: { "scale": 1.0,  "speed_min": 120.0, "speed_max": 170.0, "points": 2 },
+	FishClass.SMALL:  { "scale": 0.65, "speed_min": 180.0, "speed_max": 250.0, "points": 3 },
 }
 
 func _ready() -> void:
@@ -30,7 +48,7 @@ func _ready() -> void:
 	speed = randf_range(data["speed_min"], data["speed_max"])
 	points = data["points"]
 
-	$Sprite2D.texture = load(data["textures"].pick_random())
+	$Sprite2D.texture = load(FISH_TEXTURES.pick_random())
 
 	direction = 1.0 if randf() > 0.5 else -1.0
 	var vp := get_viewport_rect()

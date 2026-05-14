@@ -43,8 +43,23 @@ func _init() -> void:
 	_anchor_data = _load_json(ANCHORS_JSON)
 	_tag_data = _load_json(TAGS_JSON)
 
-	var themes: Array = _theme_data["themes"].keys()
-	print("Found %d themes in master index." % themes.size())
+	var target_theme := ""
+	var args := OS.get_cmdline_user_args()
+	for i in range(args.size()):
+		if args[i] == "--theme" and i + 1 < args.size():
+			target_theme = args[i+1]
+
+	var themes: Array
+	if target_theme != "":
+		if not _theme_data["themes"].has(target_theme):
+			push_error("Theme '%s' not found in master index." % target_theme)
+			quit()
+			return
+		themes = [target_theme]
+		print("Targeting single theme: %s" % target_theme)
+	else:
+		themes = _theme_data["themes"].keys()
+		print("Found %d themes in master index (Global Sync)." % themes.size())
 
 	for theme in themes:
 		_sync_theme(theme)

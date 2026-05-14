@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_nqio6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/space/air_canister.png" id="2_msjvi"]
+
+[resource]
+script = ExtResource("1_nqio6")
+item_name = "air_canister"
+thumbnail = ExtResource("2_msjvi")
+radius = 60.0

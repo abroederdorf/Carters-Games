@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/bear.png" id="4_t1wvr"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/tent.png" id="5_cauus"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/campfire.png" id="6_874hw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/dragonfly.png" id="6_7628f"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/fish.png" id="7_saa3m"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/rock_climber.png" id="8_evuin"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/skier.png" id="9_4jsw2"]
@@ -30,7 +31,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/first_aid_kit.png" id="28_2mnbg"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/climbing_rope.png" id="29_k85k5"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/water_bottle.png" id="30_f4gyv"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flashlight_modern.png" id="31_gvtlq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flashlight.png" id="31_gvtlq"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="32_1aybl"]
 
 [sub_resource type="Resource" id="Resource_u5axb"]
@@ -361,6 +362,12 @@ thumbnail = ExtResource("5_cauus")
 radius = 60.0
 tags = Array[String](["ground", "structure"])
 
+[sub_resource type="Resource" id="Resource_d8x0y"]
+script = ExtResource("3_7pyvi")
+item_name = "dragonfly"
+thumbnail = ExtResource("6_7628f")
+radius = 60.0
+
 [sub_resource type="Resource" id="Resource_al4fe"]
 script = ExtResource("3_7pyvi")
 item_name = "campfire"
@@ -532,9 +539,15 @@ item_name = "flashlight"
 thumbnail = ExtResource("31_gvtlq")
 radius = 60.0
 
+[sub_resource type="Resource" id="Resource_a4bjg"]
+script = ExtResource("3_7pyvi")
+item_name = "compass"
+radius = 60.0
+
 [resource]
 script = ExtResource("32_1aybl")
 scene_name = "mountains"
 background_image = ExtResource("2_7628f")
-items = Array[ExtResource("3_7pyvi")]([SubResource("Resource_0k0io"), SubResource("Resource_pp4fo"), SubResource("Resource_al4fe"), SubResource("Resource_8df5j"), SubResource("Resource_3wf8n"), SubResource("Resource_62edc"), SubResource("Resource_8ljoh"), SubResource("Resource_a5mc2"), SubResource("Resource_mjyjo"), SubResource("Resource_qwsqe"), SubResource("Resource_k6it1"), SubResource("Resource_6nba0"), SubResource("Resource_rohpl"), SubResource("Resource_pisdw"), SubResource("Resource_fi6rw"), SubResource("Resource_i2lw1"), SubResource("Resource_4q1ux"), SubResource("Resource_puia4"), SubResource("Resource_13ysc"), SubResource("Resource_c1ufi"), SubResource("Resource_ohfhn"), SubResource("Resource_w46qy"), SubResource("Resource_tjxyi"), SubResource("Resource_e8k4s"), SubResource("Resource_m4bta"), SubResource("Resource_82gmx"), SubResource("Resource_hroth"), SubResource("Resource_pii13"), SubResource("Resource_b464t")])
+items = Array[ExtResource("3_7pyvi")]([SubResource("Resource_0k0io"), SubResource("Resource_pp4fo"), SubResource("Resource_d8x0y"), SubResource("Resource_al4fe"), SubResource("Resource_8df5j"), SubResource("Resource_3wf8n"), SubResource("Resource_62edc"), SubResource("Resource_8ljoh"), SubResource("Resource_a5mc2"), SubResource("Resource_mjyjo"), SubResource("Resource_qwsqe"), SubResource("Resource_k6it1"), SubResource("Resource_6nba0"), SubResource("Resource_rohpl"), SubResource("Resource_pisdw"), SubResource("Resource_fi6rw"), SubResource("Resource_i2lw1"), SubResource("Resource_4q1ux"), SubResource("Resource_puia4"), SubResource("Resource_13ysc"), SubResource("Resource_c1ufi"), SubResource("Resource_ohfhn"), SubResource("Resource_w46qy"), SubResource("Resource_tjxyi"), SubResource("Resource_e8k4s"), SubResource("Resource_m4bta"), SubResource("Resource_82gmx"), SubResource("Resource_hroth"), SubResource("Resource_pii13"), SubResource("Resource_b464t"), SubResource("Resource_a4bjg")])
 anchors = Array[ExtResource("1_u5axb")]([SubResource("Resource_u5axb"), SubResource("Resource_7628f"), SubResource("Resource_7pyvi"), SubResource("Resource_t1wvr"), SubResource("Resource_cauus"), SubResource("Resource_874hw"), SubResource("Resource_saa3m"), SubResource("Resource_evuin"), SubResource("Resource_4jsw2"), SubResource("Resource_l368t"), SubResource("Resource_pypx1"), SubResource("Resource_766ys"), SubResource("Resource_qb8u2"), SubResource("Resource_vy0o4"), SubResource("Resource_mcofg"), SubResource("Resource_xrnx3"), SubResource("Resource_du4ty"), SubResource("Resource_6a75b"), SubResource("Resource_chv4t"), SubResource("Resource_0fxrq"), SubResource("Resource_ear58"), SubResource("Resource_6iryu"), SubResource("Resource_5vy3v"), SubResource("Resource_ko47g"), SubResource("Resource_n4p20"), SubResource("Resource_vaqc7"), SubResource("Resource_nti06"), SubResource("Resource_2mnbg"), SubResource("Resource_k85k5"), SubResource("Resource_f4gyv"), SubResource("Resource_gvtlq"), SubResource("Resource_1aybl"), SubResource("Resource_4dqic"), SubResource("Resource_kekeo"), SubResource("Resource_o7gw5"), SubResource("Resource_o04nw"), SubResource("Resource_8r76p"), SubResource("Resource_xqlpc"), SubResource("Resource_sy5h5"), SubResource("Resource_wciap"), SubResource("Resource_mt6ay"), SubResource("Resource_3x0li"), SubResource("Resource_j4h1y"), SubResource("Resource_pbpot"), SubResource("Resource_iw86g"), SubResource("Resource_8b68n"), SubResource("Resource_qx56q"), SubResource("Resource_xkw5b"), SubResource("Resource_hgpa1"), SubResource("Resource_fw54s")])
+metadata/is_manual_edit = true
