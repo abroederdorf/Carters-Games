@@ -9,4 +9,4 @@ item_name = "axe"
 thumbnail = ExtResource("2_u6td1")
 position = Vector2(1000, 150)
 radius = 55.0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])

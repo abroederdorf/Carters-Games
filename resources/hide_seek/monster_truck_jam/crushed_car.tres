@@ -9,4 +9,5 @@ item_name = "crushed_car"
 thumbnail = ExtResource("2_o75sb")
 position = Vector2(350, 620)
 radius = 75.0
+base_scale = 3.0
 tags = Array[String](["ground"])

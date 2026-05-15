@@ -16,326 +16,379 @@
 
 [sub_resource type="Resource" id="Resource_ki2g1"]
 script = ExtResource("1_jhm0m")
-position = Vector2(350, 150)
+id = 0
+position = Vector2(200, 150)
+radius = 35.0
+tags = Array[String](["sky", "structure"])
+
+[sub_resource type="Resource" id="Resource_jhm0m"]
+script = ExtResource("1_jhm0m")
+id = 1
+position = Vector2(100, 280)
 radius = 40.0
 difficulty = 0
 tags = Array[String](["structure"])
 
-[sub_resource type="Resource" id="Resource_jhm0m"]
-script = ExtResource("1_jhm0m")
-position = Vector2(150, 250)
-radius = 40.0
-tags = Array[String](["structure", "sky"])
-
 [sub_resource type="Resource" id="Resource_kalv6"]
 script = ExtResource("1_jhm0m")
-position = Vector2(700, 100)
-difficulty = 0
-tags = Array[String](["sky", "structure"])
+id = 2
+position = Vector2(750, 100)
+radius = 35.0
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_xe7ip"]
 script = ExtResource("1_jhm0m")
-position = Vector2(900, 300)
+id = 3
+position = Vector2(950, 250)
 radius = 40.0
+difficulty = 0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_jxn57"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1400, 150)
-radius = 40.0
-tags = Array[String](["structure"])
+id = 4
+position = Vector2(1300, 150)
+radius = 35.0
+tags = Array[String](["sky", "structure"])
 
 [sub_resource type="Resource" id="Resource_r2vrh"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1200, 50)
-radius = 40.0
-difficulty = 0
-tags = Array[String](["sky"])
-
-[sub_resource type="Resource" id="Resource_t17rq"]
-script = ExtResource("1_jhm0m")
-position = Vector2(1900, 200)
+id = 5
+position = Vector2(1550, 280)
 radius = 40.0
 difficulty = 0
 tags = Array[String](["structure"])
 
+[sub_resource type="Resource" id="Resource_t17rq"]
+script = ExtResource("1_jhm0m")
+id = 6
+position = Vector2(1800, 100)
+radius = 35.0
+tags = Array[String](["sky", "structure"])
+
 [sub_resource type="Resource" id="Resource_epjw6"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1700, 350)
+id = 7
+position = Vector2(2050, 200)
 radius = 40.0
-tags = Array[String](["structure", "sky"])
+difficulty = 0
+tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_3kc4k"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2500, 100)
-radius = 40.0
-tags = Array[String](["structure", "sky"])
+id = 8
+position = Vector2(2400, 150)
+radius = 35.0
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_tpsdr"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2300, 300)
-radius = 30.0
+id = 9
+position = Vector2(2600, 280)
+radius = 40.0
 difficulty = 0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_5bj6r"]
 script = ExtResource("1_jhm0m")
-position = Vector2(200, 500)
+id = 10
+position = Vector2(250, 500)
 radius = 40.0
-difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_rwdtu"]
 script = ExtResource("1_jhm0m")
+id = 11
 position = Vector2(400, 650)
+radius = 45.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_jg0nl"]
 script = ExtResource("1_jhm0m")
-position = Vector2(800, 550)
-radius = 30.0
-tags = Array[String](["structure"])
+id = 12
+position = Vector2(700, 580)
+radius = 40.0
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_h1h67"]
 script = ExtResource("1_jhm0m")
-position = Vector2(600, 700)
-radius = 40.0
+id = 13
+position = Vector2(950, 680)
+radius = 45.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_bkn1p"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1400, 600)
-difficulty = 0
+id = 14
+position = Vector2(1250, 550)
+radius = 40.0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_mni8v"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1200, 750)
-radius = 40.0
+id = 15
+position = Vector2(1400, 620)
+radius = 45.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_cblid"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1900, 650)
+id = 16
+position = Vector2(1850, 550)
 radius = 40.0
-difficulty = 0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_6t5nt"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2100, 500)
-radius = 40.0
+id = 17
+position = Vector2(2000, 480)
+radius = 45.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["structure", "sky"])
 
 [sub_resource type="Resource" id="Resource_2ouy7"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2500, 550)
-radius = 30.0
-difficulty = 0
-tags = Array[String](["structure"])
+id = 18
+position = Vector2(2450, 600)
+radius = 40.0
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_ddopm"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2600, 700)
-radius = 40.0
+id = 19
+position = Vector2(2650, 520)
+radius = 45.0
 difficulty = 0
 tags = Array[String](["structure"])
 
 [sub_resource type="Resource" id="Resource_61ufn"]
 script = ExtResource("1_jhm0m")
-position = Vector2(150, 850)
-radius = 30.0
-difficulty = 0
+id = 20
+position = Vector2(150, 900)
+radius = 45.0
 tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_306ku"]
 script = ExtResource("1_jhm0m")
-position = Vector2(250, 1100)
-radius = 30.0
+id = 21
+position = Vector2(300, 1050)
+radius = 40.0
 difficulty = 0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_orgr3"]
 script = ExtResource("1_jhm0m")
-position = Vector2(700, 900)
-difficulty = 0
-tags = Array[String](["structure"])
+id = 22
+position = Vector2(700, 850)
+radius = 45.0
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_llv6x"]
 script = ExtResource("1_jhm0m")
-position = Vector2(900, 1100)
+id = 23
+position = Vector2(900, 980)
+radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_2052e"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1400, 950)
-difficulty = 0
-tags = Array[String](["structure"])
+id = 24
+position = Vector2(1200, 800)
+radius = 40.0
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_oljwd"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1250, 800)
-radius = 30.0
-tags = Array[String](["structure", "person"])
+id = 25
+position = Vector2(1450, 920)
+radius = 45.0
+difficulty = 0
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_7l3ki"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1900, 900)
-tags = Array[String](["ground"])
+id = 26
+position = Vector2(1750, 880)
+radius = 45.0
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_g1bly"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2100, 1050)
+id = 27
+position = Vector2(2000, 950)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_ar77m"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2500, 850)
-difficulty = 0
-tags = Array[String](["structure"])
+id = 28
+position = Vector2(2400, 800)
+radius = 45.0
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_pul21"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2300, 950)
-radius = 30.0
+id = 29
+position = Vector2(2650, 880)
+radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_rb3ci"]
 script = ExtResource("1_jhm0m")
-position = Vector2(200, 1300)
-difficulty = 0
-tags = Array[String](["structure", "tools"])
+id = 30
+position = Vector2(100, 1300)
+radius = 45.0
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_vvpan"]
 script = ExtResource("1_jhm0m")
-position = Vector2(400, 1450)
-radius = 30.0
+id = 31
+position = Vector2(300, 1400)
+radius = 40.0
 difficulty = 0
-tags = Array[String](["ground", "tools"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_krbx1"]
 script = ExtResource("1_jhm0m")
-position = Vector2(700, 1400)
-radius = 40.0
-difficulty = 0
-tags = Array[String](["structure", "tools"])
+id = 32
+position = Vector2(650, 1250)
+radius = 45.0
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_c68kw"]
 script = ExtResource("1_jhm0m")
-position = Vector2(900, 1300)
+id = 33
+position = Vector2(800, 1380)
 radius = 40.0
-tags = Array[String](["structure"])
+difficulty = 0
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_6he6f"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1200, 1400)
-radius = 30.0
-difficulty = 0
+id = 34
+position = Vector2(1200, 1300)
+radius = 45.0
 tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_ced1u"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1400, 1300)
+id = 35
+position = Vector2(1500, 1400)
+radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_snw02"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1900, 1450)
-radius = 30.0
-difficulty = 0
-tags = Array[String](["ground", "tools"])
+id = 36
+position = Vector2(1800, 1200)
+radius = 45.0
+tags = Array[String](["ground", "shadow"])
 
 [sub_resource type="Resource" id="Resource_tbxu7"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2100, 1350)
-radius = 25.0
+id = 37
+position = Vector2(2050, 1300)
+radius = 40.0
 difficulty = 0
 tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_q4otm"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2400, 1500)
-radius = 40.0
-difficulty = 0
-tags = Array[String](["ground", "tools"])
+id = 38
+position = Vector2(2350, 1450)
+radius = 45.0
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_7hkm8"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2600, 1200)
+id = 39
+position = Vector2(2600, 1350)
 radius = 40.0
-tags = Array[String](["structure", "person"])
+difficulty = 0
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_fcl2o"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1050, 1050)
-radius = 20.0
+id = 40
+position = Vector2(180, 1000)
+radius = 45.0
 difficulty = 2
-tags = Array[String](["structure"])
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_p7v1j"]
 script = ExtResource("1_jhm0m")
-position = Vector2(350, 1200)
-radius = 25.0
+id = 41
+position = Vector2(600, 800)
+radius = 40.0
+difficulty = 2
 tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_penb3"]
 script = ExtResource("1_jhm0m")
-position = Vector2(450, 750)
-radius = 25.0
-tags = Array[String](["structure"])
+id = 42
+position = Vector2(450, 700)
+radius = 45.0
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_1myyr"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1750, 500)
-radius = 20.0
-tags = Array[String](["structure"])
+id = 43
+position = Vector2(1050, 780)
+radius = 40.0
+difficulty = 2
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_u2fwn"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1550, 1000)
-radius = 20.0
+id = 44
+position = Vector2(1300, 750)
+radius = 45.0
 difficulty = 2
-tags = Array[String](["ground"])
+tags = Array[String](["structure", "ground"])
 
 [sub_resource type="Resource" id="Resource_n55ju"]
 script = ExtResource("1_jhm0m")
-position = Vector2(150, 600)
-radius = 20.0
-tags = Array[String](["structure"])
+id = 45
+position = Vector2(1700, 650)
+radius = 40.0
+tags = Array[String](["structure", "sky"])
 
 [sub_resource type="Resource" id="Resource_wjetx"]
 script = ExtResource("1_jhm0m")
-position = Vector2(600, 950)
-radius = 20.0
-difficulty = 2
-tags = Array[String](["structure", "person"])
+id = 46
+position = Vector2(2500, 700)
+radius = 35.0
+tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_sy04e"]
 script = ExtResource("1_jhm0m")
-position = Vector2(2000, 780)
-radius = 25.0
-tags = Array[String](["structure"])
+id = 47
+position = Vector2(900, 450)
+radius = 40.0
+difficulty = 2
+tags = Array[String](["structure", "sky"])
 
 [sub_resource type="Resource" id="Resource_w0rt3"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1050, 450)
-radius = 30.0
-tags = Array[String](["structure"])
+id = 48
+position = Vector2(300, 400)
+radius = 35.0
+tags = Array[String](["structure", "sky"])
 
 [sub_resource type="Resource" id="Resource_bbj4j"]
 script = ExtResource("1_jhm0m")
-position = Vector2(1800, 1500)
-radius = 25.0
-tags = Array[String](["ground", "tools"])
+id = 49
+position = Vector2(2000, 1450)
+radius = 40.0
+difficulty = 2
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_52kwr"]
 script = ExtResource("2_jhm0m")
@@ -359,6 +412,7 @@ item_name = "dump_truck"
 thumbnail = ExtResource("6_r2vrh")
 position = Vector2(1800, 850)
 radius = 95.0
+base_scale = 3.5
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_g1331"]
@@ -373,6 +427,7 @@ tags = Array[String](["ground"])
 script = ExtResource("2_jhm0m")
 item_name = "crane"
 radius = 60.0
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_beuw8"]
 script = ExtResource("2_jhm0m")
@@ -380,6 +435,7 @@ item_name = "hard_hat"
 thumbnail = ExtResource("9_3kc4k")
 position = Vector2(1000, 550)
 radius = 45.0
+base_scale = 0.8
 tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_dqexr"]
@@ -396,7 +452,7 @@ item_name = "blueprint"
 thumbnail = ExtResource("3_kalv6")
 position = Vector2(650, 950)
 radius = 60.0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_632i5"]
 script = ExtResource("2_jhm0m")
@@ -404,6 +460,7 @@ item_name = "hammer"
 thumbnail = ExtResource("11_ki2g1")
 position = Vector2(120, 930)
 radius = 40.0
+base_scale = 0.6
 tags = Array[String](["ground", "structure"])
 
 [sub_resource type="Resource" id="Resource_hv65t"]
@@ -412,7 +469,7 @@ item_name = "toolbox"
 thumbnail = ExtResource("12_jhm0m")
 position = Vector2(70, 930)
 radius = 55.0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])
 
 [resource]
 script = ExtResource("13_jg0nl")

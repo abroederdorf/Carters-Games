@@ -9,4 +9,4 @@ item_name = "dalmatian"
 thumbnail = ExtResource("2_4hou1")
 position = Vector2(750, 900)
 radius = 70.0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])

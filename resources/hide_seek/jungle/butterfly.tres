@@ -9,4 +9,5 @@ item_name = "butterfly"
 thumbnail = ExtResource("2_6e8qk")
 position = Vector2(450, 850)
 radius = 40.0
-tags = Array[String](["sky", "foliage"])
+base_scale = 0.4
+tags = Array[String](["sky"])

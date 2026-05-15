@@ -8,4 +8,4 @@ script = ExtResource("1_moq0r")
 item_name = "flying_saucer"
 thumbnail = ExtResource("2_mnqnl")
 radius = 60.0
-tags = Array[String](["sky"])
+tags = Array[String](["ground"])

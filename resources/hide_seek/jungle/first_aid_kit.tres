@@ -9,4 +9,4 @@ item_name = "first_aid_kit"
 thumbnail = ExtResource("2_5chij")
 position = Vector2(2700, 700)
 radius = 40.0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])

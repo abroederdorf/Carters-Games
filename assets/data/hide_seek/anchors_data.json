@@ -3759,5 +3759,1726 @@
       ],
       "difficulty": 1
     }
+  ],
+  "pet_shop": [
+    {
+      "id": 0,
+      "x": 107,
+      "y": 141,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 1,
+      "x": 418,
+      "y": 130,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 2,
+      "x": 673,
+      "y": 246,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 3,
+      "x": 915,
+      "y": 128,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 4,
+      "x": 1243,
+      "y": 160,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 5,
+      "x": 1468,
+      "y": 191,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 6,
+      "x": 1696,
+      "y": 246,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 7,
+      "x": 1822,
+      "y": 43,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 8,
+      "x": 2203,
+      "y": 205,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 9,
+      "x": 2495,
+      "y": 131,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 10,
+      "x": 94,
+      "y": 378,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 11,
+      "x": 298,
+      "y": 403,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 12,
+      "x": 720,
+      "y": 350,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 13,
+      "x": 937,
+      "y": 541,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 14,
+      "x": 1169,
+      "y": 324,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 15,
+      "x": 1332,
+      "y": 459,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 16,
+      "x": 1645,
+      "y": 515,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 17,
+      "x": 1967,
+      "y": 399,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 18,
+      "x": 2202,
+      "y": 445,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 19,
+      "x": 2524,
+      "y": 357,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 20,
+      "x": 119,
+      "y": 665,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 21,
+      "x": 443,
+      "y": 791,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 22,
+      "x": 586,
+      "y": 704,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 23,
+      "x": 836,
+      "y": 806,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 24,
+      "x": 1243,
+      "y": 606,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 25,
+      "x": 1424,
+      "y": 768,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 26,
+      "x": 1602,
+      "y": 790,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 27,
+      "x": 1842,
+      "y": 763,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 28,
+      "x": 2149,
+      "y": 706,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 29,
+      "x": 2424,
+      "y": 767,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 30,
+      "x": 31,
+      "y": 978,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 31,
+      "x": 391,
+      "y": 1098,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 32,
+      "x": 603,
+      "y": 1013,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 33,
+      "x": 802,
+      "y": 939,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 34,
+      "x": 1164,
+      "y": 1031,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 35,
+      "x": 1329,
+      "y": 942,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 36,
+      "x": 1689,
+      "y": 939,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 37,
+      "x": 1898,
+      "y": 954,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 38,
+      "x": 2263,
+      "y": 1040,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 39,
+      "x": 2415,
+      "y": 978,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 40,
+      "x": 78,
+      "y": 1356,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 41,
+      "x": 476,
+      "y": 1410,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 42,
+      "x": 683,
+      "y": 1256,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 43,
+      "x": 905,
+      "y": 1335,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 44,
+      "x": 1174,
+      "y": 1391,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 45,
+      "x": 1395,
+      "y": 1403,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 46,
+      "x": 1625,
+      "y": 1194,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 47,
+      "x": 1861,
+      "y": 1390,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 48,
+      "x": 2161,
+      "y": 1335,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 49,
+      "x": 2379,
+      "y": 1332,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    }
+  ],
+  "circus": [
+    {
+      "id": 0,
+      "x": 85,
+      "y": 182,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 1,
+      "x": 474,
+      "y": 158,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 2,
+      "x": 659,
+      "y": 156,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 3,
+      "x": 865,
+      "y": 252,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 4,
+      "x": 1131,
+      "y": 90,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 5,
+      "x": 1506,
+      "y": 98,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 6,
+      "x": 1623,
+      "y": 193,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 7,
+      "x": 1886,
+      "y": 165,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 8,
+      "x": 2248,
+      "y": 77,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 9,
+      "x": 2437,
+      "y": 44,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 10,
+      "x": 66,
+      "y": 485,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 11,
+      "x": 447,
+      "y": 539,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 12,
+      "x": 648,
+      "y": 515,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 13,
+      "x": 827,
+      "y": 363,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 14,
+      "x": 1201,
+      "y": 508,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 15,
+      "x": 1501,
+      "y": 451,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 16,
+      "x": 1755,
+      "y": 417,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 17,
+      "x": 1831,
+      "y": 389,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 18,
+      "x": 2276,
+      "y": 348,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 19,
+      "x": 2465,
+      "y": 342,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 20,
+      "x": 182,
+      "y": 817,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 21,
+      "x": 360,
+      "y": 764,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 22,
+      "x": 612,
+      "y": 620,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 23,
+      "x": 911,
+      "y": 784,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 24,
+      "x": 1102,
+      "y": 710,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 25,
+      "x": 1448,
+      "y": 779,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 26,
+      "x": 1669,
+      "y": 694,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 27,
+      "x": 1941,
+      "y": 807,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 28,
+      "x": 2184,
+      "y": 832,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 29,
+      "x": 2364,
+      "y": 716,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 30,
+      "x": 135,
+      "y": 955,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 31,
+      "x": 446,
+      "y": 929,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 32,
+      "x": 608,
+      "y": 990,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 33,
+      "x": 906,
+      "y": 979,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 34,
+      "x": 1065,
+      "y": 1104,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 35,
+      "x": 1450,
+      "y": 925,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 36,
+      "x": 1659,
+      "y": 975,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 37,
+      "x": 1920,
+      "y": 1064,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 38,
+      "x": 2171,
+      "y": 1008,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 39,
+      "x": 2363,
+      "y": 957,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 40,
+      "x": 37,
+      "y": 1364,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 41,
+      "x": 415,
+      "y": 1209,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 42,
+      "x": 558,
+      "y": 1321,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 43,
+      "x": 931,
+      "y": 1280,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 44,
+      "x": 1170,
+      "y": 1242,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 45,
+      "x": 1425,
+      "y": 1393,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 46,
+      "x": 1565,
+      "y": 1271,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 47,
+      "x": 1898,
+      "y": 1325,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 48,
+      "x": 2224,
+      "y": 1342,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 49,
+      "x": 2330,
+      "y": 1234,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    }
+  ],
+  "city": [
+    {
+      "id": 0,
+      "x": 197,
+      "y": 102,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 1,
+      "x": 482,
+      "y": 72,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 2,
+      "x": 644,
+      "y": 184,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 3,
+      "x": 961,
+      "y": 56,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 4,
+      "x": 1147,
+      "y": 196,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 5,
+      "x": 1376,
+      "y": 238,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 6,
+      "x": 1562,
+      "y": 232,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 7,
+      "x": 1984,
+      "y": 150,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 8,
+      "x": 2216,
+      "y": 172,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 9,
+      "x": 2442,
+      "y": 193,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 10,
+      "x": 107,
+      "y": 375,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 11,
+      "x": 442,
+      "y": 416,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 12,
+      "x": 704,
+      "y": 334,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 13,
+      "x": 968,
+      "y": 413,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 14,
+      "x": 1070,
+      "y": 336,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 15,
+      "x": 1485,
+      "y": 448,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 16,
+      "x": 1578,
+      "y": 376,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 17,
+      "x": 1907,
+      "y": 413,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 18,
+      "x": 2237,
+      "y": 436,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 19,
+      "x": 2438,
+      "y": 326,
+      "radius": 60,
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 20,
+      "x": 129,
+      "y": 726,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 21,
+      "x": 322,
+      "y": 777,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 22,
+      "x": 605,
+      "y": 820,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 23,
+      "x": 863,
+      "y": 746,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 24,
+      "x": 1051,
+      "y": 794,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 25,
+      "x": 1505,
+      "y": 827,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 26,
+      "x": 1695,
+      "y": 698,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 27,
+      "x": 1909,
+      "y": 682,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 28,
+      "x": 2098,
+      "y": 707,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 29,
+      "x": 2408,
+      "y": 687,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 30,
+      "x": 188,
+      "y": 913,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 31,
+      "x": 284,
+      "y": 1088,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 32,
+      "x": 716,
+      "y": 922,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 33,
+      "x": 995,
+      "y": 1036,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 34,
+      "x": 1232,
+      "y": 1070,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 35,
+      "x": 1428,
+      "y": 981,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 36,
+      "x": 1694,
+      "y": 993,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 37,
+      "x": 2016,
+      "y": 908,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 38,
+      "x": 2206,
+      "y": 1045,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 39,
+      "x": 2491,
+      "y": 966,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "foliage",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 40,
+      "x": 158,
+      "y": 1277,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 41,
+      "x": 358,
+      "y": 1248,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 42,
+      "x": 738,
+      "y": 1214,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 43,
+      "x": 921,
+      "y": 1355,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 44,
+      "x": 1172,
+      "y": 1207,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 45,
+      "x": 1354,
+      "y": 1392,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 46,
+      "x": 1573,
+      "y": 1404,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 47,
+      "x": 2020,
+      "y": 1181,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 48,
+      "x": 2103,
+      "y": 1397,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": 49,
+      "x": 2471,
+      "y": 1256,
+      "radius": 60,
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "difficulty": 1
+    }
   ]
 }

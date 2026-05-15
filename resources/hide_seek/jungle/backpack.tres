@@ -9,4 +9,5 @@ item_name = "backpack"
 thumbnail = ExtResource("2_lf10d")
 position = Vector2(300, 900)
 radius = 60.0
-tags = Array[String](["ground", "structure"])
+base_scale = 1.5
+tags = Array[String](["ground"])

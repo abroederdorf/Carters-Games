@@ -8,4 +8,4 @@ script = ExtResource("1_oghbn")
 item_name = "checkered_flag"
 thumbnail = ExtResource("2_sj4ps")
 position = Vector2(200, 250)
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])

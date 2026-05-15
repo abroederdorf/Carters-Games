@@ -6,3 +6,4 @@
 script = ExtResource("1_hrfbd")
 item_name = "bus"
 radius = 60.0
+tags = Array[String](["ground"])

@@ -6,3 +6,4 @@
 script = ExtResource("1_1kkgr")
 item_name = "subway_sign"
 radius = 60.0
+tags = Array[String](["ground"])

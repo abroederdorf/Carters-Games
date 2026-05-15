@@ -9,4 +9,5 @@ item_name = "snake"
 thumbnail = ExtResource("2_75qge")
 position = Vector2(380, 400)
 radius = 60.0
+base_scale = 0.8
 tags = Array[String](["ground", "foliage"])

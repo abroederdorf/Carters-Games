@@ -9,4 +9,5 @@ item_name = "hard_hat"
 thumbnail = ExtResource("2_303fh")
 position = Vector2(1000, 550)
 radius = 45.0
+base_scale = 0.8
 tags = Array[String](["ground", "structure"])

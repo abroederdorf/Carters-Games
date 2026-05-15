@@ -9,4 +9,4 @@ item_name = "sloth"
 thumbnail = ExtResource("2_x67nk")
 position = Vector2(1200, 300)
 radius = 80.0
-tags = Array[String](["foliage"])
+tags = Array[String](["ground"])

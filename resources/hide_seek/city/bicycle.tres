@@ -8,3 +8,4 @@ script = ExtResource("1_x02nt")
 item_name = "bicycle"
 thumbnail = ExtResource("2_yl67o")
 radius = 60.0
+tags = Array[String](["ground"])

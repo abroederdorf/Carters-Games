@@ -9,4 +9,5 @@ item_name = "mushroom"
 thumbnail = ExtResource("2_cq1ve")
 position = Vector2(1100, 1000)
 radius = 35.0
-tags = Array[String](["ground", "foliage"])
+base_scale = 0.3
+tags = Array[String](["ground"])

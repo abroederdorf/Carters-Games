@@ -6,3 +6,4 @@
 script = ExtResource("1_1haxc")
 item_name = "trash_can"
 radius = 60.0
+tags = Array[String](["ground"])

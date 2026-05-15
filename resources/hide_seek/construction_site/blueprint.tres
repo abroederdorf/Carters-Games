@@ -9,4 +9,4 @@ item_name = "blueprint"
 thumbnail = ExtResource("2_m7ayc")
 position = Vector2(650, 950)
 radius = 60.0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])
