@@ -8,4 +8,5 @@ script = ExtResource("1_ebkg7")
 item_name = "clownfish"
 thumbnail = ExtResource("2_ikgjr")
 position = Vector2(120, 680)
-tags = Array[String](["foliage", "water"])
+base_scale = 0.5
+tags = Array[String](["water"])

@@ -9,4 +9,4 @@ item_name = "banana_bunch"
 thumbnail = ExtResource("2_t2lah")
 position = Vector2(150, 100)
 radius = 60.0
-tags = Array[String](["foliage"])
+tags = Array[String](["ground"])

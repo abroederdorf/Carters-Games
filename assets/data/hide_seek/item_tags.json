@@ -1,347 +1,1226 @@
 {
   "mountains": {
-    "tent": [
-      "ground",
-      "structure"
-    ],
-    "skier": [
-      "ground"
-    ],
-    "deer": [
-      "ground",
-      "foliage"
-    ],
-    "flowers": [
-      "foliage",
-      "ground"
-    ],
-    "campfire": [
-      "ground"
-    ],
-    "backpack": [
-      "ground"
-    ],
-    "rock": [
-      "ground"
-    ],
-    "cave": [
-      "ground"
-    ],
-    "tree": [
-      "foliage",
-      "ground"
-    ],
-    "hiker": [
-      "ground"
-    ],
-    "birds": [
-      "sky",
-      "foliage"
-    ],
-    "bear": [
-      "ground",
-      "foliage"
-    ],
-    "fish": [
-      "water"
-    ],
-    "climber": [
-      "ground"
-    ],
-    "compass": [
-      "ground",
-      "structure"
-    ]
+    "bear": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 2.0,
+      "preferred_anchors": []
+    },
+    "tent": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "dragonfly": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "campfire": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "fish": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "rock_climber": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.2,
+      "preferred_anchors": []
+    },
+    "skier": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "hiker": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "tree": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 3.0,
+      "preferred_anchors": []
+    },
+    "flowers": {
+      "tags": [
+        "ground",
+        "foliage"
+      ],
+      "base_scale": 0.4,
+      "preferred_anchors": []
+    },
+    "eagle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "backpack": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.5,
+      "preferred_anchors": []
+    },
+    "deer": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.8,
+      "preferred_anchors": []
+    },
+    "cave": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "rock": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.2,
+      "preferred_anchors": []
+    },
+    "mountain_goat": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "bunny": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "butterfly": {
+      "tags": [
+        "sky"
+      ],
+      "base_scale": 0.4,
+      "preferred_anchors": []
+    },
+    "ladybug": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "ant": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "mushroom": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 0.3,
+      "preferred_anchors": []
+    },
+    "turtle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "owl": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "bush": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "hiking_boot": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 0.7,
+      "preferred_anchors": []
+    },
+    "trekking_pole": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "first_aid_kit": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "climbing_rope": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "water_bottle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "flashlight": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "compass": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
   },
   "ocean": {
-    "seahorse": [
-      "foliage",
-      "water"
-    ],
-    "starfish": [
-      "ground"
-    ],
-    "sea_turtle": [
-      "water",
-      "ground"
-    ],
-    "treasure_chest": [
-      "ground",
-      "structure"
-    ],
-    "shark": [
-      "water"
-    ],
-    "clownfish": [
-      "foliage",
-      "water"
-    ],
-    "submarine": [
-      "water",
-      "ground"
-    ],
-    "jellyfish": [
-      "water"
-    ],
-    "crab": [
-      "ground"
-    ],
-    "anchor": [
-      "ground",
-      "structure"
-    ]
+    "shark": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 2.5,
+      "preferred_anchors": []
+    },
+    "crab": {
+      "tags": [
+        "ground",
+        "water"
+      ],
+      "base_scale": 0.6,
+      "preferred_anchors": []
+    },
+    "seahorse": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "treasure_chest": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "jellyfish": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "submarine": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "starfish": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "sea_turtle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "anchor": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "clownfish": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "diving_helmet": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "fish_angel": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "fish_beta": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "fish_butterfly": {
+      "tags": [
+        "sky"
+      ],
+      "base_scale": 0.4,
+      "preferred_anchors": []
+    },
+    "fish_puffer": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "fish_rainbow": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "gold_coin": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.2,
+      "preferred_anchors": []
+    },
+    "golden_trident": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "moray_eel": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "octopus": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "seashell": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
   },
   "jungle": {
-    "parrot": [
-      "sky",
-      "foliage"
-    ],
-    "banana_bunch": [
-      "foliage"
-    ],
-    "orchid": [
-      "foliage",
-      "ground"
-    ],
-    "tiger": [
-      "ground"
-    ],
-    "butterfly": [
-      "sky",
-      "foliage"
-    ],
-    "binoculars": [
-      "structure"
-    ],
-    "sloth": [
-      "foliage"
-    ],
-    "monkey": [
-      "foliage",
-      "ground"
-    ],
-    "explorer_hat": [
-      "structure"
-    ],
-    "snake": [
-      "ground",
-      "foliage"
-    ],
-    "compass": [
-      "ground",
-      "structure"
-    ],
-    "centipede": [
-      "ground",
-      "foliage"
-    ],
-    "lizard_orange": [
-      "ground",
-      "foliage"
-    ],
-    "snail": [
-      "ground",
-      "foliage"
-    ],
-    "beetle_green": [
-      "ground",
-      "foliage"
-    ]
+    "monkey": {
+      "tags": [
+        "foliage",
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "parrot": {
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "base_scale": 0.7,
+      "preferred_anchors": []
+    },
+    "tiger": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "snake": {
+      "tags": [
+        "ground",
+        "foliage"
+      ],
+      "base_scale": 0.8,
+      "preferred_anchors": []
+    },
+    "butterfly": {
+      "tags": [
+        "sky"
+      ],
+      "base_scale": 0.4,
+      "preferred_anchors": []
+    },
+    "banana_bunch": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "explorer_hat": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.8,
+      "preferred_anchors": []
+    },
+    "binoculars": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "orchid": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "sloth": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "ant": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "dragonfly": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "ladybug": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "backpack": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.5,
+      "preferred_anchors": []
+    },
+    "camera": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.6,
+      "preferred_anchors": []
+    },
+    "mushroom": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 0.3,
+      "preferred_anchors": []
+    },
+    "turtle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "bush": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "water_bottle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "first_aid_kit": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "palm_tree": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 3.0,
+      "preferred_anchors": []
+    },
+    "fern": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "compass": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "centipede": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "lizard_orange": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "snail": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "beetle_green": {
+      "tags": [
+        "sky"
+      ],
+      "base_scale": 0.3,
+      "preferred_anchors": []
+    }
   },
   "space": {
-    "astronaut": [
-      "ground",
-      "structure"
-    ],
-    "flying_saucer": [
-      "sky"
-    ],
-    "crater": [
-      "ground"
-    ],
-    "moon_rover": [
-      "ground"
-    ],
-    "rocket": [
-      "sky",
-      "ground"
-    ],
-    "alien": [
-      "ground",
-      "structure"
-    ],
-    "star": [
-      "sky"
-    ],
-    "space_helmet": [
-      "ground",
-      "structure"
-    ],
-    "saturn": [
-      "sky"
-    ],
-    "ray_gun": [
-      "ground",
-      "structure"
-    ]
+    "alien": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "rocket": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.2,
+      "preferred_anchors": []
+    },
+    "moon_rover": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "saturn": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "comet": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "flying_saucer": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "space_helmet": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "ray_gun": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "crater": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "satellite_dish": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "blue_crate": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "purple_alien": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "orbiting_satellite": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "robot": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "flying_rocket": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.2,
+      "preferred_anchors": []
+    },
+    "air_canister": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "shooting_star": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "toolbox": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "flashlight": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "wrench": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    }
   },
   "fire_station": {
-    "dalmatian": [
-      "ground",
-      "structure"
-    ],
-    "boots": [
-      "ground",
-      "structure"
-    ],
-    "bell": [
-      "structure"
-    ],
-    "fire_truck": [
-      "ground",
-      "structure"
-    ],
-    "ladder": [
-      "ground",
-      "structure"
-    ],
-    "truck_fast": [
-      "ground",
-      "structure"
-    ],
-    "hose_reel": [
-      "ground",
-      "structure"
-    ],
-    "axe": [
-      "ground",
-      "structure"
-    ],
-    "fire_extinguisher": [
-      "ground",
-      "structure"
-    ],
-    "helmet": [
-      "ground",
-      "structure"
-    ],
-    "hydrant": [
-      "ground",
-      "structure"
-    ]
+    "fire_truck": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 3.5,
+      "preferred_anchors": []
+    },
+    "dalmatian": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "helmet": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "fire_extinguisher": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "hydrant": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "axe": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "boots": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 0.7,
+      "preferred_anchors": []
+    },
+    "hose_reel": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "bell": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "ladder": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
   },
   "dinosaur_land": {
-    "palm_tree": [
-      "foliage",
-      "ground"
-    ],
-    "fern": [
-      "foliage",
-      "ground"
-    ],
-    "footprint": [
-      "ground"
-    ],
-    "t_rex": [
-      "ground"
-    ],
-    "stegosaurus": [
-      "ground"
-    ],
-    "dino_egg": [
-      "ground",
-      "foliage"
-    ],
-    "volcano": [
-      "ground"
-    ],
-    "fossil": [
-      "ground"
-    ],
-    "pterodactyl": [
-      "sky"
-    ],
-    "triceratops": [
-      "ground"
-    ]
+    "t_rex": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "triceratops": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "stegosaurus": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "pterodactyl": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "dino_egg": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "volcano": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "fossil": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "palm_tree": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 3.0,
+      "preferred_anchors": []
+    },
+    "fern": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "footprint": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
   },
   "construction_site": {
-    "dump_truck": [
-      "ground"
-    ],
-    "blueprint": [
-      "ground",
-      "structure"
-    ],
-    "hard_hat": [
-      "ground",
-      "structure"
-    ],
-    "traffic_cone": [
-      "ground"
-    ],
-    "toolbox": [
-      "ground",
-      "structure"
-    ],
-    "cement_mixer": [
-      "ground"
-    ],
-    "hammer": [
-      "ground",
-      "structure"
-    ],
-    "bulldozer": [
-      "ground"
-    ],
-    "excavator": [
-      "ground"
-    ],
-    "ladder": [
-      "structure",
-      "ground"
-    ],
-    "safety_vest": [
-      "ground",
-      "structure"
-    ]
+    "excavator": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "bulldozer": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "dump_truck": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 3.5,
+      "preferred_anchors": []
+    },
+    "cement_mixer": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "crane": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "hard_hat": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.8,
+      "preferred_anchors": []
+    },
+    "traffic_cone": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "blueprint": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "hammer": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.6,
+      "preferred_anchors": []
+    },
+    "toolbox": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
   },
   "monster_truck_jam": {
-    "trophy": [
-      "structure"
-    ],
-    "crushed_car": [
-      "ground"
-    ],
-    "flame_decal": [
-      "structure"
-    ],
-    "tire": [
-      "ground",
-      "structure"
-    ],
-    "megaphone": [
-      "structure",
-      "ground"
-    ],
-    "gas_can": [
-      "ground",
-      "structure"
-    ],
-    "monster_truck": [
-      "ground",
-      "structure"
-    ],
-    "checkered_flag": [
-      "structure"
-    ],
-    "wrench": [
-      "structure",
-      "ground"
-    ],
-    "mud_splatter": [
-      "ground",
-      "structure"
-    ]
+    "monster_truck": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 3.5,
+      "preferred_anchors": []
+    },
+    "crushed_car": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 3.0,
+      "preferred_anchors": []
+    },
+    "checkered_flag": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "trophy": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "tire": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "gas_can": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "wrench": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "megaphone": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "flame_decal": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "mud_splatter": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
+  },
+  "pet_shop": {
+    "hamster": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "kitten": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "puppy": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "goldfish_bowl": {
+      "tags": [
+        "water"
+      ],
+      "base_scale": 0.5,
+      "preferred_anchors": []
+    },
+    "parrot": {
+      "tags": [
+        "sky",
+        "foliage"
+      ],
+      "base_scale": 0.7,
+      "preferred_anchors": []
+    },
+    "bunny": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "cat_toy": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "guinea_pig": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "turtle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "lizard": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
+  },
+  "circus": {
+    "clown_nose": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "top_hat": {
+      "tags": [
+        "ground",
+        "structure"
+      ],
+      "base_scale": 0.8,
+      "preferred_anchors": []
+    },
+    "unicycle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "trapeze": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "aerial_hoop": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "lion": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "popcorn": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "megaphone": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "cotton_candy": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "juggling_club": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
+  },
+  "city": {
+    "taxi": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "stop_sign": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "traffic_light": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "skyscraper": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "fire_hydrant": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "trash_can": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "bus": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "bicycle": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "subway_sign": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    },
+    "newsstand": {
+      "tags": [
+        "ground"
+      ],
+      "base_scale": 1.0,
+      "preferred_anchors": []
+    }
   }
 }

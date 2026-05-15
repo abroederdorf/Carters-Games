@@ -8,3 +8,5 @@ script = ExtResource("1_vcfyq")
 item_name = "parrot"
 thumbnail = ExtResource("2_dfh76")
 radius = 60.0
+base_scale = 0.7
+tags = Array[String](["sky", "foliage"])

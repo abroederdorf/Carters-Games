@@ -9,4 +9,5 @@ item_name = "shark"
 thumbnail = ExtResource("2_hdhj0")
 position = Vector2(1000, 200)
 radius = 100.0
+base_scale = 2.5
 tags = Array[String](["water"])

@@ -8,4 +8,4 @@ script = ExtResource("1_ol2c3")
 item_name = "binoculars"
 thumbnail = ExtResource("2_ldjhc")
 position = Vector2(850, 920)
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])

@@ -9,4 +9,4 @@ item_name = "ant"
 thumbnail = ExtResource("2_pjmcf")
 position = Vector2(900, 1100)
 radius = 30.0
-tags = Array[String](["ground", "foliage"])
+tags = Array[String](["ground"])

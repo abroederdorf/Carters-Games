@@ -27,6 +27,14 @@ We are automating the creation of a 45-scene "Find the Hidden Object" game for A
     - `HideSeekSceneData.tres` for the full scene.
 - Resources are stored in `resources/hide_seek/`.
 
+## Resource & Cost Management
+- **MANDATORY CONFIRMATION:** Never execute scripts that perform expensive API operations (Vision analysis, Image generation, etc.) without explicit user confirmation.
+- **Affected Scripts:** This includes, but is not limited to:
+    - `tag_items.py` (Vision analysis)
+    - `map_anchors.py` (Vision mapping)
+    - `generate_*.py` (Image generation)
+- **Local Alternatives:** Always consider if a task can be performed locally (e.g., data migration) before resorting to paid API calls.
+
 ## Directory Structure
 - `assets/sprites/hide_seek/[theme_name]/`: Source images.
 - `assets/sprites/hide_seek/shared/`: Reusable isolated items.

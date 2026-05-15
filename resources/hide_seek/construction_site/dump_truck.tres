@@ -9,4 +9,5 @@ item_name = "dump_truck"
 thumbnail = ExtResource("2_odw7l")
 position = Vector2(1800, 850)
 radius = 95.0
+base_scale = 3.5
 tags = Array[String](["ground"])

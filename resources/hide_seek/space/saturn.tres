@@ -8,4 +8,4 @@ script = ExtResource("1_l3mkk")
 item_name = "saturn"
 thumbnail = ExtResource("2_aw3d6")
 radius = 60.0
-tags = Array[String](["sky"])
+tags = Array[String](["ground"])

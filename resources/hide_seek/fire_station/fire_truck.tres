@@ -9,4 +9,5 @@ item_name = "fire_truck"
 thumbnail = ExtResource("2_n3ho4")
 position = Vector2(1500, 500)
 radius = 120.0
-tags = Array[String](["ground", "structure"])
+base_scale = 3.5
+tags = Array[String](["ground"])

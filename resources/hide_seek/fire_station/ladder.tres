@@ -9,4 +9,4 @@ item_name = "ladder"
 thumbnail = ExtResource("2_421xi")
 position = Vector2(1850, 300)
 radius = 90.0
-tags = Array[String](["ground", "structure"])
+tags = Array[String](["ground"])

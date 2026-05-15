@@ -8,3 +8,5 @@ script = ExtResource("1_ycmg7")
 item_name = "flashlight"
 thumbnail = ExtResource("2_p51tf")
 radius = 60.0
+base_scale = 0.5
+tags = Array[String](["ground", "structure"])

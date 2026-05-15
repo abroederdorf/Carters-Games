@@ -8,3 +8,4 @@ script = ExtResource("1_cao66")
 item_name = "megaphone"
 thumbnail = ExtResource("2_gq240")
 radius = 60.0
+tags = Array[String](["ground"])

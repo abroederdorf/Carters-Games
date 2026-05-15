@@ -8,3 +8,4 @@ script = ExtResource("1_ds71t")
 item_name = "comet"
 thumbnail = ExtResource("2_pyg7u")
 radius = 60.0
+tags = Array[String](["ground"])
