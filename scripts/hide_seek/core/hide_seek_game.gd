@@ -65,7 +65,12 @@ func _ready() -> void:
 	for i in _active_items.size():
 		var item: HideSeekItemData = _active_items[i]
 		var d: Dictionary = _active_item_data[i]
-		_canvas.add_item_sprite(d["pos"], d.get("scale", 1.0), _get_item_texture(item))
+		var tex := _get_item_texture(item)
+		var sprite_size := 750.0
+		if tex:
+			sprite_size = max(tex.get_width(), tex.get_height())
+		var visual_scale := (300.0 * item.base_scale) / sprite_size
+		_canvas.add_item_sprite(d["pos"], visual_scale, tex)
 
 	_ui = HideSeekUI.new()
 	add_child(_ui)
@@ -111,7 +116,7 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 
 	available_anchors.shuffle()
 
-	var used_anchors: Dictionary = {} # anchor_id -> bool
+	var used_anchors: Array[HideSeekAnchor] = []
 
 	for i in _active_items.size():
 		var item := _active_items[i]
@@ -120,9 +125,8 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 		# PASS 0: Preferred Anchors (Manual override)
 		if not item.preferred_anchors.is_empty():
 			for preferred_id in item.preferred_anchors:
-				# Find anchor with this ID
 				for a in available_anchors:
-					if a.id == preferred_id and not used_anchors.has(a.id):
+					if a.id == preferred_id and a not in used_anchors:
 						assigned_anchor = a
 						break
 				if assigned_anchor: break
@@ -130,33 +134,28 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 		# PASS 1: Strict Tag Matching
 		if assigned_anchor == null and not item.tags.is_empty():
 			for anchor in available_anchors:
-				if used_anchors.has(anchor.id): continue
-				
-				# Check if any item tag matches any anchor tag
+				if anchor in used_anchors: continue
+
 				var match_found := false
 				for t in item.tags:
 					if t in anchor.tags:
 						match_found = true
 						break
-				
+
 				if match_found:
-					# Additional check: prevent ground items in sky/water unless explicitly tagged
 					var is_sky := "sky" in anchor.tags
 					var is_water := "water" in anchor.tags
 					var item_likes_sky := "sky" in item.tags
 					var item_likes_water := "water" in item.tags
-					
 					if is_sky and not item_likes_sky: continue
 					if is_water and not item_likes_water: continue
-					
 					assigned_anchor = anchor
 					break
 
 		# PASS 2: Soft Matching (Generic ground items)
 		if assigned_anchor == null:
 			for anchor in available_anchors:
-				if used_anchors.has(anchor.id): continue
-				
+				if anchor in used_anchors: continue
 				var is_special := "sky" in anchor.tags or "water" in anchor.tags
 				if not is_special:
 					assigned_anchor = anchor
@@ -165,7 +164,7 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 		# PASS 3: Environment-aware fallback (sky/water exclusion, ignores specific tags)
 		if assigned_anchor == null:
 			for anchor in available_anchors:
-				if used_anchors.has(anchor.id): continue
+				if anchor in used_anchors: continue
 				var is_sky := "sky" in anchor.tags
 				var is_water := "water" in anchor.tags
 				var item_likes_sky := "sky" in item.tags
@@ -178,25 +177,16 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 		# PASS 4: Absolute last resort (no restrictions)
 		if assigned_anchor == null:
 			for anchor in available_anchors:
-				if not used_anchors.has(anchor.id):
+				if anchor not in used_anchors:
 					assigned_anchor = anchor
 					break
 
-		var data := {"pos": Vector2.ZERO, "radius": 50.0}
+		var data := {"pos": Vector2.ZERO, "radius": 50.0, "anchor_radius": 50.0}
 		if assigned_anchor != null:
-			used_anchors[assigned_anchor.id] = true
+			used_anchors.append(assigned_anchor)
 			data["pos"] = assigned_anchor.position
-
-			var scale := item.base_scale
-
-			# Fit to anchor: downscale if item would exceed the anchor's space
-			var max_radius := assigned_anchor.radius * 2.0
-			var item_radius := 60.0 * scale
-			if item_radius > max_radius:
-				scale *= (max_radius / item_radius)
-
-			data["radius"] = 60.0 * scale * 1.5
-			data["scale"] = scale
+			data["anchor_radius"] = assigned_anchor.radius
+			data["radius"] = assigned_anchor.radius * item.base_scale * 1.2
 		
 		_active_item_data.append(data)
 

@@ -318,7 +318,7 @@ func _on_load_res_pressed() -> void:
 	_res_dialog.popup_centered()
 
 func _on_res_file_selected(path: String) -> void:
-	var res = load(path)
+	var res = ResourceLoader.load(path, "", ResourceLoader.CACHE_MODE_REPLACE)
 	if not res is HideSeekSceneData:
 		_set_status("Invalid resource type. Expected HideSeekSceneData.")
 		return
@@ -492,15 +492,15 @@ func _on_export_pressed() -> void:
 		return
 
 	_scene_data.scene_name = scene_id
-	# Flag this scene as manually edited so automation doesn't overwrite it
-	_scene_data.set_meta("is_manual_edit", true)
+	_scene_data.is_manual_edit = true
 
-	var save_path := "res://resources/hide_seek/%s.tres" % scene_id
-	var err := ResourceSaver.save(_scene_data, save_path)
+	var res_path := "res://resources/hide_seek/%s.tres" % scene_id
+	var abs_path := ProjectSettings.globalize_path(res_path)
+	var err := ResourceSaver.save(_scene_data, abs_path)
 	if err == OK:
-		_set_status("Saved: " + save_path)
+		_set_status("Saved: " + abs_path)
 	else:
-		_set_status("Save failed (error %d). Check the resources/hide_seek/ folder exists." % err)
+		_set_status("Save failed (error %d). Path: %s" % [err, abs_path])
 
 func _set_status(msg: String) -> void:
 	_status_label.text = msg

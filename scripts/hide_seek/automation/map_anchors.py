@@ -1,161 +1,111 @@
-import os
 import json
+import random
 from pathlib import Path
-from dotenv import load_dotenv
 
-load_dotenv()
-from google import genai
-from google.genai import types
-from PIL import Image
-
-# --- Configuration ---
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
-client = genai.Client(api_key=API_KEY)
-# We use Gemini 2.5 Flash for its strong vision capabilities
-VISION_MODEL = "gemini-2.5-flash"
-
-ASSET_ROOT = Path("assets/sprites/hide_seek")
-RESOURCE_ROOT = Path("resources/hide_seek")
-
-PROMPT = """
-You are a game designer for a 'Find the Hidden Object' game. 
-Look at this background image for a children's game.
-
-Task 1: Anchor Points
-Identify exactly 50 natural-looking anchor points where an object could be hidden. 
-Image Dimensions: {width} x {height}
-
-Spatial Distribution Rules (MANDATORY):
-1. Imagine the image divided into a 5x4 grid (20 equal cells).
-2. You MUST place at least 2 anchor points in every single cell of that grid.
-3. This ensures points are spread into the far corners, edges, and 'empty' areas, not just clustered in the center.
-
-Data Rules:
-- id: A unique incrementing integer (0-49).
-- x, y: Pixel coordinates where (0,0) is top-left.
-- radius: Radius (R) in pixels for the touch area (20-60px).
-- tags: Use 1-2 of: "ground", "sky", "water", "foliage", "structure", "shadow".
-- difficulty: 0 (Easy), 1 (Medium), 2 (Hard).
-
-Task 2: Item Suggestions
-Suggest 15 items to hide in this specific scene.
-- For each item, provide:
-  - name: slug (e.g. "red_bucket")
-  - desc: visual description for image generation.
-  - type: "in_scene" or "thematic".
-  - tags: 1-2 tags matching the anchor tag types (e.g. ["ground_flat", "structure_wall"]).
-  - base_scale: A float representing relative size (0.5 for a bug, 1.0 for a bucket, 3.0 for a car).
-
-Return result STRICTLY as JSON object:
-{{
-  "anchors": [{{"id": ID, "x": X, "y": Y, "radius": R, "tags": [T], "difficulty": D}}],
-  "items": [{{"name": "slug", "desc": "description", "type": "T", "tags": [T], "base_scale": S}}]
-}}
-"""
-
-def get_analysis_for_image(image_path):
-    print(f"Analyzing: {image_path.name}")
-    
-    img = Image.open(image_path)
-    width, height = img.size
-    
-    with open(image_path, "rb") as f:
-        image_bytes = f.read()
-
-    try:
-        response = client.models.generate_content(
-            model=VISION_MODEL,
-            contents=[
-                PROMPT.format(width=width, height=height),
-                types.Part.from_bytes(data=image_bytes, mime_type="image/png")
-            ]
-        )
-        
-        text = response.text
-        if "```json" in text:
-            text = text.split("```json")[1].split("```")[0]
-        elif "```" in text:
-            text = text.split("```")[1].split("```")[0]
-            
-        return json.loads(text.strip())
-    except Exception as e:
-        print(f"  Error: {e}")
-        return None
+try:
+    from PIL import Image
+    PIL_AVAILABLE = True
+except ImportError:
+    PIL_AVAILABLE = False
 
 THEMES_JSON = Path("assets/data/hide_seek/themes.json")
 ANCHORS_JSON = Path("assets/data/hide_seek/anchors_data.json")
-SUGGESTIONS_JSON = Path("assets/data/hide_seek/item_suggestions.json")
+ASSET_ROOT = Path("assets/sprites/hide_seek")
 
-def main():
-    with open(THEMES_JSON, "r") as f:
-        index = json.load(f)
-    
-    themes = index["themes"].keys()
-    
-    # Load existing data to merge
-    all_anchors = {}
-    if ANCHORS_JSON.exists():
-        with open(ANCHORS_JSON, "r") as f:
-            all_anchors = json.load(f)
-            
-    all_suggestions = {}
-    if SUGGESTIONS_JSON.exists():
-        with open(SUGGESTIONS_JSON, "r") as f:
-            all_suggestions = json.load(f)
+DEFAULT_WIDTH = 1920
+DEFAULT_HEIGHT = 1080
+GRID_COLS = 5
+GRID_ROWS = 10   # 5×10 = 50 anchors per scene
+RADIUS = 50
 
-    for theme in themes:
-        print(f"Checking theme: {theme}")
-        theme_dir = ASSET_ROOT / theme
-        
-        # Look for the best background
-        bg_path = None
-        possible_names = [
-            f"bg_{theme}.png",
-            f"bg_{theme.replace('_land', '')}.png",
-            f"bg_{theme.replace('_jam', '')}.png",
-            f"bg_{theme.replace('monster_truck_jam', 'monster_jam')}.png",
-            f"bg_{theme.replace('mountains', 'mountain')}.png",
-            f"bg_{theme.replace('_site', '')}.png",
-            "bg.png",
-            "bg_fast.png"
-        ]
-        
-        for name in possible_names:
+
+def _row_tags(row: int) -> list:
+    frac = row / GRID_ROWS
+    if frac < 0.20:
+        return ["sky"]
+    elif frac < 0.45:
+        return ["sky", "foliage"]
+    elif frac < 0.70:
+        return ["foliage", "structure"]
+    elif frac < 0.88:
+        return ["ground"]
+    else:
+        return ["ground", "shadow"]
+
+
+def _difficulty(col: int, row: int) -> int:
+    col_edge = abs(col - (GRID_COLS - 1) / 2) / ((GRID_COLS - 1) / 2)
+    row_edge = abs(row - (GRID_ROWS - 1) / 2) / ((GRID_ROWS - 1) / 2)
+    dist = max(col_edge, row_edge)
+    if dist < 0.40:
+        return 0
+    elif dist < 0.85:
+        return 1
+    else:
+        return 2
+
+
+def _bg_size(theme_dir: Path) -> tuple:
+    if PIL_AVAILABLE:
+        for name in ["bg.png", "bg_fast.png", "bg_standard.png"]:
             p = theme_dir / name
             if p.exists():
-                bg_path = p
-                print(f"  Found background: {name}")
-                break
-        
-        # Final fallback: Look for any png starting with bg_
-        if not bg_path:
-            for p in theme_dir.glob("bg_*.png"):
-                bg_path = p
-                print(f"  Found background via glob: {p.name}")
-                break
-        
-        if not bg_path:
-            print(f"  No background found for {theme}")
-            continue
-        
-        target_themes = ["mountains", "ocean", "jungle", "space", "dinosaur_land", "fire_station", "monster_truck_jam", "construction_site"]
-        if theme not in target_themes:
-            print(f"  Theme {theme} not in target list, skipping.")
+                return Image.open(p).size
+        for p in theme_dir.glob("bg_*.png"):
+            return Image.open(p).size
+    return DEFAULT_WIDTH, DEFAULT_HEIGHT
+
+
+def _generate_anchors(width: int, height: int) -> list:
+    cell_w = width / GRID_COLS
+    cell_h = height / GRID_ROWS
+    jx = cell_w * 0.25
+    jy = cell_h * 0.25
+    anchors = []
+    for row in range(GRID_ROWS):
+        for col in range(GRID_COLS):
+            x = int(cell_w * (col + 0.5) + random.uniform(-jx, jx))
+            y = int(cell_h * (row + 0.5) + random.uniform(-jy, jy))
+            x = max(RADIUS, min(width - RADIUS, x))
+            y = max(RADIUS, min(height - RADIUS, y))
+            anchors.append({
+                "x": x,
+                "y": y,
+                "radius": RADIUS,
+                "tags": _row_tags(row),
+                "difficulty": _difficulty(col, row),
+            })
+    return anchors
+
+
+def main():
+    with open(THEMES_JSON) as f:
+        data = json.load(f)
+
+    all_anchors: dict = {}
+    if ANCHORS_JSON.exists():
+        with open(ANCHORS_JSON) as f:
+            all_anchors = json.load(f)
+
+    themes = list(data["themes"].keys())
+
+    for theme in themes:
+        if theme in all_anchors:
+            print(f"[{theme}] Already has anchors — skipping. (delete from anchors_data.json to regenerate)")
             continue
 
-        result = get_analysis_for_image(bg_path)
-        if result:
-            all_anchors[theme] = result.get("anchors", [])
-            all_suggestions[theme] = result.get("items", [])
-            print(f"  Captured {len(all_anchors[theme])} anchors and {len(all_suggestions[theme])} suggestions.")
-            
-            # Save incrementally
-            with open(ANCHORS_JSON, "w") as f:
-                json.dump(all_anchors, f, indent=2)
-            with open(SUGGESTIONS_JSON, "w") as f:
-                json.dump(all_suggestions, f, indent=2)
+        theme_dir = ASSET_ROOT / theme
+        width, height = _bg_size(theme_dir)
+        random.seed(hash(theme) & 0xFFFFFF)
+        anchors = _generate_anchors(width, height)
+        all_anchors[theme] = anchors
+        source = f"bg ({width}×{height})" if (width, height) != (DEFAULT_WIDTH, DEFAULT_HEIGHT) else f"default ({width}×{height})"
+        print(f"[{theme}] Generated {len(anchors)} anchors — {source}")
 
-    print("\nProcessing complete.")
+    with open(ANCHORS_JSON, "w") as f:
+        json.dump(all_anchors, f, indent=2)
+    print(f"\nSaved anchors to {ANCHORS_JSON}")
+
 
 if __name__ == "__main__":
     main()

@@ -144,29 +144,59 @@ func show_wrong_at(pos: Vector2) -> void:
 
 
 func show_hint_at(pos: Vector2, radius: float) -> void:
-	var lbl := Label.new()
-	lbl.text = "*"
-	lbl.add_theme_font_size_override("font_size", int(radius * 1.5))
-	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	var sz := radius * 2.0
-	lbl.custom_minimum_size = Vector2(sz, sz)
-	lbl.position = pos - Vector2(radius, radius)
-	_canvas_root.add_child(lbl)
+	var hint := Node2D.new()
+	hint.position = pos
+	_canvas_root.add_child(hint)
 
-	var pulse := get_tree().create_tween()
-	pulse.set_loops(3)
-	pulse.tween_property(lbl, "scale", Vector2(1.4, 1.4), 0.3).set_ease(Tween.EASE_OUT)
-	pulse.tween_property(lbl, "scale", Vector2(1.0, 1.0), 0.3).set_ease(Tween.EASE_IN)
-	pulse.tween_callback(_fade_hint.bind(lbl))
+	var font_size := int(radius * 3.5)
 
+	# Outer ripple ring — expands and fades repeatedly
+	var ring := Label.new()
+	ring.text = "●"
+	ring.add_theme_font_size_override("font_size", font_size)
+	ring.add_theme_color_override("font_color", Color(1.0, 0.85, 0.0, 0.5))
+	ring.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	ring.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	ring.custom_minimum_size = Vector2(font_size * 1.5, font_size * 1.5)
+	ring.position = Vector2(-font_size * 0.75, -font_size * 0.75)
+	hint.add_child(ring)
 
-func _fade_hint(lbl: Label) -> void:
-	if not is_instance_valid(lbl):
-		return
-	var tween := get_tree().create_tween()
-	tween.tween_property(lbl, "modulate:a", 0.0, 0.5)
-	tween.tween_callback(lbl.queue_free)
+	# Inner star — pulses and flashes color
+	var star := Label.new()
+	star.text = "★"
+	star.add_theme_font_size_override("font_size", font_size)
+	star.add_theme_color_override("font_color", Color(1.0, 0.9, 0.0))
+	star.add_theme_color_override("font_shadow_color", Color(0.0, 0.0, 0.0, 1.0))
+	star.add_theme_constant_override("shadow_offset_x", 4)
+	star.add_theme_constant_override("shadow_offset_y", 4)
+	star.add_theme_constant_override("shadow_size", 6)
+	star.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	star.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	star.custom_minimum_size = Vector2(font_size * 1.5, font_size * 1.5)
+	star.position = Vector2(-font_size * 0.75, -font_size * 0.75)
+	hint.add_child(star)
+
+	# Ripple: ring expands outward and fades, loops 5 times
+	var ripple := get_tree().create_tween()
+	ripple.set_loops(5)
+	ripple.tween_property(ring, "scale", Vector2(2.5, 2.5), 0.6).set_ease(Tween.EASE_OUT)
+	ripple.tween_property(ring, "modulate:a", 0.0, 0.0)
+	ripple.tween_property(ring, "scale", Vector2(1.0, 1.0), 0.0)
+	ripple.tween_property(ring, "modulate:a", 1.0, 0.0)
+
+	# Star: pulses scale and flashes between gold and white, 10 times
+	var flash := get_tree().create_tween()
+	flash.set_loops(10)
+	flash.tween_property(star, "scale", Vector2(1.35, 1.35), 0.15).set_ease(Tween.EASE_OUT)
+	flash.tween_property(star, "modulate", Color(1.0, 1.0, 1.0), 0.15)
+	flash.tween_property(star, "scale", Vector2(0.9, 0.9), 0.15).set_ease(Tween.EASE_IN)
+	flash.tween_property(star, "modulate", Color(1.0, 0.9, 0.0), 0.15)
+
+	# Fade everything out after 3.5 seconds
+	var fade := get_tree().create_tween()
+	fade.tween_interval(3.2)
+	fade.tween_property(hint, "modulate:a", 0.0, 0.6)
+	fade.tween_callback(hint.queue_free)
 
 
 # ── Input ──────────────────────────────────────────────────────────────────────
