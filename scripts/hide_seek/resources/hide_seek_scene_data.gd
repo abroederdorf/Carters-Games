@@ -5,3 +5,4 @@ extends Resource
 @export var background_image: Texture2D
 @export var items: Array[HideSeekItemData] = []
 @export var anchors: Array[HideSeekAnchor] = []
+@export var is_manual_edit: bool = false

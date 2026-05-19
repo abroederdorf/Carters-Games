@@ -102,7 +102,7 @@ func _sync_theme(theme: String) -> void:
 	_sync_items(scene_data, theme, data.get("items", []))
 
 	# Check for manual edit protection
-	if scene_data.has_meta("is_manual_edit") and scene_data.get_meta("is_manual_edit") == true:
+	if scene_data.is_manual_edit:
 		print("[%s] PROTECTED: Skipping anchor/tag sync due to manual edit flag." % theme)
 	else:
 		_apply_anchors(scene_data, theme)

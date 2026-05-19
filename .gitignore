@@ -7,5 +7,8 @@ local/
 *.import
 export_credentials.cfg
 
+# Automation artifacts
+scripts/hide_seek/automation/remaining_themes_manifest.json
+
 # OS
 .DS_Store
