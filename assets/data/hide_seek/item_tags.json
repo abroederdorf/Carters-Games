@@ -667,7 +667,7 @@
       "base_scale": 1.0,
       "preferred_anchors": []
     },
-    "space_helmet": {
+    "astronaut": {
       "tags": [
         "ground",
         "structure"

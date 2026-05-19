@@ -874,7 +874,7 @@
           ]
         },
         {
-          "name": "space_helmet",
+          "name": "astronaut",
           "desc": "white helmet with blue visor, sitting upright",
           "type": "object",
           "tags": [
