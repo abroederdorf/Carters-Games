@@ -368,15 +368,6 @@
           ]
         },
         {
-          "name": "cave",
-          "desc": "dark cave entrance in a rocky cliff face",
-          "type": "object",
-          "tags": [
-            "structure",
-            "shadow"
-          ]
-        },
-        {
           "name": "rock",
           "desc": "single large rounded gray boulder, simple",
           "type": "object",

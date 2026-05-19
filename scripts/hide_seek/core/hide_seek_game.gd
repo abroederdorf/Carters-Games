@@ -69,7 +69,7 @@ func _ready() -> void:
 		var sprite_size := 750.0
 		if tex:
 			sprite_size = max(tex.get_width(), tex.get_height())
-		var visual_scale := (300.0 * item.base_scale) / sprite_size
+		var visual_scale := (229.0 * item.base_scale) / sprite_size
 		_canvas.add_item_sprite(d["pos"], visual_scale, tex)
 
 	_ui = HideSeekUI.new()
@@ -186,7 +186,7 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 			used_anchors.append(assigned_anchor)
 			data["pos"] = assigned_anchor.position
 			data["anchor_radius"] = assigned_anchor.radius
-			data["radius"] = assigned_anchor.radius * item.base_scale * 1.2
+			data["radius"] = assigned_anchor.radius * item.base_scale * 1.5
 		
 		_active_item_data.append(data)
 

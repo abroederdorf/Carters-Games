@@ -278,6 +278,7 @@ func _build_ui() -> void:
 	
 	_res_dialog = _make_dialog("Load Resource (.tres)")
 	_res_dialog.filters = PackedStringArray(["*.tres ; Resources"])
+	_res_dialog.current_dir = ProjectSettings.globalize_path("res://resources")
 	_res_dialog.file_selected.connect(_on_res_file_selected)
 	add_child(_res_dialog)
 
