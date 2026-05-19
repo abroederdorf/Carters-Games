@@ -27,10 +27,10 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/palm_tree.png" id="24_g6xkm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/fern.png" id="25_g6xkm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/compass.png" id="26_mo6dx"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/centipede.png" id="27_kuirr"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/lizard_orange.png" id="28_qkxk5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/snail.png" id="29_eued8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/beetle_green.png" id="30_h26qt"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/centipede.png" id="27_kuirr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/lizard_orange.png" id="28_qkxk5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/snail.png" id="29_eued8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/beetle_green.png" id="30_h26qt"]
 
 [sub_resource type="Resource" id="Resource_6ff2o"]
 script = ExtResource("1_3pcbq")
@@ -588,7 +588,6 @@ item_name = "palm_tree"
 thumbnail = ExtResource("24_g6xkm")
 position = Vector2(1200, 300)
 radius = 70.0
-base_scale = 1
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_fern1"]

@@ -132,7 +132,7 @@ func _has_similar_name(existing: Dictionary, name: String) -> bool:
 	# Uses underscore-split tokens with a min length of 3 to avoid short false matches
 	var name_tokens := name.split("_")
 	for existing_name in existing.keys():
-		var existing_tokens := existing_name.split("_")
+		var existing_tokens: PackedStringArray = existing_name.split("_")
 		for token in name_tokens:
 			if token.length() > 2 and token in existing_tokens:
 				return true
