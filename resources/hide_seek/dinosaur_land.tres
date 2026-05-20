@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/fern.png" id="4_k7gtb"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/footprint.png" id="5_drpck"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/fossil.png" id="6_fvl77"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/palm_tree.png" id="7_yg5xi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/palm_tree.png" id="7_yg5xi"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/pterodactyl.png" id="8_a1ner"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/stegosaurus.png" id="9_852u2"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/t_rex.png" id="10_yl3xs"]
@@ -24,6 +24,11 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bush.png" id="21_xnuee"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/ladybug.png" id="22_slurn"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/butterfly.png" id="23_5tj4l"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/prehistoric_flower.png" id="24_5746y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/raptor.png" id="25_mcl3j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/lava_rock.png" id="26_netrl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/scorpion.png" id="27_6f2am"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/dinosaur_skull.png" id="28_2v7j6"]
 
 [sub_resource type="Resource" id="Resource_l6uy3"]
 script = ExtResource("1_l6uy3")
@@ -563,10 +568,40 @@ position = Vector2(1976.7123, 305.44418)
 base_scale = 0.30000000000000004
 tags = Array[String](["sky"])
 
+[sub_resource type="Resource" id="Resource_q3bwt"]
+script = ExtResource("2_l6uy3")
+item_name = "prehistoric_flower"
+thumbnail = ExtResource("24_5746y")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_w080g"]
+script = ExtResource("2_l6uy3")
+item_name = "raptor"
+thumbnail = ExtResource("25_mcl3j")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_o1sti"]
+script = ExtResource("2_l6uy3")
+item_name = "lava_rock"
+thumbnail = ExtResource("26_netrl")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_bb102"]
+script = ExtResource("2_l6uy3")
+item_name = "scorpion"
+thumbnail = ExtResource("27_6f2am")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_p6fmn"]
+script = ExtResource("2_l6uy3")
+item_name = "dinosaur_skull"
+thumbnail = ExtResource("28_2v7j6")
+radius = 60.0
+
 [resource]
 script = ExtResource("13_b784x")
 scene_name = "dinosaur_land"
 background_image = ExtResource("1_luueq")
-items = Array[ExtResource("2_l6uy3")]([SubResource("Resource_1fv5e"), SubResource("Resource_pu3f4"), SubResource("Resource_j2vcy"), SubResource("Resource_smikw"), SubResource("Resource_2v376"), SubResource("Resource_3mbjs"), SubResource("Resource_y71cp"), SubResource("Resource_ecrqn"), SubResource("Resource_5qcu8"), SubResource("Resource_y004k"), SubResource("Resource_14wch"), SubResource("Resource_5pai6"), SubResource("Resource_tharw"), SubResource("Resource_slurn"), SubResource("Resource_h1qkh"), SubResource("Resource_netrl"), SubResource("Resource_6qisr"), SubResource("Resource_1v7er"), SubResource("Resource_5tj4l"), SubResource("Resource_5746y")])
+items = Array[ExtResource("2_l6uy3")]([SubResource("Resource_1fv5e"), SubResource("Resource_pu3f4"), SubResource("Resource_j2vcy"), SubResource("Resource_smikw"), SubResource("Resource_2v376"), SubResource("Resource_3mbjs"), SubResource("Resource_y71cp"), SubResource("Resource_ecrqn"), SubResource("Resource_5qcu8"), SubResource("Resource_y004k"), SubResource("Resource_14wch"), SubResource("Resource_5pai6"), SubResource("Resource_tharw"), SubResource("Resource_slurn"), SubResource("Resource_h1qkh"), SubResource("Resource_netrl"), SubResource("Resource_6qisr"), SubResource("Resource_1v7er"), SubResource("Resource_5tj4l"), SubResource("Resource_5746y"), SubResource("Resource_q3bwt"), SubResource("Resource_w080g"), SubResource("Resource_o1sti"), SubResource("Resource_bb102"), SubResource("Resource_p6fmn")])
 anchors = Array[ExtResource("1_l6uy3")]([SubResource("Resource_l6uy3"), SubResource("Resource_o0kys"), SubResource("Resource_k7gtb"), SubResource("Resource_drpck"), SubResource("Resource_fvl77"), SubResource("Resource_yg5xi"), SubResource("Resource_a1ner"), SubResource("Resource_852u2"), SubResource("Resource_yl3xs"), SubResource("Resource_8atkm"), SubResource("Resource_utqgp"), SubResource("Resource_b784x"), SubResource("Resource_6rmkd"), SubResource("Resource_7c7oc"), SubResource("Resource_n6glk"), SubResource("Resource_5qtmp"), SubResource("Resource_tnx0t"), SubResource("Resource_dfjgr"), SubResource("Resource_iv4f8"), SubResource("Resource_jcjkh"), SubResource("Resource_6to7n"), SubResource("Resource_5whuh"), SubResource("Resource_ideth"), SubResource("Resource_woqon"), SubResource("Resource_iytmm"), SubResource("Resource_bttxd"), SubResource("Resource_l6p12"), SubResource("Resource_c1n8j"), SubResource("Resource_n5wa6"), SubResource("Resource_qhuvl"), SubResource("Resource_qhkds"), SubResource("Resource_8c5dk"), SubResource("Resource_ujbfc"), SubResource("Resource_fviom"), SubResource("Resource_1jdg5"), SubResource("Resource_ir2on"), SubResource("Resource_76mrb"), SubResource("Resource_0lkry"), SubResource("Resource_3m4ld"), SubResource("Resource_ns12q"), SubResource("Resource_sxuhk"), SubResource("Resource_41n58"), SubResource("Resource_qbebh"), SubResource("Resource_p8ltp"), SubResource("Resource_ny0yo"), SubResource("Resource_2nxv7"), SubResource("Resource_gf7xj"), SubResource("Resource_0ajql"), SubResource("Resource_e8wio"), SubResource("Resource_dh01o")])
 is_manual_edit = true
