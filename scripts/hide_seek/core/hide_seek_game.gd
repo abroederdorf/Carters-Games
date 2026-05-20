@@ -41,7 +41,7 @@ func _ready() -> void:
 	all_items.shuffle()
 
 	var total_to_pick := TARGET_COUNT + _decoy_count
-	var pick_count := min(total_to_pick, all_items.size())
+	var pick_count: int = mini(total_to_pick, all_items.size())
 	_active_items = all_items.slice(0, pick_count)
 	var backup_pool: Array = all_items.slice(pick_count)
 
