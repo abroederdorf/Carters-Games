@@ -14,9 +14,10 @@ MODEL_NAME = "imagen-4.0-fast-generate-001"
 ASSET_ROOT = Path("assets/sprites/hide_seek")
 SHARED_ROOT = Path("assets/sprites/hide_seek/shared")
 
-# --- Refined Prefixes ---
-CHARACTER_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
-OBJECT_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, isolated object only, no people, no characters, no background, no shadows, no text, "
+# See local/hide-seek-art-guide.md for canonical item prompt formula.
+CHARACTER_PREFIX = "Isolated on white background, "
+OBJECT_PREFIX = "Isolated on white background, isolated object only, no people, no characters, no background, "
+ITEM_SUFFIX = ", centered, thick black outlines, vibrant colors, children's book illustration, 512x512."
 
 # --- Master Themes Data (Refined) ---
 THEMES = {
@@ -103,7 +104,7 @@ def main():
             if "shared" in item_data: continue
             item_path = theme_dir / f"{item_name}.png"
             prefix = CHARACTER_PREFIX if item_data["type"] == "character" else OBJECT_PREFIX
-            generate_image(prefix + item_data["desc"], item_path, MODEL_NAME)
+            generate_image(f"{prefix}{item_data['desc']}{ITEM_SUFFIX}", item_path, MODEL_NAME)
             time.sleep(5)
 
 if __name__ == "__main__":
