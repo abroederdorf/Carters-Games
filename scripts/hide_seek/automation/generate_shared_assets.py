@@ -19,9 +19,10 @@ SHARED_ROOT = Path("assets/sprites/hide_seek/shared")
 
 THEMES_JSON = Path("assets/data/hide_seek/themes.json")
 
-# --- Refined Prefixes ---
-CHARACTER_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
-OBJECT_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, isolated object only, no people, no characters, no background, no shadows, no text, "
+# See local/hide-seek-art-guide.md for canonical item prompt formula.
+CHARACTER_PREFIX = "Isolated on white background, "
+OBJECT_PREFIX = "Isolated on white background, isolated object only, no people, no characters, no background, "
+ITEM_SUFFIX = ", centered, thick black outlines, vibrant colors, children's book illustration, 512x512."
 
 def load_master_index():
     with open(THEMES_JSON, "r") as f:
@@ -60,7 +61,7 @@ def main():
             continue
             
         prefix = OBJECT_PREFIX if data["type"] == "object" else CHARACTER_PREFIX
-        full_prompt = prefix + data["desc"]
+        full_prompt = f"{prefix}{data['desc']}{ITEM_SUFFIX}"
         
         success = generate_image(full_prompt, output_path, MODEL_NAME)
         if success:

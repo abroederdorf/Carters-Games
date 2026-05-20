@@ -11,7 +11,7 @@ API_KEY = "AIzaSyAzZu1AIZdq5Im0q4sW8fdDKNiNbtSyW7A"
 client = genai.Client(api_key=API_KEY)
 
 ASSET_ROOT = Path("assets/sprites/hide_seek")
-ITEM_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
+# Items are full prompts — draft with Claude using local/hide-seek-art-guide.md, then paste here.
 
 # --- Targeted Themes ---
 TARGETS = {
@@ -89,7 +89,7 @@ def main():
             item_path = theme_dir / f"{item_name}.png"
             if item_path.exists(): continue
             
-            success = generate_image(ITEM_PREFIX + item_desc, item_path, data['model'])
+            success = generate_image(item_desc, item_path, data['model'])
             if success: time.sleep(5)
 
 if __name__ == "__main__":

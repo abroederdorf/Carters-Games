@@ -7,11 +7,11 @@ We are automating the creation of a 45-scene "Find the Hidden Object" game for A
 - **Model:** `imagen-4.0-fast-generate-001` (Fast, $0.02/image) via Google GenAI API.
 - **Backgrounds:** 16:9 aspect ratio, panoramic landscape.
 - **Items:** 1:1 aspect ratio.
-- **Surgical Prompting Pattern:** Always follow the **[Isolated] -> [Object/Orientation] -> [Style]** structure to prevent the AI from generating full scenes or incorrect perspectives.
+- **Surgical Prompting Pattern:** Always follow the **[Isolated] -> [Object/Orientation] -> [Style]** structure to prevent the AI from generating full scenes or incorrect perspectives. Canonical formula is in `local/hide-seek-art-guide.md`.
     - **Isolated:** Always start with `Isolated on white background`.
-    - **Orientation:** If a specific angle is needed (e.g. for game overlays), specify `perfect side profile` or `flat side view`.
     - **Object:** Describe the core subject (e.g. `simple oval-shaped red fish, no whiskers, solid color body with no patterns`).
-    - **Style:** Always end with `thick black outlines, flat design, children's book illustration`.
+    - **Orientation:** Specify view — `perfectly flat front view`, `perfectly flat side view`, or `slight 3/4 view` (use 3/4 for items that would look flat or ambiguous in profile, e.g. buckets, cans, stacked items).
+    - **Style:** Always end with `thick black outlines, vibrant colors, children's book illustration, 512x512`.
 - **Prompts:** 
     - **Object Prefix:** Stricter prompt following the surgical pattern to ensure isolated objects (no people).
     - **Character Prefix:** Used for people or animals while maintaining the surgical structure.

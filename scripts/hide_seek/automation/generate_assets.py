@@ -15,11 +15,10 @@ API_KEY = os.environ.get("GEMINI_API_KEY", "")
 MODEL_NAME = "imagen-4.0-fast-generate-001"
 client = genai.Client(api_key=API_KEY)
 
-# Refined prefixes from main, keeping the consistent STYLE_SUFFIX from local for art direction
-CHARACTER_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, no shadows, no text, "
-OBJECT_PREFIX = "Children's book illustration, flat design, bright saturated colors, thick black outlines, white background, centered, isolated object only, no people, no characters, no background, no shadows, no text, "
-
-STYLE_SUFFIX = ", simple flat vector design, thick black outlines, bright saturated colors, friendly cartoon style, no people, no background, no shadows, no text."
+# See local/hide-seek-art-guide.md for canonical item prompt formula.
+CHARACTER_PREFIX = "Isolated on white background, "
+OBJECT_PREFIX = "Isolated on white background, isolated object only, no people, no characters, no background, "
+ITEM_SUFFIX = ", centered, thick black outlines, vibrant colors, children's book illustration, 512x512."
 
 HS_THEMES_JSON = Path("assets/data/hide_seek/themes.json")
 HS_ASSET_ROOT = Path("assets/sprites/hide_seek")
@@ -110,7 +109,7 @@ def run_hide_seek(themes_json: Path = HS_THEMES_JSON, asset_root: Path = HS_ASSE
             item_path = theme_dir / f"{item_data['name']}.png"
             if not item_path.exists():
                 prefix = CHARACTER_PREFIX if item_data.get("type") == "character" else OBJECT_PREFIX
-                prompt = f"{prefix}{item_data['desc']}. {STYLE_SUFFIX}"
+                prompt = f"{prefix}{item_data['desc']}{ITEM_SUFFIX}"
                 ok = generate_image(prompt, item_path)
                 if ok:
                     generated_items.append(item_data['name'])
@@ -125,7 +124,7 @@ def run_hide_seek(themes_json: Path = HS_THEMES_JSON, asset_root: Path = HS_ASSE
         if not bg_path.exists():
             # Build a style-matching prompt
             item_list = ", ".join(generated_items[:5]) # Mention first few items for style matching
-            bg_prompt = f"{data['scene']}. {STYLE_SUFFIX} The environment should feature natural hiding spots and a color palette that perfectly matches the following objects: {item_list}."
+            bg_prompt = f"{data['scene']} The environment should feature natural hiding spots and a color palette that perfectly matches the following objects: {item_list}."
             
             if generate_image(bg_prompt, bg_path, aspect_ratio="16:9", transparent_bg=False):
                 time.sleep(5)

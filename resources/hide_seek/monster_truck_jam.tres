@@ -14,6 +14,16 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/wrench.png" id="10_qahqo"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/megaphone.png" id="11_amrmb"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="13_nkli5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/toolbox.png" id="14_nim8m"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/dirt_pile.png" id="15_8r1tm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/foam_finger.png" id="16_qb2m1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flashlight.png" id="17_dwx8v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/motorcycle_helmet.png" id="18_dwx8v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/crowd_barrier.png" id="19_2cgt6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/construction_cone.png" id="20_qwgho"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/oil_can.png" id="21_qwgho"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/monster_truck_jam/broken_car_door.png" id="22_5wo4x"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/pennant_flag.png" id="23_5wo4x"]
 
 [sub_resource type="Resource" id="Resource_aej6v"]
 script = ExtResource("1_aej6v")
@@ -467,9 +477,69 @@ position = Vector2(800, 800)
 radius = 60.0
 tags = Array[String](["ground"])
 
+[sub_resource type="Resource" id="Resource_2cgt6"]
+script = ExtResource("2_aej6v")
+item_name = "toolbox"
+thumbnail = ExtResource("14_nim8m")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_qwgho"]
+script = ExtResource("2_aej6v")
+item_name = "dirt_pile"
+thumbnail = ExtResource("15_8r1tm")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_5wo4x"]
+script = ExtResource("2_aej6v")
+item_name = "foam_finger"
+thumbnail = ExtResource("16_qb2m1")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_ywkvq"]
+script = ExtResource("2_aej6v")
+item_name = "flashlight"
+thumbnail = ExtResource("17_dwx8v")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_0g3mu"]
+script = ExtResource("2_aej6v")
+item_name = "motorcycle_helmet"
+thumbnail = ExtResource("18_dwx8v")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_cse0d"]
+script = ExtResource("2_aej6v")
+item_name = "crowd_barrier"
+thumbnail = ExtResource("19_2cgt6")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_mlcyt"]
+script = ExtResource("2_aej6v")
+item_name = "construction_cone"
+thumbnail = ExtResource("20_qwgho")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_hff0w"]
+script = ExtResource("2_aej6v")
+item_name = "oil_can"
+thumbnail = ExtResource("21_qwgho")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_xseux"]
+script = ExtResource("2_aej6v")
+item_name = "broken_car_door"
+thumbnail = ExtResource("22_5wo4x")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_4axap"]
+script = ExtResource("2_aej6v")
+item_name = "pennant_flag"
+thumbnail = ExtResource("23_5wo4x")
+radius = 60.0
+
 [resource]
 script = ExtResource("13_nkli5")
 scene_name = "monster_truck_jam"
 background_image = ExtResource("1_qgp2t")
-items = Array[ExtResource("2_aej6v")]([SubResource("Resource_7xiq3"), SubResource("Resource_g3oy2"), SubResource("Resource_muckm"), SubResource("Resource_3cjs7"), SubResource("Resource_2hjd2"), SubResource("Resource_uyryk"), SubResource("Resource_uua0w"), SubResource("Resource_67m3h"), SubResource("Resource_t2y43"), SubResource("Resource_le7dp")])
+items = Array[ExtResource("2_aej6v")]([SubResource("Resource_7xiq3"), SubResource("Resource_g3oy2"), SubResource("Resource_muckm"), SubResource("Resource_3cjs7"), SubResource("Resource_2hjd2"), SubResource("Resource_uyryk"), SubResource("Resource_uua0w"), SubResource("Resource_67m3h"), SubResource("Resource_t2y43"), SubResource("Resource_le7dp"), SubResource("Resource_2cgt6"), SubResource("Resource_qwgho"), SubResource("Resource_5wo4x"), SubResource("Resource_ywkvq"), SubResource("Resource_0g3mu"), SubResource("Resource_cse0d"), SubResource("Resource_mlcyt"), SubResource("Resource_hff0w"), SubResource("Resource_xseux"), SubResource("Resource_4axap")])
 anchors = Array[ExtResource("1_aej6v")]([SubResource("Resource_aej6v"), SubResource("Resource_yuy7a"), SubResource("Resource_2qptk"), SubResource("Resource_qahqo"), SubResource("Resource_amrmb"), SubResource("Resource_c8rks"), SubResource("Resource_j6syv"), SubResource("Resource_md801"), SubResource("Resource_m76tm"), SubResource("Resource_fyy86"), SubResource("Resource_s6e2j"), SubResource("Resource_nkli5"), SubResource("Resource_b6b8g"), SubResource("Resource_oubqe"), SubResource("Resource_knhov"), SubResource("Resource_orlmu"), SubResource("Resource_obhcs"), SubResource("Resource_mkj52"), SubResource("Resource_32c3v"), SubResource("Resource_x0cdq"), SubResource("Resource_wy0os"), SubResource("Resource_bxlhu"), SubResource("Resource_w7th6"), SubResource("Resource_llym4"), SubResource("Resource_8pnxy"), SubResource("Resource_76uar"), SubResource("Resource_pwvou"), SubResource("Resource_drf4o"), SubResource("Resource_7djk1"), SubResource("Resource_4s5kq"), SubResource("Resource_2b0ps"), SubResource("Resource_ycloi"), SubResource("Resource_uftjq"), SubResource("Resource_l4fp2"), SubResource("Resource_epngf"), SubResource("Resource_q1fh0"), SubResource("Resource_lg201"), SubResource("Resource_l40d2"), SubResource("Resource_vcniy"), SubResource("Resource_3csww"), SubResource("Resource_8715d"), SubResource("Resource_lext3"), SubResource("Resource_t3udq"), SubResource("Resource_0jsn2"), SubResource("Resource_w6pwe"), SubResource("Resource_negjr"), SubResource("Resource_gbped"), SubResource("Resource_hkb0q"), SubResource("Resource_x3mpa"), SubResource("Resource_i53ul")])

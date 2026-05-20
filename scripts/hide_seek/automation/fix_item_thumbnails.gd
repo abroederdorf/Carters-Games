@@ -129,12 +129,12 @@ func _has_similar_name(existing: Dictionary, name: String) -> bool:
 	if existing.has(name):
 		return true
 	# Token-based alias check: "beetle" matches "beetle_green", "lizard" matches "lizard_orange"
-	# Uses underscore-split tokens with a min length of 3 to avoid short false matches
+	# Min length of 5 avoids short false matches e.g. "hose" in fire_hose vs hose_reel
 	var name_tokens := name.split("_")
 	for existing_name in existing.keys():
 		var existing_tokens: PackedStringArray = existing_name.split("_")
 		for token in name_tokens:
-			if token.length() > 2 and token in existing_tokens:
+			if token.length() >= 5 and token in existing_tokens:
 				return true
 	return false
 

@@ -1350,8 +1350,16 @@
           ]
         },
         {
-          "name": "traffic_cone",
+          "name": "construction_cone",
           "desc": "orange and white striped traffic cone",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "t_square",
+          "desc": "silver metal T-square ruler with a perpendicular handle",
           "type": "object",
           "tags": [
             "ground"
@@ -1412,15 +1420,6 @@
           "name": "worker",
           "desc": "construction worker in orange vest and hard hat",
           "type": "character",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "safety_vest",
-          "desc": "bright orange safety vest with reflective strips",
-          "type": "object",
           "tags": [
             "ground",
             "structure"

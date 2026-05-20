@@ -41,9 +41,11 @@ func _ready() -> void:
 	all_items.shuffle()
 
 	var total_to_pick := TARGET_COUNT + _decoy_count
-	_active_items = all_items.slice(0, min(total_to_pick, all_items.size()))
-	
-	_assign_items_to_anchors(bg_size)
+	var pick_count: int = mini(total_to_pick, all_items.size())
+	_active_items = all_items.slice(0, pick_count)
+	var backup_pool: Array = all_items.slice(pick_count)
+
+	_assign_items_to_anchors(bg_size, backup_pool)
 	_found.resize(_active_items.size())
 	_found.fill(false)
 
@@ -100,95 +102,91 @@ func _process(delta: float) -> void:
 
 # ── Item Assignment ────────────────────────────────────────────────────────────
 
-func _assign_items_to_anchors(bg_size: Vector2) -> void:
+func _assign_items_to_anchors(bg_size: Vector2, backup_pool: Array) -> void:
 	_active_item_data.clear()
 
 	var margin_x := bg_size.x * 0.05
 	var margin_y := bg_size.y * 0.05
 	var available_anchors: Array[HideSeekAnchor] = []
-
 	for a in _scene_data.anchors:
-		# Filter out anchors too close to edges
 		if a.position.x < margin_x or a.position.x > bg_size.x - margin_x \
 				or a.position.y < margin_y or a.position.y > bg_size.y - margin_y:
 			continue
 		available_anchors.append(a)
-
 	available_anchors.shuffle()
 
-	var used_anchors: Array[HideSeekAnchor] = []
+	# Process most-constrained items first so items with rare tags claim anchors
+	# before generic items exhaust the pool
+	var order: Array[int] = []
+	for i in _active_items.size():
+		order.append(i)
+	order.sort_custom(func(a: int, b: int) -> bool:
+		return _count_compatible(_active_items[a], available_anchors) \
+			< _count_compatible(_active_items[b], available_anchors)
+	)
+
+	var free_anchors := available_anchors.duplicate()
+	var anchor_map: Dictionary = {}
+	var backup_idx := 0
+
+	for orig_i in order:
+		var item: HideSeekItemData = _active_items[orig_i]
+		var a := _pick_anchor(item, free_anchors)
+		if a != null:
+			free_anchors.erase(a)
+			anchor_map[orig_i] = a
+		else:
+			# No compatible anchor left — swap in a backup item that can be placed
+			while backup_idx < backup_pool.size():
+				var backup: HideSeekItemData = backup_pool[backup_idx]
+				backup_idx += 1
+				var ba := _pick_anchor(backup, free_anchors)
+				if ba != null:
+					free_anchors.erase(ba)
+					_active_items[orig_i] = backup
+					anchor_map[orig_i] = ba
+					break
 
 	for i in _active_items.size():
-		var item := _active_items[i]
-		var assigned_anchor: HideSeekAnchor = null
-
-		# PASS 0: Preferred Anchors (Manual override)
-		if not item.preferred_anchors.is_empty():
-			for preferred_id in item.preferred_anchors:
-				for a in available_anchors:
-					if a.id == preferred_id and a not in used_anchors:
-						assigned_anchor = a
-						break
-				if assigned_anchor: break
-
-		# PASS 1: Strict Tag Matching
-		if assigned_anchor == null and not item.tags.is_empty():
-			for anchor in available_anchors:
-				if anchor in used_anchors: continue
-
-				var match_found := false
-				for t in item.tags:
-					if t in anchor.tags:
-						match_found = true
-						break
-
-				if match_found:
-					var is_sky := "sky" in anchor.tags
-					var is_water := "water" in anchor.tags
-					var item_likes_sky := "sky" in item.tags
-					var item_likes_water := "water" in item.tags
-					if is_sky and not item_likes_sky: continue
-					if is_water and not item_likes_water: continue
-					assigned_anchor = anchor
-					break
-
-		# PASS 2: Soft Matching (Generic ground items)
-		if assigned_anchor == null:
-			for anchor in available_anchors:
-				if anchor in used_anchors: continue
-				var is_special := "sky" in anchor.tags or "water" in anchor.tags
-				if not is_special:
-					assigned_anchor = anchor
-					break
-
-		# PASS 3: Environment-aware fallback (sky/water exclusion, ignores specific tags)
-		if assigned_anchor == null:
-			for anchor in available_anchors:
-				if anchor in used_anchors: continue
-				var is_sky := "sky" in anchor.tags
-				var is_water := "water" in anchor.tags
-				var item_likes_sky := "sky" in item.tags
-				var item_likes_water := "water" in item.tags
-				if is_sky and not item_likes_sky: continue
-				if is_water and not item_likes_water: continue
-				assigned_anchor = anchor
-				break
-
-		# PASS 4: Absolute last resort (no restrictions)
-		if assigned_anchor == null:
-			for anchor in available_anchors:
-				if anchor not in used_anchors:
-					assigned_anchor = anchor
-					break
-
 		var data := {"pos": Vector2.ZERO, "radius": 50.0, "anchor_radius": 50.0}
-		if assigned_anchor != null:
-			used_anchors.append(assigned_anchor)
-			data["pos"] = assigned_anchor.position
-			data["anchor_radius"] = assigned_anchor.radius
-			data["radius"] = assigned_anchor.radius * item.base_scale * 1.5
-		
+		if anchor_map.has(i):
+			var a: HideSeekAnchor = anchor_map[i]
+			data["pos"] = a.position
+			data["anchor_radius"] = a.radius
+			data["radius"] = a.radius * _active_items[i].base_scale * 1.5
 		_active_item_data.append(data)
+
+
+func _item_fits_anchor(item: HideSeekItemData, anchor: HideSeekAnchor) -> bool:
+	if item.tags.is_empty() and anchor.tags.is_empty():
+		return true
+	if item.tags.is_empty() or anchor.tags.is_empty():
+		return false
+	for t in item.tags:
+		if t in anchor.tags:
+			return true
+	return false
+
+
+func _count_compatible(item: HideSeekItemData, anchors: Array[HideSeekAnchor]) -> int:
+	var count := 0
+	for a in anchors:
+		if _item_fits_anchor(item, a):
+			count += 1
+	return count
+
+
+func _pick_anchor(item: HideSeekItemData, free_anchors: Array[HideSeekAnchor]) -> HideSeekAnchor:
+	# Preferred anchor IDs take priority; fall through to tag matching if unavailable
+	if not item.preferred_anchors.is_empty():
+		for preferred_id in item.preferred_anchors:
+			for a in free_anchors:
+				if a.id == preferred_id:
+					return a
+	for a in free_anchors:
+		if _item_fits_anchor(item, a):
+			return a
+	return null
 
 
 # ── Game Logic ─────────────────────────────────────────────────────────────────

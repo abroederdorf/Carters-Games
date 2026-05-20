@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/fern.png" id="4_k7gtb"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/footprint.png" id="5_drpck"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/fossil.png" id="6_fvl77"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/palm_tree.png" id="7_yg5xi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/palm_tree.png" id="7_yg5xi"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/pterodactyl.png" id="8_a1ner"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/stegosaurus.png" id="9_852u2"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/t_rex.png" id="10_yl3xs"]
@@ -21,6 +21,14 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/beetle_green.png" id="18_slurn"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/centipede.png" id="19_5tj4l"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/lizard_orange.png" id="20_mdmwf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bush.png" id="21_xnuee"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/ladybug.png" id="22_slurn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/butterfly.png" id="23_5tj4l"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/prehistoric_flower.png" id="24_5746y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/raptor.png" id="25_mcl3j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/lava_rock.png" id="26_netrl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/scorpion.png" id="27_6f2am"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/dinosaur_land/dinosaur_skull.png" id="28_2v7j6"]
 
 [sub_resource type="Resource" id="Resource_l6uy3"]
 script = ExtResource("1_l6uy3")
@@ -28,14 +36,14 @@ id = 0
 position = Vector2(250, 180)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["sky", "tree"])
+tags = Array[String](["tree"])
 
 [sub_resource type="Resource" id="Resource_o0kys"]
 script = ExtResource("1_l6uy3")
 id = 1
 position = Vector2(100, 280)
 radius = 41.0
-tags = Array[String](["sky", "tree"])
+tags = Array[String](["tree"])
 
 [sub_resource type="Resource" id="Resource_k7gtb"]
 script = ExtResource("1_l6uy3")
@@ -50,7 +58,7 @@ script = ExtResource("1_l6uy3")
 id = 3
 position = Vector2(650, 300)
 radius = 39.0
-tags = Array[String](["sky", "volcano"])
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_fvl77"]
 script = ExtResource("1_l6uy3")
@@ -85,24 +93,24 @@ tags = Array[String](["sky", "volcano"])
 [sub_resource type="Resource" id="Resource_yl3xs"]
 script = ExtResource("1_l6uy3")
 id = 8
-position = Vector2(2119.42, 718.8157)
+position = Vector2(2030.9254, 726.51)
 radius = 39.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_8atkm"]
 script = ExtResource("1_l6uy3")
 id = 9
 position = Vector2(2600, 250)
 radius = 40.0
-tags = Array[String](["tree", "sky"])
+tags = Array[String](["tree"])
 
 [sub_resource type="Resource" id="Resource_utqgp"]
 script = ExtResource("1_l6uy3")
 id = 10
-position = Vector2(180.74855, 1107.3185)
+position = Vector2(138.42516, 1064.9996)
 radius = 45.0
-tags = Array[String](["foliage", "ground"])
+tags = Array[String](["rock"])
 
 [sub_resource type="Resource" id="Resource_b784x"]
 script = ExtResource("1_l6uy3")
@@ -145,17 +153,17 @@ tags = Array[String](["foliage"])
 [sub_resource type="Resource" id="Resource_tnx0t"]
 script = ExtResource("1_l6uy3")
 id = 16
-position = Vector2(1826.8715, 769.15076)
+position = Vector2(2303.9714, 99.74875)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_dfjgr"]
 script = ExtResource("1_l6uy3")
 id = 17
-position = Vector2(2000, 550)
+position = Vector2(1969.2196, 580.7773)
 radius = 30.0
-tags = Array[String](["foliage", "sky"])
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_iv4f8"]
 script = ExtResource("1_l6uy3")
@@ -227,10 +235,10 @@ tags = Array[String](["water"])
 [sub_resource type="Resource" id="Resource_c1n8j"]
 script = ExtResource("1_l6uy3")
 id = 27
-position = Vector2(1984.6255, 738.53656)
+position = Vector2(1438.2675, 107.605255)
 radius = 42.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_n5wa6"]
 script = ExtResource("1_l6uy3")
@@ -245,21 +253,21 @@ id = 29
 position = Vector2(2557.7214, 800)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_qhkds"]
 script = ExtResource("1_l6uy3")
 id = 30
 position = Vector2(407.51956, 1326.9049)
 difficulty = 2
-tags = Array[String](["rock"])
+tags = Array[String](["plants"])
 
 [sub_resource type="Resource" id="Resource_8c5dk"]
 script = ExtResource("1_l6uy3")
 id = 31
 position = Vector2(319.28488, 1184.6255)
 radius = 40.0
-tags = Array[String](["rock"])
+tags = Array[String](["plants"])
 
 [sub_resource type="Resource" id="Resource_ujbfc"]
 script = ExtResource("1_l6uy3")
@@ -274,36 +282,36 @@ id = 33
 position = Vector2(1080.6484, 1249.9668)
 radius = 42.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["mud"])
 
 [sub_resource type="Resource" id="Resource_1jdg5"]
 script = ExtResource("1_l6uy3")
 id = 34
-position = Vector2(1188.5361, 1369.251)
+position = Vector2(1219.3164, 1346.168)
 radius = 45.0
 difficulty = 2
-tags = Array[String](["ground"])
+tags = Array[String](["mud"])
 
 [sub_resource type="Resource" id="Resource_ir2on"]
 script = ExtResource("1_l6uy3")
 id = 35
-position = Vector2(1530.7488, 1257.6873)
+position = Vector2(1553.834, 1246.1458)
 radius = 43.0
-tags = Array[String](["ground"])
+tags = Array[String](["mud"])
 
 [sub_resource type="Resource" id="Resource_76mrb"]
 script = ExtResource("1_l6uy3")
 id = 36
 position = Vector2(2122.8606, 1284.6255)
 radius = 40.0
-tags = Array[String](["rock"])
+tags = Array[String](["mud"])
 
 [sub_resource type="Resource" id="Resource_0lkry"]
 script = ExtResource("1_l6uy3")
 id = 37
-position = Vector2(1842.4122, 1403.8768)
+position = Vector2(1842.4122, 1426.9598)
 difficulty = 2
-tags = Array[String](["ground"])
+tags = Array[String](["mud"])
 
 [sub_resource type="Resource" id="Resource_3m4ld"]
 script = ExtResource("1_l6uy3")
@@ -326,19 +334,19 @@ id = 40
 position = Vector2(199.21791, 584.62573)
 radius = 42.0
 difficulty = 2
-tags = Array[String](["foliage", "sky"])
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_41n58"]
 script = ExtResource("1_l6uy3")
 id = 41
-position = Vector2(323.0614, 727.00574)
+position = Vector2(246.10963, 742.39453)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_qbebh"]
 script = ExtResource("1_l6uy3")
 id = 42
-position = Vector2(550, 1050)
+position = Vector2(511.52405, 1057.6943)
 radius = 45.0
 difficulty = 2
 tags = Array[String](["ground"])
@@ -346,8 +354,8 @@ tags = Array[String](["ground"])
 [sub_resource type="Resource" id="Resource_p8ltp"]
 script = ExtResource("1_l6uy3")
 id = 43
-position = Vector2(780.74854, 769.21783)
-tags = Array[String](["ground"])
+position = Vector2(823.0721, 649.9558)
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_ny0yo"]
 script = ExtResource("1_l6uy3")
@@ -366,7 +374,7 @@ tags = Array[String](["foliage"])
 [sub_resource type="Resource" id="Resource_gf7xj"]
 script = ExtResource("1_l6uy3")
 id = 46
-position = Vector2(2050, 1100)
+position = Vector2(891.8783, 1415.4655)
 radius = 40.0
 difficulty = 2
 tags = Array[String](["rock"])
@@ -376,7 +384,7 @@ script = ExtResource("1_l6uy3")
 id = 47
 position = Vector2(2350, 500)
 radius = 43.0
-tags = Array[String](["volcano", "sky"])
+tags = Array[String](["volcano", "foliage"])
 
 [sub_resource type="Resource" id="Resource_e8wio"]
 script = ExtResource("1_l6uy3")
@@ -399,7 +407,8 @@ item_name = "t_rex"
 thumbnail = ExtResource("10_yl3xs")
 position = Vector2(800, 550)
 radius = 95.0
-tags = Array[String](["ground"])
+base_scale = 1.6
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_pu3f4"]
 script = ExtResource("2_l6uy3")
@@ -407,8 +416,8 @@ item_name = "triceratops"
 thumbnail = ExtResource("11_8atkm")
 position = Vector2(150, 750)
 radius = 80.0
-base_scale = 1.04
-tags = Array[String](["ground"])
+base_scale = 1.5
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_j2vcy"]
 script = ExtResource("2_l6uy3")
@@ -416,8 +425,8 @@ item_name = "stegosaurus"
 thumbnail = ExtResource("9_852u2")
 position = Vector2(1200, 600)
 radius = 85.0
-base_scale = 1.105
-tags = Array[String](["ground"])
+base_scale = 1.7
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_smikw"]
 script = ExtResource("2_l6uy3")
@@ -442,7 +451,7 @@ item_name = "volcano"
 thumbnail = ExtResource("12_utqgp")
 position = Vector2(300, 400)
 radius = 120.0
-tags = Array[String](["ground"])
+tags = Array[String](["volcano"])
 
 [sub_resource type="Resource" id="Resource_y71cp"]
 script = ExtResource("2_l6uy3")
@@ -451,7 +460,7 @@ thumbnail = ExtResource("6_fvl77")
 position = Vector2(1700, 700)
 radius = 55.0
 base_scale = 0.39
-tags = Array[String](["ground"])
+tags = Array[String](["ground", "mud"])
 
 [sub_resource type="Resource" id="Resource_ecrqn"]
 script = ExtResource("2_l6uy3")
@@ -459,7 +468,7 @@ item_name = "palm_tree"
 thumbnail = ExtResource("7_yg5xi")
 position = Vector2(500, 500)
 radius = 110.0
-tags = Array[String](["ground"])
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_5qcu8"]
 script = ExtResource("2_l6uy3")
@@ -468,7 +477,7 @@ thumbnail = ExtResource("4_k7gtb")
 position = Vector2(200, 950)
 radius = 65.0
 base_scale = 0.39
-tags = Array[String](["ground", "tree"])
+tags = Array[String](["plants", "tree"])
 
 [sub_resource type="Resource" id="Resource_y004k"]
 script = ExtResource("2_l6uy3")
@@ -477,7 +486,7 @@ thumbnail = ExtResource("5_drpck")
 position = Vector2(1000, 900)
 radius = 60.0
 base_scale = 0.39
-tags = Array[String](["ground"])
+tags = Array[String](["mud"])
 
 [sub_resource type="Resource" id="Resource_14wch"]
 script = ExtResource("2_l6uy3")
@@ -509,7 +518,7 @@ item_name = "ant"
 thumbnail = ExtResource("17_xnuee")
 position = Vector2(870.5698, 1373.3632)
 base_scale = 0.26
-tags = Array[String](["rock"])
+tags = Array[String](["rock", "plants"])
 
 [sub_resource type="Resource" id="Resource_h1qkh"]
 script = ExtResource("2_l6uy3")
@@ -517,15 +526,15 @@ item_name = "beetle_green"
 thumbnail = ExtResource("18_slurn")
 position = Vector2(528.49164, 1188.8716)
 base_scale = 0.39
-tags = Array[String](["rock"])
+tags = Array[String](["rock", "plants"])
 
 [sub_resource type="Resource" id="Resource_netrl"]
 script = ExtResource("2_l6uy3")
 item_name = "centipede"
 thumbnail = ExtResource("19_5tj4l")
 position = Vector2(1885.2737, 1208.0894)
-base_scale = 0.26
-tags = Array[String](["rock"])
+base_scale = 0.5
+tags = Array[String](["rock", "plants"])
 
 [sub_resource type="Resource" id="Resource_6qisr"]
 script = ExtResource("2_l6uy3")
@@ -533,12 +542,66 @@ item_name = "lizard_orange"
 thumbnail = ExtResource("20_mdmwf")
 position = Vector2(2275.3965, 1163.8883)
 base_scale = 0.455
-tags = Array[String](["rock", "ground"])
+tags = Array[String](["rock", "tree", "plants"])
+
+[sub_resource type="Resource" id="Resource_1v7er"]
+script = ExtResource("2_l6uy3")
+item_name = "bush"
+thumbnail = ExtResource("21_xnuee")
+position = Vector2(649.2959, 853.6614)
+base_scale = 0.6000000000000001
+tags = Array[String](["foliage"])
+
+[sub_resource type="Resource" id="Resource_5tj4l"]
+script = ExtResource("2_l6uy3")
+item_name = "ladybug"
+thumbnail = ExtResource("22_slurn")
+position = Vector2(1726.6191, 838.27277)
+base_scale = 0.4
+tags = Array[String](["rock"])
+
+[sub_resource type="Resource" id="Resource_5746y"]
+script = ExtResource("2_l6uy3")
+item_name = "butterfly"
+thumbnail = ExtResource("23_5tj4l")
+position = Vector2(1976.7123, 305.44418)
+base_scale = 0.30000000000000004
+tags = Array[String](["sky"])
+
+[sub_resource type="Resource" id="Resource_q3bwt"]
+script = ExtResource("2_l6uy3")
+item_name = "prehistoric_flower"
+thumbnail = ExtResource("24_5746y")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_w080g"]
+script = ExtResource("2_l6uy3")
+item_name = "raptor"
+thumbnail = ExtResource("25_mcl3j")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_o1sti"]
+script = ExtResource("2_l6uy3")
+item_name = "lava_rock"
+thumbnail = ExtResource("26_netrl")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_bb102"]
+script = ExtResource("2_l6uy3")
+item_name = "scorpion"
+thumbnail = ExtResource("27_6f2am")
+radius = 60.0
+
+[sub_resource type="Resource" id="Resource_p6fmn"]
+script = ExtResource("2_l6uy3")
+item_name = "dinosaur_skull"
+thumbnail = ExtResource("28_2v7j6")
+radius = 60.0
 
 [resource]
 script = ExtResource("13_b784x")
 scene_name = "dinosaur_land"
 background_image = ExtResource("1_luueq")
-items = Array[ExtResource("2_l6uy3")]([SubResource("Resource_1fv5e"), SubResource("Resource_pu3f4"), SubResource("Resource_j2vcy"), SubResource("Resource_smikw"), SubResource("Resource_2v376"), SubResource("Resource_3mbjs"), SubResource("Resource_y71cp"), SubResource("Resource_ecrqn"), SubResource("Resource_5qcu8"), SubResource("Resource_y004k"), SubResource("Resource_14wch"), SubResource("Resource_5pai6"), SubResource("Resource_tharw"), SubResource("Resource_slurn"), SubResource("Resource_h1qkh"), SubResource("Resource_netrl"), SubResource("Resource_6qisr")])
+items = Array[ExtResource("2_l6uy3")]([SubResource("Resource_1fv5e"), SubResource("Resource_pu3f4"), SubResource("Resource_j2vcy"), SubResource("Resource_smikw"), SubResource("Resource_2v376"), SubResource("Resource_3mbjs"), SubResource("Resource_y71cp"), SubResource("Resource_ecrqn"), SubResource("Resource_5qcu8"), SubResource("Resource_y004k"), SubResource("Resource_14wch"), SubResource("Resource_5pai6"), SubResource("Resource_tharw"), SubResource("Resource_slurn"), SubResource("Resource_h1qkh"), SubResource("Resource_netrl"), SubResource("Resource_6qisr"), SubResource("Resource_1v7er"), SubResource("Resource_5tj4l"), SubResource("Resource_5746y"), SubResource("Resource_q3bwt"), SubResource("Resource_w080g"), SubResource("Resource_o1sti"), SubResource("Resource_bb102"), SubResource("Resource_p6fmn")])
 anchors = Array[ExtResource("1_l6uy3")]([SubResource("Resource_l6uy3"), SubResource("Resource_o0kys"), SubResource("Resource_k7gtb"), SubResource("Resource_drpck"), SubResource("Resource_fvl77"), SubResource("Resource_yg5xi"), SubResource("Resource_a1ner"), SubResource("Resource_852u2"), SubResource("Resource_yl3xs"), SubResource("Resource_8atkm"), SubResource("Resource_utqgp"), SubResource("Resource_b784x"), SubResource("Resource_6rmkd"), SubResource("Resource_7c7oc"), SubResource("Resource_n6glk"), SubResource("Resource_5qtmp"), SubResource("Resource_tnx0t"), SubResource("Resource_dfjgr"), SubResource("Resource_iv4f8"), SubResource("Resource_jcjkh"), SubResource("Resource_6to7n"), SubResource("Resource_5whuh"), SubResource("Resource_ideth"), SubResource("Resource_woqon"), SubResource("Resource_iytmm"), SubResource("Resource_bttxd"), SubResource("Resource_l6p12"), SubResource("Resource_c1n8j"), SubResource("Resource_n5wa6"), SubResource("Resource_qhuvl"), SubResource("Resource_qhkds"), SubResource("Resource_8c5dk"), SubResource("Resource_ujbfc"), SubResource("Resource_fviom"), SubResource("Resource_1jdg5"), SubResource("Resource_ir2on"), SubResource("Resource_76mrb"), SubResource("Resource_0lkry"), SubResource("Resource_3m4ld"), SubResource("Resource_ns12q"), SubResource("Resource_sxuhk"), SubResource("Resource_41n58"), SubResource("Resource_qbebh"), SubResource("Resource_p8ltp"), SubResource("Resource_ny0yo"), SubResource("Resource_2nxv7"), SubResource("Resource_gf7xj"), SubResource("Resource_0ajql"), SubResource("Resource_e8wio"), SubResource("Resource_dh01o")])
 is_manual_edit = true
