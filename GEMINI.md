@@ -17,23 +17,20 @@ We are automating the creation of a 45-scene "Find the Hidden Object" game for A
     - **Character Prefix:** Used for people or animals while maintaining the surgical structure.
 - **Shared Library:** Reusable items (Hammer, Popcorn, etc.) are stored in `assets/sprites/hide_seek/shared/` and skipped during theme generation to save credits.
 
-### 2. Vision Mapping
-- Gemini analyzes the generated `bg.png` to identify the best thematic pixel coordinates (X, Y) and radius for each item.
-- This mapping is then converted into a Godot `.tres` manifest.
+### 2. Pre-seeding
+- Instead of automated vision mapping, we use a Godot script to "pre-seed" the scene.
+- This script (`scripts/hide_seek/automation/preseed_scene.gd`) creates the initial Godot resources.
+- Items are stacked in the upper-left (0.5 scale) and 50 anchors are placed in an offset grid pattern (40.0 radius) across the 16:9 scene.
+- This provides a clean starting point for manual placement in the Godot Scene Builder.
 
-### 3. Godot Resource Generation
-- A Godot `SceneTree` script (e.g., `scripts/hide_seek/create_mountain_resources.gd`) programmatically creates:
-    - `HideSeekItemData.tres` for each item.
-    - `HideSeekSceneData.tres` for the full scene.
+### 3. Godot Resource Finalization
+- Manual placement and tagging are performed in the Godot Editor.
 - Resources are stored in `resources/hide_seek/`.
 
 ## Resource & Cost Management
-- **MANDATORY CONFIRMATION:** Never execute scripts that perform expensive API operations (Vision analysis, Image generation, etc.) without explicit user confirmation.
-- **Affected Scripts:** This includes, but is not limited to:
-    - `tag_items.py` (Vision analysis)
-    - `map_anchors.py` (Vision mapping)
-    - `generate_*.py` (Image generation)
-- **Local Alternatives:** Always consider if a task can be performed locally (e.g., data migration) before resorting to paid API calls.
+- **MANDATORY CONFIRMATION:** Never execute scripts that perform expensive API operations (Image generation) without explicit user confirmation.
+- **Affected Scripts:** This includes `generate_*.py` scripts.
+- **Local Alternatives:** Always use the local `preseed_scene.gd` script to initialize scenes rather than relying on automated vision analysis.
 
 ## Directory Structure
 - `assets/sprites/hide_seek/[theme_name]/`: Source images.
