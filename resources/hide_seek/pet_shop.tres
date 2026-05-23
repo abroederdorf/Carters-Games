@@ -9,431 +9,496 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/goldfish_bowl.png" id="7_kidle"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/parrot.png" id="8_xm8uj"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/cat_toy.png" id="9_5tggg"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/turtle.png" id="10_b8lo7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bunny.png" id="9_pboi1"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="11_3qst8"]
-
-[sub_resource type="Resource" id="Resource_rrvu8"]
-script = ExtResource("1_rrvu8")
-id = 0
-position = Vector2(107, 141)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_l2qdg"]
-script = ExtResource("1_rrvu8")
-id = 1
-position = Vector2(418, 130)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_fy28n"]
-script = ExtResource("1_rrvu8")
-id = 2
-position = Vector2(673, 246)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_h0hqb"]
-script = ExtResource("1_rrvu8")
-id = 3
-position = Vector2(915, 128)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_ixu86"]
-script = ExtResource("1_rrvu8")
-id = 4
-position = Vector2(1243, 160)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_nvm4j"]
-script = ExtResource("1_rrvu8")
-id = 5
-position = Vector2(1468, 191)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_kidle"]
-script = ExtResource("1_rrvu8")
-id = 6
-position = Vector2(1696, 246)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_xm8uj"]
-script = ExtResource("1_rrvu8")
-id = 7
-position = Vector2(1822, 43)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_5tggg"]
-script = ExtResource("1_rrvu8")
-id = 8
-position = Vector2(2203, 205)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_b8lo7"]
-script = ExtResource("1_rrvu8")
-id = 9
-position = Vector2(2495, 131)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
-
-[sub_resource type="Resource" id="Resource_3qst8"]
-script = ExtResource("1_rrvu8")
-id = 10
-position = Vector2(94, 378)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/guinea_pig.png" id="11_b8lo7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/turtle.png" id="11_l2qdg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/bird_cage.png" id="13_3qst8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/pet_food_bowl.png" id="14_4m2hc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/leash.png" id="15_6mbwm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/dog_collar.png" id="16_nftij"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/tennis_ball.png" id="17_40rc3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/hamster_wheel.png" id="18_ypefm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/mouse.png" id="19_baw7t"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/lizard_orange.png" id="20_lzrd00"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/snake.png" id="21_snke00"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/beta_fish.png" id="22_bfsh00"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/tetra_fish.png" id="23_tfsh00"]
 
 [sub_resource type="Resource" id="Resource_5ysdf"]
 script = ExtResource("1_rrvu8")
-id = 11
-position = Vector2(298, 403)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+id = 0
+position = Vector2(285.67142, 140.95403)
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_4y5sg"]
 script = ExtResource("1_rrvu8")
-id = 12
-position = Vector2(720, 350)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+id = 1
+position = Vector2(410.1885, 135.0491)
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_s6h8o"]
 script = ExtResource("1_rrvu8")
-id = 13
-position = Vector2(937, 541)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 2
+position = Vector2(599.6681, 146.85892)
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_w6t7v"]
 script = ExtResource("1_rrvu8")
-id = 14
-position = Vector2(1169, 324)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+id = 3
+position = Vector2(1059.8041, 142.92232)
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_1kauk"]
 script = ExtResource("1_rrvu8")
-id = 15
-position = Vector2(1332, 459)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+id = 4
+position = Vector2(709.90576, 50.412064)
+tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_taayr"]
 script = ExtResource("1_rrvu8")
-id = 16
-position = Vector2(1645, 515)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 5
+position = Vector2(242.36365, 357.5767)
+tags = Array[String](["item", "bowl"])
 
 [sub_resource type="Resource" id="Resource_l061q"]
 script = ExtResource("1_rrvu8")
-id = 17
-position = Vector2(1967, 399)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+id = 6
+position = Vector2(512.5526, 288.68616)
+radius = 28.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_1bcbl"]
 script = ExtResource("1_rrvu8")
-id = 18
-position = Vector2(2202, 445)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+id = 7
+position = Vector2(845.7342, 152.8731)
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_fdl8l"]
 script = ExtResource("1_rrvu8")
-id = 19
-position = Vector2(2524, 357)
-radius = 60.0
-tags = Array[String](["sky", "foliage"])
+id = 8
+position = Vector2(969.25183, 54.458088)
+tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_y3da2"]
 script = ExtResource("1_rrvu8")
-id = 20
-position = Vector2(119, 665)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 9
+position = Vector2(1209.9127, 141.06339)
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_xw4jf"]
 script = ExtResource("1_rrvu8")
-id = 21
-position = Vector2(443, 791)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 10
+position = Vector2(122.28319, 216.93661)
+radius = 28.0
+tags = Array[String](["item", "bowl"])
 
 [sub_resource type="Resource" id="Resource_qc1fv"]
 script = ExtResource("1_rrvu8")
-id = 22
-position = Vector2(586, 704)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 11
+position = Vector2(305.85663, 529.89685)
+radius = 44.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_eyc8c"]
 script = ExtResource("1_rrvu8")
-id = 23
-position = Vector2(836, 806)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 12
+position = Vector2(607.5416, 366.52737)
+radius = 40.0
+tags = Array[String](["reptile"])
 
 [sub_resource type="Resource" id="Resource_u5fo2"]
 script = ExtResource("1_rrvu8")
-id = 24
-position = Vector2(1243, 606)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 13
+position = Vector2(1053.8987, 283.85883)
+radius = 31.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_wf174"]
 script = ExtResource("1_rrvu8")
-id = 25
-position = Vector2(1424, 768)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 14
+position = Vector2(1168.5736, 283.8588)
+radius = 32.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_ql3qb"]
 script = ExtResource("1_rrvu8")
-id = 26
-position = Vector2(1602, 790)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 15
+position = Vector2(1325.0549, 395.16162)
+radius = 35.0
+tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_ta0aj"]
 script = ExtResource("1_rrvu8")
-id = 27
-position = Vector2(1842, 763)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 16
+position = Vector2(376.72366, 294.77808)
+radius = 32.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_hucwq"]
 script = ExtResource("1_rrvu8")
-id = 28
-position = Vector2(2149, 706)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 17
+position = Vector2(788.64685, 288.87317)
+radius = 35.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_urfo4"]
 script = ExtResource("1_rrvu8")
-id = 29
-position = Vector2(2424, 767)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 18
+position = Vector2(920.0387, 288.87317)
+radius = 30.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_7yima"]
 script = ExtResource("1_rrvu8")
-id = 30
-position = Vector2(31, 978)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 19
+position = Vector2(1320.15, 239.66565)
+radius = 39.0
+tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_2kyyn"]
 script = ExtResource("1_rrvu8")
-id = 31
-position = Vector2(391, 1098)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 20
+position = Vector2(88.818184, 313.5707)
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_j3x8d"]
 script = ExtResource("1_rrvu8")
-id = 32
-position = Vector2(603, 1013)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 21
+position = Vector2(500.7412, 376.55612)
+radius = 28.0
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_tikpl"]
 script = ExtResource("1_rrvu8")
-id = 33
-position = Vector2(802, 939)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 22
+position = Vector2(796.5209, 354.90488)
+radius = 36.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_k7kyq"]
 script = ExtResource("1_rrvu8")
-id = 34
-position = Vector2(1164, 1031)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 23
+position = Vector2(935.78687, 358.84152)
+radius = 32.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_hpj34"]
 script = ExtResource("1_rrvu8")
-id = 35
-position = Vector2(1329, 942)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 24
+position = Vector2(1207.9443, 496.62265)
+radius = 36.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_w4gko"]
 script = ExtResource("1_rrvu8")
-id = 36
-position = Vector2(1689, 939)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 25
+position = Vector2(88.8182, 418)
+tags = Array[String](["item", "bowl"])
 
 [sub_resource type="Resource" id="Resource_4tuh8"]
 script = ExtResource("1_rrvu8")
-id = 37
-position = Vector2(1898, 954)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 26
+position = Vector2(185.77626, 55.832275)
+tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_fbibf"]
 script = ExtResource("1_rrvu8")
-id = 38
-position = Vector2(2263, 1040)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 27
+position = Vector2(686.2833, 418)
+radius = 35.0
+tags = Array[String](["item", "animal"])
 
 [sub_resource type="Resource" id="Resource_c8n37"]
 script = ExtResource("1_rrvu8")
-id = 39
-position = Vector2(2415, 978)
-radius = 60.0
-tags = Array[String](["ground", "foliage", "structure"])
+id = 28
+position = Vector2(1069.647, 374.6974)
+radius = 25.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_0ocbo"]
 script = ExtResource("1_rrvu8")
-id = 40
-position = Vector2(78, 1356)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 29
+position = Vector2(1225.661, 362.88748)
+tags = Array[String](["reptile", "item", "animal"])
 
 [sub_resource type="Resource" id="Resource_yndj0"]
 script = ExtResource("1_rrvu8")
-id = 41
-position = Vector2(476, 1410)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 30
+position = Vector2(120.31468, 511.5879)
+radius = 29.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_f0em7"]
 script = ExtResource("1_rrvu8")
-id = 42
-position = Vector2(683, 1256)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 31
+position = Vector2(408.22025, 446.6339)
+radius = 40.0
+tags = Array[String](["item", "animal", "bowl"])
 
 [sub_resource type="Resource" id="Resource_8xuj6"]
 script = ExtResource("1_rrvu8")
-id = 43
-position = Vector2(905, 1335)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 32
+position = Vector2(666.59827, 501.74628)
+radius = 44.0
+tags = Array[String](["animal", "item", "reptile"])
 
 [sub_resource type="Resource" id="Resource_peqpa"]
 script = ExtResource("1_rrvu8")
-id = 44
-position = Vector2(1174, 1391)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 33
+position = Vector2(1154.293, 54.941597)
+tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_mvbc1"]
 script = ExtResource("1_rrvu8")
-id = 45
-position = Vector2(1395, 1403)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 34
+position = Vector2(894.94775, 430.8875)
+radius = 30.0
+tags = Array[String](["animal", "item"])
 
 [sub_resource type="Resource" id="Resource_w3yjj"]
 script = ExtResource("1_rrvu8")
-id = 46
-position = Vector2(1625, 1194)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 35
+position = Vector2(586.85675, 457.55316)
+radius = 38.0
+tags = Array[String](["animal", "item", "retpile"])
 
 [sub_resource type="Resource" id="Resource_l4gxt"]
 script = ExtResource("1_rrvu8")
-id = 47
-position = Vector2(1861, 1390)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 36
+position = Vector2(486.96155, 46.177822)
+tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_fdtr2"]
 script = ExtResource("1_rrvu8")
-id = 48
-position = Vector2(2161, 1335)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+id = 37
+position = Vector2(428.40564, 559.90497)
+radius = 48.0
+tags = Array[String](["animal", "item"])
 
 [sub_resource type="Resource" id="Resource_rwc1k"]
 script = ExtResource("1_rrvu8")
+id = 38
+position = Vector2(1067.6781, 563.84155)
+tags = Array[String](["item", "animal", "reptile"])
+
+[sub_resource type="Resource" id="Resource_cypeg"]
+script = ExtResource("1_rrvu8")
+id = 39
+position = Vector2(1166.6047, 591.398)
+tags = Array[String](["animal", "item"])
+
+[sub_resource type="Resource" id="Resource_ox3m8"]
+script = ExtResource("1_rrvu8")
+id = 40
+position = Vector2(234.48956, 686.9541)
+tags = Array[String](["item", "animal", "bowl"])
+
+[sub_resource type="Resource" id="Resource_ytfjs"]
+script = ExtResource("1_rrvu8")
+id = 41
+position = Vector2(1337.3671, 106.304634)
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_jklgt"]
+script = ExtResource("1_rrvu8")
+id = 42
+position = Vector2(849.671, 586.5704)
+radius = 36.0
+tags = Array[String](["item", "animal"])
+
+[sub_resource type="Resource" id="Resource_j8iwt"]
+script = ExtResource("1_rrvu8")
+id = 43
+position = Vector2(941.6925, 509.80655)
+tags = Array[String](["animal", "item", "bowl"])
+
+[sub_resource type="Resource" id="Resource_g85iq"]
+script = ExtResource("1_rrvu8")
+id = 44
+position = Vector2(1255.1888, 681.04926)
+tags = Array[String](["animal", "item"])
+
+[sub_resource type="Resource" id="Resource_fxke8"]
+script = ExtResource("1_rrvu8")
+id = 45
+position = Vector2(132.12585, 645.729)
+radius = 42.0
+tags = Array[String](["fish"])
+
+[sub_resource type="Resource" id="Resource_0mv6d"]
+script = ExtResource("1_rrvu8")
+id = 46
+position = Vector2(437.7483, 679.1901)
+radius = 37.0
+tags = Array[String](["animal", "item"])
+
+[sub_resource type="Resource" id="Resource_aaavd"]
+script = ExtResource("1_rrvu8")
+id = 47
+position = Vector2(704, 691)
+tags = Array[String](["bird"])
+
+[sub_resource type="Resource" id="Resource_mflor"]
+script = ExtResource("1_rrvu8")
+id = 48
+position = Vector2(660.19244, 285.52954)
+radius = 24.0
+tags = Array[String](["fish"])
+
+[sub_resource type="Resource" id="Resource_6i4q1"]
+script = ExtResource("1_rrvu8")
 id = 49
-position = Vector2(2379, 1332)
-radius = 60.0
-tags = Array[String](["ground", "structure"])
+position = Vector2(1341.8035, 586.67993)
+radius = 42.0
+tags = Array[String](["fish"])
 
 [sub_resource type="Resource" id="Resource_4m2hc"]
 script = ExtResource("3_fy28n")
 item_name = "hamster"
 thumbnail = ExtResource("4_h0hqb")
-radius = 60.0
-tags = Array[String](["ground"])
+radius = 36.0
+base_scale = 0.3
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_6mbwm"]
 script = ExtResource("3_fy28n")
 item_name = "kitten"
 thumbnail = ExtResource("5_ixu86")
-radius = 60.0
-tags = Array[String](["ground"])
+radius = 45.0
+base_scale = 0.4
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_nftij"]
 script = ExtResource("3_fy28n")
 item_name = "puppy"
 thumbnail = ExtResource("6_nvm4j")
-radius = 60.0
-tags = Array[String](["ground"])
+base_scale = 0.4
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_40rc3"]
 script = ExtResource("3_fy28n")
 item_name = "goldfish_bowl"
 thumbnail = ExtResource("7_kidle")
-radius = 60.0
-base_scale = 0.5
-tags = Array[String](["water"])
+base_scale = 0.25
+tags = Array[String](["bowl"])
 
 [sub_resource type="Resource" id="Resource_ypefm"]
 script = ExtResource("3_fy28n")
 item_name = "parrot"
 thumbnail = ExtResource("8_xm8uj")
-radius = 60.0
-base_scale = 0.7
-tags = Array[String](["sky", "foliage"])
+base_scale = 0.30000000000000004
+tags = Array[String](["bird"])
 
 [sub_resource type="Resource" id="Resource_baw7t"]
 script = ExtResource("3_fy28n")
 item_name = "bunny"
-radius = 60.0
-tags = Array[String](["ground"])
+thumbnail = ExtResource("9_pboi1")
+base_scale = 0.4
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_6jwgf"]
 script = ExtResource("3_fy28n")
 item_name = "cat_toy"
 thumbnail = ExtResource("9_5tggg")
-radius = 60.0
-tags = Array[String](["ground"])
+base_scale = 0.25
+tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_upmls"]
 script = ExtResource("3_fy28n")
 item_name = "guinea_pig"
-radius = 60.0
-tags = Array[String](["ground"])
+thumbnail = ExtResource("11_b8lo7")
+base_scale = 0.3
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_2r2td"]
 script = ExtResource("3_fy28n")
 item_name = "turtle"
-thumbnail = ExtResource("10_b8lo7")
-radius = 60.0
-tags = Array[String](["ground"])
+thumbnail = ExtResource("11_l2qdg")
+base_scale = 0.4
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_qrf28"]
 script = ExtResource("3_fy28n")
 item_name = "lizard"
-radius = 60.0
-tags = Array[String](["ground"])
+thumbnail = ExtResource("20_lzrd00")
+base_scale = 0.25
+tags = Array[String](["animal", "wall"])
+
+[sub_resource type="Resource" id="Resource_36aye"]
+script = ExtResource("3_fy28n")
+item_name = "bird_cage"
+thumbnail = ExtResource("13_3qst8")
+base_scale = 0.5
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_xsmtg"]
+script = ExtResource("3_fy28n")
+item_name = "snake"
+thumbnail = ExtResource("21_snke00")
+base_scale = 0.30000000000000004
+tags = Array[String](["animal"])
+
+[sub_resource type="Resource" id="Resource_ex1kg"]
+script = ExtResource("3_fy28n")
+item_name = "pet_food_bowl"
+thumbnail = ExtResource("14_4m2hc")
+base_scale = 0.25
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_23o54"]
+script = ExtResource("3_fy28n")
+item_name = "leash"
+thumbnail = ExtResource("15_6mbwm")
+base_scale = 0.3
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_g4rsq"]
+script = ExtResource("3_fy28n")
+item_name = "dog_collar"
+thumbnail = ExtResource("16_nftij")
+base_scale = 0.25
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_qbqc6"]
+script = ExtResource("3_fy28n")
+item_name = "tennis_ball"
+thumbnail = ExtResource("17_40rc3")
+base_scale = 0.2
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_xv0ax"]
+script = ExtResource("3_fy28n")
+item_name = "hamster_wheel"
+thumbnail = ExtResource("18_ypefm")
+base_scale = 0.30000000000000004
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_0x2gi"]
+script = ExtResource("3_fy28n")
+item_name = "beta_fish"
+thumbnail = ExtResource("22_bfsh00")
+base_scale = 0.2
+tags = Array[String](["fish"])
+
+[sub_resource type="Resource" id="Resource_4663p"]
+script = ExtResource("3_fy28n")
+item_name = "tetra_fish"
+thumbnail = ExtResource("23_tfsh00")
+base_scale = 0.25
+tags = Array[String](["fish"])
+
+[sub_resource type="Resource" id="Resource_whqc8"]
+script = ExtResource("3_fy28n")
+item_name = "mouse"
+thumbnail = ExtResource("19_baw7t")
+base_scale = 0.2
+tags = Array[String](["animal"])
 
 [resource]
 script = ExtResource("11_3qst8")
 scene_name = "pet_shop"
 background_image = ExtResource("2_l2qdg")
-items = Array[ExtResource("3_fy28n")]([SubResource("Resource_4m2hc"), SubResource("Resource_6mbwm"), SubResource("Resource_nftij"), SubResource("Resource_40rc3"), SubResource("Resource_ypefm"), SubResource("Resource_baw7t"), SubResource("Resource_6jwgf"), SubResource("Resource_upmls"), SubResource("Resource_2r2td"), SubResource("Resource_qrf28")])
-anchors = Array[ExtResource("1_rrvu8")]([SubResource("Resource_rrvu8"), SubResource("Resource_l2qdg"), SubResource("Resource_fy28n"), SubResource("Resource_h0hqb"), SubResource("Resource_ixu86"), SubResource("Resource_nvm4j"), SubResource("Resource_kidle"), SubResource("Resource_xm8uj"), SubResource("Resource_5tggg"), SubResource("Resource_b8lo7"), SubResource("Resource_3qst8"), SubResource("Resource_5ysdf"), SubResource("Resource_4y5sg"), SubResource("Resource_s6h8o"), SubResource("Resource_w6t7v"), SubResource("Resource_1kauk"), SubResource("Resource_taayr"), SubResource("Resource_l061q"), SubResource("Resource_1bcbl"), SubResource("Resource_fdl8l"), SubResource("Resource_y3da2"), SubResource("Resource_xw4jf"), SubResource("Resource_qc1fv"), SubResource("Resource_eyc8c"), SubResource("Resource_u5fo2"), SubResource("Resource_wf174"), SubResource("Resource_ql3qb"), SubResource("Resource_ta0aj"), SubResource("Resource_hucwq"), SubResource("Resource_urfo4"), SubResource("Resource_7yima"), SubResource("Resource_2kyyn"), SubResource("Resource_j3x8d"), SubResource("Resource_tikpl"), SubResource("Resource_k7kyq"), SubResource("Resource_hpj34"), SubResource("Resource_w4gko"), SubResource("Resource_4tuh8"), SubResource("Resource_fbibf"), SubResource("Resource_c8n37"), SubResource("Resource_0ocbo"), SubResource("Resource_yndj0"), SubResource("Resource_f0em7"), SubResource("Resource_8xuj6"), SubResource("Resource_peqpa"), SubResource("Resource_mvbc1"), SubResource("Resource_w3yjj"), SubResource("Resource_l4gxt"), SubResource("Resource_fdtr2"), SubResource("Resource_rwc1k")])
+items = Array[ExtResource("3_fy28n")]([SubResource("Resource_4m2hc"), SubResource("Resource_6mbwm"), SubResource("Resource_nftij"), SubResource("Resource_40rc3"), SubResource("Resource_ypefm"), SubResource("Resource_baw7t"), SubResource("Resource_6jwgf"), SubResource("Resource_upmls"), SubResource("Resource_2r2td"), SubResource("Resource_qrf28"), SubResource("Resource_36aye"), SubResource("Resource_xsmtg"), SubResource("Resource_ex1kg"), SubResource("Resource_23o54"), SubResource("Resource_g4rsq"), SubResource("Resource_qbqc6"), SubResource("Resource_xv0ax"), SubResource("Resource_0x2gi"), SubResource("Resource_4663p"), SubResource("Resource_whqc8")])
+anchors = Array[ExtResource("1_rrvu8")]([SubResource("Resource_5ysdf"), SubResource("Resource_4y5sg"), SubResource("Resource_s6h8o"), SubResource("Resource_w6t7v"), SubResource("Resource_1kauk"), SubResource("Resource_taayr"), SubResource("Resource_l061q"), SubResource("Resource_1bcbl"), SubResource("Resource_fdl8l"), SubResource("Resource_y3da2"), SubResource("Resource_xw4jf"), SubResource("Resource_qc1fv"), SubResource("Resource_eyc8c"), SubResource("Resource_u5fo2"), SubResource("Resource_wf174"), SubResource("Resource_ql3qb"), SubResource("Resource_ta0aj"), SubResource("Resource_hucwq"), SubResource("Resource_urfo4"), SubResource("Resource_7yima"), SubResource("Resource_2kyyn"), SubResource("Resource_j3x8d"), SubResource("Resource_tikpl"), SubResource("Resource_k7kyq"), SubResource("Resource_hpj34"), SubResource("Resource_w4gko"), SubResource("Resource_4tuh8"), SubResource("Resource_fbibf"), SubResource("Resource_c8n37"), SubResource("Resource_0ocbo"), SubResource("Resource_yndj0"), SubResource("Resource_f0em7"), SubResource("Resource_8xuj6"), SubResource("Resource_peqpa"), SubResource("Resource_mvbc1"), SubResource("Resource_w3yjj"), SubResource("Resource_l4gxt"), SubResource("Resource_fdtr2"), SubResource("Resource_rwc1k"), SubResource("Resource_cypeg"), SubResource("Resource_ox3m8"), SubResource("Resource_ytfjs"), SubResource("Resource_jklgt"), SubResource("Resource_j8iwt"), SubResource("Resource_g85iq"), SubResource("Resource_fxke8"), SubResource("Resource_0mv6d"), SubResource("Resource_aaavd"), SubResource("Resource_mflor"), SubResource("Resource_6i4q1")])
+is_manual_edit = true

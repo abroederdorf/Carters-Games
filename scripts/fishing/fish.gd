@@ -30,8 +30,8 @@ var water_y: float = 400.0
 
 const CLASS_DATA = {
 	FishClass.LARGE:  { "scale": 0.4,  "speed_min": 60.0,  "speed_max": 110.0, "points": 1, "textures": ["res://assets/sprites/fishing/fish_rainbow.png", "res://assets/sprites/fishing/fish_puffer.png", "res://assets/sprites/fishing/fish_angel.png"] },
-	FishClass.MEDIUM: { "scale": 0.25, "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/fishing/fish_beta.png", "res://assets/sprites/fishing/fish_sunfish.png", "res://assets/sprites/fishing/fish_butterfly.png"] },
-	FishClass.SMALL:  { "scale": 0.16, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/fishing/fish_tetra.png", "res://assets/sprites/fishing/fish_catfish.png", "res://assets/sprites/fishing/fish_sword.png"] },
+	FishClass.MEDIUM: { "scale": 0.25, "speed_min": 120.0, "speed_max": 170.0, "points": 2, "textures": ["res://assets/sprites/hide_seek/shared/beta_fish.png", "res://assets/sprites/fishing/fish_sunfish.png", "res://assets/sprites/fishing/fish_butterfly.png"] },
+	FishClass.SMALL:  { "scale": 0.16, "speed_min": 180.0, "speed_max": 250.0, "points": 3, "textures": ["res://assets/sprites/hide_seek/shared/tetra_fish.png", "res://assets/sprites/fishing/fish_catfish.png", "res://assets/sprites/fishing/fish_sword.png"] },
 }
 
 const PLAIN_FISH_TEXTURES: Array[String] = [
@@ -46,9 +46,9 @@ const PLAIN_FISH_TEXTURES: Array[String] = [
 # Sprites that face RIGHT by default (need flip_h inverted vs the others)
 const FLIPPED_TEXTURES: Array[String] = [
 	"res://assets/sprites/fishing/fish_puffer.png",
-	"res://assets/sprites/fishing/fish_beta.png",
+	"res://assets/sprites/hide_seek/shared/beta_fish.png",
 	"res://assets/sprites/fishing/fish_angel.png",
-	"res://assets/sprites/fishing/fish_tetra.png",
+	"res://assets/sprites/hide_seek/shared/tetra_fish.png",
 	"res://assets/sprites/fishing/fish_plain_green.png",
 	"res://assets/sprites/fishing/fish_plain_orange.png",
 	"res://assets/sprites/fishing/fish_plain_purple.png",

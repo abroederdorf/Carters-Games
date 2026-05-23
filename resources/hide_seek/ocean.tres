@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/clownfish.png" id="13_d3o83"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/diving_helmet.png" id="14_ota2h"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/fish_angel.png" id="15_1b2ov"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/fish_beta.png" id="16_sqccn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/beta_fish.png" id="16_sqccn"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/fish_butterfly.png" id="17_jt17w"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/fish_puffer.png" id="18_e6mvg"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/ocean/fish_rainbow.png" id="19_7s6ic"]
@@ -513,7 +513,7 @@ tags = Array[String](["sky", "ground"])
 
 [sub_resource type="Resource" id="Resource_t2yk5"]
 script = ExtResource("3_kva4f")
-item_name = "fish_beta"
+item_name = "beta_fish"
 thumbnail = ExtResource("16_sqccn")
 position = Vector2(1128.4276, 401.48907)
 radius = 60.0

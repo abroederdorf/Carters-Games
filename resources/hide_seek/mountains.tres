@@ -38,122 +38,122 @@
 [sub_resource type="Resource" id="Resource_u5axb"]
 script = ExtResource("1_u5axb")
 position = Vector2(212.2459, 103.87707)
-radius = 30.0
+radius = 38.0
 difficulty = 0
-tags = Array[String](["cliff", "sky"])
+tags = Array[String](["cliff", "flying"])
 
 [sub_resource type="Resource" id="Resource_7628f"]
 script = ExtResource("1_u5axb")
 position = Vector2(326.9331, 319.2357)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_7pyvi"]
 script = ExtResource("1_u5axb")
 position = Vector2(584.77466, 150.69875)
-radius = 30.0
+radius = 42.0
 difficulty = 0
-tags = Array[String](["sky"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_t1wvr"]
 script = ExtResource("1_u5axb")
 position = Vector2(965.44653, 388.47137)
 radius = 40.0
-tags = Array[String](["snow", "mountain", "sky"])
+tags = Array[String](["snow"])
 
 [sub_resource type="Resource" id="Resource_cauus"]
 script = ExtResource("1_u5axb")
 position = Vector2(1200.1355, 292.95023)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["sky"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_874hw"]
 script = ExtResource("1_u5axb")
 position = Vector2(1450, 300)
 radius = 40.0
-tags = Array[String](["sky"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_saa3m"]
 script = ExtResource("1_u5axb")
 position = Vector2(1653.7551, 311.567)
 radius = 30.0
 difficulty = 0
-tags = Array[String](["sky", "snow", "mountain"])
+tags = Array[String](["snow"])
 
 [sub_resource type="Resource" id="Resource_evuin"]
 script = ExtResource("1_u5axb")
 position = Vector2(1800, 380)
 radius = 40.0
-tags = Array[String](["foliage", "mountain"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_4jsw2"]
 script = ExtResource("1_u5axb")
 position = Vector2(2515.3906, 170.01279)
 difficulty = 0
-tags = Array[String](["sky"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_l368t"]
 script = ExtResource("1_u5axb")
 position = Vector2(2142.2302, 192.28015)
 radius = 40.0
-tags = Array[String](["snow", "mountain", "sky"])
+tags = Array[String](["snow", "flying"])
 
 [sub_resource type="Resource" id="Resource_pypx1"]
 script = ExtResource("1_u5axb")
 position = Vector2(253.81664, 538.4549)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["animal", "gear"])
 
 [sub_resource type="Resource" id="Resource_766ys"]
 script = ExtResource("1_u5axb")
 position = Vector2(453.86624, 653.84717)
-radius = 30.0
+radius = 40.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["animal", "gear"])
 
 [sub_resource type="Resource" id="Resource_qb8u2"]
 script = ExtResource("1_u5axb")
-position = Vector2(657.67645, 569.24884)
+position = Vector2(599.96265, 553.86017)
 radius = 30.0
 tags = Array[String](["cliff"])
 
 [sub_resource type="Resource" id="Resource_vy0o4"]
 script = ExtResource("1_u5axb")
-position = Vector2(950, 650)
+position = Vector2(946.1524, 603.83417)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_mcofg"]
 script = ExtResource("1_u5axb")
-position = Vector2(1300, 626.9301)
+position = Vector2(1342.3231, 673.096)
 radius = 40.0
-tags = Array[String](["foliage"])
+tags = Array[String](["foliage", "animal"])
 
 [sub_resource type="Resource" id="Resource_xrnx3"]
 script = ExtResource("1_u5axb")
 position = Vector2(1450, 696.15283)
 radius = 30.0
 difficulty = 0
-tags = Array[String](["ground", "foliage"])
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_du4ty"]
 script = ExtResource("1_u5axb")
 position = Vector2(1819.2377, 661.5673)
 radius = 40.0
-tags = Array[String](["ground", "gear"])
+tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_6a75b"]
 script = ExtResource("1_u5axb")
 position = Vector2(2134.6284, 700)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_chv4t"]
 script = ExtResource("1_u5axb")
-position = Vector2(2319.2007, 565.4017)
+position = Vector2(2323.048, 542.3188)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_0fxrq"]
 script = ExtResource("1_u5axb")
@@ -163,89 +163,89 @@ tags = Array[String](["cliff"])
 
 [sub_resource type="Resource" id="Resource_ear58"]
 script = ExtResource("1_u5axb")
-position = Vector2(230.74864, 876.9386)
+position = Vector2(242.29138, 876.9386)
 radius = 30.0
-tags = Array[String](["foliage", "ground"])
+tags = Array[String](["foliage", "animal", "bug"])
 
 [sub_resource type="Resource" id="Resource_6iryu"]
 script = ExtResource("1_u5axb")
 position = Vector2(530.8178, 1019.24866)
 radius = 40.0
-tags = Array[String](["flowers", "ground"])
+tags = Array[String](["gear", "foliage"])
 
 [sub_resource type="Resource" id="Resource_5vy3v"]
 script = ExtResource("1_u5axb")
-position = Vector2(853.9033, 799.987)
+position = Vector2(830.81775, 746.1268)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["gear", "animal"])
 
 [sub_resource type="Resource" id="Resource_ko47g"]
 script = ExtResource("1_u5axb")
-position = Vector2(1411.7292, 499.87198)
+position = Vector2(1330.9304, 403.69354)
 radius = 30.0
-tags = Array[String](["mountains", "sky"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_n4p20"]
 script = ExtResource("1_u5axb")
 position = Vector2(1257.7133, 934.6113)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["gear", "animal"])
 
 [sub_resource type="Resource" id="Resource_vaqc7"]
 script = ExtResource("1_u5axb")
 position = Vector2(1400, 1050)
 radius = 40.0
-tags = Array[String](["flowers", "ground"])
+tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_nti06"]
 script = ExtResource("1_u5axb")
 position = Vector2(1880.7992, 919.23584)
 radius = 40.0
-tags = Array[String](["ground", "gear"])
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_2mnbg"]
 script = ExtResource("1_u5axb")
 position = Vector2(1996.1339, 992.30554)
 radius = 40.0
-tags = Array[String](["gear", "ground"])
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_k85k5"]
 script = ExtResource("1_u5axb")
-position = Vector2(2461.5625, 926.9561)
+position = Vector2(2503.8867, 926.9561)
 radius = 40.0
 tags = Array[String](["cliff"])
 
 [sub_resource type="Resource" id="Resource_f4gyv"]
 script = ExtResource("1_u5axb")
-position = Vector2(2134.443, 319.0695)
-radius = 29.0
-tags = Array[String](["mountain", "sky"])
+position = Vector2(1799.7036, 134.40689)
+radius = 41.0
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_gvtlq"]
 script = ExtResource("1_u5axb")
 position = Vector2(242.99448, 1284.6257)
 radius = 40.0
-tags = Array[String](["foliage", "ground"])
+tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_1aybl"]
 script = ExtResource("1_u5axb")
-position = Vector2(2029.609, 492.91528)
+position = Vector2(2214.2937, 465.98532)
 difficulty = 2
-tags = Array[String](["foliage", "sky"])
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_4dqic"]
 script = ExtResource("1_u5axb")
 position = Vector2(838.5132, 1226.917)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["ground", "flowers"])
+tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_kekeo"]
 script = ExtResource("1_u5axb")
 position = Vector2(592.45776, 1146.3601)
 radius = 40.0
-tags = Array[String](["ground"])
+tags = Array[String](["gear", "bug"])
 
 [sub_resource type="Resource" id="Resource_o7gw5"]
 script = ExtResource("1_u5axb")
@@ -255,7 +255,7 @@ tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_o04nw"]
 script = ExtResource("1_u5axb")
-position = Vector2(1280.668, 1357.758)
+position = Vector2(1276.8204, 1427.0068)
 radius = 40.0
 tags = Array[String](["water"])
 
@@ -264,75 +264,75 @@ script = ExtResource("1_u5axb")
 position = Vector2(1923.0298, 1357.7343)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["ground", "flowers", "gear"])
+tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_xqlpc"]
 script = ExtResource("1_u5axb")
 position = Vector2(2015.339, 1200.0333)
 difficulty = 0
-tags = Array[String](["ground", "flowers", "gear"])
+tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_sy5h5"]
 script = ExtResource("1_u5axb")
-position = Vector2(2265.203, 1361.6111)
-radius = 40.0
-tags = Array[String](["gear", "ground"])
+position = Vector2(2149.7756, 1365.4583)
+radius = 53.0
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_wciap"]
 script = ExtResource("1_u5axb")
 position = Vector2(2465.4126, 1266.0825)
 radius = 40.0
-tags = Array[String](["gear", "ground"])
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_mt6ay"]
 script = ExtResource("1_u5axb")
 position = Vector2(2208.3455, 800.1406)
-radius = 30.0
+radius = 42.0
 difficulty = 2
-tags = Array[String](["ground"])
+tags = Array[String](["animal", "gear", "foliage"])
 
 [sub_resource type="Resource" id="Resource_3x0li"]
 script = ExtResource("1_u5axb")
 position = Vector2(999.98145, 181.5542)
-radius = 25.0
-tags = Array[String](["sky"])
+radius = 41.0
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_j4h1y"]
 script = ExtResource("1_u5axb")
 position = Vector2(1077.1934, 780.0766)
-radius = 30.0
+radius = 40.0
 difficulty = 2
-tags = Array[String](["ground"])
+tags = Array[String](["animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_pbpot"]
 script = ExtResource("1_u5axb")
-position = Vector2(657.7139, 814.6245)
-radius = 30.0
-tags = Array[String](["ground", "foliage"])
+position = Vector2(692.3423, 703.0568)
+radius = 40.0
+tags = Array[String](["animal", "gear", "foliage"])
 
 [sub_resource type="Resource" id="Resource_iw86g"]
 script = ExtResource("1_u5axb")
 position = Vector2(1100, 1100)
 radius = 30.0
 difficulty = 2
-tags = Array[String](["ground", "flowers"])
+tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_8b68n"]
 script = ExtResource("1_u5axb")
 position = Vector2(1600, 680)
 radius = 40.0
-tags = Array[String](["foliage", "ground"])
+tags = Array[String](["foliage", "animal"])
 
 [sub_resource type="Resource" id="Resource_qx56q"]
 script = ExtResource("1_u5axb")
-position = Vector2(2300, 400)
+position = Vector2(1568.9592, 765.4781)
 radius = 30.0
 difficulty = 2
-tags = Array[String](["foliage", "sky"])
+tags = Array[String](["foliage", "animal"])
 
 [sub_resource type="Resource" id="Resource_xkw5b"]
 script = ExtResource("1_u5axb")
-position = Vector2(1742.2681, 1030.751)
+position = Vector2(1665.3167, 1015.3623)
 radius = 30.0
 tags = Array[String](["water"])
 
@@ -340,30 +340,30 @@ tags = Array[String](["water"])
 script = ExtResource("1_u5axb")
 position = Vector2(388.49448, 907.7075)
 radius = 25.0
-tags = Array[String](["ground", "foliage"])
+tags = Array[String](["animal", "gear"])
 
 [sub_resource type="Resource" id="Resource_fw54s"]
 script = ExtResource("1_u5axb")
 position = Vector2(2107.602, 1057.6943)
 radius = 30.0
 difficulty = 2
-tags = Array[String](["ground", "gear", "flowers"])
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_0k0io"]
 script = ExtResource("3_7pyvi")
 item_name = "bear"
 thumbnail = ExtResource("4_t1wvr")
 radius = 60.0
-base_scale = 0.75
-tags = Array[String](["ground"])
+base_scale = 0.45
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_pp4fo"]
 script = ExtResource("3_7pyvi")
 item_name = "tent"
 thumbnail = ExtResource("5_cauus")
 radius = 60.0
-base_scale = 0.8500000000000001
-tags = Array[String](["ground"])
+base_scale = 0.65
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_d8x0y"]
 script = ExtResource("3_7pyvi")
@@ -371,7 +371,7 @@ item_name = "dragonfly"
 thumbnail = ExtResource("6_7628f")
 radius = 60.0
 base_scale = 0.35
-tags = Array[String](["sky", "ground"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_al4fe"]
 script = ExtResource("3_7pyvi")
@@ -394,6 +394,7 @@ script = ExtResource("3_7pyvi")
 item_name = "rock_climber"
 thumbnail = ExtResource("8_evuin")
 radius = 60.0
+base_scale = 0.7
 tags = Array[String](["cliff"])
 
 [sub_resource type="Resource" id="Resource_62edc"]
@@ -401,6 +402,7 @@ script = ExtResource("3_7pyvi")
 item_name = "skier"
 thumbnail = ExtResource("9_4jsw2")
 radius = 60.0
+base_scale = 0.5
 tags = Array[String](["snow"])
 
 [sub_resource type="Resource" id="Resource_8ljoh"]
@@ -408,6 +410,7 @@ script = ExtResource("3_7pyvi")
 item_name = "hiker"
 thumbnail = ExtResource("10_l368t")
 radius = 60.0
+base_scale = 0.8500000000000001
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_a5mc2"]
@@ -415,63 +418,64 @@ script = ExtResource("3_7pyvi")
 item_name = "tree"
 thumbnail = ExtResource("11_pypx1")
 radius = 60.0
-tags = Array[String](["foliage", "ground"])
+base_scale = 0.6000000000000001
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_mjyjo"]
 script = ExtResource("3_7pyvi")
 item_name = "flowers"
 thumbnail = ExtResource("12_766ys")
 radius = 60.0
-base_scale = 0.6000000000000001
-tags = Array[String](["foliage", "ground"])
+base_scale = 0.5
+tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_qwsqe"]
 script = ExtResource("3_7pyvi")
 item_name = "eagle"
 thumbnail = ExtResource("13_qb8u2")
 radius = 60.0
-base_scale = 0.75
-tags = Array[String](["sky", "mountain", "cliff"])
+base_scale = 0.6000000000000001
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_k6it1"]
 script = ExtResource("3_7pyvi")
 item_name = "backpack"
 thumbnail = ExtResource("14_vy0o4")
 radius = 60.0
-base_scale = 0.6000000000000001
-tags = Array[String](["ground"])
+base_scale = 0.45
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_6nba0"]
 script = ExtResource("3_7pyvi")
 item_name = "deer"
 thumbnail = ExtResource("15_mcofg")
 radius = 60.0
-base_scale = 0.8
-tags = Array[String](["ground", "foliage"])
+base_scale = 0.65
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_pisdw"]
 script = ExtResource("3_7pyvi")
 item_name = "rock"
 thumbnail = ExtResource("16_xrnx3")
 radius = 60.0
-base_scale = 0.75
-tags = Array[String](["ground"])
+base_scale = 0.5
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_fi6rw"]
 script = ExtResource("3_7pyvi")
 item_name = "mountain_goat"
 thumbnail = ExtResource("17_du4ty")
 radius = 60.0
-base_scale = 0.65
-tags = Array[String](["gounrd"])
+base_scale = 0.5
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_i2lw1"]
 script = ExtResource("3_7pyvi")
 item_name = "bunny"
 thumbnail = ExtResource("18_6a75b")
 radius = 60.0
-base_scale = 0.5
-tags = Array[String](["ground", "flowers"])
+base_scale = 0.4
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_4q1ux"]
 script = ExtResource("3_7pyvi")
@@ -479,7 +483,7 @@ item_name = "butterfly"
 thumbnail = ExtResource("19_chv4t")
 radius = 60.0
 base_scale = 0.4
-tags = Array[String](["sky", "cliff", "flowers"])
+tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_puia4"]
 script = ExtResource("3_7pyvi")
@@ -487,7 +491,7 @@ item_name = "ladybug"
 thumbnail = ExtResource("20_0fxrq")
 radius = 60.0
 base_scale = 0.30000000000000004
-tags = Array[String](["ground", "flowers"])
+tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_13ysc"]
 script = ExtResource("3_7pyvi")
@@ -495,7 +499,7 @@ item_name = "ant"
 thumbnail = ExtResource("21_ear58")
 radius = 60.0
 base_scale = 0.25
-tags = Array[String](["ground", "flowers"])
+tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_c1ufi"]
 script = ExtResource("3_7pyvi")
@@ -503,7 +507,7 @@ item_name = "mushroom"
 thumbnail = ExtResource("22_6iryu")
 radius = 60.0
 base_scale = 0.25
-tags = Array[String](["ground", "flowers"])
+tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_ohfhn"]
 script = ExtResource("3_7pyvi")
@@ -511,15 +515,15 @@ item_name = "turtle"
 thumbnail = ExtResource("23_5vy3v")
 radius = 60.0
 base_scale = 0.5
-tags = Array[String](["ground", "flowers"])
+tags = Array[String](["water", "ground"])
 
 [sub_resource type="Resource" id="Resource_w46qy"]
 script = ExtResource("3_7pyvi")
 item_name = "owl"
 thumbnail = ExtResource("24_ko47g")
 radius = 60.0
-base_scale = 0.6000000000000001
-tags = Array[String](["cliff", "foliage", "ground"])
+base_scale = 0.4
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_tjxyi"]
 script = ExtResource("3_7pyvi")
@@ -527,15 +531,15 @@ item_name = "bush"
 thumbnail = ExtResource("25_n4p20")
 radius = 60.0
 base_scale = 0.6000000000000001
-tags = Array[String](["ground", "foliage"])
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_e8k4s"]
 script = ExtResource("3_7pyvi")
 item_name = "hiking_boot"
 thumbnail = ExtResource("26_vaqc7")
 radius = 60.0
-base_scale = 0.5
-tags = Array[String](["ground", "flowers"])
+base_scale = 0.4
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_m4bta"]
 script = ExtResource("3_7pyvi")
@@ -543,31 +547,31 @@ item_name = "trekking_pole"
 thumbnail = ExtResource("27_nti06")
 radius = 60.0
 base_scale = 0.8500000000000001
-tags = Array[String](["ground"])
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_82gmx"]
 script = ExtResource("3_7pyvi")
 item_name = "first_aid_kit"
 thumbnail = ExtResource("28_2mnbg")
 radius = 60.0
-base_scale = 0.4
-tags = Array[String](["ground", "flowers"])
+base_scale = 0.35
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_hroth"]
 script = ExtResource("3_7pyvi")
 item_name = "climbing_rope"
 thumbnail = ExtResource("29_k85k5")
 radius = 60.0
-base_scale = 0.6000000000000001
-tags = Array[String](["ground", "flowers", "cliff"])
+base_scale = 0.4
+tags = Array[String](["gear", "cliff"])
 
 [sub_resource type="Resource" id="Resource_pii13"]
 script = ExtResource("3_7pyvi")
 item_name = "water_bottle"
 thumbnail = ExtResource("30_f4gyv")
 radius = 60.0
-base_scale = 0.5
-tags = Array[String](["ground", "gear", "flowers"])
+base_scale = 0.4
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_b464t"]
 script = ExtResource("3_7pyvi")
@@ -575,7 +579,7 @@ item_name = "flashlight"
 thumbnail = ExtResource("31_gvtlq")
 radius = 60.0
 base_scale = 0.35
-tags = Array[String](["ground", "gear"])
+tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_a4bjg"]
 script = ExtResource("3_7pyvi")
@@ -583,7 +587,7 @@ item_name = "compass"
 thumbnail = ExtResource("33_7pyvi")
 radius = 60.0
 base_scale = 0.25
-tags = Array[String](["ground", "gear", "flowers"])
+tags = Array[String](["gear"])
 
 [resource]
 script = ExtResource("32_1aybl")

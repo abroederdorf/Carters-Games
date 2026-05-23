@@ -3,15 +3,28 @@ extends Node
 const SAVE_PATH = "user://find_it_progress.json"
 
 const SCENE_ORDER: Array[String] = [
-	"mountains",
-	"ocean",
-	"jungle",
-	"space",
+	"pet_shop",
 	"dinosaur_land",
-	"fire_station",
 	"monster_truck_jam",
+	"mountains",
+	"jungle",
 	"construction_site",
+	"space",
+	"fire_station",
+	"ocean",
 ]
+
+const DISPLAY_NAMES: Dictionary = {
+	"mountains": "Mountains",
+	"ocean": "Ocean",
+	"jungle": "Jungle",
+	"space": "Space",
+	"dinosaur_land": "Dinosaur Land",
+	"fire_station": "Fire Station",
+	"monster_truck_jam": "Monster Truck Jam",
+	"construction_site": "Construction Site",
+	"pet_shop": "Pet Shop",
+}
 
 var current_scene_name: String = ""
 var hint_stars: int = 0

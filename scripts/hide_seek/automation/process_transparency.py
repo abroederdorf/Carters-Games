@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 from PIL import Image
 
@@ -25,12 +26,13 @@ def make_transparent(image_path, tolerance=30):
         seeds.append((0, y))
         seeds.append((width - 1, y))
         
-    # We use a set to track already processed background to avoid redundant fills
-    # However, floodfill is fast enough to just call. 
-    # To be more efficient, we check if the pixel is still whitish before filling.
+    # Skip if top-left is already transparent (simple optimization)
+    if img.getpixel((0,0))[3] == 0:
+        print(f"  Skipping: {image_path.name} (already transparent)")
+        return
+
     for seed in seeds:
         pixel = img.getpixel(seed)
-        # If it's already transparent, skip
         if pixel[3] == 0:
             continue
         # Only start if the seed is "whitish"
@@ -46,25 +48,40 @@ def make_transparent(image_path, tolerance=30):
     img.save(image_path)
 
 def main():
-    # Iterate through all theme directories
+    targets = sys.argv[1:]
+    
+    if targets:
+        # Process specific files or entire theme folders passed as arguments
+        for t in targets:
+            p = Path(t)
+            # Support relative paths from root
+            if not p.exists():
+                # Check if it's a theme name
+                p = ASSET_ROOT / t
+            
+            if p.is_dir():
+                print(f"\n--- Theme: {p.name} ---")
+                for img_path in p.glob("*.png"):
+                    if img_path.name == "bg.png" or img_path.name.startswith("bg_"):
+                        continue
+                    make_transparent(img_path)
+            elif p.is_file() and p.suffix == ".png":
+                make_transparent(p)
+            else:
+                print(f"Warning: Target {t} not found or not a valid PNG/Directory")
+        return
+
+    # Default: Iterate through all theme directories
     for theme_dir in ASSET_ROOT.iterdir():
-        if not theme_dir.is_dir() or theme_dir.name == "shared":
+        if not theme_dir.is_dir():
             continue
             
         print(f"\n--- Theme: {theme_dir.name} ---")
         for img_path in theme_dir.glob("*.png"):
-            # Skip background images
             if img_path.name == "bg.png" or img_path.name.startswith("bg_"):
                 continue
-                
             make_transparent(img_path)
 
-    # Also process shared folder
-    shared_dir = ASSET_ROOT / "shared"
-    if shared_dir.exists():
-        print("\n--- Shared Items ---")
-        for img_path in shared_dir.glob("*.png"):
-            make_transparent(img_path)
 
 if __name__ == "__main__":
     main()
