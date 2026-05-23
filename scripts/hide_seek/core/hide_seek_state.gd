@@ -4,6 +4,7 @@ const SAVE_PATH = "user://find_it_progress.json"
 
 const SCENE_ORDER: Array[String] = [
 	"pet_shop",
+	"circus",
 	"dinosaur_land",
 	"monster_truck_jam",
 	"mountains",
@@ -24,6 +25,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"monster_truck_jam": "Monster Truck Jam",
 	"construction_site": "Construction Site",
 	"pet_shop": "Pet Shop",
+	"circus": "Circus",
 }
 
 var current_scene_name: String = ""
