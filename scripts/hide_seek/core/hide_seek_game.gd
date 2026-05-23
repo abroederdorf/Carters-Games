@@ -41,11 +41,62 @@ func _ready() -> void:
 	all_items.shuffle()
 
 	var total_to_pick := TARGET_COUNT + _decoy_count
-	var pick_count: int = mini(total_to_pick, all_items.size())
-	_active_items = all_items.slice(0, pick_count)
-	var backup_pool: Array = all_items.slice(pick_count)
+	var valid_anchors := _build_valid_anchors(bg_size)
 
-	_assign_items_to_anchors(bg_size, backup_pool)
+	# Count anchors and items per tag for ratio-based selection probability
+	var tag_anchor_count: Dictionary = {}
+	var tag_item_count: Dictionary = {}
+	for a in valid_anchors:
+		for t in a.tags:
+			tag_anchor_count[t] = tag_anchor_count.get(t, 0) + 1
+	for item in all_items:
+		for t in item.tags:
+			tag_item_count[t] = tag_item_count.get(t, 0) + 1
+
+	# Most-constrained first; prior shuffle randomizes within equal-constraint groups
+	all_items.sort_custom(func(a, b):
+		return _count_compatible(a, valid_anchors) < _count_compatible(b, valid_anchors)
+	)
+
+	var reserved_anchor_ids: Array[int] = []
+	var skipped_items: Array = []
+	_active_items = []
+
+	for item in all_items:
+		if _active_items.size() >= total_to_pick:
+			break
+		var claimed := -1
+		if randf() <= _item_selection_prob(item, tag_anchor_count, tag_item_count):
+			for a in valid_anchors:
+				if a.id in reserved_anchor_ids:
+					continue
+				if _item_fits_anchor(item, a):
+					claimed = a.id
+					break
+		if claimed >= 0:
+			_active_items.append(item)
+			reserved_anchor_ids.append(claimed)
+		else:
+			skipped_items.append(item)
+
+	# If probability rolls left us short of TARGET_COUNT, fill from skipped items
+	# so the game stays playable — specialty items just won't appear as decoys.
+	if _active_items.size() < TARGET_COUNT:
+		for item in skipped_items:
+			if _active_items.size() >= TARGET_COUNT:
+				break
+			var claimed := -1
+			for a in valid_anchors:
+				if a.id in reserved_anchor_ids:
+					continue
+				if _item_fits_anchor(item, a):
+					claimed = a.id
+					break
+			if claimed >= 0:
+				_active_items.append(item)
+				reserved_anchor_ids.append(claimed)
+
+	_assign_items_to_anchors(bg_size)
 	_found.resize(_active_items.size())
 	_found.fill(false)
 
@@ -102,17 +153,24 @@ func _process(delta: float) -> void:
 
 # ── Item Assignment ────────────────────────────────────────────────────────────
 
-func _assign_items_to_anchors(bg_size: Vector2, backup_pool: Array) -> void:
-	_active_item_data.clear()
-
+func _build_valid_anchors(bg_size: Vector2) -> Array[HideSeekAnchor]:
 	var margin_x := bg_size.x * 0.05
 	var margin_y := bg_size.y * 0.05
-	var available_anchors: Array[HideSeekAnchor] = []
+	var result: Array[HideSeekAnchor] = []
 	for a in _scene_data.anchors:
+		if a.tags.is_empty():
+			continue
 		if a.position.x < margin_x or a.position.x > bg_size.x - margin_x \
 				or a.position.y < margin_y or a.position.y > bg_size.y - margin_y:
 			continue
-		available_anchors.append(a)
+		result.append(a)
+	return result
+
+
+func _assign_items_to_anchors(bg_size: Vector2) -> void:
+	_active_item_data.clear()
+
+	var available_anchors := _build_valid_anchors(bg_size)
 	available_anchors.shuffle()
 
 	# Process most-constrained items first so items with rare tags claim anchors
@@ -127,7 +185,6 @@ func _assign_items_to_anchors(bg_size: Vector2, backup_pool: Array) -> void:
 
 	var free_anchors := available_anchors.duplicate()
 	var anchor_map: Dictionary = {}
-	var backup_idx := 0
 
 	for orig_i in order:
 		var item: HideSeekItemData = _active_items[orig_i]
@@ -135,17 +192,6 @@ func _assign_items_to_anchors(bg_size: Vector2, backup_pool: Array) -> void:
 		if a != null:
 			free_anchors.erase(a)
 			anchor_map[orig_i] = a
-		else:
-			# No compatible anchor left — swap in a backup item that can be placed
-			while backup_idx < backup_pool.size():
-				var backup: HideSeekItemData = backup_pool[backup_idx]
-				backup_idx += 1
-				var ba := _pick_anchor(backup, free_anchors)
-				if ba != null:
-					free_anchors.erase(ba)
-					_active_items[orig_i] = backup
-					anchor_map[orig_i] = ba
-					break
 
 	for i in _active_items.size():
 		var data := {"pos": Vector2.ZERO, "radius": 50.0, "anchor_radius": 50.0}
@@ -285,6 +331,21 @@ func _on_next_pressed() -> void:
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
+
+# Selection probability range. An item at a 1:1 anchor-to-item ratio appears
+# at the floor (25%). A 3:1 ratio hits the cap (75%). Oversubscribed tags are
+# also floored at 25% — the anchor capacity check handles actual contention.
+const SELECTION_PROB_FLOOR := 0.25
+const SELECTION_PROB_CAP   := 0.75
+
+func _item_selection_prob(item: HideSeekItemData, tag_anchors: Dictionary, tag_items: Dictionary) -> float:
+	var prob := 1.0
+	for t in item.tags:
+		var A := float(tag_anchors.get(t, 0))
+		var I := float(tag_items.get(t, 1))
+		prob = minf(prob, clampf(SELECTION_PROB_FLOOR * A / I, SELECTION_PROB_FLOOR, SELECTION_PROB_CAP))
+	return prob
+
 
 func _get_item_texture(item: HideSeekItemData) -> Texture2D:
 	if item.thumbnail != null:
