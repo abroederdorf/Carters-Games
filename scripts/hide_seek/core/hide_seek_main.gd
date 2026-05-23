@@ -1,32 +1,28 @@
 extends Control
 
-const SCENE_ORDER: Array[String] = [
-	"mountains",
-	"ocean",
-	"jungle",
-	"space",
-	"dinosaur_land",
-	"fire_station",
-	"monster_truck_jam",
-	"construction_site",
-]
+const CARDS_PER_PAGE := 8
+const COLS := 4
+const ROWS := 2
 
-const DISPLAY_NAMES: Dictionary = {
-	"mountains": "Mountains",
-	"ocean": "Ocean",
-	"jungle": "Jungle",
-	"space": "Space",
-	"dinosaur_land": "Dinosaur Land",
-	"fire_station": "Fire Station",
-	"monster_truck_jam": "Monster Truck Jam",
-	"construction_site": "Construction Site",
-}
+var _current_page: int = 0
+var _total_pages: int = 0
+var _page_width: float = 0.0
+
+var _scroll: ScrollContainer
+var _pages_container: HBoxContainer
+var _btn_prev: Button
+var _btn_next: Button
+var _dots_container: HBoxContainer
+
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_ui()
+	_update_pagination_ui()
+
 
 func _build_ui() -> void:
+	# Background
 	var bg := TextureRect.new()
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	bg.texture = preload("res://assets/icons/screen_settings.png")
@@ -89,16 +85,122 @@ func _build_ui() -> void:
 	)
 	header.add_child(mute_btn)
 
-	# ── Scene grid: two rows of four ────────────────────────────────────────
-	for row in 2:
-		var hbox := HBoxContainer.new()
-		hbox.add_theme_constant_override("separation", 24)
-		hbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
-		vbox.add_child(hbox)
-		for col in 4:
-			var idx := row * 4 + col
-			var card := _make_card(SCENE_ORDER[idx])
-			hbox.add_child(card)
+	# ── Paginated Grid ──────────────────────────────────────────────────────
+	var grid_area := HBoxContainer.new()
+	grid_area.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	vbox.add_child(grid_area)
+
+	# Floating Prev Button
+	_btn_prev = Button.new()
+	_btn_prev.flat = true
+	_btn_prev.expand_icon = true
+	_btn_prev.icon = preload("res://assets/sprites/ui/button_page_prev.png")
+	_btn_prev.custom_minimum_size = Vector2(80, 400)
+	_btn_prev.focus_mode = Control.FOCUS_NONE
+	_btn_prev.pressed.connect(_on_prev_pressed)
+	grid_area.add_child(_btn_prev)
+
+	# Scroll Viewport
+	_scroll = ScrollContainer.new()
+	_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
+	_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	grid_area.add_child(_scroll)
+
+	_pages_container = HBoxContainer.new()
+	_pages_container.add_theme_constant_override("separation", 0)
+	_pages_container.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_scroll.add_child(_pages_container)
+
+	# Floating Next Button
+	_btn_next = Button.new()
+	_btn_next.flat = true
+	_btn_next.expand_icon = true
+	_btn_next.icon = preload("res://assets/sprites/ui/button_page_next.png")
+	_btn_next.custom_minimum_size = Vector2(80, 400)
+	_btn_next.focus_mode = Control.FOCUS_NONE
+	_btn_next.pressed.connect(_on_next_pressed)
+	grid_area.add_child(_btn_next)
+
+	# ── Build Pages ─────────────────────────────────────────────────────────
+	var scenes := HideSeekState.SCENE_ORDER
+	_total_pages = ceil(scenes.size() / float(CARDS_PER_PAGE))
+	
+	# We need to calculate page width after the layout is established.
+	# For now, we'll use a placeholder or wait for a frame.
+	# But in _ready, the viewport size is usually known.
+	# Each page will take 100% of the _scroll width.
+	
+	for p in _total_pages:
+		var page_vbox := VBoxContainer.new()
+		page_vbox.add_theme_constant_override("separation", 24)
+		page_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		page_vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		# Force the page to be exactly the width of the scroll container
+		# This is tricky before the container is sized. We'll use a simpler trick:
+		# Give each page a custom_minimum_size.x based on the layout.
+		# 1920 - 120 (margins) - 160 (arrows) = 1640.
+		page_vbox.custom_minimum_size.x = 1640 
+		_pages_container.add_child(page_vbox)
+		
+		var start_idx := p * CARDS_PER_PAGE
+		for r in ROWS:
+			var hbox := HBoxContainer.new()
+			hbox.add_theme_constant_override("separation", 24)
+			hbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+			page_vbox.add_child(hbox)
+			for c in COLS:
+				var idx := start_idx + (r * COLS + c)
+				if idx < scenes.size():
+					var card := _make_card(scenes[idx])
+					hbox.add_child(card)
+				else:
+					# Empty slot for layout consistency
+					var empty := Control.new()
+					empty.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+					hbox.add_child(empty)
+
+	_page_width = 1640 # Matches the hardcoded size for now
+
+	# ── Dot Indicator ───────────────────────────────────────────────────────
+	_dots_container = HBoxContainer.new()
+	_dots_container.alignment = BoxContainer.ALIGNMENT_CENTER
+	_dots_container.add_theme_constant_override("separation", 20)
+	vbox.add_child(_dots_container)
+	
+	for p in _total_pages:
+		var dot := Panel.new()
+		dot.custom_minimum_size = Vector2(20, 20)
+		_dots_container.add_child(dot)
+
+	# Initial UI state update
+	_update_pagination_ui()
+
+
+func _update_pagination_ui() -> void:
+	if _btn_prev == null: return
+
+	_btn_prev.modulate.a = 1.0 if _current_page > 0 else 0.0
+	_btn_prev.mouse_filter = Control.MOUSE_FILTER_STOP if _current_page > 0 else Control.MOUSE_FILTER_IGNORE
+	_btn_next.modulate.a = 1.0 if _current_page < _total_pages - 1 else 0.0
+	_btn_next.mouse_filter = Control.MOUSE_FILTER_STOP if _current_page < _total_pages - 1 else Control.MOUSE_FILTER_IGNORE
+	
+	# Update dots
+	var active_style := _dot_style(Color.WHITE)
+	var inactive_style := _dot_style(Color(0, 0, 0, 0.4))
+	
+	for i in _dots_container.get_child_count():
+		var dot: Panel = _dots_container.get_child(i)
+		dot.add_theme_stylebox_override("panel", active_style if i == _current_page else inactive_style)
+
+
+func _dot_style(color: Color) -> StyleBoxFlat:
+	var s := StyleBoxFlat.new()
+	s.bg_color = color
+	s.set_corner_radius_all(10)
+	return s
+
 
 func _make_card(scene_name: String) -> Button:
 	var unlocked := HideSeekState.is_unlocked(scene_name)
@@ -144,7 +246,7 @@ func _make_card(scene_name: String) -> Button:
 		tex_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		btn.add_child(tex_rect)
 
-	# Bottom gradient for name legibility (Increased height for more breathing room)
+	# Bottom gradient for name legibility
 	var gradient := ColorRect.new()
 	gradient.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	gradient.offset_top = -110.0
@@ -152,9 +254,9 @@ func _make_card(scene_name: String) -> Button:
 	gradient.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	btn.add_child(gradient)
 
-	# Scene name (Shifted up slightly)
+	# Scene name
 	var name_lbl := Label.new()
-	name_lbl.text = DISPLAY_NAMES.get(scene_name, scene_name)
+	name_lbl.text = HideSeekState.DISPLAY_NAMES.get(scene_name, scene_name)
 	name_lbl.add_theme_font_size_override("font_size", 28)
 	name_lbl.add_theme_color_override("font_color", Color.WHITE)
 	name_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -164,7 +266,7 @@ func _make_card(scene_name: String) -> Button:
 	name_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	btn.add_child(name_lbl)
 
-	# Stars (Smaller and centered)
+	# Stars
 	var star_hbox := HBoxContainer.new()
 	star_hbox.alignment = BoxContainer.ALIGNMENT_CENTER
 	star_hbox.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
@@ -180,7 +282,7 @@ func _make_card(scene_name: String) -> Button:
 		s.texture = star_filled if i < stars else star_empty
 		s.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 		s.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		s.custom_minimum_size = Vector2(32, 32) # Smaller stars
+		s.custom_minimum_size = Vector2(32, 32)
 		star_hbox.add_child(s)
 
 	if not unlocked:
@@ -196,8 +298,6 @@ func _make_card(scene_name: String) -> Button:
 		lock_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		lock_icon.custom_minimum_size = Vector2(80, 80)
 		lock_icon.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-		# Add a small negative offset to account for the pivot point if needed, 
-		# but PRESET_CENTER should handle it. Let's ensure it's centered.
 		lock_icon.grow_horizontal = Control.GROW_DIRECTION_BOTH
 		lock_icon.grow_vertical = Control.GROW_DIRECTION_BOTH
 		lock_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -208,6 +308,7 @@ func _make_card(scene_name: String) -> Button:
 		btn.pressed.connect(_on_scene_pressed.bind(scene_name))
 
 	return btn
+
 
 func _card_stylebox(bg: Color, border: Color) -> StyleBoxFlat:
 	var s := StyleBoxFlat.new()
@@ -223,12 +324,36 @@ func _card_stylebox(bg: Color, border: Color) -> StyleBoxFlat:
 	s.border_color = border
 	return s
 
+
 func _on_back_pressed() -> void:
 	AudioManager.play_sfx("pop")
 	get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
+
 
 func _on_scene_pressed(scene_name: String) -> void:
 	AudioManager.play_sfx("pop")
 	HideSeekState.current_scene_name = scene_name
 	if ResourceLoader.exists("res://scenes/hide_seek/HideSeekGame.tscn"):
 		get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekGame.tscn")
+
+
+func _on_prev_pressed() -> void:
+	if _current_page > 0:
+		_current_page -= 1
+		_scroll_to_page()
+
+
+func _on_next_pressed() -> void:
+	if _current_page < _total_pages - 1:
+		_current_page += 1
+		_scroll_to_page()
+
+
+func _scroll_to_page() -> void:
+	AudioManager.play_sfx("pop")
+	var target_scroll := _current_page * _page_width
+	var tween := create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(_scroll, "scroll_horizontal", int(target_scroll), 0.4)
+	_update_pagination_ui()
