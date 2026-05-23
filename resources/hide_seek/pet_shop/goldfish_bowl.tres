@@ -8,4 +8,4 @@ script = ExtResource("1_oc63g")
 item_name = "goldfish_bowl"
 thumbnail = ExtResource("2_imv4m")
 base_scale = 0.5
-tags = Array[String]([])
+tags = Array[String](["tank"])

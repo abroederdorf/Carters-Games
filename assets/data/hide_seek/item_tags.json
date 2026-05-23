@@ -1414,21 +1414,21 @@
         "ground",
         "structure"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.4,
       "preferred_anchors": []
     },
     "puppy": {
       "tags": [
         "ground"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.5,
       "preferred_anchors": []
     },
     "goldfish_bowl": {
       "tags": [
         "structure"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.5,
       "preferred_anchors": []
     },
     "parrot": {
@@ -1436,7 +1436,7 @@
         "sky",
         "structure"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.35,
       "preferred_anchors": []
     },
     "bunny": {
@@ -1444,21 +1444,21 @@
         "ground",
         "foliage"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.4,
       "preferred_anchors": []
     },
     "cat_toy": {
       "tags": [
         "ground"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.25,
       "preferred_anchors": []
     },
     "guinea_pig": {
       "tags": [
         "ground"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.3,
       "preferred_anchors": []
     },
     "turtle": {
@@ -1466,7 +1466,7 @@
         "ground",
         "water"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.4,
       "preferred_anchors": []
     },
     "lizard": {
@@ -1474,7 +1474,7 @@
         "foliage",
         "structure"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.25,
       "preferred_anchors": []
     },
     "bird_cage": {
@@ -1482,7 +1482,7 @@
         "ground",
         "structure"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.5,
       "preferred_anchors": []
     },
     "snake": {
@@ -1490,14 +1490,14 @@
         "ground",
         "structure"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.45,
       "preferred_anchors": []
     },
     "pet_food_bowl": {
       "tags": [
         "ground"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.25,
       "preferred_anchors": []
     },
     "leash": {
@@ -1505,21 +1505,21 @@
         "ground",
         "structure"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.3,
       "preferred_anchors": []
     },
     "dog_collar": {
       "tags": [
         "ground"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.25,
       "preferred_anchors": []
     },
     "tennis_ball": {
       "tags": [
         "ground"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.2,
       "preferred_anchors": []
     },
     "hamster_wheel": {
@@ -1527,21 +1527,21 @@
         "ground",
         "structure"
       ],
-      "base_scale": 1.0,
+      "base_scale": 0.45,
       "preferred_anchors": []
     },
     "beta_fish": {
       "tags": [
         "water"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.35,
       "preferred_anchors": []
     },
     "tetra_fish": {
       "tags": [
         "water"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.3,
       "preferred_anchors": []
     },
     "mouse": {
@@ -1549,7 +1549,7 @@
         "ground",
         "structure"
       ],
-      "base_scale": 0.6,
+      "base_scale": 0.1,
       "preferred_anchors": []
     }
   },

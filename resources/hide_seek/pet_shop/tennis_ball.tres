@@ -7,3 +7,5 @@
 script = ExtResource("1_7666f")
 item_name = "tennis_ball"
 thumbnail = ExtResource("2_f512t")
+base_scale = 0.2
+tags = Array[String](["item"])

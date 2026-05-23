@@ -7,3 +7,5 @@
 script = ExtResource("1_7ywwi")
 item_name = "hamster_wheel"
 thumbnail = ExtResource("2_4bjmn")
+base_scale = 0.45
+tags = Array[String](["item"])
