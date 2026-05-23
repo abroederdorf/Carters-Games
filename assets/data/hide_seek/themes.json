@@ -562,7 +562,7 @@
           ]
         },
         {
-          "name": "fish_beta",
+          "name": "beta_fish",
           "desc": "fancy betta fish with flowing colorful fins",
           "type": "character",
           "tags": [
@@ -1753,12 +1753,7 @@
         },
         {
           "name": "mouse",
-          "desc": "tiny white mouse with pink ears and long tail",
-          "type": "character",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "name": "mouse", "shared": "mouse"
         }
       ]
     },

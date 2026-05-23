@@ -7,5 +7,4 @@
 script = ExtResource("1_7jnex")
 item_name = "cat_toy"
 thumbnail = ExtResource("2_pwgma")
-radius = 60.0
-tags = Array[String](["ground"])
+tags = Array[String]([])

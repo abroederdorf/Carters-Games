@@ -29,33 +29,31 @@
 script = ExtResource("1_dkvht")
 id = 0
 position = Vector2(120, 100)
-radius = 30.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_on1gf"]
 script = ExtResource("1_dkvht")
 id = 1
 position = Vector2(400, 250)
-radius = 35.0
+radius = 45.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_jk1u2"]
 script = ExtResource("1_dkvht")
 id = 2
-position = Vector2(700, 150)
-radius = 40.0
+position = Vector2(715.37427, 130.78209)
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_82yq3"]
 script = ExtResource("1_dkvht")
 id = 3
-position = Vector2(950, 200)
-radius = 40.0
+position = Vector2(988.43567, 80.84915)
+radius = 52.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_prvns"]
 script = ExtResource("1_dkvht")
@@ -63,47 +61,46 @@ id = 4
 position = Vector2(1300, 120)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_f1tlo"]
 script = ExtResource("1_dkvht")
 id = 5
-position = Vector2(1550, 300)
-radius = 30.0
+position = Vector2(2095.7888, 115.50838)
+radius = 52.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_605le"]
 script = ExtResource("1_dkvht")
 id = 6
-position = Vector2(1800, 100)
+position = Vector2(1830.749, 123.06145)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_v0rb7"]
 script = ExtResource("1_dkvht")
 id = 7
-position = Vector2(2050, 250)
-radius = 40.0
+position = Vector2(2172.9946, 388.36862)
+radius = 49.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_3rtu5"]
 script = ExtResource("1_dkvht")
 id = 8
-position = Vector2(2350, 150)
-radius = 35.0
+position = Vector2(2642.1123, 342.1788)
+radius = 46.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_p8w20"]
 script = ExtResource("1_dkvht")
 id = 9
-position = Vector2(2600, 250)
-radius = 30.0
+position = Vector2(712.80426, 430.6481)
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["trucktop"])
 
 [sub_resource type="Resource" id="Resource_aa0vn"]
 script = ExtResource("1_dkvht")
@@ -111,47 +108,47 @@ id = 10
 position = Vector2(200, 500)
 radius = 45.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["locker"])
 
 [sub_resource type="Resource" id="Resource_nyba5"]
 script = ExtResource("1_dkvht")
 id = 11
-position = Vector2(450, 600)
-radius = 30.0
+position = Vector2(576.8379, 565.4079)
+radius = 52.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["trucktop"])
 
 [sub_resource type="Resource" id="Resource_smvw4"]
 script = ExtResource("1_dkvht")
 id = 12
-position = Vector2(700, 650)
-radius = 30.0
+position = Vector2(350.23468, 792.21204)
+radius = 60.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ladder"])
 
 [sub_resource type="Resource" id="Resource_fo6ho"]
 script = ExtResource("1_dkvht")
 id = 13
-position = Vector2(950, 500)
-radius = 30.0
+position = Vector2(1026.8715, 749.8322)
+radius = 51.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_6cvec"]
 script = ExtResource("1_dkvht")
 id = 14
-position = Vector2(1200, 550)
+position = Vector2(1249.9666, 553.84357)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["trucktop"])
 
 [sub_resource type="Resource" id="Resource_s2wl2"]
 script = ExtResource("1_dkvht")
 id = 15
-position = Vector2(1500, 680)
-radius = 30.0
+position = Vector2(1061.8324, 910.61426)
+radius = 51.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ladder"])
 
 [sub_resource type="Resource" id="Resource_7wcwg"]
 script = ExtResource("1_dkvht")
@@ -159,99 +156,99 @@ id = 16
 position = Vector2(1800, 500)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["trucktop"])
 
 [sub_resource type="Resource" id="Resource_cw81t"]
 script = ExtResource("1_dkvht")
 id = 17
-position = Vector2(2050, 600)
+position = Vector2(1315.8763, 400.13437)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["trucktop"])
 
 [sub_resource type="Resource" id="Resource_5vc4u"]
 script = ExtResource("1_dkvht")
 id = 18
-position = Vector2(2300, 500)
-radius = 30.0
+position = Vector2(2476.8047, 845.9221)
+radius = 53.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ladder"])
 
 [sub_resource type="Resource" id="Resource_uqijd"]
 script = ExtResource("1_dkvht")
 id = 19
-position = Vector2(2600, 650)
-radius = 30.0
+position = Vector2(2673.028, 726.87134)
+radius = 44.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_tixcf"]
 script = ExtResource("1_dkvht")
 id = 20
-position = Vector2(150, 900)
-radius = 30.0
+position = Vector2(676.56995, 1457.3185)
+radius = 57.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_4uibe"]
 script = ExtResource("1_dkvht")
 id = 21
-position = Vector2(400, 1050)
-radius = 35.0
+position = Vector2(415.37427, 1157.6201)
+radius = 49.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_v2jbd"]
 script = ExtResource("1_dkvht")
 id = 22
-position = Vector2(650, 950)
-radius = 35.0
+position = Vector2(1145.8208, 1046.0891)
+radius = 56.0
 difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_reept"]
 script = ExtResource("1_dkvht")
 id = 23
-position = Vector2(900, 850)
-radius = 30.0
+position = Vector2(915.37427, 730.8494)
+radius = 51.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_ipfet"]
 script = ExtResource("1_dkvht")
 id = 24
-position = Vector2(1200, 900)
+position = Vector2(1196.1564, 796.2237)
 radius = 40.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_vbnx4"]
 script = ExtResource("1_dkvht")
 id = 25
-position = Vector2(1450, 1050)
-radius = 35.0
+position = Vector2(1565.3075, 927.0057)
+radius = 51.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_i86bn"]
 script = ExtResource("1_dkvht")
 id = 26
-position = Vector2(1750, 950)
-radius = 40.0
+position = Vector2(1715.4073, 946.15643)
+radius = 69.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["ladder", "firetruck"])
 
 [sub_resource type="Resource" id="Resource_3dktv"]
 script = ExtResource("1_dkvht")
 id = 27
-position = Vector2(2000, 850)
-radius = 30.0
+position = Vector2(1869.3182, 857.68713)
+radius = 48.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_lh4w7"]
 script = ExtResource("1_dkvht")
 id = 28
-position = Vector2(2300, 950)
+position = Vector2(2165.4749, 1049.9329)
 radius = 40.0
 difficulty = 0
 tags = Array[String](["ground"])
@@ -259,161 +256,157 @@ tags = Array[String](["ground"])
 [sub_resource type="Resource" id="Resource_07xbt"]
 script = ExtResource("1_dkvht")
 id = 29
-position = Vector2(2600, 1000)
-radius = 35.0
+position = Vector2(2269.4524, 723.26276)
+radius = 51.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_577vy"]
 script = ExtResource("1_dkvht")
 id = 30
-position = Vector2(150, 1300)
-radius = 35.0
+position = Vector2(219.18445, 1319.2181)
 difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_xgivm"]
 script = ExtResource("1_dkvht")
 id = 31
-position = Vector2(400, 1400)
-radius = 35.0
+position = Vector2(323.12857, 1453.8102)
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_f06bv"]
 script = ExtResource("1_dkvht")
 id = 32
-position = Vector2(700, 1250)
-radius = 30.0
+position = Vector2(700, 1192.3461)
+radius = 54.0
 difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_1dgja"]
 script = ExtResource("1_dkvht")
 id = 33
-position = Vector2(950, 1400)
-radius = 25.0
+position = Vector2(1180.6143, 1488.4028)
+radius = 40.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_0stuw"]
 script = ExtResource("1_dkvht")
 id = 34
-position = Vector2(1250, 1200)
-radius = 35.0
+position = Vector2(1253.8436, 1115.441)
+radius = 54.0
 difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_evwc8"]
 script = ExtResource("1_dkvht")
 id = 35
-position = Vector2(1400, 1350)
-radius = 30.0
+position = Vector2(1346.189, 1384.5922)
+radius = 43.0
 difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_5vqf1"]
 script = ExtResource("1_dkvht")
 id = 36
-position = Vector2(1800, 1200)
-radius = 35.0
+position = Vector2(2003.7098, 1165.4073)
+radius = 59.0
 difficulty = 0
-tags = Array[String](["ground"])
+tags = Array[String](["ground", "firetruck"])
 
 [sub_resource type="Resource" id="Resource_qn1n4"]
 script = ExtResource("1_dkvht")
 id = 37
-position = Vector2(2050, 1300)
-radius = 40.0
+position = Vector2(2092.2788, 1276.9382)
+radius = 49.0
 difficulty = 0
-tags = Array[String](["structure"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_bw4ep"]
 script = ExtResource("1_dkvht")
 id = 38
-position = Vector2(2350, 1400)
-radius = 30.0
+position = Vector2(2369.2185, 1054.0782)
+radius = 53.0
 difficulty = 0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_vyl1u"]
 script = ExtResource("1_dkvht")
 id = 39
-position = Vector2(2600, 1250)
-radius = 30.0
+position = Vector2(2477.0056, 1284.5925)
+radius = 49.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_hcunk"]
 script = ExtResource("1_dkvht")
 id = 40
-position = Vector2(180, 780)
-radius = 25.0
+position = Vector2(79.84259, 557.0297)
+radius = 44.0
 difficulty = 2
-tags = Array[String](["structure"])
+tags = Array[String](["locker"])
 
 [sub_resource type="Resource" id="Resource_mhq0s"]
 script = ExtResource("1_dkvht")
 id = 41
 position = Vector2(650, 720)
-radius = 30.0
-tags = Array[String](["structure"])
+tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_fnxcm"]
 script = ExtResource("1_dkvht")
 id = 42
-position = Vector2(900, 1080)
-radius = 20.0
+position = Vector2(876.9386, 1022.34564)
+radius = 49.0
 difficulty = 2
-tags = Array[String](["ground"])
+tags = Array[String](["firetruck"])
 
 [sub_resource type="Resource" id="Resource_hv83h"]
 script = ExtResource("1_dkvht")
 id = 43
 position = Vector2(1280, 700)
-radius = 30.0
-tags = Array[String](["structure"])
+radius = 45.0
+tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_py6qw"]
 script = ExtResource("1_dkvht")
 id = 44
-position = Vector2(1550, 1400)
-radius = 35.0
+position = Vector2(1676.8389, 1438.436)
+radius = 51.0
 difficulty = 2
-tags = Array[String](["shadow"])
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_2e55y"]
 script = ExtResource("1_dkvht")
 id = 45
 position = Vector2(2100, 750)
-radius = 25.0
+radius = 49.0
 difficulty = 2
-tags = Array[String](["structure"])
+tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_xdax7"]
 script = ExtResource("1_dkvht")
 id = 46
-position = Vector2(250, 1200)
-radius = 25.0
-tags = Array[String](["ground"])
+position = Vector2(53.97766, 873.29596)
+radius = 40.0
+tags = Array[String](["trucktop"])
 
 [sub_resource type="Resource" id="Resource_2b6ao"]
 script = ExtResource("1_dkvht")
 id = 47
 position = Vector2(1000, 300)
-radius = 25.0
+radius = 48.0
 difficulty = 2
-tags = Array[String](["structure"])
+tags = Array[String](["highwall", "wall"])
 
 [sub_resource type="Resource" id="Resource_psbjq"]
 script = ExtResource("1_dkvht")
 id = 48
 position = Vector2(2450, 450)
-radius = 30.0
-tags = Array[String](["structure"])
+radius = 45.0
+tags = Array[String](["highwall", "wall"])
 
 [sub_resource type="Resource" id="Resource_nsd18"]
 script = ExtResource("1_dkvht")
 id = 49
-position = Vector2(1700, 1080)
-radius = 30.0
+position = Vector2(1115.7762, 1241.4305)
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_cv0ly"]
@@ -422,8 +415,8 @@ item_name = "fire_truck"
 thumbnail = ExtResource("8_605le")
 position = Vector2(1500, 500)
 radius = 120.0
-base_scale = 3.5
-tags = Array[String](["ground"])
+base_scale = 1.65
+tags = Array[String](["firetruck"])
 
 [sub_resource type="Resource" id="Resource_5u626"]
 script = ExtResource("2_dkvht")
@@ -431,6 +424,7 @@ item_name = "dalmatian"
 thumbnail = ExtResource("6_prvns")
 position = Vector2(750, 900)
 radius = 70.0
+base_scale = 0.6000000000000001
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_wbocv"]
@@ -438,13 +432,15 @@ script = ExtResource("2_dkvht")
 item_name = "helmet"
 thumbnail = ExtResource("9_v0rb7")
 position = Vector2(1700, 800)
-tags = Array[String](["ground", "structure"])
+base_scale = 0.4
+tags = Array[String](["locker", "trucktop", "ground"])
 
 [sub_resource type="Resource" id="Resource_pvamn"]
 script = ExtResource("2_dkvht")
 item_name = "fire_extinguisher"
 thumbnail = ExtResource("7_f1tlo")
 position = Vector2(500, 500)
+base_scale = 0.6000000000000001
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_fibxq"]
@@ -453,6 +449,7 @@ item_name = "hydrant"
 thumbnail = ExtResource("8_dkvht")
 position = Vector2(50, 950)
 radius = 55.0
+base_scale = 0.5
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_5nvjq"]
@@ -461,7 +458,8 @@ item_name = "axe"
 thumbnail = ExtResource("3_on1gf")
 position = Vector2(1000, 150)
 radius = 55.0
-tags = Array[String](["ground"])
+base_scale = 0.4
+tags = Array[String](["ground", "wall", "truck"])
 
 [sub_resource type="Resource" id="Resource_undxx"]
 script = ExtResource("2_dkvht")
@@ -469,7 +467,7 @@ item_name = "boots"
 thumbnail = ExtResource("5_82yq3")
 position = Vector2(1900, 950)
 radius = 60.0
-base_scale = 0.7
+base_scale = 0.6000000000000001
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_yjrkb"]
@@ -478,7 +476,8 @@ item_name = "hose_reel"
 thumbnail = ExtResource("10_3rtu5")
 position = Vector2(300, 850)
 radius = 65.0
-tags = Array[String](["ground"])
+base_scale = 0.7
+tags = Array[String](["ground", "wall"])
 
 [sub_resource type="Resource" id="Resource_acbkq"]
 script = ExtResource("2_dkvht")
@@ -486,7 +485,8 @@ item_name = "bell"
 thumbnail = ExtResource("4_jk1u2")
 position = Vector2(1350, 70)
 radius = 45.0
-tags = Array[String](["ground"])
+base_scale = 0.30000000000000004
+tags = Array[String](["highwall"])
 
 [sub_resource type="Resource" id="Resource_f6wam"]
 script = ExtResource("2_dkvht")
@@ -494,67 +494,87 @@ item_name = "ladder"
 thumbnail = ExtResource("12_aa0vn")
 position = Vector2(1850, 300)
 radius = 90.0
-tags = Array[String](["ground"])
+tags = Array[String](["ladder"])
 
 [sub_resource type="Resource" id="Resource_npo3t"]
 script = ExtResource("2_dkvht")
 item_name = "megaphone"
 thumbnail = ExtResource("14_wyp83")
 radius = 60.0
+base_scale = 0.4
+tags = Array[String](["ground", "wall", "truck"])
 
 [sub_resource type="Resource" id="Resource_vax1l"]
 script = ExtResource("2_dkvht")
 item_name = "air_canister"
 thumbnail = ExtResource("15_5yvg3")
 radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_r53pm"]
 script = ExtResource("2_dkvht")
 item_name = "walkie_talkie"
 thumbnail = ExtResource("16_086d0")
 radius = 60.0
+base_scale = 0.25
+tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_i3hls"]
 script = ExtResource("2_dkvht")
 item_name = "bucket"
 thumbnail = ExtResource("17_dt7n0")
 radius = 60.0
+base_scale = 0.45
+tags = Array[String](["ground", "truck"])
 
 [sub_resource type="Resource" id="Resource_foclt"]
 script = ExtResource("2_dkvht")
 item_name = "wrench"
 thumbnail = ExtResource("18_4jj56")
 radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["ground", "truck", "wall"])
 
 [sub_resource type="Resource" id="Resource_hv6d8"]
 script = ExtResource("2_dkvht")
 item_name = "badge"
 thumbnail = ExtResource("19_mvguf")
 radius = 60.0
+base_scale = 0.2
+tags = Array[String](["ground", "locker"])
 
 [sub_resource type="Resource" id="Resource_1rn78"]
 script = ExtResource("2_dkvht")
 item_name = "climbing_rope"
 thumbnail = ExtResource("20_unwa6")
 radius = 60.0
+base_scale = 0.45
+tags = Array[String](["wall", "truck"])
 
 [sub_resource type="Resource" id="Resource_ybnb5"]
 script = ExtResource("2_dkvht")
 item_name = "toolbox"
 thumbnail = ExtResource("21_5lhkp")
 radius = 60.0
+base_scale = 0.55
+tags = Array[String](["ground", "truck"])
 
 [sub_resource type="Resource" id="Resource_4eyye"]
 script = ExtResource("2_dkvht")
 item_name = "first_aid_kit"
 thumbnail = ExtResource("22_r5j81")
 radius = 60.0
+base_scale = 0.35
+tags = Array[String](["ground", "truck"])
 
 [sub_resource type="Resource" id="Resource_086d0"]
 script = ExtResource("2_dkvht")
 item_name = "fire_hose"
 thumbnail = ExtResource("23_5yvg3")
 radius = 60.0
+base_scale = 0.65
+tags = Array[String](["ground", "truck"])
 
 [resource]
 script = ExtResource("13_nyba5")
@@ -562,3 +582,4 @@ scene_name = "fire_station"
 background_image = ExtResource("2_on1gf")
 items = Array[ExtResource("2_dkvht")]([SubResource("Resource_cv0ly"), SubResource("Resource_5u626"), SubResource("Resource_wbocv"), SubResource("Resource_pvamn"), SubResource("Resource_fibxq"), SubResource("Resource_5nvjq"), SubResource("Resource_undxx"), SubResource("Resource_yjrkb"), SubResource("Resource_acbkq"), SubResource("Resource_f6wam"), SubResource("Resource_npo3t"), SubResource("Resource_vax1l"), SubResource("Resource_r53pm"), SubResource("Resource_i3hls"), SubResource("Resource_foclt"), SubResource("Resource_hv6d8"), SubResource("Resource_1rn78"), SubResource("Resource_ybnb5"), SubResource("Resource_4eyye"), SubResource("Resource_086d0")])
 anchors = Array[ExtResource("1_dkvht")]([SubResource("Resource_dkvht"), SubResource("Resource_on1gf"), SubResource("Resource_jk1u2"), SubResource("Resource_82yq3"), SubResource("Resource_prvns"), SubResource("Resource_f1tlo"), SubResource("Resource_605le"), SubResource("Resource_v0rb7"), SubResource("Resource_3rtu5"), SubResource("Resource_p8w20"), SubResource("Resource_aa0vn"), SubResource("Resource_nyba5"), SubResource("Resource_smvw4"), SubResource("Resource_fo6ho"), SubResource("Resource_6cvec"), SubResource("Resource_s2wl2"), SubResource("Resource_7wcwg"), SubResource("Resource_cw81t"), SubResource("Resource_5vc4u"), SubResource("Resource_uqijd"), SubResource("Resource_tixcf"), SubResource("Resource_4uibe"), SubResource("Resource_v2jbd"), SubResource("Resource_reept"), SubResource("Resource_ipfet"), SubResource("Resource_vbnx4"), SubResource("Resource_i86bn"), SubResource("Resource_3dktv"), SubResource("Resource_lh4w7"), SubResource("Resource_07xbt"), SubResource("Resource_577vy"), SubResource("Resource_xgivm"), SubResource("Resource_f06bv"), SubResource("Resource_1dgja"), SubResource("Resource_0stuw"), SubResource("Resource_evwc8"), SubResource("Resource_5vqf1"), SubResource("Resource_qn1n4"), SubResource("Resource_bw4ep"), SubResource("Resource_vyl1u"), SubResource("Resource_hcunk"), SubResource("Resource_mhq0s"), SubResource("Resource_fnxcm"), SubResource("Resource_hv83h"), SubResource("Resource_py6qw"), SubResource("Resource_2e55y"), SubResource("Resource_xdax7"), SubResource("Resource_2b6ao"), SubResource("Resource_psbjq"), SubResource("Resource_nsd18")])
+is_manual_edit = true

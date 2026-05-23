@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_i7sc6"]
+
+[resource]
+script = ExtResource("1_i7sc6")
+item_name = "tetra_fish"

@@ -9,12 +9,12 @@ const CLAM_SCRIPT = preload("res://scripts/fishing/clam.gd")
 
 const FISH_TEXTURES = [
 	"res://assets/sprites/fishing/fish_angel.png",
-	"res://assets/sprites/fishing/fish_beta.png",
+	"res://assets/sprites/hide_seek/shared/beta_fish.png",
 	"res://assets/sprites/fishing/fish_catfish.png",
 	"res://assets/sprites/fishing/fish_puffer.png",
 	"res://assets/sprites/fishing/fish_rainbow.png",
 	"res://assets/sprites/fishing/fish_sunfish.png",
-	"res://assets/sprites/fishing/fish_tetra.png",
+	"res://assets/sprites/hide_seek/shared/tetra_fish.png",
 	"res://assets/sprites/fishing/fish_butterfly.png",
 	"res://assets/sprites/fishing/fish_sword.png"
 ]
