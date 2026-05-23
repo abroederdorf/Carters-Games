@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - 'assets/data/hide_seek/**'
+      - 'resources/hide_seek/**'
       - 'scripts/hide_seek/automation/verify_tags.py'
   pull_request:
     paths:
       - 'assets/data/hide_seek/**'
+      - 'resources/hide_seek/**'
       - 'scripts/hide_seek/automation/verify_tags.py'
 
 jobs:
