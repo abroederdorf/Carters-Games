@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cuu000000001" path="res://scenes/fishing/ui.tscn" id="2_ui0001"]
 [ext_resource type="Texture2D" uid="uid://b1q5o5b2tl8ow" path="res://assets/sprites/hook.svg" id="11_hook"]
 [ext_resource type="Texture2D" uid="uid://cdtupe6koxjkc" path="res://assets/sprites/water_overlay.svg" id="13_water"]
-[ext_resource type="Texture2D" uid="uid://ntbfwwrv7rdy" path="res://assets/sprites/fishing/bg.png" id="14_bg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fishing/bg_fishing.jpg" id="14_bg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_water"]
 size = Vector2(1280, 450)
@@ -18,10 +18,16 @@ script = ExtResource("1_game01")
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=547835801]
 layer = -1
 
-[node name="Background" type="Sprite2D" parent="BackgroundLayer" unique_id=2041832067]
-position = Vector2(960, 540)
-scale = Vector2(0.698, 0.703)
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=2041832067]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("14_bg")
+expand_mode = 3
+stretch_mode = 6
 
 [node name="Environment" type="Node2D" parent="." unique_id=1071737500]
 
