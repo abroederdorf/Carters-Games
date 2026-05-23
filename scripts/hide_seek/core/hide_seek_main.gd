@@ -13,12 +13,16 @@ var _pages_container: HBoxContainer
 var _btn_prev: Button
 var _btn_next: Button
 var _dots_container: HBoxContainer
+var _page_vboxes: Array[VBoxContainer] = []
 
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_ui()
 	_update_pagination_ui()
+	await get_tree().process_frame
+	_fit_pages_to_scroll()
+	_scroll.resized.connect(_fit_pages_to_scroll)
 
 
 func _build_ui() -> void:
@@ -137,12 +141,8 @@ func _build_ui() -> void:
 		page_vbox.add_theme_constant_override("separation", 24)
 		page_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		page_vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
-		# Force the page to be exactly the width of the scroll container
-		# This is tricky before the container is sized. We'll use a simpler trick:
-		# Give each page a custom_minimum_size.x based on the layout.
-		# 1920 - 120 (margins) - 160 (arrows) = 1640.
-		page_vbox.custom_minimum_size.x = 1640 
 		_pages_container.add_child(page_vbox)
+		_page_vboxes.append(page_vbox)
 		
 		var start_idx := p * CARDS_PER_PAGE
 		for r in ROWS:
@@ -160,8 +160,6 @@ func _build_ui() -> void:
 					var empty := Control.new()
 					empty.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 					hbox.add_child(empty)
-
-	_page_width = 1640 # Matches the hardcoded size for now
 
 	# ── Dot Indicator ───────────────────────────────────────────────────────
 	_dots_container = HBoxContainer.new()
@@ -347,6 +345,16 @@ func _on_next_pressed() -> void:
 	if _current_page < _total_pages - 1:
 		_current_page += 1
 		_scroll_to_page()
+
+
+func _fit_pages_to_scroll() -> void:
+	var w := _scroll.size.x
+	if w <= 0:
+		return
+	_page_width = w
+	for page in _page_vboxes:
+		page.custom_minimum_size.x = w
+	_scroll.scroll_horizontal = int(_current_page * _page_width)
 
 
 func _scroll_to_page() -> void:
