@@ -1758,7 +1758,7 @@
       ]
     },
     "circus": {
-      "scene": "Children's book illustration of a grand circus tent interior. A center ring with sand, colorful spotlights, tiered seating, performers everywhere. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's book illustration of a busy grand circus tent interior. A center ring with sand, colorful spotlights, tiered seating filled with silhouettes of people. The scene is dense with circus props: a colorful cannon, circus balls with stars, a flaming hoop, and pennant flags hanging from the ceiling. Performers like a ringleader and clown are visible in the distance. Wide panoramic landscape (2:1 ratio), bright saturated colors, flat design, thick black outlines, no text.",
       "items": [
         {
           "name": "top_hat",
@@ -1778,20 +1778,12 @@
           ]
         },
         {
-          "name": "aerial_hoop",
-          "desc": "large metal ring for aerial acrobatics",
+          "name": "clown_wig",
+          "desc": "huge rainbow afro clown wig",
           "type": "object",
           "tags": [
-            "sky",
+            "ground",
             "structure"
-          ]
-        },
-        {
-          "name": "lion",
-          "desc": "sitting male lion with a large mane",
-          "type": "character",
-          "tags": [
-            "ground"
           ]
         },
         {
@@ -1803,6 +1795,87 @@
           "shared": "megaphone"
         },
         {
+          "name": "pennant_flag",
+          "shared": "pennant_flag"
+        },
+        {
+          "name": "monkey",
+          "desc": "cute brown monkey sitting and looking curious",
+          "type": "character",
+          "tags": [
+            "ground"
+          ],
+          "path": "assets/sprites/hide_seek/jungle/monkey.png"
+        },
+        {
+          "name": "cannon",
+          "desc": "festive circus cannon in red and gold with star patterns",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "circus_ball",
+          "desc": "large ball with bright colors and a red star",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "flaming_hoop",
+          "desc": "metal ring with orange and yellow flames standing on the ground",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "juggling_clubs",
+          "desc": "group of three colorful juggling pins with stripes",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "trained_seal",
+          "desc": "gray seal balancing a colorful ball on its nose",
+          "type": "character",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "ringleader",
+          "desc": "man with a large black handlebar mustache and a red coat",
+          "type": "character",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "clown",
+          "desc": "happy clown in a colorful polka-dot suit",
+          "type": "character",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "acrobat",
+          "desc": "person in a sparkly purple costume in a graceful pose",
+          "type": "character",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "camera",
+          "shared": "camera"
+        },
+        {
           "name": "cotton_candy",
           "desc": "pink fluffy cloud of candy on a paper cone",
           "type": "object",
@@ -1812,29 +1885,12 @@
           ]
         },
         {
-          "name": "juggling_club",
-          "desc": "three colorful juggling pins mid-air",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "name": "lion",
+          "shared": "lion"
         },
         {
-          "name": "clown_wig",
-          "desc": "huge rainbow afro clown wig",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "peanuts",
-          "desc": "small bag of roasted peanuts in the shell",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "name": "elephant",
+          "shared": "elephant"
         },
         {
           "name": "clown_shoes",
@@ -1845,82 +1901,8 @@
           ]
         },
         {
-          "name": "elephant",
-          "desc": "large gray circus elephant with a festive headdress",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "acrobat",
-          "desc": "acrobat in a sparkly costume doing a backflip",
-          "type": "character",
-          "tags": [
-            "sky",
-            "ground"
-          ]
-        },
-        {
-          "name": "stilts",
-          "desc": "pair of tall wooden performance stilts",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "spinning_plates",
-          "desc": "three colorful plates spinning on thin sticks",
-          "type": "object",
-          "tags": [
-            "sky",
-            "ground"
-          ]
-        },
-        {
-          "name": "confetti",
-          "desc": "burst of multicolored confetti in the air",
-          "type": "object",
-          "tags": [
-            "sky",
-            "ground"
-          ]
-        },
-        {
           "name": "ticket",
-          "desc": "colorful circus admission ticket with a star",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "magic_wand",
-          "desc": "black magic wand with a white tip and sparkles",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "tightrope",
-          "desc": "thin rope stretched high between two poles",
-          "type": "object",
-          "tags": [
-            "sky",
-            "structure"
-          ]
-        },
-        {
-          "name": "trained_seal",
-          "desc": "gray seal balancing a colorful ball on its nose",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "ticket"
         }
       ]
     },
