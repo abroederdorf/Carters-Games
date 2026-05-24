@@ -41,17 +41,23 @@ func _ready() -> void:
 	var free_anchors := _build_valid_anchors(bg_size)
 	free_anchors.shuffle()
 
-	var scores: Dictionary = {}
-	for item in all_items:
-		scores[item] = _count_compatible(item, free_anchors) + randf() * SELECTION_JITTER
-	all_items.sort_custom(func(a, b): return scores[a] < scores[b])
+	var tag_anchor_counts: Dictionary = {}
+	for a in free_anchors:
+		for t in a.tags:
+			tag_anchor_counts[t] = tag_anchor_counts.get(t, 0) + 1
 
 	_active_items = []
 	_active_item_data = []
+	var specialty_used: Dictionary = {}
 
 	for item in all_items:
 		if _active_items.size() >= TARGET_COUNT + MAX_DECOYS:
 			break
+		var rarest := _rarest_tag(item, tag_anchor_counts)
+		if not rarest.is_empty() \
+				and tag_anchor_counts.get(rarest, 0) < SPECIALTY_THRESHOLD \
+				and specialty_used.get(rarest, 0) >= 1:
+			continue
 		var anchor := _pick_random_compatible(item, free_anchors)
 		if anchor == null:
 			continue
@@ -62,6 +68,8 @@ func _ready() -> void:
 			"radius": anchor.radius * item.base_scale * 1.5,
 			"anchor_radius": anchor.radius
 		})
+		if not rarest.is_empty() and tag_anchor_counts.get(rarest, 0) < SPECIALTY_THRESHOLD:
+			specialty_used[rarest] = specialty_used.get(rarest, 0) + 1
 	_found.resize(_active_items.size())
 	_found.fill(false)
 
@@ -143,12 +151,15 @@ func _item_fits_anchor(item: HideSeekItemData, anchor: HideSeekAnchor) -> bool:
 	return false
 
 
-func _count_compatible(item: HideSeekItemData, anchors: Array[HideSeekAnchor]) -> int:
-	var count := 0
-	for a in anchors:
-		if _item_fits_anchor(item, a):
-			count += 1
-	return count
+func _rarest_tag(item: HideSeekItemData, tag_anchor_counts: Dictionary) -> String:
+	var rarest := ""
+	var min_count := INF
+	for t in item.tags:
+		var count: int = tag_anchor_counts.get(t, 0)
+		if count < min_count:
+			min_count = count
+			rarest = t
+	return rarest
 
 
 func _pick_random_compatible(item: HideSeekItemData, free_anchors: Array[HideSeekAnchor]) -> HideSeekAnchor:
@@ -258,7 +269,7 @@ func _on_next_pressed() -> void:
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
-const SELECTION_JITTER := 5.0
+const SPECIALTY_THRESHOLD := 8
 
 
 func _get_item_texture(item: HideSeekItemData) -> Texture2D:
