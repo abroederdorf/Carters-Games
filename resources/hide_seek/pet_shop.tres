@@ -261,7 +261,7 @@ script = ExtResource("1_rrvu8")
 id = 35
 position = Vector2(586.85675, 457.55316)
 radius = 38.0
-tags = Array[String](["animal", "item", "retpile"])
+tags = Array[String](["animal", "item", "reptile"])
 
 [sub_resource type="Resource" id="Resource_l4gxt"]
 script = ExtResource("1_rrvu8")
@@ -416,14 +416,14 @@ script = ExtResource("3_fy28n")
 item_name = "turtle"
 thumbnail = ExtResource("11_l2qdg")
 base_scale = 0.4
-tags = Array[String](["animal"])
+tags = Array[String](["animal", "reptile"])
 
 [sub_resource type="Resource" id="Resource_qrf28"]
 script = ExtResource("3_fy28n")
 item_name = "lizard"
 thumbnail = ExtResource("20_lzrd00")
 base_scale = 0.25
-tags = Array[String](["animal", "wall"])
+tags = Array[String](["animal", "reptile", "wall"])
 
 [sub_resource type="Resource" id="Resource_36aye"]
 script = ExtResource("3_fy28n")
@@ -437,7 +437,7 @@ script = ExtResource("3_fy28n")
 item_name = "snake"
 thumbnail = ExtResource("21_snke00")
 base_scale = 0.30000000000000004
-tags = Array[String](["animal"])
+tags = Array[String](["animal", "reptile"])
 
 [sub_resource type="Resource" id="Resource_ex1kg"]
 script = ExtResource("3_fy28n")
