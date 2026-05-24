@@ -1,0 +1,594 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_e61is"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/bg_airport.png" id="2_dywbo"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_c7nu0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/backpack.png" id="4_0v7bs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/airplane.png" id="4_a7vlr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/suitcase.png" id="5_d8qht"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/binoculars.png" id="5_sjeyk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/camera.png" id="6_c7nu0"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="6_et7q1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/pilot_hat.png" id="6_yncfs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/popcorn.png" id="7_0v7bs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/boarding_pass.png" id="7_dncg4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/luggage_cart.png" id="8_f2fu3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/gate_sign.png" id="9_f6j6d"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/headphones.png" id="10_x6s3l"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/neck_pillow.png" id="11_sxab1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/coffee_cup.png" id="13_cabgn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/passport.png" id="14_i2vqw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/luggage_tag.png" id="15_jgae6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/toy_plane.png" id="16_6gwvt"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/vending_machine.png" id="17_mq8sw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/departure_board.png" id="19_yapbf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/fuel_truck.png" id="20_upmt2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/helicopter.png" id="21_r0p8a"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/airport_utility_truck.png" id="22_hgu2q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/bouquet_of_flowers.png" id="23_7q1y3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/luggage_tractor.png" id="24_loml3"]
+
+[sub_resource type="Resource" id="Resource_hpuwa"]
+script = ExtResource("1_e61is")
+id = 0
+position = Vector2(1332.9354, 122.787506)
+radius = 30.0
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_u3inv"]
+script = ExtResource("1_e61is")
+id = 1
+position = Vector2(2568.161, 1034.6489)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_rxsvo"]
+script = ExtResource("1_e61is")
+id = 2
+position = Vector2(2060.877, 1067.2151)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_2wmq2"]
+script = ExtResource("1_e61is")
+id = 3
+position = Vector2(315.92413, 285.62)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_jddft"]
+script = ExtResource("1_e61is")
+id = 4
+position = Vector2(130.27213, 1262.6136)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_4sbmc"]
+script = ExtResource("1_e61is")
+id = 5
+position = Vector2(942.08435, 1360.3132)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_h333o"]
+script = ExtResource("1_e61is")
+id = 6
+position = Vector2(1534.0463, 118.71676)
+radius = 29.0
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_ny6j7"]
+script = ExtResource("1_e61is")
+id = 7
+position = Vector2(737.70245, 82.07951)
+radius = 20.0
+tags = Array[String](["airplane", "helicopter"])
+
+[sub_resource type="Resource" id="Resource_10pan"]
+script = ExtResource("1_e61is")
+id = 8
+position = Vector2(1972.94, 1369.1183)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_mtu4i"]
+script = ExtResource("1_e61is")
+id = 9
+position = Vector2(2459.0503, 786.99274)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_8ysrp"]
+script = ExtResource("1_e61is")
+id = 10
+position = Vector2(1715.632, 786.9926)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_dejd8"]
+script = ExtResource("1_e61is")
+id = 11
+position = Vector2(666.86755, 998.67474)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_aeggd"]
+script = ExtResource("1_e61is")
+id = 12
+position = Vector2(1136.6918, 331.06207)
+radius = 40.0
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_0crcn"]
+script = ExtResource("1_e61is")
+id = 13
+position = Vector2(564.26746, 746.2845)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_53yvb"]
+script = ExtResource("1_e61is")
+id = 14
+position = Vector2(1595.9287, 343.2746)
+radius = 31.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_ujrt6"]
+script = ExtResource("1_e61is")
+id = 15
+position = Vector2(1373.635, 1377.26)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_nb4f3"]
+script = ExtResource("1_e61is")
+id = 16
+position = Vector2(160.40671, 441.63724)
+radius = 40.0
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_uc21b"]
+script = ExtResource("1_e61is")
+id = 17
+position = Vector2(1696.9061, 323.5838)
+radius = 29.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_2qjkc"]
+script = ExtResource("1_e61is")
+id = 18
+position = Vector2(485.2914, 1247.6573)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_ri7nh"]
+script = ExtResource("1_e61is")
+id = 19
+position = Vector2(67.57622, 714.38153)
+radius = 29.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_jx10d"]
+script = ExtResource("1_e61is")
+id = 20
+position = Vector2(1836.1385, 75.264366)
+radius = 40.0
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_lmct7"]
+script = ExtResource("1_e61is")
+id = 21
+position = Vector2(1296.2852, 539.33673)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_2ey8w"]
+script = ExtResource("1_e61is")
+id = 22
+position = Vector2(1863.8206, 803.9389)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_5f0a7"]
+script = ExtResource("1_e61is")
+id = 23
+position = Vector2(1735.1656, 474.20383)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_fb51c"]
+script = ExtResource("1_e61is")
+id = 24
+position = Vector2(340.3564, 466.7256)
+radius = 40.0
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_84ixt"]
+script = ExtResource("1_e61is")
+id = 25
+position = Vector2(1372.0173, 947.0814)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_bs7kg"]
+script = ExtResource("1_e61is")
+id = 26
+position = Vector2(746.6667, 540)
+radius = 40.0
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_ioqao"]
+script = ExtResource("1_e61is")
+id = 27
+position = Vector2(255.66823, 776.10693)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_45u0b"]
+script = ExtResource("1_e61is")
+id = 28
+position = Vector2(1478.6797, 812.7441)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_ikyh3"]
+script = ExtResource("1_e61is")
+id = 29
+position = Vector2(1411.0944, 629.5576)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_6mdjs"]
+script = ExtResource("1_e61is")
+id = 30
+position = Vector2(1677.3545, 645.8408)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_oc43o"]
+script = ExtResource("1_e61is")
+id = 31
+position = Vector2(1866.26, 580.708)
+radius = 31.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_2rwu4"]
+script = ExtResource("1_e61is")
+id = 32
+position = Vector2(1398.076, 414.46848)
+radius = 40.0
+tags = Array[String](["big"])
+
+[sub_resource type="Resource" id="Resource_ed5op"]
+script = ExtResource("1_e61is")
+id = 33
+position = Vector2(1175.7827, 711.6372)
+radius = 40.0
+tags = Array[String](["big"])
+
+[sub_resource type="Resource" id="Resource_kntwa"]
+script = ExtResource("1_e61is")
+id = 34
+position = Vector2(782.49506, 1305.9753)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_cgq77"]
+script = ExtResource("1_e61is")
+id = 35
+position = Vector2(723.0522, 817.4781)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_lbanw"]
+script = ExtResource("1_e61is")
+id = 36
+position = Vector2(447.83154, 894.8236)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_7r6fi"]
+script = ExtResource("1_e61is")
+id = 37
+position = Vector2(1133.4336, 1346.6831)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_nchog"]
+script = ExtResource("1_e61is")
+id = 38
+position = Vector2(1648.0422, 1094.2931)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_5eqfw"]
+script = ExtResource("1_e61is")
+id = 39
+position = Vector2(1389.1062, 1171.6387)
+radius = 40.0
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_j5wd2"]
+script = ExtResource("1_e61is")
+id = 40
+position = Vector2(438.06723, 260.44086)
+radius = 40.0
+tags = Array[String](["big"])
+
+[sub_resource type="Resource" id="Resource_dsk6o"]
+script = ExtResource("1_e61is")
+id = 41
+position = Vector2(1616.2946, 936.1948)
+radius = 40.0
+tags = Array[String](["big", "item"])
+
+[sub_resource type="Resource" id="Resource_jtwmp"]
+script = ExtResource("1_e61is")
+id = 42
+position = Vector2(2391.4648, 223.8035)
+radius = 26.0
+tags = Array[String](["truck", "helicopter"])
+
+[sub_resource type="Resource" id="Resource_bnefi"]
+script = ExtResource("1_e61is")
+id = 43
+position = Vector2(2238.3826, 985.0446)
+radius = 40.0
+tags = Array[String](["truck"])
+
+[sub_resource type="Resource" id="Resource_4l3y2"]
+script = ExtResource("1_e61is")
+id = 44
+position = Vector2(2170.7974, 1302.5674)
+radius = 40.0
+tags = Array[String](["truck"])
+
+[sub_resource type="Resource" id="Resource_700gd"]
+script = ExtResource("1_e61is")
+id = 45
+position = Vector2(2738.3323, 679.73425)
+radius = 51.0
+tags = Array[String](["airplane", "truck"])
+
+[sub_resource type="Resource" id="Resource_q5nx5"]
+script = ExtResource("1_e61is")
+id = 46
+position = Vector2(2788.814, 252.29916)
+radius = 24.0
+tags = Array[String](["helicopter", "truck"])
+
+[sub_resource type="Resource" id="Resource_362ku"]
+script = ExtResource("1_e61is")
+id = 47
+position = Vector2(2375.1702, 93.537544)
+radius = 40.0
+tags = Array[String](["helicopter"])
+
+[sub_resource type="Resource" id="Resource_wgs8x"]
+script = ExtResource("1_e61is")
+id = 48
+position = Vector2(2533.9639, 171.54645)
+radius = 40.0
+tags = Array[String](["airplame", "helicopter"])
+
+[sub_resource type="Resource" id="Resource_pomp8"]
+script = ExtResource("1_e61is")
+id = 49
+position = Vector2(2706.5852, 81.9885)
+radius = 30.0
+tags = Array[String](["airplane", "helicopter"])
+
+[sub_resource type="Resource" id="Resource_oq8bt"]
+script = ExtResource("3_c7nu0")
+item_name = "airplane"
+thumbnail = ExtResource("4_a7vlr")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 1.25
+tags = Array[String](["airplane"])
+
+[sub_resource type="Resource" id="Resource_y6l3i"]
+script = ExtResource("3_c7nu0")
+item_name = "suitcase"
+thumbnail = ExtResource("5_d8qht")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.65
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_c570k"]
+script = ExtResource("3_c7nu0")
+item_name = "pilot_hat"
+thumbnail = ExtResource("6_yncfs")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_bdv4t"]
+script = ExtResource("3_c7nu0")
+item_name = "boarding_pass"
+thumbnail = ExtResource("7_dncg4")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.25
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_udr77"]
+script = ExtResource("3_c7nu0")
+item_name = "luggage_cart"
+thumbnail = ExtResource("8_f2fu3")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.8
+tags = Array[String](["big"])
+
+[sub_resource type="Resource" id="Resource_tjgb5"]
+script = ExtResource("3_c7nu0")
+item_name = "gate_sign"
+thumbnail = ExtResource("9_f6j6d")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_hrtup"]
+script = ExtResource("3_c7nu0")
+item_name = "headphones"
+thumbnail = ExtResource("10_x6s3l")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_phnk2"]
+script = ExtResource("3_c7nu0")
+item_name = "neck_pillow"
+thumbnail = ExtResource("11_sxab1")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_xaplj"]
+script = ExtResource("3_c7nu0")
+item_name = "backpack"
+thumbnail = ExtResource("4_0v7bs")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_hgfof"]
+script = ExtResource("3_c7nu0")
+item_name = "coffee_cup"
+thumbnail = ExtResource("13_cabgn")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_iwk2p"]
+script = ExtResource("3_c7nu0")
+item_name = "passport"
+thumbnail = ExtResource("14_i2vqw")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.25
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_0dgfw"]
+script = ExtResource("3_c7nu0")
+item_name = "luggage_tag"
+thumbnail = ExtResource("15_jgae6")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.25
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_32hd3"]
+script = ExtResource("3_c7nu0")
+item_name = "toy_plane"
+thumbnail = ExtResource("16_6gwvt")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_dxc5f"]
+script = ExtResource("3_c7nu0")
+item_name = "vending_machine"
+thumbnail = ExtResource("17_mq8sw")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.8500000000000001
+tags = Array[String](["big"])
+
+[sub_resource type="Resource" id="Resource_lpabo"]
+script = ExtResource("3_c7nu0")
+item_name = "binoculars"
+thumbnail = ExtResource("5_sjeyk")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_ikl7m"]
+script = ExtResource("3_c7nu0")
+item_name = "departure_board"
+thumbnail = ExtResource("19_yapbf")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["hanging"])
+
+[sub_resource type="Resource" id="Resource_274dw"]
+script = ExtResource("3_c7nu0")
+item_name = "fuel_truck"
+thumbnail = ExtResource("20_upmt2")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.8500000000000001
+tags = Array[String](["truck"])
+
+[sub_resource type="Resource" id="Resource_2aefk"]
+script = ExtResource("3_c7nu0")
+item_name = "helicopter"
+thumbnail = ExtResource("21_r0p8a")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.8
+tags = Array[String](["helicopter"])
+
+[sub_resource type="Resource" id="Resource_ixwhf"]
+script = ExtResource("3_c7nu0")
+item_name = "airport_utility_truck"
+thumbnail = ExtResource("22_hgu2q")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.8999999999999999
+tags = Array[String](["truck"])
+
+[sub_resource type="Resource" id="Resource_pirtd"]
+script = ExtResource("3_c7nu0")
+item_name = "bouquet_of_flowers"
+thumbnail = ExtResource("23_7q1y3")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_3myf8"]
+script = ExtResource("3_c7nu0")
+item_name = "luggage_tractor"
+thumbnail = ExtResource("24_loml3")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.8500000000000001
+tags = Array[String](["truck"])
+
+[sub_resource type="Resource" id="Resource_pv1pd"]
+script = ExtResource("3_c7nu0")
+item_name = "camera"
+thumbnail = ExtResource("6_c7nu0")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_11eqh"]
+script = ExtResource("3_c7nu0")
+item_name = "popcorn"
+thumbnail = ExtResource("7_0v7bs")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["item"])
+
+[resource]
+script = ExtResource("6_et7q1")
+scene_name = "airport"
+background_image = ExtResource("2_dywbo")
+items = Array[ExtResource("3_c7nu0")]([SubResource("Resource_oq8bt"), SubResource("Resource_y6l3i"), SubResource("Resource_c570k"), SubResource("Resource_bdv4t"), SubResource("Resource_udr77"), SubResource("Resource_tjgb5"), SubResource("Resource_hrtup"), SubResource("Resource_phnk2"), SubResource("Resource_xaplj"), SubResource("Resource_hgfof"), SubResource("Resource_iwk2p"), SubResource("Resource_0dgfw"), SubResource("Resource_32hd3"), SubResource("Resource_dxc5f"), SubResource("Resource_lpabo"), SubResource("Resource_ikl7m"), SubResource("Resource_274dw"), SubResource("Resource_2aefk"), SubResource("Resource_ixwhf"), SubResource("Resource_pirtd"), SubResource("Resource_3myf8"), SubResource("Resource_pv1pd"), SubResource("Resource_11eqh")])
+anchors = Array[ExtResource("1_e61is")]([SubResource("Resource_hpuwa"), SubResource("Resource_u3inv"), SubResource("Resource_rxsvo"), SubResource("Resource_2wmq2"), SubResource("Resource_jddft"), SubResource("Resource_4sbmc"), SubResource("Resource_h333o"), SubResource("Resource_ny6j7"), SubResource("Resource_10pan"), SubResource("Resource_mtu4i"), SubResource("Resource_8ysrp"), SubResource("Resource_dejd8"), SubResource("Resource_aeggd"), SubResource("Resource_0crcn"), SubResource("Resource_53yvb"), SubResource("Resource_ujrt6"), SubResource("Resource_nb4f3"), SubResource("Resource_uc21b"), SubResource("Resource_2qjkc"), SubResource("Resource_ri7nh"), SubResource("Resource_jx10d"), SubResource("Resource_lmct7"), SubResource("Resource_2ey8w"), SubResource("Resource_5f0a7"), SubResource("Resource_fb51c"), SubResource("Resource_84ixt"), SubResource("Resource_bs7kg"), SubResource("Resource_ioqao"), SubResource("Resource_45u0b"), SubResource("Resource_ikyh3"), SubResource("Resource_6mdjs"), SubResource("Resource_oc43o"), SubResource("Resource_2rwu4"), SubResource("Resource_ed5op"), SubResource("Resource_kntwa"), SubResource("Resource_cgq77"), SubResource("Resource_lbanw"), SubResource("Resource_7r6fi"), SubResource("Resource_nchog"), SubResource("Resource_5eqfw"), SubResource("Resource_j5wd2"), SubResource("Resource_dsk6o"), SubResource("Resource_jtwmp"), SubResource("Resource_bnefi"), SubResource("Resource_4l3y2"), SubResource("Resource_700gd"), SubResource("Resource_q5nx5"), SubResource("Resource_362ku"), SubResource("Resource_wgs8x"), SubResource("Resource_pomp8")])
+is_manual_edit = true

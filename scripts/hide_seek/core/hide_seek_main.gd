@@ -19,6 +19,7 @@ var _page_vboxes: Array[VBoxContainer] = []
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_ui()
+	_current_page = HideSeekState.current_scene_list_page
 	_update_pagination_ui()
 	await get_tree().process_frame
 	_fit_pages_to_scroll()
@@ -331,6 +332,7 @@ func _on_back_pressed() -> void:
 func _on_scene_pressed(scene_name: String) -> void:
 	AudioManager.play_sfx("pop")
 	HideSeekState.current_scene_name = scene_name
+	HideSeekState.current_scene_list_page = _current_page
 	if ResourceLoader.exists("res://scenes/hide_seek/HideSeekGame.tscn"):
 		get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekGame.tscn")
 
