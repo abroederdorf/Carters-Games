@@ -52,7 +52,7 @@ tags = Array[String](["item"])
 [sub_resource type="Resource" id="Resource_2wmq2"]
 script = ExtResource("1_e61is")
 id = 3
-position = Vector2(315.92413, 285.62)
+position = Vector2(250.7836, 277.4784)
 radius = 40.0
 tags = Array[String](["item"])
 
@@ -122,8 +122,8 @@ tags = Array[String](["hanging"])
 [sub_resource type="Resource" id="Resource_0crcn"]
 script = ExtResource("1_e61is")
 id = 13
-position = Vector2(564.26746, 746.2845)
-radius = 40.0
+position = Vector2(556.1249, 713.7181)
+radius = 38.0
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_53yvb"]
@@ -150,7 +150,7 @@ tags = Array[String](["hanging"])
 [sub_resource type="Resource" id="Resource_uc21b"]
 script = ExtResource("1_e61is")
 id = 17
-position = Vector2(1696.9061, 323.5838)
+position = Vector2(1941.1831, 592.2571)
 radius = 29.0
 tags = Array[String](["item"])
 
@@ -248,7 +248,7 @@ tags = Array[String](["item"])
 [sub_resource type="Resource" id="Resource_oc43o"]
 script = ExtResource("1_e61is")
 id = 31
-position = Vector2(1866.26, 580.708)
+position = Vector2(1866.26, 527.7876)
 radius = 31.0
 tags = Array[String](["item"])
 
@@ -257,12 +257,12 @@ script = ExtResource("1_e61is")
 id = 32
 position = Vector2(1398.076, 414.46848)
 radius = 40.0
-tags = Array[String](["big"])
+tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_ed5op"]
 script = ExtResource("1_e61is")
 id = 33
-position = Vector2(1175.7827, 711.6372)
+position = Vector2(1143.2124, 695.354)
 radius = 40.0
 tags = Array[String](["big"])
 
@@ -304,7 +304,7 @@ tags = Array[String](["item"])
 [sub_resource type="Resource" id="Resource_5eqfw"]
 script = ExtResource("1_e61is")
 id = 39
-position = Vector2(1389.1062, 1171.6387)
+position = Vector2(1372.821, 1114.6475)
 radius = 40.0
 tags = Array[String](["item"])
 
@@ -318,16 +318,16 @@ tags = Array[String](["big"])
 [sub_resource type="Resource" id="Resource_dsk6o"]
 script = ExtResource("1_e61is")
 id = 41
-position = Vector2(1616.2946, 936.1948)
-radius = 40.0
+position = Vector2(1644.7936, 936.1948)
+radius = 32.0
 tags = Array[String](["big", "item"])
 
 [sub_resource type="Resource" id="Resource_jtwmp"]
 script = ExtResource("1_e61is")
 id = 42
-position = Vector2(2391.4648, 223.8035)
-radius = 26.0
-tags = Array[String](["truck", "helicopter"])
+position = Vector2(2358.8945, 537.2558)
+radius = 38.0
+tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_bnefi"]
 script = ExtResource("1_e61is")
@@ -340,13 +340,13 @@ tags = Array[String](["truck"])
 script = ExtResource("1_e61is")
 id = 44
 position = Vector2(2170.7974, 1302.5674)
-radius = 40.0
+radius = 54.0
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_700gd"]
 script = ExtResource("1_e61is")
 id = 45
-position = Vector2(2738.3323, 679.73425)
+position = Vector2(2738.3323, 659.38025)
 radius = 51.0
 tags = Array[String](["airplane", "truck"])
 
@@ -369,7 +369,7 @@ script = ExtResource("1_e61is")
 id = 48
 position = Vector2(2533.9639, 171.54645)
 radius = 40.0
-tags = Array[String](["airplame", "helicopter"])
+tags = Array[String](["airplane", "helicopter"])
 
 [sub_resource type="Resource" id="Resource_pomp8"]
 script = ExtResource("1_e61is")
@@ -500,8 +500,8 @@ script = ExtResource("3_c7nu0")
 item_name = "vending_machine"
 thumbnail = ExtResource("17_mq8sw")
 position = Vector2(100, 100)
-radius = 60.0
-base_scale = 0.8500000000000001
+radius = 54.0
+base_scale = 0.8
 tags = Array[String](["big"])
 
 [sub_resource type="Resource" id="Resource_lpabo"]
@@ -546,7 +546,6 @@ item_name = "airport_utility_truck"
 thumbnail = ExtResource("22_hgu2q")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.8999999999999999
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_pirtd"]
@@ -564,7 +563,7 @@ item_name = "luggage_tractor"
 thumbnail = ExtResource("24_loml3")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.8500000000000001
+base_scale = 1.05
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_pv1pd"]
