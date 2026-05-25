@@ -322,7 +322,7 @@ tags = Array[String](["item", "person"])
 [sub_resource type="Resource" id="Resource_rsqnm"]
 script = ExtResource("1_y6ccw")
 id = 42
-position = Vector2(1316.1095, 1163.9374)
+position = Vector2(1298.8419, 1092.7006)
 radius = 40.0
 tags = Array[String](["item", "person", "animal", "big"])
 
