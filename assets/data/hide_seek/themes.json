@@ -1558,6 +1558,7 @@
         },
         {
           "name": "crowd_barrier",
+          "shared": "crowd_barrier",
           "desc": "metal crowd control barrier fence",
           "type": "object",
           "tags": [
@@ -1610,6 +1611,7 @@
         },
         {
           "name": "kitten",
+          "shared": "kitten",
           "desc": "tiny orange kitten playing with a ball of yarn",
           "type": "character",
           "tags": [
@@ -1619,6 +1621,7 @@
         },
         {
           "name": "puppy",
+          "shared": "puppy",
           "desc": "happy brown puppy wagging its tail",
           "type": "character",
           "tags": [
@@ -1907,8 +1910,50 @@
       ]
     },
     "city": {
-      "scene": "Children's book illustration of a busy city street corner. Tall buildings, storefronts, city traffic, a small park. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's book illustration of a busy city street corner with a large open park. The scene has a wide blue sky with a few fluffy white clouds. In the foreground is a gray sidewalk and a crosswalk. To the right is a green park with trees, grass, and flower beds. The background features colorful low-rise storefronts and small apartment buildings. The street has a T-junction layout. Wide panoramic 16:9 aspect ratio, bright cheerful colors, flat design, thick clean black outlines, no text, no people.",
       "items": [
+        {
+          "name": "airplane",
+          "shared": "airplane",
+          "desc": "large white passenger jet with blue tail stripe",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "helicopter",
+          "shared": "helicopter",
+          "desc": "bright blue rescue helicopter with spinning rotors",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "blimp",
+          "desc": "friendly white and blue blimp floating in the sky",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "kite",
+          "desc": "diamond kite with a long ribbon tail flying in the sky",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "balloon",
+          "desc": "bunch of bright helium balloons tied with string",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
         {
           "name": "taxi",
           "desc": "bright yellow city taxi cab with a TAXI sign on top",
@@ -1918,12 +1963,11 @@
           ]
         },
         {
-          "name": "stop_sign",
-          "desc": "red octagonal stop sign on a silver pole",
+          "name": "police_car",
+          "desc": "black and white police car with lights on top",
           "type": "object",
           "tags": [
-            "ground",
-            "structure"
+            "ground"
           ]
         },
         {
@@ -1936,11 +1980,11 @@
           ]
         },
         {
-          "name": "skyscraper",
-          "desc": "tall blue glass building with many small windows",
+          "name": "stop_sign",
+          "desc": "red octagonal stop sign on a silver pole",
           "type": "object",
           "tags": [
-            "sky",
+            "ground",
             "structure"
           ]
         },
@@ -1949,28 +1993,17 @@
           "shared": "fire_hydrant"
         },
         {
-          "name": "trash_can",
-          "desc": "silver metal bin with a domed lid",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "bus",
-          "desc": "long bright red city bus, simple rounded shapes",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "name": "construction_cone",
+          "shared": "construction_cone"
         },
         {
           "name": "bicycle",
           "shared": "bicycle"
         },
         {
-          "name": "subway_sign",
-          "desc": "round green subway station entrance sign",
+          "name": "crowd_barrier",
+          "shared": "crowd_barrier",
+          "desc": "metal crowd control barrier fence",
           "type": "object",
           "tags": [
             "ground",
@@ -1978,12 +2011,30 @@
           ]
         },
         {
-          "name": "newsstand",
-          "desc": "small green magazine kiosk with a glass window",
-          "type": "object",
+          "name": "puppy",
+          "shared": "puppy",
+          "desc": "happy brown puppy wagging its tail",
+          "type": "character",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "kitten",
+          "shared": "kitten",
+          "desc": "tiny orange kitten playing with a ball of yarn",
+          "type": "character",
           "tags": [
             "ground",
             "structure"
+          ]
+        },
+        {
+          "name": "trash_can",
+          "desc": "silver metal bin with a domed lid",
+          "type": "object",
+          "tags": [
+            "ground"
           ]
         },
         {
@@ -2013,23 +2064,6 @@
           ]
         },
         {
-          "name": "beetle",
-          "desc": "small shiny black beetle with spotted wing cases",
-          "type": "character",
-          "tags": [
-            "ground",
-            "foliage"
-          ]
-        },
-        {
-          "name": "construction_cone",
-          "desc": "bright orange safety cone with white reflective stripe",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "street_sign",
           "desc": "green rectangular street name sign on a pole",
           "type": "object",
@@ -2050,14 +2084,6 @@
         {
           "name": "shopping_bag",
           "desc": "paper shopping bag with handles and a logo",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "police_car",
-          "desc": "black and white police car with lights on top",
           "type": "object",
           "tags": [
             "ground"
@@ -2243,10 +2269,11 @@
       ]
     },
     "airport": {
-      "scene": "Children's cartoon illustration of a large, busy airport tarmac and terminal packed with things to find. Large white airplanes are parked at gates, a yellow fuel truck is connected to a wing, and a luggage truck with trailers drives across the runway. Through large terminal windows, you can see a vending machine and a departure board. The scene is wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Filled with details like traffic cones, runway markings, and small figures. Friendly and bustling mood, suitable for children.",
+      "scene": "Children's book illustration of a busy airport. Planes on the tarmac, a control tower, gates with travelers, a luggage carousel. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "airplane",
+          "shared": "airplane",
           "desc": "large white passenger jet with blue tail stripe",
           "type": "object",
           "tags": [
@@ -2278,6 +2305,24 @@
           ]
         },
         {
+          "name": "control_tower",
+          "desc": "tall airport control tower with glass windows at the top",
+          "type": "object",
+          "tags": [
+            "structure",
+            "sky"
+          ]
+        },
+        {
+          "name": "runway_light",
+          "desc": "small green runway edge light on a low post",
+          "type": "object",
+          "tags": [
+            "ground",
+            "structure"
+          ]
+        },
+        {
           "name": "luggage_cart",
           "desc": "silver metal luggage trolley stacked with bags",
           "type": "object",
@@ -2291,6 +2336,14 @@
           "type": "object",
           "tags": [
             "structure"
+          ]
+        },
+        {
+          "name": "snack_bag",
+          "desc": "foil snack bag of pretzels",
+          "type": "object",
+          "tags": [
+            "ground"
           ]
         },
         {
@@ -2323,7 +2376,7 @@
         },
         {
           "name": "passport",
-          "desc": "small dark blue passport book with a gold crest on the front",
+          "desc": "small navy blue passport booklet",
           "type": "object",
           "tags": [
             "ground"
@@ -2331,7 +2384,7 @@
         },
         {
           "name": "luggage_tag",
-          "desc": "bright yellow plastic luggage tag with a clear window",
+          "desc": "colorful luggage tag with a strap",
           "type": "object",
           "tags": [
             "ground"
@@ -2339,15 +2392,16 @@
         },
         {
           "name": "toy_plane",
-          "desc": "small red and white propeller toy plane",
+          "desc": "small model toy airplane, silver with red wings",
           "type": "object",
           "tags": [
+            "sky",
             "ground"
           ]
         },
         {
           "name": "vending_machine",
-          "desc": "tall red snacks vending machine with a glass front",
+          "desc": "tall snack vending machine with colorful items inside",
           "type": "object",
           "tags": [
             "structure"
@@ -2358,60 +2412,16 @@
           "shared": "binoculars"
         },
         {
+          "name": "megaphone",
+          "shared": "megaphone"
+        },
+        {
           "name": "departure_board",
-          "desc": "flat-screen airport departure monitor with a dark blue screen showing glowing white and yellow text, perfectly flat front view",
+          "desc": "large black flight departure board with flipping tiles",
           "type": "object",
           "tags": [
             "structure"
           ]
-        },
-        {
-          "name": "fuel_truck",
-          "desc": "bright yellow airport fuel tanker truck with a large tank",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "helicopter",
-          "desc": "small blue and white rescue helicopter with large black rotors",
-          "type": "object",
-          "tags": [
-            "sky"
-          ]
-        },
-        {
-          "name": "airport_utility_truck",
-          "desc": "white airport utility pickup truck with a flashing yellow light on top",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "bouquet_of_flowers",
-          "desc": "colorful bouquet of red and yellow flowers wrapped in clear plastic",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "luggage_tractor",
-          "desc": "small open-topped airport baggage tractor pulling trailers loaded with colorful suitcases",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "camera",
-          "shared": "camera"
-        },
-        {
-          "name": "popcorn",
-          "shared": "popcorn"
         }
       ]
     },

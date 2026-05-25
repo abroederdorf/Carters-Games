@@ -7,5 +7,6 @@
 script = ExtResource("1_x02nt")
 item_name = "bicycle"
 thumbnail = ExtResource("2_yl67o")
+position = Vector2(100, 100)
 radius = 60.0
-tags = Array[String](["ground"])
+base_scale = 0.5

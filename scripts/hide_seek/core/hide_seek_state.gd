@@ -8,19 +8,19 @@ const SCENE_ORDER: Array[String] = [
 	"dinosaur_land",
 	"monster_truck_jam",
 	"mountains",
-	"jungle",
+	"city",
 	"construction_site",
-	"airport",
+	"jungle",
 	"space",
 	"fire_station",
 	"ocean",
 ]
 
 const DISPLAY_NAMES: Dictionary = {
+	"city": "City",
 	"mountains": "Mountains",
 	"ocean": "Ocean",
 	"jungle": "Jungle",
-	"airport": "Airport",
 	"space": "Space",
 	"dinosaur_land": "Dinosaur Land",
 	"fire_station": "Fire Station",
@@ -31,7 +31,6 @@ const DISPLAY_NAMES: Dictionary = {
 }
 
 var current_scene_name: String = ""
-var current_scene_list_page: int = 0
 var hint_stars: int = 0
 var _progress: Dictionary = {}
 

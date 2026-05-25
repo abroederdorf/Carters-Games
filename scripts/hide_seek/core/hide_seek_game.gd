@@ -4,7 +4,7 @@ const HideSeekCanvas = preload("res://scripts/hide_seek/core/hide_seek_canvas.gd
 const HideSeekUI = preload("res://scripts/hide_seek/core/hide_seek_ui.gd")
 
 const TARGET_COUNT := 10
-const MAX_DECOYS := 5
+var _decoy_count: int
 
 var _scene_name: String
 var _scene_data: HideSeekSceneData
@@ -35,41 +35,54 @@ func _ready() -> void:
 	var bg_tex := _scene_data.background_image
 	var bg_size := Vector2(bg_tex.get_width(), bg_tex.get_height())
 
+	_decoy_count = randi_range(5, 10)
+
 	var all_items := _scene_data.items.duplicate()
 	all_items.shuffle()
 
-	var free_anchors := _build_valid_anchors(bg_size)
-	free_anchors.shuffle()
+	var total_to_pick := TARGET_COUNT + _decoy_count
+	var valid_anchors := _build_valid_anchors(bg_size)
 
-	var tag_anchor_counts: Dictionary = {}
-	for a in free_anchors:
-		for t in a.tags:
-			tag_anchor_counts[t] = tag_anchor_counts.get(t, 0) + 1
-
+	var reserved_anchor_ids: Array[int] = []
+	var skipped_items: Array = []
 	_active_items = []
-	_active_item_data = []
-	var specialty_used: Dictionary = {}
 
 	for item in all_items:
-		if _active_items.size() >= TARGET_COUNT + MAX_DECOYS:
+		if _active_items.size() >= total_to_pick:
 			break
-		var rarest := _rarest_tag(item, tag_anchor_counts)
-		if not rarest.is_empty() \
-				and tag_anchor_counts.get(rarest, 0) < SPECIALTY_THRESHOLD \
-				and specialty_used.get(rarest, 0) >= 1:
-			continue
-		var anchor := _pick_random_compatible(item, free_anchors)
-		if anchor == null:
-			continue
-		free_anchors.erase(anchor)
-		_active_items.append(item)
-		_active_item_data.append({
-			"pos": anchor.position,
-			"radius": anchor.radius * item.base_scale * 1.5,
-			"anchor_radius": anchor.radius
-		})
-		if not rarest.is_empty() and tag_anchor_counts.get(rarest, 0) < SPECIALTY_THRESHOLD:
-			specialty_used[rarest] = specialty_used.get(rarest, 0) + 1
+		var claimed := -1
+		if randf() < 0.7:
+			for a in valid_anchors:
+				if a.id in reserved_anchor_ids:
+					continue
+				if _item_fits_anchor(item, a):
+					claimed = a.id
+					break
+		if claimed >= 0:
+			_active_items.append(item)
+			reserved_anchor_ids.append(claimed)
+		else:
+			skipped_items.append(item)
+
+	# Fill from skipped items up to total_to_pick (covers both target shortfall and decoys).
+	if _active_items.size() < total_to_pick:
+		for item in skipped_items:
+			if _active_items.size() >= total_to_pick:
+				break
+			var claimed := -1
+			for a in valid_anchors:
+				if a.id in reserved_anchor_ids:
+					continue
+				if _item_fits_anchor(item, a):
+					claimed = a.id
+					break
+			if claimed >= 0:
+				_active_items.append(item)
+				reserved_anchor_ids.append(claimed)
+
+	# Shuffle so constrained items (taxi, police) aren't always targets 0-9.
+	_active_items.shuffle()
+	_assign_items_to_anchors(bg_size)
 	_found.resize(_active_items.size())
 	_found.fill(false)
 
@@ -95,7 +108,7 @@ func _ready() -> void:
 		var sprite_size := 750.0
 		if tex:
 			sprite_size = max(tex.get_width(), tex.get_height())
-		var visual_scale := (229.0 * item.base_scale) / sprite_size
+		var visual_scale: float = (229.0 * item.base_scale * float(d["visual_scale"])) / sprite_size
 		_canvas.add_item_sprite(d["pos"], visual_scale, tex)
 
 	_ui = HideSeekUI.new()
@@ -140,6 +153,43 @@ func _build_valid_anchors(bg_size: Vector2) -> Array[HideSeekAnchor]:
 	return result
 
 
+func _assign_items_to_anchors(bg_size: Vector2) -> void:
+	_active_item_data.clear()
+
+	var available_anchors := _build_valid_anchors(bg_size)
+	available_anchors.shuffle()
+
+	# Process most-constrained items first so items with rare tags claim anchors
+	# before generic items exhaust the pool
+	var order: Array[int] = []
+	for i in _active_items.size():
+		order.append(i)
+	order.sort_custom(func(a: int, b: int) -> bool:
+		return _count_compatible(_active_items[a], available_anchors) \
+			< _count_compatible(_active_items[b], available_anchors)
+	)
+
+	var free_anchors := available_anchors.duplicate()
+	var anchor_map: Dictionary = {}
+
+	for orig_i in order:
+		var item: HideSeekItemData = _active_items[orig_i]
+		var a := _pick_anchor(item, free_anchors)
+		if a != null:
+			free_anchors.erase(a)
+			anchor_map[orig_i] = a
+
+	for i in _active_items.size():
+		var data := {"pos": Vector2.ZERO, "radius": 50.0, "anchor_radius": 50.0, "visual_scale": 1.0}
+		if anchor_map.has(i):
+			var a: HideSeekAnchor = anchor_map[i]
+			data["pos"] = a.position
+			data["anchor_radius"] = a.radius
+			data["visual_scale"] = a.visual_scale
+			data["radius"] = a.radius * _active_items[i].base_scale * a.visual_scale * 1.5
+		_active_item_data.append(data)
+
+
 func _item_fits_anchor(item: HideSeekItemData, anchor: HideSeekAnchor) -> bool:
 	if item.tags.is_empty() and anchor.tags.is_empty():
 		return true
@@ -151,25 +201,25 @@ func _item_fits_anchor(item: HideSeekItemData, anchor: HideSeekAnchor) -> bool:
 	return false
 
 
-func _rarest_tag(item: HideSeekItemData, tag_anchor_counts: Dictionary) -> String:
-	var rarest := ""
-	var min_count := INF
-	for t in item.tags:
-		var count: int = tag_anchor_counts.get(t, 0)
-		if count < min_count:
-			min_count = count
-			rarest = t
-	return rarest
+func _count_compatible(item: HideSeekItemData, anchors: Array[HideSeekAnchor]) -> int:
+	var count := 0
+	for a in anchors:
+		if _item_fits_anchor(item, a):
+			count += 1
+	return count
 
 
-func _pick_random_compatible(item: HideSeekItemData, free_anchors: Array[HideSeekAnchor]) -> HideSeekAnchor:
-	var compatible: Array[HideSeekAnchor] = []
+func _pick_anchor(item: HideSeekItemData, free_anchors: Array[HideSeekAnchor]) -> HideSeekAnchor:
+	# Preferred anchor IDs take priority; fall through to tag matching if unavailable
+	if not item.preferred_anchors.is_empty():
+		for preferred_id in item.preferred_anchors:
+			for a in free_anchors:
+				if a.id == preferred_id:
+					return a
 	for a in free_anchors:
 		if _item_fits_anchor(item, a):
-			compatible.append(a)
-	if compatible.is_empty():
-		return null
-	return compatible[randi() % compatible.size()]
+			return a
+	return null
 
 
 # ── Game Logic ─────────────────────────────────────────────────────────────────
@@ -268,8 +318,6 @@ func _on_next_pressed() -> void:
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
-
-const SPECIALTY_THRESHOLD := 8
 
 
 func _get_item_texture(item: HideSeekItemData) -> Texture2D:

@@ -409,11 +409,13 @@ func _refresh_selected_panel() -> void:
 		_name_input.get_parent().visible = false
 		_thumb_preview.get_parent().get_child(1).visible = false
 		_thumb_preview.visible = false
-		_scale_slider.get_parent().visible = false
+		_scale_slider.get_parent().visible = true
 		_tags_input.get_parent().visible = true
 		_difficulty_option.get_parent().visible = true
 		_radius_slider.value = obj.radius
 		_radius_label.text = str(int(obj.radius))
+		_scale_slider.value = obj.visual_scale
+		_scale_label.text = "%.2f" % obj.visual_scale
 		_tags_input.text = ", ".join(obj.tags)
 		_difficulty_option.selected = obj.difficulty
 		
@@ -436,9 +438,12 @@ func _on_radius_changed(value: float) -> void:
 	_canvas.setup(_scene_data, _selected_index)
 
 func _on_scale_changed(value: float) -> void:
-	if _updating_ui or _selected_index < 0 or _mode != 0:
+	if _updating_ui or _selected_index < 0:
 		return
-	_scene_data.items[_selected_index].base_scale = value
+	if _mode == 0:
+		_scene_data.items[_selected_index].base_scale = value
+	else:
+		_scene_data.anchors[_selected_index].visual_scale = value
 	_scale_label.text = "%.2f" % value
 	_canvas.setup(_scene_data, _selected_index)
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/bg_airport.png" id="2_dywbo"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_c7nu0"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/backpack.png" id="4_0v7bs"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/airplane.png" id="4_a7vlr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/airplane.png" id="4_a7vlr"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/suitcase.png" id="5_d8qht"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/binoculars.png" id="5_sjeyk"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/camera.png" id="6_c7nu0"]
@@ -23,10 +23,11 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/vending_machine.png" id="17_mq8sw"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/departure_board.png" id="19_yapbf"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/fuel_truck.png" id="20_upmt2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/helicopter.png" id="21_r0p8a"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/helicopter.png" id="21_r0p8a"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/airport_utility_truck.png" id="22_hgu2q"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/bouquet_of_flowers.png" id="23_7q1y3"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/luggage_tractor.png" id="24_loml3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/megaphone.png" id="27_h34f7"]
 
 [sub_resource type="Resource" id="Resource_hpuwa"]
 script = ExtResource("1_e61is")
@@ -584,10 +585,16 @@ radius = 60.0
 base_scale = 0.4
 tags = Array[String](["item"])
 
+[sub_resource type="Resource" id="Resource_tat7y"]
+script = ExtResource("3_c7nu0")
+item_name = "megaphone"
+thumbnail = ExtResource("27_h34f7")
+radius = 60.0
+
 [resource]
 script = ExtResource("6_et7q1")
 scene_name = "airport"
 background_image = ExtResource("2_dywbo")
-items = Array[ExtResource("3_c7nu0")]([SubResource("Resource_oq8bt"), SubResource("Resource_y6l3i"), SubResource("Resource_c570k"), SubResource("Resource_bdv4t"), SubResource("Resource_udr77"), SubResource("Resource_tjgb5"), SubResource("Resource_hrtup"), SubResource("Resource_phnk2"), SubResource("Resource_xaplj"), SubResource("Resource_hgfof"), SubResource("Resource_iwk2p"), SubResource("Resource_0dgfw"), SubResource("Resource_32hd3"), SubResource("Resource_dxc5f"), SubResource("Resource_lpabo"), SubResource("Resource_ikl7m"), SubResource("Resource_274dw"), SubResource("Resource_2aefk"), SubResource("Resource_ixwhf"), SubResource("Resource_pirtd"), SubResource("Resource_3myf8"), SubResource("Resource_pv1pd"), SubResource("Resource_11eqh")])
+items = Array[ExtResource("3_c7nu0")]([SubResource("Resource_oq8bt"), SubResource("Resource_y6l3i"), SubResource("Resource_c570k"), SubResource("Resource_bdv4t"), SubResource("Resource_udr77"), SubResource("Resource_tjgb5"), SubResource("Resource_hrtup"), SubResource("Resource_phnk2"), SubResource("Resource_xaplj"), SubResource("Resource_hgfof"), SubResource("Resource_iwk2p"), SubResource("Resource_0dgfw"), SubResource("Resource_32hd3"), SubResource("Resource_dxc5f"), SubResource("Resource_lpabo"), SubResource("Resource_ikl7m"), SubResource("Resource_274dw"), SubResource("Resource_2aefk"), SubResource("Resource_ixwhf"), SubResource("Resource_pirtd"), SubResource("Resource_3myf8"), SubResource("Resource_pv1pd"), SubResource("Resource_11eqh"), SubResource("Resource_tat7y")])
 anchors = Array[ExtResource("1_e61is")]([SubResource("Resource_hpuwa"), SubResource("Resource_u3inv"), SubResource("Resource_rxsvo"), SubResource("Resource_2wmq2"), SubResource("Resource_jddft"), SubResource("Resource_4sbmc"), SubResource("Resource_h333o"), SubResource("Resource_ny6j7"), SubResource("Resource_10pan"), SubResource("Resource_mtu4i"), SubResource("Resource_8ysrp"), SubResource("Resource_dejd8"), SubResource("Resource_aeggd"), SubResource("Resource_0crcn"), SubResource("Resource_53yvb"), SubResource("Resource_ujrt6"), SubResource("Resource_nb4f3"), SubResource("Resource_uc21b"), SubResource("Resource_2qjkc"), SubResource("Resource_ri7nh"), SubResource("Resource_jx10d"), SubResource("Resource_lmct7"), SubResource("Resource_2ey8w"), SubResource("Resource_5f0a7"), SubResource("Resource_fb51c"), SubResource("Resource_84ixt"), SubResource("Resource_bs7kg"), SubResource("Resource_ioqao"), SubResource("Resource_45u0b"), SubResource("Resource_ikyh3"), SubResource("Resource_6mdjs"), SubResource("Resource_oc43o"), SubResource("Resource_2rwu4"), SubResource("Resource_ed5op"), SubResource("Resource_kntwa"), SubResource("Resource_cgq77"), SubResource("Resource_lbanw"), SubResource("Resource_7r6fi"), SubResource("Resource_nchog"), SubResource("Resource_5eqfw"), SubResource("Resource_j5wd2"), SubResource("Resource_dsk6o"), SubResource("Resource_jtwmp"), SubResource("Resource_bnefi"), SubResource("Resource_4l3y2"), SubResource("Resource_700gd"), SubResource("Resource_q5nx5"), SubResource("Resource_362ku"), SubResource("Resource_wgs8x"), SubResource("Resource_pomp8")])
 is_manual_edit = true

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/bg.png" id="2_l2qdg"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_fy28n"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/hamster.png" id="4_h0hqb"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/kitten.png" id="5_ixu86"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/puppy.png" id="6_nvm4j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/kitten.png" id="5_ixu86"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/puppy.png" id="6_nvm4j"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/goldfish_bowl.png" id="7_kidle"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/parrot.png" id="8_xm8uj"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/pet_shop/cat_toy.png" id="9_5tggg"]
@@ -261,7 +261,7 @@ script = ExtResource("1_rrvu8")
 id = 35
 position = Vector2(586.85675, 457.55316)
 radius = 38.0
-tags = Array[String](["animal", "item", "reptile"])
+tags = Array[String](["animal", "item", "retpile"])
 
 [sub_resource type="Resource" id="Resource_l4gxt"]
 script = ExtResource("1_rrvu8")
@@ -416,14 +416,14 @@ script = ExtResource("3_fy28n")
 item_name = "turtle"
 thumbnail = ExtResource("11_l2qdg")
 base_scale = 0.4
-tags = Array[String](["animal", "reptile"])
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_qrf28"]
 script = ExtResource("3_fy28n")
 item_name = "lizard"
 thumbnail = ExtResource("20_lzrd00")
 base_scale = 0.25
-tags = Array[String](["animal", "reptile", "wall"])
+tags = Array[String](["animal", "wall"])
 
 [sub_resource type="Resource" id="Resource_36aye"]
 script = ExtResource("3_fy28n")
@@ -437,7 +437,7 @@ script = ExtResource("3_fy28n")
 item_name = "snake"
 thumbnail = ExtResource("21_snke00")
 base_scale = 0.30000000000000004
-tags = Array[String](["animal", "reptile"])
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_ex1kg"]
 script = ExtResource("3_fy28n")
