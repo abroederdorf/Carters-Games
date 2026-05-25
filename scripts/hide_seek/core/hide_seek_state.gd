@@ -3,14 +3,14 @@ extends Node
 const SAVE_PATH = "user://find_it_progress.json"
 
 const SCENE_ORDER: Array[String] = [
-	"city",
 	"pet_shop",
 	"circus",
 	"dinosaur_land",
 	"monster_truck_jam",
 	"mountains",
-	"jungle",
+	"city",
 	"construction_site",
+	"jungle",
 	"space",
 	"fire_station",
 	"ocean",
