@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_2suqw"]
+
+[resource]
+script = ExtResource("1_2suqw")
+item_name = "street_lamp"
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5

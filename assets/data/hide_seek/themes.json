@@ -1907,8 +1907,48 @@
       ]
     },
     "city": {
-      "scene": "Children's book illustration of a busy city street corner. Tall buildings, storefronts, city traffic, a small park. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's book illustration of a busy city street corner with a large open park. The scene has a wide blue sky with a few fluffy white clouds. In the foreground is a gray sidewalk and a crosswalk. To the right is a green park with trees, grass, and flower beds. The background features colorful low-rise storefronts and small apartment buildings. The street has a T-junction layout. Wide panoramic 16:9 aspect ratio, bright cheerful colors, flat design, thick clean black outlines, no text, no people.",
       "items": [
+        {
+          "name": "airplane",
+          "desc": "large white passenger jet with blue tail stripe",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "helicopter",
+          "desc": "bright blue rescue helicopter with spinning rotors",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "blimp",
+          "desc": "friendly white and blue blimp floating in the sky",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "kite",
+          "desc": "diamond kite with a long ribbon tail flying in the sky",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "balloon",
+          "desc": "bunch of bright helium balloons tied with string",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
         {
           "name": "taxi",
           "desc": "bright yellow city taxi cab with a TAXI sign on top",
@@ -1918,12 +1958,11 @@
           ]
         },
         {
-          "name": "stop_sign",
-          "desc": "red octagonal stop sign on a silver pole",
+          "name": "police_car",
+          "desc": "black and white police car with lights on top",
           "type": "object",
           "tags": [
-            "ground",
-            "structure"
+            "ground"
           ]
         },
         {
@@ -1936,11 +1975,11 @@
           ]
         },
         {
-          "name": "skyscraper",
-          "desc": "tall blue glass building with many small windows",
+          "name": "stop_sign",
+          "desc": "red octagonal stop sign on a silver pole",
           "type": "object",
           "tags": [
-            "sky",
+            "ground",
             "structure"
           ]
         },
@@ -1949,28 +1988,16 @@
           "shared": "fire_hydrant"
         },
         {
-          "name": "trash_can",
-          "desc": "silver metal bin with a domed lid",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "bus",
-          "desc": "long bright red city bus, simple rounded shapes",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "name": "construction_cone",
+          "shared": "construction_cone"
         },
         {
           "name": "bicycle",
           "shared": "bicycle"
         },
         {
-          "name": "subway_sign",
-          "desc": "round green subway station entrance sign",
+          "name": "crowd_barrier",
+          "desc": "metal crowd control barrier fence",
           "type": "object",
           "tags": [
             "ground",
@@ -1978,12 +2005,28 @@
           ]
         },
         {
-          "name": "newsstand",
-          "desc": "small green magazine kiosk with a glass window",
-          "type": "object",
+          "name": "puppy",
+          "desc": "happy brown puppy wagging its tail",
+          "type": "character",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "kitten",
+          "desc": "tiny orange kitten playing with a ball of yarn",
+          "type": "character",
           "tags": [
             "ground",
             "structure"
+          ]
+        },
+        {
+          "name": "trash_can",
+          "desc": "silver metal bin with a domed lid",
+          "type": "object",
+          "tags": [
+            "ground"
           ]
         },
         {
@@ -2013,23 +2056,6 @@
           ]
         },
         {
-          "name": "beetle",
-          "desc": "small shiny black beetle with spotted wing cases",
-          "type": "character",
-          "tags": [
-            "ground",
-            "foliage"
-          ]
-        },
-        {
-          "name": "construction_cone",
-          "desc": "bright orange safety cone with white reflective stripe",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "street_sign",
           "desc": "green rectangular street name sign on a pole",
           "type": "object",
@@ -2050,14 +2076,6 @@
         {
           "name": "shopping_bag",
           "desc": "paper shopping bag with handles and a logo",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "police_car",
-          "desc": "black and white police car with lights on top",
           "type": "object",
           "tags": [
             "ground"

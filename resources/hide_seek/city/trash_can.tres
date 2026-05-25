@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_1haxc")
 item_name = "trash_can"
+position = Vector2(100, 100)
 radius = 60.0
-tags = Array[String](["ground"])
+base_scale = 0.5
