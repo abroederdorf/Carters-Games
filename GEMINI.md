@@ -29,6 +29,8 @@ We are automating the creation of a 45-scene "Find the Hidden Object" game for A
 
 ## Resource & Cost Management
 - **MANDATORY CONFIRMATION:** Never execute scripts that perform expensive API operations (Image generation) without explicit user confirmation.
+- **CONFIRMATION KEYWORD:** For any generation tasks, you MUST wait for the user to explicitly say "PROCEED WITH GENERATION". Do not interpret "go ahead", "yes", or "ok" as sufficient for full batch execution.
+- **STRICT BATCH LIMITS:** All generation scripts (e.g. `generate_assets.py`) must enforce a hard limit of **3 items per run** to allow for style review and prevent accidental large-scale credit usage.
 - **Affected Scripts:** This includes `generate_*.py` scripts.
 - **Local Alternatives:** Always use the local `preseed_scene.gd` script to initialize scenes rather than relying on automated vision analysis.
 

@@ -2243,7 +2243,7 @@
       ]
     },
     "airport": {
-      "scene": "Children's book illustration of a busy airport. Planes on the tarmac, a control tower, gates with travelers, a luggage carousel. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon illustration of a large, busy airport tarmac and terminal packed with things to find. Large white airplanes are parked at gates, a yellow fuel truck is connected to a wing, and a luggage truck with trailers drives across the runway. Through large terminal windows, you can see a vending machine and a departure board. The scene is wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Filled with details like traffic cones, runway markings, and small figures. Friendly and bustling mood, suitable for children.",
       "items": [
         {
           "name": "airplane",
@@ -2278,24 +2278,6 @@
           ]
         },
         {
-          "name": "control_tower",
-          "desc": "tall airport control tower with glass windows at the top",
-          "type": "object",
-          "tags": [
-            "structure",
-            "sky"
-          ]
-        },
-        {
-          "name": "runway_light",
-          "desc": "small green runway edge light on a low post",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
           "name": "luggage_cart",
           "desc": "silver metal luggage trolley stacked with bags",
           "type": "object",
@@ -2309,14 +2291,6 @@
           "type": "object",
           "tags": [
             "structure"
-          ]
-        },
-        {
-          "name": "snack_bag",
-          "desc": "foil snack bag of pretzels",
-          "type": "object",
-          "tags": [
-            "ground"
           ]
         },
         {
@@ -2349,7 +2323,7 @@
         },
         {
           "name": "passport",
-          "desc": "small navy blue passport booklet",
+          "desc": "small dark blue passport book with a gold crest on the front",
           "type": "object",
           "tags": [
             "ground"
@@ -2357,7 +2331,7 @@
         },
         {
           "name": "luggage_tag",
-          "desc": "colorful luggage tag with a strap",
+          "desc": "bright yellow plastic luggage tag with a clear window",
           "type": "object",
           "tags": [
             "ground"
@@ -2365,16 +2339,15 @@
         },
         {
           "name": "toy_plane",
-          "desc": "small model toy airplane, silver with red wings",
+          "desc": "small red and white propeller toy plane",
           "type": "object",
           "tags": [
-            "sky",
             "ground"
           ]
         },
         {
           "name": "vending_machine",
-          "desc": "tall snack vending machine with colorful items inside",
+          "desc": "tall red snacks vending machine with a glass front",
           "type": "object",
           "tags": [
             "structure"
@@ -2385,16 +2358,60 @@
           "shared": "binoculars"
         },
         {
-          "name": "megaphone",
-          "shared": "megaphone"
-        },
-        {
           "name": "departure_board",
-          "desc": "large black flight departure board with flipping tiles",
+          "desc": "flat-screen airport departure monitor with a dark blue screen showing glowing white and yellow text, perfectly flat front view",
           "type": "object",
           "tags": [
             "structure"
           ]
+        },
+        {
+          "name": "fuel_truck",
+          "desc": "bright yellow airport fuel tanker truck with a large tank",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "helicopter",
+          "desc": "small blue and white rescue helicopter with large black rotors",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "airport_utility_truck",
+          "desc": "white airport utility pickup truck with a flashing yellow light on top",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "bouquet_of_flowers",
+          "desc": "colorful bouquet of red and yellow flowers wrapped in clear plastic",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "luggage_tractor",
+          "desc": "small open-topped airport baggage tractor pulling trailers loaded with colorful suitcases",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "camera",
+          "shared": "camera"
+        },
+        {
+          "name": "popcorn",
+          "shared": "popcorn"
         }
       ]
     },

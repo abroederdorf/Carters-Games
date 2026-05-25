@@ -37,6 +37,7 @@
 
 [sub_resource type="Resource" id="Resource_u5axb"]
 script = ExtResource("1_u5axb")
+id = 0
 position = Vector2(212.2459, 103.87707)
 radius = 38.0
 difficulty = 0
@@ -44,12 +45,14 @@ tags = Array[String](["cliff", "flying"])
 
 [sub_resource type="Resource" id="Resource_7628f"]
 script = ExtResource("1_u5axb")
+id = 1
 position = Vector2(326.9331, 319.2357)
 radius = 40.0
 tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_7pyvi"]
 script = ExtResource("1_u5axb")
+id = 2
 position = Vector2(584.77466, 150.69875)
 radius = 42.0
 difficulty = 0
@@ -57,12 +60,14 @@ tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_t1wvr"]
 script = ExtResource("1_u5axb")
+id = 3
 position = Vector2(965.44653, 388.47137)
 radius = 40.0
 tags = Array[String](["snow"])
 
 [sub_resource type="Resource" id="Resource_cauus"]
 script = ExtResource("1_u5axb")
+id = 4
 position = Vector2(1200.1355, 292.95023)
 radius = 40.0
 difficulty = 0
@@ -70,12 +75,14 @@ tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_874hw"]
 script = ExtResource("1_u5axb")
+id = 5
 position = Vector2(1450, 300)
 radius = 40.0
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_saa3m"]
 script = ExtResource("1_u5axb")
+id = 6
 position = Vector2(1653.7551, 311.567)
 radius = 30.0
 difficulty = 0
@@ -83,30 +90,35 @@ tags = Array[String](["snow"])
 
 [sub_resource type="Resource" id="Resource_evuin"]
 script = ExtResource("1_u5axb")
+id = 7
 position = Vector2(1800, 380)
 radius = 40.0
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_4jsw2"]
 script = ExtResource("1_u5axb")
+id = 8
 position = Vector2(2515.3906, 170.01279)
 difficulty = 0
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_l368t"]
 script = ExtResource("1_u5axb")
+id = 9
 position = Vector2(2142.2302, 192.28015)
 radius = 40.0
 tags = Array[String](["snow", "flying"])
 
 [sub_resource type="Resource" id="Resource_pypx1"]
 script = ExtResource("1_u5axb")
+id = 10
 position = Vector2(253.81664, 538.4549)
 radius = 40.0
 tags = Array[String](["animal", "gear"])
 
 [sub_resource type="Resource" id="Resource_766ys"]
 script = ExtResource("1_u5axb")
+id = 11
 position = Vector2(453.86624, 653.84717)
 radius = 40.0
 difficulty = 0
@@ -114,24 +126,28 @@ tags = Array[String](["animal", "gear"])
 
 [sub_resource type="Resource" id="Resource_qb8u2"]
 script = ExtResource("1_u5axb")
+id = 12
 position = Vector2(599.96265, 553.86017)
 radius = 30.0
 tags = Array[String](["cliff"])
 
 [sub_resource type="Resource" id="Resource_vy0o4"]
 script = ExtResource("1_u5axb")
+id = 13
 position = Vector2(946.1524, 603.83417)
 radius = 40.0
 tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_mcofg"]
 script = ExtResource("1_u5axb")
+id = 14
 position = Vector2(1342.3231, 673.096)
 radius = 40.0
 tags = Array[String](["foliage", "animal"])
 
 [sub_resource type="Resource" id="Resource_xrnx3"]
 script = ExtResource("1_u5axb")
+id = 15
 position = Vector2(1450, 696.15283)
 radius = 30.0
 difficulty = 0
@@ -139,54 +155,63 @@ tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_du4ty"]
 script = ExtResource("1_u5axb")
+id = 16
 position = Vector2(1819.2377, 661.5673)
 radius = 40.0
 tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_6a75b"]
 script = ExtResource("1_u5axb")
+id = 17
 position = Vector2(2134.6284, 700)
 radius = 40.0
 tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_chv4t"]
 script = ExtResource("1_u5axb")
+id = 18
 position = Vector2(2323.048, 542.3188)
 radius = 40.0
 tags = Array[String](["gear", "animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_0fxrq"]
 script = ExtResource("1_u5axb")
+id = 19
 position = Vector2(2576.914, 542.27985)
 radius = 40.0
 tags = Array[String](["cliff"])
 
 [sub_resource type="Resource" id="Resource_ear58"]
 script = ExtResource("1_u5axb")
+id = 20
 position = Vector2(242.29138, 876.9386)
 radius = 30.0
 tags = Array[String](["foliage", "animal", "bug"])
 
 [sub_resource type="Resource" id="Resource_6iryu"]
 script = ExtResource("1_u5axb")
+id = 21
 position = Vector2(530.8178, 1019.24866)
 radius = 40.0
 tags = Array[String](["gear", "foliage"])
 
 [sub_resource type="Resource" id="Resource_5vy3v"]
 script = ExtResource("1_u5axb")
+id = 22
 position = Vector2(830.81775, 746.1268)
 radius = 40.0
 tags = Array[String](["gear", "animal"])
 
 [sub_resource type="Resource" id="Resource_ko47g"]
 script = ExtResource("1_u5axb")
+id = 23
 position = Vector2(1330.9304, 403.69354)
 radius = 30.0
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_n4p20"]
 script = ExtResource("1_u5axb")
+id = 24
 position = Vector2(1257.7133, 934.6113)
 radius = 40.0
 difficulty = 0
@@ -194,48 +219,56 @@ tags = Array[String](["gear", "animal"])
 
 [sub_resource type="Resource" id="Resource_vaqc7"]
 script = ExtResource("1_u5axb")
+id = 25
 position = Vector2(1400, 1050)
 radius = 40.0
 tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_nti06"]
 script = ExtResource("1_u5axb")
+id = 26
 position = Vector2(1880.7992, 919.23584)
 radius = 40.0
 tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_2mnbg"]
 script = ExtResource("1_u5axb")
+id = 27
 position = Vector2(1996.1339, 992.30554)
 radius = 40.0
 tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_k85k5"]
 script = ExtResource("1_u5axb")
+id = 28
 position = Vector2(2503.8867, 926.9561)
 radius = 40.0
 tags = Array[String](["cliff"])
 
 [sub_resource type="Resource" id="Resource_f4gyv"]
 script = ExtResource("1_u5axb")
+id = 29
 position = Vector2(1799.7036, 134.40689)
 radius = 41.0
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_gvtlq"]
 script = ExtResource("1_u5axb")
+id = 30
 position = Vector2(242.99448, 1284.6257)
 radius = 40.0
 tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_1aybl"]
 script = ExtResource("1_u5axb")
+id = 31
 position = Vector2(2214.2937, 465.98532)
 difficulty = 2
 tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_4dqic"]
 script = ExtResource("1_u5axb")
+id = 32
 position = Vector2(838.5132, 1226.917)
 radius = 40.0
 difficulty = 0
@@ -243,24 +276,28 @@ tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_kekeo"]
 script = ExtResource("1_u5axb")
+id = 33
 position = Vector2(592.45776, 1146.3601)
 radius = 40.0
 tags = Array[String](["gear", "bug"])
 
 [sub_resource type="Resource" id="Resource_o7gw5"]
 script = ExtResource("1_u5axb")
+id = 34
 position = Vector2(1703.9962, 1234.6241)
 radius = 40.0
 tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_o04nw"]
 script = ExtResource("1_u5axb")
+id = 35
 position = Vector2(1276.8204, 1427.0068)
 radius = 40.0
 tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_8r76p"]
 script = ExtResource("1_u5axb")
+id = 36
 position = Vector2(1923.0298, 1357.7343)
 radius = 40.0
 difficulty = 0
@@ -268,24 +305,28 @@ tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_xqlpc"]
 script = ExtResource("1_u5axb")
+id = 37
 position = Vector2(2015.339, 1200.0333)
 difficulty = 0
 tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_sy5h5"]
 script = ExtResource("1_u5axb")
+id = 38
 position = Vector2(2149.7756, 1365.4583)
 radius = 53.0
 tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_wciap"]
 script = ExtResource("1_u5axb")
+id = 39
 position = Vector2(2465.4126, 1266.0825)
 radius = 40.0
 tags = Array[String](["gear"])
 
 [sub_resource type="Resource" id="Resource_mt6ay"]
 script = ExtResource("1_u5axb")
+id = 40
 position = Vector2(2208.3455, 800.1406)
 radius = 42.0
 difficulty = 2
@@ -293,12 +334,14 @@ tags = Array[String](["animal", "gear", "foliage"])
 
 [sub_resource type="Resource" id="Resource_3x0li"]
 script = ExtResource("1_u5axb")
+id = 41
 position = Vector2(999.98145, 181.5542)
 radius = 41.0
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_j4h1y"]
 script = ExtResource("1_u5axb")
+id = 42
 position = Vector2(1077.1934, 780.0766)
 radius = 40.0
 difficulty = 2
@@ -306,12 +349,14 @@ tags = Array[String](["animal", "foliage"])
 
 [sub_resource type="Resource" id="Resource_pbpot"]
 script = ExtResource("1_u5axb")
+id = 43
 position = Vector2(692.3423, 703.0568)
 radius = 40.0
 tags = Array[String](["animal", "gear", "foliage"])
 
 [sub_resource type="Resource" id="Resource_iw86g"]
 script = ExtResource("1_u5axb")
+id = 44
 position = Vector2(1100, 1100)
 radius = 30.0
 difficulty = 2
@@ -319,12 +364,14 @@ tags = Array[String](["bug", "gear"])
 
 [sub_resource type="Resource" id="Resource_8b68n"]
 script = ExtResource("1_u5axb")
+id = 45
 position = Vector2(1600, 680)
 radius = 40.0
 tags = Array[String](["foliage", "animal"])
 
 [sub_resource type="Resource" id="Resource_qx56q"]
 script = ExtResource("1_u5axb")
+id = 46
 position = Vector2(1568.9592, 765.4781)
 radius = 30.0
 difficulty = 2
@@ -332,18 +379,21 @@ tags = Array[String](["foliage", "animal"])
 
 [sub_resource type="Resource" id="Resource_xkw5b"]
 script = ExtResource("1_u5axb")
+id = 47
 position = Vector2(1665.3167, 1015.3623)
 radius = 30.0
 tags = Array[String](["water"])
 
 [sub_resource type="Resource" id="Resource_hgpa1"]
 script = ExtResource("1_u5axb")
+id = 48
 position = Vector2(388.49448, 907.7075)
 radius = 25.0
 tags = Array[String](["animal", "gear"])
 
 [sub_resource type="Resource" id="Resource_fw54s"]
 script = ExtResource("1_u5axb")
+id = 49
 position = Vector2(2107.602, 1057.6943)
 radius = 30.0
 difficulty = 2
@@ -411,7 +461,7 @@ item_name = "hiker"
 thumbnail = ExtResource("10_l368t")
 radius = 60.0
 base_scale = 0.8500000000000001
-tags = Array[String](["ground"])
+tags = Array[String](["animal"])
 
 [sub_resource type="Resource" id="Resource_a5mc2"]
 script = ExtResource("3_7pyvi")

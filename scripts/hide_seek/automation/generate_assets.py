@@ -18,7 +18,7 @@ client = genai.Client(api_key=API_KEY)
 # See local/hide-seek-art-guide.md for canonical item prompt formula.
 CHARACTER_PREFIX = "Isolated on white background, "
 OBJECT_PREFIX = "Isolated on white background, isolated object only, no people, no characters, no background, "
-ITEM_SUFFIX = ", centered, thick black outlines, vibrant colors, children's book illustration, 512x512."
+ITEM_SUFFIX = ", centered, slight 3/4 view, thick black outlines, vibrant colors, children's cartoon image, 512x512."
 
 HS_THEMES_JSON = Path("assets/data/hide_seek/themes.json")
 HS_ASSET_ROOT = Path("assets/sprites/hide_seek")
@@ -96,14 +96,26 @@ def run_manifest(manifest_path: Path) -> None:
 
 def run_hide_seek(themes_json: Path = HS_THEMES_JSON, asset_root: Path = HS_ASSET_ROOT) -> None:
     """Hide & Seek mode: generates backgrounds + items from themes.json."""
-    index = load_json(themes_json)
+    if isinstance(themes_json, dict):
+        index = themes_json
+    else:
+        index = load_json(themes_json)
+    
+    total_generated = 0
+    
     for theme_name, data in index["themes"].items():
+        if total_generated >= MAX_GENERATIONS_PER_RUN:
+            break
+            
         theme_dir = asset_root / theme_name
         theme_dir.mkdir(parents=True, exist_ok=True)
 
         # 1. Generate Items First
         generated_items = []
         for item_data in data["items"]:
+            if total_generated >= MAX_GENERATIONS_PER_RUN:
+                break
+                
             if "shared" in item_data:
                 continue
             item_path = theme_dir / f"{item_data['name']}.png"
@@ -113,6 +125,7 @@ def run_hide_seek(themes_json: Path = HS_THEMES_JSON, asset_root: Path = HS_ASSE
                 ok = generate_image(prompt, item_path)
                 if ok:
                     generated_items.append(item_data['name'])
+                    total_generated += 1
                     time.sleep(5)
                 else:
                     time.sleep(10)
@@ -120,14 +133,19 @@ def run_hide_seek(themes_json: Path = HS_THEMES_JSON, asset_root: Path = HS_ASSE
                 generated_items.append(item_data['name'])
 
         # 2. Generate Background with Item Context
-        bg_path = theme_dir / "bg.png"
-        if not bg_path.exists():
-            # Build a style-matching prompt
-            item_list = ", ".join(generated_items[:5]) # Mention first few items for style matching
-            bg_prompt = f"{data['scene']} The environment should feature natural hiding spots and a color palette that perfectly matches the following objects: {item_list}."
-            
-            if generate_image(bg_prompt, bg_path, aspect_ratio="16:9", transparent_bg=False):
-                time.sleep(5)
+        if total_generated < MAX_GENERATIONS_PER_RUN:
+            bg_path = theme_dir / "bg.png"
+            if not bg_path.exists():
+                # Build a style-matching prompt
+                item_list = ", ".join(generated_items[:5]) # Mention first few items for style matching
+                bg_prompt = f"{data['scene']} The environment should feature natural hiding spots and a color palette that perfectly matches the following objects: {item_list}."
+                
+                if generate_image(bg_prompt, bg_path, aspect_ratio="16:9", transparent_bg=False):
+                    total_generated += 1
+                    time.sleep(5)
+    
+    if total_generated >= MAX_GENERATIONS_PER_RUN:
+        print(f"\nReached limit of {MAX_GENERATIONS_PER_RUN} generations. Stopping.")
 
 
 def main() -> None:

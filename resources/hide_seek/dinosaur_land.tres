@@ -574,30 +574,35 @@ script = ExtResource("2_l6uy3")
 item_name = "prehistoric_flower"
 thumbnail = ExtResource("24_5746y")
 radius = 60.0
+tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_w080g"]
 script = ExtResource("2_l6uy3")
 item_name = "raptor"
 thumbnail = ExtResource("25_mcl3j")
 radius = 60.0
+tags = Array[String](["dinosaur"])
 
 [sub_resource type="Resource" id="Resource_o1sti"]
 script = ExtResource("2_l6uy3")
 item_name = "lava_rock"
 thumbnail = ExtResource("26_netrl")
 radius = 60.0
+tags = Array[String](["foliage", "mud"])
 
 [sub_resource type="Resource" id="Resource_bb102"]
 script = ExtResource("2_l6uy3")
 item_name = "scorpion"
 thumbnail = ExtResource("27_6f2am")
 radius = 60.0
+tags = Array[String](["rock"])
 
 [sub_resource type="Resource" id="Resource_p6fmn"]
 script = ExtResource("2_l6uy3")
 item_name = "dinosaur_skull"
 thumbnail = ExtResource("28_2v7j6")
 radius = 60.0
+tags = Array[String](["ground", "mud", "foliage"])
 
 [resource]
 script = ExtResource("13_b784x")
