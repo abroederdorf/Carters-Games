@@ -1,376 +1,397 @@
 [gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
 
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_aqa3e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/bg.png" id="2_uhjwj"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_gynth"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/fire_hydrant.png" id="4_3d1ab"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/construction_cone.png" id="4_aqa3e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/blimp.png" id="4_vigsu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/kite.png" id="5_vjwsy"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bicycle.png" id="5_xq4rq"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="6_8n7fg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/taxi.png" id="6_rwljy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/police_car.png" id="7_03ejo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/traffic_light.png" id="8_lm1rd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/stop_sign.png" id="9_ndcn4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/trash_can.png" id="13_ybdrp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/stroller.png" id="14_dnugu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/street_lamp.png" id="15_lsb43"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/park_bench.png" id="16_ccqpe"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/street_sign.png" id="17_pdkpd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/pigeon.png" id="18_32rlc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/shopping_bag.png" id="19_xsolv"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/city/hot_dog_cart.png" id="20_sgpnt"]
 
-[sub_resource type="Resource" id="Resource_aqa3e"]
+[sub_resource type="Resource" id="Resource_uhjwj"]
 script = ExtResource("1_aqa3e")
 id = 0
 position = Vector2(213.33333, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_xx6hk"]
+[sub_resource type="Resource" id="Resource_vigsu"]
 script = ExtResource("1_aqa3e")
 id = 1
 position = Vector2(426.66666, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_gynth"]
+[sub_resource type="Resource" id="Resource_vjwsy"]
 script = ExtResource("1_aqa3e")
 id = 2
 position = Vector2(640, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_3d1ab"]
+[sub_resource type="Resource" id="Resource_rwljy"]
 script = ExtResource("1_aqa3e")
 id = 3
 position = Vector2(853.3333, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_xq4rq"]
+[sub_resource type="Resource" id="Resource_03ejo"]
 script = ExtResource("1_aqa3e")
 id = 4
 position = Vector2(1066.6666, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_8n7fg"]
+[sub_resource type="Resource" id="Resource_lm1rd"]
 script = ExtResource("1_aqa3e")
 id = 5
 position = Vector2(1280, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_f6tlr"]
+[sub_resource type="Resource" id="Resource_ndcn4"]
 script = ExtResource("1_aqa3e")
 id = 6
 position = Vector2(1493.3334, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_3rx8s"]
+[sub_resource type="Resource" id="Resource_ybdrp"]
 script = ExtResource("1_aqa3e")
 id = 7
 position = Vector2(1706.6666, 135)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_xrqow"]
+[sub_resource type="Resource" id="Resource_dnugu"]
 script = ExtResource("1_aqa3e")
 id = 8
 position = Vector2(320, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_0dtrj"]
+[sub_resource type="Resource" id="Resource_lsb43"]
 script = ExtResource("1_aqa3e")
 id = 9
 position = Vector2(533.3333, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_r2ism"]
+[sub_resource type="Resource" id="Resource_ccqpe"]
 script = ExtResource("1_aqa3e")
 id = 10
 position = Vector2(746.6667, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_2usmf"]
+[sub_resource type="Resource" id="Resource_pdkpd"]
 script = ExtResource("1_aqa3e")
 id = 11
 position = Vector2(960, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_pvq21"]
+[sub_resource type="Resource" id="Resource_32rlc"]
 script = ExtResource("1_aqa3e")
 id = 12
 position = Vector2(1173.3334, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_cs3k2"]
+[sub_resource type="Resource" id="Resource_xsolv"]
 script = ExtResource("1_aqa3e")
 id = 13
 position = Vector2(1386.6666, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_27y4o"]
+[sub_resource type="Resource" id="Resource_sgpnt"]
 script = ExtResource("1_aqa3e")
 id = 14
 position = Vector2(1600, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_uhjwj"]
+[sub_resource type="Resource" id="Resource_dalvh"]
 script = ExtResource("1_aqa3e")
 id = 15
 position = Vector2(1813.3334, 270)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_vigsu"]
+[sub_resource type="Resource" id="Resource_7j70y"]
 script = ExtResource("1_aqa3e")
 id = 16
 position = Vector2(213.33333, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_vjwsy"]
+[sub_resource type="Resource" id="Resource_bufbm"]
 script = ExtResource("1_aqa3e")
 id = 17
 position = Vector2(426.66666, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_rwljy"]
+[sub_resource type="Resource" id="Resource_dd2i7"]
 script = ExtResource("1_aqa3e")
 id = 18
 position = Vector2(640, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_03ejo"]
+[sub_resource type="Resource" id="Resource_lgnp1"]
 script = ExtResource("1_aqa3e")
 id = 19
 position = Vector2(853.3333, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_lm1rd"]
+[sub_resource type="Resource" id="Resource_7j5og"]
 script = ExtResource("1_aqa3e")
 id = 20
 position = Vector2(1066.6666, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_ndcn4"]
+[sub_resource type="Resource" id="Resource_popv4"]
 script = ExtResource("1_aqa3e")
 id = 21
 position = Vector2(1280, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_ybdrp"]
+[sub_resource type="Resource" id="Resource_ho3wj"]
 script = ExtResource("1_aqa3e")
 id = 22
 position = Vector2(1493.3334, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_dnugu"]
+[sub_resource type="Resource" id="Resource_x2imu"]
 script = ExtResource("1_aqa3e")
 id = 23
 position = Vector2(1706.6666, 405)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_lsb43"]
+[sub_resource type="Resource" id="Resource_06g0w"]
 script = ExtResource("1_aqa3e")
 id = 24
 position = Vector2(320, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_ccqpe"]
+[sub_resource type="Resource" id="Resource_b6yud"]
 script = ExtResource("1_aqa3e")
 id = 25
 position = Vector2(533.3333, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_pdkpd"]
+[sub_resource type="Resource" id="Resource_5gb4p"]
 script = ExtResource("1_aqa3e")
 id = 26
 position = Vector2(746.6667, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_32rlc"]
+[sub_resource type="Resource" id="Resource_c45kn"]
 script = ExtResource("1_aqa3e")
 id = 27
 position = Vector2(960, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_xsolv"]
+[sub_resource type="Resource" id="Resource_4s50c"]
 script = ExtResource("1_aqa3e")
 id = 28
 position = Vector2(1173.3334, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_sgpnt"]
+[sub_resource type="Resource" id="Resource_ii5nv"]
 script = ExtResource("1_aqa3e")
 id = 29
 position = Vector2(1386.6666, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_dalvh"]
+[sub_resource type="Resource" id="Resource_hhqac"]
 script = ExtResource("1_aqa3e")
 id = 30
 position = Vector2(1600, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_7j70y"]
+[sub_resource type="Resource" id="Resource_r3d2w"]
 script = ExtResource("1_aqa3e")
 id = 31
 position = Vector2(1813.3334, 540)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_bufbm"]
+[sub_resource type="Resource" id="Resource_3suu6"]
 script = ExtResource("1_aqa3e")
 id = 32
 position = Vector2(213.33333, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_dd2i7"]
+[sub_resource type="Resource" id="Resource_udgip"]
 script = ExtResource("1_aqa3e")
 id = 33
 position = Vector2(426.66666, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_lgnp1"]
+[sub_resource type="Resource" id="Resource_rln1x"]
 script = ExtResource("1_aqa3e")
 id = 34
 position = Vector2(640, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_7j5og"]
+[sub_resource type="Resource" id="Resource_yc3k1"]
 script = ExtResource("1_aqa3e")
 id = 35
 position = Vector2(853.3333, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_popv4"]
+[sub_resource type="Resource" id="Resource_kmhgl"]
 script = ExtResource("1_aqa3e")
 id = 36
 position = Vector2(1066.6666, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_ho3wj"]
+[sub_resource type="Resource" id="Resource_08ndp"]
 script = ExtResource("1_aqa3e")
 id = 37
 position = Vector2(1280, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_x2imu"]
+[sub_resource type="Resource" id="Resource_vkc71"]
 script = ExtResource("1_aqa3e")
 id = 38
 position = Vector2(1493.3334, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_06g0w"]
+[sub_resource type="Resource" id="Resource_rthih"]
 script = ExtResource("1_aqa3e")
 id = 39
 position = Vector2(1706.6666, 675)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_b6yud"]
+[sub_resource type="Resource" id="Resource_tyk0j"]
 script = ExtResource("1_aqa3e")
 id = 40
 position = Vector2(320, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_5gb4p"]
+[sub_resource type="Resource" id="Resource_5jacu"]
 script = ExtResource("1_aqa3e")
 id = 41
 position = Vector2(533.3333, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_c45kn"]
+[sub_resource type="Resource" id="Resource_htmw3"]
 script = ExtResource("1_aqa3e")
 id = 42
 position = Vector2(746.6667, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_4s50c"]
+[sub_resource type="Resource" id="Resource_4jvpv"]
 script = ExtResource("1_aqa3e")
 id = 43
 position = Vector2(960, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_ii5nv"]
+[sub_resource type="Resource" id="Resource_i3edp"]
 script = ExtResource("1_aqa3e")
 id = 44
 position = Vector2(1173.3334, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_hhqac"]
+[sub_resource type="Resource" id="Resource_4c8xg"]
 script = ExtResource("1_aqa3e")
 id = 45
 position = Vector2(1386.6666, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_r3d2w"]
+[sub_resource type="Resource" id="Resource_113rc"]
 script = ExtResource("1_aqa3e")
 id = 46
 position = Vector2(1600, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_3suu6"]
+[sub_resource type="Resource" id="Resource_fof1e"]
 script = ExtResource("1_aqa3e")
 id = 47
 position = Vector2(1813.3334, 810)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_udgip"]
+[sub_resource type="Resource" id="Resource_jewmw"]
 script = ExtResource("1_aqa3e")
 id = 48
 position = Vector2(213.33333, 945)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_rln1x"]
+[sub_resource type="Resource" id="Resource_kfw8l"]
 script = ExtResource("1_aqa3e")
 id = 49
 position = Vector2(426.66666, 945)
 radius = 40.0
 
-[sub_resource type="Resource" id="Resource_yc3k1"]
+[sub_resource type="Resource" id="Resource_rejrj"]
 script = ExtResource("3_gynth")
 item_name = "airplane"
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_kmhgl"]
+[sub_resource type="Resource" id="Resource_l3yj1"]
 script = ExtResource("3_gynth")
 item_name = "helicopter"
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_08ndp"]
+[sub_resource type="Resource" id="Resource_hmnlh"]
 script = ExtResource("3_gynth")
 item_name = "blimp"
+thumbnail = ExtResource("4_vigsu")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_vkc71"]
+[sub_resource type="Resource" id="Resource_k8vjn"]
 script = ExtResource("3_gynth")
 item_name = "kite"
+thumbnail = ExtResource("5_vjwsy")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_rthih"]
+[sub_resource type="Resource" id="Resource_84vfh"]
 script = ExtResource("3_gynth")
 item_name = "balloon"
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_tyk0j"]
+[sub_resource type="Resource" id="Resource_dwr2f"]
 script = ExtResource("3_gynth")
 item_name = "taxi"
+thumbnail = ExtResource("6_rwljy")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_5jacu"]
+[sub_resource type="Resource" id="Resource_68wxl"]
 script = ExtResource("3_gynth")
 item_name = "police_car"
+thumbnail = ExtResource("7_03ejo")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_htmw3"]
+[sub_resource type="Resource" id="Resource_m6ymh"]
 script = ExtResource("3_gynth")
 item_name = "traffic_light"
+thumbnail = ExtResource("8_lm1rd")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_4jvpv"]
+[sub_resource type="Resource" id="Resource_vwmdp"]
 script = ExtResource("3_gynth")
 item_name = "stop_sign"
+thumbnail = ExtResource("9_ndcn4")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_i3edp"]
+[sub_resource type="Resource" id="Resource_pansv"]
 script = ExtResource("3_gynth")
 item_name = "fire_hydrant"
 thumbnail = ExtResource("4_3d1ab")
@@ -378,7 +399,7 @@ position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_4c8xg"]
+[sub_resource type="Resource" id="Resource_35rnj"]
 script = ExtResource("3_gynth")
 item_name = "construction_cone"
 thumbnail = ExtResource("4_aqa3e")
@@ -386,7 +407,7 @@ position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_113rc"]
+[sub_resource type="Resource" id="Resource_6i2e8"]
 script = ExtResource("3_gynth")
 item_name = "bicycle"
 thumbnail = ExtResource("5_xq4rq")
@@ -394,79 +415,87 @@ position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_fof1e"]
+[sub_resource type="Resource" id="Resource_58w3g"]
 script = ExtResource("3_gynth")
 item_name = "crowd_barrier"
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_jewmw"]
+[sub_resource type="Resource" id="Resource_gekqw"]
 script = ExtResource("3_gynth")
 item_name = "puppy"
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_kfw8l"]
+[sub_resource type="Resource" id="Resource_fm7cv"]
 script = ExtResource("3_gynth")
 item_name = "kitten"
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_rejrj"]
+[sub_resource type="Resource" id="Resource_c88ao"]
 script = ExtResource("3_gynth")
 item_name = "trash_can"
+thumbnail = ExtResource("13_ybdrp")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_l3yj1"]
+[sub_resource type="Resource" id="Resource_fn1k7"]
 script = ExtResource("3_gynth")
 item_name = "stroller"
+thumbnail = ExtResource("14_dnugu")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_hmnlh"]
+[sub_resource type="Resource" id="Resource_blv3y"]
 script = ExtResource("3_gynth")
 item_name = "street_lamp"
+thumbnail = ExtResource("15_lsb43")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_k8vjn"]
+[sub_resource type="Resource" id="Resource_5qp0x"]
 script = ExtResource("3_gynth")
 item_name = "park_bench"
+thumbnail = ExtResource("16_ccqpe")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_84vfh"]
+[sub_resource type="Resource" id="Resource_lm181"]
 script = ExtResource("3_gynth")
 item_name = "street_sign"
+thumbnail = ExtResource("17_pdkpd")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_dwr2f"]
+[sub_resource type="Resource" id="Resource_gqvkp"]
 script = ExtResource("3_gynth")
 item_name = "pigeon"
+thumbnail = ExtResource("18_32rlc")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_68wxl"]
+[sub_resource type="Resource" id="Resource_ns6gt"]
 script = ExtResource("3_gynth")
 item_name = "shopping_bag"
+thumbnail = ExtResource("19_xsolv")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
 
-[sub_resource type="Resource" id="Resource_m6ymh"]
+[sub_resource type="Resource" id="Resource_cfjg1"]
 script = ExtResource("3_gynth")
 item_name = "hot_dog_cart"
+thumbnail = ExtResource("20_sgpnt")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
@@ -474,5 +503,6 @@ base_scale = 0.5
 [resource]
 script = ExtResource("6_8n7fg")
 scene_name = "city"
-items = Array[ExtResource("3_gynth")]([SubResource("Resource_yc3k1"), SubResource("Resource_kmhgl"), SubResource("Resource_08ndp"), SubResource("Resource_vkc71"), SubResource("Resource_rthih"), SubResource("Resource_tyk0j"), SubResource("Resource_5jacu"), SubResource("Resource_htmw3"), SubResource("Resource_4jvpv"), SubResource("Resource_i3edp"), SubResource("Resource_4c8xg"), SubResource("Resource_113rc"), SubResource("Resource_fof1e"), SubResource("Resource_jewmw"), SubResource("Resource_kfw8l"), SubResource("Resource_rejrj"), SubResource("Resource_l3yj1"), SubResource("Resource_hmnlh"), SubResource("Resource_k8vjn"), SubResource("Resource_84vfh"), SubResource("Resource_dwr2f"), SubResource("Resource_68wxl"), SubResource("Resource_m6ymh")])
-anchors = Array[ExtResource("1_aqa3e")]([SubResource("Resource_aqa3e"), SubResource("Resource_xx6hk"), SubResource("Resource_gynth"), SubResource("Resource_3d1ab"), SubResource("Resource_xq4rq"), SubResource("Resource_8n7fg"), SubResource("Resource_f6tlr"), SubResource("Resource_3rx8s"), SubResource("Resource_xrqow"), SubResource("Resource_0dtrj"), SubResource("Resource_r2ism"), SubResource("Resource_2usmf"), SubResource("Resource_pvq21"), SubResource("Resource_cs3k2"), SubResource("Resource_27y4o"), SubResource("Resource_uhjwj"), SubResource("Resource_vigsu"), SubResource("Resource_vjwsy"), SubResource("Resource_rwljy"), SubResource("Resource_03ejo"), SubResource("Resource_lm1rd"), SubResource("Resource_ndcn4"), SubResource("Resource_ybdrp"), SubResource("Resource_dnugu"), SubResource("Resource_lsb43"), SubResource("Resource_ccqpe"), SubResource("Resource_pdkpd"), SubResource("Resource_32rlc"), SubResource("Resource_xsolv"), SubResource("Resource_sgpnt"), SubResource("Resource_dalvh"), SubResource("Resource_7j70y"), SubResource("Resource_bufbm"), SubResource("Resource_dd2i7"), SubResource("Resource_lgnp1"), SubResource("Resource_7j5og"), SubResource("Resource_popv4"), SubResource("Resource_ho3wj"), SubResource("Resource_x2imu"), SubResource("Resource_06g0w"), SubResource("Resource_b6yud"), SubResource("Resource_5gb4p"), SubResource("Resource_c45kn"), SubResource("Resource_4s50c"), SubResource("Resource_ii5nv"), SubResource("Resource_hhqac"), SubResource("Resource_r3d2w"), SubResource("Resource_3suu6"), SubResource("Resource_udgip"), SubResource("Resource_rln1x")])
+background_image = ExtResource("2_uhjwj")
+items = Array[ExtResource("3_gynth")]([SubResource("Resource_rejrj"), SubResource("Resource_l3yj1"), SubResource("Resource_hmnlh"), SubResource("Resource_k8vjn"), SubResource("Resource_84vfh"), SubResource("Resource_dwr2f"), SubResource("Resource_68wxl"), SubResource("Resource_m6ymh"), SubResource("Resource_vwmdp"), SubResource("Resource_pansv"), SubResource("Resource_35rnj"), SubResource("Resource_6i2e8"), SubResource("Resource_58w3g"), SubResource("Resource_gekqw"), SubResource("Resource_fm7cv"), SubResource("Resource_c88ao"), SubResource("Resource_fn1k7"), SubResource("Resource_blv3y"), SubResource("Resource_5qp0x"), SubResource("Resource_lm181"), SubResource("Resource_gqvkp"), SubResource("Resource_ns6gt"), SubResource("Resource_cfjg1")])
+anchors = Array[ExtResource("1_aqa3e")]([SubResource("Resource_uhjwj"), SubResource("Resource_vigsu"), SubResource("Resource_vjwsy"), SubResource("Resource_rwljy"), SubResource("Resource_03ejo"), SubResource("Resource_lm1rd"), SubResource("Resource_ndcn4"), SubResource("Resource_ybdrp"), SubResource("Resource_dnugu"), SubResource("Resource_lsb43"), SubResource("Resource_ccqpe"), SubResource("Resource_pdkpd"), SubResource("Resource_32rlc"), SubResource("Resource_xsolv"), SubResource("Resource_sgpnt"), SubResource("Resource_dalvh"), SubResource("Resource_7j70y"), SubResource("Resource_bufbm"), SubResource("Resource_dd2i7"), SubResource("Resource_lgnp1"), SubResource("Resource_7j5og"), SubResource("Resource_popv4"), SubResource("Resource_ho3wj"), SubResource("Resource_x2imu"), SubResource("Resource_06g0w"), SubResource("Resource_b6yud"), SubResource("Resource_5gb4p"), SubResource("Resource_c45kn"), SubResource("Resource_4s50c"), SubResource("Resource_ii5nv"), SubResource("Resource_hhqac"), SubResource("Resource_r3d2w"), SubResource("Resource_3suu6"), SubResource("Resource_udgip"), SubResource("Resource_rln1x"), SubResource("Resource_yc3k1"), SubResource("Resource_kmhgl"), SubResource("Resource_08ndp"), SubResource("Resource_vkc71"), SubResource("Resource_rthih"), SubResource("Resource_tyk0j"), SubResource("Resource_5jacu"), SubResource("Resource_htmw3"), SubResource("Resource_4jvpv"), SubResource("Resource_i3edp"), SubResource("Resource_4c8xg"), SubResource("Resource_113rc"), SubResource("Resource_fof1e"), SubResource("Resource_jewmw"), SubResource("Resource_kfw8l")])

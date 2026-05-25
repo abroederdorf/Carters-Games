@@ -1911,6 +1911,7 @@
       "items": [
         {
           "name": "airplane",
+          "shared": "airplane",
           "desc": "large white passenger jet with blue tail stripe",
           "type": "object",
           "tags": [
@@ -1919,6 +1920,7 @@
         },
         {
           "name": "helicopter",
+          "shared": "helicopter",
           "desc": "bright blue rescue helicopter with spinning rotors",
           "type": "object",
           "tags": [
@@ -1997,6 +1999,7 @@
         },
         {
           "name": "crowd_barrier",
+          "shared": "crowd_barrier",
           "desc": "metal crowd control barrier fence",
           "type": "object",
           "tags": [
@@ -2006,6 +2009,7 @@
         },
         {
           "name": "puppy",
+          "shared": "puppy",
           "desc": "happy brown puppy wagging its tail",
           "type": "character",
           "tags": [
@@ -2014,6 +2018,7 @@
         },
         {
           "name": "kitten",
+          "shared": "kitten",
           "desc": "tiny orange kitten playing with a ball of yarn",
           "type": "character",
           "tags": [
