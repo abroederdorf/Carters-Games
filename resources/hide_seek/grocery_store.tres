@@ -3,449 +3,577 @@
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_82n7b"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_irbja"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="3_ik2kr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/bg.png" id="4_bg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/shopping_cart.png" id="5_shopping_cart"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/apple.png" id="6_apple"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/bread_loaf.png" id="7_bread_loaf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/milk_carton.png" id="8_milk_carton"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/cereal_box.png" id="9_cereal_box"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/watermelon.png" id="10_watermelon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/carrot.png" id="11_carrot"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/grapes.png" id="12_grapes"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/cheese.png" id="13_cheese"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/juice_box.png" id="14_juice_box"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/donut.png" id="15_donut"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/muffin.png" id="16_muffin"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/fish_can.png" id="17_fish_can"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/price_tag.png" id="18_price_tag"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/basket.png" id="19_basket"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/coupon.png" id="20_coupon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/candy_bar.png" id="21_candy_bar"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/grocery_store/yogurt_cup.png" id="22_yogurt_cup"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/banana_bunch.png" id="23_banana"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/shopping_bag.png" id="24_shopping_bag"]
 
 [sub_resource type="Resource" id="Resource_tp4ln"]
 script = ExtResource("1_82n7b")
 id = 0
-position = Vector2(213.33333, 135)
+position = Vector2(759.4165, 754.54443)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_jju0q"]
 script = ExtResource("1_82n7b")
 id = 1
-position = Vector2(426.66666, 135)
+position = Vector2(353.27994, 724.32275)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_lqn1n"]
 script = ExtResource("1_82n7b")
 id = 2
-position = Vector2(640, 135)
+position = Vector2(1753.751, 607.7534)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_ot34v"]
 script = ExtResource("1_82n7b")
 id = 3
-position = Vector2(853.3333, 135)
+position = Vector2(61.18846, 866.7964)
 radius = 40.0
+tags = Array[String](["small", "medium", "large"])
 
 [sub_resource type="Resource" id="Resource_w8xfc"]
 script = ExtResource("1_82n7b")
 id = 4
-position = Vector2(1066.6666, 135)
+position = Vector2(997.5964, 1445.3257)
 radius = 40.0
+tags = Array[String](["small", "medium", "large"])
 
 [sub_resource type="Resource" id="Resource_stck7"]
 script = ExtResource("1_82n7b")
 id = 5
-position = Vector2(1280, 135)
+position = Vector2(2044.0847, 810.6704)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_pcojw"]
 script = ExtResource("1_82n7b")
 id = 6
-position = Vector2(1493.3334, 135)
+position = Vector2(2693.4226, 646.60986)
 radius = 40.0
+tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_fapca"]
 script = ExtResource("1_82n7b")
 id = 7
-position = Vector2(1706.6666, 135)
+position = Vector2(1067.7698, 637.9751)
 radius = 40.0
+tags = Array[String](["produce"])
 
 [sub_resource type="Resource" id="Resource_6xm6g"]
 script = ExtResource("1_82n7b")
 id = 8
-position = Vector2(320, 270)
+position = Vector2(563.90314, 304.53906)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_qapne"]
 script = ExtResource("1_82n7b")
 id = 9
-position = Vector2(533.3333, 270)
+position = Vector2(1796.0166, 1427.0586)
 radius = 40.0
+tags = Array[String](["small", "medium", "large"])
 
 [sub_resource type="Resource" id="Resource_1o3aj"]
 script = ExtResource("1_82n7b")
 id = 10
-position = Vector2(746.6667, 270)
+position = Vector2(125.038025, 775.1338)
 radius = 40.0
+tags = Array[String](["bakery"])
 
 [sub_resource type="Resource" id="Resource_sq0d8"]
 script = ExtResource("1_82n7b")
 id = 11
-position = Vector2(960, 270)
+position = Vector2(2477.3784, 1219.8242)
 radius = 40.0
+tags = Array[String](["small", "medium", "large"])
 
 [sub_resource type="Resource" id="Resource_5jewk"]
 script = ExtResource("1_82n7b")
 id = 12
-position = Vector2(1173.3334, 270)
+position = Vector2(1229.4528, 436.21924)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_5itbe"]
 script = ExtResource("1_82n7b")
 id = 13
-position = Vector2(1386.6666, 270)
+position = Vector2(2696.8367, 744.9121)
 radius = 40.0
+visual_scale = 0.75
+tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_do1mh"]
 script = ExtResource("1_82n7b")
 id = 14
-position = Vector2(1600, 270)
+position = Vector2(2154.7173, 526.8843)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_74f6n"]
 script = ExtResource("1_82n7b")
 id = 15
-position = Vector2(1813.3334, 270)
+position = Vector2(1051.4065, 522.5669)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["produce"])
 
 [sub_resource type="Resource" id="Resource_ogtir"]
 script = ExtResource("1_82n7b")
 id = 16
-position = Vector2(213.33333, 405)
+position = Vector2(226.28394, 530.2041)
 radius = 40.0
+tags = Array[String](["bakery"])
 
 [sub_resource type="Resource" id="Resource_cetdf"]
 script = ExtResource("1_82n7b")
 id = 17
-position = Vector2(426.66666, 405)
+position = Vector2(1164.8507, 761.1841)
 radius = 40.0
+tags = Array[String](["aisle"])
 
 [sub_resource type="Resource" id="Resource_6i6o5"]
 script = ExtResource("1_82n7b")
 id = 18
-position = Vector2(640, 405)
+position = Vector2(2358.1123, 540.99756)
 radius = 40.0
+visual_scale = 0.8999999999999999
+tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_0mnjt"]
 script = ExtResource("1_82n7b")
 id = 19
-position = Vector2(853.3333, 405)
+position = Vector2(866.28394, 510.77588)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["produce"])
 
 [sub_resource type="Resource" id="Resource_mxuwh"]
 script = ExtResource("1_82n7b")
 id = 20
-position = Vector2(1066.6666, 405)
+position = Vector2(1623.5422, 454.6499)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_dkysr"]
 script = ExtResource("1_82n7b")
 id = 21
-position = Vector2(1280, 405)
+position = Vector2(1003.7201, 450.33252)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["produce"])
 
 [sub_resource type="Resource" id="Resource_6xwi8"]
 script = ExtResource("1_82n7b")
 id = 22
-position = Vector2(1493.3334, 405)
+position = Vector2(1424.2637, 435.22168)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_t7ura"]
 script = ExtResource("1_82n7b")
 id = 23
-position = Vector2(1706.6666, 405)
+position = Vector2(1851.282, 543.15625)
 radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_hwayy"]
 script = ExtResource("1_82n7b")
 id = 24
-position = Vector2(320, 540)
+position = Vector2(67.46338, 634.9824)
 radius = 40.0
+tags = Array[String](["bakery"])
 
 [sub_resource type="Resource" id="Resource_bf6ip"]
 script = ExtResource("1_82n7b")
 id = 25
-position = Vector2(533.3333, 540)
+position = Vector2(492.32294, 602.60205)
 radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["bakery"])
 
 [sub_resource type="Resource" id="Resource_algdd"]
 script = ExtResource("1_82n7b")
 id = 26
-position = Vector2(746.6667, 540)
+position = Vector2(753.1419, 591.8086)
 radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["produce"])
 
 [sub_resource type="Resource" id="Resource_llp6b"]
 script = ExtResource("1_82n7b")
 id = 27
-position = Vector2(960, 540)
+position = Vector2(916.8313, 745.0757)
 radius = 40.0
+tags = Array[String](["produce"])
 
 [sub_resource type="Resource" id="Resource_gsc3v"]
 script = ExtResource("1_82n7b")
 id = 28
 position = Vector2(1173.3334, 540)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_xkgt7"]
 script = ExtResource("1_82n7b")
 id = 29
-position = Vector2(1386.6666, 540)
+position = Vector2(1613.3021, 604.76074)
 radius = 40.0
+visual_scale = 0.7
+tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_yaprl"]
 script = ExtResource("1_82n7b")
 id = 30
-position = Vector2(1600, 540)
+position = Vector2(2683.5327, 533.5239)
 radius = 40.0
+visual_scale = 0.7
+tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_wjuwa"]
 script = ExtResource("1_82n7b")
 id = 31
-position = Vector2(1813.3334, 540)
+position = Vector2(2292.5059, 740.7583)
 radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_xjoth"]
 script = ExtResource("1_82n7b")
 id = 32
-position = Vector2(213.33333, 675)
+position = Vector2(2494.7961, 700.9043)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_76olp"]
 script = ExtResource("1_82n7b")
 id = 33
-position = Vector2(426.66666, 675)
+position = Vector2(1980.7379, 577.8589)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_os4a4"]
 script = ExtResource("1_82n7b")
 id = 34
-position = Vector2(640, 675)
+position = Vector2(415.52292, 1354.9878)
 radius = 40.0
+tags = Array[String](["small", "medium", "belt"])
 
 [sub_resource type="Resource" id="Resource_np0e4"]
 script = ExtResource("1_82n7b")
 id = 35
-position = Vector2(853.3333, 675)
+position = Vector2(2530.435, 431.06787)
 radius = 40.0
+tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_rj6nr"]
 script = ExtResource("1_82n7b")
 id = 36
-position = Vector2(1066.6666, 675)
+position = Vector2(1662.3945, 741.91943)
 radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["aisle", "cart"])
 
 [sub_resource type="Resource" id="Resource_iqs7e"]
 script = ExtResource("1_82n7b")
 id = 37
-position = Vector2(1280, 675)
+position = Vector2(483.53833, 873.5996)
 radius = 40.0
+tags = Array[String](["aisle", "cart"])
 
 [sub_resource type="Resource" id="Resource_1w4xw"]
 script = ExtResource("1_82n7b")
 id = 38
-position = Vector2(1493.3334, 675)
+position = Vector2(2253.101, 964.26465)
 radius = 40.0
+tags = Array[String](["aisle", "cart"])
 
 [sub_resource type="Resource" id="Resource_vcvio"]
 script = ExtResource("1_82n7b")
 id = 39
-position = Vector2(1706.6666, 675)
+position = Vector2(752.63916, 1154.2295)
 radius = 40.0
+tags = Array[String](["small", "belt"])
 
 [sub_resource type="Resource" id="Resource_gjm8q"]
 script = ExtResource("1_82n7b")
 id = 40
-position = Vector2(320, 810)
+position = Vector2(788.38, 954.6323)
 radius = 40.0
+tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_h014q"]
 script = ExtResource("1_82n7b")
 id = 41
-position = Vector2(533.3333, 810)
+position = Vector2(86.53778, 1049.6147)
 radius = 40.0
+tags = Array[String](["small", "medium", "large", "belt"])
 
 [sub_resource type="Resource" id="Resource_r5x6d"]
 script = ExtResource("1_82n7b")
 id = 42
-position = Vector2(746.6667, 810)
+position = Vector2(213.53372, 950.31494)
 radius = 40.0
+tags = Array[String](["medium", "large", "belt"])
 
 [sub_resource type="Resource" id="Resource_cknqi"]
 script = ExtResource("1_82n7b")
 id = 43
-position = Vector2(960, 810)
+position = Vector2(1454.2813, 1267.6426)
 radius = 40.0
+tags = Array[String](["small", "belt"])
 
 [sub_resource type="Resource" id="Resource_q0y2c"]
 script = ExtResource("1_82n7b")
 id = 44
-position = Vector2(1173.3334, 810)
+position = Vector2(1391.3353, 945.99756)
 radius = 40.0
+tags = Array[String](["medium", "large"])
 
 [sub_resource type="Resource" id="Resource_gc2c5"]
 script = ExtResource("1_82n7b")
 id = 45
-position = Vector2(1386.6666, 810)
+position = Vector2(1367.2406, 684.7959)
 radius = 40.0
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_ru86s"]
 script = ExtResource("1_82n7b")
 id = 46
-position = Vector2(1600, 810)
+position = Vector2(2064.0632, 1002.12354)
 radius = 40.0
+tags = Array[String](["small", "medium", "belt"])
 
 [sub_resource type="Resource" id="Resource_b7lxv"]
 script = ExtResource("1_82n7b")
 id = 47
-position = Vector2(1813.3334, 810)
+position = Vector2(2534.2505, 952.47363)
 radius = 40.0
+tags = Array[String](["medium", "large", "belt"])
 
 [sub_resource type="Resource" id="Resource_j4230"]
 script = ExtResource("1_82n7b")
 id = 48
-position = Vector2(213.33333, 945)
+position = Vector2(2138.6555, 1104.7432)
 radius = 40.0
+tags = Array[String](["small", "belt"])
 
 [sub_resource type="Resource" id="Resource_8wccd"]
 script = ExtResource("1_82n7b")
 id = 49
-position = Vector2(426.66666, 945)
+position = Vector2(2654.17, 1044.2998)
 radius = 40.0
+tags = Array[String](["small", "medium", "belt"])
 
 [sub_resource type="Resource" id="Resource_fmdwx"]
 script = ExtResource("2_irbja")
 item_name = "shopping_cart"
+thumbnail = ExtResource("5_shopping_cart")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+tags = Array[String](["cart"])
 
 [sub_resource type="Resource" id="Resource_ivgvb"]
 script = ExtResource("2_irbja")
 item_name = "apple"
+thumbnail = ExtResource("6_apple")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.25
+tags = Array[String](["small", "produce"])
 
 [sub_resource type="Resource" id="Resource_vdsxg"]
 script = ExtResource("2_irbja")
 item_name = "banana"
+thumbnail = ExtResource("23_banana")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.4
+tags = Array[String](["medium", "produce"])
 
 [sub_resource type="Resource" id="Resource_mppnw"]
 script = ExtResource("2_irbja")
 item_name = "bread_loaf"
+thumbnail = ExtResource("7_bread_loaf")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.4
+tags = Array[String](["medium", "bakery"])
 
 [sub_resource type="Resource" id="Resource_4ehck"]
 script = ExtResource("2_irbja")
 item_name = "milk_carton"
+thumbnail = ExtResource("8_milk_carton")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_nbtgt"]
 script = ExtResource("2_irbja")
 item_name = "cereal_box"
+thumbnail = ExtResource("9_cereal_box")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
+tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_4s26w"]
 script = ExtResource("2_irbja")
 item_name = "watermelon"
+thumbnail = ExtResource("10_watermelon")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.45
+tags = Array[String](["large", "produce"])
 
 [sub_resource type="Resource" id="Resource_g468n"]
 script = ExtResource("2_irbja")
 item_name = "carrot"
+thumbnail = ExtResource("11_carrot")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.4
+tags = Array[String](["small", "produce"])
 
 [sub_resource type="Resource" id="Resource_t5o3o"]
 script = ExtResource("2_irbja")
 item_name = "shopping_bag"
+thumbnail = ExtResource("24_shopping_bag")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.6000000000000001
+tags = Array[String](["aisle"])
 
 [sub_resource type="Resource" id="Resource_apklr"]
 script = ExtResource("2_irbja")
 item_name = "grapes"
+thumbnail = ExtResource("12_grapes")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.4
+tags = Array[String](["medium", "produce"])
 
 [sub_resource type="Resource" id="Resource_8iylf"]
 script = ExtResource("2_irbja")
 item_name = "cheese"
+thumbnail = ExtResource("13_cheese")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.30000000000000004
+tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_7huvf"]
 script = ExtResource("2_irbja")
 item_name = "juice_box"
+thumbnail = ExtResource("14_juice_box")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.4
+tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_yf18g"]
 script = ExtResource("2_irbja")
 item_name = "donut"
+thumbnail = ExtResource("15_donut")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.30000000000000004
+tags = Array[String](["small", "bakery"])
 
 [sub_resource type="Resource" id="Resource_upuh3"]
 script = ExtResource("2_irbja")
 item_name = "muffin"
+thumbnail = ExtResource("16_muffin")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.25
+tags = Array[String](["small", "bakery"])
 
 [sub_resource type="Resource" id="Resource_em0c1"]
 script = ExtResource("2_irbja")
 item_name = "fish_can"
+thumbnail = ExtResource("17_fish_can")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_on4um"]
 script = ExtResource("2_irbja")
 item_name = "price_tag"
+thumbnail = ExtResource("18_price_tag")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.4
+tags = Array[String](["tag"])
 
 [sub_resource type="Resource" id="Resource_1bkqv"]
 script = ExtResource("2_irbja")
 item_name = "basket"
+thumbnail = ExtResource("19_basket")
 position = Vector2(100, 100)
 radius = 60.0
 base_scale = 0.5
+tags = Array[String](["aisle"])
 
 [sub_resource type="Resource" id="Resource_s865g"]
 script = ExtResource("2_irbja")
 item_name = "coupon"
+thumbnail = ExtResource("20_coupon")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.30000000000000004
+tags = Array[String](["belt"])
 
 [sub_resource type="Resource" id="Resource_bnb6w"]
 script = ExtResource("2_irbja")
 item_name = "candy_bar"
+thumbnail = ExtResource("21_candy_bar")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_tcb2n"]
 script = ExtResource("2_irbja")
 item_name = "yogurt_cup"
+thumbnail = ExtResource("22_yogurt_cup")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
 
 [resource]
 script = ExtResource("3_ik2kr")
 scene_name = "grocery_store"
+background_image = ExtResource("4_bg")
 items = Array[ExtResource("2_irbja")]([SubResource("Resource_fmdwx"), SubResource("Resource_ivgvb"), SubResource("Resource_vdsxg"), SubResource("Resource_mppnw"), SubResource("Resource_4ehck"), SubResource("Resource_nbtgt"), SubResource("Resource_4s26w"), SubResource("Resource_g468n"), SubResource("Resource_t5o3o"), SubResource("Resource_apklr"), SubResource("Resource_8iylf"), SubResource("Resource_7huvf"), SubResource("Resource_yf18g"), SubResource("Resource_upuh3"), SubResource("Resource_em0c1"), SubResource("Resource_on4um"), SubResource("Resource_1bkqv"), SubResource("Resource_s865g"), SubResource("Resource_bnb6w"), SubResource("Resource_tcb2n")])
 anchors = Array[ExtResource("1_82n7b")]([SubResource("Resource_tp4ln"), SubResource("Resource_jju0q"), SubResource("Resource_lqn1n"), SubResource("Resource_ot34v"), SubResource("Resource_w8xfc"), SubResource("Resource_stck7"), SubResource("Resource_pcojw"), SubResource("Resource_fapca"), SubResource("Resource_6xm6g"), SubResource("Resource_qapne"), SubResource("Resource_1o3aj"), SubResource("Resource_sq0d8"), SubResource("Resource_5jewk"), SubResource("Resource_5itbe"), SubResource("Resource_do1mh"), SubResource("Resource_74f6n"), SubResource("Resource_ogtir"), SubResource("Resource_cetdf"), SubResource("Resource_6i6o5"), SubResource("Resource_0mnjt"), SubResource("Resource_mxuwh"), SubResource("Resource_dkysr"), SubResource("Resource_6xwi8"), SubResource("Resource_t7ura"), SubResource("Resource_hwayy"), SubResource("Resource_bf6ip"), SubResource("Resource_algdd"), SubResource("Resource_llp6b"), SubResource("Resource_gsc3v"), SubResource("Resource_xkgt7"), SubResource("Resource_yaprl"), SubResource("Resource_wjuwa"), SubResource("Resource_xjoth"), SubResource("Resource_76olp"), SubResource("Resource_os4a4"), SubResource("Resource_np0e4"), SubResource("Resource_rj6nr"), SubResource("Resource_iqs7e"), SubResource("Resource_1w4xw"), SubResource("Resource_vcvio"), SubResource("Resource_gjm8q"), SubResource("Resource_h014q"), SubResource("Resource_r5x6d"), SubResource("Resource_cknqi"), SubResource("Resource_q0y2c"), SubResource("Resource_gc2c5"), SubResource("Resource_ru86s"), SubResource("Resource_b7lxv"), SubResource("Resource_j4230"), SubResource("Resource_8wccd")])
+is_manual_edit = true
