@@ -43,13 +43,15 @@ func _fix_theme(theme: String) -> void:
 	var added := 0
 	var skipped := 0
 
+	var themes_data := _load_json(THEMES_JSON)
+	var shared_overrides := _build_shared_overrides(themes_data, theme)
+
 	# ── Step 1 & 2: Fix thumbnails for ALL existing items ──────────────────────
 	for item in scene_data.items:
-		if _fix_thumbnail(item, theme):
+		if _fix_thumbnail(item, theme, shared_overrides):
 			fixed += 1
 
 	# ── Step 3 & 4: Add items from themes.json that are missing from the .tres ─
-	var themes_data := _load_json(THEMES_JSON)
 	if themes_data.has("themes") and themes_data["themes"].has(theme):
 		var theme_items: Array = themes_data["themes"][theme].get("items", [])
 
@@ -63,7 +65,7 @@ func _fix_theme(theme: String) -> void:
 			if _has_similar_name(existing_names, item_name):
 				continue
 
-			var tex := _find_texture(item_name, theme)
+			var tex := _find_texture(item_name, theme, shared_overrides)
 			if tex == null:
 				print("[%s] No sprite for '%s' — skipping" % [theme, item_name])
 				skipped += 1
@@ -92,7 +94,7 @@ func _fix_theme(theme: String) -> void:
 
 # ── Thumbnail repair ───────────────────────────────────────────────────────────
 
-func _fix_thumbnail(item: HideSeekItemData, theme: String) -> bool:
+func _fix_thumbnail(item: HideSeekItemData, theme: String, shared_overrides: Dictionary) -> bool:
 	if item.thumbnail is CompressedTexture2D:
 		var tex_path := item.thumbnail.resource_path
 		if not tex_path.is_empty() and ResourceLoader.exists(tex_path):
@@ -104,7 +106,7 @@ func _fix_thumbnail(item: HideSeekItemData, theme: String) -> bool:
 		print("[%s] Fixing embedded thumbnail for '%s'" % [theme, item.item_name])
 	# null thumbnails are also repaired silently
 
-	var tex := _find_texture(item.item_name, theme)
+	var tex := _find_texture(item.item_name, theme, shared_overrides)
 	if tex != null:
 		item.thumbnail = tex
 		return true
@@ -115,11 +117,24 @@ func _fix_thumbnail(item: HideSeekItemData, theme: String) -> bool:
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
-func _find_texture(item_name: String, theme: String) -> Texture2D:
+# Returns a map of item_name -> shared filename for items with a "shared" override in themes.json.
+func _build_shared_overrides(themes_data: Dictionary, theme: String) -> Dictionary:
+	var overrides := {}
+	if not (themes_data.has("themes") and themes_data["themes"].has(theme)):
+		return overrides
+	for i_data in themes_data["themes"][theme].get("items", []):
+		if i_data.has("shared"):
+			overrides[i_data["name"]] = i_data["shared"]
+	return overrides
+
+
+func _find_texture(item_name: String, theme: String, shared_overrides: Dictionary) -> Texture2D:
 	var local := "%s/%s/%s.png" % [SPRITES_ROOT, theme, item_name]
 	if ResourceLoader.exists(local):
 		return load(local) as Texture2D
-	var shared := "%s/%s.png" % [SHARED_SPRITES, item_name]
+	# Use the shared filename from themes.json if present, otherwise fall back to item_name.
+	var shared_filename: String = shared_overrides.get(item_name, item_name)
+	var shared := "%s/%s.png" % [SHARED_SPRITES, shared_filename]
 	if ResourceLoader.exists(shared):
 		return load(shared) as Texture2D
 	return null

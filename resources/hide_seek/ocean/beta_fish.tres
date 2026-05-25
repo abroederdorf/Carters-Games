@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_7h4ox"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/beta_fish.png" id="2_p7o62"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/beta_fish.webp" id="2_p7o62"]
 
 [resource]
 script = ExtResource("1_7h4ox")

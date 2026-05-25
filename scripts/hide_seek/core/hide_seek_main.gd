@@ -218,16 +218,24 @@ func _make_card(scene_name: String) -> Button:
 	btn.add_theme_stylebox_override("pressed", style_pressed)
 
 	# Background scene image
-	var bg_candidates: Array[String] = [
-		"res://assets/sprites/hide_seek/%s/bg_%s.png" % [scene_name, scene_name],
-		"res://assets/sprites/hide_seek/%s/bg_%s.png" % [scene_name, scene_name.trim_suffix("s")],
-		"res://assets/sprites/hide_seek/%s/bg_%s.png" % [scene_name, scene_name.split("_")[0]],
-		"res://assets/sprites/hide_seek/%s/bg_%s.png" % [scene_name, scene_name.replace("_land", "")],
-		"res://assets/sprites/hide_seek/%s/bg_%s.png" % [scene_name, scene_name.replace("_site", "")],
-		"res://assets/sprites/hide_seek/%s/bg_%s.png" % [scene_name, scene_name.replace("monster_truck_jam", "monster_jam")],
-		"res://assets/sprites/hide_seek/%s/bg.png" % scene_name,
-		"res://assets/sprites/hide_seek/%s/bg_fast.png" % scene_name,
+	var bg_candidates: Array[String] = []
+	var base_names := [
+		scene_name,
+		scene_name.trim_suffix("s"),
+		scene_name.split("_")[0],
+		scene_name.replace("_land", ""),
+		scene_name.replace("_site", ""),
+		scene_name.replace("monster_truck_jam", "monster_jam")
 	]
+	
+	for n in base_names:
+		bg_candidates.append("res://assets/sprites/hide_seek/%s/bg_%s.webp" % [scene_name, n])
+		bg_candidates.append("res://assets/sprites/hide_seek/%s/bg_%s.png" % [scene_name, n])
+	
+	bg_candidates.append("res://assets/sprites/hide_seek/%s/bg.webp" % scene_name)
+	bg_candidates.append("res://assets/sprites/hide_seek/%s/bg.png" % scene_name)
+	bg_candidates.append("res://assets/sprites/hide_seek/%s/bg_fast.webp" % scene_name)
+	bg_candidates.append("res://assets/sprites/hide_seek/%s/bg_fast.png" % scene_name)
 	
 	var bg_path := ""
 	for path in bg_candidates:

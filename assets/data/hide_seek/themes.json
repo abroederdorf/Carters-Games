@@ -270,6 +270,21 @@
         "foliage",
         "ground"
       ]
+    },
+    "banana_bunch": {
+      "desc": "cluster of bright yellow bananas, slightly curved",
+      "type": "object",
+      "tags": [
+        "foliage",
+        "structure"
+      ]
+    },
+    "shopping_bag": {
+      "desc": "paper shopping bag with handles and a logo",
+      "type": "object",
+      "tags": [
+        "ground"
+      ]
     }
   },
   "themes": {
@@ -691,12 +706,7 @@
         },
         {
           "name": "banana_bunch",
-          "desc": "cluster of bright yellow bananas, slightly curved",
-          "type": "object",
-          "tags": [
-            "foliage",
-            "structure"
-          ]
+          "shared": "banana_bunch"
         },
         {
           "name": "explorer_hat",
@@ -2083,11 +2093,7 @@
         },
         {
           "name": "shopping_bag",
-          "desc": "paper shopping bag with handles and a logo",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "shopping_bag"
         },
         {
           "name": "hot_dog_cart",
@@ -4501,7 +4507,7 @@
       ]
     },
     "grocery_store": {
-      "scene": "Children's book illustration of a colorful grocery store. Aisles with bright product shelves, a produce section with piled fruit, a checkout lane with a conveyor. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's book illustration of a busy, slightly chaotic grocery store interior. Several checkout lanes with black conveyor belts are in the foreground, some with scattered boxes and groceries. In the background, aisles with partially filled colorful shelves. Red shopping carts and square plastic baskets are scattered around the floor. A produce section with tilted wooden crates of fruits. Bright saturated colors, flat design, thick black outlines, wide 16:9 panoramic view, no text or people.",
       "items": [
         {
           "name": "shopping_cart",
@@ -4521,11 +4527,7 @@
         },
         {
           "name": "banana",
-          "desc": "bunch of bright yellow bananas",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "banana_bunch"
         },
         {
           "name": "bread_loaf",
@@ -4572,11 +4574,7 @@
         },
         {
           "name": "shopping_bag",
-          "desc": "brown paper grocery bag with handles",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "shopping_bag"
         },
         {
           "name": "grapes",
@@ -4605,19 +4603,18 @@
         },
         {
           "name": "donut",
-          "desc": "pink frosted donut with rainbow sprinkles",
+          "desc": "pink frosted donut lying flat on its base",
           "type": "object",
           "tags": [
             "ground"
           ]
         },
         {
-          "name": "pizza_box",
-          "desc": "flat square pizza delivery box",
+          "name": "muffin",
+          "desc": "blueberry muffin in a paper liner",
           "type": "object",
           "tags": [
-            "ground",
-            "structure"
+            "ground"
           ]
         },
         {
@@ -4640,7 +4637,7 @@
         },
         {
           "name": "basket",
-          "desc": "small wicker hand basket for shopping",
+          "desc": "square red plastic hand basket for shopping",
           "type": "object",
           "tags": [
             "ground"

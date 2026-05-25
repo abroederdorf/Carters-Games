@@ -323,10 +323,20 @@ func _on_next_pressed() -> void:
 func _get_item_texture(item: HideSeekItemData) -> Texture2D:
 	if item.thumbnail != null:
 		return item.thumbnail
-	var path := "res://assets/sprites/hide_seek/%s/%s.png" % [_scene_name, item.item_name]
+		
+	# Try theme-specific webp first
+	var path := "res://assets/sprites/hide_seek/%s/%s.webp" % [_scene_name, item.item_name]
 	if ResourceLoader.exists(path):
 		return load(path) as Texture2D
-	var shared := "res://assets/sprites/hide_seek/shared/%s.png" % item.item_name
+		
+	# Try shared webp
+	var shared := "res://assets/sprites/hide_seek/shared/%s.webp" % item.item_name
 	if ResourceLoader.exists(shared):
 		return load(shared) as Texture2D
+		
+	# Fallback to PNG just in case
+	var path_png := "res://assets/sprites/hide_seek/%s/%s.png" % [_scene_name, item.item_name]
+	if ResourceLoader.exists(path_png):
+		return load(path_png) as Texture2D
+		
 	return null

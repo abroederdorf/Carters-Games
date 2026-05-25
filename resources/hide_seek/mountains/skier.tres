@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="HideSeekItemData" format=3]
 
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_sxphc"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/skier.png" id="2_gkeva"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/skier.webp" id="2_gkeva"]
 
 [resource]
 script = ExtResource("1_sxphc")
