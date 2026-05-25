@@ -43,21 +43,6 @@ func _ready() -> void:
 	var total_to_pick := TARGET_COUNT + _decoy_count
 	var valid_anchors := _build_valid_anchors(bg_size)
 
-	# Count anchors and items per tag for ratio-based selection probability
-	var tag_anchor_count: Dictionary = {}
-	var tag_item_count: Dictionary = {}
-	for a in valid_anchors:
-		for t in a.tags:
-			tag_anchor_count[t] = tag_anchor_count.get(t, 0) + 1
-	for item in all_items:
-		for t in item.tags:
-			tag_item_count[t] = tag_item_count.get(t, 0) + 1
-
-	# Most-constrained first; prior shuffle randomizes within equal-constraint groups
-	all_items.sort_custom(func(a, b):
-		return _count_compatible(a, valid_anchors) < _count_compatible(b, valid_anchors)
-	)
-
 	var reserved_anchor_ids: Array[int] = []
 	var skipped_items: Array = []
 	_active_items = []
@@ -66,7 +51,7 @@ func _ready() -> void:
 		if _active_items.size() >= total_to_pick:
 			break
 		var claimed := -1
-		if randf() <= _item_selection_prob(item, tag_anchor_count, tag_item_count):
+		if randf() < 0.7:
 			for a in valid_anchors:
 				if a.id in reserved_anchor_ids:
 					continue
@@ -79,11 +64,10 @@ func _ready() -> void:
 		else:
 			skipped_items.append(item)
 
-	# If probability rolls left us short of TARGET_COUNT, fill from skipped items
-	# so the game stays playable — specialty items just won't appear as decoys.
-	if _active_items.size() < TARGET_COUNT:
+	# Fill from skipped items up to total_to_pick (covers both target shortfall and decoys).
+	if _active_items.size() < total_to_pick:
 		for item in skipped_items:
-			if _active_items.size() >= TARGET_COUNT:
+			if _active_items.size() >= total_to_pick:
 				break
 			var claimed := -1
 			for a in valid_anchors:
@@ -96,6 +80,8 @@ func _ready() -> void:
 				_active_items.append(item)
 				reserved_anchor_ids.append(claimed)
 
+	# Shuffle so constrained items (taxi, police) aren't always targets 0-9.
+	_active_items.shuffle()
 	_assign_items_to_anchors(bg_size)
 	_found.resize(_active_items.size())
 	_found.fill(false)
@@ -122,7 +108,7 @@ func _ready() -> void:
 		var sprite_size := 750.0
 		if tex:
 			sprite_size = max(tex.get_width(), tex.get_height())
-		var visual_scale := (229.0 * item.base_scale) / sprite_size
+		var visual_scale: float = (229.0 * item.base_scale * float(d["visual_scale"])) / sprite_size
 		_canvas.add_item_sprite(d["pos"], visual_scale, tex)
 
 	_ui = HideSeekUI.new()
@@ -194,12 +180,13 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 			anchor_map[orig_i] = a
 
 	for i in _active_items.size():
-		var data := {"pos": Vector2.ZERO, "radius": 50.0, "anchor_radius": 50.0}
+		var data := {"pos": Vector2.ZERO, "radius": 50.0, "anchor_radius": 50.0, "visual_scale": 1.0}
 		if anchor_map.has(i):
 			var a: HideSeekAnchor = anchor_map[i]
 			data["pos"] = a.position
 			data["anchor_radius"] = a.radius
-			data["radius"] = a.radius * _active_items[i].base_scale * 1.5
+			data["visual_scale"] = a.visual_scale
+			data["radius"] = a.radius * _active_items[i].base_scale * a.visual_scale * 1.5
 		_active_item_data.append(data)
 
 
@@ -331,20 +318,6 @@ func _on_next_pressed() -> void:
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
-
-# Selection probability range. An item at a 1:1 anchor-to-item ratio appears
-# at the floor (25%). A 3:1 ratio hits the cap (75%). Oversubscribed tags are
-# also floored at 25% — the anchor capacity check handles actual contention.
-const SELECTION_PROB_FLOOR := 0.25
-const SELECTION_PROB_CAP   := 0.75
-
-func _item_selection_prob(item: HideSeekItemData, tag_anchors: Dictionary, tag_items: Dictionary) -> float:
-	var prob := 1.0
-	for t in item.tags:
-		var A := float(tag_anchors.get(t, 0))
-		var I := float(tag_items.get(t, 1))
-		prob = minf(prob, clampf(SELECTION_PROB_FLOOR * A / I, SELECTION_PROB_FLOOR, SELECTION_PROB_CAP))
-	return prob
 
 
 func _get_item_texture(item: HideSeekItemData) -> Texture2D:

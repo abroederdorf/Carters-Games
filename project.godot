@@ -25,12 +25,12 @@ MorningScrambleState="*res://scripts/morning_scramble/core/morning_scramble_stat
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=3840
+window/size/viewport_height=2160
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/size/initial_width=1280
-window/size/initial_height=720
+window/size/initial_width=1600
+window/size/initial_height=900
 
 [input_devices]
 
