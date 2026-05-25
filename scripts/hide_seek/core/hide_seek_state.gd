@@ -11,9 +11,9 @@ const SCENE_ORDER: Array[String] = [
 	"mountains",
 	"city",
 	"construction_site",
+	"airport",
 	"jungle",
 	"space",
-	"airport",
 	"fire_station",
 	"ocean",
 ]
