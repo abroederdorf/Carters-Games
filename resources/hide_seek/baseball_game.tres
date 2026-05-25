@@ -1,0 +1,529 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_25fpw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/bg_baseball.webp" id="99_bg"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_u8pqd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/baseball.webp" id="3_3wllu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/baseball_bat.webp" id="4_tkqnd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/baseball_glove.webp" id="5_akaqi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/baseball_cap.webp" id="6_qvwuu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/catcher_mask.webp" id="7_olvhw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/umpire.webp" id="8_j6lit"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/hot_dog.webp" id="9_gt8r4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/popcorn.webp" id="10_yen2n"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/trophy.webp" id="11_ytlxd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/batting_helmet.webp" id="12_d70bq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/cleats.webp" id="13_yhgbf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/foam_finger.webp" id="14_jydeo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/pennant_flag.webp" id="15_26yyr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/sunflower_seeds.webp" id="16_gujvj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/water_bottle.webp" id="17_ahq1c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/cotton_candy.webp" id="18_7exhn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/megaphone.webp" id="19_564o4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/coffee_cup.webp" id="20_jj53c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/camera.webp" id="21_j75ck"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/airplane.webp" id="22_db4mg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/helicopter.webp" id="23_4jtq7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/blimp.webp" id="24_i1j6f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/balloon_bunch.webp" id="25_152vh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/baseball_game/scoreboard_number_card.webp" id="26_2s6ec"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="27_nsud7"]
+
+[sub_resource type="Resource" id="Resource_rlwv1"]
+script = ExtResource("1_25fpw")
+id = 0
+position = Vector2(213.33333, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_n6u25"]
+script = ExtResource("1_25fpw")
+id = 1
+position = Vector2(426.66666, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_nil7x"]
+script = ExtResource("1_25fpw")
+id = 2
+position = Vector2(640, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_xkgil"]
+script = ExtResource("1_25fpw")
+id = 3
+position = Vector2(853.3333, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_3s1f7"]
+script = ExtResource("1_25fpw")
+id = 4
+position = Vector2(1066.6666, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ta8gy"]
+script = ExtResource("1_25fpw")
+id = 5
+position = Vector2(1280, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_sl5pp"]
+script = ExtResource("1_25fpw")
+id = 6
+position = Vector2(1493.3334, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_acriu"]
+script = ExtResource("1_25fpw")
+id = 7
+position = Vector2(1706.6666, 135)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ck1bi"]
+script = ExtResource("1_25fpw")
+id = 8
+position = Vector2(320, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_nogwq"]
+script = ExtResource("1_25fpw")
+id = 9
+position = Vector2(533.3333, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ibknr"]
+script = ExtResource("1_25fpw")
+id = 10
+position = Vector2(746.6667, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_see0i"]
+script = ExtResource("1_25fpw")
+id = 11
+position = Vector2(960, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_qihvh"]
+script = ExtResource("1_25fpw")
+id = 12
+position = Vector2(1173.3334, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_nho1y"]
+script = ExtResource("1_25fpw")
+id = 13
+position = Vector2(1386.6666, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_jwrw7"]
+script = ExtResource("1_25fpw")
+id = 14
+position = Vector2(1600, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_a2x5h"]
+script = ExtResource("1_25fpw")
+id = 15
+position = Vector2(1813.3334, 270)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_7hiwn"]
+script = ExtResource("1_25fpw")
+id = 16
+position = Vector2(213.33333, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_fhrek"]
+script = ExtResource("1_25fpw")
+id = 17
+position = Vector2(426.66666, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_1xble"]
+script = ExtResource("1_25fpw")
+id = 18
+position = Vector2(640, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_r4jtg"]
+script = ExtResource("1_25fpw")
+id = 19
+position = Vector2(853.3333, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_o1wwf"]
+script = ExtResource("1_25fpw")
+id = 20
+position = Vector2(1066.6666, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_m7laj"]
+script = ExtResource("1_25fpw")
+id = 21
+position = Vector2(1280, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_576wb"]
+script = ExtResource("1_25fpw")
+id = 22
+position = Vector2(1493.3334, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_wbu8t"]
+script = ExtResource("1_25fpw")
+id = 23
+position = Vector2(1706.6666, 405)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_rjpxd"]
+script = ExtResource("1_25fpw")
+id = 24
+position = Vector2(320, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ydmoy"]
+script = ExtResource("1_25fpw")
+id = 25
+position = Vector2(533.3333, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_2b10o"]
+script = ExtResource("1_25fpw")
+id = 26
+position = Vector2(746.6667, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_i2jv2"]
+script = ExtResource("1_25fpw")
+id = 27
+position = Vector2(960, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_6r4vh"]
+script = ExtResource("1_25fpw")
+id = 28
+position = Vector2(1173.3334, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_dssno"]
+script = ExtResource("1_25fpw")
+id = 29
+position = Vector2(1386.6666, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_h20k4"]
+script = ExtResource("1_25fpw")
+id = 30
+position = Vector2(1600, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_n5wgh"]
+script = ExtResource("1_25fpw")
+id = 31
+position = Vector2(1813.3334, 540)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_cobvs"]
+script = ExtResource("1_25fpw")
+id = 32
+position = Vector2(213.33333, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_idube"]
+script = ExtResource("1_25fpw")
+id = 33
+position = Vector2(426.66666, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_gv8ay"]
+script = ExtResource("1_25fpw")
+id = 34
+position = Vector2(640, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_1xdf6"]
+script = ExtResource("1_25fpw")
+id = 35
+position = Vector2(853.3333, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_qdmyy"]
+script = ExtResource("1_25fpw")
+id = 36
+position = Vector2(1066.6666, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_opv5u"]
+script = ExtResource("1_25fpw")
+id = 37
+position = Vector2(1280, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_l7wr6"]
+script = ExtResource("1_25fpw")
+id = 38
+position = Vector2(1493.3334, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_a31s0"]
+script = ExtResource("1_25fpw")
+id = 39
+position = Vector2(1706.6666, 675)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ja38u"]
+script = ExtResource("1_25fpw")
+id = 40
+position = Vector2(320, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_hsmfh"]
+script = ExtResource("1_25fpw")
+id = 41
+position = Vector2(533.3333, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_tlayg"]
+script = ExtResource("1_25fpw")
+id = 42
+position = Vector2(746.6667, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_eq74t"]
+script = ExtResource("1_25fpw")
+id = 43
+position = Vector2(960, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_7r1r5"]
+script = ExtResource("1_25fpw")
+id = 44
+position = Vector2(1173.3334, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_w54qq"]
+script = ExtResource("1_25fpw")
+id = 45
+position = Vector2(1386.6666, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_00t7b"]
+script = ExtResource("1_25fpw")
+id = 46
+position = Vector2(1600, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_od0co"]
+script = ExtResource("1_25fpw")
+id = 47
+position = Vector2(1813.3334, 810)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_js3be"]
+script = ExtResource("1_25fpw")
+id = 48
+position = Vector2(213.33333, 945)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_t76u0"]
+script = ExtResource("1_25fpw")
+id = 49
+position = Vector2(426.66666, 945)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ncihr"]
+script = ExtResource("2_u8pqd")
+item_name = "baseball"
+thumbnail = ExtResource("3_3wllu")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_4wq7b"]
+script = ExtResource("2_u8pqd")
+item_name = "baseball_bat"
+thumbnail = ExtResource("4_tkqnd")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_ne15o"]
+script = ExtResource("2_u8pqd")
+item_name = "baseball_glove"
+thumbnail = ExtResource("5_akaqi")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_85xkd"]
+script = ExtResource("2_u8pqd")
+item_name = "baseball_cap"
+thumbnail = ExtResource("6_qvwuu")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_jfmvo"]
+script = ExtResource("2_u8pqd")
+item_name = "catcher_mask"
+thumbnail = ExtResource("7_olvhw")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_chyq4"]
+script = ExtResource("2_u8pqd")
+item_name = "umpire"
+thumbnail = ExtResource("8_j6lit")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_3j82m"]
+script = ExtResource("2_u8pqd")
+item_name = "hot_dog"
+thumbnail = ExtResource("9_gt8r4")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_dwrnq"]
+script = ExtResource("2_u8pqd")
+item_name = "popcorn"
+thumbnail = ExtResource("10_yen2n")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_oeddw"]
+script = ExtResource("2_u8pqd")
+item_name = "trophy"
+thumbnail = ExtResource("11_ytlxd")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_dqyxk"]
+script = ExtResource("2_u8pqd")
+item_name = "batting_helmet"
+thumbnail = ExtResource("12_d70bq")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_6fxyc"]
+script = ExtResource("2_u8pqd")
+item_name = "cleats"
+thumbnail = ExtResource("13_yhgbf")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_0k7h8"]
+script = ExtResource("2_u8pqd")
+item_name = "foam_finger"
+thumbnail = ExtResource("14_jydeo")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_sl137"]
+script = ExtResource("2_u8pqd")
+item_name = "pennant_flag"
+thumbnail = ExtResource("15_26yyr")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_lage6"]
+script = ExtResource("2_u8pqd")
+item_name = "sunflower_seeds"
+thumbnail = ExtResource("16_gujvj")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_du5v7"]
+script = ExtResource("2_u8pqd")
+item_name = "water_bottle"
+thumbnail = ExtResource("17_ahq1c")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_thok6"]
+script = ExtResource("2_u8pqd")
+item_name = "cotton_candy"
+thumbnail = ExtResource("18_7exhn")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_4hl7x"]
+script = ExtResource("2_u8pqd")
+item_name = "megaphone"
+thumbnail = ExtResource("19_564o4")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_2qpes"]
+script = ExtResource("2_u8pqd")
+item_name = "coffee_cup"
+thumbnail = ExtResource("20_jj53c")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_nbrpb"]
+script = ExtResource("2_u8pqd")
+item_name = "camera"
+thumbnail = ExtResource("21_j75ck")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_yro2g"]
+script = ExtResource("2_u8pqd")
+item_name = "airplane"
+thumbnail = ExtResource("22_db4mg")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_j6h8k"]
+script = ExtResource("2_u8pqd")
+item_name = "helicopter"
+thumbnail = ExtResource("23_4jtq7")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_qvvbn"]
+script = ExtResource("2_u8pqd")
+item_name = "blimp"
+thumbnail = ExtResource("24_i1j6f")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_s0bvm"]
+script = ExtResource("2_u8pqd")
+item_name = "balloon_bunch"
+thumbnail = ExtResource("25_152vh")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_0xb8f"]
+script = ExtResource("2_u8pqd")
+item_name = "scoreboard_number_card"
+thumbnail = ExtResource("26_2s6ec")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[resource]
+script = ExtResource("27_nsud7")
+background_image = ExtResource("99_bg")
+scene_name = "baseball_game"
+items = Array[ExtResource("2_u8pqd")]([SubResource("Resource_ncihr"), SubResource("Resource_4wq7b"), SubResource("Resource_ne15o"), SubResource("Resource_85xkd"), SubResource("Resource_jfmvo"), SubResource("Resource_chyq4"), SubResource("Resource_3j82m"), SubResource("Resource_dwrnq"), SubResource("Resource_oeddw"), SubResource("Resource_dqyxk"), SubResource("Resource_6fxyc"), SubResource("Resource_0k7h8"), SubResource("Resource_sl137"), SubResource("Resource_lage6"), SubResource("Resource_du5v7"), SubResource("Resource_thok6"), SubResource("Resource_4hl7x"), SubResource("Resource_2qpes"), SubResource("Resource_nbrpb"), SubResource("Resource_yro2g"), SubResource("Resource_j6h8k"), SubResource("Resource_qvvbn"), SubResource("Resource_s0bvm"), SubResource("Resource_0xb8f")])
+anchors = Array[ExtResource("1_25fpw")]([SubResource("Resource_rlwv1"), SubResource("Resource_n6u25"), SubResource("Resource_nil7x"), SubResource("Resource_xkgil"), SubResource("Resource_3s1f7"), SubResource("Resource_ta8gy"), SubResource("Resource_sl5pp"), SubResource("Resource_acriu"), SubResource("Resource_ck1bi"), SubResource("Resource_nogwq"), SubResource("Resource_ibknr"), SubResource("Resource_see0i"), SubResource("Resource_qihvh"), SubResource("Resource_nho1y"), SubResource("Resource_jwrw7"), SubResource("Resource_a2x5h"), SubResource("Resource_7hiwn"), SubResource("Resource_fhrek"), SubResource("Resource_1xble"), SubResource("Resource_r4jtg"), SubResource("Resource_o1wwf"), SubResource("Resource_m7laj"), SubResource("Resource_576wb"), SubResource("Resource_wbu8t"), SubResource("Resource_rjpxd"), SubResource("Resource_ydmoy"), SubResource("Resource_2b10o"), SubResource("Resource_i2jv2"), SubResource("Resource_6r4vh"), SubResource("Resource_dssno"), SubResource("Resource_h20k4"), SubResource("Resource_n5wgh"), SubResource("Resource_cobvs"), SubResource("Resource_idube"), SubResource("Resource_gv8ay"), SubResource("Resource_1xdf6"), SubResource("Resource_qdmyy"), SubResource("Resource_opv5u"), SubResource("Resource_l7wr6"), SubResource("Resource_a31s0"), SubResource("Resource_ja38u"), SubResource("Resource_hsmfh"), SubResource("Resource_tlayg"), SubResource("Resource_eq74t"), SubResource("Resource_7r1r5"), SubResource("Resource_w54qq"), SubResource("Resource_00t7b"), SubResource("Resource_od0co"), SubResource("Resource_js3be"), SubResource("Resource_t76u0")])

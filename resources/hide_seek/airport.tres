@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/gate_sign.webp" id="9_f6j6d"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/headphones.webp" id="10_x6s3l"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/neck_pillow.webp" id="11_sxab1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/coffee_cup.webp" id="13_cabgn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/coffee_cup.webp" id="13_cabgn"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/passport.webp" id="14_i2vqw"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/luggage_tag.webp" id="15_jgae6"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/airport/toy_plane.webp" id="16_6gwvt"]
@@ -589,6 +589,7 @@ tags = Array[String](["item"])
 script = ExtResource("3_c7nu0")
 item_name = "megaphone"
 thumbnail = ExtResource("27_h34f7")
+position = Vector2(93.64083, 95.93627)
 radius = 60.0
 
 [resource]
