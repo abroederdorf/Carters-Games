@@ -1890,12 +1890,7 @@
         },
         {
           "name": "cotton_candy",
-          "desc": "pink fluffy cloud of candy on a paper cone",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "cotton_candy"
         },
         {
           "name": "lion",
@@ -1942,11 +1937,7 @@
         },
         {
           "name": "blimp",
-          "desc": "friendly white and blue blimp floating in the sky",
-          "type": "object",
-          "tags": [
-            "sky"
-          ]
+          "shared": "blimp"
         },
         {
           "name": "kite",
@@ -1957,12 +1948,8 @@
           ]
         },
         {
-          "name": "balloon",
-          "desc": "bunch of bright helium balloons tied with string",
-          "type": "object",
-          "tags": [
-            "sky"
-          ]
+          "name": "balloon_bunch",
+          "shared": "balloon_bunch"
         },
         {
           "name": "taxi",
@@ -2138,11 +2125,7 @@
         },
         {
           "name": "cotton_candy",
-          "desc": "pink fluffy cloud of spun sugar on a paper cone",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "cotton_candy"
         },
         {
           "name": "popcorn",
@@ -2224,11 +2207,7 @@
         },
         {
           "name": "hot_dog",
-          "desc": "hot dog in a bun with mustard and ketchup",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "hot_dog"
         },
         {
           "name": "sunglasses",
@@ -2374,11 +2353,7 @@
         },
         {
           "name": "coffee_cup",
-          "desc": "tall paper coffee cup with a cardboard sleeve",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "coffee_cup"
         },
         {
           "name": "passport",
@@ -2910,15 +2885,11 @@
       ]
     },
     "baseball_game": {
-      "scene": "Children's book illustration of a packed baseball stadium. Green diamond infield, dugouts, scoreboard, hot dog vendors, cheering fans in the stands. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's book illustration of a packed, vibrant baseball stadium, 16:9 panoramic landscape. A dense, cheering crowd of fans fills the stands across the entire image, holding hot dogs, pink cotton candy, popcorn tubs, megaphones, and coffee cups, with blue and white pennants waving above them. In the foreground, a detailed wooden dugout contains scattered baseball bats, gloves, blue batting helmets, and open bags of sunflower seeds. On the green field, baseball players in pinstripe jerseys are in action. In the outfield, a large green manual scoreboard sits between sections of the crowd, displaying SEA vs CHC with innings 1-5 filled in and columns for R, H, and E. The top of the scene shows a bright blue sky with a few fluffy white clouds. Vibrant colors, flat design, thick black outlines, no small text.",
       "items": [
         {
           "name": "baseball",
-          "desc": "white baseball with red stitching",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "baseball"
         },
         {
           "name": "baseball_bat",
@@ -2938,7 +2909,7 @@
         },
         {
           "name": "baseball_cap",
-          "desc": "blue baseball cap with a white team logo",
+          "desc": "blue baseball cap with a red circular logo",
           "type": "object",
           "tags": [
             "ground"
@@ -2962,11 +2933,7 @@
         },
         {
           "name": "hot_dog",
-          "desc": "hot dog in a bun with mustard and relish",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "hot_dog"
         },
         {
           "name": "popcorn",
@@ -2975,23 +2942,6 @@
         {
           "name": "trophy",
           "shared": "trophy"
-        },
-        {
-          "name": "base",
-          "desc": "white rubber base bag on the infield dirt",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "scoreboard",
-          "desc": "large green scoreboard with numbers",
-          "type": "object",
-          "tags": [
-            "structure",
-            "sky"
-          ]
         },
         {
           "name": "batting_helmet",
@@ -3003,29 +2953,15 @@
         },
         {
           "name": "cleats",
-          "desc": "pair of black metal baseball cleats",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "cleats"
         },
         {
           "name": "foam_finger",
-          "desc": "giant foam hand with index finger pointing up",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "foam_finger"
         },
         {
           "name": "pennant_flag",
-          "desc": "triangular blue and white team pennant on a stick",
-          "type": "object",
-          "tags": [
-            "sky",
-            "structure"
-          ]
+          "shared": "pennant_flag"
         },
         {
           "name": "sunflower_seeds",
@@ -3040,25 +2976,40 @@
           "shared": "water_bottle"
         },
         {
-          "name": "jersey",
-          "desc": "pinstripe baseball jersey with a number on the back",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "name": "cotton_candy",
+          "shared": "cotton_candy"
         },
         {
-          "name": "baseball_card",
-          "desc": "colorful trading card with a player photo",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "name": "megaphone",
+          "shared": "megaphone"
         },
         {
-          "name": "dugout_bench",
-          "desc": "long wooden bench inside a dugout",
+          "name": "coffee_cup",
+          "shared": "coffee_cup"
+        },
+        {
+          "name": "camera",
+          "shared": "camera"
+        },
+        {
+          "name": "airplane",
+          "shared": "airplane"
+        },
+        {
+          "name": "helicopter",
+          "shared": "helicopter"
+        },
+        {
+          "name": "blimp",
+          "shared": "blimp"
+        },
+        {
+          "name": "balloon_bunch",
+          "shared": "balloon_bunch"
+        },
+        {
+          "name": "scoreboard_number_card",
+          "desc": "dark green card with a large white number 3 for a manual scoreboard",
           "type": "object",
           "tags": [
             "ground",
@@ -6905,11 +6856,7 @@
         },
         {
           "name": "cleats",
-          "desc": "blue soccer cleats with rubber studded soles",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "cleats"
         },
         {
           "name": "megaphone",
@@ -7044,11 +6991,7 @@
         },
         {
           "name": "coffee_cup",
-          "desc": "paper coffee cup with a cardboard sleeve and a lid",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "coffee_cup"
         },
         {
           "name": "baggage_cart",
