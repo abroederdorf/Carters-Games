@@ -1,4 +1,4 @@
-name: Export & Deploy to Netlify
+name: Export & Deploy
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
           name: web-export
           path: web/
 
-  deploy:
+  deploy-netlify:
     needs: export
     runs-on: ubuntu-latest
     steps:
@@ -44,6 +44,16 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+  deploy-itchio:
+    needs: export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download export artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-export
+          path: web/
 
       - name: Install butler
         run: |
