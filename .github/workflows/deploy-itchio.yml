@@ -6,6 +6,8 @@ on:
 jobs:
   deploy-itchio:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
     steps:
       - name: Download latest export artifact
         uses: dawidd6/action-download-artifact@v6
