@@ -51,11 +51,18 @@ func _init() -> void:
 	scene_data.scene_name = theme
 	
 	# Load Background
-	var bg_names := ["bg_%s.png" % theme, "bg.png", "bg_fast.png"]
+	var short_theme := theme.replace("_game", "").replace("_scene", "")
+	var bg_names := [
+		"bg_%s.webp" % theme, "bg_%s.png" % theme,
+		"bg_%s.webp" % short_theme, "bg_%s.png" % short_theme,
+		"bg.webp", "bg.png",
+		"bg_fast.webp", "bg_fast.png"
+	]
 	for bg_name in bg_names:
 		var bg_path := "%s/%s/%s" % [SPRITES_ROOT, theme, bg_name]
-		if ResourceLoader.exists(bg_path):
+		if FileAccess.file_exists(bg_path.replace("res://", "")):
 			scene_data.background_image = load(bg_path)
+			print("[%s] Background assigned: %s" % [theme, bg_name])
 			break
 	
 	# 2. Pre-seed Items
@@ -71,16 +78,26 @@ func _init() -> void:
 		item.base_scale = ITEM_DEFAULT_SCALE
 		
 		# Thumbnail resolution
-		var thumb_path: String
+		var thumb_path := ""
 		if i_data.has("shared"):
-			thumb_path = "%s/%s.png" % [SHARED_SPRITES, i_data["shared"]]
+			var base_shared := "%s/%s" % [SHARED_SPRITES, i_data["shared"]]
+			if FileAccess.file_exists((base_shared + ".webp").replace("res://", "")):
+				thumb_path = base_shared + ".webp"
+			elif FileAccess.file_exists((base_shared + ".png").replace("res://", "")):
+				thumb_path = base_shared + ".png"
 		elif i_data.has("path"):
 			thumb_path = "res://" + i_data["path"]
 		else:
-			thumb_path = "%s/%s/%s.png" % [SPRITES_ROOT, theme, item_name]
+			var base_local := "%s/%s/%s" % [SPRITES_ROOT, theme, item_name]
+			if FileAccess.file_exists((base_local + ".webp").replace("res://", "")):
+				thumb_path = base_local + ".webp"
+			elif FileAccess.file_exists((base_local + ".png").replace("res://", "")):
+				thumb_path = base_local + ".png"
 		
-		if ResourceLoader.exists(thumb_path):
+		if thumb_path != "":
 			item.thumbnail = load(thumb_path)
+		else:
+			print("[%s] WARNING: No sprite found for item: %s" % [theme, item_name])
 		
 		# Save individual item resource
 		var item_dir := "%s/%s" % [RESOURCES_ROOT, theme]
