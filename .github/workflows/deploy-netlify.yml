@@ -1,0 +1,23 @@
+name: Deploy to Netlify
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download latest export artifact
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          workflow: export-web.yml
+          name: web-export
+          path: web/
+
+      - name: Deploy to Netlify
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --dir=web --prod --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
