@@ -11,10 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6.2
-      env:
-        HOME: /root
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup export templates
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          cp -r /root/.local/share/godot/export_templates/. ~/.local/share/godot/export_templates/
 
       - name: Export
         run: |
