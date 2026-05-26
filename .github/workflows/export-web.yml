@@ -1,0 +1,33 @@
+name: Export Web Build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.6.2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup export templates
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/4.6.2.stable
+          mv /root/templates/* ~/.local/share/godot/export_templates/4.6.2.stable/
+
+      - name: Export
+        run: |
+          mkdir -v -p web
+          godot --headless --export-release "Web" web/index.html
+
+      - name: Commit export
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/
+          git diff --staged --quiet || git commit -m "chore: update web export"
+          git push
