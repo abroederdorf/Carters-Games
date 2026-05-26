@@ -1,13 +1,10 @@
-name: Export Web Build
+name: Export & Deploy to Netlify
 
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  export:
+  export-deploy:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6.2
@@ -24,12 +21,8 @@ jobs:
           mkdir -v -p web
           godot --headless --export-release "Web" web/index.html
 
-      - name: Commit export
-        working-directory: ${{ github.workspace }}
-        run: |
-          git config --global --add safe.directory $GITHUB_WORKSPACE
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add web/
-          git diff --staged --quiet || git commit -m "chore: update web export"
-          git push
+      - name: Deploy to Netlify
+        run: netlify deploy --dir=web --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
