@@ -7,7 +7,7 @@ var _selected_index: int = -1
 var _updating_ui: bool = false
 
 var _canvas: SceneBuilderCanvas
-var _mode: int = 0 # SceneBuilderCanvas.Mode.ITEMS
+var _mode: int = 1 # SceneBuilderCanvas.Mode.ANCHORS
 var _side_panel: Control
 var _scene_name_input: LineEdit
 var _status_label: Label
@@ -27,8 +27,7 @@ var _thumb_dialog: FileDialog
 var _res_dialog: FileDialog
 
 func _ready() -> void:
-	# Retina/4K scaling: 2.0 is standard for Mac Retina
-	get_window().content_scale_factor = 2.0
+	get_window().mode = Window.MODE_MAXIMIZED
 	_build_ui()
 
 func _build_ui() -> void:
@@ -43,24 +42,22 @@ func _build_ui() -> void:
 	_side_panel.custom_minimum_size.x = PANEL_WIDTH
 	hbox.add_child(_side_panel)
 
-	var outer_scroll := ScrollContainer.new()
-	outer_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	_side_panel.add_child(outer_scroll)
-
 	var margin := MarginContainer.new()
 	for side in ["left", "right", "top", "bottom"]:
 		margin.add_theme_constant_override("margin_" + side, 8)
 	margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	outer_scroll.add_child(margin)
+	margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_side_panel.add_child(margin)
 
 	var vbox := VBoxContainer.new()
 	vbox.add_theme_constant_override("separation", 6)
 	vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	margin.add_child(vbox)
 
 	var title := Label.new()
 	title.text = "Hide & Seek Builder"
-	title.add_theme_font_size_override("font_size", 14)
+	title.add_theme_font_size_override("font_size", 16)
 	vbox.add_child(title)
 
 	# --- Mode Toggle ---
@@ -72,15 +69,15 @@ func _build_ui() -> void:
 	var items_mode_btn := Button.new()
 	items_mode_btn.text = "Items"
 	items_mode_btn.toggle_mode = true
-	items_mode_btn.button_pressed = true
 	items_mode_btn.button_group = btn_group
 	items_mode_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	items_mode_btn.pressed.connect(_set_mode.bind(SceneBuilderCanvas.Mode.ITEMS))
 	mode_hbox.add_child(items_mode_btn)
-	
+
 	var anchors_mode_btn := Button.new()
 	anchors_mode_btn.text = "Anchors"
 	anchors_mode_btn.toggle_mode = true
+	anchors_mode_btn.button_pressed = true
 	anchors_mode_btn.button_group = btn_group
 	anchors_mode_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	anchors_mode_btn.pressed.connect(_set_mode.bind(SceneBuilderCanvas.Mode.ANCHORS))
@@ -105,7 +102,7 @@ func _build_ui() -> void:
 
 	var items_lbl := Label.new()
 	items_lbl.text = "Items  (tap canvas to place)"
-	items_lbl.add_theme_font_size_override("font_size", 12)
+	items_lbl.add_theme_font_size_override("font_size", 14)
 	vbox.add_child(items_lbl)
 
 	var scroll := ScrollContainer.new()
@@ -127,7 +124,7 @@ func _build_ui() -> void:
 
 	var sel_title := Label.new()
 	sel_title.text = "Selected Item"
-	sel_title.add_theme_font_size_override("font_size", 13)
+	sel_title.add_theme_font_size_override("font_size", 15)
 	_selected_panel.add_child(sel_title)
 
 	var name_hbox := HBoxContainer.new()
@@ -242,7 +239,7 @@ func _build_ui() -> void:
 
 	_status_label = Label.new()
 	_status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_status_label.add_theme_font_size_override("font_size", 9)
+	_status_label.add_theme_font_size_override("font_size", 11)
 	_status_label.add_theme_color_override("font_color", Color(0.7, 0.9, 0.7))
 	vbox.add_child(_status_label)
 

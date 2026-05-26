@@ -358,13 +358,8 @@
           ]
         },
         {
-          "name": "flowers",
-          "desc": "small cluster of three wildflowers, purple and yellow",
-          "type": "object",
-          "tags": [
-            "ground",
-            "foliage"
-          ]
+          "name": "flower_patch",
+          "shared": "flower_patch"
         },
         {
           "name": "eagle",
@@ -1941,11 +1936,7 @@
         },
         {
           "name": "kite",
-          "desc": "diamond kite with a long ribbon tail flying in the sky",
-          "type": "object",
-          "tags": [
-            "sky"
-          ]
+          "shared": "kite"
         },
         {
           "name": "balloon_bunch",
@@ -2036,11 +2027,7 @@
         },
         {
           "name": "stroller",
-          "desc": "blue foldable baby stroller with a canopy",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "stroller"
         },
         {
           "name": "street_lamp",
@@ -2053,12 +2040,7 @@
         },
         {
           "name": "park_bench",
-          "desc": "green wooden park bench with iron armrests",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "park_bench"
         },
         {
           "name": "street_sign",
@@ -2071,12 +2053,7 @@
         },
         {
           "name": "pigeon",
-          "desc": "gray city pigeon strutting on the sidewalk",
-          "type": "character",
-          "tags": [
-            "ground",
-            "sky"
-          ]
+          "shared": "pigeon"
         },
         {
           "name": "shopping_bag",
@@ -2901,11 +2878,7 @@
         },
         {
           "name": "baseball_glove",
-          "desc": "brown leather baseball mitt",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "baseball_glove"
         },
         {
           "name": "baseball_cap",
@@ -3331,11 +3304,7 @@
         },
         {
           "name": "kite",
-          "desc": "diamond-shaped kite in the sky with a long tail",
-          "type": "object",
-          "tags": [
-            "sky"
-          ]
+          "shared": "kite"
         },
         {
           "name": "turtle",
@@ -6175,11 +6144,7 @@
         },
         {
           "name": "stroller",
-          "desc": "blue baby stroller being pushed down the sidewalk",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "stroller"
         },
         {
           "name": "red_wagon",
@@ -6259,12 +6224,7 @@
         },
         {
           "name": "park_bench",
-          "desc": "green wooden park bench with iron armrests",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "park_bench"
         },
         {
           "name": "tricycle",
@@ -6305,100 +6265,57 @@
         }
       ]
     },
-    "playground": {
-      "scene": "Children's book illustration of a colorful playground. Bright climbing structures, swings, a tall slide, a sandbox, an open grassy area with kids playing everywhere. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+    "park": {
+      "scene": "Children's book illustration of a peaceful city park. The scene features a colorful flower garden, wide open green spaces with large leafy trees, and several picnic blankets spread out on the grass. Recreational areas are visible in the distance. Wide panoramic 16:9 aspect ratio, bright cheerful colors, flat design, thick clean black outlines, no text.",
       "items": [
         {
-          "name": "swing",
-          "desc": "rubber bucket swing on long chains",
-          "type": "object",
-          "tags": [
-            "sky",
-            "structure"
-          ]
-        },
-        {
-          "name": "slide",
-          "desc": "tall red plastic slide with a ladder on one side",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "monkey_bars",
-          "desc": "row of horizontal metal bars to swing across",
-          "type": "object",
-          "tags": [
-            "structure"
-          ]
-        },
-        {
-          "name": "seesaw",
-          "desc": "yellow and blue seesaw balanced in the middle",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "sandbox",
-          "desc": "wooden sandbox frame filled with yellow sand and toy shovels",
+          "name": "kickball",
+          "desc": "big bouncy red rubber playground ball",
           "type": "object",
           "tags": [
             "ground"
           ]
         },
         {
-          "name": "ball",
-          "desc": "big bouncy red rubber kickball",
+          "name": "soccer_ball",
+          "desc": "classic black and white checkered soccer ball",
           "type": "object",
           "tags": [
             "ground"
           ]
         },
         {
-          "name": "jump_rope",
-          "desc": "colorful jump rope lying on the ground",
+          "name": "picnic_basket",
+          "desc": "woven wicker picnic basket with a red checkered cloth peeking out",
           "type": "object",
           "tags": [
             "ground"
           ]
         },
         {
-          "name": "hula_hoop",
-          "desc": "large bright pink hula hoop",
+          "name": "garden_gnome",
+          "desc": "friendly garden gnome with a red hat and a white beard",
           "type": "object",
           "tags": [
             "ground"
           ]
+        },
+        {
+          "name": "birdhouse",
+          "desc": "small wooden birdhouse with a red roof on a post",
+          "type": "object",
+          "tags": [
+            "structure",
+            "ground"
+          ]
+        },
+        {
+          "name": "flower_patch",
+          "shared": "flower_patch"
         },
         {
           "name": "tricycle",
           "shared": "tricycle"
-        },
-        {
-          "name": "ladder",
-          "shared": "ladder"
-        },
-        {
-          "name": "water_fountain",
-          "desc": "short silver drinking fountain with a push button",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "chalk",
-          "desc": "fat sidewalk chalk stick next to a hopscotch drawing",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
         },
         {
           "name": "butterfly",
@@ -6417,37 +6334,68 @@
           "shared": "mushroom"
         },
         {
+          "name": "park_bench",
+          "shared": "park_bench"
+        },
+        {
+          "name": "bush",
+          "shared": "bush"
+        },
+        {
+          "name": "water_bottle",
+          "shared": "water_bottle"
+        },
+        {
+          "name": "backpack",
+          "shared": "backpack"
+        },
+        {
           "name": "kite",
-          "desc": "diamond kite with a long ribbon tail flying in the sky",
-          "type": "object",
-          "tags": [
-            "sky"
-          ]
+          "shared": "kite"
+        },
+        {
+          "name": "baseball",
+          "shared": "baseball"
+        },
+        {
+          "name": "baseball_glove",
+          "shared": "baseball_glove"
+        },
+        {
+          "name": "pigeon",
+          "shared": "pigeon"
+        },
+        {
+          "name": "stroller",
+          "shared": "stroller"
+        },
+        {
+          "name": "puppy",
+          "shared": "puppy"
+        },
+        {
+          "name": "kitten",
+          "shared": "kitten"
+        },
+        {
+          "name": "bunny",
+          "shared": "bunny"
+        },
+        {
+          "name": "dragonfly",
+          "shared": "dragonfly"
+        },
+        {
+          "name": "balloon_bunch",
+          "shared": "balloon_bunch"
         },
         {
           "name": "frisbee",
-          "desc": "bright orange flying disc in mid-air",
+          "desc": "bright orange flying disc",
           "type": "object",
           "tags": [
             "sky",
             "ground"
-          ]
-        },
-        {
-          "name": "climbing_wall",
-          "desc": "colorful rock climbing wall panel with hand holds",
-          "type": "object",
-          "tags": [
-            "structure"
-          ]
-        },
-        {
-          "name": "tire_swing",
-          "desc": "old rubber tire hanging from a tree on a thick rope",
-          "type": "object",
-          "tags": [
-            "sky",
-            "structure"
           ]
         }
       ]
