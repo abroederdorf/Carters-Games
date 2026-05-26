@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  export-deploy:
+  export:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6.2
@@ -20,6 +20,22 @@ jobs:
         run: |
           mkdir -v -p web
           godot --headless --export-release "Web" web/index.html
+
+      - name: Upload export artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-export
+          path: web/
+
+  deploy:
+    needs: export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download export artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-export
+          path: web/
 
       - name: Deploy to Netlify
         run: |
