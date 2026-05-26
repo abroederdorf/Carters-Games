@@ -20,6 +20,7 @@ var sfx_enabled: bool = true
 var master_mute: bool = false
 var spelling_quiet: bool = false
 var _web_audio_unlocked: bool = false
+var _music_requested: bool = false
 
 func _ready() -> void:
 	# Essential: Keep playing even when game is paused
@@ -48,7 +49,7 @@ func _ready() -> void:
 func _input(_event: InputEvent) -> void:
 	if OS.has_feature("web") and not _web_audio_unlocked:
 		_web_audio_unlocked = true
-		if music_player.stream != null and music_enabled and not master_mute and not music_player.playing:
+		if _music_requested and music_player.stream != null and music_enabled and not master_mute and not music_player.playing:
 			music_player.play()
 
 func _load_music_stream() -> void:
@@ -59,13 +60,18 @@ func _load_music_stream() -> void:
 		music_player.stream = stream
 
 func start_music() -> void:
+	_music_requested = true
 	if music_player.stream == null:
 		_load_music_stream()
 	if music_enabled and not master_mute:
-		if not OS.has_feature("web"):
+		if OS.has_feature("web"):
+			if _web_audio_unlocked:
+				music_player.play()
+		else:
 			music_player.play()
 
 func stop_music() -> void:
+	_music_requested = false
 	music_player.stop()
 
 func _on_music_finished() -> void:
