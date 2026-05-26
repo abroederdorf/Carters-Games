@@ -13,12 +13,14 @@ const SCENE_ORDER: Array[String] = [
 	"construction_site",
 	"airport",
 	"jungle",
+	"baseball_game",
 	"space",
 	"fire_station",
 	"ocean",
 ]
 
 const DISPLAY_NAMES: Dictionary = {
+	"baseball_game": "Baseball Game",
 	"city": "City",
 	"mountains": "Mountains",
 	"ocean": "Ocean",
