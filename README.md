@@ -1,8 +1,8 @@
 # Carter's Games
 
-A collection of touch-first mini-games for kids age 5–8, built in Godot 4. Android tablet is the primary target; also deployed as a web build on Netlify.
+A collection of touch-first mini-games for kids age 5–10, built in Godot 4 and deployed as a Progressive Web App (PWA). Playable on any modern browser — optimised for tablet.
 
-**Package ID:** `com.cartersgames.app`  
+**Live:** [itch.io](https://abroederdorf.itch.io/carters-games) · [Netlify](https://cartersgames.netlify.app)  
 **Window size:** 1280×800 landscape  
 **Renderer:** Mobile  
 
@@ -29,7 +29,7 @@ House-exploration chore/puzzle mini-game. School theme, 7 rooms, 3 missing items
 
 ## Design & Accessibility
 
-The games are designed specifically for children age 5–8, focusing on high-quality visual feedback and forgiving interaction patterns:
+The games are designed specifically for children age 5–10, focusing on high-quality visual feedback and forgiving interaction patterns:
 
 - **Visual Style:** Children's book illustrations with thick black outlines and vibrant colors for readability on mobile screens.
 - **UI:** Illustrated buttons shared across all mini-games for a consistent experience.
@@ -272,42 +272,48 @@ Requires a `GEMINI_API_KEY` in `.env`. The script caps at 3 generations per run 
 
 ---
 
-## Exporting and Deploying
+## GitHub Actions
 
-### Web export (Netlify) — automated via GitHub Actions
+### Verify Hide & Seek Tags (automatic)
 
-The web build is deployed to Netlify automatically. Trigger it manually from GitHub:
+Runs automatically on every push to `main` and on pull requests that touch `resources/hide_seek/` or `verify_tags.py`. Validates that every item in every scene has at least one matching anchor tag — catches placement errors before they merge.
 
-1. Go to **Actions** tab in the GitHub repo
-2. Select **Export & Deploy to Netlify**
-3. Click **Run workflow**
+No secrets required.
 
-The workflow:
-1. Runs `godot --headless --export-release "Web"` using the `barichello/godot-ci` Docker image
-2. Uploads the export as a GitHub artifact
-3. Deploys to Netlify production using `netlify-cli`
+### Export & Deploy (manual)
 
-Required GitHub secrets (set in repo Settings → Secrets):
-- `NETLIFY_AUTH_TOKEN` — your Netlify personal access token
-- `NETLIFY_SITE_ID` — the site ID from your Netlify dashboard
+All deployments are manual and controlled. Trigger from the **Actions** tab → **Export & Deploy** → **Run workflow**, then pick a target:
 
-### Android export — local
+| Target | What happens |
+|--------|-------------|
+| `itch` | Export → deploy to itch.io (use for testing) |
+| `netlify` | Export → deploy to Netlify (use for releases) |
+| `both` | Export once → deploy to both from the same build |
 
-1. Open Godot editor → **Project → Export**
-2. Select the **Android** preset (`com.cartersgames.app`)
-3. Click **Export Project** → saves to `local/exports/android/Carters-Games.apk`
-4. Install on device: `adb install local/exports/android/Carters-Games.apk`
+**Workflow:** `itch` and `netlify` are a single export job that uploads an artifact, then one or two deploy jobs that download and push it. This means if you pick `both`, Netlify gets the exact same binary you tested on itch.io.
 
-The `local/` directory is gitignored — exports stay local.
+**Typical flow:**
+1. Work is merged and ready to test → run workflow → pick `itch`
+2. Test on itch.io — looks good → run workflow → pick `both` to sync Netlify to the same build
 
-### Web export — local
+Required GitHub secrets (repo Settings → Secrets and variables → Actions):
+- `BUTLER_CREDENTIALS` — itch.io API key (from [itch.io account settings](https://itch.io/user/settings/api-keys))
+- `NETLIFY_AUTH_TOKEN` — Netlify personal access token
+- `NETLIFY_SITE_ID` — site ID from the Netlify dashboard
+
+### Local web export
 
 ```bash
 mkdir -p local/exports/html
 godot --headless --export-release "Web" local/exports/html/index.html
 ```
 
-Open `local/exports/html/index.html` in a browser (requires a local server for SharedArrayBuffer support — use `python -m http.server` or the Godot editor's built-in server).
+Open via a local server — the PWA requires `SharedArrayBuffer`, which browsers only allow over HTTPS or localhost:
+
+```bash
+cd local/exports/html && python -m http.server 8080
+# then open http://localhost:8080
+```
 
 ---
 
