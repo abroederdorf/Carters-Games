@@ -2,6 +2,16 @@ name: Export & Deploy
 
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: 'Deploy target'
+        required: true
+        default: 'itch'
+        type: choice
+        options:
+          - itch
+          - netlify
+          - both
 
 jobs:
   export:
@@ -27,26 +37,9 @@ jobs:
           name: web-export
           path: web/
 
-  deploy-netlify:
+  deploy-itch:
     needs: export
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download export artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: web-export
-          path: web/
-
-      - name: Deploy to Netlify
-        run: |
-          npm install -g netlify-cli
-          netlify deploy --dir=web --prod --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-  deploy-itchio:
-    needs: export
+    if: ${{ inputs.target == 'itch' || inputs.target == 'both' }}
     runs-on: ubuntu-latest
     steps:
       - name: Download export artifact
@@ -65,3 +58,22 @@ jobs:
         run: ./linux-amd64/butler push web/ abroederdorf/carters-games:html5
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_CREDENTIALS }}
+
+  deploy-netlify:
+    needs: export
+    if: ${{ inputs.target == 'netlify' || inputs.target == 'both' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download export artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-export
+          path: web/
+
+      - name: Deploy to Netlify
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --dir=web --prod --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
