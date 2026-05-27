@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/skier.webp" id="9_4jsw2"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/hiker.webp" id="10_l368t"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/tree.webp" id="11_pypx1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/flowers.webp" id="12_766ys"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flower_patch.webp" id="12_766ys"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/eagle.webp" id="13_qb8u2"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/backpack.webp" id="14_vy0o4"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountains/deer.webp" id="15_mcofg"]
@@ -473,7 +473,7 @@ tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_mjyjo"]
 script = ExtResource("3_7pyvi")
-item_name = "flowers"
+item_name = "flower_patch"
 thumbnail = ExtResource("12_766ys")
 radius = 60.0
 base_scale = 0.5

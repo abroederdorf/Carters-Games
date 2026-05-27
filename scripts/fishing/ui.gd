@@ -350,6 +350,8 @@ func _update_menu_visuals() -> void:
 		var btn = mode_btns[i]
 		if i == _selected_mode:
 			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.add_theme_stylebox_override("hover", style_selected)
+			btn.add_theme_stylebox_override("focus", style_selected)
 			btn.modulate = Color(1, 1, 1, 1)
 		else:
 			_apply_choice_style(btn)
@@ -360,6 +362,8 @@ func _update_menu_visuals() -> void:
 		var btn = diff_btns[i]
 		if i == _selected_difficulty:
 			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.add_theme_stylebox_override("hover", style_selected)
+			btn.add_theme_stylebox_override("focus", style_selected)
 			btn.modulate = Color(1, 1, 1, 1)
 		else:
 			_apply_choice_style(btn)
@@ -371,6 +375,8 @@ func _update_menu_visuals() -> void:
 		var btn = timer_btns[i]
 		if timer_vals[i] == _selected_timer:
 			btn.add_theme_stylebox_override("normal", style_selected)
+			btn.add_theme_stylebox_override("hover", style_selected)
+			btn.add_theme_stylebox_override("focus", style_selected)
 			btn.modulate = Color(1, 1, 1, 1)
 		else:
 			_apply_choice_style(btn)
@@ -594,7 +600,11 @@ func _on_play_again_pressed() -> void:
 
 func _on_end_home_pressed() -> void:
 	AudioManager.play_sfx("pop")
-	back_to_game_select.emit()
+	end_screen.visible = false
+	exit_button.visible = false
+	pause_button.visible = false
+	menu_screen.visible = true
+	_update_menu_visuals()
 
 func _make_slot_style(bg: Color, border: Color) -> StyleBoxFlat:
 	var s := StyleBoxFlat.new()
