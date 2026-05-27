@@ -162,18 +162,14 @@ func show_hint_at(pos: Vector2, radius: float) -> void:
 	hint.add_child(ring)
 
 	# Inner star — pulses and flashes color
-	var star := Label.new()
-	star.text = "★"
-	star.add_theme_font_size_override("font_size", font_size)
-	star.add_theme_color_override("font_color", Color(1.0, 0.9, 0.0))
-	star.add_theme_color_override("font_shadow_color", Color(0.0, 0.0, 0.0, 1.0))
-	star.add_theme_constant_override("shadow_offset_x", 4)
-	star.add_theme_constant_override("shadow_offset_y", 4)
-	star.add_theme_constant_override("shadow_size", 6)
-	star.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	star.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	star.custom_minimum_size = Vector2(font_size * 1.5, font_size * 1.5)
-	star.position = Vector2(-font_size * 0.75, -font_size * 0.75)
+	var star_size := font_size * 1.5
+	var star := TextureRect.new()
+	star.texture = load("res://assets/sprites/ui/star_filled.png")
+	star.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	star.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	star.custom_minimum_size = Vector2(star_size, star_size)
+	star.size = Vector2(star_size, star_size)
+	star.position = Vector2(-star_size / 2.0, -star_size / 2.0)
 	hint.add_child(star)
 
 	# Ripple: ring expands outward and fades, loops 5 times

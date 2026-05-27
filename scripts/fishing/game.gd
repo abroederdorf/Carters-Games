@@ -151,11 +151,11 @@ func _start_game(duration: float) -> void:
 	await get_tree().process_frame
 
 	if _game_mode == GameMode.MATH:
-		_max_fish = 6
+		_max_fish = 5
 		_spawn_math_fish()
 		_spawn_math_octopus()
 	elif _game_mode == GameMode.SPELLING:
-		_max_fish = 8 if _difficulty == 2 else 6
+		_max_fish = 8 if _difficulty == 2 else 5
 		_spawn_math_octopus()
 		_new_spelling_round()
 	else:
@@ -382,13 +382,19 @@ func _spawn_spelling_fish() -> void:
 	all_letters.shuffle()
 
 	var vp := get_viewport_rect()
-	var water_top := water_y_start + 50.0
-	var water_bottom := vp.size.y - 125.0
+	var water_top := water_y_start + 30.0
+	var water_bottom := vp.size.y - 80.0
 	var slot_size := (water_bottom - water_top) / float(_max_fish)
 	var y_slots: Array[float] = []
 	for i in _max_fish:
-		y_slots.append(water_top + slot_size * i + slot_size * 0.5 + randf_range(-8.0, 8.0))
+		y_slots.append(water_top + slot_size * i + slot_size * 0.5)
 	y_slots.shuffle()
+
+	var x_step := vp.size.x / float(_max_fish)
+	var x_slots: Array[float] = []
+	for i in _max_fish:
+		x_slots.append(x_step * i + x_step * 0.5)
+	x_slots.shuffle()
 
 	for i in all_letters.size():
 		var fish := FISH_SCENE.instantiate()
@@ -398,6 +404,7 @@ func _spawn_spelling_fish() -> void:
 		fish.is_correct = all_letters[i] in correct_letters
 		fish.bounces = true
 		fish.spawn_y = y_slots[i]
+		fish.spawn_x = x_slots[i]
 		fish.water_y = water_y_start
 		fish_layer.add_child(fish)
 
@@ -531,17 +538,17 @@ func _spawn_math_fish() -> void:
 	_math_correct_answer = problem.answer
 	ui.show_math_problem(problem.display)
 
-	var distractors := _generate_distractors(problem.answer, 5, problem.distractor_min, problem.distractor_max)
+	var distractors := _generate_distractors(problem.answer, 4, problem.distractor_min, problem.distractor_max)
 	var numbers: Array = distractors + [problem.answer]
 	numbers.shuffle()
 
 	var vp := get_viewport_rect()
-	var water_top := water_y_start + 50.0
-	var water_bottom := vp.size.y - 125.0
-	var slot := (water_bottom - water_top) / 6.0
+	var water_top := water_y_start + 30.0
+	var water_bottom := vp.size.y - 80.0
+	var slot := (water_bottom - water_top) / 5.0
 	var y_slots: Array = []
-	for i in 6:
-		y_slots.append(water_top + slot * i + slot * 0.5 + randf_range(-8.0, 8.0))
+	for i in 5:
+		y_slots.append(water_top + slot * i + slot * 0.5)
 	y_slots.shuffle()
 
 	for i in numbers.size():
@@ -649,7 +656,7 @@ func _on_window_resized() -> void:
 
 	var water_area = size.x * (size.y - water_y_start)
 	if _game_mode == GameMode.MATH or _game_mode == GameMode.SPELLING:
-		_max_fish = 8 if (_game_mode == GameMode.SPELLING and _difficulty == 2) else 6
+		_max_fish = 8 if (_game_mode == GameMode.SPELLING and _difficulty == 2) else 5
 	else:
 		_max_fish = clamp(int(water_area / 110000.0) + 2, 4, 12)
 

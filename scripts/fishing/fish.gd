@@ -25,6 +25,7 @@ var spell_letter: String = "":
 		spell_letter = v
 		if is_inside_tree(): _setup_labels()
 var bounces: bool = false
+var spawn_x: float = -1.0
 var _faces_right: bool = false
 var water_y: float = 400.0
 
@@ -97,7 +98,10 @@ func _ready() -> void:
 	var water_start = water_y + 50.0
 	var water_end = vp.size.y - 125.0
 	position.y = spawn_y if spawn_y >= 0.0 else randf_range(water_start, water_end)
-	position.x = -80.0 if direction > 0 else vp.size.x + 80.0
+	if spawn_x >= 0.0:
+		position.x = spawn_x
+	else:
+		position.x = -80.0 if direction > 0 else vp.size.x + 80.0
 	$Sprite2D.flip_h = (direction > 0) != _faces_right
 
 	if difficulty >= 1:
@@ -161,6 +165,7 @@ func _process(delta: float) -> void:
 			direction = -direction
 			$Sprite2D.flip_h = (direction > 0) != _faces_right
 			position.x = clamp(position.x, -140.0, vp.size.x + 140.0)
+			_update_label_position()
 		else:
 			caught.emit()
 			queue_free()
