@@ -10,7 +10,7 @@ on:
         type: choice
         options:
           - itch
-          - netlify
+          - pages
           - both
 
 jobs:
@@ -59,10 +59,16 @@ jobs:
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_CREDENTIALS }}
 
-  deploy-netlify:
+  deploy-pages:
     needs: export
-    if: ${{ inputs.target == 'netlify' || inputs.target == 'both' }}
+    if: ${{ inputs.target == 'pages' || inputs.target == 'both' }}
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download export artifact
         uses: actions/download-artifact@v4
@@ -70,10 +76,14 @@ jobs:
           name: web-export
           path: web/
 
-      - name: Deploy to Netlify
-        run: |
-          npm install -g netlify-cli
-          netlify deploy --dir=web --prod --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: Add CNAME
+        run: echo "cartersgames.alpinealicia.com" > web/CNAME
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
