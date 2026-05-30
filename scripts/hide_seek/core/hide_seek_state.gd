@@ -3,6 +3,7 @@ extends Node
 const SAVE_PATH = "user://find_it_progress.json"
 
 const SCENE_ORDER: Array[String] = [
+	"park",
 	"pet_shop",
 	"circus",
 	"dinosaur_land",
@@ -34,6 +35,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"circus": "Circus",
 	"grocery_store": "Grocery Store",
 	"airport": "Airport",
+	"park": "Park",
 }
 
 var current_scene_name: String = ""
