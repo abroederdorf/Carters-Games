@@ -13,7 +13,7 @@ We are automating the creation of a 45-scene "Find the Hidden Object" game for A
     - **Orientation:** Specify view — `perfectly flat front view`, `perfectly flat side view`, or `slight 3/4 view` (use 3/4 for items that would look flat or ambiguous in profile, e.g. buckets, cans, stacked items).
     - **Style:** 
         - **Items:** Always end with `thick black outlines, vibrant colors, children's cartoon image, 512x512`.
-        - **Backgrounds:** Always use `children's book illustration` at the start of the prompt.
+        - **Backgrounds:** Always use `children's cartoon image` at the start of the prompt.
 - **Prompts:** 
     - **Object Prefix:** Stricter prompt following the surgical pattern to ensure isolated objects (no people).
     - **Character Prefix:** Used for people or animals while maintaining the surgical structure.
@@ -33,6 +33,10 @@ We are automating the creation of a 45-scene "Find the Hidden Object" game for A
 - **MANDATORY CONFIRMATION:** Never execute scripts that perform expensive API operations (Image generation) without explicit user confirmation.
 - **Affected Scripts:** This includes `generate_*.py` scripts.
 - **Local Alternatives:** Always use the local `preseed_scene.gd` script to initialize scenes rather than relying on automated vision analysis.
+
+## Scene Progress
+
+See `local/hide-seek-scene-tracker.md` for the full list of all 45 scenes with current status (complete / sprites-done / needs-art). Update it when a scene moves to a new stage.
 
 ## Directory Structure
 - `assets/sprites/hide_seek/[theme_name]/`: Source images.
