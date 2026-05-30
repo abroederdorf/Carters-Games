@@ -2,7 +2,7 @@
 
 A collection of touch-first mini-games for kids age 5–10, built in Godot 4 and deployed as a Progressive Web App (PWA). Playable on any modern browser — optimised for tablet.
 
-**Live:** [itch.io](https://abroederdorf.itch.io/carters-games) · [Netlify](https://cartersgames.netlify.app)  
+**Live:** [itch.io](https://abroederdorf.itch.io/carters-games) · [Web](https://cartersgames.alpinealicia.com)  
 **Window size:** 1280×800 landscape  
 **Renderer:** Mobile  
 
@@ -67,7 +67,7 @@ scripts/
 
 local/                — Local-only files, gitignored (plan docs, exports, credentials)
 web/                  — Output directory for web export (gitignored content)
-.github/workflows/    — CI/CD (export + deploy to Netlify)
+.github/workflows/    — CI/CD (export + deploy to itch.io and GitHub Pages)
 ```
 
 ---
@@ -87,19 +87,19 @@ All deployments are manual and controlled. Trigger from the **Actions** tab → 
 | Target | What happens |
 |--------|-------------|
 | `itch` | Export → deploy to itch.io (use for testing) |
-| `netlify` | Export → deploy to Netlify (use for releases) |
+| `pages` | Export → deploy to GitHub Pages (use for releases) |
 | `both` | Export once → deploy to both from the same build |
 
-**Workflow:** `itch` and `netlify` are a single export job that uploads an artifact, then one or two deploy jobs that download and push it. This means if you pick `both`, Netlify gets the exact same binary you tested on itch.io.
+**Workflow:** `itch` and `pages` share a single export job that uploads an artifact, then one or two deploy jobs download and push it. Picking `both` means GitHub Pages gets the exact same binary you tested on itch.io.
 
 **Typical flow:**
 1. Work is merged and ready to test → run workflow → pick `itch`
-2. Test on itch.io — looks good → run workflow → pick `both` to sync Netlify to the same build
+2. Test on itch.io — looks good → run workflow → pick `both` to sync GitHub Pages to the same build
 
 Required GitHub secrets (repo Settings → Secrets and variables → Actions):
 - `BUTLER_CREDENTIALS` — itch.io API key (from [itch.io account settings](https://itch.io/user/settings/api-keys))
-- `NETLIFY_AUTH_TOKEN` — Netlify personal access token
-- `NETLIFY_SITE_ID` — site ID from the Netlify dashboard
+
+GitHub Pages deployment uses built-in GitHub Actions permissions — no extra secrets needed.
 
 ### Local web export
 
