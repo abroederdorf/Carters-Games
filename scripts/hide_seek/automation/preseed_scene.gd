@@ -110,11 +110,13 @@ func _init() -> void:
 	# 3. Pre-seed Anchors (Offset Grid)
 	scene_data.anchors.clear()
 	var cols := 8
-	var rows := 7 
-	var spacing_x := 1920.0 / (cols + 1)
-	var spacing_y := 1080.0 / (rows + 1)
+	var rows := 7
+	var bg_w := float(scene_data.background_image.get_width()) if scene_data.background_image else 1920.0
+	var bg_h := float(scene_data.background_image.get_height()) if scene_data.background_image else 1080.0
+	var spacing_x := bg_w / (cols + 1)
+	var spacing_y := bg_h / (rows + 1)
 	var offset_shift := spacing_x * 0.5
-	
+
 	var count := 0
 	for r in range(rows):
 		for c in range(cols):
@@ -124,7 +126,7 @@ func _init() -> void:
 			var x = spacing_x * (c + 1)
 			if r % 2 == 1:
 				x += offset_shift
-				if x > 1850: x -= spacing_x
+				if x > bg_w - offset_shift: x -= spacing_x
 			anchor.position = Vector2(x, spacing_y * (r + 1))
 			anchor.radius = ANCHOR_DEFAULT_RADIUS
 			scene_data.anchors.append(anchor)
