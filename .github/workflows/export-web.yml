@@ -51,6 +51,44 @@ jobs:
           event-type: deploy
           client-payload: '{"ref": "${{ github.ref_name }}"}'
 
+      - name: Wait for testing deploy to complete
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.STAGING_PAT }}
+          script: |
+            const owner = 'abroederdorf';
+            const repo = 'Carters-Games-Testing';
+            const workflow_id = 'deploy.yml';
+
+            // Give GitHub time to queue the triggered run
+            await new Promise(r => setTimeout(r, 10000));
+
+            const { data: { workflow_runs } } = await github.rest.actions.listWorkflowRuns({
+              owner, repo, workflow_id, per_page: 1
+            });
+
+            if (workflow_runs.length === 0) {
+              core.setFailed('No workflow run found in testing repo');
+              return;
+            }
+
+            const run_id = workflow_runs[0].id;
+            console.log(`Watching: https://github.com/${owner}/${repo}/actions/runs/${run_id}`);
+
+            for (let i = 0; i < 45; i++) {
+              const { data: run } = await github.rest.actions.getWorkflowRun({ owner, repo, run_id });
+              console.log(`Status: ${run.status}`);
+              if (run.status === 'completed') {
+                if (run.conclusion !== 'success') {
+                  core.setFailed(`Testing deploy failed: ${run.conclusion}`);
+                }
+                return;
+              }
+              await new Promise(r => setTimeout(r, 20000));
+            }
+            core.setFailed('Timed out waiting for testing deploy (15 min)');
+
+
   deploy-itch:
     needs: export
     if: ${{ inputs.target == 'itch' || inputs.target == 'both' }}
