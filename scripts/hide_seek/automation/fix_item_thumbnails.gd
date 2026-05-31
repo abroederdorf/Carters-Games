@@ -129,14 +129,15 @@ func _build_shared_overrides(themes_data: Dictionary, theme: String) -> Dictiona
 
 
 func _find_texture(item_name: String, theme: String, shared_overrides: Dictionary) -> Texture2D:
-	var local := "%s/%s/%s.png" % [SPRITES_ROOT, theme, item_name]
-	if ResourceLoader.exists(local):
-		return load(local) as Texture2D
-	# Use the shared filename from themes.json if present, otherwise fall back to item_name.
+	for ext in [".webp", ".png"]:
+		var local := "%s/%s/%s%s" % [SPRITES_ROOT, theme, item_name, ext]
+		if ResourceLoader.exists(local):
+			return load(local) as Texture2D
 	var shared_filename: String = shared_overrides.get(item_name, item_name)
-	var shared := "%s/%s.png" % [SHARED_SPRITES, shared_filename]
-	if ResourceLoader.exists(shared):
-		return load(shared) as Texture2D
+	for ext in [".webp", ".png"]:
+		var shared := "%s/%s%s" % [SHARED_SPRITES, shared_filename, ext]
+		if ResourceLoader.exists(shared):
+			return load(shared) as Texture2D
 	return null
 
 
