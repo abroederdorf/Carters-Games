@@ -41,6 +41,7 @@ script = ExtResource("1_e61is")
 id = 1
 position = Vector2(2568.161, 1034.6489)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_rxsvo"]
@@ -48,14 +49,16 @@ script = ExtResource("1_e61is")
 id = 2
 position = Vector2(2060.877, 1067.2151)
 radius = 40.0
+visual_scale = 0.8999999999999999
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_2wmq2"]
 script = ExtResource("1_e61is")
 id = 3
-position = Vector2(250.7836, 277.4784)
+position = Vector2(474.03778, 77.884964)
 radius = 40.0
-tags = Array[String](["item"])
+visual_scale = 0.6000000000000001
+tags = Array[String](["airplane", "helicopter"])
 
 [sub_resource type="Resource" id="Resource_jddft"]
 script = ExtResource("1_e61is")
@@ -82,7 +85,8 @@ tags = Array[String](["hanging"])
 script = ExtResource("1_e61is")
 id = 7
 position = Vector2(737.70245, 82.07951)
-radius = 20.0
+radius = 55.0
+visual_scale = 0.7
 tags = Array[String](["airplane", "helicopter"])
 
 [sub_resource type="Resource" id="Resource_10pan"]
@@ -90,13 +94,15 @@ script = ExtResource("1_e61is")
 id = 8
 position = Vector2(1972.94, 1369.1183)
 radius = 40.0
+visual_scale = 0.8999999999999999
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_mtu4i"]
 script = ExtResource("1_e61is")
 id = 9
-position = Vector2(2459.0503, 786.99274)
+position = Vector2(2423.4893, 783.04034)
 radius = 40.0
+visual_scale = 0.8500000000000001
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_8ysrp"]
@@ -104,6 +110,7 @@ script = ExtResource("1_e61is")
 id = 10
 position = Vector2(1715.632, 786.9926)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_dejd8"]
@@ -123,7 +130,7 @@ tags = Array[String](["hanging"])
 [sub_resource type="Resource" id="Resource_0crcn"]
 script = ExtResource("1_e61is")
 id = 13
-position = Vector2(556.1249, 713.7181)
+position = Vector2(556.1249, 727.55145)
 radius = 38.0
 tags = Array[String](["item"])
 
@@ -132,6 +139,7 @@ script = ExtResource("1_e61is")
 id = 14
 position = Vector2(1595.9287, 343.2746)
 radius = 31.0
+visual_scale = 0.8
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_ujrt6"]
@@ -153,6 +161,7 @@ script = ExtResource("1_e61is")
 id = 17
 position = Vector2(1941.1831, 592.2571)
 radius = 29.0
+visual_scale = 0.75
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_2qjkc"]
@@ -195,6 +204,7 @@ script = ExtResource("1_e61is")
 id = 23
 position = Vector2(1735.1656, 474.20383)
 radius = 40.0
+visual_scale = 0.8999999999999999
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_fb51c"]
@@ -221,7 +231,7 @@ tags = Array[String](["hanging"])
 [sub_resource type="Resource" id="Resource_ioqao"]
 script = ExtResource("1_e61is")
 id = 27
-position = Vector2(255.66823, 776.10693)
+position = Vector2(245.78969, 772.15454)
 radius = 40.0
 tags = Array[String](["item"])
 
@@ -258,12 +268,13 @@ script = ExtResource("1_e61is")
 id = 32
 position = Vector2(1398.076, 414.46848)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_ed5op"]
 script = ExtResource("1_e61is")
 id = 33
-position = Vector2(1143.2124, 695.354)
+position = Vector2(1143.2124, 711.1635)
 radius = 40.0
 tags = Array[String](["big"])
 
@@ -312,7 +323,7 @@ tags = Array[String](["item"])
 [sub_resource type="Resource" id="Resource_j5wd2"]
 script = ExtResource("1_e61is")
 id = 40
-position = Vector2(438.06723, 260.44086)
+position = Vector2(434.1158, 266.36935)
 radius = 40.0
 tags = Array[String](["big"])
 
@@ -328,34 +339,39 @@ script = ExtResource("1_e61is")
 id = 42
 position = Vector2(2358.8945, 537.2558)
 radius = 38.0
+visual_scale = 0.8500000000000001
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_bnefi"]
 script = ExtResource("1_e61is")
 id = 43
-position = Vector2(2238.3826, 985.0446)
+position = Vector2(2220.6023, 961.33026)
 radius = 40.0
+visual_scale = 0.8999999999999999
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_4l3y2"]
 script = ExtResource("1_e61is")
 id = 44
-position = Vector2(2170.7974, 1302.5674)
+position = Vector2(2172.773, 1320.3531)
 radius = 54.0
+visual_scale = 1.2
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_700gd"]
 script = ExtResource("1_e61is")
 id = 45
-position = Vector2(2738.3323, 659.38025)
+position = Vector2(2769.9424, 679.1422)
 radius = 51.0
+visual_scale = 0.7
 tags = Array[String](["airplane", "truck"])
 
 [sub_resource type="Resource" id="Resource_q5nx5"]
 script = ExtResource("1_e61is")
 id = 46
 position = Vector2(2788.814, 252.29916)
-radius = 24.0
+radius = 46.0
+visual_scale = 0.8
 tags = Array[String](["helicopter", "truck"])
 
 [sub_resource type="Resource" id="Resource_362ku"]
@@ -363,6 +379,7 @@ script = ExtResource("1_e61is")
 id = 47
 position = Vector2(2375.1702, 93.537544)
 radius = 40.0
+visual_scale = 0.8500000000000001
 tags = Array[String](["helicopter"])
 
 [sub_resource type="Resource" id="Resource_wgs8x"]
@@ -370,13 +387,15 @@ script = ExtResource("1_e61is")
 id = 48
 position = Vector2(2533.9639, 171.54645)
 radius = 40.0
+visual_scale = 0.95
 tags = Array[String](["airplane", "helicopter"])
 
 [sub_resource type="Resource" id="Resource_pomp8"]
 script = ExtResource("1_e61is")
 id = 49
 position = Vector2(2706.5852, 81.9885)
-radius = 30.0
+radius = 53.0
+visual_scale = 0.75
 tags = Array[String](["airplane", "helicopter"])
 
 [sub_resource type="Resource" id="Resource_oq8bt"]
@@ -394,7 +413,7 @@ item_name = "suitcase"
 thumbnail = ExtResource("5_d8qht")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.65
+base_scale = 0.55
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_c570k"]
@@ -421,7 +440,7 @@ item_name = "luggage_cart"
 thumbnail = ExtResource("8_f2fu3")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.8
+base_scale = 0.75
 tags = Array[String](["big"])
 
 [sub_resource type="Resource" id="Resource_tjgb5"]
@@ -529,7 +548,6 @@ item_name = "fuel_truck"
 thumbnail = ExtResource("20_upmt2")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.8500000000000001
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_2aefk"]
@@ -547,6 +565,7 @@ item_name = "airport_utility_truck"
 thumbnail = ExtResource("22_hgu2q")
 position = Vector2(100, 100)
 radius = 60.0
+base_scale = 1.1
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_pirtd"]
@@ -555,7 +574,7 @@ item_name = "bouquet_of_flowers"
 thumbnail = ExtResource("23_7q1y3")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.45
+base_scale = 0.35
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_3myf8"]
@@ -564,7 +583,7 @@ item_name = "luggage_tractor"
 thumbnail = ExtResource("24_loml3")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 1.05
+base_scale = 1.25
 tags = Array[String](["truck"])
 
 [sub_resource type="Resource" id="Resource_pv1pd"]
@@ -582,7 +601,7 @@ item_name = "popcorn"
 thumbnail = ExtResource("7_0v7bs")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.30000000000000004
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_tat7y"]
