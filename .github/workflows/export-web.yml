@@ -9,7 +9,7 @@ on:
         default: 'itch'
         type: choice
         options:
-          - staging
+          - testing
           - itch
           - pages
           - both
@@ -38,9 +38,9 @@ jobs:
           name: web-export
           path: web/
 
-  deploy-staging:
+  deploy-testing:
     needs: export
-    if: ${{ inputs.target == 'staging' }}
+    if: ${{ inputs.target == 'testing' }}
     runs-on: ubuntu-latest
     steps:
       - name: Download export artifact
