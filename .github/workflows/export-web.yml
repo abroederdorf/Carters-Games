@@ -43,6 +43,8 @@ jobs:
     if: ${{ inputs.target == 'testing' }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download export artifact
         uses: actions/download-artifact@v4
         with:
