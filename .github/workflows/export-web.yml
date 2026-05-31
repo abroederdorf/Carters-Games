@@ -9,6 +9,7 @@ on:
         default: 'itch'
         type: choice
         options:
+          - staging
           - itch
           - pages
           - both
@@ -36,6 +37,25 @@ jobs:
         with:
           name: web-export
           path: web/
+
+  deploy-staging:
+    needs: export
+    if: ${{ inputs.target == 'staging' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download export artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-export
+          path: web/
+
+      - name: Deploy to carters-games-testing
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: abroederdorf/carters-games-testing
+          branch: gh-pages
+          folder: web/
+          ssh-key: ${{ secrets.STAGING_DEPLOY_KEY }}
 
   deploy-itch:
     needs: export
