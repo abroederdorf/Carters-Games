@@ -39,25 +39,16 @@ jobs:
           path: web/
 
   deploy-testing:
-    needs: export
     if: ${{ inputs.target == 'testing' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Download export artifact
-        uses: actions/download-artifact@v4
+      - name: Trigger testing repo deploy
+        uses: peter-evans/repository-dispatch@v3
         with:
-          name: web-export
-          path: web/
-
-      - name: Deploy to carters-games-testing
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: abroederdorf/carters-games-testing
-          branch: gh-pages
-          folder: web/
           token: ${{ secrets.STAGING_PAT }}
+          repository: abroederdorf/Carters-Games-Testing
+          event-type: deploy
+          client-payload: '{"ref": "${{ github.ref_name }}"}'
 
   deploy-itch:
     needs: export
