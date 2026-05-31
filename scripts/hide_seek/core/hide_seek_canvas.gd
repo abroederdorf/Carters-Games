@@ -267,10 +267,16 @@ func _handle_drag(event: InputEventScreenDrag) -> void:
 			_canvas_offset = _pinch_area_mid - canvas_pt * _canvas_scale
 			_clamp_offset()
 			_update_transform()
-	elif not _is_pinching and _touches.size() == 1:
-		_canvas_offset = _pan_start_offset + (event.position - _pan_start_pos)
-		_clamp_offset()
-		_update_transform()
+	elif _touches.size() == 1:
+		if _is_pinching:
+			# Touch release event was missed — recover cleanly to pan
+			_is_pinching = false
+			_pan_start_offset = _canvas_offset
+			_pan_start_pos = event.position
+		else:
+			_canvas_offset = _pan_start_offset + (event.position - _pan_start_pos)
+			_clamp_offset()
+			_update_transform()
 
 
 func _handle_mouse_button(event: InputEventMouseButton) -> void:
