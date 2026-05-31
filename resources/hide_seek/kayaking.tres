@@ -571,7 +571,7 @@ item_name = "rock"
 thumbnail = ExtResource("20_6mif6")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.45
+base_scale = 0.35
 tags = Array[String](["rock"])
 
 [sub_resource type="Resource" id="Resource_raqy3"]
@@ -580,7 +580,7 @@ item_name = "butterfly"
 thumbnail = ExtResource("21_e1l0a")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.30000000000000004
+base_scale = 0.2
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_ebeko"]
