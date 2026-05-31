@@ -1627,6 +1627,30 @@
           "tags": [
             "ground"
           ]
+        },
+        {
+          "name": "popcorn",
+          "shared": "popcorn"
+        },
+        {
+          "name": "cotton_candy",
+          "shared": "cotton_candy"
+        },
+        {
+          "name": "camera",
+          "shared": "camera"
+        },
+        {
+          "name": "blimp",
+          "shared": "blimp"
+        },
+        {
+          "name": "airplane",
+          "shared": "airplane"
+        },
+        {
+          "name": "helicopter",
+          "shared": "helicopter"
         }
       ]
     },
