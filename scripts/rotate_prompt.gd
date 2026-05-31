@@ -30,15 +30,16 @@ func _build_overlay() -> void:
 	vbox.add_theme_constant_override("separation", 24)
 	_overlay.add_child(vbox)
 
-	var icon_lbl := Label.new()
-	icon_lbl.text = "🔄"
-	icon_lbl.add_theme_font_size_override("font_size", 96)
-	icon_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	vbox.add_child(icon_lbl)
+	var icon := TextureRect.new()
+	icon.texture = load("res://assets/sprites/ui/phone_rotate.png")
+	icon.custom_minimum_size = Vector2(160, 160)
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	icon.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	vbox.add_child(icon)
 
 	var msg := Label.new()
-	msg.text = "Rotate your device"
-	msg.add_theme_font_size_override("font_size", 40)
+	msg.text = "Please rotate your device to landscape"
+	msg.add_theme_font_size_override("font_size", 52)
 	msg.add_theme_color_override("font_color", Color.WHITE)
 	msg.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(msg)

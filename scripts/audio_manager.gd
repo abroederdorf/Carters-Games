@@ -126,7 +126,7 @@ func toggle_mute() -> bool:
 
 	if master_mute:
 		music_player.stop()
-	elif music_enabled:
+	elif music_enabled and _music_requested:
 		music_player.play()
 
 	return master_mute
