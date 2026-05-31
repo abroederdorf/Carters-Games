@@ -151,6 +151,7 @@ script = ExtResource("1")
 id = 16
 position = Vector2(358.05807, 495.69354)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_kpt4y"]
@@ -240,6 +241,7 @@ script = ExtResource("1")
 id = 28
 position = Vector2(1566.0142, 739.9858)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_o1fs8"]
@@ -247,6 +249,7 @@ script = ExtResource("1")
 id = 29
 position = Vector2(1856.8546, 708.2365)
 radius = 40.0
+visual_scale = 0.8500000000000001
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_qnxer"]
@@ -254,6 +257,7 @@ script = ExtResource("1")
 id = 30
 position = Vector2(2158.8975, 743.7212)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_id3m6"]
@@ -275,6 +279,7 @@ script = ExtResource("1")
 id = 33
 position = Vector2(818.809, 898.36926)
 radius = 40.0
+visual_scale = 0.95
 tags = Array[String](["small", "medium", "large"])
 
 [sub_resource type="Resource" id="Resource_7sx0g"]
@@ -294,7 +299,7 @@ tags = Array[String](["small", "medium"])
 [sub_resource type="Resource" id="Resource_opewi"]
 script = ExtResource("1")
 id = 36
-position = Vector2(1844.4368, 986.1463)
+position = Vector2(1859.3743, 956.26447)
 radius = 40.0
 tags = Array[String](["small", "medium", "large"])
 
@@ -310,6 +315,7 @@ script = ExtResource("1")
 id = 38
 position = Vector2(71.64538, 440.80945)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["tree"])
 
 [sub_resource type="Resource" id="Resource_qk2uf"]
@@ -317,6 +323,7 @@ script = ExtResource("1")
 id = 39
 position = Vector2(155.23262, 565.938)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_jgflk"]
@@ -398,7 +405,7 @@ item_name = "kickball"
 thumbnail = ExtResource("3")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.35
 tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_vf03m"]
@@ -407,7 +414,7 @@ item_name = "soccer_ball"
 thumbnail = ExtResource("4")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.35
 tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_ldrjx"]
@@ -416,7 +423,7 @@ item_name = "picnic_basket"
 thumbnail = ExtResource("5")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.55
 tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_7x33c"]
@@ -425,7 +432,7 @@ item_name = "garden_gnome"
 thumbnail = ExtResource("6")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.30000000000000004
+base_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_4m0xc"]
@@ -434,7 +441,7 @@ item_name = "birdhouse"
 thumbnail = ExtResource("7")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.25
+base_scale = 0.35
 tags = Array[String](["garden", "tree"])
 
 [sub_resource type="Resource" id="Resource_2jf5e"]
@@ -452,7 +459,7 @@ item_name = "tricycle"
 thumbnail = ExtResource("9")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.6000000000000001
+base_scale = 0.45
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_h1pgw"]
@@ -479,7 +486,7 @@ item_name = "ant"
 thumbnail = ExtResource("12")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.2
+base_scale = 0.25
 tags = Array[String](["garden", "tree", "bug"])
 
 [sub_resource type="Resource" id="Resource_j2bj4"]
@@ -524,7 +531,7 @@ item_name = "backpack"
 thumbnail = ExtResource("17")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.4
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_8w7dk"]
@@ -560,7 +567,7 @@ item_name = "pigeon"
 thumbnail = ExtResource("21")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.25
 tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_ygt70"]
@@ -587,7 +594,7 @@ item_name = "kitten"
 thumbnail = ExtResource("24")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.30000000000000004
+base_scale = 0.45
 tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_mrxie"]
@@ -596,7 +603,7 @@ item_name = "bunny"
 thumbnail = ExtResource("25")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4
 tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_xb5lw"]
@@ -614,7 +621,7 @@ item_name = "balloon_bunch"
 thumbnail = ExtResource("27")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.5
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_3d4n4"]

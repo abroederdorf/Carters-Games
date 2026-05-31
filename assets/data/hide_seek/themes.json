@@ -289,7 +289,7 @@
   },
   "themes": {
     "mountains": {
-      "scene": "Children's book illustration of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
+      "scene": "Children's cartoon image of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
       "items": [
         {
           "name": "bear",
@@ -466,7 +466,7 @@
       ]
     },
     "ocean": {
-      "scene": "Children's book illustration of a vibrant, busy underwater coral reef scene. Sunbeams filtering through the blue water, colorful coral formations, bubbling vents, swaying seaweed, and sandy patches. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
+      "scene": "Children's cartoon image of a vibrant, busy underwater coral reef scene. Sunbeams filtering through the blue water, colorful coral formations, bubbling vents, swaying seaweed, and sandy patches. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
       "items": [
         {
           "name": "shark",
@@ -653,7 +653,7 @@
       ]
     },
     "jungle": {
-      "scene": "Children's book illustration of a dense, lush jungle canopy. Tall mahogany trees with vines, giant ferns, misty waterfalls in the background, a small stream. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
+      "scene": "Children's cartoon image of a dense, lush jungle canopy. Tall mahogany trees with vines, giant ferns, misty waterfalls in the background, a small stream. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
       "items": [
         {
           "name": "monkey",
@@ -824,7 +824,7 @@
       ]
     },
     "space": {
-      "scene": "Children's book illustration of a busy futuristic moon base. Gray lunar surface with craters, black star-filled sky with Earth in distance, glass-domed habitats. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
+      "scene": "Children's cartoon image of a busy futuristic moon base. Gray lunar surface with craters, black star-filled sky with Earth in distance, glass-domed habitats. Wide panoramic landscape (2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text.",
       "items": [
         {
           "name": "alien",
@@ -988,7 +988,7 @@
       ]
     },
     "fire_station": {
-      "scene": "Children's book illustration of a busy fire station. Large red trucks in bays, firefighters in gear, a fire pole, Dalmatians running around. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a busy fire station. Large red trucks in bays, firefighters in gear, a fire pole, Dalmatians running around. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "fire_truck",
@@ -1131,7 +1131,7 @@
       ]
     },
     "dinosaur_land": {
-      "scene": "Children's book illustration of a prehistoric jungle with volcanoes and dinosaurs. Large ferns, steaming vents, distant erupting volcano. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a prehistoric jungle with volcanoes and dinosaurs. Large ferns, steaming vents, distant erupting volcano. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "t_rex",
@@ -1302,7 +1302,7 @@
       ]
     },
     "construction_site": {
-      "scene": "Children's book illustration of a busy construction site. Half-finished buildings, cranes, piles of dirt, and scaffolding. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a busy construction site. Half-finished buildings, cranes, piles of dirt, and scaffolding. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "excavator",
@@ -1458,7 +1458,7 @@
       ]
     },
     "monster_truck_jam": {
-      "scene": "Children's book illustration of a monster truck arena. Dirt track, ramps, crushed cars, and stadium lights. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a monster truck arena. Dirt track, ramps, crushed cars, and stadium lights. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "monster_truck",
@@ -1603,7 +1603,7 @@
       ]
     },
     "pet_shop": {
-      "scene": "Children's book illustration of a busy pet shop. Rows of fish tanks, bird cages, a puppy play area, and colorful merchandise. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a busy pet shop. Rows of fish tanks, bird cages, a puppy play area, and colorful merchandise. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "hamster",
@@ -1761,12 +1761,12 @@
         },
         {
           "name": "mouse",
-          "name": "mouse", "shared": "mouse"
+          "shared": "mouse"
         }
       ]
     },
     "circus": {
-      "scene": "Children's book illustration of a busy grand circus tent interior. A center ring with sand, colorful spotlights, tiered seating filled with silhouettes of people. The scene is dense with circus props: a colorful cannon, circus balls with stars, a flaming hoop, and pennant flags hanging from the ceiling. Performers like a ringleader and clown are visible in the distance. Wide panoramic landscape (2:1 ratio), bright saturated colors, flat design, thick black outlines, no text.",
+      "scene": "Children's cartoon image of a busy grand circus tent interior. A center ring with sand, colorful spotlights, tiered seating filled with silhouettes of people. The scene is dense with circus props: a colorful cannon, circus balls with stars, a flaming hoop, and pennant flags hanging from the ceiling. Performers like a ringleader and clown are visible in the distance. Wide panoramic landscape (2:1 ratio), bright saturated colors, flat design, thick black outlines, no text.",
       "items": [
         {
           "name": "top_hat",
@@ -1910,7 +1910,7 @@
       ]
     },
     "city": {
-      "scene": "Children's book illustration of a busy city street corner with a large open park. The scene has a wide blue sky with a few fluffy white clouds. In the foreground is a gray sidewalk and a crosswalk. To the right is a green park with trees, grass, and flower beds. The background features colorful low-rise storefronts and small apartment buildings. The street has a T-junction layout. Wide panoramic 16:9 aspect ratio, bright cheerful colors, flat design, thick clean black outlines, no text, no people.",
+      "scene": "Children's cartoon image of a busy city street corner with a large open park. The scene has a wide blue sky with a few fluffy white clouds. In the foreground is a gray sidewalk and a crosswalk. To the right is a green park with trees, grass, and flower beds. The background features colorful low-rise storefronts and small apartment buildings. The street has a T-junction layout. Wide panoramic 16:9 aspect ratio, bright cheerful colors, flat design, thick clean black outlines, no text, no people.",
       "items": [
         {
           "name": "airplane",
@@ -2071,7 +2071,7 @@
       ]
     },
     "amusement_park": {
-      "scene": "Children's book illustration of a colorful amusement park. Roller coaster, ferris wheel, carousel, game booths, cotton candy stands, happy crowds. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a colorful amusement park. Roller coaster, ferris wheel, carousel, game booths, cotton candy stands, happy crowds. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "roller_coaster",
@@ -2231,7 +2231,7 @@
       ]
     },
     "airport": {
-      "scene": "Children's book illustration of a busy airport. Planes on the tarmac, a control tower, gates with travelers, a luggage carousel. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a busy airport. Planes on the tarmac, a control tower, gates with travelers, a luggage carousel. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "airplane",
@@ -2384,7 +2384,7 @@
       ]
     },
     "arcade": {
-      "scene": "Children's book illustration of a neon-lit arcade. Rows of game machines, a prize counter overflowing with stuffed animals, flashing screens. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a neon-lit arcade. Rows of game machines, a prize counter overflowing with stuffed animals, flashing screens. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "joystick",
@@ -2543,7 +2543,7 @@
       ]
     },
     "arctic": {
-      "scene": "Children's book illustration of a snowy Arctic landscape. Ice floes, igloos, polar animals, snow drifts, a colorful aurora in the sky. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a snowy Arctic landscape. Ice floes, igloos, polar animals, snow drifts, a colorful aurora in the sky. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "polar_bear",
@@ -2700,7 +2700,7 @@
       ]
     },
     "art_studio": {
-      "scene": "Children's book illustration of a cozy art studio. Easels with paintings, shelves of supplies, clay sculptures, colorful aprons hanging on pegs. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a cozy art studio. Easels with paintings, shelves of supplies, clay sculptures, colorful aprons hanging on pegs. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "paintbrush",
@@ -2862,7 +2862,7 @@
       ]
     },
     "baseball_game": {
-      "scene": "Children's book illustration of a packed, vibrant baseball stadium, 16:9 panoramic landscape. A dense, cheering crowd of fans fills the stands across the entire image, holding hot dogs, pink cotton candy, popcorn tubs, megaphones, and coffee cups, with blue and white pennants waving above them. In the foreground, a detailed wooden dugout contains scattered baseball bats, gloves, blue batting helmets, and open bags of sunflower seeds. On the green field, baseball players in pinstripe jerseys are in action. In the outfield, a large green manual scoreboard sits between sections of the crowd, displaying SEA vs CHC with innings 1-5 filled in and columns for R, H, and E. The top of the scene shows a bright blue sky with a few fluffy white clouds. Vibrant colors, flat design, thick black outlines, no small text.",
+      "scene": "Children's cartoon image of a packed, vibrant baseball stadium, 16:9 panoramic landscape. A dense, cheering crowd of fans fills the stands across the entire image, holding hot dogs, pink cotton candy, popcorn tubs, megaphones, and coffee cups, with blue and white pennants waving above them. In the foreground, a detailed wooden dugout contains scattered baseball bats, gloves, blue batting helmets, and open bags of sunflower seeds. On the green field, baseball players in pinstripe jerseys are in action. In the outfield, a large green manual scoreboard sits between sections of the crowd, displaying SEA vs CHC with innings 1-5 filled in and columns for R, H, and E. The top of the scene shows a bright blue sky with a few fluffy white clouds. Vibrant colors, flat design, thick black outlines, no small text.",
       "items": [
         {
           "name": "baseball",
@@ -2992,7 +2992,7 @@
       ]
     },
     "basketball_game": {
-      "scene": "Children's book illustration of a basketball arena. Shiny hardwood court, hoops with nets, a scoreboard, cheering crowd, cheerleaders on the sideline. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a basketball arena. Shiny hardwood court, hoops with nets, a scoreboard, cheering crowd, cheerleaders on the sideline. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "basketball",
@@ -3147,7 +3147,7 @@
       ]
     },
     "beach": {
-      "scene": "Children's book illustration of a sunny beach. Sandy shore, rolling ocean waves, colorful beach umbrellas, sandcastles, kids playing in the waves. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a sunny beach. Sandy shore, rolling ocean waves, colorful beach umbrellas, sandcastles, kids playing in the waves. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "beach_ball",
@@ -3313,7 +3313,7 @@
       ]
     },
     "bowling_alley": {
-      "scene": "Children's book illustration of a colorful bowling alley. Shiny lanes with pins at the end, a snack counter, shoe rental desk, and a scoreboard overhead. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a colorful bowling alley. Shiny lanes with pins at the end, a snack counter, shoe rental desk, and a scoreboard overhead. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "bowling_ball",
@@ -3471,8 +3471,8 @@
         }
       ]
     },
-    "car_repair_shop": {
-      "scene": "Children's book illustration of a busy auto repair garage. Cars on hydraulic lifts, tool pegboards on the walls, oil drums, a mechanic in overalls. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+    "car_repair": {
+      "scene": "Children's cartoon image of a busy auto repair garage. Cars on hydraulic lifts, tool pegboards on the walls, oil drums, a mechanic in overalls. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "car_jack",
@@ -3620,7 +3620,7 @@
       ]
     },
     "classroom": {
-      "scene": "Children's book illustration of a bright elementary school classroom. Rows of small desks, a chalkboard, a globe, art supply shelves, a teacher's desk with an apple. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a bright elementary school classroom. Rows of small desks, a chalkboard, a globe, art supply shelves, a teacher's desk with an apple. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "book",
@@ -3785,7 +3785,7 @@
       ]
     },
     "cruise_ship": {
-      "scene": "Children's book illustration of a large cruise ship at sea. Pool deck, shuffle board courts, lifeboats, ocean waves, seagulls, tropical island in the distance. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a large cruise ship at sea. Pool deck, shuffle board courts, lifeboats, ocean waves, seagulls, tropical island in the distance. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "life_preserver",
@@ -3945,7 +3945,7 @@
       ]
     },
     "desert": {
-      "scene": "Children's book illustration of a vast desert. Tall saguaro cacti, rolling sand dunes, a distant mesa, a blazing sun, desert animals hiding. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a vast desert. Tall saguaro cacti, rolling sand dunes, a distant mesa, a blazing sun, desert animals hiding. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "cactus",
@@ -4097,7 +4097,7 @@
       ]
     },
     "doctors_office": {
-      "scene": "Children's book illustration of a friendly doctor's office. An exam table, eye chart on the wall, a supply cabinet, a waiting area with toys. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a friendly doctor's office. An exam table, eye chart on the wall, a supply cabinet, a waiting area with toys. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "stethoscope",
@@ -4261,7 +4261,7 @@
       ]
     },
     "farm": {
-      "scene": "Children's book illustration of a sunny farm. Red barn, green pastures with animals, a tractor, vegetable garden, chicken coop, and a big oak tree. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a sunny farm. Red barn, green pastures with animals, a tractor, vegetable garden, chicken coop, and a big oak tree. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "cow",
@@ -4427,7 +4427,7 @@
       ]
     },
     "grocery_store": {
-      "scene": "Children's book illustration of a busy, slightly chaotic grocery store interior. Several checkout lanes with black conveyor belts are in the foreground, some with scattered boxes and groceries. In the background, aisles with partially filled colorful shelves. Red shopping carts and square plastic baskets are scattered around the floor. A produce section with tilted wooden crates of fruits. Bright saturated colors, flat design, thick black outlines, wide 16:9 panoramic view, no text or people.",
+      "scene": "Children's cartoon image of a busy, slightly chaotic grocery store interior. Several checkout lanes with black conveyor belts are in the foreground, some with scattered boxes and groceries. In the background, aisles with partially filled colorful shelves. Red shopping carts and square plastic baskets are scattered around the floor. A produce section with tilted wooden crates of fruits. Bright saturated colors, flat design, thick black outlines, wide 16:9 panoramic view, no text or people.",
       "items": [
         {
           "name": "shopping_cart",
@@ -4590,7 +4590,7 @@
       ]
     },
     "ice_cream_shop": {
-      "scene": "Children's book illustration of a cheerful ice cream parlor. A long display case of flavors, spinning stools at a counter, a giant sundae poster, happy kids choosing flavors. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a cheerful ice cream parlor. A long display case of flavors, spinning stools at a counter, a giant sundae poster, happy kids choosing flavors. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "ice_cream_cone",
@@ -4759,7 +4759,7 @@
       ]
     },
     "ice_skating_rink": {
-      "scene": "Children's book illustration of an indoor ice skating rink. Smooth shiny ice, skaters of all ages, a Zamboni resurfacing machine, a rink-side snack bar. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of an indoor ice skating rink. Smooth shiny ice, skaters of all ages, a Zamboni resurfacing machine, a rink-side snack bar. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "ice_skate",
@@ -4915,7 +4915,7 @@
       ]
     },
     "kayaking": {
-      "scene": "Children's book illustration of a peaceful river kayaking scene. Bright kayaks on a gentle river, lush green banks with wildlife, a distant waterfall. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a peaceful river kayaking scene. Bright kayaks on a gentle river, lush green banks with wildlife, a distant waterfall. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "kayak",
@@ -4927,33 +4927,12 @@
           ]
         },
         {
-          "name": "paddle",
-          "desc": "two-bladed kayak paddle dripping water",
-          "type": "object",
-          "tags": [
-            "ground",
-            "water"
-          ]
-        },
-        {
-          "name": "life_jacket",
-          "desc": "bright orange inflatable life jacket with buckle clips",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "water_bottle",
           "shared": "water_bottle"
         },
         {
           "name": "fish",
-          "desc": "silver trout leaping from the river",
-          "type": "character",
-          "tags": [
-            "water"
-          ]
+          "shared": "tetra_fish"
         },
         {
           "name": "dragonfly",
@@ -4979,10 +4958,6 @@
         {
           "name": "turtle",
           "shared": "turtle"
-        },
-        {
-          "name": "compass",
-          "shared": "compass"
         },
         {
           "name": "binoculars",
@@ -5026,17 +5001,37 @@
           "shared": "mushroom"
         },
         {
-          "name": "fern",
-          "shared": "fern"
-        },
-        {
           "name": "tent",
           "shared": "tent"
+        },
+        {
+          "name": "rock",
+          "shared": "rock"
+        },
+        {
+          "name": "butterfly",
+          "shared": "butterfly"
+        },
+        {
+          "name": "flowers",
+          "shared": "flower_patch"
+        },
+        {
+          "name": "tree",
+          "shared": "tree"
+        },
+        {
+          "name": "compass",
+          "shared": "compass"
+        },
+        {
+          "name": "fern",
+          "shared": "fern"
         }
       ]
     },
     "kitchen": {
-      "scene": "Children's book illustration of a cozy home kitchen. Counters full of cooking supplies, a stove with a bubbling pot, an open cookbook, fresh vegetables on a cutting board. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a cozy home kitchen. Counters full of cooking supplies, a stove with a bubbling pot, an open cookbook, fresh vegetables on a cutting board. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "pot",
@@ -5207,8 +5202,8 @@
         }
       ]
     },
-    "lake_with_fishing": {
-      "scene": "Children's book illustration of a peaceful fishing lake. A wooden dock stretching into calm blue water, rowboats tied up, tall pine trees reflected in the surface, a bait shop on shore. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+    "lake_fishing": {
+      "scene": "Children's cartoon image of a peaceful fishing lake. A wooden dock stretching into calm blue water, rowboats tied up, tall pine trees reflected in the surface, a bait shop on shore. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "fishing_rod",
@@ -5344,7 +5339,7 @@
       ]
     },
     "library": {
-      "scene": "Children's book illustration of a cozy public library. Tall wooden bookshelves reaching the ceiling, reading nooks with bean bags, a globe on a stand, afternoon sunlight through tall windows. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a cozy public library. Tall wooden bookshelves reaching the ceiling, reading nooks with bean bags, a globe on a stand, afternoon sunlight through tall windows. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "book",
@@ -5505,7 +5500,7 @@
       ]
     },
     "mountain_biking": {
-      "scene": "Children's book illustration of a mountain bike trail. Dirt path winding through a pine forest, rocky outcrops, a wooden jump ramp, valley views below. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a mountain bike trail. Dirt path winding through a pine forest, rocky outcrops, a wooden jump ramp, valley views below. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "bicycle",
@@ -5635,7 +5630,7 @@
       ]
     },
     "movie_theater": {
-      "scene": "Children's book illustration of a movie theater. A huge glowing screen at the front, rows of red recliners, a bright concession stand with popcorn and candy, spotlights on the ceiling. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a movie theater. A huge glowing screen at the front, rows of red recliners, a bright concession stand with popcorn and candy, spotlights on the ceiling. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "popcorn",
@@ -5784,7 +5779,7 @@
       ]
     },
     "museum": {
-      "scene": "Children's book illustration of a natural history museum. A massive dinosaur skeleton in the central atrium, display cases with ancient artifacts, an Egyptian mummy exhibit, a planetarium dome in the background. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a natural history museum. A massive dinosaur skeleton in the central atrium, display cases with ancient artifacts, an Egyptian mummy exhibit, a planetarium dome in the background. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "dinosaur_skeleton",
@@ -5937,7 +5932,7 @@
       ]
     },
     "music_studio": {
-      "scene": "Children's book illustration of a recording studio. Soundproofed foam walls, an instrument corner with guitars and drums, a large mixing board with glowing knobs, a red ON AIR light above the door. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a recording studio. Soundproofed foam walls, an instrument corner with guitars and drums, a large mixing board with glowing knobs, a red ON AIR light above the door. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "guitar",
@@ -6111,7 +6106,7 @@
       ]
     },
     "neighborhood": {
-      "scene": "Children's book illustration of a friendly suburban neighborhood. Houses with front yards, a sidewalk, children playing outside, bikes parked on porches, a mailbox at every house. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a friendly suburban neighborhood. Houses with front yards, a sidewalk, children playing outside, bikes parked on porches, a mailbox at every house. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "house",
@@ -6266,7 +6261,7 @@
       ]
     },
     "park": {
-      "scene": "Children's book illustration of a peaceful city park. The scene features a colorful flower garden, wide open green spaces with large leafy trees, and several picnic blankets spread out on the grass. Recreational areas are visible in the distance. Wide panoramic 16:9 aspect ratio, bright cheerful colors, flat design, thick clean black outlines, no text.",
+      "scene": "Children's cartoon image of a peaceful city park. The scene features a colorful flower garden, wide open green spaces with large leafy trees, and several picnic blankets spread out on the grass. Recreational areas are visible in the distance. Wide panoramic 16:9 aspect ratio, bright cheerful colors, flat design, thick clean black outlines, no text.",
       "items": [
         {
           "name": "kickball",
@@ -6401,7 +6396,7 @@
       ]
     },
     "restaurant": {
-      "scene": "Children's book illustration of a cozy family restaurant. Tables with white cloths and candles, a busy open kitchen window, a dessert cart being wheeled by, warm glowing lights overhead. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a cozy family restaurant. Tables with white cloths and candles, a busy open kitchen window, a dessert cart being wheeled by, warm glowing lights overhead. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "plate",
@@ -6572,7 +6567,7 @@
       ]
     },
     "ski_resort": {
-      "scene": "Children's book illustration of a snowy ski resort. White slopes with colorful skiers, a chairlift rising up the mountain, a cozy timber lodge with smoke from the chimney, snowy mountain peaks. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a snowy ski resort. White slopes with colorful skiers, a chairlift rising up the mountain, a cozy timber lodge with smoke from the chimney, snowy mountain peaks. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "ski",
@@ -6724,7 +6719,7 @@
       ]
     },
     "soccer_game": {
-      "scene": "Children's book illustration of a soccer stadium. A bright green pitch with white yard lines, goal posts with nets, cheering fans in the stands, corner flags blowing in the wind. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a soccer stadium. A bright green pitch with white yard lines, goal posts with nets, cheering fans in the stands, corner flags blowing in the wind. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "soccer_ball",
@@ -6874,7 +6869,7 @@
       ]
     },
     "train_station": {
-      "scene": "Children's book illustration of a busy train station. A green steam locomotive pulling into a platform, a large departure board, travelers with luggage, a clock tower above the main hall. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a busy train station. A green steam locomotive pulling into a platform, a large departure board, travelers with luggage, a clock tower above the main hall. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "locomotive",
@@ -7023,7 +7018,7 @@
       ]
     },
     "wood_shop": {
-      "scene": "Children's book illustration of a woodworking shop. Sturdy workbenches covered with wood projects in progress, tool pegboards on the walls, sawdust on the floor, shelves of neatly stacked lumber. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a woodworking shop. Sturdy workbenches covered with wood projects in progress, tool pegboards on the walls, sawdust on the floor, shelves of neatly stacked lumber. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "hammer",
@@ -7179,7 +7174,7 @@
       ]
     },
     "zoo": {
-      "scene": "Children's book illustration of a busy zoo. Animal habitats with giraffes and elephants visible over the fences, a map kiosk, a splash pad area, colorful balloons, families exploring winding paths. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a busy zoo. Animal habitats with giraffes and elephants visible over the fences, a map kiosk, a splash pad area, colorful balloons, families exploring winding paths. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "giraffe",
