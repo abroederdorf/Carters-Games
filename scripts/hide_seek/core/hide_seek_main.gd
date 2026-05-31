@@ -304,12 +304,27 @@ func _make_card(scene_name: String) -> Button:
 		lock_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		lock_icon.custom_minimum_size = Vector2(80, 80)
 		lock_icon.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+		lock_icon.offset_top = -20.0
+		lock_icon.offset_bottom = -20.0
 		lock_icon.grow_horizontal = Control.GROW_DIRECTION_BOTH
 		lock_icon.grow_vertical = Control.GROW_DIRECTION_BOTH
 		lock_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		btn.add_child(lock_icon)
 
-		btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		# Star cost hint
+		var cost_lbl := Label.new()
+		cost_lbl.text = "⭐ %d" % HideSeekState.UNLOCK_STAR_COST
+		cost_lbl.add_theme_font_size_override("font_size", 22)
+		cost_lbl.add_theme_color_override("font_color", Color.YELLOW)
+		cost_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		cost_lbl.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+		cost_lbl.offset_top = 40.0
+		cost_lbl.offset_bottom = 70.0
+		cost_lbl.grow_horizontal = Control.GROW_DIRECTION_BOTH
+		cost_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		btn.add_child(cost_lbl)
+
+		btn.pressed.connect(_on_locked_scene_pressed.bind(scene_name))
 	else:
 		btn.pressed.connect(_on_scene_pressed.bind(scene_name))
 
@@ -373,3 +388,130 @@ func _scroll_to_page() -> void:
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(_scroll, "scroll_horizontal", int(target_scroll), 0.4)
 	_update_pagination_ui()
+
+
+func _on_locked_scene_pressed(scene_name: String) -> void:
+	AudioManager.play_sfx("pop")
+	_show_unlock_dialog(scene_name)
+
+
+func _show_unlock_dialog(scene_name: String) -> void:
+	var can_afford := HideSeekState.hint_stars >= HideSeekState.UNLOCK_STAR_COST
+
+	# Full-screen dim
+	var overlay := ColorRect.new()
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.color = Color(0, 0, 0, 0.6)
+	overlay.z_index = 10
+	add_child(overlay)
+
+	# Dialog panel
+	var panel := PanelContainer.new()
+	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	panel.custom_minimum_size = Vector2(420, 280)
+	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
+	panel.z_index = 11
+	add_child(panel)
+
+	var vbox := VBoxContainer.new()
+	vbox.add_theme_constant_override("separation", 20)
+	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	var margin := MarginContainer.new()
+	for side in ["left", "right", "top", "bottom"]:
+		margin.add_theme_constant_override("margin_" + side, 30)
+	margin.add_child(vbox)
+	panel.add_child(margin)
+
+	# Scene name
+	var title := Label.new()
+	title.text = HideSeekState.DISPLAY_NAMES.get(scene_name, scene_name)
+	title.add_theme_font_size_override("font_size", 32)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(title)
+
+	# Cost row
+	var cost_row := HBoxContainer.new()
+	cost_row.alignment = BoxContainer.ALIGNMENT_CENTER
+	cost_row.add_theme_constant_override("separation", 10)
+	vbox.add_child(cost_row)
+
+	var star_icon := TextureRect.new()
+	star_icon.texture = preload("res://assets/sprites/ui/star_filled.png")
+	star_icon.custom_minimum_size = Vector2(36, 36)
+	star_icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	star_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	cost_row.add_child(star_icon)
+
+	var cost_lbl := Label.new()
+	cost_lbl.text = "%d / %d" % [HideSeekState.hint_stars, HideSeekState.UNLOCK_STAR_COST]
+	cost_lbl.add_theme_font_size_override("font_size", 28)
+	cost_lbl.add_theme_color_override("font_color", Color.YELLOW if can_afford else Color(0.6, 0.6, 0.6))
+	cost_row.add_child(cost_lbl)
+
+	# Buttons
+	var btn_row := HBoxContainer.new()
+	btn_row.alignment = BoxContainer.ALIGNMENT_CENTER
+	btn_row.add_theme_constant_override("separation", 30)
+	vbox.add_child(btn_row)
+
+	var cancel_btn := Button.new()
+	cancel_btn.text = "✕"
+	cancel_btn.add_theme_font_size_override("font_size", 32)
+	cancel_btn.custom_minimum_size = Vector2(100, 70)
+	cancel_btn.focus_mode = Control.FOCUS_NONE
+	cancel_btn.pressed.connect(func() -> void:
+		AudioManager.play_sfx("pop")
+		panel.queue_free()
+		overlay.queue_free()
+	)
+	btn_row.add_child(cancel_btn)
+
+	if can_afford:
+		var confirm_btn := Button.new()
+		confirm_btn.text = "✓"
+		confirm_btn.add_theme_font_size_override("font_size", 32)
+		confirm_btn.custom_minimum_size = Vector2(100, 70)
+		confirm_btn.focus_mode = Control.FOCUS_NONE
+		confirm_btn.pressed.connect(func() -> void:
+			AudioManager.play_sfx("pop")
+			panel.queue_free()
+			overlay.queue_free()
+			HideSeekState.unlock_with_stars(scene_name)
+			_rebuild_pages()
+		)
+		btn_row.add_child(confirm_btn)
+
+
+func _rebuild_pages() -> void:
+	for child in _pages_container.get_children():
+		child.queue_free()
+	_page_vboxes.clear()
+
+	var scenes := HideSeekState.SCENE_ORDER
+	for p in _total_pages:
+		var page_vbox := VBoxContainer.new()
+		page_vbox.add_theme_constant_override("separation", 24)
+		page_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		page_vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		_pages_container.add_child(page_vbox)
+		_page_vboxes.append(page_vbox)
+
+		var start_idx := p * CARDS_PER_PAGE
+		for r in ROWS:
+			var hbox := HBoxContainer.new()
+			hbox.add_theme_constant_override("separation", 24)
+			hbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+			page_vbox.add_child(hbox)
+			for c in COLS:
+				var idx := start_idx + (r * COLS + c)
+				if idx < scenes.size():
+					var card := _make_card(scenes[idx])
+					hbox.add_child(card)
+				else:
+					var empty := Control.new()
+					empty.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+					hbox.add_child(empty)
+
+	await get_tree().process_frame
+	_fit_pages_to_scroll()

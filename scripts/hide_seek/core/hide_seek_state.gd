@@ -1,11 +1,13 @@
 extends Node
 
 const SAVE_PATH = "user://find_it_progress.json"
+const UNLOCK_STAR_COST := 3
 
 const SCENE_ORDER: Array[String] = [
 	"pet_shop",
 	"circus",
 	"dinosaur_land",
+	"kayaking",
 	"park",
 	"grocery_store",
 	"monster_truck_jam",
@@ -21,6 +23,7 @@ const SCENE_ORDER: Array[String] = [
 ]
 
 const DISPLAY_NAMES: Dictionary = {
+	"kayaking": "Kayaking",
 	"baseball_game": "Baseball Game",
 	"city": "City",
 	"mountains": "Mountains",
@@ -92,6 +95,19 @@ func get_stars(sname: String) -> int:
 		return 0
 	var entry: Dictionary = _progress[sname]
 	return entry.get("stars", 0)
+
+func unlock_with_stars(sname: String) -> bool:
+	if hint_stars < UNLOCK_STAR_COST:
+		return false
+	if not _progress.has(sname):
+		return false
+	if _progress[sname].get("unlocked", false):
+		return true
+	hint_stars -= UNLOCK_STAR_COST
+	_progress[sname]["unlocked"] = true
+	save()
+	return true
+
 
 func complete_scene(sname: String, stars: int) -> void:
 	if not _progress.has(sname):
