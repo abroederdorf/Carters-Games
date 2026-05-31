@@ -22,6 +22,7 @@ Leaderboard="*res://scripts/leaderboard.gd"
 AudioManager="*res://scripts/audio_manager.gd"
 HideSeekState="*res://scripts/hide_seek/core/hide_seek_state.gd"
 MorningScrambleState="*res://scripts/morning_scramble/core/morning_scramble_state.gd"
+RotatePrompt="*res://scripts/rotate_prompt.gd"
 
 [display]
 
@@ -31,6 +32,7 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/size/initial_width=1600
 window/size/initial_height=900
+window/handheld/orientation="landscape"
 
 [input_devices]
 
