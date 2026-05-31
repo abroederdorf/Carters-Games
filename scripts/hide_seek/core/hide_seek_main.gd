@@ -315,17 +315,30 @@ func _make_card(scene_name: String) -> Button:
 		btn.add_child(lock_icon)
 
 		# Star cost hint
+		var cost_row := HBoxContainer.new()
+		cost_row.alignment = BoxContainer.ALIGNMENT_CENTER
+		cost_row.add_theme_constant_override("separation", 6)
+		cost_row.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+		cost_row.offset_top = 40.0
+		cost_row.offset_bottom = 70.0
+		cost_row.grow_horizontal = Control.GROW_DIRECTION_BOTH
+		cost_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		btn.add_child(cost_row)
+
+		var cost_star := TextureRect.new()
+		cost_star.texture = preload("res://assets/sprites/ui/star_filled.png")
+		cost_star.custom_minimum_size = Vector2(22, 22)
+		cost_star.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+		cost_star.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		cost_star.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cost_row.add_child(cost_star)
+
 		var cost_lbl := Label.new()
-		cost_lbl.text = "⭐ %d" % HideSeekState.UNLOCK_STAR_COST
+		cost_lbl.text = str(HideSeekState.UNLOCK_STAR_COST)
 		cost_lbl.add_theme_font_size_override("font_size", 22)
 		cost_lbl.add_theme_color_override("font_color", Color.YELLOW)
-		cost_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		cost_lbl.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-		cost_lbl.offset_top = 40.0
-		cost_lbl.offset_bottom = 70.0
-		cost_lbl.grow_horizontal = Control.GROW_DIRECTION_BOTH
 		cost_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		btn.add_child(cost_lbl)
+		cost_row.add_child(cost_lbl)
 
 		btn.pressed.connect(_on_locked_scene_pressed.bind(scene_name))
 	else:
@@ -467,7 +480,7 @@ func _show_unlock_dialog(scene_name: String) -> void:
 	vbox.add_child(btn_row)
 
 	var cancel_btn := Button.new()
-	cancel_btn.text = "✕  Cancel"
+	cancel_btn.text = "Cancel"
 	cancel_btn.add_theme_font_size_override("font_size", 26)
 	cancel_btn.add_theme_color_override("font_color", Color.WHITE)
 	cancel_btn.custom_minimum_size = Vector2(160, 70)
@@ -484,7 +497,9 @@ func _show_unlock_dialog(scene_name: String) -> void:
 
 	if can_afford:
 		var confirm_btn := Button.new()
-		confirm_btn.text = "✓  Unlock (-3 ⭐)"
+		confirm_btn.icon = preload("res://assets/sprites/ui/star_filled.png")
+		confirm_btn.add_theme_constant_override("icon_max_width", 28)
+		confirm_btn.text = "Unlock (-3)"
 		confirm_btn.add_theme_font_size_override("font_size", 26)
 		confirm_btn.add_theme_color_override("font_color", Color.WHITE)
 		confirm_btn.custom_minimum_size = Vector2(220, 70)
