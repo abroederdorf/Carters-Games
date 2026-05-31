@@ -16,6 +16,7 @@ on:
 
 jobs:
   export:
+    if: ${{ inputs.target != 'testing' }}
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6.2
