@@ -42,6 +42,7 @@ const DISPLAY_NAMES: Dictionary = {
 }
 
 var current_scene_name: String = ""
+var last_select_page: int = 0
 var hint_stars: int = 0
 var _progress: Dictionary = {}
 

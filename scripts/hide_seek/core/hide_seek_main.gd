@@ -19,9 +19,12 @@ var _page_vboxes: Array[VBoxContainer] = []
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_ui()
+	_current_page = HideSeekState.last_select_page
 	_update_pagination_ui()
 	await get_tree().process_frame
 	_fit_pages_to_scroll()
+	await get_tree().process_frame
+	_scroll.scroll_horizontal = int(_current_page * _page_width)
 	_scroll.resized.connect(_fit_pages_to_scroll)
 
 
@@ -353,6 +356,7 @@ func _on_back_pressed() -> void:
 
 func _on_scene_pressed(scene_name: String) -> void:
 	AudioManager.play_sfx("pop")
+	HideSeekState.last_select_page = _current_page
 	HideSeekState.current_scene_name = scene_name
 	if ResourceLoader.exists("res://scenes/hide_seek/HideSeekGame.tscn"):
 		get_tree().change_scene_to_file("res://scenes/hide_seek/HideSeekGame.tscn")
@@ -430,7 +434,14 @@ func _show_unlock_dialog(scene_name: String) -> void:
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(title)
 
-	# Cost row
+	# "Unlock for X stars" label
+	var unlock_lbl := Label.new()
+	unlock_lbl.text = "Unlock for %d stars" % HideSeekState.UNLOCK_STAR_COST
+	unlock_lbl.add_theme_font_size_override("font_size", 24)
+	unlock_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(unlock_lbl)
+
+	# Stars available row
 	var cost_row := HBoxContainer.new()
 	cost_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	cost_row.add_theme_constant_override("separation", 10)
@@ -438,28 +449,32 @@ func _show_unlock_dialog(scene_name: String) -> void:
 
 	var star_icon := TextureRect.new()
 	star_icon.texture = preload("res://assets/sprites/ui/star_filled.png")
-	star_icon.custom_minimum_size = Vector2(36, 36)
+	star_icon.custom_minimum_size = Vector2(32, 32)
 	star_icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	star_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	cost_row.add_child(star_icon)
 
 	var cost_lbl := Label.new()
-	cost_lbl.text = "%d / %d" % [HideSeekState.hint_stars, HideSeekState.UNLOCK_STAR_COST]
-	cost_lbl.add_theme_font_size_override("font_size", 28)
-	cost_lbl.add_theme_color_override("font_color", Color.YELLOW if can_afford else Color(0.6, 0.6, 0.6))
+	cost_lbl.text = "You have %d stars" % HideSeekState.hint_stars
+	cost_lbl.add_theme_font_size_override("font_size", 24)
+	cost_lbl.add_theme_color_override("font_color", Color.YELLOW if can_afford else Color(0.8, 0.3, 0.3))
 	cost_row.add_child(cost_lbl)
 
 	# Buttons
 	var btn_row := HBoxContainer.new()
 	btn_row.alignment = BoxContainer.ALIGNMENT_CENTER
-	btn_row.add_theme_constant_override("separation", 30)
+	btn_row.add_theme_constant_override("separation", 20)
 	vbox.add_child(btn_row)
 
 	var cancel_btn := Button.new()
-	cancel_btn.text = "✕"
-	cancel_btn.add_theme_font_size_override("font_size", 32)
-	cancel_btn.custom_minimum_size = Vector2(100, 70)
+	cancel_btn.text = "✕  Cancel"
+	cancel_btn.add_theme_font_size_override("font_size", 26)
+	cancel_btn.add_theme_color_override("font_color", Color.WHITE)
+	cancel_btn.custom_minimum_size = Vector2(160, 70)
 	cancel_btn.focus_mode = Control.FOCUS_NONE
+	cancel_btn.add_theme_stylebox_override("normal", _dialog_btn_style(Color(0.55, 0.1, 0.1), Color(0.75, 0.2, 0.2)))
+	cancel_btn.add_theme_stylebox_override("hover", _dialog_btn_style(Color(0.65, 0.15, 0.15), Color(0.75, 0.2, 0.2)))
+	cancel_btn.add_theme_stylebox_override("pressed", _dialog_btn_style(Color(0.4, 0.05, 0.05), Color(0.75, 0.2, 0.2)))
 	cancel_btn.pressed.connect(func() -> void:
 		AudioManager.play_sfx("pop")
 		panel.queue_free()
@@ -469,10 +484,14 @@ func _show_unlock_dialog(scene_name: String) -> void:
 
 	if can_afford:
 		var confirm_btn := Button.new()
-		confirm_btn.text = "✓"
-		confirm_btn.add_theme_font_size_override("font_size", 32)
-		confirm_btn.custom_minimum_size = Vector2(100, 70)
+		confirm_btn.text = "✓  Unlock (-3 ⭐)"
+		confirm_btn.add_theme_font_size_override("font_size", 26)
+		confirm_btn.add_theme_color_override("font_color", Color.WHITE)
+		confirm_btn.custom_minimum_size = Vector2(220, 70)
 		confirm_btn.focus_mode = Control.FOCUS_NONE
+		confirm_btn.add_theme_stylebox_override("normal", _dialog_btn_style(Color(0.1, 0.45, 0.15), Color(0.2, 0.65, 0.25)))
+		confirm_btn.add_theme_stylebox_override("hover", _dialog_btn_style(Color(0.15, 0.55, 0.2), Color(0.2, 0.65, 0.25)))
+		confirm_btn.add_theme_stylebox_override("pressed", _dialog_btn_style(Color(0.05, 0.3, 0.1), Color(0.2, 0.65, 0.25)))
 		confirm_btn.pressed.connect(func() -> void:
 			AudioManager.play_sfx("pop")
 			panel.queue_free()
@@ -483,9 +502,22 @@ func _show_unlock_dialog(scene_name: String) -> void:
 		btn_row.add_child(confirm_btn)
 
 
+func _dialog_btn_style(bg: Color, border: Color) -> StyleBoxFlat:
+	var s := StyleBoxFlat.new()
+	s.bg_color = bg
+	s.border_color = border
+	s.set_border_width_all(3)
+	s.set_corner_radius_all(14)
+	s.content_margin_left = 16
+	s.content_margin_right = 16
+	s.content_margin_top = 10
+	s.content_margin_bottom = 10
+	return s
+
+
 func _rebuild_pages() -> void:
 	for child in _pages_container.get_children():
-		child.queue_free()
+		child.free()
 	_page_vboxes.clear()
 
 	var scenes := HideSeekState.SCENE_ORDER
@@ -513,5 +545,12 @@ func _rebuild_pages() -> void:
 					empty.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 					hbox.add_child(empty)
 
+	# Apply the known page width immediately so layout has the right sizes
+	if _page_width > 0:
+		for page in _page_vboxes:
+			page.custom_minimum_size.x = _page_width
+
+	# Wait for the layout engine to process the sizes, then snap scroll directly
 	await get_tree().process_frame
-	_fit_pages_to_scroll()
+	await get_tree().process_frame
+	_scroll.scroll_horizontal = int(_current_page * _page_width)
