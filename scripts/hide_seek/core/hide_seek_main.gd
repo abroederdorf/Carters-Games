@@ -75,9 +75,25 @@ func _build_ui() -> void:
 	title.add_theme_color_override("font_color", Color(0.04, 0.12, 0.28, 1))
 	header.add_child(title)
 
-	var pad_r := Control.new()
-	pad_r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	header.add_child(pad_r)
+	var right_area := HBoxContainer.new()
+	right_area.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	right_area.alignment = BoxContainer.ALIGNMENT_END
+	right_area.add_theme_constant_override("separation", 8)
+	header.add_child(right_area)
+
+	var header_star := TextureRect.new()
+	header_star.texture = preload("res://assets/sprites/ui/star_filled.png")
+	header_star.custom_minimum_size = Vector2(40, 40)
+	header_star.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	header_star.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	right_area.add_child(header_star)
+
+	var star_count_lbl := Label.new()
+	star_count_lbl.text = str(HideSeekState.hint_stars)
+	star_count_lbl.add_theme_font_size_override("font_size", 40)
+	star_count_lbl.add_theme_color_override("font_color", Color(0.04, 0.12, 0.28, 1))
+	star_count_lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	right_area.add_child(star_count_lbl)
 
 	var mute_btn := Button.new()
 	mute_btn.flat = true
