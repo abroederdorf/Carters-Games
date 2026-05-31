@@ -285,6 +285,34 @@
       "tags": [
         "ground"
       ]
+    },
+    "scissors": {
+      "desc": "silver haircutting scissors with pointed blades",
+      "type": "object",
+      "tags": [
+        "ground"
+      ]
+    },
+    "clock": {
+      "desc": "round wall clock with a white face and black numbers",
+      "type": "object",
+      "tags": [
+        "structure"
+      ]
+    },
+    "goldfish_bowl": {
+      "desc": "round glass bowl with blue water and one orange fish",
+      "type": "object",
+      "tags": [
+        "structure"
+      ]
+    },
+    "trash_can": {
+      "desc": "silver metal bin with a domed lid",
+      "type": "object",
+      "tags": [
+        "ground"
+      ]
     }
   },
   "themes": {
@@ -1635,11 +1663,7 @@
         },
         {
           "name": "goldfish_bowl",
-          "desc": "round glass bowl with blue water and one orange fish",
-          "type": "object",
-          "tags": [
-            "structure"
-          ]
+          "shared": "goldfish_bowl"
         },
         {
           "name": "parrot",
@@ -2019,11 +2043,7 @@
         },
         {
           "name": "trash_can",
-          "desc": "silver metal bin with a domed lid",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "trash_can"
         },
         {
           "name": "stroller",
@@ -7331,6 +7351,163 @@
         {
           "name": "trophy",
           "shared": "trophy"
+        }
+      ]
+    },
+    "beauty_salon": {
+      "scene": "Children's cartoon image of a busy beauty salon. Styling stations with large mirrors, shelves of colorful products, a row of hair dryers on the wall, a reception desk with a tip jar, swept-up hair on the floor. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "items": [
+        {
+          "name": "coffee_cup",
+          "shared": "coffee_cup"
+        },
+        {
+          "name": "scissors",
+          "shared": "scissors"
+        },
+        {
+          "name": "clock",
+          "shared": "clock"
+        },
+        {
+          "name": "goldfish_bowl",
+          "shared": "goldfish_bowl"
+        },
+        {
+          "name": "trash_can",
+          "shared": "trash_can"
+        },
+        {
+          "name": "hair_dryer",
+          "desc": "handheld hair dryer, pink, blowing air",
+          "type": "object",
+          "tags": [
+            "ground",
+            "structure"
+          ]
+        },
+        {
+          "name": "mirror",
+          "desc": "large oval wall mirror with a decorative frame",
+          "type": "object",
+          "tags": [
+            "structure"
+          ]
+        },
+        {
+          "name": "comb",
+          "desc": "wide-tooth styling comb, yellow plastic",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "hairbrush",
+          "desc": "oval paddle brush with black bristles",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "curling_iron",
+          "desc": "pink curling iron with a clamp",
+          "type": "object",
+          "tags": [
+            "ground",
+            "structure"
+          ]
+        },
+        {
+          "name": "shampoo_bottle",
+          "desc": "round shampoo bottle with a flip cap",
+          "type": "object",
+          "tags": [
+            "ground",
+            "structure"
+          ]
+        },
+        {
+          "name": "hair_dye_bottle",
+          "desc": "salon color bottle with an applicator tip",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "spray_bottle",
+          "desc": "clear spray bottle with a trigger nozzle",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "rollers",
+          "desc": "set of pink foam hair rollers",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "nail_polish",
+          "desc": "small bottle of bright red nail polish",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "nail_file",
+          "desc": "pink emery board nail file",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "hair_clip",
+          "desc": "large claw hair clip, bright purple",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "headband",
+          "desc": "stretchy pink spa headband",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "tip_jar",
+          "desc": "glass jar with coins and bills inside",
+          "type": "object",
+          "tags": [
+            "ground",
+            "structure"
+          ]
+        },
+        {
+          "name": "broom",
+          "desc": "classic straw broom with a wooden handle",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "hair_buzzer",
+          "desc": "black electric hair clipper with a cord",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
         }
       ]
     }

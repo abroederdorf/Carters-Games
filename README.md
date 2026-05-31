@@ -20,7 +20,7 @@ Tap-to-cast fishing game with math and spelling educational modes. Features mult
 ### Find It! (Hide & Seek)
 Where's Waldo-style hidden object game. Pan and zoom a busy illustrated scene and tap items from a thumbnail strip to find them. Scenes are data-driven — adding new scenes requires no code changes.
 
-- 45 scenes planned, each with 15–20 items
+- 46 scenes planned, each with 15–20 items
 - Star rating system (time-based), hint system using stars as currency
 - Scene data stored in `resources/hide_seek/<scene>.tres`
 
@@ -86,18 +86,21 @@ All deployments are manual and controlled. Trigger from the **Actions** tab → 
 
 | Target | What happens |
 |--------|-------------|
-| `itch` | Export → deploy to itch.io (use for testing) |
+| `testing` | Dispatches to the [Carters-Games-Testing](https://github.com/abroederdorf/Carters-Games-Testing) repo, which exports from the current branch and deploys to the private itch.io testing channel — no Godot export runs here |
+| `itch` | Export → deploy to the public itch.io channel |
 | `pages` | Export → deploy to GitHub Pages (use for releases) |
-| `both` | Export once → deploy to both from the same build |
+| `both` | Export once → deploy to both itch.io and GitHub Pages from the same build |
 
-**Workflow:** `itch` and `pages` share a single export job that uploads an artifact, then one or two deploy jobs download and push it. Picking `both` means GitHub Pages gets the exact same binary you tested on itch.io.
+**Workflow:** `itch`, `pages`, and `both` share a single export job that uploads an artifact, then one or two deploy jobs download and push it. Picking `both` means GitHub Pages gets the exact same binary you tested on itch.io.
 
 **Typical flow:**
-1. Work is merged and ready to test → run workflow → pick `itch`
-2. Test on itch.io — looks good → run workflow → pick `both` to sync GitHub Pages to the same build
+1. Work is on a feature branch and ready to preview → run workflow → pick `testing`
+2. Test on the private itch.io testing channel — looks good → merge PR to `main`
+3. Run workflow on `main` → pick `both` to deploy to public itch.io and sync GitHub Pages
 
 Required GitHub secrets (repo Settings → Secrets and variables → Actions):
 - `BUTLER_CREDENTIALS` — itch.io API key (from [itch.io account settings](https://itch.io/user/settings/api-keys))
+- `STAGING_PAT` — personal access token with `repo` scope, used to dispatch to the testing repo
 
 GitHub Pages deployment uses built-in GitHub Actions permissions — no extra secrets needed.
 
