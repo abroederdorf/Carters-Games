@@ -57,7 +57,7 @@ jobs:
           repository-name: abroederdorf/carters-games-testing
           branch: gh-pages
           folder: web/
-          ssh-key: ${{ secrets.STAGING_DEPLOY_KEY }}
+          token: ${{ secrets.STAGING_PAT }}
 
   deploy-itch:
     needs: export
