@@ -7,6 +7,6 @@
 script = ExtResource("1_gvpof")
 item_name = "volcano"
 thumbnail = ExtResource("2_dbq24")
-position = Vector2(300, 400)
-radius = 120.0
-tags = Array[String](["ground"])
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
