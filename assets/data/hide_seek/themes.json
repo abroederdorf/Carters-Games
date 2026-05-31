@@ -1194,7 +1194,7 @@
           ]
         },
         {
-          "name": "dino_egg",
+          "name": "dinosaur_egg",
           "desc": "large spotted dinosaur egg in a nest of leaves",
           "type": "object",
           "tags": [
@@ -1224,12 +1224,7 @@
         },
         {
           "name": "palm_tree",
-          "desc": "prehistoric palm tree with large drooping leaves",
-          "type": "object",
-          "tags": [
-            "ground",
-            "sky"
-          ]
+          "shared": "palm_tree"
         },
         {
           "name": "fern",
@@ -1298,12 +1293,7 @@
         },
         {
           "name": "lizard",
-          "desc": "small bright green lizard with blue-striped tail",
-          "type": "character",
-          "tags": [
-            "ground",
-            "foliage"
-          ]
+          "shared": "lizard_orange"
         },
         {
           "name": "mushroom",
@@ -1311,12 +1301,7 @@
         },
         {
           "name": "scorpion",
-          "desc": "brown scorpion with raised stinger tail",
-          "type": "character",
-          "tags": [
-            "ground",
-            "shadow"
-          ]
+          "shared": "scorpion"
         },
         {
           "name": "dinosaur_skull",

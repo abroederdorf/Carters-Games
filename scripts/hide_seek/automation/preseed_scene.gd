@@ -76,6 +76,7 @@ func _init() -> void:
 		item.position = ITEM_START_POS
 		item.radius = 60.0
 		item.base_scale = ITEM_DEFAULT_SCALE
+		item.tags.clear()
 		
 		# Thumbnail resolution
 		var thumb_path := ""
@@ -107,14 +108,13 @@ func _init() -> void:
 	
 	scene_data.items = synced_items
 	
-	# 3. Pre-seed Anchors (Offset Grid)
+	# 3. Pre-seed Anchors (packed at top so bottom-up placement has clear working space)
 	scene_data.anchors.clear()
-	var cols := 8
-	var rows := 7
+	var cols := 10
 	var bg_w := float(scene_data.background_image.get_width()) if scene_data.background_image else 1920.0
-	var bg_h := float(scene_data.background_image.get_height()) if scene_data.background_image else 1080.0
+	var rows := int(ceil(float(ANCHOR_COUNT) / cols))
 	var spacing_x := bg_w / (cols + 1)
-	var spacing_y := bg_h / (rows + 1)
+	var spacing_y := 60.0
 	var offset_shift := spacing_x * 0.5
 
 	var count := 0
@@ -127,8 +127,9 @@ func _init() -> void:
 			if r % 2 == 1:
 				x += offset_shift
 				if x > bg_w - offset_shift: x -= spacing_x
-			anchor.position = Vector2(x, spacing_y * (r + 1))
+			anchor.position = Vector2(x, 40.0 + spacing_y * r)
 			anchor.radius = ANCHOR_DEFAULT_RADIUS
+			anchor.tags.clear()
 			scene_data.anchors.append(anchor)
 			count += 1
 	
