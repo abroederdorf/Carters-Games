@@ -4,6 +4,7 @@ const SAVE_PATH = "user://find_it_progress.json"
 const UNLOCK_STAR_COST := 3
 
 const SCENE_ORDER: Array[String] = [
+	"classroom",
 	"pet_shop",
 	"circus",
 	"dinosaur_land",
@@ -24,6 +25,7 @@ const SCENE_ORDER: Array[String] = [
 ]
 
 const DISPLAY_NAMES: Dictionary = {
+	"classroom": "Classroom",
 	"beauty_salon": "Beauty Salon",
 	"kayaking": "Kayaking",
 	"baseball_game": "Baseball Game",
