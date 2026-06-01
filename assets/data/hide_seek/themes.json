@@ -294,7 +294,7 @@
       ]
     },
     "clock": {
-      "desc": "round wall clock with a white face and black numbers",
+      "desc": "round wall clock with a white face, bold red frame, and black numerals",
       "type": "object",
       "tags": [
         "structure"
@@ -7364,7 +7364,7 @@
       ]
     },
     "beauty_salon": {
-      "scene": "Children's cartoon image of a busy beauty salon. Styling stations with large mirrors, shelves of colorful products, a row of hair dryers on the wall, a reception desk with a tip jar, swept-up hair on the floor. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's book illustration of a large, busy beauty salon packed with things to find. A front reception counter on one side has a cash register, a tip jar, and a small goldfish bowl. Behind the counter, wall shelves hold colorful bottles of shampoo and hair dye with gaps between them and a round wall clock above. In the middle of the salon are two hair styling stations — tall chairs facing large oval mirrors with cluttered tables holding scissors, combs, brushes, clips, curling irons, and hair dryers; one chair is shaped like a bright red firetruck for kids. On the far side is a hair washing station with a reclined chair and a deep sink, and a nail station with a small table, bottles of nail polish, and a lamp. The scene is wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — swept-up hair on the floor, a broom leaning in the corner, framed hairstyle posters on the walls, a spray bottle hanging from a hook, a trash can near the styling stations. Friendly and cheerful mood, suitable for children age 5–8.",
       "items": [
         {
           "name": "coffee_cup",
@@ -7388,7 +7388,7 @@
         },
         {
           "name": "hair_dryer",
-          "desc": "handheld hair dryer, pink, blowing air",
+          "desc": "handheld hair dryer, teal body with a silver nozzle",
           "type": "object",
           "tags": [
             "ground",
@@ -7397,7 +7397,7 @@
         },
         {
           "name": "mirror",
-          "desc": "large oval wall mirror with a decorative frame",
+          "desc": "large oval wall mirror with a gold decorative frame",
           "type": "object",
           "tags": [
             "structure"
@@ -7405,7 +7405,7 @@
         },
         {
           "name": "comb",
-          "desc": "wide-tooth styling comb, yellow plastic",
+          "desc": "wide-tooth styling comb, bright orange plastic",
           "type": "object",
           "tags": [
             "ground"
@@ -7413,7 +7413,7 @@
         },
         {
           "name": "hairbrush",
-          "desc": "oval paddle brush with black bristles",
+          "desc": "oval paddle brush with a green handle and black bristles",
           "type": "object",
           "tags": [
             "ground"
@@ -7421,7 +7421,7 @@
         },
         {
           "name": "curling_iron",
-          "desc": "pink curling iron with a clamp",
+          "desc": "curling iron with a clamp, deep purple body with a silver barrel",
           "type": "object",
           "tags": [
             "ground",
@@ -7430,7 +7430,7 @@
         },
         {
           "name": "shampoo_bottle",
-          "desc": "round shampoo bottle with a flip cap",
+          "desc": "round shampoo bottle with a flip cap, lime green with a white label",
           "type": "object",
           "tags": [
             "ground",
@@ -7439,7 +7439,7 @@
         },
         {
           "name": "hair_dye_bottle",
-          "desc": "salon color bottle with an applicator tip",
+          "desc": "salon color applicator bottle with a pointed tip, amber orange body",
           "type": "object",
           "tags": [
             "ground"
@@ -7447,7 +7447,7 @@
         },
         {
           "name": "spray_bottle",
-          "desc": "clear spray bottle with a trigger nozzle",
+          "desc": "spray bottle with a trigger nozzle, sky blue translucent body",
           "type": "object",
           "tags": [
             "ground"
@@ -7455,7 +7455,7 @@
         },
         {
           "name": "rollers",
-          "desc": "set of pink foam hair rollers",
+          "desc": "set of foam hair rollers, mixed colors — yellow, lavender, and coral",
           "type": "object",
           "tags": [
             "ground"
@@ -7471,7 +7471,7 @@
         },
         {
           "name": "nail_file",
-          "desc": "pink emery board nail file",
+          "desc": "emery board nail file, coral with a white grit surface",
           "type": "object",
           "tags": [
             "ground"
@@ -7487,7 +7487,7 @@
         },
         {
           "name": "headband",
-          "desc": "stretchy pink spa headband",
+          "desc": "stretchy spa headband, mint green with a white terry texture",
           "type": "object",
           "tags": [
             "ground"
@@ -7495,7 +7495,7 @@
         },
         {
           "name": "tip_jar",
-          "desc": "glass jar with coins and bills inside",
+          "desc": "glass jar with coins and folded dollar bills inside, clear glass with a gold rim",
           "type": "object",
           "tags": [
             "ground",
@@ -7504,7 +7504,7 @@
         },
         {
           "name": "broom",
-          "desc": "classic straw broom with a wooden handle",
+          "desc": "modern broom with a bright blue plastic handle and teal synthetic bristles",
           "type": "object",
           "tags": [
             "ground"
@@ -7512,7 +7512,7 @@
         },
         {
           "name": "hair_buzzer",
-          "desc": "black electric hair clipper with a cord",
+          "desc": "electric hair clipper with a cord, black body with an orange accent stripe",
           "type": "object",
           "tags": [
             "ground"
