@@ -386,7 +386,7 @@ item_name = "coffee_cup"
 thumbnail = ExtResource("4_juybb")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.5
 tags = Array[String](["counter", "table"])
 
 [sub_resource type="Resource" id="Resource_lhnml"]
@@ -395,7 +395,7 @@ item_name = "scissors"
 thumbnail = ExtResource("5_8qrk8")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4375
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_gl886"]
@@ -404,7 +404,7 @@ item_name = "clock"
 thumbnail = ExtResource("6_rikws")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.6875
 tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_xxkc3"]
@@ -413,7 +413,7 @@ item_name = "goldfish_bowl"
 thumbnail = ExtResource("7_uf0ye")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.625
 tags = Array[String](["counter", "shelf"])
 
 [sub_resource type="Resource" id="Resource_5l8cd"]
@@ -422,7 +422,7 @@ item_name = "trash_can"
 thumbnail = ExtResource("8_vqgq5")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 1.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_d37xc"]
@@ -431,7 +431,7 @@ item_name = "hair_dryer"
 thumbnail = ExtResource("9_vvy88")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.5
 tags = Array[String](["table", "wall"])
 
 [sub_resource type="Resource" id="Resource_eq51l"]
@@ -440,7 +440,7 @@ item_name = "mirror"
 thumbnail = ExtResource("10_cdllc")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.625
 tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_mel3v"]
@@ -449,7 +449,7 @@ item_name = "comb"
 thumbnail = ExtResource("11_ejn67")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.30000000000000004
+base_scale = 0.375
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_g055q"]
@@ -458,7 +458,7 @@ item_name = "hairbrush"
 thumbnail = ExtResource("12_wk6fa")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4375
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_gf1ce"]
@@ -467,7 +467,7 @@ item_name = "curling_iron"
 thumbnail = ExtResource("13_e5vou")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4375
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_rkjsl"]
@@ -476,7 +476,7 @@ item_name = "shampoo_bottle"
 thumbnail = ExtResource("14_i1wm8")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4375
 tags = Array[String](["table", "shelf"])
 
 [sub_resource type="Resource" id="Resource_vfgl2"]
@@ -485,7 +485,7 @@ item_name = "hair_dye_bottle"
 thumbnail = ExtResource("15_jsm26")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.30000000000000004
+base_scale = 0.5
 tags = Array[String](["table", "shelf"])
 
 [sub_resource type="Resource" id="Resource_2e3ua"]
@@ -494,7 +494,7 @@ item_name = "spray_bottle"
 thumbnail = ExtResource("16_cithn")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4375
 tags = Array[String](["table", "shelf"])
 
 [sub_resource type="Resource" id="Resource_b1elr"]
@@ -503,7 +503,7 @@ item_name = "rollers"
 thumbnail = ExtResource("17_5vdi2")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.625
 tags = Array[String](["table", "small"])
 
 [sub_resource type="Resource" id="Resource_cpyc7"]
@@ -512,7 +512,7 @@ item_name = "nail_polish"
 thumbnail = ExtResource("18_v3ybs")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.30000000000000004
+base_scale = 0.375
 tags = Array[String](["table", "shelf"])
 
 [sub_resource type="Resource" id="Resource_vvnpe"]
@@ -521,7 +521,7 @@ item_name = "nail_file"
 thumbnail = ExtResource("19_w47co")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.30000000000000004
+base_scale = 0.375
 tags = Array[String](["table", "small"])
 
 [sub_resource type="Resource" id="Resource_urp6v"]
@@ -530,7 +530,7 @@ item_name = "hair_clip"
 thumbnail = ExtResource("20_qbxav")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.2
+base_scale = 0.4375
 tags = Array[String](["table", "small"])
 
 [sub_resource type="Resource" id="Resource_0bo50"]
@@ -539,7 +539,7 @@ item_name = "headband"
 thumbnail = ExtResource("21_c8unp")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4375
 tags = Array[String](["table", "small"])
 
 [sub_resource type="Resource" id="Resource_sio3p"]
@@ -548,7 +548,7 @@ item_name = "tip_jar"
 thumbnail = ExtResource("22_kuye5")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4
+base_scale = 0.5
 tags = Array[String](["counter", "table"])
 
 [sub_resource type="Resource" id="Resource_g8uf4"]
@@ -557,7 +557,7 @@ item_name = "broom"
 thumbnail = ExtResource("23_jlgc8")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.65
+base_scale = 1.1875
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_tmx64"]
@@ -566,7 +566,7 @@ item_name = "hair_buzzer"
 thumbnail = ExtResource("24_iqd24")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.35
+base_scale = 0.4375
 tags = Array[String](["table"])
 
 [resource]
