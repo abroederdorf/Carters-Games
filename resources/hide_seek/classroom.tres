@@ -1,0 +1,600 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_woln3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/bg_classroom.webp" id="2_2fgq4"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_41v6v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/book.webp" id="4_0xxk7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/pencil.webp" id="5_k77gl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/ruler.webp" id="6_3h238"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/globe.webp" id="7_7knn8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/stapler.webp" id="8_x3dka"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/apple.webp" id="9_mmvwe"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/backpack.webp" id="10_h3t87"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/scissors.webp" id="11_g1el3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/paint_jar.webp" id="12_hfant"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/clock.webp" id="13_1v4qb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/paper_airplane.webp" id="14_ib1h2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/glue_bottle.webp" id="15_eculi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/lunch_box.webp" id="16_3vtqn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/marker.webp" id="17_kdrqq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/calculator.webp" id="18_3gks7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/crayons.webp" id="19_gw6lu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/coffee_cup.webp" id="20_v87e3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/potted_plant.webp" id="21_xcrve"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/juice_box.webp" id="22_aqpku"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/tape_dispenser.webp" id="23_h7bgf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/goldfish_bowl.webp" id="24_rj5es"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="25_u8k5k"]
+
+[sub_resource type="Resource" id="Resource_o3vo7"]
+script = ExtResource("1_woln3")
+id = 0
+position = Vector2(1548.9423, 617.04236)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_jsb25"]
+script = ExtResource("1_woln3")
+id = 1
+position = Vector2(535.3983, 71.618774)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_vcagh"]
+script = ExtResource("1_woln3")
+id = 2
+position = Vector2(1211.0807, 257.37903)
+radius = 40.0
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_qyu83"]
+script = ExtResource("1_woln3")
+id = 3
+position = Vector2(768.5144, 449.06805)
+radius = 40.0
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_yn2x2"]
+script = ExtResource("1_woln3")
+id = 4
+position = Vector2(331.87573, 931.2543)
+radius = 40.0
+visual_scale = 1.2
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_17ctf"]
+script = ExtResource("1_woln3")
+id = 5
+position = Vector2(1936.1376, 178.33203)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["cabinet"])
+
+[sub_resource type="Resource" id="Resource_q1fbd"]
+script = ExtResource("1_woln3")
+id = 6
+position = Vector2(2098.1375, 498.4719)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["cabinet"])
+
+[sub_resource type="Resource" id="Resource_qhb5r"]
+script = ExtResource("1_woln3")
+id = 7
+position = Vector2(2236.4263, 537.9954)
+radius = 40.0
+visual_scale = 0.8999999999999999
+tags = Array[String](["shelf"])
+
+[sub_resource type="Resource" id="Resource_rtfbu"]
+script = ExtResource("1_woln3")
+id = 8
+position = Vector2(2384.5947, 573.56635)
+radius = 40.0
+tags = Array[String](["shelf"])
+
+[sub_resource type="Resource" id="Resource_wpok8"]
+script = ExtResource("1_woln3")
+id = 9
+position = Vector2(2546.5962, 620.9945)
+radius = 40.0
+tags = Array[String](["shelf"])
+
+[sub_resource type="Resource" id="Resource_6ckf8"]
+script = ExtResource("1_woln3")
+id = 10
+position = Vector2(2739.3005, 667.1612)
+radius = 40.0
+tags = Array[String](["shelf"])
+
+[sub_resource type="Resource" id="Resource_a6le1"]
+script = ExtResource("1_woln3")
+id = 11
+position = Vector2(1494.597, 477.4491)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["cabinet"])
+
+[sub_resource type="Resource" id="Resource_livrr"]
+script = ExtResource("1_woln3")
+id = 12
+position = Vector2(1330.6052, 475.4727)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["cabinet"])
+
+[sub_resource type="Resource" id="Resource_cuokq"]
+script = ExtResource("1_woln3")
+id = 13
+position = Vector2(984.84973, 179.04677)
+radius = 40.0
+visual_scale = 0.75
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_nbt40"]
+script = ExtResource("1_woln3")
+id = 14
+position = Vector2(1387.8845, 779.8036)
+radius = 40.0
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_nb6c5"]
+script = ExtResource("1_woln3")
+id = 15
+position = Vector2(492.88272, 746.20807)
+radius = 40.0
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_anr3y"]
+script = ExtResource("1_woln3")
+id = 16
+position = Vector2(998.6544, 619.7335)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_x5gio"]
+script = ExtResource("1_woln3")
+id = 17
+position = Vector2(2095.161, 619.73376)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_bks1u"]
+script = ExtResource("1_woln3")
+id = 18
+position = Vector2(1346.3612, 619.7331)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_qrgiy"]
+script = ExtResource("1_woln3")
+id = 19
+position = Vector2(2300.6248, 781.7796)
+radius = 40.0
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_7rg31"]
+script = ExtResource("1_woln3")
+id = 20
+position = Vector2(1568.6993, 776.5656)
+radius = 40.0
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_irqqc"]
+script = ExtResource("1_woln3")
+id = 21
+position = Vector2(699.3817, 756.80396)
+radius = 40.0
+visual_scale = 0.8999999999999999
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_6lm4i"]
+script = ExtResource("1_woln3")
+id = 22
+position = Vector2(567.00116, 863.5174)
+radius = 40.0
+visual_scale = 1.25
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_3niy2"]
+script = ExtResource("1_woln3")
+id = 23
+position = Vector2(683.5591, 936.636)
+radius = 40.0
+visual_scale = 1.25
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_kupvx"]
+script = ExtResource("1_woln3")
+id = 24
+position = Vector2(2459.7068, 446.5452)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_g05n5"]
+script = ExtResource("1_woln3")
+id = 25
+position = Vector2(778.37616, 239.04681)
+radius = 40.0
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_bhvm1"]
+script = ExtResource("1_woln3")
+id = 26
+position = Vector2(1766.2189, 179.76172)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_fdilc"]
+script = ExtResource("1_woln3")
+id = 27
+position = Vector2(1461.9518, 183.71414)
+radius = 40.0
+visual_scale = 0.8999999999999999
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_mrr7e"]
+script = ExtResource("1_woln3")
+id = 28
+position = Vector2(2163.3179, 136.28593)
+radius = 40.0
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_r0f1s"]
+script = ExtResource("1_woln3")
+id = 29
+position = Vector2(2392.4915, 65.14372)
+radius = 40.0
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_wjjeg"]
+script = ExtResource("1_woln3")
+id = 30
+position = Vector2(2456.7717, 221.97612)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_1wl3k"]
+script = ExtResource("1_woln3")
+id = 31
+position = Vector2(1087.6031, 1358.2755)
+radius = 40.0
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_tp2im"]
+script = ExtResource("1_woln3")
+id = 32
+position = Vector2(913.7323, 1081.6111)
+radius = 40.0
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_5ydsr"]
+script = ExtResource("1_woln3")
+id = 33
+position = Vector2(287.42682, 1374.0846)
+radius = 40.0
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_d6dl2"]
+script = ExtResource("1_woln3")
+id = 34
+position = Vector2(1628.9202, 988.73096)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_lj8cy"]
+script = ExtResource("1_woln3")
+id = 35
+position = Vector2(1034.2257, 810.8756)
+radius = 40.0
+visual_scale = 0.6000000000000001
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_qcqx5"]
+script = ExtResource("1_woln3")
+id = 36
+position = Vector2(1763.2511, 682.4246)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["floor", "bag"])
+
+[sub_resource type="Resource" id="Resource_cxvp3"]
+script = ExtResource("1_woln3")
+id = 37
+position = Vector2(1253.5118, 1036.1593)
+radius = 40.0
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_aewnb"]
+script = ExtResource("1_woln3")
+id = 38
+position = Vector2(2371.7505, 1051.968)
+radius = 40.0
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_2pks1"]
+script = ExtResource("1_woln3")
+id = 39
+position = Vector2(2269.0117, 1348.3944)
+radius = 40.0
+tags = Array[String](["rug"])
+
+[sub_resource type="Resource" id="Resource_rliuy"]
+script = ExtResource("1_woln3")
+id = 40
+position = Vector2(1588.456, 1362.9431)
+radius = 40.0
+tags = Array[String](["rug"])
+
+[sub_resource type="Resource" id="Resource_0otby"]
+script = ExtResource("1_woln3")
+id = 41
+position = Vector2(2823.2615, 1141.6118)
+radius = 40.0
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_capfs"]
+script = ExtResource("1_woln3")
+id = 42
+position = Vector2(1205.1531, 693.0201)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["floor", "bag"])
+
+[sub_resource type="Resource" id="Resource_b2bx4"]
+script = ExtResource("1_woln3")
+id = 43
+position = Vector2(1934.1787, 862.9707)
+radius = 40.0
+tags = Array[String](["floor", "bag"])
+
+[sub_resource type="Resource" id="Resource_in0oe"]
+script = ExtResource("1_woln3")
+id = 44
+position = Vector2(1165.6227, 1161.3737)
+radius = 40.0
+tags = Array[String](["floor", "bag"])
+
+[sub_resource type="Resource" id="Resource_6s32m"]
+script = ExtResource("1_woln3")
+id = 45
+position = Vector2(1009.53345, 983.51764)
+radius = 40.0
+tags = Array[String](["floor", "bag"])
+
+[sub_resource type="Resource" id="Resource_4ln3j"]
+script = ExtResource("1_woln3")
+id = 46
+position = Vector2(142.19177, 1287.8478)
+radius = 40.0
+tags = Array[String](["floor"])
+
+[sub_resource type="Resource" id="Resource_c7ol7"]
+script = ExtResource("1_woln3")
+id = 47
+position = Vector2(1284.1393, 1333.2998)
+radius = 40.0
+visual_scale = 1.25
+tags = Array[String](["rug", "bag"])
+
+[sub_resource type="Resource" id="Resource_8rvgw"]
+script = ExtResource("1_woln3")
+id = 48
+position = Vector2(2744.1755, 1331.3234)
+radius = 40.0
+visual_scale = 1.25
+tags = Array[String](["rug", "bag"])
+
+[sub_resource type="Resource" id="Resource_c7qsl"]
+script = ExtResource("1_woln3")
+id = 49
+position = Vector2(1951.9098, 1268.0862)
+radius = 40.0
+visual_scale = 1.35
+tags = Array[String](["rug", "bag"])
+
+[sub_resource type="Resource" id="Resource_3tuil"]
+script = ExtResource("3_41v6v")
+item_name = "book"
+thumbnail = ExtResource("4_0xxk7")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["desk", "bag", "rug"])
+
+[sub_resource type="Resource" id="Resource_pbtfr"]
+script = ExtResource("3_41v6v")
+item_name = "pencil"
+thumbnail = ExtResource("5_k77gl")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["desk", "shelf", "floor"])
+
+[sub_resource type="Resource" id="Resource_x3nyc"]
+script = ExtResource("3_41v6v")
+item_name = "ruler"
+thumbnail = ExtResource("6_3h238")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["desk", "floor"])
+
+[sub_resource type="Resource" id="Resource_i5eb3"]
+script = ExtResource("3_41v6v")
+item_name = "globe"
+thumbnail = ExtResource("7_7knn8")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.55
+tags = Array[String](["shelf", "rug", "cabinet"])
+
+[sub_resource type="Resource" id="Resource_bg7ki"]
+script = ExtResource("3_41v6v")
+item_name = "stapler"
+thumbnail = ExtResource("8_x3dka")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["desk", "shelf"])
+
+[sub_resource type="Resource" id="Resource_wu5qj"]
+script = ExtResource("3_41v6v")
+item_name = "apple"
+thumbnail = ExtResource("9_mmvwe")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["desk", "shelf"])
+
+[sub_resource type="Resource" id="Resource_4ckra"]
+script = ExtResource("3_41v6v")
+item_name = "backpack"
+thumbnail = ExtResource("10_h3t87")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.65
+tags = Array[String](["bag"])
+
+[sub_resource type="Resource" id="Resource_hn6sy"]
+script = ExtResource("3_41v6v")
+item_name = "scissors"
+thumbnail = ExtResource("11_g1el3")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_hij8l"]
+script = ExtResource("3_41v6v")
+item_name = "paint_jar"
+thumbnail = ExtResource("12_hfant")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["desk", "shelf"])
+
+[sub_resource type="Resource" id="Resource_mk3wh"]
+script = ExtResource("3_41v6v")
+item_name = "clock"
+thumbnail = ExtResource("13_1v4qb")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_pue33"]
+script = ExtResource("3_41v6v")
+item_name = "paper_airplane"
+thumbnail = ExtResource("14_ib1h2")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["wall"])
+
+[sub_resource type="Resource" id="Resource_1u5ga"]
+script = ExtResource("3_41v6v")
+item_name = "glue_bottle"
+thumbnail = ExtResource("15_eculi")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["desk", "shelf"])
+
+[sub_resource type="Resource" id="Resource_02vqo"]
+script = ExtResource("3_41v6v")
+item_name = "lunch_box"
+thumbnail = ExtResource("16_3vtqn")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["rug", "desk", "bag"])
+
+[sub_resource type="Resource" id="Resource_t1ug5"]
+script = ExtResource("3_41v6v")
+item_name = "marker"
+thumbnail = ExtResource("17_kdrqq")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["desk", "floor"])
+
+[sub_resource type="Resource" id="Resource_4bgw3"]
+script = ExtResource("3_41v6v")
+item_name = "calculator"
+thumbnail = ExtResource("18_3gks7")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["desk"])
+
+[sub_resource type="Resource" id="Resource_da26o"]
+script = ExtResource("3_41v6v")
+item_name = "crayons"
+thumbnail = ExtResource("19_gw6lu")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["desk", "shelf", "floor"])
+
+[sub_resource type="Resource" id="Resource_u2xwi"]
+script = ExtResource("3_41v6v")
+item_name = "coffee_cup"
+thumbnail = ExtResource("20_v87e3")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["desk", "shelf", "cabinet"])
+
+[sub_resource type="Resource" id="Resource_qegf0"]
+script = ExtResource("3_41v6v")
+item_name = "potted_plant"
+thumbnail = ExtResource("21_xcrve")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["desk", "shelf", "cabinet"])
+
+[sub_resource type="Resource" id="Resource_qmjl2"]
+script = ExtResource("3_41v6v")
+item_name = "juice_box"
+thumbnail = ExtResource("22_aqpku")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["shelf", "rug"])
+
+[sub_resource type="Resource" id="Resource_5ypf5"]
+script = ExtResource("3_41v6v")
+item_name = "tape_dispenser"
+thumbnail = ExtResource("23_h7bgf")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["desk", "shelf", "floor"])
+
+[sub_resource type="Resource" id="Resource_xlfon"]
+script = ExtResource("3_41v6v")
+item_name = "goldfish_bowl"
+thumbnail = ExtResource("24_rj5es")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["desk", "shelf", "rug", "cabinet"])
+
+[resource]
+script = ExtResource("25_u8k5k")
+scene_name = "classroom"
+background_image = ExtResource("2_2fgq4")
+items = Array[ExtResource("3_41v6v")]([SubResource("Resource_3tuil"), SubResource("Resource_pbtfr"), SubResource("Resource_x3nyc"), SubResource("Resource_i5eb3"), SubResource("Resource_bg7ki"), SubResource("Resource_wu5qj"), SubResource("Resource_4ckra"), SubResource("Resource_hn6sy"), SubResource("Resource_hij8l"), SubResource("Resource_mk3wh"), SubResource("Resource_pue33"), SubResource("Resource_1u5ga"), SubResource("Resource_02vqo"), SubResource("Resource_t1ug5"), SubResource("Resource_4bgw3"), SubResource("Resource_da26o"), SubResource("Resource_u2xwi"), SubResource("Resource_qegf0"), SubResource("Resource_qmjl2"), SubResource("Resource_5ypf5"), SubResource("Resource_xlfon")])
+anchors = Array[ExtResource("1_woln3")]([SubResource("Resource_o3vo7"), SubResource("Resource_jsb25"), SubResource("Resource_vcagh"), SubResource("Resource_qyu83"), SubResource("Resource_yn2x2"), SubResource("Resource_17ctf"), SubResource("Resource_q1fbd"), SubResource("Resource_qhb5r"), SubResource("Resource_rtfbu"), SubResource("Resource_wpok8"), SubResource("Resource_6ckf8"), SubResource("Resource_a6le1"), SubResource("Resource_livrr"), SubResource("Resource_cuokq"), SubResource("Resource_nbt40"), SubResource("Resource_nb6c5"), SubResource("Resource_anr3y"), SubResource("Resource_x5gio"), SubResource("Resource_bks1u"), SubResource("Resource_qrgiy"), SubResource("Resource_7rg31"), SubResource("Resource_irqqc"), SubResource("Resource_6lm4i"), SubResource("Resource_3niy2"), SubResource("Resource_kupvx"), SubResource("Resource_g05n5"), SubResource("Resource_bhvm1"), SubResource("Resource_fdilc"), SubResource("Resource_mrr7e"), SubResource("Resource_r0f1s"), SubResource("Resource_wjjeg"), SubResource("Resource_1wl3k"), SubResource("Resource_tp2im"), SubResource("Resource_5ydsr"), SubResource("Resource_d6dl2"), SubResource("Resource_lj8cy"), SubResource("Resource_qcqx5"), SubResource("Resource_cxvp3"), SubResource("Resource_aewnb"), SubResource("Resource_2pks1"), SubResource("Resource_rliuy"), SubResource("Resource_0otby"), SubResource("Resource_capfs"), SubResource("Resource_b2bx4"), SubResource("Resource_in0oe"), SubResource("Resource_6s32m"), SubResource("Resource_4ln3j"), SubResource("Resource_c7ol7"), SubResource("Resource_8rvgw"), SubResource("Resource_c7qsl")])
+is_manual_edit = true
