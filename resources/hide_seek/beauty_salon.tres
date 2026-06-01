@@ -31,13 +31,13 @@ script = ExtResource("1_kahtu")
 id = 0
 position = Vector2(2088.2366, 1102.5289)
 radius = 40.0
-visual_scale = 0.75
+visual_scale = 0.8999999999999999
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_ky6md"]
 script = ExtResource("1_kahtu")
 id = 1
-position = Vector2(510.08942, 101.15278)
+position = Vector2(540.65875, 61.02128)
 radius = 40.0
 visual_scale = 0.7
 tags = Array[String](["wall"])
@@ -52,7 +52,7 @@ tags = Array[String](["table"])
 [sub_resource type="Resource" id="Resource_6ds2g"]
 script = ExtResource("1_kahtu")
 id = 3
-position = Vector2(1259.0005, 85.86457)
+position = Vector2(1329.6914, 227.28036)
 radius = 40.0
 tags = Array[String](["wall"])
 
@@ -66,28 +66,29 @@ tags = Array[String](["table"])
 [sub_resource type="Resource" id="Resource_gad6c"]
 script = ExtResource("1_kahtu")
 id = 5
-position = Vector2(462.2603, 1333.7634)
+position = Vector2(2237.18, 877.0292)
 radius = 40.0
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_rewar"]
 script = ExtResource("1_kahtu")
 id = 6
-position = Vector2(1587.5692, 1184.7032)
+position = Vector2(2743.4646, 1213.3684)
 radius = 40.0
+visual_scale = 0.8500000000000001
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_yinjq"]
 script = ExtResource("1_kahtu")
 id = 7
-position = Vector2(2380.4395, 116.44097)
+position = Vector2(2372.7969, 225.3693)
 radius = 40.0
 tags = Array[String](["wall"])
 
 [sub_resource type="Resource" id="Resource_dj14j"]
 script = ExtResource("1_kahtu")
 id = 8
-position = Vector2(2191.2761, 1322.2966)
+position = Vector2(2208.4705, 1305.0975)
 radius = 40.0
 tags = Array[String](["shelf"])
 
@@ -101,7 +102,7 @@ tags = Array[String](["shelf"])
 [sub_resource type="Resource" id="Resource_epjlo"]
 script = ExtResource("1_kahtu")
 id = 10
-position = Vector2(452.78067, 1474.0261)
+position = Vector2(441.31717, 1422.4288)
 radius = 40.0
 tags = Array[String](["small"])
 
@@ -115,7 +116,7 @@ tags = Array[String](["small"])
 [sub_resource type="Resource" id="Resource_5ykbu"]
 script = ExtResource("1_kahtu")
 id = 12
-position = Vector2(1801.6094, 170.70786)
+position = Vector2(1801.6094, 231.86069)
 radius = 40.0
 tags = Array[String](["wall"])
 
@@ -129,14 +130,14 @@ tags = Array[String](["counter"])
 [sub_resource type="Resource" id="Resource_fb6ga"]
 script = ExtResource("1_kahtu")
 id = 14
-position = Vector2(666.69916, 514.6921)
+position = Vector2(662.878, 512.78107)
 radius = 40.0
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_ovcmh"]
 script = ExtResource("1_kahtu")
 id = 15
-position = Vector2(301.76456, 512.781)
+position = Vector2(320.8704, 510.87)
 radius = 40.0
 tags = Array[String](["shelf"])
 
@@ -185,7 +186,7 @@ tags = Array[String](["wall"])
 [sub_resource type="Resource" id="Resource_kdp47"]
 script = ExtResource("1_kahtu")
 id = 22
-position = Vector2(624.7071, 1104.0459)
+position = Vector2(620.8864, 1056.2706)
 radius = 40.0
 visual_scale = 0.75
 tags = Array[String](["wall"])
@@ -200,7 +201,7 @@ tags = Array[String](["wall"])
 [sub_resource type="Resource" id="Resource_4exn3"]
 script = ExtResource("1_kahtu")
 id = 24
-position = Vector2(248.29277, 867.0787)
+position = Vector2(259.7562, 838.41345)
 radius = 40.0
 tags = Array[String](["counter"])
 
@@ -214,49 +215,49 @@ tags = Array[String](["shelf"])
 [sub_resource type="Resource" id="Resource_fxmxx"]
 script = ExtResource("1_kahtu")
 id = 26
-position = Vector2(418.30057, 330.08124)
+position = Vector2(418.30057, 326.2592)
 radius = 40.0
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_3sd7f"]
 script = ExtResource("1_kahtu")
 id = 27
-position = Vector2(603.6093, 328.17004)
+position = Vector2(594.0564, 324.34802)
 radius = 40.0
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_qy3p7"]
 script = ExtResource("1_kahtu")
 id = 28
-position = Vector2(2626.8865, 314.79276)
+position = Vector2(2623.0652, 295.68265)
 radius = 40.0
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_4giog"]
 script = ExtResource("1_kahtu")
 id = 29
-position = Vector2(731.58575, 857.5242)
+position = Vector2(712.4799, 849.8801)
 radius = 40.0
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_tausf"]
 script = ExtResource("1_kahtu")
 id = 30
-position = Vector2(563.59326, 865.926)
+position = Vector2(561.6827, 844.90485)
 radius = 40.0
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_i1w1k"]
 script = ExtResource("1_kahtu")
 id = 31
-position = Vector2(886.46326, 871.6591)
+position = Vector2(850.1622, 844.90497)
 radius = 40.0
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_6k5tk"]
 script = ExtResource("1_kahtu")
 id = 32
-position = Vector2(1066.0409, 806.6844)
+position = Vector2(1073.683, 793.3073)
 radius = 40.0
 tags = Array[String](["table"])
 
@@ -271,7 +272,7 @@ tags = Array[String](["table"])
 [sub_resource type="Resource" id="Resource_mkjov"]
 script = ExtResource("1_kahtu")
 id = 34
-position = Vector2(1667.8383, 804.7734)
+position = Vector2(1650.6436, 781.84125)
 radius = 40.0
 tags = Array[String](["table"])
 
@@ -285,7 +286,7 @@ tags = Array[String](["table"])
 [sub_resource type="Resource" id="Resource_30v8i"]
 script = ExtResource("1_kahtu")
 id = 36
-position = Vector2(2386.1792, 1341.7706)
+position = Vector2(2388.0898, 1337.9486)
 radius = 40.0
 tags = Array[String](["table"])
 
@@ -334,8 +335,9 @@ tags = Array[String](["small"])
 [sub_resource type="Resource" id="Resource_7rkjt"]
 script = ExtResource("1_kahtu")
 id = 43
-position = Vector2(653.34955, 1306.2197)
+position = Vector2(2361.397, 1482.034)
 radius = 40.0
+visual_scale = 0.8
 tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_dq8ao"]
@@ -355,21 +357,21 @@ tags = Array[String](["table"])
 [sub_resource type="Resource" id="Resource_ka1hi"]
 script = ExtResource("1_kahtu")
 id = 46
-position = Vector2(848.17865, 1166.714)
+position = Vector2(731.6338, 1235.5104)
 radius = 40.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_1epu5"]
 script = ExtResource("1_kahtu")
 id = 47
-position = Vector2(1023.9351, 1053.9644)
+position = Vector2(1023.9351, 1071.1635)
 radius = 40.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_55xvr"]
 script = ExtResource("1_kahtu")
 id = 48
-position = Vector2(1633.3899, 1065.4305)
+position = Vector2(1633.3899, 1090.2737)
 radius = 40.0
 tags = Array[String](["ground"])
 
@@ -422,7 +424,6 @@ item_name = "trash_can"
 thumbnail = ExtResource("8_vqgq5")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 1.0
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_d37xc"]
@@ -449,7 +450,7 @@ item_name = "comb"
 thumbnail = ExtResource("11_ejn67")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.375
+base_scale = 0.5
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_g055q"]
@@ -458,7 +459,7 @@ item_name = "hairbrush"
 thumbnail = ExtResource("12_wk6fa")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4375
+base_scale = 0.6000000000000001
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_gf1ce"]
@@ -467,7 +468,7 @@ item_name = "curling_iron"
 thumbnail = ExtResource("13_e5vou")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4375
+base_scale = 0.7
 tags = Array[String](["table"])
 
 [sub_resource type="Resource" id="Resource_rkjsl"]
@@ -485,7 +486,7 @@ item_name = "hair_dye_bottle"
 thumbnail = ExtResource("15_jsm26")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.55
 tags = Array[String](["table", "shelf"])
 
 [sub_resource type="Resource" id="Resource_2e3ua"]
@@ -494,7 +495,7 @@ item_name = "spray_bottle"
 thumbnail = ExtResource("16_cithn")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4375
+base_scale = 0.6000000000000001
 tags = Array[String](["table", "shelf"])
 
 [sub_resource type="Resource" id="Resource_b1elr"]
@@ -548,7 +549,7 @@ item_name = "tip_jar"
 thumbnail = ExtResource("22_kuye5")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.5
+base_scale = 0.6000000000000001
 tags = Array[String](["counter", "table"])
 
 [sub_resource type="Resource" id="Resource_g8uf4"]
@@ -566,7 +567,7 @@ item_name = "hair_buzzer"
 thumbnail = ExtResource("24_iqd24")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.4375
+base_scale = 0.5
 tags = Array[String](["table"])
 
 [resource]
