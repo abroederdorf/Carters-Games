@@ -26,6 +26,8 @@ var _pan_start_offset: Vector2 = Vector2.ZERO
 var _pan_start_pos: Vector2 = Vector2.ZERO
 var _is_pinching: bool = false
 
+var _pan_restart_needed: bool = false
+
 var _mouse_panning: bool = false
 var _mouse_press_start: Vector2 = Vector2.ZERO
 
@@ -215,9 +217,10 @@ func _input(event: InputEvent) -> void:
 
 
 func _handle_touch(event: InputEventScreenTouch) -> void:
-	var vp_h := get_viewport().get_visible_rect().size.y
-	if event.position.y < _top_bar_h or event.position.y > vp_h - _thumb_strip_h:
-		return
+	if event.pressed:
+		var vp_h := get_viewport().get_visible_rect().size.y
+		if event.position.y < _top_bar_h or event.position.y > vp_h - _thumb_strip_h:
+			return
 	if event.pressed:
 		_touches[event.index] = {"pos": event.position, "start": event.position}
 		if _touches.size() == 2:
@@ -245,6 +248,7 @@ func _handle_touch(event: InputEventScreenTouch) -> void:
 			var ids := _touches.keys()
 			_pan_start_offset = _canvas_offset
 			_pan_start_pos = _touches[ids[0]]["pos"]
+			_pan_restart_needed = true
 
 
 func _handle_drag(event: InputEventScreenDrag) -> void:
@@ -273,6 +277,12 @@ func _handle_drag(event: InputEventScreenDrag) -> void:
 			_is_pinching = false
 			_pan_start_offset = _canvas_offset
 			_pan_start_pos = event.position
+			_pan_restart_needed = false
+		elif _pan_restart_needed:
+			# Re-anchor pan to current finger position so first move doesn't jump
+			_pan_start_offset = _canvas_offset
+			_pan_start_pos = event.position
+			_pan_restart_needed = false
 		else:
 			_canvas_offset = _pan_start_offset + (event.position - _pan_start_pos)
 			_clamp_offset()
