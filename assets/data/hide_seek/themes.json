@@ -3686,21 +3686,16 @@
           ]
         },
         {
-          "name": "chalkboard_eraser",
-          "desc": "rectangular felt chalkboard eraser dusted with chalk",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "apple",
-          "desc": "shiny red apple with a green leaf on the stem",
+          "name": "stapler",
+          "desc": "red stapler",
           "type": "object",
           "tags": [
             "ground"
           ]
+        },
+        {
+          "name": "apple",
+          "shared": "apple"
         },
         {
           "name": "backpack",
@@ -3708,11 +3703,7 @@
         },
         {
           "name": "scissors",
-          "desc": "safety scissors with orange handles",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "scissors"
         },
         {
           "name": "paint_jar",
@@ -3725,11 +3716,7 @@
         },
         {
           "name": "clock",
-          "desc": "round wall clock with a white face and black hands",
-          "type": "object",
-          "tags": [
-            "structure"
-          ]
+          "shared": "clock"
         },
         {
           "name": "paper_airplane",
@@ -3741,8 +3728,8 @@
           ]
         },
         {
-          "name": "chalk",
-          "desc": "stick of white chalk with dust on it",
+          "name": "glue_bottle",
+          "desc": "bottle of white school glue with an orange tip",
           "type": "object",
           "tags": [
             "ground"
@@ -3757,8 +3744,8 @@
           ]
         },
         {
-          "name": "magnifying_glass",
-          "desc": "round magnifying glass with a plastic handle",
+          "name": "marker",
+          "desc": "thick red marker with cap off",
           "type": "object",
           "tags": [
             "ground"
@@ -3781,12 +3768,12 @@
           ]
         },
         {
-          "name": "trophy",
-          "shared": "trophy"
+          "name": "coffee_cup",
+          "shared": "coffee_cup"
         },
         {
-          "name": "plant",
-          "desc": "small green potted plant on a windowsill",
+          "name": "potted_plant",
+          "desc": "small green potted plant in a terracotta pot",
           "type": "object",
           "tags": [
             "ground",
@@ -3794,8 +3781,12 @@
           ]
         },
         {
-          "name": "teacher_desk",
-          "desc": "large wooden teacher's desk with a name plate",
+          "name": "juice_box",
+          "shared": "juice_box"
+        },
+        {
+          "name": "tape_dispenser",
+          "desc": "clear tape dispenser with a roll of scotch tape",
           "type": "object",
           "tags": [
             "ground",
@@ -3803,13 +3794,8 @@
           ]
         },
         {
-          "name": "pencil_cup",
-          "desc": "clay pencil holder cup full of colored pencils",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "name": "goldfish_bowl",
+          "shared": "goldfish_bowl"
         }
       ]
     },
@@ -4468,11 +4454,7 @@
         },
         {
           "name": "apple",
-          "desc": "shiny red apple in the produce section",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "apple"
         },
         {
           "name": "banana",
@@ -4544,11 +4526,7 @@
         },
         {
           "name": "juice_box",
-          "desc": "small juice box with a straw on the side",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "juice_box"
         },
         {
           "name": "donut",
@@ -7364,7 +7342,7 @@
       ]
     },
     "beauty_salon": {
-      "scene": "Children's book illustration of a large, busy beauty salon packed with things to find. A front reception counter on one side has a cash register, a tip jar, and a small goldfish bowl. Behind the counter, wall shelves hold colorful bottles of shampoo and hair dye with gaps between them and a round wall clock above. In the middle of the salon are two hair styling stations — tall chairs facing large oval mirrors with cluttered tables holding scissors, combs, brushes, clips, curling irons, and hair dryers; one chair is shaped like a bright red firetruck for kids. On the far side is a hair washing station with a reclined chair and a deep sink, and a nail station with a small table, bottles of nail polish, and a lamp. The scene is wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — swept-up hair on the floor, a broom leaning in the corner, framed hairstyle posters on the walls, a spray bottle hanging from a hook, a trash can near the styling stations. Friendly and cheerful mood, suitable for children age 5–8.",
+      "scene": "Children's book illustration of a large, busy beauty salon packed with things to find. A front reception counter on one side has a cash register, a tip jar, and a small goldfish bowl. Behind the counter, wall shelves hold colorful bottles of shampoo and hair dye with gaps between them and a round wall clock above. In the middle of the salon are two hair styling stations \u2014 tall chairs facing large oval mirrors with cluttered tables holding scissors, combs, brushes, clips, curling irons, and hair dryers; one chair is shaped like a bright red firetruck for kids. On the far side is a hair washing station with a reclined chair and a deep sink, and a nail station with a small table, bottles of nail polish, and a lamp. The scene is wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details \u2014 swept-up hair on the floor, a broom leaning in the corner, framed hairstyle posters on the walls, a spray bottle hanging from a hook, a trash can near the styling stations. Friendly and cheerful mood, suitable for children age 5\u20138.",
       "items": [
         {
           "name": "coffee_cup",
@@ -7455,7 +7433,7 @@
         },
         {
           "name": "rollers",
-          "desc": "set of foam hair rollers, mixed colors — yellow, lavender, and coral",
+          "desc": "set of foam hair rollers, mixed colors \u2014 yellow, lavender, and coral",
           "type": "object",
           "tags": [
             "ground"

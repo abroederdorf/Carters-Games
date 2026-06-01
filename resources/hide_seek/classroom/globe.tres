@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_vcr7h"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/classroom/globe.webp" id="2_v0vfg"]
+
+[resource]
+script = ExtResource("1_vcr7h")
+item_name = "globe"
+thumbnail = ExtResource("2_v0vfg")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5

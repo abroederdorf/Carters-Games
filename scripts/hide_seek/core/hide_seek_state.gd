@@ -10,6 +10,7 @@ const SCENE_ORDER: Array[String] = [
 	"kayaking",
 	"beauty_salon",
 	"park",
+	"classroom",
 	"grocery_store",
 	"monster_truck_jam",
 	"mountains",
@@ -24,6 +25,7 @@ const SCENE_ORDER: Array[String] = [
 ]
 
 const DISPLAY_NAMES: Dictionary = {
+	"classroom": "Classroom",
 	"beauty_salon": "Beauty Salon",
 	"kayaking": "Kayaking",
 	"baseball_game": "Baseball Game",
