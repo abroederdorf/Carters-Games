@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/park/kickball.webp" id="3"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/park/soccer_ball.webp" id="4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/park/picnic_basket.webp" id="5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/picnic_basket.webp" id="5"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/park/garden_gnome.webp" id="6"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/park/birdhouse.webp" id="7"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flower_patch.webp" id="8"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bunny.webp" id="25"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/dragonfly.webp" id="26"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/balloon_bunch.webp" id="27"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/park/frisbee.webp" id="28"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/frisbee.webp" id="28"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="29"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/park/bg_park.webp" id="30"]
 
