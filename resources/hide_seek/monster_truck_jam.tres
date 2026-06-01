@@ -363,8 +363,9 @@ tags = Array[String](["stands"])
 [sub_resource type="Resource" id="Resource_w6pwe"]
 script = ExtResource("1_aej6v")
 id = 44
-position = Vector2(2353.7922, 656.55566)
+position = Vector2(2331.386, 645.35004)
 radius = 40.0
+visual_scale = 0.8500000000000001
 tags = Array[String](["surface"])
 
 [sub_resource type="Resource" id="Resource_negjr"]
@@ -498,7 +499,7 @@ script = ExtResource("2_aej6v")
 item_name = "toolbox"
 thumbnail = ExtResource("14_nim8m")
 radius = 60.0
-base_scale = 0.45
+base_scale = 0.4
 tags = Array[String](["ground"])
 
 [sub_resource type="Resource" id="Resource_qwgho"]
