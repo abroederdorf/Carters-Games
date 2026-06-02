@@ -5188,12 +5188,7 @@
       "items": [
         {
           "name": "fishing_rod",
-          "desc": "fishing rod bent with a fish on the line",
-          "type": "object",
-          "tags": [
-            "ground",
-            "water"
-          ]
+          "shared": "fishing_rod"
         },
         {
           "name": "tackle_box",
@@ -5204,29 +5199,16 @@
           ]
         },
         {
-          "name": "fish",
-          "desc": "largemouth bass leaping from the lake",
-          "type": "character",
-          "tags": [
-            "water"
-          ]
+          "name": "tetra_fish",
+          "shared": "tetra_fish"
         },
         {
           "name": "frog",
-          "desc": "green frog on a lily pad at the water's edge",
-          "type": "character",
-          "tags": [
-            "ground",
-            "water"
-          ]
+          "shared": "frog"
         },
         {
           "name": "duck",
-          "desc": "mallard duck floating on the calm lake",
-          "type": "character",
-          "tags": [
-            "water"
-          ]
+          "shared": "duck"
         },
         {
           "name": "turtle",
@@ -5245,14 +5227,6 @@
           ]
         },
         {
-          "name": "life_jacket",
-          "desc": "bright orange child-sized life jacket",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "worm",
           "desc": "pink earthworm wriggling on a fish hook",
           "type": "character",
@@ -5262,11 +5236,7 @@
         },
         {
           "name": "bucket",
-          "desc": "red bucket with lake water and a fish peeking out",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "bucket"
         },
         {
           "name": "water_bottle",
@@ -5281,8 +5251,12 @@
           "shared": "compass"
         },
         {
-          "name": "fishing_hook",
-          "desc": "small silver fish hook with a barb",
+          "name": "kayak",
+          "shared": "kayak"
+        },
+        {
+          "name": "fishing_lure",
+          "desc": "colorful fishing lure with bright metallic spinners and treble hooks",
           "type": "object",
           "tags": [
             "ground"
@@ -5314,8 +5288,32 @@
           "shared": "mushroom"
         },
         {
-          "name": "fern",
-          "shared": "fern"
+          "name": "butterfly",
+          "shared": "butterfly"
+        },
+        {
+          "name": "rock",
+          "shared": "rock"
+        },
+        {
+          "name": "ladybug",
+          "shared": "ladybug"
+        },
+        {
+          "name": "beetle_green",
+          "shared": "beetle_green"
+        },
+        {
+          "name": "tree",
+          "shared": "tree"
+        },
+        {
+          "name": "sunscreen_bottle",
+          "shared": "sunscreen_bottle"
+        },
+        {
+          "name": "flower_patch",
+          "shared": "flower_patch"
         }
       ]
     },
