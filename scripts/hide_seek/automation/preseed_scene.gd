@@ -136,7 +136,37 @@ func _init() -> void:
 	# 4. Save Scene
 	ResourceSaver.save(scene_data, scene_path)
 	print("Successfully pre-seeded '%s': %d items, %d anchors" % [theme, synced_items.size(), scene_data.anchors.size()])
+
+	# 5. Move scene to front of SCENE_ORDER for testing
+	_update_scene_order(theme)
 	quit()
+
+func _update_scene_order(theme: String) -> void:
+	var state_path := "res://scripts/hide_seek/core/hide_seek_state.gd"
+	var file := FileAccess.open(state_path, FileAccess.READ)
+	if not file:
+		print("[%s] WARNING: Could not open hide_seek_state.gd to update scene order" % theme)
+		return
+	var content := file.get_as_text()
+	file.close()
+
+	# Remove existing entry wherever it is (with or without trailing comma)
+	for pattern: String in ['\t"%s",\n' % theme, '\t"%s"\n' % theme]:
+		content = content.replace(pattern, "")
+
+	# Insert as first entry in SCENE_ORDER
+	var marker := "const SCENE_ORDER: Array[String] = [\n"
+	var idx := content.find(marker)
+	if idx == -1:
+		print("[%s] WARNING: SCENE_ORDER not found in hide_seek_state.gd" % theme)
+		return
+
+	content = content.insert(idx + marker.length(), '\t"%s",\n' % theme)
+
+	var out := FileAccess.open(state_path, FileAccess.WRITE)
+	out.store_string(content)
+	out.close()
+	print("[%s] Moved to first in SCENE_ORDER for testing" % theme)
 
 func _load_themes() -> Dictionary:
 	var file = FileAccess.open(THEMES_JSON, FileAccess.READ)

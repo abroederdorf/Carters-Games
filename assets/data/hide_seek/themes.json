@@ -506,12 +506,7 @@
         },
         {
           "name": "crab",
-          "desc": "small bright red crab, large claws, big eyes",
-          "type": "character",
-          "tags": [
-            "ground",
-            "water"
-          ]
+          "shared": "crab"
         },
         {
           "name": "seahorse",
@@ -549,12 +544,7 @@
         },
         {
           "name": "starfish",
-          "desc": "orange starfish, textured surface, smiling",
-          "type": "character",
-          "tags": [
-            "ground",
-            "water"
-          ]
+          "shared": "starfish"
         },
         {
           "name": "sea_turtle",
@@ -671,12 +661,7 @@
         },
         {
           "name": "seashell",
-          "desc": "large spiral conch seashell with pearlescent stripes",
-          "type": "object",
-          "tags": [
-            "ground",
-            "water"
-          ]
+          "shared": "seashell"
         }
       ]
     },
@@ -3176,7 +3161,7 @@
       ]
     },
     "beach": {
-      "scene": "Children's cartoon image of a sunny beach. Sandy shore, rolling ocean waves, colorful beach umbrellas, sandcastles, kids playing in the waves. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a big busy sunny beach. Sandy shore packed with colorful beach towels, beach chairs, striped beach umbrellas, sandcastles, and sand pails. Beach balls scattered across the sand, turtles and seashells near the water's edge. Rolling ocean waves with sailboats in the distance. Sunny sky filled with birds flying overhead. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
           "name": "beach_ball",
@@ -3214,28 +3199,15 @@
         },
         {
           "name": "seashell",
-          "desc": "large pink conch spiral shell",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "seashell"
         },
         {
           "name": "crab",
-          "desc": "bright orange crab with big claws on the sand",
-          "type": "character",
-          "tags": [
-            "ground",
-            "water"
-          ]
+          "shared": "crab"
         },
         {
           "name": "sunscreen_bottle",
-          "desc": "white squeeze bottle of sunscreen with a pump",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "sunscreen_bottle"
         },
         {
           "name": "surfboard",
@@ -3265,24 +3237,11 @@
         },
         {
           "name": "starfish",
-          "desc": "orange starfish lying on the sand",
-          "type": "character",
-          "tags": [
-            "ground",
-            "water"
-          ]
+          "shared": "starfish"
         },
         {
-          "name": "lifeguard_chair",
-          "desc": "tall white wooden lifeguard tower chair",
-          "type": "object",
-          "tags": [
-            "structure"
-          ]
-        },
-        {
-          "name": "ice_cream_cone",
-          "desc": "strawberry ice cream cone with a wafer biscuit",
+          "name": "beach_chair",
+          "desc": "folding beach chair with colorful stripes, sitting on sand",
           "type": "object",
           "tags": [
             "ground"
@@ -3338,6 +3297,30 @@
         {
           "name": "turtle",
           "shared": "turtle"
+        },
+        {
+          "name": "pelican",
+          "shared": "pelican"
+        },
+        {
+          "name": "dragonfly",
+          "shared": "dragonfly"
+        },
+        {
+          "name": "airplane",
+          "shared": "airplane"
+        },
+        {
+          "name": "frisbee",
+          "shared": "frisbee"
+        },
+        {
+          "name": "picnic_basket",
+          "shared": "picnic_basket"
+        },
+        {
+          "name": "kayak",
+          "shared": "kayak"
         }
       ]
     },
@@ -4926,12 +4909,7 @@
       "items": [
         {
           "name": "kayak",
-          "desc": "bright yellow kayak floating on the river",
-          "type": "object",
-          "tags": [
-            "water",
-            "ground"
-          ]
+          "shared": "kayak"
         },
         {
           "name": "water_bottle",
@@ -4976,11 +4954,7 @@
         },
         {
           "name": "sunscreen_bottle",
-          "desc": "small squeeze bottle of sunscreen",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "sunscreen_bottle"
         },
         {
           "name": "camera",
@@ -6288,11 +6262,7 @@
         },
         {
           "name": "picnic_basket",
-          "desc": "woven wicker picnic basket with a red checkered cloth peeking out",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "picnic_basket"
         },
         {
           "name": "garden_gnome",
@@ -6393,12 +6363,7 @@
         },
         {
           "name": "frisbee",
-          "desc": "bright orange flying disc",
-          "type": "object",
-          "tags": [
-            "sky",
-            "ground"
-          ]
+          "shared": "frisbee"
         }
       ]
     },
