@@ -1,0 +1,635 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_dbofi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/lake_fishing/bg_lake_fishing.webp" id="2_stagp"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_jgwrn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/fishing_rod.webp" id="4_37vsr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/lake_fishing/tackle_box.webp" id="5_vfva2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/tetra_fish.webp" id="6_4q472"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/frog.webp" id="7_6go0k"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/duck.webp" id="8_7qjq6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/turtle.webp" id="9_abpqq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/dragonfly.webp" id="10_ejeh2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/lake_fishing/worm.webp" id="11_djrga"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/lake_fishing/rowboat.webp" id="11_stagp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bucket.webp" id="12_6lcwt"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/water_bottle.webp" id="13_xcx3p"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/binoculars.webp" id="14_j4542"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/compass.webp" id="15_xa58i"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/kayak.webp" id="16_sxcbx"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/lake_fishing/fishing_lure.webp" id="17_nepml"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/lake_fishing/fishing_net.webp" id="18_bgiw8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/eagle.webp" id="19_yo6la"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/lake_fishing/fishing_hat.webp" id="20_8cq5h"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/mushroom.webp" id="21_of3xa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/butterfly.webp" id="22_oahbw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/rock.webp" id="23_uu5er"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/ladybug.webp" id="24_uhuy4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/beetle_green.webp" id="25_y4n2q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/tree.webp" id="26_yurwi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/sunscreen_bottle.webp" id="27_64dvh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flower_patch.webp" id="28_0dk80"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="29_d4y47"]
+
+[sub_resource type="Resource" id="Resource_jgwrn"]
+script = ExtResource("1_dbofi")
+id = 0
+position = Vector2(1298.019, 872.4459)
+radius = 40.0
+tags = Array[String](["boatitem", "pole"])
+
+[sub_resource type="Resource" id="Resource_37vsr"]
+script = ExtResource("1_dbofi")
+id = 1
+position = Vector2(1481.7432, 668.8998)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_vfva2"]
+script = ExtResource("1_dbofi")
+id = 2
+position = Vector2(258.76614, 168.92781)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_4q472"]
+script = ExtResource("1_dbofi")
+id = 3
+position = Vector2(991.7346, 64.19061)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_6go0k"]
+script = ExtResource("1_dbofi")
+id = 4
+position = Vector2(1621.9683, 66.16679)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_7qjq6"]
+script = ExtResource("1_dbofi")
+id = 5
+position = Vector2(683.49194, 105.690186)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_abpqq"]
+script = ExtResource("1_dbofi")
+id = 6
+position = Vector2(1220.8655, 249.95065)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_ejeh2"]
+script = ExtResource("1_dbofi")
+id = 7
+position = Vector2(2013.1062, 109.6426)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_djrga"]
+script = ExtResource("1_dbofi")
+id = 8
+position = Vector2(2258.0771, 70.11913)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_6lcwt"]
+script = ExtResource("1_dbofi")
+id = 9
+position = Vector2(2514.8984, 103.71409)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_xcx3p"]
+script = ExtResource("1_dbofi")
+id = 10
+position = Vector2(296.32983, 1059.6353)
+radius = 40.0
+tags = Array[String](["lily"])
+
+[sub_resource type="Resource" id="Resource_j4542"]
+script = ExtResource("1_dbofi")
+id = 11
+position = Vector2(2266.0896, 848.1842)
+radius = 40.0
+tags = Array[String](["pole", "boatitem"])
+
+[sub_resource type="Resource" id="Resource_xa58i"]
+script = ExtResource("1_dbofi")
+id = 12
+position = Vector2(1732.6348, 186.16675)
+radius = 40.0
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_sxcbx"]
+script = ExtResource("1_dbofi")
+id = 13
+position = Vector2(695.3715, 350.18878)
+radius = 40.0
+visual_scale = 0.95
+tags = Array[String](["rock"])
+
+[sub_resource type="Resource" id="Resource_nepml"]
+script = ExtResource("1_dbofi")
+id = 14
+position = Vector2(1096.422, 350.1891)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["rock"])
+
+[sub_resource type="Resource" id="Resource_bgiw8"]
+script = ExtResource("1_dbofi")
+id = 15
+position = Vector2(511.59717, 263.23758)
+radius = 40.0
+tags = Array[String](["tree"])
+
+[sub_resource type="Resource" id="Resource_yo6la"]
+script = ExtResource("1_dbofi")
+id = 16
+position = Vector2(896.8429, 273.11853)
+radius = 40.0
+visual_scale = 0.8999999999999999
+tags = Array[String](["tree"])
+
+[sub_resource type="Resource" id="Resource_8cq5h"]
+script = ExtResource("1_dbofi")
+id = 17
+position = Vector2(2283.7683, 1146.5869)
+radius = 40.0
+tags = Array[String](["lily"])
+
+[sub_resource type="Resource" id="Resource_of3xa"]
+script = ExtResource("1_dbofi")
+id = 18
+position = Vector2(1764.1426, 350.18884)
+radius = 40.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["rock"])
+
+[sub_resource type="Resource" id="Resource_oahbw"]
+script = ExtResource("1_dbofi")
+id = 19
+position = Vector2(1945.9073, 284.97543)
+radius = 40.0
+tags = Array[String](["tree"])
+
+[sub_resource type="Resource" id="Resource_uu5er"]
+script = ExtResource("1_dbofi")
+id = 20
+position = Vector2(284.48434, 361.49948)
+radius = 40.0
+tags = Array[String](["rock"])
+
+[sub_resource type="Resource" id="Resource_uhuy4"]
+script = ExtResource("1_dbofi")
+id = 21
+position = Vector2(2074.4536, 379.28522)
+radius = 40.0
+visual_scale = 0.75
+tags = Array[String](["item", "rock"])
+
+[sub_resource type="Resource" id="Resource_y4n2q"]
+script = ExtResource("1_dbofi")
+id = 22
+position = Vector2(655.8842, 1146.0403)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["lily"])
+
+[sub_resource type="Resource" id="Resource_yurwi"]
+script = ExtResource("1_dbofi")
+id = 23
+position = Vector2(606.4754, 825.90027)
+radius = 40.0
+tags = Array[String](["boatitem", "pole"])
+
+[sub_resource type="Resource" id="Resource_64dvh"]
+script = ExtResource("1_dbofi")
+id = 24
+position = Vector2(2323.338, 385.21368)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["item", "rock"])
+
+[sub_resource type="Resource" id="Resource_0dk80"]
+script = ExtResource("1_dbofi")
+id = 25
+position = Vector2(946.2605, 521.5696)
+radius = 40.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_d4y47"]
+script = ExtResource("1_dbofi")
+id = 26
+position = Vector2(1128.0085, 586.7839)
+radius = 40.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_sbpkt"]
+script = ExtResource("1_dbofi")
+id = 27
+position = Vector2(1930.1263, 574.926)
+radius = 64.0
+visual_scale = 0.8500000000000001
+tags = Array[String](["boat"])
+
+[sub_resource type="Resource" id="Resource_xs7yg"]
+script = ExtResource("1_dbofi")
+id = 28
+position = Vector2(1416.4269, 438.57068)
+radius = 56.0
+visual_scale = 0.65
+tags = Array[String](["boat"])
+
+[sub_resource type="Resource" id="Resource_174uo"]
+script = ExtResource("1_dbofi")
+id = 29
+position = Vector2(1596.1992, 541.33136)
+radius = 71.0
+tags = Array[String](["boat"])
+
+[sub_resource type="Resource" id="Resource_ruj0c"]
+script = ExtResource("1_dbofi")
+id = 30
+position = Vector2(626.27246, 542.76105)
+radius = 78.0
+tags = Array[String](["boat"])
+
+[sub_resource type="Resource" id="Resource_vox68"]
+script = ExtResource("1_dbofi")
+id = 31
+position = Vector2(2779.7732, 983.4473)
+radius = 40.0
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_q5tws"]
+script = ExtResource("1_dbofi")
+id = 32
+position = Vector2(2299.6572, 647.4979)
+radius = 40.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_oxwfb"]
+script = ExtResource("1_dbofi")
+id = 33
+position = Vector2(1037.1675, 991.3522)
+radius = 40.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_yebb6"]
+script = ExtResource("1_dbofi")
+id = 34
+position = Vector2(1487.6113, 1214.6599)
+radius = 40.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_mhi8i"]
+script = ExtResource("1_dbofi")
+id = 35
+position = Vector2(1752.3389, 1068.423)
+radius = 40.0
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_wso6s"]
+script = ExtResource("1_dbofi")
+id = 36
+position = Vector2(2672.9966, 550.6657)
+radius = 40.0
+visual_scale = 0.8999999999999999
+tags = Array[String](["item", "pole"])
+
+[sub_resource type="Resource" id="Resource_n4n0v"]
+script = ExtResource("1_dbofi")
+id = 37
+position = Vector2(254.72284, 548.6894)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["ground", "item"])
+
+[sub_resource type="Resource" id="Resource_hrhtx"]
+script = ExtResource("1_dbofi")
+id = 38
+position = Vector2(104.55283, 550.6654)
+radius = 40.0
+tags = Array[String](["ground", "item", "bug"])
+
+[sub_resource type="Resource" id="Resource_1fkcf"]
+script = ExtResource("1_dbofi")
+id = 39
+position = Vector2(2825.0913, 704.8076)
+radius = 40.0
+tags = Array[String](["ground", "item", "pole"])
+
+[sub_resource type="Resource" id="Resource_7jrlm"]
+script = ExtResource("1_dbofi")
+id = 40
+position = Vector2(1406.6831, 1358.3735)
+radius = 40.0
+tags = Array[String](["ground", "bug"])
+
+[sub_resource type="Resource" id="Resource_ca1vy"]
+script = ExtResource("1_dbofi")
+id = 41
+position = Vector2(1088.5781, 1360.3502)
+radius = 40.0
+tags = Array[String](["ground", "bug"])
+
+[sub_resource type="Resource" id="Resource_17bb0"]
+script = ExtResource("1_dbofi")
+id = 42
+position = Vector2(671.68835, 1344.54)
+radius = 40.0
+tags = Array[String](["ground", "bug"])
+
+[sub_resource type="Resource" id="Resource_osdhe"]
+script = ExtResource("1_dbofi")
+id = 43
+position = Vector2(2293.7234, 1324.7782)
+radius = 40.0
+visual_scale = 0.95
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_bkyj0"]
+script = ExtResource("1_dbofi")
+id = 44
+position = Vector2(1673.3363, 1356.3977)
+radius = 40.0
+tags = Array[String](["ground", "bug"])
+
+[sub_resource type="Resource" id="Resource_2vg24"]
+script = ExtResource("1_dbofi")
+id = 45
+position = Vector2(82.87819, 1188.4216)
+radius = 40.0
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_08iof"]
+script = ExtResource("1_dbofi")
+id = 46
+position = Vector2(325.87326, 1235.8513)
+radius = 40.0
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_nbfyw"]
+script = ExtResource("1_dbofi")
+id = 47
+position = Vector2(1868.8799, 1346.5165)
+radius = 40.0
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_pyvro"]
+script = ExtResource("1_dbofi")
+id = 48
+position = Vector2(2495.1594, 1271.4222)
+radius = 40.0
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_3ry4v"]
+script = ExtResource("1_dbofi")
+id = 49
+position = Vector2(2793.4722, 1182.4946)
+radius = 40.0
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_781y8"]
+script = ExtResource("3_jgwrn")
+item_name = "fishing_rod"
+thumbnail = ExtResource("4_37vsr")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.8500000000000001
+tags = Array[String](["pole"])
+
+[sub_resource type="Resource" id="Resource_5yeo7"]
+script = ExtResource("3_jgwrn")
+item_name = "tackle_box"
+thumbnail = ExtResource("5_vfva2")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_du1cd"]
+script = ExtResource("3_jgwrn")
+item_name = "tetra_fish"
+thumbnail = ExtResource("6_4q472")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["water"])
+
+[sub_resource type="Resource" id="Resource_nll1s"]
+script = ExtResource("3_jgwrn")
+item_name = "frog"
+thumbnail = ExtResource("7_6go0k")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["lily", "ground"])
+
+[sub_resource type="Resource" id="Resource_vyc3t"]
+script = ExtResource("3_jgwrn")
+item_name = "duck"
+thumbnail = ExtResource("8_7qjq6")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["ground", "lily"])
+
+[sub_resource type="Resource" id="Resource_vqkf1"]
+script = ExtResource("3_jgwrn")
+item_name = "turtle"
+thumbnail = ExtResource("9_abpqq")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["water", "ground", "lily"])
+
+[sub_resource type="Resource" id="Resource_0iufr"]
+script = ExtResource("3_jgwrn")
+item_name = "dragonfly"
+thumbnail = ExtResource("10_ejeh2")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_ckaia"]
+script = ExtResource("3_jgwrn")
+item_name = "rowboat"
+thumbnail = ExtResource("11_stagp")
+position = Vector2(100, 100)
+radius = 60.0
+tags = Array[String](["boat"])
+
+[sub_resource type="Resource" id="Resource_yeyou"]
+script = ExtResource("3_jgwrn")
+item_name = "worm"
+thumbnail = ExtResource("11_djrga")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_mcq48"]
+script = ExtResource("3_jgwrn")
+item_name = "bucket"
+thumbnail = ExtResource("12_6lcwt")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["item"])
+
+[sub_resource type="Resource" id="Resource_mpk1f"]
+script = ExtResource("3_jgwrn")
+item_name = "water_bottle"
+thumbnail = ExtResource("13_xcx3p")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["boatitem", "ground"])
+
+[sub_resource type="Resource" id="Resource_fjppn"]
+script = ExtResource("3_jgwrn")
+item_name = "binoculars"
+thumbnail = ExtResource("14_j4542")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["boatitem", "ground"])
+
+[sub_resource type="Resource" id="Resource_wtv37"]
+script = ExtResource("3_jgwrn")
+item_name = "compass"
+thumbnail = ExtResource("15_xa58i")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["boatitem", "ground"])
+
+[sub_resource type="Resource" id="Resource_tkggc"]
+script = ExtResource("3_jgwrn")
+item_name = "kayak"
+thumbnail = ExtResource("16_sxcbx")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.75
+tags = Array[String](["boat"])
+
+[sub_resource type="Resource" id="Resource_t85b2"]
+script = ExtResource("3_jgwrn")
+item_name = "fishing_lure"
+thumbnail = ExtResource("17_nepml")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["ground", "boatitem"])
+
+[sub_resource type="Resource" id="Resource_jm7fq"]
+script = ExtResource("3_jgwrn")
+item_name = "fishing_net"
+thumbnail = ExtResource("18_bgiw8")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.75
+tags = Array[String](["pole"])
+
+[sub_resource type="Resource" id="Resource_wnggf"]
+script = ExtResource("3_jgwrn")
+item_name = "eagle"
+thumbnail = ExtResource("19_yo6la")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_dy8gi"]
+script = ExtResource("3_jgwrn")
+item_name = "fishing_hat"
+thumbnail = ExtResource("20_8cq5h")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["item", "boatitem"])
+
+[sub_resource type="Resource" id="Resource_3efud"]
+script = ExtResource("3_jgwrn")
+item_name = "mushroom"
+thumbnail = ExtResource("21_of3xa")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["ground"])
+
+[sub_resource type="Resource" id="Resource_x6yas"]
+script = ExtResource("3_jgwrn")
+item_name = "butterfly"
+thumbnail = ExtResource("22_oahbw")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["flying"])
+
+[sub_resource type="Resource" id="Resource_a7tyq"]
+script = ExtResource("3_jgwrn")
+item_name = "rock"
+thumbnail = ExtResource("23_uu5er")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["rock"])
+
+[sub_resource type="Resource" id="Resource_b0nur"]
+script = ExtResource("3_jgwrn")
+item_name = "ladybug"
+thumbnail = ExtResource("24_uhuy4")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_qs7pg"]
+script = ExtResource("3_jgwrn")
+item_name = "beetle_green"
+thumbnail = ExtResource("25_y4n2q")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["bug"])
+
+[sub_resource type="Resource" id="Resource_fyt1t"]
+script = ExtResource("3_jgwrn")
+item_name = "tree"
+thumbnail = ExtResource("26_yurwi")
+position = Vector2(100, 100)
+radius = 60.0
+tags = Array[String](["tree"])
+
+[sub_resource type="Resource" id="Resource_4uppd"]
+script = ExtResource("3_jgwrn")
+item_name = "sunscreen_bottle"
+thumbnail = ExtResource("27_64dvh")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["ground", "boatitem"])
+
+[sub_resource type="Resource" id="Resource_7ifdg"]
+script = ExtResource("3_jgwrn")
+item_name = "flower_patch"
+thumbnail = ExtResource("28_0dk80")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["ground"])
+
+[resource]
+script = ExtResource("29_d4y47")
+scene_name = "lake_fishing"
+background_image = ExtResource("2_stagp")
+items = Array[ExtResource("3_jgwrn")]([SubResource("Resource_781y8"), SubResource("Resource_5yeo7"), SubResource("Resource_du1cd"), SubResource("Resource_nll1s"), SubResource("Resource_vyc3t"), SubResource("Resource_vqkf1"), SubResource("Resource_0iufr"), SubResource("Resource_ckaia"), SubResource("Resource_yeyou"), SubResource("Resource_mcq48"), SubResource("Resource_mpk1f"), SubResource("Resource_fjppn"), SubResource("Resource_wtv37"), SubResource("Resource_tkggc"), SubResource("Resource_t85b2"), SubResource("Resource_jm7fq"), SubResource("Resource_wnggf"), SubResource("Resource_dy8gi"), SubResource("Resource_3efud"), SubResource("Resource_x6yas"), SubResource("Resource_a7tyq"), SubResource("Resource_b0nur"), SubResource("Resource_qs7pg"), SubResource("Resource_fyt1t"), SubResource("Resource_4uppd"), SubResource("Resource_7ifdg")])
+anchors = Array[ExtResource("1_dbofi")]([SubResource("Resource_jgwrn"), SubResource("Resource_37vsr"), SubResource("Resource_vfva2"), SubResource("Resource_4q472"), SubResource("Resource_6go0k"), SubResource("Resource_7qjq6"), SubResource("Resource_abpqq"), SubResource("Resource_ejeh2"), SubResource("Resource_djrga"), SubResource("Resource_6lcwt"), SubResource("Resource_xcx3p"), SubResource("Resource_j4542"), SubResource("Resource_xa58i"), SubResource("Resource_sxcbx"), SubResource("Resource_nepml"), SubResource("Resource_bgiw8"), SubResource("Resource_yo6la"), SubResource("Resource_8cq5h"), SubResource("Resource_of3xa"), SubResource("Resource_oahbw"), SubResource("Resource_uu5er"), SubResource("Resource_uhuy4"), SubResource("Resource_y4n2q"), SubResource("Resource_yurwi"), SubResource("Resource_64dvh"), SubResource("Resource_0dk80"), SubResource("Resource_d4y47"), SubResource("Resource_sbpkt"), SubResource("Resource_xs7yg"), SubResource("Resource_174uo"), SubResource("Resource_ruj0c"), SubResource("Resource_vox68"), SubResource("Resource_q5tws"), SubResource("Resource_oxwfb"), SubResource("Resource_yebb6"), SubResource("Resource_mhi8i"), SubResource("Resource_wso6s"), SubResource("Resource_n4n0v"), SubResource("Resource_hrhtx"), SubResource("Resource_1fkcf"), SubResource("Resource_7jrlm"), SubResource("Resource_ca1vy"), SubResource("Resource_17bb0"), SubResource("Resource_osdhe"), SubResource("Resource_bkyj0"), SubResource("Resource_2vg24"), SubResource("Resource_08iof"), SubResource("Resource_nbfyw"), SubResource("Resource_pyvro"), SubResource("Resource_3ry4v")])
+is_manual_edit = true

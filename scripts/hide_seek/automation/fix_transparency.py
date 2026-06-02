@@ -103,20 +103,22 @@ def fix_transparency(image_path, tolerance=50, white_threshold=210, remove_botto
     img.save(image_path, "WEBP")
     print(f"Successfully processed {image_path}")
 
+# Usage:
+#   python scripts/hide_seek/automation/fix_transparency.py <file1.webp> [file2.webp ...]
+#   --remove-island    Remove disconnected bottom pixel island (use for items with drop shadows)
+#   --no-clear-holes   Skip clearing internal white holes
+#
+# Examples:
+#   python scripts/hide_seek/automation/fix_transparency.py assets/sprites/hide_seek/lake_fishing/fishing_net.webp
+#   python scripts/hide_seek/automation/fix_transparency.py assets/sprites/hide_seek/lake_fishing/*.webp
+#   python scripts/hide_seek/automation/fix_transparency.py assets/sprites/hide_seek/beach/sailboat.webp --remove-island
+
 if __name__ == "__main__":
-    targets = [
-        ("assets/sprites/hide_seek/beauty_salon/hair_clip.webp", False, True),
-        ("assets/sprites/hide_seek/beauty_salon/hair_buzzer.webp", False, True),
-        ("assets/sprites/hide_seek/classroom/pencil.webp", True, True),
-        ("assets/sprites/hide_seek/classroom/potted_plant.webp", False, True),
-        ("assets/sprites/hide_seek/beach/sand_bucket.webp", False, True),
-        ("assets/sprites/hide_seek/beach/flip_flops.webp", False, True),
-        ("assets/sprites/hide_seek/beach/swim_ring.webp", False, True),
-        ("assets/sprites/hide_seek/beach/beach_chair.webp", False, True),
-        ("assets/sprites/hide_seek/beach/beach_umbrella.webp", False, True),
-        ("assets/sprites/hide_seek/beach/beach_ball.webp", False, True),
-        ("assets/sprites/hide_seek/beach/snorkel.webp", False, True),
-        ("assets/sprites/hide_seek/beach/sailboat.webp", False, False),
-    ]
-    for target, remove_island, clear_holes in targets:
-        fix_transparency(target, remove_bottom_island=remove_island, clear_internal_holes=clear_holes)
+    import argparse
+    parser = argparse.ArgumentParser(description="Remove white backgrounds from item sprites.")
+    parser.add_argument("files", nargs="+", help="Paths to .webp files to process")
+    parser.add_argument("--remove-island", action="store_true", help="Remove disconnected bottom island (shadows)")
+    parser.add_argument("--no-clear-holes", action="store_true", help="Skip clearing internal white holes")
+    args = parser.parse_args()
+    for path in args.files:
+        fix_transparency(path, remove_bottom_island=args.remove_island, clear_internal_holes=not args.no_clear_holes)

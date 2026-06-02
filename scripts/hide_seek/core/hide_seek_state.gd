@@ -12,6 +12,7 @@ const SCENE_ORDER: Array[String] = [
 	"beauty_salon",
 	"park",
 	"classroom",
+	"lake_fishing",
 	"grocery_store",
 	"monster_truck_jam",
 	"mountains",
@@ -45,6 +46,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"grocery_store": "Grocery Store",
 	"airport": "Airport",
 	"park": "Park",
+	"lake_fishing": "Fishing",
 }
 
 var current_scene_name: String = ""
