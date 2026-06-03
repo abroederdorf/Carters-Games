@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/banana_bunch.webp" id="3_vsats"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/butterfly.webp" id="5_87j6v"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/explorer_hat.webp" id="6_v4xi2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/monkey.webp" id="7_d076x"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/monkey.webp" id="7_d076x"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/orchid.webp" id="8_o3jcm"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/parrot.webp" id="9_l8m0n"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/parrot.webp" id="9_l8m0n"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/sloth.webp" id="10_p8e40"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/binoculars.webp" id="11_3pcbq"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/snake.webp" id="11_keyr2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/jungle/tiger.webp" id="12_nku0q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/tiger.webp" id="12_nku0q"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="13_g6xkm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/ant.webp" id="14_g6xkm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/dragonfly.webp" id="15_g6xkm"]
@@ -96,7 +96,7 @@ tags = Array[String](["hanging", "flying"])
 [sub_resource type="Resource" id="Resource_tf27u"]
 script = ExtResource("1_3pcbq")
 id = 8
-position = Vector2(414.59128, 565.4656)
+position = Vector2(408.9898, 595.3472)
 radius = 45.0
 difficulty = 0
 tags = Array[String](["foliage"])
@@ -132,10 +132,10 @@ tags = Array[String](["foliage"])
 [sub_resource type="Resource" id="Resource_1ilek"]
 script = ExtResource("1_3pcbq")
 id = 13
-position = Vector2(926.93317, 688.4457)
+position = Vector2(954.94006, 722.06274)
 radius = 48.0
 difficulty = 0
-tags = Array[String](["item"])
+tags = Array[String](["item", "ground"])
 
 [sub_resource type="Resource" id="Resource_nsk2p"]
 script = ExtResource("1_3pcbq")
@@ -164,8 +164,9 @@ tags = Array[String](["item"])
 [sub_resource type="Resource" id="Resource_tv8qj"]
 script = ExtResource("1_3pcbq")
 id = 17
-position = Vector2(2092.2458, 615.37427)
+position = Vector2(2067.9724, 607.9038)
 radius = 41.0
+visual_scale = 0.8
 tags = Array[String](["foliage"])
 
 [sub_resource type="Resource" id="Resource_6mpbi"]
@@ -194,7 +195,7 @@ script = ExtResource("1_3pcbq")
 id = 21
 position = Vector2(527.0446, 1088.4971)
 radius = 49.0
-tags = Array[String](["item"])
+tags = Array[String](["item", "ground"])
 
 [sub_resource type="Resource" id="Resource_hrfoh"]
 script = ExtResource("1_3pcbq")
@@ -299,7 +300,7 @@ script = ExtResource("1_3pcbq")
 id = 35
 position = Vector2(1396.1564, 1323.0887)
 radius = 63.0
-tags = Array[String](["item"])
+tags = Array[String](["item", "ground"])
 
 [sub_resource type="Resource" id="Resource_2ufli"]
 script = ExtResource("1_3pcbq")
@@ -334,7 +335,7 @@ tags = Array[String](["bug"])
 [sub_resource type="Resource" id="Resource_peuho"]
 script = ExtResource("1_3pcbq")
 id = 40
-position = Vector2(2269.1855, 653.9565)
+position = Vector2(2218.7715, 667.0298)
 tags = Array[String](["item"])
 
 [sub_resource type="Resource" id="Resource_kndof"]
@@ -354,9 +355,9 @@ tags = Array[String](["bug"])
 [sub_resource type="Resource" id="Resource_0n4yg"]
 script = ExtResource("1_3pcbq")
 id = 43
-position = Vector2(580.5948, 615.37555)
+position = Vector2(2173.2717, 1001.96704)
 radius = 56.0
-tags = Array[String](["item"])
+tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_xg0f5"]
 script = ExtResource("1_3pcbq")
@@ -395,7 +396,7 @@ script = ExtResource("1_3pcbq")
 id = 48
 position = Vector2(1542.3457, 800)
 radius = 62.0
-tags = Array[String](["item"])
+tags = Array[String](["item", "ground"])
 
 [sub_resource type="Resource" id="Resource_jedfl"]
 script = ExtResource("1_3pcbq")

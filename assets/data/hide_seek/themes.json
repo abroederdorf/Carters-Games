@@ -3937,30 +3937,12 @@
       "scene": "Children's cartoon image of a vast desert. Tall saguaro cacti, rolling sand dunes, a distant mesa, a blazing sun, desert animals hiding. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
-          "name": "cactus",
-          "desc": "tall green saguaro cactus with two arms",
-          "type": "object",
-          "tags": [
-            "ground",
-            "foliage"
-          ]
-        },
-        {
           "name": "scorpion",
-          "desc": "yellow scorpion with raised stinger tail",
-          "type": "character",
-          "tags": [
-            "ground",
-            "shadow"
-          ]
+          "shared": "scorpion"
         },
         {
           "name": "snake",
-          "desc": "coiled brown rattlesnake on a warm rock",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "snake"
         },
         {
           "name": "camel",
@@ -3979,16 +3961,8 @@
           ]
         },
         {
-          "name": "lizard",
-          "desc": "small spiny horned lizard on a flat rock",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "eagle",
-          "shared": "eagle"
+          "name": "lizard_orange",
+          "shared": "lizard_orange"
         },
         {
           "name": "vulture",
@@ -3999,32 +3973,12 @@
           ]
         },
         {
-          "name": "cowboy_hat",
-          "desc": "tan wide-brim cowboy hat with a brown band",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "water_bottle",
           "shared": "water_bottle"
         },
         {
           "name": "fossil",
-          "desc": "spiral ammonite fossil in a flat sandstone rock",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "saddle",
-          "desc": "brown leather western horse saddle",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "fossil"
         },
         {
           "name": "roadrunner",
@@ -4033,10 +3987,6 @@
           "tags": [
             "ground"
           ]
-        },
-        {
-          "name": "flashlight",
-          "shared": "flashlight"
         },
         {
           "name": "compass",
@@ -4068,20 +4018,57 @@
           ]
         },
         {
-          "name": "rattlesnake_rattle",
-          "desc": "dry segmented rattlesnake rattle tail piece",
+          "name": "cattle_skull",
+          "desc": "white bleached cattle skull with two curved horns",
           "type": "object",
           "tags": [
             "ground"
           ]
         },
         {
-          "name": "bleached_skull",
-          "desc": "small white animal skull sun-bleached in the sand",
+          "name": "barrel_cactus",
+          "desc": "short round barrel cactus with thick ribs and yellow spines",
           "type": "object",
           "tags": [
             "ground"
           ]
+        },
+        {
+          "name": "saguaro_cactus",
+          "desc": "tall saguaro cactus with two upward arms",
+          "type": "object",
+          "tags": [
+            "ground",
+            "sky"
+          ]
+        },
+        {
+          "name": "cholla_plant",
+          "desc": "spiky cholla cactus with dense fuzzy-looking thorns on branching arms",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "sunglasses",
+          "shared": "sunglasses"
+        },
+        {
+          "name": "sunscreen_bottle",
+          "shared": "sunscreen_bottle"
+        },
+        {
+          "name": "desert_bush",
+          "desc": "dry woody desert shrub with thin spiky branches, no leaves",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "ant",
+          "shared": "ant"
         }
       ]
     },
@@ -5559,11 +5546,7 @@
         },
         {
           "name": "sunglasses",
-          "desc": "wraparound sport sunglasses with mirrored lenses",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "sunglasses"
         },
         {
           "name": "eagle",
@@ -7160,19 +7143,11 @@
         },
         {
           "name": "elephant",
-          "desc": "large gray elephant spraying water from its trunk",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "elephant"
         },
         {
           "name": "lion",
-          "desc": "male lion with a large fluffy mane resting in the sun",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "lion"
         },
         {
           "name": "zebra",
@@ -7201,20 +7176,11 @@
         },
         {
           "name": "parrot",
-          "desc": "bright scarlet macaw on a wooden perch with red and blue feathers",
-          "type": "character",
-          "tags": [
-            "sky",
-            "foliage"
-          ]
+          "shared": "parrot"
         },
         {
           "name": "tiger",
-          "desc": "orange tiger with black stripes prowling in its enclosure",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "tiger"
         },
         {
           "name": "hippo",
@@ -7251,7 +7217,7 @@
           ]
         },
         {
-          "name": "toucan",
+          "name": "tucan",
           "desc": "toucan with an enormous colorful orange and yellow beak",
           "type": "character",
           "tags": [
@@ -7268,42 +7234,48 @@
           "shared": "binoculars"
         },
         {
-          "name": "zoo_map",
-          "desc": "colorful folded zoo visitor map with animal habitat icons",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "peanuts",
-          "desc": "small bag of roasted peanuts in the shell",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "snake",
-          "desc": "large green and yellow boa constrictor coiled on a branch",
-          "type": "character",
-          "tags": [
-            "foliage",
-            "structure"
-          ]
+          "shared": "snake"
         },
         {
           "name": "monkey",
-          "desc": "small brown monkey swinging on a rope in its habitat",
-          "type": "character",
+          "shared": "monkey"
+        },
+        {
+          "name": "stroller",
+          "shared": "stroller"
+        },
+        {
+          "name": "balloon",
+          "desc": "single round red helium balloon on a string",
+          "type": "object",
           "tags": [
-            "sky",
-            "foliage"
+            "sky"
           ]
         },
         {
-          "name": "trophy",
-          "shared": "trophy"
+          "name": "popcorn",
+          "shared": "popcorn"
+        },
+        {
+          "name": "cotton_candy",
+          "shared": "cotton_candy"
+        },
+        {
+          "name": "bear",
+          "shared": "bear"
+        },
+        {
+          "name": "turtle",
+          "shared": "turtle"
+        },
+        {
+          "name": "trash_can",
+          "shared": "trash_can"
+        },
+        {
+          "name": "park_bench",
+          "shared": "park_bench"
         }
       ]
     },
