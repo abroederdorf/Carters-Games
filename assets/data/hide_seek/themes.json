@@ -7271,8 +7271,12 @@
           "shared": "stroller"
         },
         {
-          "name": "balloon_bunch",
-          "shared": "balloon_bunch"
+          "name": "balloon",
+          "desc": "single round red helium balloon on a string",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
         },
         {
           "name": "popcorn",
