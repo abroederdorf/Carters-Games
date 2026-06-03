@@ -7160,19 +7160,11 @@
         },
         {
           "name": "elephant",
-          "desc": "large gray elephant spraying water from its trunk",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "elephant"
         },
         {
           "name": "lion",
-          "desc": "male lion with a large fluffy mane resting in the sun",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "lion"
         },
         {
           "name": "zebra",
@@ -7201,20 +7193,11 @@
         },
         {
           "name": "parrot",
-          "desc": "bright scarlet macaw on a wooden perch with red and blue feathers",
-          "type": "character",
-          "tags": [
-            "sky",
-            "foliage"
-          ]
+          "shared": "parrot"
         },
         {
           "name": "tiger",
-          "desc": "orange tiger with black stripes prowling in its enclosure",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "tiger"
         },
         {
           "name": "hippo",
@@ -7285,21 +7268,11 @@
         },
         {
           "name": "snake",
-          "desc": "large green and yellow boa constrictor coiled on a branch",
-          "type": "character",
-          "tags": [
-            "foliage",
-            "structure"
-          ]
+          "shared": "snake"
         },
         {
           "name": "monkey",
-          "desc": "small brown monkey swinging on a rope in its habitat",
-          "type": "character",
-          "tags": [
-            "sky",
-            "foliage"
-          ]
+          "shared": "monkey"
         },
         {
           "name": "trophy",
