@@ -1514,12 +1514,7 @@
         },
         {
           "name": "mud_splatter",
-          "desc": "brown splash of mud on the ground",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "mud_splatter"
         },
         {
           "name": "motorcycle_helmet",
@@ -1553,11 +1548,7 @@
         },
         {
           "name": "dirt_pile",
-          "desc": "large mound of loose brown dirt",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "dirt_pile"
         },
         {
           "name": "crowd_barrier",
@@ -5482,8 +5473,12 @@
       "scene": "Children's cartoon image of a mountain bike trail. Dirt path winding through a pine forest, rocky outcrops, a wooden jump ramp, valley views below. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
-          "name": "bicycle",
-          "shared": "bicycle"
+          "name": "mountain_bike",
+          "desc": "bright red full-suspension mountain bike",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
         },
         {
           "name": "bike_helmet",
@@ -5502,7 +5497,7 @@
           "shared": "backpack"
         },
         {
-          "name": "gloves",
+          "name": "bike_gloves",
           "desc": "padded fingerless mountain bike gloves",
           "type": "object",
           "tags": [
@@ -5510,7 +5505,7 @@
           ]
         },
         {
-          "name": "knee_pad",
+          "name": "knee_pads",
           "desc": "black foam knee pad with velcro straps",
           "type": "object",
           "tags": [
@@ -5518,7 +5513,7 @@
           ]
         },
         {
-          "name": "pump",
+          "name": "bike_pump",
           "desc": "compact bike tire pump clipped to a frame",
           "type": "object",
           "tags": [
@@ -5546,28 +5541,8 @@
           "shared": "first_aid_kit"
         },
         {
-          "name": "flashlight",
-          "shared": "flashlight"
-        },
-        {
           "name": "compass",
           "shared": "compass"
-        },
-        {
-          "name": "muddy_boot",
-          "desc": "hiking boot caked in brown trail mud",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "goggles",
-          "desc": "yellow-framed mountain bike riding goggles",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
         },
         {
           "name": "camera",
@@ -5575,19 +5550,11 @@
         },
         {
           "name": "trail_marker",
-          "desc": "orange diamond-shaped trail marker nailed to a tree",
+          "desc": "blue diamond-shaped trail marker nailed to a tree",
           "type": "object",
           "tags": [
             "foliage",
             "structure"
-          ]
-        },
-        {
-          "name": "repair_kit",
-          "desc": "small orange bike repair kit pouch with patches",
-          "type": "object",
-          "tags": [
-            "ground"
           ]
         },
         {
@@ -5605,6 +5572,42 @@
         {
           "name": "dragonfly",
           "shared": "dragonfly"
+        },
+        {
+          "name": "butterfly",
+          "shared": "butterfly"
+        },
+        {
+          "name": "tree",
+          "shared": "tree"
+        },
+        {
+          "name": "rock",
+          "shared": "rock"
+        },
+        {
+          "name": "ladybug",
+          "shared": "ladybug"
+        },
+        {
+          "name": "flower_patch",
+          "shared": "flower_patch"
+        },
+        {
+          "name": "drone",
+          "desc": "small quadcopter drone hovering in the air",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "dirt_pile",
+          "shared": "dirt_pile"
+        },
+        {
+          "name": "mud_splatter",
+          "shared": "mud_splatter"
         }
       ]
     },

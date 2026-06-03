@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HideSeekItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="1_om1mr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/knee_pads.webp" id="2_5gkcl"]
+
+[resource]
+script = ExtResource("1_om1mr")
+item_name = "knee_pads"
+thumbnail = ExtResource("2_5gkcl")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
