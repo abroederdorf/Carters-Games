@@ -7285,6 +7285,14 @@
         {
           "name": "cotton_candy",
           "shared": "cotton_candy"
+        },
+        {
+          "name": "otter",
+          "desc": "small brown otter floating on its back in water",
+          "type": "character",
+          "tags": [
+            "water"
+          ]
         }
       ]
     },
