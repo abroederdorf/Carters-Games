@@ -4065,6 +4065,10 @@
           "tags": [
             "ground"
           ]
+        },
+        {
+          "name": "ant",
+          "shared": "ant"
         }
       ]
     },
