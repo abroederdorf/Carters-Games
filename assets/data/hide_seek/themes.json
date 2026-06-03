@@ -4055,12 +4055,8 @@
           "shared": "sunglasses"
         },
         {
-          "name": "sunscreen",
-          "desc": "white bottle of sunscreen with a flip-top cap",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "name": "sunscreen_bottle",
+          "shared": "sunscreen_bottle"
         },
         {
           "name": "desert_bush",
