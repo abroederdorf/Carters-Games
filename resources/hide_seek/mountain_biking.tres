@@ -61,8 +61,9 @@ tags = Array[String](["small"])
 [sub_resource type="Resource" id="Resource_i825e"]
 script = ExtResource("1_mfh5n")
 id = 4
-position = Vector2(683.0306, 873.11975)
+position = Vector2(681.03314, 851.1432)
 radius = 40.0
+visual_scale = 0.8500000000000001
 tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_gu6ks"]
@@ -133,17 +134,17 @@ tags = Array[String](["ground", "bug"])
 [sub_resource type="Resource" id="Resource_6hfc7"]
 script = ExtResource("1_mfh5n")
 id = 14
-position = Vector2(1090.4935, 163.93246)
+position = Vector2(1859.4971, 729.3342)
 radius = 40.0
-visual_scale = 0.75
+visual_scale = 0.65
 tags = Array[String](["rock"])
 
 [sub_resource type="Resource" id="Resource_c6n4m"]
 script = ExtResource("1_mfh5n")
 id = 15
-position = Vector2(2091.18, 643.42554)
+position = Vector2(1100.4629, 369.71463)
 radius = 40.0
-visual_scale = 0.8999999999999999
+visual_scale = 0.7
 tags = Array[String](["rock"])
 
 [sub_resource type="Resource" id="Resource_kpk68"]
@@ -410,7 +411,7 @@ item_name = "bike_helmet"
 thumbnail = ExtResource("5_a1fru")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.45
+base_scale = 0.4
 tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_tbbl1"]
@@ -446,7 +447,7 @@ item_name = "knee_pads"
 thumbnail = ExtResource("8_in2a4")
 position = Vector2(100, 100)
 radius = 60.0
-base_scale = 0.45
+base_scale = 0.35
 tags = Array[String](["medium"])
 
 [sub_resource type="Resource" id="Resource_epdga"]
