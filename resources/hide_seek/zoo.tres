@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/zoo/flamingo.webp" id="13_mtb0t"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/zoo/gorilla.webp" id="14_xosbi"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/zoo/peacock.webp" id="15_o6kjg"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/zoo/toucan.webp" id="16_kqsl1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/zoo/tucan.webp" id="16_kqsl1"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/camera.webp" id="17_4k5xm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/binoculars.webp" id="18_i7vjn"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/snake.webp" id="19_t0syj"]
@@ -497,7 +497,7 @@ tags = Array[String](["peacock"])
 
 [sub_resource type="Resource" id="Resource_vb5a3"]
 script = ExtResource("3_k7iqu")
-item_name = "toucan"
+item_name = "tucan"
 thumbnail = ExtResource("16_kqsl1")
 position = Vector2(100, 100)
 radius = 60.0
