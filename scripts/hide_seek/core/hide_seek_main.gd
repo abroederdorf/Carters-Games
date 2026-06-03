@@ -23,6 +23,8 @@ func _ready() -> void:
 	_update_pagination_ui()
 	await get_tree().process_frame
 	_fit_pages_to_scroll()
+	if not is_inside_tree():
+		return
 	await get_tree().process_frame
 	_scroll.scroll_horizontal = int(_current_page * _page_width)
 	_scroll.resized.connect(_fit_pages_to_scroll)
