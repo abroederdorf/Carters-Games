@@ -4018,8 +4018,8 @@
           ]
         },
         {
-          "name": "bleached_skull",
-          "desc": "small white animal skull sun-bleached in the sand",
+          "name": "cattle_skull",
+          "desc": "white bleached cattle skull with two curved horns",
           "type": "object",
           "tags": [
             "ground"
