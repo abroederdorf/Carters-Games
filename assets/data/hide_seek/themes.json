@@ -3937,30 +3937,12 @@
       "scene": "Children's cartoon image of a vast desert. Tall saguaro cacti, rolling sand dunes, a distant mesa, a blazing sun, desert animals hiding. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
-          "name": "cactus",
-          "desc": "tall green saguaro cactus with two arms",
-          "type": "object",
-          "tags": [
-            "ground",
-            "foliage"
-          ]
-        },
-        {
           "name": "scorpion",
-          "desc": "yellow scorpion with raised stinger tail",
-          "type": "character",
-          "tags": [
-            "ground",
-            "shadow"
-          ]
+          "shared": "scorpion"
         },
         {
           "name": "snake",
-          "desc": "coiled brown rattlesnake on a warm rock",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "snake"
         },
         {
           "name": "camel",
@@ -3979,16 +3961,8 @@
           ]
         },
         {
-          "name": "lizard",
-          "desc": "small spiny horned lizard on a flat rock",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "eagle",
-          "shared": "eagle"
+          "name": "lizard_orange",
+          "shared": "lizard_orange"
         },
         {
           "name": "vulture",
@@ -3999,32 +3973,12 @@
           ]
         },
         {
-          "name": "cowboy_hat",
-          "desc": "tan wide-brim cowboy hat with a brown band",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "water_bottle",
           "shared": "water_bottle"
         },
         {
           "name": "fossil",
-          "desc": "spiral ammonite fossil in a flat sandstone rock",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "saddle",
-          "desc": "brown leather western horse saddle",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "fossil"
         },
         {
           "name": "roadrunner",
@@ -4033,10 +3987,6 @@
           "tags": [
             "ground"
           ]
-        },
-        {
-          "name": "flashlight",
-          "shared": "flashlight"
         },
         {
           "name": "compass",
@@ -4068,16 +4018,53 @@
           ]
         },
         {
-          "name": "rattlesnake_rattle",
-          "desc": "dry segmented rattlesnake rattle tail piece",
+          "name": "bleached_skull",
+          "desc": "small white animal skull sun-bleached in the sand",
           "type": "object",
           "tags": [
             "ground"
           ]
         },
         {
-          "name": "bleached_skull",
-          "desc": "small white animal skull sun-bleached in the sand",
+          "name": "barrel_cactus",
+          "desc": "short round barrel cactus with thick ribs and yellow spines",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "saguaro_cactus",
+          "desc": "tall saguaro cactus with two upward arms",
+          "type": "object",
+          "tags": [
+            "ground",
+            "sky"
+          ]
+        },
+        {
+          "name": "cholla_cactus",
+          "desc": "spiky cholla cactus with dense fuzzy-looking thorns on branching arms",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "sunglasses",
+          "shared": "sunglasses"
+        },
+        {
+          "name": "sunscreen",
+          "desc": "white bottle of sunscreen with a flip-top cap",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "desert_bush",
+          "desc": "dry woody desert shrub with thin spiky branches, no leaves",
           "type": "object",
           "tags": [
             "ground"
@@ -5559,11 +5546,7 @@
         },
         {
           "name": "sunglasses",
-          "desc": "wraparound sport sunglasses with mirrored lenses",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "sunglasses"
         },
         {
           "name": "eagle",
