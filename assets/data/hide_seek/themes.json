@@ -7271,12 +7271,8 @@
           "shared": "stroller"
         },
         {
-          "name": "balloons",
-          "desc": "bunch of colorful helium balloons tied together on a string",
-          "type": "object",
-          "tags": [
-            "sky"
-          ]
+          "name": "balloon_bunch",
+          "shared": "balloon_bunch"
         },
         {
           "name": "popcorn",
