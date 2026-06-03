@@ -18,24 +18,28 @@ def parse_tres(path: Path):
     Returns (anchors, items) where each is a list of dicts with 'name' and 'tags'.
     """
     content = path.read_text()
-    
-    # 1. Extract Anchors
-    # Matches sub_resources with hide_seek_anchor script (ExtResource("1_rrvu8"))
-    # We look for the tags array.
-    anchors = []
-    anchor_blocks = re.findall(r'\[sub_resource.*?script = ExtResource\("1_rrvu8"\).*?tags = Array\[String\]\(\[(.*?)\]\)', content, re.DOTALL)
-    for tags_str in anchor_blocks:
-        tags = [t.strip().strip('"') for t in tags_str.split(',') if t.strip()]
-        anchors.append({"tags": tags})
 
-    # 2. Extract Items
-    # Matches sub_resources with hide_seek_item_data script (ExtResource("3_fy28n"))
+    # Dynamically resolve script IDs from ext_resource headers
+    anchor_id = re.search(r'\[ext_resource.*?path="res://scripts/hide_seek/resources/hide_seek_anchor\.gd".*?id="(.*?)"', content)
+    item_id = re.search(r'\[ext_resource.*?path="res://scripts/hide_seek/resources/hide_seek_item_data\.gd".*?id="(.*?)"', content)
+
+    anchors = []
     items = []
-    item_blocks = re.findall(r'\[sub_resource.*?script = ExtResource\("3_fy28n"\).*?item_name = "(.*?)".*?tags = Array\[String\]\(\[(.*?)\]\)', content, re.DOTALL)
-    for name, tags_str in item_blocks:
-        tags = [t.strip().strip('"') for t in tags_str.split(',') if t.strip()]
-        items.append({"name": name, "tags": tags})
-        
+
+    if anchor_id:
+        aid = re.escape(anchor_id.group(1))
+        anchor_blocks = re.findall(rf'\[sub_resource.*?script = ExtResource\("{aid}"\).*?tags = Array\[String\]\(\[(.*?)\]\)', content, re.DOTALL)
+        for tags_str in anchor_blocks:
+            tags = [t.strip().strip('"') for t in tags_str.split(',') if t.strip()]
+            anchors.append({"tags": tags})
+
+    if item_id:
+        iid = re.escape(item_id.group(1))
+        item_blocks = re.findall(rf'\[sub_resource.*?script = ExtResource\("{iid}"\).*?item_name = "(.*?)".*?tags = Array\[String\]\(\[(.*?)\]\)', content, re.DOTALL)
+        for name, tags_str in item_blocks:
+            tags = [t.strip().strip('"') for t in tags_str.split(',') if t.strip()]
+            items.append({"name": name, "tags": tags})
+
     return anchors, items
 
 def main():
