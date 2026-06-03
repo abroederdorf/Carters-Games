@@ -4,6 +4,15 @@ from pathlib import Path
 from PIL import Image
 
 ASSET_ROOT = Path("assets/sprites/hide_seek")
+MIN_BG_WIDTH = 2700
+
+def check_background(image_path):
+    img = Image.open(image_path)
+    w, h = img.size
+    if w < MIN_BG_WIDTH:
+        print(f"  WARNING: Background too small ({w}x{h}) — expected at least {MIN_BG_WIDTH}px wide. Regenerate at full resolution.")
+    else:
+        print(f"  Background size OK: {w}x{h}")
 
 def make_transparent(image_path, tolerance=30, clear_holes=False):
     """
@@ -82,6 +91,7 @@ def main():
                 print(f"\n--- Theme: {p.name} ---")
                 for img_path in p.glob("*.png"):
                     if img_path.name == "bg.png" or img_path.name.startswith("bg_"):
+                        check_background(img_path)
                         continue
                     make_transparent(img_path, tolerance=args.tolerance, clear_holes=args.holes)
             elif p.is_file() and p.suffix == ".png":
@@ -98,6 +108,7 @@ def main():
         print(f"\n--- Theme: {theme_dir.name} ---")
         for img_path in theme_dir.glob("*.png"):
             if img_path.name == "bg.png" or img_path.name.startswith("bg_"):
+                check_background(img_path)
                 continue
             make_transparent(img_path, tolerance=args.tolerance, clear_holes=args.holes)
 
