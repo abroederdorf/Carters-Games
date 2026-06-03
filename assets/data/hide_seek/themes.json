@@ -4043,7 +4043,7 @@
           ]
         },
         {
-          "name": "cholla_cactus",
+          "name": "cholla_plant",
           "desc": "spiky cholla cactus with dense fuzzy-looking thorns on branching arms",
           "type": "object",
           "tags": [
