@@ -7259,14 +7259,6 @@
           ]
         },
         {
-          "name": "peanuts",
-          "desc": "small bag of roasted peanuts in the shell",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "snake",
           "shared": "snake"
         },
@@ -7275,8 +7267,24 @@
           "shared": "monkey"
         },
         {
-          "name": "trophy",
-          "shared": "trophy"
+          "name": "stroller",
+          "shared": "stroller"
+        },
+        {
+          "name": "balloons",
+          "desc": "bunch of colorful helium balloons tied together on a string",
+          "type": "object",
+          "tags": [
+            "sky"
+          ]
+        },
+        {
+          "name": "popcorn",
+          "shared": "popcorn"
+        },
+        {
+          "name": "cotton_candy",
+          "shared": "cotton_candy"
         }
       ]
     },
