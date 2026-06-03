@@ -7285,6 +7285,14 @@
         {
           "name": "turtle",
           "shared": "turtle"
+        },
+        {
+          "name": "trash_can",
+          "shared": "trash_can"
+        },
+        {
+          "name": "park_bench",
+          "shared": "park_bench"
         }
       ]
     },
