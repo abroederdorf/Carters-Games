@@ -4,6 +4,7 @@ const SAVE_PATH = "user://find_it_progress.json"
 const UNLOCK_STAR_COST := 3
 
 const SCENE_ORDER: Array[String] = [
+	"mountain_biking",
 	"pet_shop",
 	"beach",
 	"circus",

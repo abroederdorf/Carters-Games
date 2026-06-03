@@ -1,0 +1,529 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_mfh5n"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/bg_mountain_biking.webp" id="2_tvycr"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_ld6ol"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/mountain_bike.webp" id="4_q0hdf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/bike_helmet.webp" id="5_a1fru"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/water_bottle.webp" id="6_q0hdf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/bike_gloves.webp" id="7_ld6ol"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/backpack.webp" id="7_xyh88"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/knee_pads.webp" id="8_in2a4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/trail_map.webp" id="8_wph82"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/bike_pump.webp" id="9_a1fru"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/energy_bar.webp" id="9_pyy2r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/first_aid_kit.webp" id="10_jw7cl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/compass.webp" id="11_i825e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/camera.webp" id="12_gu6ks"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/trail_marker.webp" id="13_08q4o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/eagle.webp" id="14_hln8i"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/dragonfly.webp" id="15_kkuct"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/butterfly.webp" id="16_e34fp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/tree.webp" id="17_688b6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/sunglasses.webp" id="17_xyh88"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/rock.webp" id="18_p2wag"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/ladybug.webp" id="19_try88"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/flower_patch.webp" id="20_27tea"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/dirt_pile.webp" id="21_6hfc7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/mud_splatter.webp" id="22_c6n4m"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="23_kpk68"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/mountain_biking/drone.webp" id="25_wph82"]
+
+[sub_resource type="Resource" id="Resource_pyy2r"]
+script = ExtResource("1_mfh5n")
+id = 0
+position = Vector2(132.36363, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_jw7cl"]
+script = ExtResource("1_mfh5n")
+id = 1
+position = Vector2(264.72726, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_i825e"]
+script = ExtResource("1_mfh5n")
+id = 2
+position = Vector2(397.0909, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_gu6ks"]
+script = ExtResource("1_mfh5n")
+id = 3
+position = Vector2(529.4545, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_08q4o"]
+script = ExtResource("1_mfh5n")
+id = 4
+position = Vector2(661.8182, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_hln8i"]
+script = ExtResource("1_mfh5n")
+id = 5
+position = Vector2(794.1818, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_kkuct"]
+script = ExtResource("1_mfh5n")
+id = 6
+position = Vector2(926.5455, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_e34fp"]
+script = ExtResource("1_mfh5n")
+id = 7
+position = Vector2(1058.909, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_688b6"]
+script = ExtResource("1_mfh5n")
+id = 8
+position = Vector2(1191.2727, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_p2wag"]
+script = ExtResource("1_mfh5n")
+id = 9
+position = Vector2(1323.6364, 40)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_try88"]
+script = ExtResource("1_mfh5n")
+id = 10
+position = Vector2(198.54546, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_27tea"]
+script = ExtResource("1_mfh5n")
+id = 11
+position = Vector2(330.9091, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_6hfc7"]
+script = ExtResource("1_mfh5n")
+id = 12
+position = Vector2(463.27274, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_c6n4m"]
+script = ExtResource("1_mfh5n")
+id = 13
+position = Vector2(595.63635, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_kpk68"]
+script = ExtResource("1_mfh5n")
+id = 14
+position = Vector2(728, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_cdstm"]
+script = ExtResource("1_mfh5n")
+id = 15
+position = Vector2(860.36365, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_rpjfq"]
+script = ExtResource("1_mfh5n")
+id = 16
+position = Vector2(992.7273, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_hg3ua"]
+script = ExtResource("1_mfh5n")
+id = 17
+position = Vector2(1125.091, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_33e67"]
+script = ExtResource("1_mfh5n")
+id = 18
+position = Vector2(1257.4546, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_4xn4m"]
+script = ExtResource("1_mfh5n")
+id = 19
+position = Vector2(1257.4546, 100)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_jw7xp"]
+script = ExtResource("1_mfh5n")
+id = 20
+position = Vector2(132.36363, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_o6p84"]
+script = ExtResource("1_mfh5n")
+id = 21
+position = Vector2(264.72726, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_3wamn"]
+script = ExtResource("1_mfh5n")
+id = 22
+position = Vector2(397.0909, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_3eo3n"]
+script = ExtResource("1_mfh5n")
+id = 23
+position = Vector2(529.4545, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ex5x0"]
+script = ExtResource("1_mfh5n")
+id = 24
+position = Vector2(661.8182, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_3q5qo"]
+script = ExtResource("1_mfh5n")
+id = 25
+position = Vector2(794.1818, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_418sl"]
+script = ExtResource("1_mfh5n")
+id = 26
+position = Vector2(926.5455, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_825f2"]
+script = ExtResource("1_mfh5n")
+id = 27
+position = Vector2(1058.909, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_usvkn"]
+script = ExtResource("1_mfh5n")
+id = 28
+position = Vector2(1191.2727, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_mayah"]
+script = ExtResource("1_mfh5n")
+id = 29
+position = Vector2(1323.6364, 160)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_4jf3g"]
+script = ExtResource("1_mfh5n")
+id = 30
+position = Vector2(198.54546, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_ocfx8"]
+script = ExtResource("1_mfh5n")
+id = 31
+position = Vector2(330.9091, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_eqyhw"]
+script = ExtResource("1_mfh5n")
+id = 32
+position = Vector2(463.27274, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_t6hjv"]
+script = ExtResource("1_mfh5n")
+id = 33
+position = Vector2(595.63635, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_gkthm"]
+script = ExtResource("1_mfh5n")
+id = 34
+position = Vector2(728, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_r80fb"]
+script = ExtResource("1_mfh5n")
+id = 35
+position = Vector2(860.36365, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_qdim2"]
+script = ExtResource("1_mfh5n")
+id = 36
+position = Vector2(992.7273, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_vf0ie"]
+script = ExtResource("1_mfh5n")
+id = 37
+position = Vector2(1125.091, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_w1etu"]
+script = ExtResource("1_mfh5n")
+id = 38
+position = Vector2(1257.4546, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_5oq07"]
+script = ExtResource("1_mfh5n")
+id = 39
+position = Vector2(1257.4546, 220)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_oo6ru"]
+script = ExtResource("1_mfh5n")
+id = 40
+position = Vector2(132.36363, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_dirxg"]
+script = ExtResource("1_mfh5n")
+id = 41
+position = Vector2(264.72726, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_cswes"]
+script = ExtResource("1_mfh5n")
+id = 42
+position = Vector2(397.0909, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_r5ydx"]
+script = ExtResource("1_mfh5n")
+id = 43
+position = Vector2(529.4545, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_msefe"]
+script = ExtResource("1_mfh5n")
+id = 44
+position = Vector2(661.8182, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_3r1d1"]
+script = ExtResource("1_mfh5n")
+id = 45
+position = Vector2(794.1818, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_2nfpt"]
+script = ExtResource("1_mfh5n")
+id = 46
+position = Vector2(926.5455, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_65cew"]
+script = ExtResource("1_mfh5n")
+id = 47
+position = Vector2(1058.909, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_umd2u"]
+script = ExtResource("1_mfh5n")
+id = 48
+position = Vector2(1191.2727, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_sytya"]
+script = ExtResource("1_mfh5n")
+id = 49
+position = Vector2(1323.6364, 280)
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_tbbl1"]
+script = ExtResource("3_ld6ol")
+item_name = "mountain_bike"
+thumbnail = ExtResource("4_q0hdf")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_mc6qw"]
+script = ExtResource("3_ld6ol")
+item_name = "bike_helmet"
+thumbnail = ExtResource("5_a1fru")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_1bcrg"]
+script = ExtResource("3_ld6ol")
+item_name = "water_bottle"
+thumbnail = ExtResource("6_q0hdf")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_7dota"]
+script = ExtResource("3_ld6ol")
+item_name = "backpack"
+thumbnail = ExtResource("7_xyh88")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_epdga"]
+script = ExtResource("3_ld6ol")
+item_name = "bike_gloves"
+thumbnail = ExtResource("7_ld6ol")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_xbpd0"]
+script = ExtResource("3_ld6ol")
+item_name = "knee_pads"
+thumbnail = ExtResource("8_in2a4")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_imho6"]
+script = ExtResource("3_ld6ol")
+item_name = "bike_pump"
+thumbnail = ExtResource("9_a1fru")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_1cquf"]
+script = ExtResource("3_ld6ol")
+item_name = "trail_map"
+thumbnail = ExtResource("8_wph82")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_tcgl7"]
+script = ExtResource("3_ld6ol")
+item_name = "energy_bar"
+thumbnail = ExtResource("9_pyy2r")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_y2hvo"]
+script = ExtResource("3_ld6ol")
+item_name = "first_aid_kit"
+thumbnail = ExtResource("10_jw7cl")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_a528l"]
+script = ExtResource("3_ld6ol")
+item_name = "compass"
+thumbnail = ExtResource("11_i825e")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_wqyq7"]
+script = ExtResource("3_ld6ol")
+item_name = "camera"
+thumbnail = ExtResource("12_gu6ks")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_fij2j"]
+script = ExtResource("3_ld6ol")
+item_name = "trail_marker"
+thumbnail = ExtResource("13_08q4o")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_5asq4"]
+script = ExtResource("3_ld6ol")
+item_name = "sunglasses"
+thumbnail = ExtResource("17_xyh88")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_7g1kb"]
+script = ExtResource("3_ld6ol")
+item_name = "eagle"
+thumbnail = ExtResource("14_hln8i")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_27wkg"]
+script = ExtResource("3_ld6ol")
+item_name = "dragonfly"
+thumbnail = ExtResource("15_kkuct")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_vyr51"]
+script = ExtResource("3_ld6ol")
+item_name = "butterfly"
+thumbnail = ExtResource("16_e34fp")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_pmam6"]
+script = ExtResource("3_ld6ol")
+item_name = "tree"
+thumbnail = ExtResource("17_688b6")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_f0i2h"]
+script = ExtResource("3_ld6ol")
+item_name = "rock"
+thumbnail = ExtResource("18_p2wag")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_6c6sw"]
+script = ExtResource("3_ld6ol")
+item_name = "ladybug"
+thumbnail = ExtResource("19_try88")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_tb3hc"]
+script = ExtResource("3_ld6ol")
+item_name = "flower_patch"
+thumbnail = ExtResource("20_27tea")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_m52l6"]
+script = ExtResource("3_ld6ol")
+item_name = "drone"
+thumbnail = ExtResource("25_wph82")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_050l1"]
+script = ExtResource("3_ld6ol")
+item_name = "dirt_pile"
+thumbnail = ExtResource("21_6hfc7")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[sub_resource type="Resource" id="Resource_xld6v"]
+script = ExtResource("3_ld6ol")
+item_name = "mud_splatter"
+thumbnail = ExtResource("22_c6n4m")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+
+[resource]
+script = ExtResource("23_kpk68")
+scene_name = "mountain_biking"
+background_image = ExtResource("2_tvycr")
+items = Array[ExtResource("3_ld6ol")]([SubResource("Resource_tbbl1"), SubResource("Resource_mc6qw"), SubResource("Resource_1bcrg"), SubResource("Resource_7dota"), SubResource("Resource_epdga"), SubResource("Resource_xbpd0"), SubResource("Resource_imho6"), SubResource("Resource_1cquf"), SubResource("Resource_tcgl7"), SubResource("Resource_y2hvo"), SubResource("Resource_a528l"), SubResource("Resource_wqyq7"), SubResource("Resource_fij2j"), SubResource("Resource_5asq4"), SubResource("Resource_7g1kb"), SubResource("Resource_27wkg"), SubResource("Resource_vyr51"), SubResource("Resource_pmam6"), SubResource("Resource_f0i2h"), SubResource("Resource_6c6sw"), SubResource("Resource_tb3hc"), SubResource("Resource_m52l6"), SubResource("Resource_050l1"), SubResource("Resource_xld6v")])
+anchors = Array[ExtResource("1_mfh5n")]([SubResource("Resource_pyy2r"), SubResource("Resource_jw7cl"), SubResource("Resource_i825e"), SubResource("Resource_gu6ks"), SubResource("Resource_08q4o"), SubResource("Resource_hln8i"), SubResource("Resource_kkuct"), SubResource("Resource_e34fp"), SubResource("Resource_688b6"), SubResource("Resource_p2wag"), SubResource("Resource_try88"), SubResource("Resource_27tea"), SubResource("Resource_6hfc7"), SubResource("Resource_c6n4m"), SubResource("Resource_kpk68"), SubResource("Resource_cdstm"), SubResource("Resource_rpjfq"), SubResource("Resource_hg3ua"), SubResource("Resource_33e67"), SubResource("Resource_4xn4m"), SubResource("Resource_jw7xp"), SubResource("Resource_o6p84"), SubResource("Resource_3wamn"), SubResource("Resource_3eo3n"), SubResource("Resource_ex5x0"), SubResource("Resource_3q5qo"), SubResource("Resource_418sl"), SubResource("Resource_825f2"), SubResource("Resource_usvkn"), SubResource("Resource_mayah"), SubResource("Resource_4jf3g"), SubResource("Resource_ocfx8"), SubResource("Resource_eqyhw"), SubResource("Resource_t6hjv"), SubResource("Resource_gkthm"), SubResource("Resource_r80fb"), SubResource("Resource_qdim2"), SubResource("Resource_vf0ie"), SubResource("Resource_w1etu"), SubResource("Resource_5oq07"), SubResource("Resource_oo6ru"), SubResource("Resource_dirxg"), SubResource("Resource_cswes"), SubResource("Resource_r5ydx"), SubResource("Resource_msefe"), SubResource("Resource_3r1d1"), SubResource("Resource_2nfpt"), SubResource("Resource_65cew"), SubResource("Resource_umd2u"), SubResource("Resource_sytya")])

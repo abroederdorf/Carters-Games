@@ -5473,8 +5473,12 @@
       "scene": "Children's cartoon image of a mountain bike trail. Dirt path winding through a pine forest, rocky outcrops, a wooden jump ramp, valley views below. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
       "items": [
         {
-          "name": "bicycle",
-          "shared": "bicycle"
+          "name": "mountain_bike",
+          "desc": "bright red full-suspension mountain bike",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
         },
         {
           "name": "bike_helmet",
@@ -5493,7 +5497,7 @@
           "shared": "backpack"
         },
         {
-          "name": "gloves",
+          "name": "bike_gloves",
           "desc": "padded fingerless mountain bike gloves",
           "type": "object",
           "tags": [
@@ -5501,7 +5505,7 @@
           ]
         },
         {
-          "name": "knee_pad",
+          "name": "knee_pads",
           "desc": "black foam knee pad with velcro straps",
           "type": "object",
           "tags": [
@@ -5509,7 +5513,7 @@
           ]
         },
         {
-          "name": "pump",
+          "name": "bike_pump",
           "desc": "compact bike tire pump clipped to a frame",
           "type": "object",
           "tags": [
