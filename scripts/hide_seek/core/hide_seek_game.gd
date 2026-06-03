@@ -140,14 +140,9 @@ func _process(delta: float) -> void:
 # ── Item Assignment ────────────────────────────────────────────────────────────
 
 func _build_valid_anchors(bg_size: Vector2) -> Array[HideSeekAnchor]:
-	var margin_x := bg_size.x * 0.025
-	var margin_y := bg_size.y * 0.025
 	var result: Array[HideSeekAnchor] = []
 	for a in _scene_data.anchors:
 		if a.tags.is_empty():
-			continue
-		if a.position.x < margin_x or a.position.x > bg_size.x - margin_x \
-				or a.position.y < margin_y or a.position.y > bg_size.y - margin_y:
 			continue
 		result.append(a)
 	return result
