@@ -48,6 +48,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"airport": "Airport",
 	"park": "Park",
 	"lake_fishing": "Fishing",
+	"mountain_biking": "Mountain Biking",
 }
 
 var current_scene_name: String = ""
