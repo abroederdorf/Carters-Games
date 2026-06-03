@@ -7251,14 +7251,6 @@
           "shared": "binoculars"
         },
         {
-          "name": "zoo_map",
-          "desc": "colorful folded zoo visitor map with animal habitat icons",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
           "name": "snake",
           "shared": "snake"
         },
@@ -7287,12 +7279,12 @@
           "shared": "cotton_candy"
         },
         {
-          "name": "otter",
-          "desc": "small brown otter floating on its back in water",
-          "type": "character",
-          "tags": [
-            "water"
-          ]
+          "name": "bear",
+          "shared": "bear"
+        },
+        {
+          "name": "turtle",
+          "shared": "turtle"
         }
       ]
     },
