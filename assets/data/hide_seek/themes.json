@@ -313,6 +313,50 @@
       "tags": [
         "ground"
       ]
+    },
+    "milk_carton": {
+      "desc": "white milk carton with a red cap",
+      "type": "object",
+      "tags": [
+        "ground",
+        "structure"
+      ]
+    },
+    "carrot": {
+      "desc": "orange carrot with green leafy tops",
+      "type": "object",
+      "tags": [
+        "ground"
+      ]
+    },
+    "grapes": {
+      "desc": "cluster of purple grapes on a stem",
+      "type": "object",
+      "tags": [
+        "ground"
+      ]
+    },
+    "cheese": {
+      "desc": "yellow wedge of cheese with holes",
+      "type": "object",
+      "tags": [
+        "ground",
+        "structure"
+      ]
+    },
+    "muffin": {
+      "desc": "blueberry muffin in a paper liner",
+      "type": "object",
+      "tags": [
+        "ground"
+      ]
+    },
+    "yogurt_cup": {
+      "desc": "small plastic yogurt cup with a foil lid",
+      "type": "object",
+      "tags": [
+        "ground"
+      ]
     }
   },
   "themes": {
@@ -4432,12 +4476,7 @@
         },
         {
           "name": "milk_carton",
-          "desc": "white milk carton with a red cap",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "milk_carton"
         },
         {
           "name": "cereal_box",
@@ -4458,11 +4497,7 @@
         },
         {
           "name": "carrot",
-          "desc": "orange carrot with green leafy tops",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "carrot"
         },
         {
           "name": "shopping_bag",
@@ -4470,20 +4505,11 @@
         },
         {
           "name": "grapes",
-          "desc": "cluster of purple grapes on a stem",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "grapes"
         },
         {
           "name": "cheese",
-          "desc": "yellow wedge of cheese with holes",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "cheese"
         },
         {
           "name": "juice_box",
@@ -4499,11 +4525,7 @@
         },
         {
           "name": "muffin",
-          "desc": "blueberry muffin in a paper liner",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "muffin"
         },
         {
           "name": "fish_can",
@@ -4549,11 +4571,7 @@
         },
         {
           "name": "yogurt_cup",
-          "desc": "small plastic yogurt cup with a foil lid",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "yogurt_cup"
         }
       ]
     },
@@ -5054,11 +5072,7 @@
         },
         {
           "name": "apple",
-          "desc": "green apple sitting on the kitchen counter",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "apple"
         },
         {
           "name": "cutting_board",
@@ -5086,34 +5100,8 @@
           ]
         },
         {
-          "name": "timer",
-          "desc": "round egg timer with a ticking dial",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "oven_mitt",
-          "desc": "red quilted oven mitt",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
           "name": "measuring_cup",
           "desc": "clear glass measuring cup with red markings",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
-        },
-        {
-          "name": "ladle",
-          "desc": "silver soup ladle with a long handle",
           "type": "object",
           "tags": [
             "ground"
@@ -5144,20 +5132,40 @@
           ]
         },
         {
-          "name": "refrigerator_magnet",
-          "desc": "colorful alphabet letter fridge magnet",
-          "type": "object",
-          "tags": [
-            "structure"
-          ]
-        },
-        {
           "name": "cookie_cutter",
           "desc": "star-shaped metal cookie cutter",
           "type": "object",
           "tags": [
             "ground"
           ]
+        },
+        {
+          "name": "milk_carton",
+          "shared": "milk_carton"
+        },
+        {
+          "name": "banana",
+          "shared": "banana_bunch"
+        },
+        {
+          "name": "cheese",
+          "shared": "cheese"
+        },
+        {
+          "name": "grapes",
+          "shared": "grapes"
+        },
+        {
+          "name": "carrot",
+          "shared": "carrot"
+        },
+        {
+          "name": "muffin",
+          "shared": "muffin"
+        },
+        {
+          "name": "yogurt_cup",
+          "shared": "yogurt_cup"
         }
       ]
     },
