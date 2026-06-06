@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_jhm0m"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/bg_construction.webp" id="1_ki2g1"]
 [ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="2_jhm0m"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/blueprint.webp" id="3_kalv6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/blueprint.webp" id="3_kalv6"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/bulldozer.webp" id="4_xe7ip"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/cement_mixer.webp" id="5_jxn57"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/dump_truck.webp" id="6_r2vrh"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/wheelbarrow.webp" id="20_kc7rn"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/bucket.webp" id="21_yxilm"]
 [ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/measuring_tape.webp" id="22_88lrp"]
-[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/construction_site/t_square.webp" id="23_p5pkr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/t_square.webp" id="23_p5pkr"]
 
 [sub_resource type="Resource" id="Resource_ki2g1"]
 script = ExtResource("1_jhm0m")

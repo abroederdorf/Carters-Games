@@ -1406,20 +1406,11 @@
         },
         {
           "name": "t_square",
-          "desc": "silver metal T-square ruler with a perpendicular handle",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "t_square"
         },
         {
           "name": "blueprint",
-          "desc": "rolled-up blue paper with white house plans",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "blueprint"
         },
         {
           "name": "hammer",
@@ -2592,7 +2583,7 @@
       ]
     },
     "arctic": {
-      "scene": "Children's cartoon image of a snowy Arctic landscape. Ice floes, igloos, polar animals, snow drifts, a colorful aurora in the sky. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a large, busy arctic scene packed with things to find. The left third of the scene is open arctic sea with floating ice floes, a whale tail emerging from the water, and a seal resting on an ice chunk. The remaining two-thirds is a wide snowy landscape with gently rolling white hills \u2014 an igloo sits mid-scene, a husky and sled are visible on a hill, a polar bear and caribou roam the snowfield, and a small arctic fox peeks from behind a drift. The scene is wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Large open stretches of flat white snow and clear blue-grey sea provide space for hiding items. Friendly and wintry mood, suitable for children age 5\u20138.",
       "items": [
         {
           "name": "polar_bear",
@@ -2604,11 +2595,7 @@
         },
         {
           "name": "penguin",
-          "desc": "chubby black and white penguin with an orange beak",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "penguin"
         },
         {
           "name": "seal",
@@ -2670,15 +2657,6 @@
           ]
         },
         {
-          "name": "fishing_hole",
-          "desc": "round hole cut in ice with a fishing line",
-          "type": "object",
-          "tags": [
-            "ground",
-            "water"
-          ]
-        },
-        {
           "name": "sled",
           "desc": "wooden sled with red metal runners",
           "type": "object",
@@ -2711,10 +2689,6 @@
           ]
         },
         {
-          "name": "water_bottle",
-          "shared": "water_bottle"
-        },
-        {
           "name": "compass",
           "shared": "compass"
         },
@@ -2739,11 +2713,31 @@
           ]
         },
         {
-          "name": "aurora_shimmer",
-          "desc": "wavy curtain of green and purple northern lights",
+          "name": "coffee_cup",
+          "shared": "coffee_cup"
+        },
+        {
+          "name": "thermos",
+          "desc": "tall metal thermos with a screw-on lid",
           "type": "object",
           "tags": [
-            "sky"
+            "ground"
+          ]
+        },
+        {
+          "name": "mittens",
+          "desc": "pair of thick red knitted mittens",
+          "type": "object",
+          "tags": [
+            "ground"
+          ]
+        },
+        {
+          "name": "beanie_hat",
+          "desc": "colorful knitted beanie hat with a pom-pom on top",
+          "type": "object",
+          "tags": [
+            "ground"
           ]
         }
       ]
@@ -3680,11 +3674,7 @@
         },
         {
           "name": "pencil",
-          "desc": "sharpened yellow pencil with a pink eraser",
-          "type": "object",
-          "tags": [
-            "ground"
-          ]
+          "shared": "pencil"
         },
         {
           "name": "ruler",
@@ -6982,7 +6972,7 @@
       ]
     },
     "wood_shop": {
-      "scene": "Children's cartoon image of a woodworking shop. Sturdy workbenches covered with wood projects in progress, tool pegboards on the walls, sawdust on the floor, shelves of neatly stacked lumber. Wide panoramic (2:1). Bright colors, flat design, thick outlines, no text.",
+      "scene": "Children's cartoon image of a large, busy wood shop scene packed with things to find. A tall pegboard spans the entire back wall with tools hanging from hooks \u2014 hammers, saws, chisels, levels, screwdrivers, and wrenches with open pegs between them. A wide wooden shelf runs below the pegboard holding in-progress wood projects: a half-built birdhouse, cut planks, a small toy car frame, and wood shavings. A long sturdy workbench sits in the foreground at a slight 3/4 angle so the top surface is visible, with items spread across it \u2014 a toolbox, clamp, drill, blueprint, nails, and duct tape with open tabletop space between them. A thin strip of sawdust-covered floor is visible below the bench. The scene is wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Lots of open flat surface area on the bench top and pegboard wall for hiding items. Friendly and industrious mood, suitable for children age 5\u20138.",
       "items": [
         {
           "name": "hammer",
@@ -7094,21 +7084,7 @@
         },
         {
           "name": "blueprint",
-          "desc": "rolled blue technical drawing of a bookcase project",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
-        },
-        {
-          "name": "apron",
-          "desc": "heavy canvas shop apron with a front pocket and ties",
-          "type": "object",
-          "tags": [
-            "ground",
-            "structure"
-          ]
+          "shared": "blueprint"
         },
         {
           "name": "nails",
@@ -7119,20 +7095,27 @@
           ]
         },
         {
-          "name": "wood_chip",
-          "desc": "curled wood shaving from a hand plane on the floor",
+          "name": "t_square",
+          "shared": "t_square"
+        },
+        {
+          "name": "pencil",
+          "shared": "pencil"
+        },
+        {
+          "name": "screws",
+          "desc": "small pile of silver wood screws",
           "type": "object",
           "tags": [
             "ground"
           ]
         },
         {
-          "name": "workbench",
-          "desc": "solid hardwood workbench with a built-in vise clamp",
+          "name": "duct_tape",
+          "desc": "roll of silver duct tape",
           "type": "object",
           "tags": [
-            "ground",
-            "structure"
+            "ground"
           ]
         }
       ]
@@ -7176,11 +7159,7 @@
         },
         {
           "name": "penguin",
-          "desc": "waddling black and white penguin with an orange beak",
-          "type": "character",
-          "tags": [
-            "ground"
-          ]
+          "shared": "penguin"
         },
         {
           "name": "parrot",
