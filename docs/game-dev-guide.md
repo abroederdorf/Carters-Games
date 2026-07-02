@@ -11,7 +11,7 @@
 > **Intimidated or don't know where to start?** Paste the link to this guide into AI ([Gemini](https://gemini.google.com), [Claude](https://claude.ai), or [ChatGPT](https://chatgpt.com)) and have it walk you through the guide. Ask the AI questions just like you would a person if something is not working or does not make sense, and work together to figure it out.
 >
 > AI example prompt:
-> *"I want to make a game but I need help getting started. Read this guide and help me through the steps: [https://github.com/abroederdorf/Carters-Games/edit/docs/game-tutorial-updates/docs/game-dev-guide.md](https://github.com/abroederdorf/Carters-Games/blob/main/docs/game-dev-guide.md)"*
+> *"I want to make a game but I need help getting started. Read this guide and help me through the steps: https://github.com/abroederdorf/Carters-Games/blob/main/docs/game-dev-guide.md"*
 
 
 ---
