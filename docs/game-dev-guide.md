@@ -57,6 +57,10 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 
 > **Adult note:** This chapter involves creating accounts and installing software. It's a good place to help out.
 
+> [!TIP]
+> **Stuck on anything? Ask AI.**
+> If something in this chapter — or anywhere in this guide — isn't working, just open [claude.ai](https://claude.ai) or [gemini.google.com](https://gemini.google.com) in a browser and describe the problem. You don't need to already know how to use AI to ask for help getting AI set up. That's the whole point. Describe what you're trying to do, what step you're on, what happened, and ask: *"How do I fix this?"* AI can walk you through almost any setup issue step by step.
+
 ### Step 1: Create a GitHub account
 
 Go to [github.com](https://github.com) and sign up. GitHub is where your code will live. Think of it like Google Drive, but for code — it tracks every change you make and lets you go back in time if something breaks.
