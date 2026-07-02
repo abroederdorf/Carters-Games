@@ -43,9 +43,10 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 | [GitHub](https://github.com) | Saves your work and lets you deploy it | Free |
 | [GitHub Pages](https://pages.github.com) | Hosts your game on the web for free | Free |
 | [itch.io](https://itch.io) | Game hosting site where you can publish your game | Free |
-| [Google ImageFX](https://imagefx.google.com) | AI tool for generating item and character art | Free |
-| [Google Flow](https://flow.google) | AI creative studio for generating and editing background scenes | Free |
-| [Claude](https://claude.ai) / [Gemini](https://gemini.google.com) | AI assistant to help you plan, write code, and solve problems | Free tier available |
+| [Gemini](https://gemini.google.com) | AI assistant AND image generator — use it for planning, coding help, and creating all your game art | Free tier available |
+| [Claude](https://claude.ai) | AI assistant — great for planning, writing code, and working through problems | Free tier available |
+| [Claude Code](https://claude.ai/code) | Claude that runs on your computer and builds the game for you directly | Free tier available |
+| [Cursor](https://cursor.com) | AI-powered code editor — visual alternative to Claude Code | Free tier available |
 
 ---
 
@@ -76,6 +77,33 @@ Either one works. The key is knowing **how to talk to them.** We'll show you exa
 
 **Try this right now:**
 > *"I just installed Godot 4 and I'm making my first game. How should I get started?"*
+
+> **Free tier limits:** Both Claude and Gemini have free tiers, but they limit how many messages you can send per day. When you hit a limit on one, just switch to the other and keep going. Having accounts on both means you're rarely blocked for long.
+
+### Step 5: Choose Where to Work with AI
+
+There are a few different ways to interact with AI while building your game. Pick whichever feels most comfortable — they all work.
+
+**Option 1: Claude Code or Gemini CLI (most powerful)**
+
+These are AI tools that run in a **terminal** — a text window where you type commands. You chat with AI just like a conversation, and it writes files, runs your game, and manages git all by itself. You never touch code.
+
+- **Claude Code** — install at [claude.ai/code](https://claude.ai/code)
+- **Gemini CLI** — Google's equivalent; install by running `npm install -g @google/gemini-cli` in your terminal (AI can walk you through this)
+
+To open a terminal:
+- **Mac:** use the built-in **Terminal** app, or download [iTerm2](https://iterm2.com) for a nicer experience
+- **Windows:** use **Windows Terminal** (free from the Microsoft Store)
+
+> **Adult note:** Getting Claude Code or Gemini CLI set up takes about 10 minutes. The terminal looks intimidating but becomes second nature quickly. If it's too much friction to start, try Cursor first.
+
+**Option 2: Cursor (most visual)**
+
+[Cursor](https://cursor.com) is a code editor with AI built right in. You can see your project files and chat with AI in a sidebar — it edits the files directly, similar to Claude Code but in a visual interface. Good if the terminal feels uncomfortable. Free tier available.
+
+**Option 3: Web chat (for planning only)**
+
+Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase. For actually building, they'll give you code you'd have to paste in yourself — that's why Claude Code, Gemini CLI, or Cursor are better for the build phases.
 
 ---
 
@@ -154,16 +182,7 @@ Each phase gives you something working and testable. You'll find out early wheth
 
 With your plan in hand, you're ready to start building. Here's the key mindset: **you are the creative director, and AI is the developer.** Your job is to describe what you want clearly. AI writes the code. 
 
-### First: Use an AI That Can Actually Build For You
-
-There's a big difference between asking AI a question and having AI *do the work*:
-
-- **Claude or Gemini on the web** (claude.ai / gemini.google.com) — great for planning and conversation, but if you want code, you'd have to copy-paste it into Godot yourself.
-- **Claude Code** — Claude that runs on your computer and can write files, run your game, manage git, and make changes directly. You describe what you want, it handles everything.
-
-For building a real game, **Claude Code is the recommended tool.** You talk to it like a conversation, but instead of giving you code to paste, it just does it.
-
-> **Adult note:** Claude Code runs in the terminal. Install it at [claude.ai/code](https://claude.ai/code) — it takes about 5 minutes. Once it's running in your Godot project folder, your kid can describe what they want and Claude Code does the rest.
+Use whichever tool you set up in Chapter 3 — Claude Code, Gemini CLI, or Cursor. They all work the same way for building: you describe what you want, AI builds it. No pasting code, no touching files.
 
 A quick orientation on Godot's structure, because you'll hear these words a lot:
 - A **Node** is one building block — an image on screen, a sound, a timer, a collision area.
@@ -197,73 +216,76 @@ Once a phase works and feels good to play, move on:
 
 > *"Phase 1 is done — fish swim and I can tap them. Now let's build Phase 2: a 60-second countdown timer, a score that increases when I catch a fish, and a game over screen showing the final score."*
 
-Repeat for each phase. Your game grows from something simple into something real, one working piece at a time. Each time you start a new phase, remind AI of the full plan so it keeps the bigger picture in mind.
+Repeat for each phase. Your game grows from something simple into something real, one working piece at a time.
+
+### Start a Fresh Conversation for Each Phase
+
+AI gets slower and less reliable as a conversation grows very long. A simple rule: **when you finish one phase and start the next, open a fresh conversation.** Paste your game design document at the top so AI has full context — that's all it needs. You're not losing anything; you're giving AI a clean slate to work from.
+
+> *"Here's my game design document: [paste plan]. We've completed Phases 1 and 2. Now let's build Phase 3: [describe it]."*
 
 ---
 
 ## Chapter 6: Create Your Art with AI
 
-You don't need to be an artist. AI image tools can generate all your game art — characters, items, backgrounds — from text descriptions.
+You don't need to be an artist. Use Gemini — on the web at [gemini.google.com](https://gemini.google.com) or the Gemini app on your phone — to generate all your game art. Both item images and full background scenes can be created right there, no separate tools needed.
 
-### Tool 1: Google ImageFX — for individual items and characters
+### Generating item images
 
-Go to [ImageFX](https://aitestkitchen.withgoogle.com/tools/image-fx). Type a description, and it generates an image. Use this for individual things: a fish, a fishing rod, a backpack, a bear.
-
-**The prompt formula that works best for game items:**
+Use Gemini's image generation feature for individual things: a fish, a fishing rod, a bear, a tent. The key is a prompt formula that keeps items clean and consistent:
 
 ```
 Isolated on white background, [describe the item], [view angle], 
-thick black outlines, vibrant colors, children's cartoon image, 512x512.
+thick black outlines, vibrant colors, children's cartoon image.
 ```
 
 For the view angle, pick one:
-- `perfectly flat front view` — for things that face you (badges, faces, helmets)
+- `perfectly flat front view` — for things that face you (faces, helmets, badges)
 - `perfectly flat side view` — for things with a clear profile (fish, cars, tools)
-- `slight 3/4 view` — for things that look boring from the side (buckets, backpacks, bowls)
+- `slight 3/4 view` — for things that would look flat or boring from the side (buckets, backpacks, bowls)
 
 **Real examples from Carter's Games:**
 
-> `Isolated on white background, cute brown bear sitting upright, friendly expression, simple shapes, perfectly flat front view, thick black outlines, vibrant colors, children's cartoon image, 512x512.`
+> `Isolated on white background, cute brown bear sitting upright, friendly expression, simple shapes, perfectly flat front view, thick black outlines, vibrant colors, children's cartoon image.`
 
-> `Isolated on white background, single trout fish, blue and silver with pink stripe, facing right, perfectly flat side view, thick black outlines, vibrant colors, children's cartoon image, 512x512.`
+> `Isolated on white background, single trout fish, blue and silver with pink stripe, facing right, perfectly flat side view, thick black outlines, vibrant colors, children's cartoon image.`
 
-> `Isolated on white background, small orange camping tent, triangular, front flap open, slight 3/4 view, thick black outlines, vibrant colors, children's cartoon image, 512x512. No text, no words, no labels.`
+> `Isolated on white background, small orange camping tent, triangular, front flap open, slight 3/4 view, thick black outlines, vibrant colors, children's cartoon image. No text, no words, no labels.`
 
 **Tips:**
-- Add `no text, no words, no labels` any time your item might have writing on it (books, bottles, boxes, signs).
-- Keep the description short — one item, one color, one detail.
-- Generate 3–4 versions and pick your favorite.
+- Add `no text, no words, no labels` when the item might have writing on it (books, bottles, signs).
+- Keep descriptions short — one item, one color, one detail.
+- Generate a few versions and pick your favorite.
 
-### Tool 2: Google Flow — for background scenes
+### Generating background scenes
 
-Go to [Google Flow](https://flow.google). You can upload 3–4 of your generated item images as style references (or "ingredients") so the background scene matches your items' art style perfectly.
-
-**The background prompt formula:**
+Use the same Gemini app for full backgrounds. Describe what the scene should look like:
 
 ```
 Children's book illustration of a large, busy [THEME] scene packed with things to find.
-[2-3 sentences describing what's in the scene].
-Wide and panoramic (landscape orientation, roughly 2:1 ratio).
+[2-3 sentences describing the environment].
+Wide and panoramic, landscape orientation.
 Bright saturated colors, flat design, thick black outlines, no text.
-Every part of the scene is filled with interesting details — [list 4-5 background details].
+Every part of the scene is filled with interesting details — [list 4-5 background fillers].
 ```
 
 **Real example from Carter's Games (mountain scene):**
 
-> *Children's book illustration of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — rocks, bushes, snowdrifts, fallen logs, streams.*
+> *Children's book illustration of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide and panoramic, landscape orientation. Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — rocks, bushes, snowdrifts, fallen logs, streams.*
 
-### Remove white backgrounds
+### Remove white backgrounds — let AI do it
 
-When you generate an item in ImageFX, it comes on a white background. You'll need to make that background transparent so it looks right in the game.
+Item images come back with a white background. To make it transparent for use in the game, just ask your AI coding tool:
 
-Go to [remove.bg](https://remove.bg), upload your image, and download the result. It handles most cartoon-style images well. The free version gives you a limited number of downloads per month — enough to get started.
+> *"I have a folder of PNG images in assets/sprites/. Can you remove the white background from each one and save them as transparent PNGs?"*
 
-### Import your art into Godot
+Claude Code or Gemini CLI will handle it. No separate tool needed.
 
-1. Create a folder for your images inside the Godot project (e.g., `assets/sprites/`)
-2. Drag your image files into that folder in your file manager
-3. Open Godot — it will automatically detect and import them
-4. You can now drag images into your scene from the FileSystem panel
+### Get images into Godot — let AI do it too
+
+> *"I've added new images to assets/sprites/. Can you import them into the Godot project and make sure they're ready to use?"*
+
+AI will move the files into the right place and set up the Godot import settings.
 
 ---
 
@@ -518,14 +540,16 @@ This saves you from going in circles and makes it easier to explain the problem 
 
 | What you need | Tool | Link |
 |---------------|------|------|
-| Build the game | Godot 4 | [godotengine.org](https://godotengine.org) |
-| Write code, manage git, run commands | Claude Code | [claude.ai/code](https://claude.ai/code) |
+| Build and run the game | Godot 4 | [godotengine.org](https://godotengine.org) |
+| AI that builds directly on your computer | Claude Code | [claude.ai/code](https://claude.ai/code) |
+| AI that builds directly on your computer (Google) | Gemini CLI | install via `npm install -g @google/gemini-cli` |
+| Visual AI code editor | Cursor | [cursor.com](https://cursor.com) |
+| Terminal app (Mac) | iTerm2 | [iterm2.com](https://iterm2.com) |
+| AI planning, chat, and image generation | Gemini (web or phone) | [gemini.google.com](https://gemini.google.com) |
+| AI planning and chat | Claude (web) | [claude.ai](https://claude.ai) |
 | Store and version your code | GitHub | [github.com](https://github.com) |
-| Generate item art | Google ImageFX | [imagefx.google.com](https://imagefx.google.com) |
-| Generate background scenes | Google Flow | [flow.google](https://flow.google) |
 | Publish your game | itch.io | [itch.io](https://itch.io) |
 | Host your game on the web (free) | GitHub Pages | [pages.github.com](https://pages.github.com) |
-| AI planning + coding help | Claude or Gemini | [claude.ai](https://claude.ai) or [gemini.google.com](https://gemini.google.com) |
 
 ### Helpful AI prompts to keep handy
 
@@ -534,7 +558,9 @@ This saves you from going in circles and makes it easier to explain the problem 
 | To start your game plan | *"Here's my game idea: [brain dump everything]. I'm building it in Godot 4. Before writing any code, can you ask me clarifying questions and then write a complete game design document with a phase breakdown?"* |
 | To start a new phase | *"Here's my full game plan: [paste plan]. Phase [N] is done. Now I want to build Phase [N+1]: [describe it]."* |
 | To understand a Godot concept | *"In Godot 4, what is [confusing thing]? Explain it simply with a short example."* |
-| To fix a bug | *"Here's my game plan for context: [paste plan]. I got this error in Godot: [paste error]. I was expecting [what you wanted]. What's wrong?"* |
+| To fix a bug | *"Here's my game plan for context: [paste plan]. This is happening: [describe it]. I expected: [what you wanted]. Can you find and fix it?"* |
+| To generate game art | Ask Gemini: *"Generate a children's cartoon image: isolated on white background, [item], [view angle], thick black outlines, vibrant colors."* |
+| To remove image backgrounds | *"Remove the white background from all PNGs in assets/sprites/ and save them as transparent PNGs."* |
 | To set up GitHub Actions | *"Write a GitHub Actions workflow that exports my Godot 4 game and deploys it to GitHub Pages."* |
 
 ---
