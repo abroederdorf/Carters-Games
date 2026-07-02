@@ -114,18 +114,19 @@ The key advantage over tools like Cursor is that both connect directly to your C
 
 > **What about Cursor?** Cursor is polished and beginner-friendly, but the free tier caps you at 50 agent requests per month — enough for a few days of building before you hit the wall. It's fine to start with, but Zed or VS Code + Cline will take you further without unexpected limits.
 
-**Option 2: Terminal — Claude Code or Antigravity CLI (most powerful)**
+**Option 2: AI Agent in the Terminal (most powerful)**
 
 These run in a text window where you type commands. Same natural language conversation, but AI also runs commands, manages git, and operates directly on your project without any manual steps. More powerful, slightly more setup.
 
+**AI Agent**
 - **Claude Code** — install at [claude.ai/code](https://claude.ai/code)
-- **[Antigravity CLI](https://antigravity.google)** — Google's equivalent; install on Mac/Linux by running `curl -fsSL https://antigravity.google/cli/install.sh | bash`
+- **Antigravity CLI** — install at [Antigravity CLI](https://antigravity.google)
 
-You'll need a terminal:
+**Terminal**
 
 | Platform | Recommended | Alternative |
 |----------|------------|-------------|
-| Mac | [iTerm2](https://iterm2.com) | Built-in Terminal app, [Tabby](https://tabby.sh) |
+| Mac | [iTerm2](https://iterm2.com) | Built-in Terminal app on Mac, [Tabby](https://tabby.sh) |
 | Windows | [Windows Terminal](https://aka.ms/terminal) — free, built into Windows 11 | [Tabby](https://tabby.sh) |
 
 > **Adult note:** Terminal setup takes about 10 minutes. If it feels like too much to start, go with Zed or VS Code + Cline first and come back to this later.
@@ -169,9 +170,10 @@ Before AI writes any code, ask it to produce a **plan** first. If you jump strai
 
 > *"Before we write any code, can you write a complete game design document? Include: the core gameplay loop, all the screens in the game, what data needs to be saved, and a list of features broken into phases — what to build first, second, and so on."*
 
-**Using Claude Code** (a more advanced tool — the adult helping you may have this installed): there's a built-in feature called **Plan Mode**. When you describe what you want to build, Claude proposes a full written plan and waits for your approval before doing anything. You can edit the plan, push back on ideas, or ask for alternatives — only when you say "looks good" does it start writing code.
+**Using Claude Code** (a more advanced tool — the adult helping you may have this installed): there's a built-in feature called **Plan Mode**. When you describe what you want to build, Claude proposes a full written plan and waits for your approval before doing anything. You can edit the plan, push back on ideas, or ask for alternatives — only when you say "looks good" does it start writing code. 
 
-> **Adult note:** Claude Code is a command-line tool that lets Claude directly write and edit code files on your computer. It's more powerful than the web interface and worth exploring as the project grows. See [claude.ai/code](https://claude.ai/code) to get started.
+While the Gemini AI agent in the Antigravity CLI does not have a built in plan mode, you can recreate it through your prompts by telling AI to ask you clarifying questions to create a plan, and not to start any implementation until you say so.
+> *"Ask clarifying questions and create a detailed plan first. Wait for my explicit approval before touching any files.*
 
 ### Step 4: Review and Push Back
 
@@ -221,11 +223,11 @@ You don't need to deeply understand these. When something is confusing, just ask
 
 ### Step 1: Hand AI Your Plan and Start Phase 1
 
-Give Claude Code the full context upfront — your game plan and what you're building first. The more context it has, the better decisions it makes throughout the project:
+Give the AI Agent (Claude Code or Antigravity CLI) the full context upfront — your game plan and what you're building first. The more context it has, the better decisions it makes throughout the project:
 
 > *"I'm building a game in Godot 4 using GDScript. Here's my full game plan: [paste your plan from Chapter 4]. Let's start with Phase 1: fish swim across the screen and you can tap them to make them disappear. Please set up the project structure and implement Phase 1."*
 
-Claude Code will create the files, write the scripts, and set everything up. You don't need to touch the code — just watch what it's doing and ask questions if something is unclear.
+The AI Agent will create the files, write the scripts, and set everything up. You don't need to touch the code — just watch what it's doing and ask questions if something is unclear.
 
 ### Step 2: Test It and Describe What's Wrong
 
@@ -249,9 +251,13 @@ Repeat for each phase. Your game grows from something simple into something real
 
 ### Start a Fresh Conversation for Each Phase
 
-AI gets slower and less reliable as a conversation grows very long. A simple rule: **when you finish one phase and start the next, open a fresh conversation.** Paste your game design document at the top so AI has full context — that's all it needs. You're not losing anything; you're giving AI a clean slate to work from.
+AI gets slower and less reliable as a conversation grows very long. A simple rule: **when you finish one phase and start the next, open a new conversation.** Paste your game design document at the top so AI has full context — that's all it needs. You're not losing anything; you're giving AI a clean slate to work from.
 
-> *"Here's my game design document: [paste plan]. We've completed Phases 1 and 2. Now let's build Phase 3: [describe it]."*
+Using an AI Agent, it might look something like this to clear your context and start the next phase:
+```
+>> /clear
+>> Here's my game design document: [paste plan]. We've completed Phases 1 and 2. Now let's build Phase 3: [describe it].
+```
 
 ---
 
@@ -308,7 +314,7 @@ Item images come back with a white background. To make it transparent for use in
 
 > *"I have a folder of PNG images in assets/sprites/. Can you remove the white background from each one and save them as transparent PNGs?"*
 
-Claude Code or Antigravity CLI will handle it. No separate tool needed.
+The AI Agent will handle it. No separate tool needed.
 
 ### Get images into Godot — let AI do it too
 
@@ -382,7 +388,7 @@ Your game shows up in the store, people can search for it and install it like an
 
 For a first game, this is usually more friction than it's worth.
 
-**Option 2: Progressive Web App (PWA) — what Carter's Games chose**
+**Option 2 - Recommended: Progressive Web App (PWA) — what Carter's Games chose**
 A PWA is a website that *acts* like an app. Players open it in a browser on any device — phone, tablet, computer — and it works. They can even tap "Add to Home Screen" to install it like a real app, with no store involved.
 
 The advantages:
@@ -480,7 +486,7 @@ You don't need to learn git commands. Claude Code handles all of it. Here are th
 
 ### Adding new content
 
-One of the best things about planning your game well from the start is that **adding content later requires no new code.** In Carter's Games, adding a new hidden-objects scene is just:
+One of the best things about planning your game well from the start is that **adding content later may not require new code.** As an example, in Carter's Games, adding a new hidden-objects scene is just:
 1. Generate the art
 2. Import it into Godot
 3. Use the in-game Scene Builder tool to place item locations and hitboxes
