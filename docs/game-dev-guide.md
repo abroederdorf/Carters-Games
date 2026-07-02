@@ -84,18 +84,18 @@ Either one works. The key is knowing **how to talk to them.** We'll show you exa
 
 There are a few different ways to interact with AI while building your game. Pick whichever feels most comfortable — they all work.
 
-**Option 1: Claude Code or Gemini CLI (most powerful)**
+**Option 1: Claude Code or Antigravity CLI (most powerful)**
 
 These are AI tools that run in a **terminal** — a text window where you type commands. You chat with AI just like a conversation, and it writes files, runs your game, and manages git all by itself. You never touch code.
 
 - **Claude Code** — install at [claude.ai/code](https://claude.ai/code)
-- **Gemini CLI** — Google's equivalent; install by running `npm install -g @google/gemini-cli` in your terminal (AI can walk you through this)
+- **Antigravity CLI** — Google's equivalent of Claude Code; replaces the older Gemini CLI. Install instructions are in their docs (AI can walk you through it)
 
 To open a terminal:
 - **Mac:** use the built-in **Terminal** app, or download [iTerm2](https://iterm2.com) for a nicer experience
 - **Windows:** use **Windows Terminal** (free from the Microsoft Store)
 
-> **Adult note:** Getting Claude Code or Gemini CLI set up takes about 10 minutes. The terminal looks intimidating but becomes second nature quickly. If it's too much friction to start, try Cursor first.
+> **Adult note:** Getting Claude Code or Antigravity CLI set up takes about 10 minutes. The terminal looks intimidating but becomes second nature quickly. If it's too much friction to start, try Cursor first.
 
 **Option 2: Cursor (most visual)**
 
@@ -103,7 +103,7 @@ To open a terminal:
 
 **Option 3: Web chat (for planning only)**
 
-Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase. For actually building, they'll give you code you'd have to paste in yourself — that's why Claude Code, Gemini CLI, or Cursor are better for the build phases.
+Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase. For actually building, they'll give you code you'd have to paste in yourself — that's why Claude Code, Antigravity CLI, or Cursor are better for the build phases.
 
 ---
 
@@ -182,7 +182,7 @@ Each phase gives you something working and testable. You'll find out early wheth
 
 With your plan in hand, you're ready to start building. Here's the key mindset: **you are the creative director, and AI is the developer.** Your job is to describe what you want clearly. AI writes the code. 
 
-Use whichever tool you set up in Chapter 3 — Claude Code, Gemini CLI, or Cursor. They all work the same way for building: you describe what you want, AI builds it. No pasting code, no touching files.
+Use whichever tool you set up in Chapter 3 — Claude Code, Antigravity CLI, or Cursor. They all work the same way for building: you describe what you want, AI builds it. No pasting code, no touching files.
 
 A quick orientation on Godot's structure, because you'll hear these words a lot:
 - A **Node** is one building block — an image on screen, a sound, a timer, a collision area.
@@ -279,7 +279,7 @@ Item images come back with a white background. To make it transparent for use in
 
 > *"I have a folder of PNG images in assets/sprites/. Can you remove the white background from each one and save them as transparent PNGs?"*
 
-Claude Code or Gemini CLI will handle it. No separate tool needed.
+Claude Code or Antigravity CLI will handle it. No separate tool needed.
 
 ### Get images into Godot — let AI do it too
 
@@ -542,7 +542,7 @@ This saves you from going in circles and makes it easier to explain the problem 
 |---------------|------|------|
 | Build and run the game | Godot 4 | [godotengine.org](https://godotengine.org) |
 | AI that builds directly on your computer | Claude Code | [claude.ai/code](https://claude.ai/code) |
-| AI that builds directly on your computer (Google) | Gemini CLI | install via `npm install -g @google/gemini-cli` |
+| AI that builds directly on your computer (Google) | Antigravity CLI | see their docs to install |
 | Visual AI code editor | Cursor | [cursor.com](https://cursor.com) |
 | Terminal app (Mac) | iTerm2 | [iterm2.com](https://iterm2.com) |
 | AI planning, chat, and image generation | Gemini (web or phone) | [gemini.google.com](https://gemini.google.com) |
