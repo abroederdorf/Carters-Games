@@ -55,6 +55,7 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 | [itch.io](https://itch.io) | Game hosting site where you can publish your game | Free |
 | [Gemini](https://gemini.google.com) | AI assistant AND image generator — use it for planning, coding help, and creating all your game art | Free tier available |
 | [Claude](https://claude.ai) | AI assistant — great for planning, writing code, and working through problems | Free tier available |
+| [ChatGPT](https://chatgpt.com) | AI assistant — another great option for planning and problem solving; good third rotation when Claude/Gemini limits are hit | Free tier available |
 | [Zed](https://zed.dev) | Fast visual editor with AI agent — plug in your own API key, no quota limits (Mac/Linux) | Free |
 | [VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot) | Most popular editor + free AI agent extension — plug in your own API key (all platforms) | Free |
 | [Claude Code](https://claude.ai/code) | Claude that runs in your terminal and builds the game directly | Free tier available |
@@ -69,7 +70,7 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 
 > [!TIP]
 > **Stuck on anything? Ask AI.**
-> If something in this chapter — or anywhere in this guide — isn't working, just open [claude.ai](https://claude.ai) or [gemini.google.com](https://gemini.google.com) in a browser and describe the problem. You don't need to already know how to use AI to ask for help getting AI set up. That's the whole point. Describe what you're trying to do, what step you're on, what happened, and ask: *"How do I fix this?"* AI can walk you through almost any setup issue step by step.
+> If something in this chapter — or anywhere in this guide — isn't working, just open [claude.ai](https://claude.ai), [gemini.google.com](https://gemini.google.com), or [chatgpt.com](https://chatgpt.com) in a browser and describe the problem. You don't need to already know how to use AI to ask for help getting AI set up. That's the whole point. Describe what you're trying to do, what step you're on, what happened, and ask: *"How do I fix this?"* AI can walk you through almost any setup issue step by step.
 
 ### Step 1: Create a GitHub account
 
@@ -85,17 +86,18 @@ Open Godot and click **New Project**. Pick a folder, give it a name, and click *
 
 ### Step 4: Meet your AI helper
 
-You'll be working with AI constantly throughout this process — not just to answer questions, but to help you plan, write code, and solve problems. The two best options are:
+You'll be working with AI constantly throughout this process — not just to answer questions, but to help you plan, write code, and solve problems. Three great options, all free:
 
-- **[Claude](https://claude.ai)** (by Anthropic) — great for planning, reasoning through problems, and writing code. Has a free tier at claude.ai.
-- **[Gemini](https://gemini.google.com)** (by Google) — also excellent, especially if you're already using Google tools. Free at gemini.google.com.
+- **[Gemini](https://gemini.google.com)** (by Google) — most generous free tier, great for coding help, and doubles as your image generation tool. Start here.
+- **[Claude](https://claude.ai)** (by Anthropic) — excellent for planning, reasoning through problems, and writing code.
+- **[ChatGPT](https://chatgpt.com)** (by OpenAI) — another strong option; good to have as a third account to rotate through.
 
-Either one works. The key is knowing **how to talk to them.** We'll show you example prompts throughout this guide.
+The key is knowing **how to talk to them.** We'll show you example prompts throughout this guide.
 
-**Try this right now:**
+**Try this right now with any of them:**
 > *"I just installed Godot 4 and I'm making my first game. How should I get started?"*
 
-> **Free tier limits:** Both Claude and Gemini have free tiers, but they limit how many messages you can send per day. When you hit a limit on one, just switch to the other and keep going. Having accounts on both means you're rarely blocked for long.
+> **Free tier limits:** All three have free tiers that limit daily messages. When you hit a limit on one, switch to another and keep going. Having all three accounts set up means you're almost never blocked.
 
 ### Step 5: Choose Where to Work with AI
 
@@ -604,6 +606,7 @@ This saves you from going in circles and makes it easier to explain the problem 
 | Visual AI editor (free tier, 50 req/mo limit) | Cursor | [cursor.com](https://cursor.com) |
 | AI planning, chat, and image generation | Gemini (web or phone) | [gemini.google.com](https://gemini.google.com) |
 | AI planning and chat | Claude (web) | [claude.ai](https://claude.ai) |
+| AI planning and chat (third rotation option) | ChatGPT (web) | [chatgpt.com](https://chatgpt.com) |
 | Store and version your code | GitHub | [github.com](https://github.com) |
 | Publish your game | itch.io | [itch.io](https://itch.io) |
 | Host your game on the web (free) | GitHub Pages | [pages.github.com](https://pages.github.com) |
