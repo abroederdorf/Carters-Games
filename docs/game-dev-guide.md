@@ -8,7 +8,7 @@
 >
 > **Real example used throughout:** [Carter's Games](https://cartersgames.alpinealicia.com) — a real app built by a parent and kid together using exactly this approach, with a fishing game and a hidden-objects game. We'll use it as a reference so you can see what "done" looks like.
 >
-> **Intimidated or don't know where to start?** Paste the link to this guide into AI ([Gemini](https://gemini.google.com) or [Claude](https://claude.ai)) and have it walk you through the guide. Ask the AI questions just like you would a person if something is not working or does not make sense, and work together to figure it out.
+> **Intimidated or don't know where to start?** Paste the link to this guide into AI ([Gemini](https://gemini.google.com), [Claude](https://claude.ai), or [ChatGPT](https://chatgpt.com)) and have it walk you through the guide. Ask the AI questions just like you would a person if something is not working or does not make sense, and work together to figure it out.
 >
 > AI example prompt:
 > *"I want to make a game but I need help getting started. Read this guide and help me through the steps: [https://github.com/abroederdorf/Carters-Games/edit/docs/game-tutorial-updates/docs/game-dev-guide.md](https://github.com/abroederdorf/Carters-Games/blob/main/docs/game-dev-guide.md)"*
@@ -132,7 +132,7 @@ You'll need a terminal:
 
 **Option 3: Web chat (planning only)**
 
-Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase in Chapter 4 or asking questions when you don't know what to do next or to get help fixing something. For building, use one of the options above instead.
+Claude, Gemini, and ChatGPT on the web are great for the planning phase in Chapter 4, or for asking questions when you don't know what to do next. For building, use one of the options above instead.
 
 ---
 
@@ -142,7 +142,7 @@ Don't plan your game alone. AI is an excellent co-designer — and the more you 
 
 ### Step 1: The Brain Dump
 
-Open a new conversation with Claude ([claude.ai](https://claude.ai)) or Gemini ([gemini.google.com](https://gemini.google.com)). Don't worry about being organized or having everything figured out. Just write down everything you know about your game idea — even if it's messy or incomplete. The more you give the AI to work with, the better.
+Open a new conversation with Claude ([claude.ai](https://claude.ai)), Gemini ([gemini.google.com](https://gemini.google.com)), or ChatGPT ([chatgpt.com](https://chatgpt.com)). Don't worry about being organized or having everything figured out. Just write down everything you know about your game idea — even if it's messy or incomplete. The more you give the AI to work with, the better.
 
 **Example brain dump:**
 
@@ -165,7 +165,7 @@ These questions turn a fuzzy idea into a concrete plan. Don't skip this step —
 
 Before AI writes any code, ask it to produce a **plan** first. If you jump straight to code, you end up with something you don't fully understand and can't easily change.
 
-**On Claude or Gemini (web)**, ask explicitly:
+**On Claude, Gemini, or ChatGPT (web)**, ask explicitly:
 
 > *"Before we write any code, can you write a complete game design document? Include: the core gameplay loop, all the screens in the game, what data needs to be saved, and a list of features broken into phases — what to build first, second, and so on."*
 
