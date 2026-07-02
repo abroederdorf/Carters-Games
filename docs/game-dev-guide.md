@@ -340,6 +340,33 @@ cd local/exports/html && python -m http.server 8080
 
 This is where your game goes from living on your computer to being something you can send a link to anyone.
 
+### First: How do you want people to play it?
+
+Before you think about hosting, it's worth understanding your options — because the choice affects everything from cost to how players find your game.
+
+**Option 1: App stores (Google Play / Apple App Store)**
+Your game shows up in the store, people can search for it and install it like any other app. Sounds great — but there are real costs and hoops to jump through:
+- Google Play: $25 one-time developer fee
+- Apple App Store: $99/year developer fee
+- Both require submitting your app for review, which can take days and get rejected
+- Updates also go through review
+
+For a first game, this is usually more friction than it's worth.
+
+**Option 2: Progressive Web App (PWA) — what Carter's Games chose**
+A PWA is a website that *acts* like an app. Players open it in a browser on any device — phone, tablet, computer — and it works. They can even tap "Add to Home Screen" to install it like a real app, with no store involved.
+
+The advantages:
+- **Free to publish** — no developer fees, no review process
+- **Works everywhere** — any device with a browser, no download required
+- **Instant updates** — you push a change and everyone gets it immediately
+- **Easy to share** — just send a link
+
+The tradeoff is that you won't show up in app store search results. But for a game you're sharing with friends and family, or building as a learning project, a PWA is the right call. You can always add store listings later if the game takes off.
+
+Godot 4 has built-in PWA export support — ask AI to enable it:
+> *"Can you enable Progressive Web App (PWA) settings in my Godot 4 export preset so the game can be installed from a browser?"*
+
 ### Before You Export: Install Export Templates
 
 Godot needs **Export Templates** before it can package your game for the web. You only need to do this once.
