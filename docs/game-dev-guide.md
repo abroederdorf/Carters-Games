@@ -1,8 +1,18 @@
-# Build Your Own Game App: A Guide for Young Game Makers
+# Build Your Own Game App: A Beginner's Guide to Making Games with AI
 
-> **Who this is for:** Kids age 10–15 who want to build a real game that other people can actually play — not just a school project, but something you can share a link to. No experience required. An adult helping with some of the setup steps is totally normal and expected.
+**No coding experience needed. AI does the building — you bring the idea.**
+
+> **Who this is for:** Kids age 10–15 (and curious adults) who want to build a real game that other people can actually play — not just a school project, but something you can share a link to. You don't need to know anything about coding, game design, or art. This guide assumes zero experience and uses AI as your co-creator every step of the way. An adult helping with some of the setup steps is totally normal and expected.
 >
-> **Real example used throughout:** [Carter's Games](https://cartersgames.alpinealicia.com) — a real app built by a parent and kid together, with a fishing game and a hidden-objects game. We'll use it as a reference so you can see what "done" looks like.
+> **How it works:** You describe what you want. AI writes the code, creates the art direction, manages your project files, and solves problems. Your job is to have the idea, make decisions, and test whether it's fun.
+>
+> **Real example used throughout:** [Carter's Games](https://cartersgames.alpinealicia.com) — a real app built by a parent and kid together using exactly this approach, with a fishing game and a hidden-objects game. We'll use it as a reference so you can see what "done" looks like.
+>
+> **Intimidated or don't know where to start?** Paste the link to this guide into AI ([Gemini](https://gemini.google.com), [Claude](https://claude.ai), or [ChatGPT](https://chatgpt.com)) and have it walk you through the guide. Ask the AI questions just like you would a person if something is not working or does not make sense, and work together to figure it out.
+>
+> AI example prompt:
+> *"I want to make a game but I need help getting started. Read this guide and help me through the steps: [https://github.com/abroederdorf/Carters-Games/edit/docs/game-tutorial-updates/docs/game-dev-guide.md](https://github.com/abroederdorf/Carters-Games/blob/main/docs/game-dev-guide.md)"*
+
 
 ---
 
@@ -11,10 +21,10 @@
 Here's what you'll build and the path to get there:
 
 ```
-Your idea → Design on paper → Build in Godot → Create art with AI → Test it → Ship it
+Your idea → Design with AI → AI builds it in Godot → Create art with AI → Test it → Ship it
 ```
 
-This isn't a weekend project — expect it to take **weeks or months** depending on how ambitious your game is. That's normal. Real games take time. The good news: you'll have something playable after just a few days, and then you keep making it better.
+This isn't a weekend project — expect it to take **weeks** depending on how ambitious your game is. That's normal. Real games take time. The good news: you'll have something playable after just a day or two, and then you keep making it better.
 
 ---
 
@@ -26,17 +36,10 @@ The best first game is **one mechanic, kept simple.** Not "a game like Minecraft
 
 - What's one thing that would be fun to do over and over?
 - Is there a game you already love that you could make a simpler version of?
-- Could a 5-year-old understand the rules without reading anything?
 
 ### How Carter's Games started
 
-The idea for the fishing game was: *"What if you could cast a line and tap fish as they swim by?"* That's it. One sentence. The first version had no score, no music, no levels — just a line that dropped and fish that swam. That was enough to know if it was fun.
-
-### Tips
-
-- **Write your idea in one sentence.** If you can't, it's too complicated.
-- **Sketch it on paper first.** What does the screen look like? Where are the buttons?
-- **Start smaller than you think.** You can always add more later.
+The idea for the fishing game was: *"What if you could cast a line and catch a fish as they swim by?"* That's it. One sentence. The first version had no score, no music, no levels — just a line that dropped and fish that swam. That was enough to know if it was fun.
 
 ---
 
@@ -50,19 +53,24 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 | [GitHub](https://github.com) | Saves your work and lets you deploy it | Free |
 | [GitHub Pages](https://pages.github.com) | Hosts your game on the web for free | Free |
 | [itch.io](https://itch.io) | Game hosting site where you can publish your game | Free |
-| [Google ImageFX](https://imagefx.google.com) | AI tool for generating item and character art | Free |
-| [Google Flow](https://flow.google) | AI creative studio for generating and editing background scenes | Free |
-| [VS Code](https://code.visualstudio.com) | Code editor (optional, Godot has one built in) | Free |
-| Claude / ChatGPT | AI assistant to help you write code and solve problems | Free tier available |
-| [remove.bg](https://remove.bg) | Removes white backgrounds from images automatically | Free (limited) |
-
-**One thing that does cost money:** If you want to generate images automatically using the Google Imagen API (a more powerful, programmable version of ImageFX), it costs about $0.02 per image. For making art one at a time in the browser with ImageFX and Flow, it's completely free.
+| [Gemini](https://gemini.google.com) | AI assistant AND image generator — use it for planning, coding help, and creating all your game art | Free tier available |
+| [Claude](https://claude.ai) | AI assistant — great for planning, writing code, and working through problems | Free tier available |
+| [ChatGPT](https://chatgpt.com) | AI assistant — great for planning, problem solving, and writing code | Free tier available |
+| [Zed](https://zed.dev) | Fast visual editor with AI agent — plug in your own API key, no quota limits (Mac/Linux) | Free |
+| [VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot) | Most popular editor + free AI agent extension — plug in your own API key (all platforms) | Free |
+| [Claude Code](https://claude.ai/code) | Claude that runs in your terminal and builds the game directly | Free tier available |
+| [Antigravity CLI](https://antigravity.google) | Google's terminal AI agent — equivalent to Claude Code | Free |
+| [Cursor](https://cursor.com) | Polished visual AI editor — good to start, 50 agent requests/month free tier limit | Free tier available |
 
 ---
 
 ## Chapter 3: Set Up Your Workspace
 
 > **Adult note:** This chapter involves creating accounts and installing software. It's a good place to help out.
+
+> [!TIP]
+> **Stuck on anything? Ask AI.**
+> If something in this chapter — or anywhere in this guide — isn't working, just open [claude.ai](https://claude.ai), [gemini.google.com](https://gemini.google.com), or [chatgpt.com](https://chatgpt.com) in a browser and describe the problem. You don't need to already know how to use AI to ask for help getting AI set up. That's the whole point. Describe what you're trying to do, what step you're on, what happened, and ask: *"How do I fix this?"* AI can walk you through almost any setup issue step by step.
 
 ### Step 1: Create a GitHub account
 
@@ -78,139 +86,235 @@ Open Godot and click **New Project**. Pick a folder, give it a name, and click *
 
 ### Step 4: Meet your AI helper
 
-You're going to use an AI assistant (Claude, ChatGPT, or similar) a lot throughout this process. The trick is knowing **how to ask.** We'll show you example prompts throughout this guide — you can copy them and modify them for your game.
+You'll be working with AI constantly throughout this process — not just to answer questions, but to help you plan, write code, and solve problems. Three great options, all free:
 
-**Try this right now:**
-> *"I just installed Godot 4 and I'm making my first game. Can you explain what a Scene and a Node are, in simple terms?"*
+- **[Gemini](https://gemini.google.com)** (by Google) — most generous free tier, great for coding help, and doubles as your image generation tool. Start here.
+- **[Claude](https://claude.ai)** (by Anthropic) — excellent for planning, reasoning through problems, and writing code.
+- **[ChatGPT](https://chatgpt.com)** (by OpenAI) — also excellent for planning, problem solving, and writing code.
+
+The key is knowing **how to talk to them.** We'll show you example prompts throughout this guide.
+
+**Try this right now with any of them:**
+> *"I just installed Godot 4 and I'm making my first game. How should I get started?"*
+
+> **Free tier limits:** All three have free tiers that limit daily messages. When you hit a limit on one, switch to another and keep going. Having all three accounts set up means you're almost never blocked.
+
+### Step 5: Choose Where to Work with AI
+
+There are a few different ways to interact with AI while building your game. Here's the recommended path, from easiest to most powerful.
+
+**Option 1: Visual AI editor — Zed or VS Code + Cline (recommended starting point)**
+
+These give you a natural language chat interface alongside your project files. You describe what you want, AI builds it — no terminal required.
+
+The key advantage over tools like Cursor is that both connect directly to your Claude or Gemini API key instead of a monthly request quota. That means no artificial limits on how many things you can ask AI to build — you're only billed for what you use, and for a small project that's very cheap (often pennies).
+
+- **[Zed](https://zed.dev)** — fast, clean standalone editor. Plug in your Claude or Gemini API key and agent mode is fully unlimited. *Mac and Linux only — not available on Windows yet.*
+- **[VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot)** — VS Code is the world's most popular editor; Cline is a free extension that adds a full AI agent sidebar. Works on Mac, Windows, and Linux.
+
+> **What about Cursor?** Cursor is polished and beginner-friendly, but the free tier caps you at 50 agent requests per month — enough for a few days of building before you hit the wall. It's fine to start with, but Zed or VS Code + Cline will take you further without unexpected limits.
+
+**Option 2: Terminal — Claude Code or Antigravity CLI (most powerful)**
+
+These run in a text window where you type commands. Same natural language conversation, but AI also runs commands, manages git, and operates directly on your project without any manual steps. More powerful, slightly more setup.
+
+- **Claude Code** — install at [claude.ai/code](https://claude.ai/code)
+- **[Antigravity CLI](https://antigravity.google)** — Google's equivalent; install on Mac/Linux by running `curl -fsSL https://antigravity.google/cli/install.sh | bash`
+
+You'll need a terminal:
+
+| Platform | Recommended | Alternative |
+|----------|------------|-------------|
+| Mac | [iTerm2](https://iterm2.com) | Built-in Terminal app, [Tabby](https://tabby.sh) |
+| Windows | [Windows Terminal](https://aka.ms/terminal) — free, built into Windows 11 | [Tabby](https://tabby.sh) |
+
+> **Adult note:** Terminal setup takes about 10 minutes. If it feels like too much to start, go with Zed or VS Code + Cline first and come back to this later.
+
+**Option 3: Web chat (planning only)**
+
+Claude, Gemini, and ChatGPT on the web are great for the planning phase in Chapter 4, or for asking questions when you don't know what to do next. For building, use one of the options above instead.
 
 ---
 
-## Chapter 4: Plan Your Game
+## Chapter 4: Plan Your Game with AI
 
-Before you write any code, get your plan out of your head and onto paper (or a document). This doesn't have to be fancy — it just needs to answer a few questions.
+Don't plan your game alone. AI is an excellent co-designer — and the more you tell it upfront, the better your plan will be.
 
-### The questions to answer
+### Step 1: The Brain Dump
 
-1. **What does the player do?** (The core loop — the thing they repeat)
-2. **How does the player win or lose?** (Or is it endless?)
-3. **What does the screen look like?** (Sketch it — stick figures are fine)
-4. **What are the different "screens" in the game?** (Main menu? Game over screen? Level select?)
+Open a new conversation with Claude ([claude.ai](https://claude.ai)), Gemini ([gemini.google.com](https://gemini.google.com)), or ChatGPT ([chatgpt.com](https://chatgpt.com)). Don't worry about being organized or having everything figured out. Just write down everything you know about your game idea — even if it's messy or incomplete. The more you give the AI to work with, the better.
 
-### Example: Carter's fishing game plan
+**Example brain dump:**
 
-| Question | Answer |
-|----------|--------|
-| What does the player do? | Tap to cast, wait for fish to bite, tap again to reel in |
-| How do they win? | Catch as many fish as possible before the timer runs out |
-| What does the screen look like? | Blue water background, fishing line drops from top, fish swim left and right |
-| What are the screens? | Main menu → Game → Score screen |
+> *"I want to make a game for kids. The idea is a fishing game where you tap to cast your line into the water. Fish swim by at different speeds and you have to tap them to catch them. I want a timer and some kind of score. Maybe different types of fish that are worth different points? I'm not sure if there should be levels or just one endless mode. I also thought it would be cool to have a shark that you have to avoid. I want it to run on a tablet. I'm going to build it in Godot 4. Can you help me design this game?"*
 
-That's enough to start building.
+That's it. Messy, uncertain, incomplete — totally fine. AI's job is to help you fill in the gaps.
+
+### Step 2: Let AI Ask You Questions
+
+After your brain dump, a good AI won't immediately write a plan — it'll ask you questions to understand what you're building. Answer them as best you can. If you don't know, say so. The AI can suggest options.
+
+You might get questions like:
+- *"When the timer runs out, does the game end immediately, or does the player get to finish their current cast?"*
+- *"Should the game save your high score, or start fresh every time?"*
+- *"Do you want the fish to look realistic or cartoon-style?"*
+
+These questions turn a fuzzy idea into a concrete plan. Don't skip this step — it saves a lot of backtracking later.
+
+### Step 3: Use Plan Mode
+
+Before AI writes any code, ask it to produce a **plan** first. If you jump straight to code, you end up with something you don't fully understand and can't easily change.
+
+**On Claude, Gemini, or ChatGPT (web)**, ask explicitly:
+
+> *"Before we write any code, can you write a complete game design document? Include: the core gameplay loop, all the screens in the game, what data needs to be saved, and a list of features broken into phases — what to build first, second, and so on."*
+
+**Using Claude Code** (a more advanced tool — the adult helping you may have this installed): there's a built-in feature called **Plan Mode**. When you describe what you want to build, Claude proposes a full written plan and waits for your approval before doing anything. You can edit the plan, push back on ideas, or ask for alternatives — only when you say "looks good" does it start writing code.
+
+> **Adult note:** Claude Code is a command-line tool that lets Claude directly write and edit code files on your computer. It's more powerful than the web interface and worth exploring as the project grows. See [claude.ai/code](https://claude.ai/code) to get started.
+
+### Step 4: Review and Push Back
+
+Read through the plan AI produces. At this stage it's much easier to change your mind than after code has been written. Things to check:
+
+- Does the core gameplay sound fun when you read it back?
+- Is anything missing that you care about?
+- Does anything seem more complicated than you need right now?
+
+Push back freely — this is a conversation, not a one-way street:
+
+> *"I don't want lives — let's just use the timer."*
+> *"Can we add a leaderboard that saves the top 5 scores?"*
+> *"Phase 1 seems too big. Can you split it into smaller steps?"*
+
+Keep going until the plan feels right.
+
+### Step 5: Get a Phase Breakdown
+
+Ask AI to break the work into **phases** — concrete milestones where each one produces something you can actually play and test. A good phase breakdown for a fishing game might look like:
+
+| Phase | What you'll have when it's done |
+|-------|--------------------------------|
+| 1 | Fish swim across the screen. Tap one and it disappears. That's it. |
+| 2 | A timer counts down. Score goes up per fish caught. Game over screen shows final score. |
+| 3 | Multiple fish types with different speeds and point values. |
+| 4 | A shark appears occasionally — tapping it ends the game early. |
+| 5 | Main menu, high score leaderboard, sound effects, polish. |
+
+Each phase gives you something working and testable. You'll find out early whether the core idea is actually fun — before you've built the fancy parts.
+
+**You don't need every phase figured out before you start.** Give AI everything you have now and begin. You can always add more later.
 
 ---
 
-## Chapter 5: Build Your Game in Godot
+## Chapter 5: Build Your Game with AI
 
-Godot uses a system of **Scenes** and **Nodes.** Think of it like a theater play:
+With your plan in hand, you're ready to start building. Here's the key mindset: **you are the creative director, and AI is the developer.** Your job is to describe what you want clearly. AI writes the code. 
 
-- A **Node** is like a single actor, prop, or sound effect in the play — an image, a sound file, a collision box, or a timer.
-- A **Scene** is a collection of nodes working together to create something bigger — like a character (a sprite node + a collision node + a sound node), a level, or the main menu screen.
-- Scenes can be nested inside other scenes, just like putting a character scene inside a level scene!
+Use whichever tool you set up in Chapter 3 — Claude Code, Antigravity CLI, or Cursor. They all work the same way for building: you describe what you want, AI builds it. No pasting code, no touching files.
 
-You write game logic in a language called **GDScript**. It is designed specifically for Godot and uses simple, English-like words to tell your game what to do, making it super friendly for beginners!
+A quick orientation on Godot's structure, because you'll hear these words a lot:
+- A **Node** is one building block — an image on screen, a sound, a timer, a collision area.
+- A **Scene** is a group of nodes that work together — like a fish character, a menu, or a level.
 
-### How to use AI to write code
+You don't need to deeply understand these. When something is confusing, just ask AI.
 
-You don't have to figure everything out yourself. AI is great at writing Godot code if you describe what you want clearly.
+### Step 1: Hand AI Your Plan and Start Phase 1
 
-**Good prompt formula:**
-> *"I'm making a [type of game] in Godot 4 using GDScript. I want to [describe what you want to happen]. Here's what I have so far: [paste your code or describe your scene]. Can you help me write a script that does this?"*
+Give Claude Code the full context upfront — your game plan and what you're building first. The more context it has, the better decisions it makes throughout the project:
 
-**Real example prompts:**
+> *"I'm building a game in Godot 4 using GDScript. Here's my full game plan: [paste your plan from Chapter 4]. Let's start with Phase 1: fish swim across the screen and you can tap them to make them disappear. Please set up the project structure and implement Phase 1."*
 
-> *"I'm making a fishing game in Godot 4. I have a Sprite2D node for a fish. Can you write a GDScript that makes the fish swim back and forth across the screen, then reverses direction when it hits the edge?"*
+Claude Code will create the files, write the scripts, and set everything up. You don't need to touch the code — just watch what it's doing and ask questions if something is unclear.
 
-> *"My Godot game has a timer that counts down from 60 seconds. When it hits zero, I want to show a 'Game Over' label and stop the fish from moving. How do I do that?"*
+### Step 2: Test It and Describe What's Wrong
 
-> *"I have a scene called GameOver.tscn. How do I switch to it from my main game scene when the player loses?"*
+Press **Play** in Godot (the triangle button, top-right) to test what AI built. Something probably won't feel right the first time — that's completely normal.
 
-### Tips for working with AI on code
+When something's off, describe it in plain language:
 
-- **Paste the error message.** If something breaks, copy the exact error from Godot and give it to the AI.
-- **One thing at a time.** Don't ask for the whole game at once. Ask for one feature, test it, then ask for the next.
-- **Ask it to explain.** If you don't understand the code it wrote, ask: *"Can you explain what each line does?"*
-- **It's okay if it's wrong.** AI makes mistakes. If the code doesn't work, paste the error back and ask for a fix.
+> *"The fish swims off the right side of the screen instead of bouncing back. Can you fix that?"*
 
-### Build the simplest possible version first
+> *"The tap isn't registering on mobile — it works with a mouse click but not a finger tap. What's wrong?"*
 
-Before adding music, animations, levels, or anything else — get the **core mechanic working.** Can you tap the fish? Does it register? Does the timer count down? That's your first milestone. Everything else comes after.
+You don't need to understand the code or find the bug yourself. Just describe what you see and what you expected.
+
+### Step 3: Move to the Next Phase
+
+Once a phase works and feels good to play, move on:
+
+> *"Phase 1 is done — fish swim and I can tap them. Now let's build Phase 2: a 60-second countdown timer, a score that increases when I catch a fish, and a game over screen showing the final score."*
+
+Repeat for each phase. Your game grows from something simple into something real, one working piece at a time.
+
+### Start a Fresh Conversation for Each Phase
+
+AI gets slower and less reliable as a conversation grows very long. A simple rule: **when you finish one phase and start the next, open a fresh conversation.** Paste your game design document at the top so AI has full context — that's all it needs. You're not losing anything; you're giving AI a clean slate to work from.
+
+> *"Here's my game design document: [paste plan]. We've completed Phases 1 and 2. Now let's build Phase 3: [describe it]."*
 
 ---
 
 ## Chapter 6: Create Your Art with AI
 
-You don't need to be an artist. AI image tools can generate all your game art — characters, items, backgrounds — from text descriptions.
+You don't need to be an artist. Use Gemini — on the web at [gemini.google.com](https://gemini.google.com) or the Gemini app on your phone — to generate all your game art. Both item images and full background scenes can be created right there, no separate tools needed. Use AI to help create the prompts themselves, then paste the prompt into Gemini to create the image file.
 
-### Tool 1: Google ImageFX — for individual items and characters
+### Generating item images
 
-Go to [ImageFX](https://aitestkitchen.withgoogle.com/tools/image-fx). Type a description, and it generates an image. Use this for individual things: a fish, a fishing rod, a backpack, a bear.
-
-**The prompt formula that works best for game items:**
+Use Gemini's image generation feature for individual things: a fish, a fishing rod, a bear, a tent. The key is a prompt formula that keeps items clean and consistent:
 
 ```
 Isolated on white background, [describe the item], [view angle], 
-thick black outlines, vibrant colors, children's cartoon image, 512x512.
+thick black outlines, vibrant colors, children's cartoon image.
 ```
 
 For the view angle, pick one:
-- `perfectly flat front view` — for things that face you (badges, faces, helmets)
+- `perfectly flat front view` — for things that face you (faces, helmets, badges)
 - `perfectly flat side view` — for things with a clear profile (fish, cars, tools)
-- `slight 3/4 view` — for things that look boring from the side (buckets, backpacks, bowls)
+- `slight 3/4 view` — for things that would look flat or boring from the side (buckets, backpacks, bowls)
 
 **Real examples from Carter's Games:**
 
-> `Isolated on white background, cute brown bear sitting upright, friendly expression, simple shapes, perfectly flat front view, thick black outlines, vibrant colors, children's cartoon image, 512x512.`
+> `Isolated on white background, cute brown bear sitting upright, friendly expression, simple shapes, perfectly flat front view, thick black outlines, vibrant colors, children's cartoon image.`
 
-> `Isolated on white background, single trout fish, blue and silver with pink stripe, facing right, perfectly flat side view, thick black outlines, vibrant colors, children's cartoon image, 512x512.`
+> `Isolated on white background, single trout fish, blue and silver with pink stripe, facing right, perfectly flat side view, thick black outlines, vibrant colors, children's cartoon image.`
 
-> `Isolated on white background, small orange camping tent, triangular, front flap open, slight 3/4 view, thick black outlines, vibrant colors, children's cartoon image, 512x512. No text, no words, no labels.`
+> `Isolated on white background, small orange camping tent, triangular, front flap open, slight 3/4 view, thick black outlines, vibrant colors, children's cartoon image. No text, no words, no labels.`
 
 **Tips:**
-- Add `no text, no words, no labels` any time your item might have writing on it (books, bottles, boxes, signs).
-- Keep the description short — one item, one color, one detail.
-- Generate 3–4 versions and pick your favorite.
+- Add `no text, no words, no labels` when the item might have writing on it (books, bottles, signs).
+- Keep descriptions short — one item, one color, one detail.
+- Generate a few versions and pick your favorite.
 
-### Tool 2: Google Flow — for background scenes
+### Generating background scenes
 
-Go to [Google Flow](https://flow.google). You can upload 3–4 of your generated item images as style references (or "ingredients") so the background scene matches your items' art style perfectly.
-
-**The background prompt formula:**
+Use the same Gemini app for full backgrounds. Describe what the scene should look like:
 
 ```
 Children's book illustration of a large, busy [THEME] scene packed with things to find.
-[2-3 sentences describing what's in the scene].
-Wide and panoramic (landscape orientation, roughly 2:1 ratio).
+[2-3 sentences describing the environment].
+Wide and panoramic, landscape orientation.
 Bright saturated colors, flat design, thick black outlines, no text.
-Every part of the scene is filled with interesting details — [list 4-5 background details].
-Friendly mood, suitable for children age 5–8.
+Every part of the scene is filled with interesting details — [list 4-5 background fillers].
 ```
 
 **Real example from Carter's Games (mountain scene):**
 
-> *Children's book illustration of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — rocks, bushes, snowdrifts, fallen logs, streams. Friendly and adventurous mood, suitable for children age 5–8.*
+> *Children's book illustration of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide and panoramic, landscape orientation. Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — rocks, bushes, snowdrifts, fallen logs, streams.*
 
-### Remove white backgrounds
+### Remove white backgrounds — let AI do it
 
-When you generate an item in ImageFX, it comes on a white background. You'll need to make that background transparent so it looks right in the game.
+Item images come back with a white background. To make it transparent for use in the game, just ask your AI coding tool:
 
-Go to [remove.bg](https://remove.bg), upload your image, and download the result. It handles most cartoon-style images well. The free version gives you a limited number of downloads per month — enough to get started.
+> *"I have a folder of PNG images in assets/sprites/. Can you remove the white background from each one and save them as transparent PNGs?"*
 
-### Import your art into Godot
+Claude Code or Antigravity CLI will handle it. No separate tool needed.
 
-1. Create a folder for your images inside the Godot project (e.g., `assets/sprites/`)
-2. Drag your image files into that folder in your file manager
-3. Open Godot — it will automatically detect and import them
-4. You can now drag images into your scene from the FileSystem panel
+### Get images into Godot — let AI do it too
+
+> *"I've added new images to assets/sprites/. Can you import them into the Godot project and make sure they're ready to use?"*
+
+AI will move the files into the right place and set up the Godot import settings.
 
 ---
 
@@ -220,7 +324,7 @@ Before you share your game with anyone, play it yourself — and find someone el
 
 ### The "watch someone else play" trick
 
-Sit next to a friend or sibling (ideally someone younger) and watch them play your game **without telling them anything.** Don't explain the rules. Don't say "no, tap *that* button." Just watch.
+Sit next to a friend or sibling and watch them play your game **without telling them anything.** Don't explain the rules. Don't say "no, tap *that* button." Just watch.
 
 Where they get confused, that's something you need to fix. Where they smile or laugh, that's something you should keep.
 
@@ -265,6 +369,33 @@ cd local/exports/html && python -m http.server 8080
 
 This is where your game goes from living on your computer to being something you can send a link to anyone.
 
+### First: How do you want people to play it?
+
+Before you think about hosting, it's worth understanding your options — because the choice affects everything from cost to how players find your game.
+
+**Option 1: App stores (Google Play / Apple App Store)**
+Your game shows up in the store, people can search for it and install it like any other app. Sounds great — but there are real costs and hoops to jump through:
+- Google Play: $25 one-time developer fee
+- Apple App Store: $99/year developer fee
+- Both require submitting your app for review, which can take days and get rejected
+- Updates also go through review
+
+For a first game, this is usually more friction than it's worth.
+
+**Option 2: Progressive Web App (PWA) — what Carter's Games chose**
+A PWA is a website that *acts* like an app. Players open it in a browser on any device — phone, tablet, computer — and it works. They can even tap "Add to Home Screen" to install it like a real app, with no store involved.
+
+The advantages:
+- **Free to publish** — no developer fees, no review process
+- **Works everywhere** — any device with a browser, no download required
+- **Instant updates** — you push a change and everyone gets it immediately
+- **Easy to share** — just send a link
+
+The tradeoff is that you won't show up in app store search results. But for a game you're sharing with friends and family, or building as a learning project, a PWA is the right call. You can always add store listings later if the game takes off.
+
+Godot 4 has built-in PWA export support — ask AI to enable it:
+> *"Can you enable Progressive Web App (PWA) settings in my Godot 4 export preset so the game can be installed from a browser?"*
+
 ### Before You Export: Install Export Templates
 
 Godot needs **Export Templates** before it can package your game for the web. You only need to do this once.
@@ -298,7 +429,7 @@ GitHub Pages lets you host your game directly from your GitHub repository.
 6. Your game will be live at `yourusername.github.io/your-repo-name`!
 
 #### The Automated Way (GitHub Actions)
-For advanced users, you can write a GitHub Actions workflow to export your game in the cloud and deploy it automatically. 
+For advanced users, you can have AI write a GitHub Actions workflow to export your game in the cloud and deploy it automatically. 
 
 > [!IMPORTANT]
 > **Two things you MUST do to make GitHub Actions work:**
@@ -317,13 +448,12 @@ This takes some setup, but once it's working, deploying is just clicking a butto
 
 Carter's Games deploys to both itch.io and GitHub Pages from a single automated build. The GitHub Actions workflow runs Godot in the cloud, packages the game, and pushes to both places at once. This is a more advanced setup, but a great learning project for working with AI to build automation.
 
-> **Ask your AI helper:** *"I want to deploy my Godot web export to both itch.io (using a tool called 'butler') and GitHub Pages from the same GitHub Actions workflow. Can you write the workflow YAML file for me and explain what each section does?"*
+> **Ask your AI helper:** *"I want to deploy my Godot web export to both itch.io (using a tool called 'butler') and GitHub Pages from the same GitHub Actions workflow. Can you write the workflow YAML file?"*
 
 ### Costs at this stage
 
 - GitHub Pages: **Free**
 - itch.io: **Free** (they take a cut of sales if you charge money, but free games cost nothing)
-- Custom domain (optional, e.g. `mygame.com`): ~$12/year
 
 ---
 
@@ -331,26 +461,22 @@ Carter's Games deploys to both itch.io and GitHub Pages from a single automated 
 
 Shipping your first version is just the beginning. Here's how to keep building without losing your work.
 
-### Use Git branches
+### Use Git Branches — and Let AI Handle Git
 
-Never edit your working game directly. Instead, create a **branch** for each new feature — a separate copy of your code where you can experiment safely without breaking your main game. You can manage branches visually or via terminal.
+Git is the tool that tracks every change to your game. It lets you go back in time if something breaks, and keeps your finished working game safe while you experiment with new features.
 
-#### Option 1: The Visual Way (Easiest)
-Download **[GitHub Desktop](https://desktop.github.com)**. It gives you a clean visual layout of your files and lets you create, switch, and merge branches with simple button clicks.
+The key habit is: **never build directly on your main game.** Instead, create a **branch** for each new feature — a separate copy of your project where you can safely experiment. If something goes wrong, you haven't touched your main game.
 
-#### Option 2: The Command Line Way (Terminal)
-Open your command line in your project folder and run:
+You don't need to learn git commands. Claude Code handles all of it. Here are the prompts to use:
 
-```bash
-# Start a new feature branch
-git checkout -b feat/add-sound-effects
+| What you want | What to say |
+|---------------|-------------|
+| Start working on a new feature | *"Create a new branch called feat/add-sound-effects"* |
+| Save your progress | *"Commit all my changes with a good message describing what we built"* |
+| Share it on GitHub | *"Push this branch to GitHub and open a pull request"* |
+| Finalize a finished feature | *"The PR looks good — merge it into main"* |
 
-# When it's ready and tested, switch to main and merge it back
-git checkout main
-git merge feat/add-sound-effects
-```
-
-> **Ask your AI helper:** *"Can you explain how git branches work? If I'm using the terminal, how do I create a branch, stage my files, commit them, and push them to GitHub?"*
+> **Why branches matter:** Imagine you've just finished Phase 2 and it's working perfectly. You start building Phase 3 and something breaks badly. With branches, you can throw away Phase 3's changes and your Phase 2 game is completely untouched. Without branches, you might lose everything you had working.
 
 ### Adding new content
 
@@ -372,7 +498,7 @@ The game code automatically detects your new resource and loads it. No programmi
 
 ## Chapter 10: When You Get Stuck
 
-Getting stuck is not a sign that you're bad at this. Every developer gets stuck — the difference is knowing how to get unstuck.
+Getting stuck is not a sign that you're bad at this. Every developer gets stuck — the key is knowing how to get unstuck.
 
 ### First: describe the problem out loud
 
@@ -395,24 +521,22 @@ Here's what's actually happening: [what's going wrong]
 
 Here's the error message (if there is one): [paste it exactly]
 
-Here's my code: [paste the relevant script or describe the scene]
-
 What's wrong?
 ```
 
 **Real example:**
 
-> *"I'm building a fishing game in Godot 4. I have a fish node that's supposed to reverse direction when it hits the edge of the screen. What's actually happening is the fish swims off the left edge and disappears. There's no error message. Here's the script: [paste script]. What's wrong?"*
+> *"I'm building a fishing game in Godot 4. I have a fish node that's supposed to reverse direction when it hits the edge of the screen. What's actually happening is the fish swims off the left edge and disappears. There's no error message. What's wrong?"*
 
 That's the kind of prompt that gets a useful answer.
 
-### When AI code doesn't work the first time
+### When something doesn't work the first time
 
-This happens constantly. It's not a failure — it's just how the process goes. When the AI gives you code and it doesn't work:
+This happens constantly. It's not a failure — it's just how the process goes. When something AI built doesn't work:
 
-1. **Paste the error back.** Just say: *"That didn't work. Here's the error Godot gave me: [paste error]."*
-2. **Describe what happened vs. what you expected.** *"The fish now moves, but it moves off-screen instead of bouncing."*
-3. **Ask for an explanation.** If you don't understand the code, ask: *"Can you explain what line 7 does?"* Understanding the code makes it easier to spot what's wrong.
+1. **Describe what happened vs. what you expected.** *"The fish moves off-screen instead of bouncing back."*
+2. **If there's an error message in Godot**, tell AI what it says — Claude Code can often see the error directly, or you can read it to AI.
+3. **Stay in the same conversation.** AI already knows what it built. Just keep talking.
 
 Don't throw the whole thing away and start over after one failure. Usually you're one or two exchanges away from it working.
 
@@ -420,33 +544,29 @@ Don't throw the whole thing away and start over after one failure. Usually you'r
 
 If you've been stuck on the same thing for 20+ minutes and nothing is working, try this:
 
-**1. Ask the AI to start fresh with a simpler version:**
-> *"Let's forget what we had. Can you show me the most basic possible version of [what you're trying to do] in Godot 4 — just enough to prove the concept works?"*
+**1. Ask AI to start fresh with a simpler version:**
+> *"Let's set aside what we have and build the simplest possible version of [the thing that's broken] — just enough to prove it works. Then we can add the rest back."*
 
-Get that tiny thing working first. Then add back the rest piece by piece.
+Get the tiny version working first, then rebuild from there.
 
-**2. Strip your code down:**
-Delete (or comment out) everything except the one thing that's broken. If you have 100 lines and something's wrong, you don't know which 5 lines are the problem. Get it down to 10 lines that still show the bug — now you (and the AI) can see what's actually happening.
+**2. Give AI more context:**
+> *"Here's my full game plan: [paste plan]. We're on Phase [N]. Here's what's happening: [describe the problem]. Here's what I expected: [describe what you wanted]. Can you figure out what's wrong?"*
 
-**3. Check the simple stuff first:**
-- Is the node you're scripting the right one? (Right-click → Attach Script goes on a specific node)
-- Is the file saved? (Godot won't run unsaved changes)
-- Did you connect the signal? (In Godot, lots of things require wiring up in the editor, not just in code)
+The more context AI has, the better it can diagnose the problem.
 
-Ask the AI: *"What are the most common reasons a Godot script might not seem to do anything?"*
+**3. Ask AI to check the simple stuff:**
+> *"What are the most common reasons something like this would stop working in Godot 4? Can you check if any of those apply to what we built?"*
 
 **4. Take a break.**
-Seriously. Walk away for 10 minutes. Come back. You'll often see the problem immediately.
+Seriously. Walk away for 10 minutes. Come back. You'll often see the problem immediately — or be able to describe it more clearly to AI.
 
-### When the AI gives you something you don't understand
+### When you don't understand what AI did
 
-Never paste code you don't understand into your game and just hope it works. When it breaks (and it will), you won't know where to start.
+You don't need to read or understand the code — but you should understand *what* was built and *why*, so you can keep directing it. If something is unclear, ask:
 
-Instead:
+> *"Can you explain what you just built in plain English? What does each part do?"*
 
-> *"Before I use this code, can you walk through it line by line and explain what each part does?"*
-
-You don't need to understand every detail of how Godot works under the hood. But you should be able to say *"this function runs when the fish reaches the edge, and it flips the direction variable."* That's enough.
+You should be able to say something like *"the fish bounces because there's a script watching for when it hits the edge, then it flips direction."* You don't need to know how the code does it — just what it does. That's enough to keep building.
 
 ### When to ask a human
 
@@ -476,25 +596,32 @@ This saves you from going in circles and makes it easier to explain the problem 
 
 | What you need | Tool | Link |
 |---------------|------|------|
-| Build the game | Godot 4 | [godotengine.org](https://godotengine.org) |
-| Write code | Built into Godot (or VS Code) | [code.visualstudio.com](https://code.visualstudio.com) |
+| Build and run the game | Godot 4 | [godotengine.org](https://godotengine.org) |
+| Visual AI editor, no quota limits (Mac/Linux) | Zed | [zed.dev](https://zed.dev) |
+| Visual AI editor, no quota limits (all platforms) | VS Code + Cline | [code.visualstudio.com](https://code.visualstudio.com) + [cline.bot](https://cline.bot) |
+| Terminal AI agent (Anthropic) | Claude Code | [claude.ai/code](https://claude.ai/code) |
+| Terminal AI agent (Google) | Antigravity CLI | [antigravity.google](https://antigravity.google) |
+| Terminal app (Mac) | iTerm2 | [iterm2.com](https://iterm2.com) |
+| Terminal app (Windows) | Windows Terminal | [aka.ms/terminal](https://aka.ms/terminal) |
+| Visual AI editor (free tier, 50 req/mo limit) | Cursor | [cursor.com](https://cursor.com) |
+| AI planning, chat, and image generation | Gemini (web or phone) | [gemini.google.com](https://gemini.google.com) |
+| AI planning and chat | Claude (web) | [claude.ai](https://claude.ai) |
+| AI planning and chat | ChatGPT (web) | [chatgpt.com](https://chatgpt.com) |
 | Store and version your code | GitHub | [github.com](https://github.com) |
-| Generate item art | Google ImageFX | [imagefx.google.com](https://imagefx.google.com) |
-| Generate background scenes | Google Flow | [flow.google](https://flow.google) |
-| Remove white backgrounds from art | remove.bg | [remove.bg](https://remove.bg) |
 | Publish your game | itch.io | [itch.io](https://itch.io) |
 | Host your game on the web (free) | GitHub Pages | [pages.github.com](https://pages.github.com) |
-| AI coding help | Claude or ChatGPT | [claude.ai](https://claude.ai) or [chatgpt.com](https://chatgpt.com) |
 
 ### Helpful AI prompts to keep handy
 
 | When you need... | Ask the AI... |
 |-----------------|---------------|
-| To understand a Godot concept | *"Explain [concept] in Godot 4, simply. Give me a short example."* |
-| To write a new feature | *"I'm building [game type] in Godot 4 with GDScript. I want [feature]. Here's what I have: [your code]. Write a script that does this."* |
-| To fix a bug | *"This Godot script has a bug. Here's the code: [paste code]. Here's the error: [paste error]. What's wrong and how do I fix it?"* |
-| To set up GitHub Actions | *"Write a GitHub Actions workflow that exports my Godot 4 game and deploys it to GitHub Pages. Explain each step."* |
-| To design your game | *"I'm making a game where [describe your idea]. What should I build first to test if the core mechanic is fun? Keep it simple."* |
+| To start your game plan | *"Here's my game idea: [brain dump everything]. I'm building it in Godot 4. Before writing any code, can you ask me clarifying questions and then write a complete game design document with a phase breakdown?"* |
+| To start a new phase | *"Here's my full game plan: [paste plan]. Phase [N] is done. Now I want to build Phase [N+1]: [describe it]."* |
+| To understand a Godot concept | *"In Godot 4, what is [confusing thing]? Explain it simply with a short example."* |
+| To fix a bug | *"Here's my game plan for context: [paste plan]. This is happening: [describe it]. I expected: [what you wanted]. Can you find and fix it?"* |
+| To generate game art | Ask Gemini: *"Generate a children's cartoon image: isolated on white background, [item], [view angle], thick black outlines, vibrant colors."* |
+| To remove image backgrounds | *"Remove the white background from all PNGs in assets/sprites/ and save them as transparent PNGs."* |
+| To set up GitHub Actions | *"Write a GitHub Actions workflow that exports my Godot 4 game and deploys it to GitHub Pages."* |
 
 ---
 
@@ -502,7 +629,7 @@ This saves you from going in circles and makes it easier to explain the problem 
 
 The most important thing isn't any tool or technique in this guide — it's finishing something. A simple game that works and is published is worth more than a complex game that never gets finished.
 
-Carter's Games started as *"what if you could tap fish?"* — and grew from there over months of work, one feature at a time, with a lot of AI help along the way.
+Carter's Games started as *"what if you could tap fish?"* — and grew from there over weeks of work, one feature at a time, with a lot of AI help along the way.
 
 You can do the same thing. Start simple, finish it, ship it, and then make it better.
 
