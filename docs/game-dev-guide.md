@@ -55,7 +55,7 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 | [itch.io](https://itch.io) | Game hosting site where you can publish your game | Free |
 | [Gemini](https://gemini.google.com) | AI assistant AND image generator — use it for planning, coding help, and creating all your game art | Free tier available |
 | [Claude](https://claude.ai) | AI assistant — great for planning, writing code, and working through problems | Free tier available |
-| [ChatGPT](https://chatgpt.com) | AI assistant — another great option for planning and problem solving; good third rotation when Claude/Gemini limits are hit | Free tier available |
+| [ChatGPT](https://chatgpt.com) | AI assistant — great for planning, problem solving, and writing code | Free tier available |
 | [Zed](https://zed.dev) | Fast visual editor with AI agent — plug in your own API key, no quota limits (Mac/Linux) | Free |
 | [VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot) | Most popular editor + free AI agent extension — plug in your own API key (all platforms) | Free |
 | [Claude Code](https://claude.ai/code) | Claude that runs in your terminal and builds the game directly | Free tier available |
@@ -90,7 +90,7 @@ You'll be working with AI constantly throughout this process — not just to ans
 
 - **[Gemini](https://gemini.google.com)** (by Google) — most generous free tier, great for coding help, and doubles as your image generation tool. Start here.
 - **[Claude](https://claude.ai)** (by Anthropic) — excellent for planning, reasoning through problems, and writing code.
-- **[ChatGPT](https://chatgpt.com)** (by OpenAI) — another strong option; good to have as a third account to rotate through.
+- **[ChatGPT](https://chatgpt.com)** (by OpenAI) — also excellent for planning, problem solving, and writing code.
 
 The key is knowing **how to talk to them.** We'll show you example prompts throughout this guide.
 
@@ -606,7 +606,7 @@ This saves you from going in circles and makes it easier to explain the problem 
 | Visual AI editor (free tier, 50 req/mo limit) | Cursor | [cursor.com](https://cursor.com) |
 | AI planning, chat, and image generation | Gemini (web or phone) | [gemini.google.com](https://gemini.google.com) |
 | AI planning and chat | Claude (web) | [claude.ai](https://claude.ai) |
-| AI planning and chat (third rotation option) | ChatGPT (web) | [chatgpt.com](https://chatgpt.com) |
+| AI planning and chat | ChatGPT (web) | [chatgpt.com](https://chatgpt.com) |
 | Store and version your code | GitHub | [github.com](https://github.com) |
 | Publish your game | itch.io | [itch.io](https://itch.io) |
 | Host your game on the web (free) | GitHub Pages | [pages.github.com](https://pages.github.com) |
