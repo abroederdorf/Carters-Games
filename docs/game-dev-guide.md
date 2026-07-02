@@ -1,8 +1,12 @@
-# Build Your Own Game App: A Guide for Young Game Makers
+# Build Your Own Game App: A Beginner's Guide to Making Games with AI
 
-> **Who this is for:** Kids age 10–15 who want to build a real game that other people can actually play — not just a school project, but something you can share a link to. No experience required. An adult helping with some of the setup steps is totally normal and expected.
+**No coding experience needed. AI does the building — you bring the idea.**
+
+> **Who this is for:** Kids age 10–15 (and curious adults) who want to build a real game that other people can actually play — not just a school project, but something you can share a link to. You don't need to know anything about coding, game design, or art. This guide assumes zero experience and uses AI as your co-creator every step of the way. An adult helping with some of the setup steps is totally normal and expected.
 >
-> **Real example used throughout:** [Carter's Games](https://cartersgames.alpinealicia.com) — a real app built by a parent and kid together, with a fishing game and a hidden-objects game. We'll use it as a reference so you can see what "done" looks like.
+> **How it works:** You describe what you want. AI writes the code, creates the art direction, manages your project files, and solves problems. Your job is to have the idea, make decisions, and test whether it's fun.
+>
+> **Real example used throughout:** [Carter's Games](https://cartersgames.alpinealicia.com) — a real app built by a parent and kid together using exactly this approach, with a fishing game and a hidden-objects game. We'll use it as a reference so you can see what "done" looks like.
 
 ---
 
@@ -11,7 +15,7 @@
 Here's what you'll build and the path to get there:
 
 ```
-Your idea → Design → Build in Godot → Create art → Test it → Ship it
+Your idea → Design with AI → AI builds it in Godot → Create art with AI → Test it → Ship it
 ```
 
 This isn't a weekend project — expect it to take **weeks** depending on how ambitious your game is. That's normal. Real games take time. The good news: you'll have something playable after just a day or two, and then you keep making it better.
