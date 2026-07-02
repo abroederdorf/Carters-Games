@@ -89,7 +89,7 @@ There are a few different ways to interact with AI while building your game. Pic
 These are AI tools that run in a **terminal** — a text window where you type commands. You chat with AI just like a conversation, and it writes files, runs your game, and manages git all by itself. You never touch code.
 
 - **Claude Code** — install at [claude.ai/code](https://claude.ai/code)
-- **Antigravity CLI** — Google's equivalent of Claude Code; replaces the older Gemini CLI. Install instructions are in their docs (AI can walk you through it)
+- **[Antigravity CLI](https://antigravity.google)** — Google's equivalent of Claude Code; replaced Gemini CLI. Install on Mac/Linux by running `curl -fsSL https://antigravity.google/cli/install.sh | bash` in your terminal
 
 To open a terminal:
 - **Mac:** use the built-in **Terminal** app, or download [iTerm2](https://iterm2.com) for a nicer experience
@@ -542,7 +542,7 @@ This saves you from going in circles and makes it easier to explain the problem 
 |---------------|------|------|
 | Build and run the game | Godot 4 | [godotengine.org](https://godotengine.org) |
 | AI that builds directly on your computer | Claude Code | [claude.ai/code](https://claude.ai/code) |
-| AI that builds directly on your computer (Google) | Antigravity CLI | see their docs to install |
+| AI that builds directly on your computer (Google) | Antigravity CLI | [antigravity.google](https://antigravity.google) |
 | Visual AI code editor | Cursor | [cursor.com](https://cursor.com) |
 | Terminal app (Mac) | iTerm2 | [iterm2.com](https://iterm2.com) |
 | AI planning, chat, and image generation | Gemini (web or phone) | [gemini.google.com](https://gemini.google.com) |
