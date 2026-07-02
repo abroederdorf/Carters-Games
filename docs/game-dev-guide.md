@@ -45,11 +45,11 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 | [itch.io](https://itch.io) | Game hosting site where you can publish your game | Free |
 | [Gemini](https://gemini.google.com) | AI assistant AND image generator — use it for planning, coding help, and creating all your game art | Free tier available |
 | [Claude](https://claude.ai) | AI assistant — great for planning, writing code, and working through problems | Free tier available |
+| [Zed](https://zed.dev) | Fast visual editor with AI agent — plug in your own API key, no quota limits (Mac/Linux) | Free |
+| [VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot) | Most popular editor + free AI agent extension — plug in your own API key (all platforms) | Free |
 | [Claude Code](https://claude.ai/code) | Claude that runs in your terminal and builds the game directly | Free tier available |
-| [Antigravity CLI](https://antigravity.google) | Google's equivalent of Claude Code | Free |
-| [Cursor](https://cursor.com) | Visual AI code editor — no terminal needed | Free tier available |
-| [VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot) | World's most popular editor + free AI agent extension | Free |
-| [Zed](https://zed.dev) | Fast, free editor — bring your own Claude/Gemini API key | Free |
+| [Antigravity CLI](https://antigravity.google) | Google's terminal AI agent — equivalent to Claude Code | Free |
+| [Cursor](https://cursor.com) | Polished visual AI editor — good to start, 50 agent requests/month free tier limit | Free tier available |
 
 ---
 
@@ -85,35 +85,38 @@ Either one works. The key is knowing **how to talk to them.** We'll show you exa
 
 ### Step 5: Choose Where to Work with AI
 
-There are a few different ways to interact with AI while building your game. Pick whichever feels most comfortable — they all work.
+There are a few different ways to interact with AI while building your game. Here's the recommended path, from easiest to most powerful.
 
-**Option 1: Claude Code or Antigravity CLI (most powerful)**
+**Option 1: Visual AI editor — Zed or VS Code + Cline (recommended starting point)**
 
-These are AI tools that run in a **terminal** — a text window where you type commands. You chat with AI just like a conversation, and it writes files, runs your game, and manages git all by itself. You never touch code.
+These give you a natural language chat interface alongside your project files. You describe what you want, AI builds it — no terminal required.
+
+The key advantage over tools like Cursor is that both connect directly to your Claude or Gemini API key instead of a monthly request quota. That means no artificial limits on how many things you can ask AI to build — you're only billed for what you use, and for a small project that's very cheap (often pennies).
+
+- **[Zed](https://zed.dev)** — fast, clean standalone editor. Plug in your Claude or Gemini API key and agent mode is fully unlimited. *Mac and Linux only — not available on Windows yet.*
+- **[VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot)** — VS Code is the world's most popular editor; Cline is a free extension that adds a full AI agent sidebar. Works on Mac, Windows, and Linux.
+
+> **What about Cursor?** Cursor is polished and beginner-friendly, but the free tier caps you at 50 agent requests per month — enough for a few days of building before you hit the wall. It's fine to start with, but Zed or VS Code + Cline will take you further without unexpected limits.
+
+**Option 2: Terminal — Claude Code or Antigravity CLI (most powerful)**
+
+These run in a text window where you type commands. Same natural language conversation, but AI also runs commands, manages git, and operates directly on your project without any manual steps. More powerful, slightly more setup.
 
 - **Claude Code** — install at [claude.ai/code](https://claude.ai/code)
 - **[Antigravity CLI](https://antigravity.google)** — Google's equivalent; install on Mac/Linux by running `curl -fsSL https://antigravity.google/cli/install.sh | bash`
 
-You'll need a terminal to run them. Good options:
+You'll need a terminal:
 
-| Platform | Recommended | Alternatives |
-|----------|------------|--------------|
-| Mac | [iTerm2](https://iterm2.com) — free, polished, great for beginners | Built-in Terminal app, [Tabby](https://tabby.sh) |
-| Windows | [Windows Terminal](https://aka.ms/terminal) — free, built into Windows 11, on the Microsoft Store for Windows 10 | [Tabby](https://tabby.sh) |
+| Platform | Recommended | Alternative |
+|----------|------------|-------------|
+| Mac | [iTerm2](https://iterm2.com) | Built-in Terminal app, [Tabby](https://tabby.sh) |
+| Windows | [Windows Terminal](https://aka.ms/terminal) — free, built into Windows 11 | [Tabby](https://tabby.sh) |
 
-> **Adult note:** Getting Claude Code or Antigravity CLI set up takes about 10 minutes. The terminal looks intimidating but becomes second nature quickly. If it's too much friction to start, try one of the visual editors below.
+> **Adult note:** Terminal setup takes about 10 minutes. If it feels like too much to start, go with Zed or VS Code + Cline first and come back to this later.
 
-**Option 2: Visual AI editors (no terminal needed)**
+**Option 3: Web chat (planning only)**
 
-These are code editors with AI built right in — you can see your project files and chat with AI in a sidebar. Good if the terminal feels uncomfortable.
-
-- **[Cursor](https://cursor.com)** — popular, beginner-friendly, free tier available
-- **[VS Code](https://code.visualstudio.com) + [Cline](https://cline.bot)** — VS Code is the world's most popular editor; Cline is a free extension that adds an AI agent sidebar to it. Good if you've heard of VS Code and want to start there
-- **[Zed](https://zed.dev)** — fast and free; bring your own Claude or Gemini API key for AI features
-
-**Option 3: Web chat (for planning only)**
-
-Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase. For actually building, they'll give you code you'd have to paste in yourself — that's why the options above are better for the build phases.
+Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase in Chapter 4. For building, use one of the options above instead.
 
 ---
 
@@ -578,13 +581,13 @@ This saves you from going in circles and makes it easier to explain the problem 
 | What you need | Tool | Link |
 |---------------|------|------|
 | Build and run the game | Godot 4 | [godotengine.org](https://godotengine.org) |
-| AI that builds directly on your computer | Claude Code | [claude.ai/code](https://claude.ai/code) |
-| AI that builds directly on your computer (Google) | Antigravity CLI | [antigravity.google](https://antigravity.google) |
-| Visual AI code editor | Cursor | [cursor.com](https://cursor.com) |
-| Visual AI code editor (VS Code-based) | VS Code + Cline | [code.visualstudio.com](https://code.visualstudio.com) + [cline.bot](https://cline.bot) |
-| Fast free editor (bring your own API key) | Zed | [zed.dev](https://zed.dev) |
+| Visual AI editor, no quota limits (Mac/Linux) | Zed | [zed.dev](https://zed.dev) |
+| Visual AI editor, no quota limits (all platforms) | VS Code + Cline | [code.visualstudio.com](https://code.visualstudio.com) + [cline.bot](https://cline.bot) |
+| Terminal AI agent (Anthropic) | Claude Code | [claude.ai/code](https://claude.ai/code) |
+| Terminal AI agent (Google) | Antigravity CLI | [antigravity.google](https://antigravity.google) |
 | Terminal app (Mac) | iTerm2 | [iterm2.com](https://iterm2.com) |
 | Terminal app (Windows) | Windows Terminal | [aka.ms/terminal](https://aka.ms/terminal) |
+| Visual AI editor (free tier, 50 req/mo limit) | Cursor | [cursor.com](https://cursor.com) |
 | AI planning, chat, and image generation | Gemini (web or phone) | [gemini.google.com](https://gemini.google.com) |
 | AI planning and chat | Claude (web) | [claude.ai](https://claude.ai) |
 | Store and version your code | GitHub | [github.com](https://github.com) |
