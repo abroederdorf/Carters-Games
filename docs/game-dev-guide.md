@@ -11,10 +11,10 @@
 Here's what you'll build and the path to get there:
 
 ```
-Your idea → Design on paper → Build in Godot → Create art with AI → Test it → Ship it
+Your idea → Design → Build in Godot → Create art → Test it → Ship it
 ```
 
-This isn't a weekend project — expect it to take **weeks or months** depending on how ambitious your game is. That's normal. Real games take time. The good news: you'll have something playable after just a few days, and then you keep making it better.
+This isn't a weekend project — expect it to take **weeks** depending on how ambitious your game is. That's normal. Real games take time. The good news: you'll have something playable after just a day or two, and then you keep making it better.
 
 ---
 
@@ -26,17 +26,10 @@ The best first game is **one mechanic, kept simple.** Not "a game like Minecraft
 
 - What's one thing that would be fun to do over and over?
 - Is there a game you already love that you could make a simpler version of?
-- Could a 5-year-old understand the rules without reading anything?
 
 ### How Carter's Games started
 
-The idea for the fishing game was: *"What if you could cast a line and tap fish as they swim by?"* That's it. One sentence. The first version had no score, no music, no levels — just a line that dropped and fish that swam. That was enough to know if it was fun.
-
-### Tips
-
-- **Write your idea in one sentence.** If you can't, it's too complicated.
-- **Sketch it on paper first.** What does the screen look like? Where are the buttons?
-- **Start smaller than you think.** You can always add more later.
+The idea for the fishing game was: *"What if you could cast a line and catch a fish as they swim by?"* That's it. One sentence. The first version had no score, no music, no levels — just a line that dropped and fish that swam. That was enough to know if it was fun.
 
 ---
 
@@ -52,11 +45,7 @@ Here's everything you'll use and what it costs. Almost all of it is free.
 | [itch.io](https://itch.io) | Game hosting site where you can publish your game | Free |
 | [Google ImageFX](https://imagefx.google.com) | AI tool for generating item and character art | Free |
 | [Google Flow](https://flow.google) | AI creative studio for generating and editing background scenes | Free |
-| [VS Code](https://code.visualstudio.com) | Code editor (optional, Godot has one built in) | Free |
 | [Claude](https://claude.ai) / [Gemini](https://gemini.google.com) | AI assistant to help you plan, write code, and solve problems | Free tier available |
-| [remove.bg](https://remove.bg) | Removes white backgrounds from images automatically | Free (limited) |
-
-**One thing that does cost money:** If you want to generate images automatically using the Google Imagen API (a more powerful, programmable version of ImageFX), it costs about $0.02 per image. For making art one at a time in the browser with ImageFX and Flow, it's completely free.
 
 ---
 
@@ -86,7 +75,7 @@ You'll be working with AI constantly throughout this process — not just to ans
 Either one works. The key is knowing **how to talk to them.** We'll show you example prompts throughout this guide.
 
 **Try this right now:**
-> *"I just installed Godot 4 and I'm making my first game. Can you explain what a Scene and a Node are, in simple terms?"*
+> *"I just installed Godot 4 and I'm making my first game. How should I get started?"*
 
 ---
 
@@ -163,7 +152,7 @@ Each phase gives you something working and testable. You'll find out early wheth
 
 ## Chapter 5: Build Your Game with AI
 
-With your plan in hand, you're ready to start building. Here's the key mindset: **you are the creative director, and AI is the developer.** Your job is to describe what you want clearly. AI writes the code. Godot is where you assemble it all.
+With your plan in hand, you're ready to start building. Here's the key mindset: **you are the creative director, and AI is the developer.** Your job is to describe what you want clearly. AI writes the code. 
 
 ### First: Use an AI That Can Actually Build For You
 
@@ -180,7 +169,7 @@ A quick orientation on Godot's structure, because you'll hear these words a lot:
 - A **Node** is one building block — an image on screen, a sound, a timer, a collision area.
 - A **Scene** is a group of nodes that work together — like a fish character, a menu, or a level.
 
-You don't need to deeply understand these. When something is confusing, just ask.
+You don't need to deeply understand these. When something is confusing, just ask AI.
 
 ### Step 1: Hand AI Your Plan and Start Phase 1
 
@@ -257,12 +246,11 @@ Children's book illustration of a large, busy [THEME] scene packed with things t
 Wide and panoramic (landscape orientation, roughly 2:1 ratio).
 Bright saturated colors, flat design, thick black outlines, no text.
 Every part of the scene is filled with interesting details — [list 4-5 background details].
-Friendly mood, suitable for children age 5–8.
 ```
 
 **Real example from Carter's Games (mountain scene):**
 
-> *Children's book illustration of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — rocks, bushes, snowdrifts, fallen logs, streams. Friendly and adventurous mood, suitable for children age 5–8.*
+> *Children's book illustration of a large, busy mountain scene packed with things to find. Snow-capped peaks in the background, pine forest on the slopes, a winding trail, a mountain lake, rocky cliffs, meadows with wildflowers. Wide and panoramic (landscape orientation, roughly 2:1 ratio). Bright saturated colors, flat design, thick black outlines, no text. Every part of the scene is filled with interesting details — rocks, bushes, snowdrifts, fallen logs, streams.*
 
 ### Remove white backgrounds
 
@@ -285,7 +273,7 @@ Before you share your game with anyone, play it yourself — and find someone el
 
 ### The "watch someone else play" trick
 
-Sit next to a friend or sibling (ideally someone younger) and watch them play your game **without telling them anything.** Don't explain the rules. Don't say "no, tap *that* button." Just watch.
+Sit next to a friend or sibling and watch them play your game **without telling them anything.** Don't explain the rules. Don't say "no, tap *that* button." Just watch.
 
 Where they get confused, that's something you need to fix. Where they smile or laugh, that's something you should keep.
 
@@ -363,7 +351,7 @@ GitHub Pages lets you host your game directly from your GitHub repository.
 6. Your game will be live at `yourusername.github.io/your-repo-name`!
 
 #### The Automated Way (GitHub Actions)
-For advanced users, you can write a GitHub Actions workflow to export your game in the cloud and deploy it automatically. 
+For advanced users, you can have AI write a GitHub Actions workflow to export your game in the cloud and deploy it automatically. 
 
 > [!IMPORTANT]
 > **Two things you MUST do to make GitHub Actions work:**
@@ -382,13 +370,12 @@ This takes some setup, but once it's working, deploying is just clicking a butto
 
 Carter's Games deploys to both itch.io and GitHub Pages from a single automated build. The GitHub Actions workflow runs Godot in the cloud, packages the game, and pushes to both places at once. This is a more advanced setup, but a great learning project for working with AI to build automation.
 
-> **Ask your AI helper:** *"I want to deploy my Godot web export to both itch.io (using a tool called 'butler') and GitHub Pages from the same GitHub Actions workflow. Can you write the workflow YAML file for me and explain what each section does?"*
+> **Ask your AI helper:** *"I want to deploy my Godot web export to both itch.io (using a tool called 'butler') and GitHub Pages from the same GitHub Actions workflow. Can you write the workflow YAML file?"*
 
 ### Costs at this stage
 
 - GitHub Pages: **Free**
 - itch.io: **Free** (they take a cut of sales if you charge money, but free games cost nothing)
-- Custom domain (optional, e.g. `mygame.com`): ~$12/year
 
 ---
 
@@ -433,7 +420,7 @@ The game code automatically detects your new resource and loads it. No programmi
 
 ## Chapter 10: When You Get Stuck
 
-Getting stuck is not a sign that you're bad at this. Every developer gets stuck — the difference is knowing how to get unstuck.
+Getting stuck is not a sign that you're bad at this. Every developer gets stuck — the key is knowing how to get unstuck.
 
 ### First: describe the problem out loud
 
@@ -456,14 +443,12 @@ Here's what's actually happening: [what's going wrong]
 
 Here's the error message (if there is one): [paste it exactly]
 
-Here's my code: [paste the relevant script or describe the scene]
-
 What's wrong?
 ```
 
 **Real example:**
 
-> *"I'm building a fishing game in Godot 4. I have a fish node that's supposed to reverse direction when it hits the edge of the screen. What's actually happening is the fish swims off the left edge and disappears. There's no error message. Here's the script: [paste script]. What's wrong?"*
+> *"I'm building a fishing game in Godot 4. I have a fish node that's supposed to reverse direction when it hits the edge of the screen. What's actually happening is the fish swims off the left edge and disappears. There's no error message. What's wrong?"*
 
 That's the kind of prompt that gets a useful answer.
 
@@ -538,7 +523,6 @@ This saves you from going in circles and makes it easier to explain the problem 
 | Store and version your code | GitHub | [github.com](https://github.com) |
 | Generate item art | Google ImageFX | [imagefx.google.com](https://imagefx.google.com) |
 | Generate background scenes | Google Flow | [flow.google](https://flow.google) |
-| Remove white backgrounds from art | remove.bg | [remove.bg](https://remove.bg) |
 | Publish your game | itch.io | [itch.io](https://itch.io) |
 | Host your game on the web (free) | GitHub Pages | [pages.github.com](https://pages.github.com) |
 | AI planning + coding help | Claude or Gemini | [claude.ai](https://claude.ai) or [gemini.google.com](https://gemini.google.com) |
@@ -548,10 +532,10 @@ This saves you from going in circles and makes it easier to explain the problem 
 | When you need... | Ask the AI... |
 |-----------------|---------------|
 | To start your game plan | *"Here's my game idea: [brain dump everything]. I'm building it in Godot 4. Before writing any code, can you ask me clarifying questions and then write a complete game design document with a phase breakdown?"* |
-| To start a new phase | *"Here's my full game plan: [paste plan]. Phase [N] is done. Now I want to build Phase [N+1]: [describe it]. What do I need to add in Godot 4 with GDScript? Walk me through it step by step."* |
+| To start a new phase | *"Here's my full game plan: [paste plan]. Phase [N] is done. Now I want to build Phase [N+1]: [describe it]."* |
 | To understand a Godot concept | *"In Godot 4, what is [confusing thing]? Explain it simply with a short example."* |
 | To fix a bug | *"Here's my game plan for context: [paste plan]. I got this error in Godot: [paste error]. I was expecting [what you wanted]. What's wrong?"* |
-| To set up GitHub Actions | *"Write a GitHub Actions workflow that exports my Godot 4 game and deploys it to GitHub Pages. Explain what each section does."* |
+| To set up GitHub Actions | *"Write a GitHub Actions workflow that exports my Godot 4 game and deploys it to GitHub Pages."* |
 
 ---
 
@@ -559,7 +543,7 @@ This saves you from going in circles and makes it easier to explain the problem 
 
 The most important thing isn't any tool or technique in this guide — it's finishing something. A simple game that works and is published is worth more than a complex game that never gets finished.
 
-Carter's Games started as *"what if you could tap fish?"* — and grew from there over months of work, one feature at a time, with a lot of AI help along the way.
+Carter's Games started as *"what if you could tap fish?"* — and grew from there over weeks of work, one feature at a time, with a lot of AI help along the way.
 
 You can do the same thing. Start simple, finish it, ship it, and then make it better.
 
