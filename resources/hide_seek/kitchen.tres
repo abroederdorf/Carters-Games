@@ -1,0 +1,598 @@
+[gd_resource type="Resource" script_class="HideSeekSceneData" format=3]
+
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_anchor.gd" id="1_yd23t"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/bg_kitchen.webp" id="2_ipd1y"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_item_data.gd" id="3_knwha"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/pot.webp" id="4_l3t0c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/spatula.webp" id="5_afxwa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/frying_pan.webp" id="5_j1p5v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/whisk.webp" id="6_j1p5v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/chef_hat.webp" id="7_dka2y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/mixing_bowl.webp" id="7_fll8o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/apple.webp" id="8_fll8o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/cutting_board.webp" id="9_1vml2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/cookbook.webp" id="10_1vml2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/rolling_pin.webp" id="10_vloh3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/salt_shaker.webp" id="11_bpcs5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/measuring_cup.webp" id="12_ot30o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/grater.webp" id="13_cgfum"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/colander.webp" id="14_tqbrv"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/wooden_spoon.webp" id="15_oheh5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/milk_carton.webp" id="16_poiqd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/banana_bunch.webp" id="17_qp0ap"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/cheese.webp" id="18_srexu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/grapes.webp" id="19_0k13d"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/kitchen/cookie_cutter.webp" id="19_vloh3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/carrot.webp" id="20_ejeog"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/muffin.webp" id="21_5esea"]
+[ext_resource type="Texture2D" path="res://assets/sprites/hide_seek/shared/yogurt_cup.webp" id="22_ilv11"]
+[ext_resource type="Script" path="res://scripts/hide_seek/resources/hide_seek_scene_data.gd" id="23_0dr50"]
+
+[sub_resource type="Resource" id="Resource_bpcs5"]
+script = ExtResource("1_yd23t")
+id = 0
+position = Vector2(2414.29, 1328.4648)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_ot30o"]
+script = ExtResource("1_yd23t")
+id = 1
+position = Vector2(580.8244, 49.881317)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_cgfum"]
+script = ExtResource("1_yd23t")
+id = 2
+position = Vector2(2005.2867, 45.92851)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_tqbrv"]
+script = ExtResource("1_yd23t")
+id = 3
+position = Vector2(1005.56494, 43.952347)
+radius = 40.0
+visual_scale = 0.8
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_oheh5"]
+script = ExtResource("1_yd23t")
+id = 4
+position = Vector2(318.00363, 1051.8008)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_poiqd"]
+script = ExtResource("1_yd23t")
+id = 5
+position = Vector2(900.81903, 302.831)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_qp0ap"]
+script = ExtResource("1_yd23t")
+id = 6
+position = Vector2(1902.4836, 162.52263)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_srexu"]
+script = ExtResource("1_yd23t")
+id = 7
+position = Vector2(877.0777, 164.49904)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_0k13d"]
+script = ExtResource("1_yd23t")
+id = 8
+position = Vector2(1947.8909, 300.85458)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_ejeog"]
+script = ExtResource("1_yd23t")
+id = 9
+position = Vector2(2688.7612, 488.59088)
+radius = 40.0
+visual_scale = 0.7
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_5esea"]
+script = ExtResource("1_yd23t")
+id = 10
+position = Vector2(1384.9417, 380.6166)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_ilv11"]
+script = ExtResource("1_yd23t")
+id = 11
+position = Vector2(1620.0338, 167.18982)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_0dr50"]
+script = ExtResource("1_yd23t")
+id = 12
+position = Vector2(1369.1022, 171.14217)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_alp4n"]
+script = ExtResource("1_yd23t")
+id = 13
+position = Vector2(296.27988, 522.9016)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_v7jan"]
+script = ExtResource("1_yd23t")
+id = 14
+position = Vector2(78.935776, 1317.3218)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_xre2i"]
+script = ExtResource("1_yd23t")
+id = 15
+position = Vector2(1768.1443, 1226.419)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_vibqc"]
+script = ExtResource("1_yd23t")
+id = 16
+position = Vector2(2267.982, 902.3257)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_qymvf"]
+script = ExtResource("1_yd23t")
+id = 17
+position = Vector2(2149.4233, 1283.727)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_qvjvl"]
+script = ExtResource("1_yd23t")
+id = 18
+position = Vector2(1965.6641, 1283.7272)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_s5sqj"]
+script = ExtResource("1_yd23t")
+id = 19
+position = Vector2(2341.0461, 621.70996)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_e4wa4"]
+script = ExtResource("1_yd23t")
+id = 20
+position = Vector2(436.61325, 1353.6085)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_moqea"]
+script = ExtResource("1_yd23t")
+id = 21
+position = Vector2(345.714, 231.14217)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_0go2i"]
+script = ExtResource("1_yd23t")
+id = 22
+position = Vector2(727.0076, 1314.0844)
+radius = 40.0
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_iytbj"]
+script = ExtResource("1_yd23t")
+id = 23
+position = Vector2(1058.909, 160)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_uqquh"]
+script = ExtResource("1_yd23t")
+id = 24
+position = Vector2(1485.6444, 1217.252)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_v2ipb"]
+script = ExtResource("1_yd23t")
+id = 25
+position = Vector2(2400.3801, 1136.229)
+radius = 40.0
+tags = Array[String](["big", "medium"])
+
+[sub_resource type="Resource" id="Resource_utjib"]
+script = ExtResource("1_yd23t")
+id = 26
+position = Vector2(910.68115, 671.8286)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_7cmv8"]
+script = ExtResource("1_yd23t")
+id = 27
+position = Vector2(2103.9888, 161.97617)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_6nao3"]
+script = ExtResource("1_yd23t")
+id = 28
+position = Vector2(497.72498, 1189.5848)
+radius = 40.0
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_17xof"]
+script = ExtResource("1_yd23t")
+id = 29
+position = Vector2(2672.9556, 616.4962)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_6rqmd"]
+script = ExtResource("1_yd23t")
+id = 30
+position = Vector2(1056.9752, 304.97525)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_naxk4"]
+script = ExtResource("1_yd23t")
+id = 31
+position = Vector2(1039.1771, 443.30737)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_elgpg"]
+script = ExtResource("1_yd23t")
+id = 32
+position = Vector2(205.41434, 247.66635)
+radius = 40.0
+tags = Array[String](["medium", "bigger"])
+
+[sub_resource type="Resource" id="Resource_kwmbh"]
+script = ExtResource("1_yd23t")
+id = 33
+position = Vector2(1744.4691, 941.303)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_lyyb2"]
+script = ExtResource("1_yd23t")
+id = 34
+position = Vector2(1384.8754, 1032.2063)
+radius = 40.0
+tags = Array[String](["small", "medium"])
+
+[sub_resource type="Resource" id="Resource_vvysh"]
+script = ExtResource("1_yd23t")
+id = 35
+position = Vector2(1592.3058, 1057.8975)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_nrino"]
+script = ExtResource("1_yd23t")
+id = 36
+position = Vector2(1614.0221, 666.61475)
+radius = 40.0
+tags = Array[String](["stove"])
+
+[sub_resource type="Resource" id="Resource_tqf3g"]
+script = ExtResource("1_yd23t")
+id = 37
+position = Vector2(2105.9568, 439.355)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_ud1no"]
+script = ExtResource("1_yd23t")
+id = 38
+position = Vector2(2489.2253, 749.6144)
+radius = 40.0
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_myuqk"]
+script = ExtResource("1_yd23t")
+id = 39
+position = Vector2(1102.282, 996.63574)
+radius = 40.0
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_u8nru"]
+script = ExtResource("1_yd23t")
+id = 40
+position = Vector2(2017.1748, 991.4212)
+radius = 40.0
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_rphp1"]
+script = ExtResource("1_yd23t")
+id = 41
+position = Vector2(2214.7297, 694.99664)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_lj6t1"]
+script = ExtResource("1_yd23t")
+id = 42
+position = Vector2(1924.2833, 679.18695)
+radius = 40.0
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_bjdfu"]
+script = ExtResource("1_yd23t")
+id = 43
+position = Vector2(1149.7916, 655.4727)
+radius = 40.0
+tags = Array[String](["medium", "big"])
+
+[sub_resource type="Resource" id="Resource_r8pl3"]
+script = ExtResource("1_yd23t")
+id = 44
+position = Vector2(709.19275, 866.9232)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_ja4vh"]
+script = ExtResource("1_yd23t")
+id = 45
+position = Vector2(578.77966, 864.94714)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_dsqv3"]
+script = ExtResource("1_yd23t")
+id = 46
+position = Vector2(304.1405, 623.8543)
+radius = 40.0
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_shxry"]
+script = ExtResource("1_yd23t")
+id = 47
+position = Vector2(2775.7236, 779.97076)
+radius = 40.0
+tags = Array[String](["big"])
+
+[sub_resource type="Resource" id="Resource_6umom"]
+script = ExtResource("1_yd23t")
+id = 48
+position = Vector2(1617.9487, 1368.8715)
+radius = 40.0
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_v0au5"]
+script = ExtResource("1_yd23t")
+id = 49
+position = Vector2(1052.8805, 1270.063)
+radius = 40.0
+tags = Array[String](["big", "medium"])
+
+[sub_resource type="Resource" id="Resource_0utnx"]
+script = ExtResource("3_knwha")
+item_name = "pot"
+thumbnail = ExtResource("4_l3t0c")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.7
+tags = Array[String](["big", "stove"])
+
+[sub_resource type="Resource" id="Resource_kfjol"]
+script = ExtResource("3_knwha")
+item_name = "frying_pan"
+thumbnail = ExtResource("5_j1p5v")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.6000000000000001
+tags = Array[String](["big", "stove"])
+
+[sub_resource type="Resource" id="Resource_63a2h"]
+script = ExtResource("3_knwha")
+item_name = "spatula"
+thumbnail = ExtResource("5_afxwa")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_18b6g"]
+script = ExtResource("3_knwha")
+item_name = "mixing_bowl"
+thumbnail = ExtResource("7_fll8o")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["medium", "stove"])
+
+[sub_resource type="Resource" id="Resource_gbdp1"]
+script = ExtResource("3_knwha")
+item_name = "whisk"
+thumbnail = ExtResource("6_j1p5v")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_s74mh"]
+script = ExtResource("3_knwha")
+item_name = "chef_hat"
+thumbnail = ExtResource("7_dka2y")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["big"])
+
+[sub_resource type="Resource" id="Resource_7py8h"]
+script = ExtResource("3_knwha")
+item_name = "cookbook"
+thumbnail = ExtResource("10_1vml2")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_1m7nm"]
+script = ExtResource("3_knwha")
+item_name = "apple"
+thumbnail = ExtResource("8_fll8o")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_piens"]
+script = ExtResource("3_knwha")
+item_name = "cutting_board"
+thumbnail = ExtResource("9_1vml2")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_ihat1"]
+script = ExtResource("3_knwha")
+item_name = "rolling_pin"
+thumbnail = ExtResource("10_vloh3")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.35
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_fh61e"]
+script = ExtResource("3_knwha")
+item_name = "salt_shaker"
+thumbnail = ExtResource("11_bpcs5")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.25
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_3ia4q"]
+script = ExtResource("3_knwha")
+item_name = "measuring_cup"
+thumbnail = ExtResource("12_ot30o")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_ffuob"]
+script = ExtResource("3_knwha")
+item_name = "grater"
+thumbnail = ExtResource("13_cgfum")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_t3x5k"]
+script = ExtResource("3_knwha")
+item_name = "colander"
+thumbnail = ExtResource("14_tqbrv")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.5
+tags = Array[String](["medium", "stove"])
+
+[sub_resource type="Resource" id="Resource_20lbg"]
+script = ExtResource("3_knwha")
+item_name = "wooden_spoon"
+thumbnail = ExtResource("15_oheh5")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_uhq7f"]
+script = ExtResource("3_knwha")
+item_name = "cookie_cutter"
+thumbnail = ExtResource("19_vloh3")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_4bflp"]
+script = ExtResource("3_knwha")
+item_name = "milk_carton"
+thumbnail = ExtResource("16_poiqd")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_bqpj5"]
+script = ExtResource("3_knwha")
+item_name = "banana"
+thumbnail = ExtResource("17_qp0ap")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_sr8pn"]
+script = ExtResource("3_knwha")
+item_name = "cheese"
+thumbnail = ExtResource("18_srexu")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_t7mhs"]
+script = ExtResource("3_knwha")
+item_name = "grapes"
+thumbnail = ExtResource("19_0k13d")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.45
+tags = Array[String](["medium"])
+
+[sub_resource type="Resource" id="Resource_xvh3r"]
+script = ExtResource("3_knwha")
+item_name = "carrot"
+thumbnail = ExtResource("20_ejeog")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.4
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_2yqx4"]
+script = ExtResource("3_knwha")
+item_name = "muffin"
+thumbnail = ExtResource("21_5esea")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
+
+[sub_resource type="Resource" id="Resource_62pse"]
+script = ExtResource("3_knwha")
+item_name = "yogurt_cup"
+thumbnail = ExtResource("22_ilv11")
+position = Vector2(100, 100)
+radius = 60.0
+base_scale = 0.30000000000000004
+tags = Array[String](["small"])
+
+[resource]
+script = ExtResource("23_0dr50")
+scene_name = "kitchen"
+background_image = ExtResource("2_ipd1y")
+items = Array[ExtResource("3_knwha")]([SubResource("Resource_0utnx"), SubResource("Resource_kfjol"), SubResource("Resource_63a2h"), SubResource("Resource_18b6g"), SubResource("Resource_gbdp1"), SubResource("Resource_s74mh"), SubResource("Resource_7py8h"), SubResource("Resource_1m7nm"), SubResource("Resource_piens"), SubResource("Resource_ihat1"), SubResource("Resource_fh61e"), SubResource("Resource_3ia4q"), SubResource("Resource_ffuob"), SubResource("Resource_t3x5k"), SubResource("Resource_20lbg"), SubResource("Resource_uhq7f"), SubResource("Resource_4bflp"), SubResource("Resource_bqpj5"), SubResource("Resource_sr8pn"), SubResource("Resource_t7mhs"), SubResource("Resource_xvh3r"), SubResource("Resource_2yqx4"), SubResource("Resource_62pse")])
+anchors = Array[ExtResource("1_yd23t")]([SubResource("Resource_bpcs5"), SubResource("Resource_ot30o"), SubResource("Resource_cgfum"), SubResource("Resource_tqbrv"), SubResource("Resource_oheh5"), SubResource("Resource_poiqd"), SubResource("Resource_qp0ap"), SubResource("Resource_srexu"), SubResource("Resource_0k13d"), SubResource("Resource_ejeog"), SubResource("Resource_5esea"), SubResource("Resource_ilv11"), SubResource("Resource_0dr50"), SubResource("Resource_alp4n"), SubResource("Resource_v7jan"), SubResource("Resource_xre2i"), SubResource("Resource_vibqc"), SubResource("Resource_qymvf"), SubResource("Resource_qvjvl"), SubResource("Resource_s5sqj"), SubResource("Resource_e4wa4"), SubResource("Resource_moqea"), SubResource("Resource_0go2i"), SubResource("Resource_iytbj"), SubResource("Resource_uqquh"), SubResource("Resource_v2ipb"), SubResource("Resource_utjib"), SubResource("Resource_7cmv8"), SubResource("Resource_6nao3"), SubResource("Resource_17xof"), SubResource("Resource_6rqmd"), SubResource("Resource_naxk4"), SubResource("Resource_elgpg"), SubResource("Resource_kwmbh"), SubResource("Resource_lyyb2"), SubResource("Resource_vvysh"), SubResource("Resource_nrino"), SubResource("Resource_tqf3g"), SubResource("Resource_ud1no"), SubResource("Resource_myuqk"), SubResource("Resource_u8nru"), SubResource("Resource_rphp1"), SubResource("Resource_lj6t1"), SubResource("Resource_bjdfu"), SubResource("Resource_r8pl3"), SubResource("Resource_ja4vh"), SubResource("Resource_dsqv3"), SubResource("Resource_shxry"), SubResource("Resource_6umom"), SubResource("Resource_v0au5")])
+is_manual_edit = true
