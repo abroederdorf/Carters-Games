@@ -7,6 +7,12 @@
 > **How it works:** You describe what you want. AI writes the code, creates the art direction, manages your project files, and solves problems. Your job is to have the idea, make decisions, and test whether it's fun.
 >
 > **Real example used throughout:** [Carter's Games](https://cartersgames.alpinealicia.com) — a real app built by a parent and kid together using exactly this approach, with a fishing game and a hidden-objects game. We'll use it as a reference so you can see what "done" looks like.
+>
+> **Intimidated or don't know where to start?** Paste the link to this guide into AI ([Gemini](https://gemini.google.com) or [Claude](https://claude.ai)) and have it walk you through the guide. Ask the AI questions just like you would a person if something is not working or does not make sense, and work together to figure it out.
+>
+> AI example prompt:
+> *"I want to make a game but I need help getting started. Read this guide and help me through the steps: [https://github.com/abroederdorf/Carters-Games/edit/docs/game-tutorial-updates/docs/game-dev-guide.md](https://github.com/abroederdorf/Carters-Games/blob/main/docs/game-dev-guide.md)"*
+
 
 ---
 
@@ -124,7 +130,7 @@ You'll need a terminal:
 
 **Option 3: Web chat (planning only)**
 
-Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase in Chapter 4. For building, use one of the options above instead.
+Claude and Gemini on the web (claude.ai / gemini.google.com) are great for the planning phase in Chapter 4 or asking questions when you don't know what to do next or to get help fixing something. For building, use one of the options above instead.
 
 ---
 
@@ -249,7 +255,7 @@ AI gets slower and less reliable as a conversation grows very long. A simple rul
 
 ## Chapter 6: Create Your Art with AI
 
-You don't need to be an artist. Use Gemini — on the web at [gemini.google.com](https://gemini.google.com) or the Gemini app on your phone — to generate all your game art. Both item images and full background scenes can be created right there, no separate tools needed.
+You don't need to be an artist. Use Gemini — on the web at [gemini.google.com](https://gemini.google.com) or the Gemini app on your phone — to generate all your game art. Both item images and full background scenes can be created right there, no separate tools needed. Use AI to help create the prompts themselves, then paste the prompt into Gemini to create the image file.
 
 ### Generating item images
 
