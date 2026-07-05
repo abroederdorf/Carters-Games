@@ -160,7 +160,7 @@ func _on_fishing_pressed() -> void:
 
 func _on_bubble_blaster_pressed() -> void:
 	AudioManager.play_sfx("pop")
-	get_tree().change_scene_to_file("res://scenes/bubble_blaster/BubbleBlasterGame.tscn")
+	get_tree().change_scene_to_file("res://scenes/bubble_blaster/BubbleBlasterMain.tscn")
 
 func _on_find_it_pressed() -> void:
 	AudioManager.play_sfx("pop")

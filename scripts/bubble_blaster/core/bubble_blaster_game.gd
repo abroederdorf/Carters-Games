@@ -4,6 +4,7 @@ enum State { AIMING, FIRING, RESOLVING, OVERLAY }
 
 const BUBBLE_SCENE = preload("res://scenes/bubble_blaster/Bubble.tscn")
 const SLINGSHOT_TEX = preload("res://assets/sprites/bubble_blaster/sling_shot.png")
+const BTN_HOME_TEX = preload("res://assets/sprites/ui/button_home.png")
 
 const RIGHT_ANCHOR_X: float = 1920.0
 const GRID_TOP_Y: float = 60.0
@@ -143,6 +144,24 @@ func _build_ui() -> void:
 	_ui.new_game.connect(_on_new_game)
 	_ui.refill_requested.connect(_on_refill)
 	_ui.go_home.connect(_on_go_home)
+
+	# Persistent home button (top-left corner, always visible during play)
+	var hud := CanvasLayer.new()
+	hud.layer = 5
+	add_child(hud)
+	var home_btn := Button.new()
+	home_btn.flat = true
+	home_btn.expand_icon = true
+	home_btn.focus_mode = Control.FOCUS_NONE
+	home_btn.icon = BTN_HOME_TEX
+	home_btn.anchors_preset = Control.PRESET_TOP_LEFT
+	home_btn.custom_minimum_size = Vector2(80, 80)
+	home_btn.offset_left = 12
+	home_btn.offset_top = 12
+	home_btn.offset_right = 92
+	home_btn.offset_bottom = 92
+	home_btn.pressed.connect(_on_go_home)
+	hud.add_child(home_btn)
 
 func _calc_stars() -> int:
 	if _shots_fired * 4 <= _cluster_count * 3:  # ≤ 0.75x
