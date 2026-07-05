@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbbubblescen1"]
+
+[ext_resource type="Script" path="res://scripts/bubble_blaster/core/bubble.gd" id="1_bubble"]
+
+[node name="Bubble" type="Node2D" unique_id=881234001]
+script = ExtResource("1_bubble")

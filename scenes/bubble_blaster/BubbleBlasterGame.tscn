@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbgamescene01"]
+
+[ext_resource type="Script" path="res://scripts/bubble_blaster/core/bubble_blaster_game.gd" id="1_game"]
+
+[node name="BubbleBlasterGame" type="Node2D" unique_id=992345001]
+script = ExtResource("1_game")
+
+[node name="GridRoot" type="Node2D" parent="." unique_id=992345002]
