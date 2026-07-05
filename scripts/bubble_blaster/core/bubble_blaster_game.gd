@@ -14,6 +14,15 @@ const BOUNCE_TOP_Y: float = HexGrid.BUBBLE_R
 const BOUNCE_BOT_Y: float = 1080.0 - HexGrid.BUBBLE_R
 const MAX_BOUNCES: int = 4
 
+# Queue display layout
+const QUEUE_POS: Array[Vector2] = [
+	Vector2(90.0, 945.0),   # current bubble (large)
+	Vector2(215.0, 968.0),  # next 1 (smaller)
+	Vector2(315.0, 968.0),  # next 2 (smaller)
+]
+const QUEUE_SCALE: Array[float] = [1.0, 0.72, 0.72]
+const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R
+
 @onready var grid_root: Node2D = $GridRoot
 
 var _grid: HexGrid
@@ -33,7 +42,12 @@ var _aim_dir: Vector2 = Vector2.RIGHT
 var _projectile: Bubble = null
 var _proj_vel: Vector2 = Vector2.RIGHT  # live direction during flight (may bounce)
 var _proj_bounces: int = 0
-var _next_color: int = 0  # cycles 0-4; replaced by queue in step 6
+
+# Bubble queue: queue[0] fires next; visual hopper shows first 3.
+var _queue: Array[int] = []
+var _queue_display: Array[Bubble] = []
+var _ammo_total: int = 0    # 2 × cluster_count; refills add to this (step 8)
+var _shots_total_gen: int = 0  # total bubbles ever generated into the queue
 
 func _ready() -> void:
 	_grid = HexGrid.new()
@@ -44,6 +58,8 @@ func _ready() -> void:
 	_spawn_bubble_sprites()
 	_build_slingshot()
 	_build_aim_line()
+	_init_queue()
+	_build_queue_display()
 
 # ─── Slingshot + aim line ─────────────────────────────────────────────────────
 
@@ -60,6 +76,53 @@ func _build_aim_line() -> void:
 	_aim_line.visible = false
 	add_child(_aim_line)
 
+# ─── Bubble queue ─────────────────────────────────────────────────────────────
+
+func _init_queue() -> void:
+	_ammo_total = 2 * _cluster_count
+	_queue.clear()
+	_shots_total_gen = mini(3, _ammo_total)
+	for _i in _shots_total_gen:
+		_queue.append(_weighted_color())
+
+func _build_queue_display() -> void:
+	_queue_display.clear()
+	for _i in 3:
+		var b: Bubble = BUBBLE_SCENE.instantiate()
+		b.visible = false
+		add_child(b)
+		_queue_display.append(b)
+	_update_queue_display()
+
+func _update_queue_display() -> void:
+	for i in 3:
+		var node: Bubble = _queue_display[i]
+		if i < _queue.size():
+			node.color_index = _queue[i]
+			node.position = QUEUE_POS[i]
+			node.scale = Vector2.ONE * QUEUE_SCALE[i]
+			node.visible = true
+		else:
+			node.visible = false
+
+# Returns a color index weighted proportionally to colors remaining on the board.
+func _weighted_color() -> int:
+	if cells.is_empty():
+		return randi() % _level_data.num_colors
+	var pool: Array[int] = cells.values()
+	return pool[randi() % pool.size()]
+
+# Returns true if touch_pos hit a swappable preview slot and the swap was done.
+func _try_swap(touch_pos: Vector2) -> bool:
+	for i in range(1, QUEUE_POS.size()):
+		if touch_pos.distance_to(QUEUE_POS[i]) < QUEUE_SWAP_RADIUS and i < _queue.size():
+			var tmp := _queue[0]
+			_queue[0] = _queue[i]
+			_queue[i] = tmp
+			_update_queue_display()
+			return true
+	return false
+
 # ─── Input ────────────────────────────────────────────────────────────────────
 
 func _input(event: InputEvent) -> void:
@@ -67,6 +130,8 @@ func _input(event: InputEvent) -> void:
 		return
 	if event is InputEventScreenTouch:
 		if event.pressed:
+			if _try_swap(event.position):
+				return
 			_touch_id = event.index
 			_update_aim(event.position)
 		elif event.index == _touch_id:
@@ -93,11 +158,13 @@ func _update_aim(touch_pos: Vector2) -> void:
 # ─── Fire ─────────────────────────────────────────────────────────────────────
 
 func _fire() -> void:
+	if _queue.is_empty():
+		return
 	_state = State.FIRING
 	_proj_vel = _aim_dir
 	_proj_bounces = 0
 	_projectile = BUBBLE_SCENE.instantiate()
-	_projectile.color_index = _next_color
+	_projectile.color_index = _queue[0]
 	_projectile.position = SLINGSHOT_POS
 	add_child(_projectile)
 
@@ -174,9 +241,16 @@ func _snap(cell: Vector2i) -> void:
 	sprites[cell] = _projectile
 	_projectile = null
 	_shots_fired += 1
-	_next_color = (_next_color + 1) % 5
+	_queue.pop_front()
+	if _shots_total_gen < _ammo_total:
+		_queue.append(_weighted_color())
+		_shots_total_gen += 1
+	_update_queue_display()
 	await _resolve(cell)
-	_state = State.AIMING
+	if _queue.is_empty():
+		_on_out_of_ammo()
+	else:
+		_state = State.AIMING
 
 func _discard_projectile() -> void:
 	_projectile.queue_free()
@@ -286,6 +360,10 @@ func _compute_cluster_count() -> void:
 func _on_win() -> void:
 	# Placeholder — step 8 adds the overlay and star calculation.
 	print("Level cleared! shots=%d  clusters=%d" % [_shots_fired, _cluster_count])
+
+func _on_out_of_ammo() -> void:
+	# Placeholder — step 8 adds the refill modal.
+	print("Out of ammo! shots=%d" % _shots_fired)
 
 # ─── Level data factory ───────────────────────────────────────────────────────
 
