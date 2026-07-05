@@ -71,7 +71,7 @@ func _build_ui() -> void:
 	hbox.add_child(find_card)
 
 	var bubble_card := _make_game_card(
-		"Bubble Blaster",
+		"Bubble Blast",
 		BUBBLE_BLASTER_ICON,
 		Color(0.80, 0.10, 0.10, 1),
 		Color(0.50, 0.04, 0.04, 1)
@@ -147,6 +147,8 @@ func _make_game_card(title: String, icon: Texture2D, color: Color, border: Color
 	lbl.add_theme_font_size_override("font_size", 40)
 	lbl.add_theme_color_override("font_color", Color.WHITE)
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	inner.add_child(lbl)
 
