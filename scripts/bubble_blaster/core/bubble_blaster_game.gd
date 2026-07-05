@@ -23,6 +23,10 @@ const QUEUE_POS: Array[Vector2] = [
 const QUEUE_SCALE: Array[float] = [1.0, 0.72, 0.72]
 const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R
 
+# The leftmost x-coordinate a bubble may reach before it's game over.
+# Col 20 is roughly x=210 (< 280), so this is only triggered by stacking many missed shots.
+const DEATH_LINE_X: float = SLINGSHOT_POS.x + 150.0
+
 @onready var grid_root: Node2D = $GridRoot
 
 var _grid: HexGrid
@@ -31,8 +35,9 @@ var sprites: Dictionary = {}  # Vector2i → Bubble node
 var _level_data: BubbleLevelData
 var _state: State = State.AIMING
 
-var _cluster_count: int = 0  # x: distinct same-color clusters at round start (par base)
-var _shots_fired: int = 0    # for par rating in step 8
+var _cluster_count: int = 0      # x: distinct same-color clusters at round start (par base)
+var _shots_fired: int = 0        # for par rating in step 8
+var _next_reserve_col: int = 0   # next hidden column index to reveal
 
 var _slingshot: Sprite2D
 var _aim_line: AimLine
@@ -55,6 +60,7 @@ func _ready() -> void:
 	_level_data = _make_level_data(1)
 	_generate_blob_board(_level_data)
 	_compute_cluster_count()
+	_next_reserve_col = _level_data.visible_cols
 	_spawn_bubble_sprites()
 	_build_slingshot()
 	_build_aim_line()
@@ -247,6 +253,10 @@ func _snap(cell: Vector2i) -> void:
 		_shots_total_gen += 1
 	_update_queue_display()
 	await _resolve(cell)
+	_check_column_reveal()
+	if _check_death_line():
+		_on_game_over()
+		return
 	if _queue.is_empty():
 		_on_out_of_ammo()
 	else:
@@ -365,6 +375,43 @@ func _on_out_of_ammo() -> void:
 	# Placeholder — step 8 adds the refill modal.
 	print("Out of ammo! shots=%d" % _shots_fired)
 
+func _on_game_over() -> void:
+	# Placeholder — step 8 adds the game-over overlay.
+	print("Game over! shots=%d" % _shots_fired)
+
+# ─── Column reveal + death line (step 7) ─────────────────────────────────────
+
+# If the leftmost visible column is now clear, animate the next reserve column in.
+func _check_column_reveal() -> void:
+	if _next_reserve_col >= _level_data.total_cols:
+		return
+	var leftmost := _next_reserve_col - 1
+	for cell: Vector2i in cells:
+		if cell.x == leftmost:
+			return  # still occupied
+	_reveal_column(_next_reserve_col)
+	_next_reserve_col += 1
+
+func _reveal_column(col: int) -> void:
+	var tween := create_tween().set_parallel(true)
+	for cell: Vector2i in cells:
+		if cell.x != col:
+			continue
+		var sprite: Bubble = sprites.get(cell)
+		if not sprite or sprite.visible:
+			continue
+		var target_x := sprite.position.x
+		sprite.position.x = target_x - 240.0  # start just off-screen to the left
+		sprite.visible = true
+		tween.tween_property(sprite, "position:x", target_x, 0.45)
+
+# Returns true when any bubble has crossed the death line (game over).
+func _check_death_line() -> bool:
+	for cell: Vector2i in cells:
+		if _grid.grid_to_world(cell).x < DEATH_LINE_X:
+			return true
+	return false
+
 # ─── Level data factory ───────────────────────────────────────────────────────
 
 func _make_level_data(difficulty: int) -> BubbleLevelData:
@@ -441,5 +488,6 @@ func _spawn_bubble_sprites() -> void:
 		var bubble: Bubble = BUBBLE_SCENE.instantiate()
 		bubble.color_index = cells[cell]
 		bubble.position = _grid.grid_to_world(cell)
+		bubble.visible = cell.x < _next_reserve_col
 		grid_root.add_child(bubble)
 		sprites[cell] = bubble
