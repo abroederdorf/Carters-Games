@@ -162,7 +162,25 @@ You might get questions like:
 
 These questions turn a fuzzy idea into a concrete plan. Don't skip this step — it saves a lot of backtracking later.
 
-### Step 3: Use Plan Mode
+> **Don't rush the Q&A.** A good design conversation has several rounds of AI presenting options with tradeoffs — and you choosing. Each round sharpens the plan. Fifteen minutes of design questions here saves hours of rework once code is being written. Keep going until you've made the key decisions and the plan genuinely reflects what you want to build.
+
+### Step 3: Use a Smarter Model for Planning
+
+Planning is the one place where it pays to use the most capable AI model available — even if it costs a bit more. You only design the game once, and a better model catches design problems, asks sharper questions, and produces a plan that holds up when coding starts. Once you're in implementation, you'll iterate dozens of times, so a faster, cheaper model is the right call there.
+
+| | Planning | Implementation |
+|---|---|---|
+| **Claude** | **Opus 4** — deepest reasoning, best for design decisions | **Sonnet 4** — fast, cost-effective, great for coding |
+| **Gemini** | **Gemini 3.1 Pro** — strongest reasoning and analysis | **Gemini 3.5 Flash** — fast, cheap, excellent at coding tasks |
+
+**How to switch models:**
+- *Claude Code (terminal):* type `/model opus` before your planning session, then `/model sonnet` when you start building
+- *Claude.ai (web):* use the model selector dropdown at the top of the conversation
+- *Gemini (web):* use the model selector at the bottom of the chat input
+
+> The design phase is where deep reasoning matters most. Implementation is where fast iteration matters most. Match the model to the task — you'll get better plans and cheaper builds.
+
+### Step 4: Use Plan Mode
 
 Before AI writes any code, ask it to produce a **plan** first. If you jump straight to code, you end up with something you don't fully understand and can't easily change.
 
@@ -173,9 +191,30 @@ Before AI writes any code, ask it to produce a **plan** first. If you jump strai
 **Using Claude Code** (a more advanced tool — the adult helping you may have this installed): there's a built-in feature called **Plan Mode**. When you describe what you want to build, Claude proposes a full written plan and waits for your approval before doing anything. You can edit the plan, push back on ideas, or ask for alternatives — only when you say "looks good" does it start writing code. 
 
 While the Gemini AI agent in the Antigravity CLI does not have a built in plan mode, you can recreate it through your prompts by telling AI to ask you clarifying questions to create a plan, and not to start any implementation until you say so.
-> *"Ask clarifying questions and create a detailed plan first. Wait for my explicit approval before touching any files.*
+> *"Ask clarifying questions and create a detailed plan first. Wait for my explicit approval before touching any files."*
 
-### Step 4: Review and Push Back
+### Step 5: Save Your Plan as a File
+
+Once you're happy with the plan, have AI save it as a file inside your project folder — something like `local/my-game-plan.md`.
+
+> *"Save the final game plan to local/my-game-plan.md in my project."*
+
+This matters more than it sounds. Once the plan lives at a known path:
+- Every new conversation can read it directly without you pasting anything
+- Different AI tools (Claude Code, Gemini, a reviewer) can all reference the same document
+- The plan stays versioned in git alongside your code — you can see how your design evolved over time
+
+From this point on, instead of pasting the plan, just say: *"Read my game plan at local/my-game-plan.md."*
+
+### Step 6: Get a Second Opinion on Your Plan
+
+Before writing a single line of code, have a *different* AI session review your plan — fresh eyes catch things the original conversation missed. You can use a different tool (e.g. write the plan with Claude, review it with Gemini), or just start a new conversation with the same tool.
+
+> *"Read my game plan at local/my-game-plan.md. Review it for: (1) any logical errors in the mechanics, (2) anything that would be hard to build in Godot 4, (3) anything that might confuse or frustrate kids, (4) anything missing that would block implementation, and (5) anything that seems more complex than it sounds. Be specific."*
+
+This step pays off most for anything involving math (scoring, timers, physics) or multi-step systems (saving progress, unlocks, difficulty scaling) — exactly the places where a plan can look right but break in practice.
+
+### Step 7: Review and Push Back
 
 Read through the plan AI produces. At this stage it's much easier to change your mind than after code has been written. Things to check:
 
@@ -191,7 +230,7 @@ Push back freely — this is a conversation, not a one-way street:
 
 Keep going until the plan feels right.
 
-### Step 5: Get a Phase Breakdown
+### Step 8: Get a Phase Breakdown
 
 Ask AI to break the work into **phases** — concrete milestones where each one produces something you can actually play and test. A good phase breakdown for a fishing game might look like:
 
@@ -223,7 +262,13 @@ You don't need to deeply understand these. When something is confusing, just ask
 
 ### Step 1: Hand AI Your Plan and Start Phase 1
 
-Give the AI Agent (Claude Code or Antigravity CLI) the full context upfront — your game plan and what you're building first. The more context it has, the better decisions it makes throughout the project:
+Give the AI Agent (Claude Code or Antigravity CLI) the full context upfront — your game plan and what you're building first. The more context it has, the better decisions it makes throughout the project.
+
+If you saved your plan to a file in Chapter 4 (recommended), point the agent at it directly:
+
+> *"I'm building a game in Godot 4 using GDScript. Read my game plan at local/my-game-plan.md. Let's start with Phase 1: fish swim across the screen and you can tap them to make them disappear. Please set up the project structure and implement Phase 1."*
+
+If you didn't save it to a file yet, paste the plan in:
 
 > *"I'm building a game in Godot 4 using GDScript. Here's my full game plan: [paste your plan from Chapter 4]. Let's start with Phase 1: fish swim across the screen and you can tap them to make them disappear. Please set up the project structure and implement Phase 1."*
 
@@ -251,13 +296,15 @@ Repeat for each phase. Your game grows from something simple into something real
 
 ### Start a Fresh Conversation for Each Phase
 
-AI gets slower and less reliable as a conversation grows very long. A simple rule: **when you finish one phase and start the next, open a new conversation.** Paste your game design document at the top so AI has full context — that's all it needs. You're not losing anything; you're giving AI a clean slate to work from.
+AI gets slower and less reliable as a conversation grows very long. A simple rule: **when you finish one phase and start the next, open a new conversation.** Your saved plan file gives AI everything it needs. You're not losing anything; you're giving AI a clean slate to work from.
 
 Using an AI Agent, it might look something like this to clear your context and start the next phase:
 ```
 >> /clear
->> Here's my game design document: [paste plan]. We've completed Phases 1 and 2. Now let's build Phase 3: [describe it].
+>> Read my game plan at local/my-game-plan.md. We've completed Phases 1 and 2. Now let's build Phase 3: [describe it].
 ```
+
+If you haven't saved your plan to a file, paste it instead — but this is a good moment to do that if you haven't yet.
 
 ---
 
@@ -622,9 +669,11 @@ This saves you from going in circles and makes it easier to explain the problem 
 | When you need... | Ask the AI... |
 |-----------------|---------------|
 | To start your game plan | *"Here's my game idea: [brain dump everything]. I'm building it in Godot 4. Before writing any code, can you ask me clarifying questions and then write a complete game design document with a phase breakdown?"* |
-| To start a new phase | *"Here's my full game plan: [paste plan]. Phase [N] is done. Now I want to build Phase [N+1]: [describe it]."* |
+| To save your plan | *"Save the final game plan to local/my-game-plan.md in my project."* |
+| To start a new phase | *"Read my game plan at local/my-game-plan.md. Phase [N] is done. Now I want to build Phase [N+1]: [describe it]."* |
+| To review a plan before coding | *"Read my game plan at local/my-game-plan.md. Review it for: (1) logical errors in the mechanics, (2) anything hard to build in Godot 4, (3) anything confusing for kids, (4) missing pieces that would block implementation, (5) anything underestimated in complexity. Be specific."* |
 | To understand a Godot concept | *"In Godot 4, what is [confusing thing]? Explain it simply with a short example."* |
-| To fix a bug | *"Here's my game plan for context: [paste plan]. This is happening: [describe it]. I expected: [what you wanted]. Can you find and fix it?"* |
+| To fix a bug | *"Read my game plan at local/my-game-plan.md for context. This is happening: [describe it]. I expected: [what you wanted]. Can you find and fix it?"* |
 | To generate game art | Ask Gemini: *"Generate a children's cartoon image: isolated on white background, [item], [view angle], thick black outlines, vibrant colors."* |
 | To remove image backgrounds | *"Remove the white background from all PNGs in assets/sprites/ and save them as transparent PNGs."* |
 | To set up GitHub Actions | *"Write a GitHub Actions workflow that exports my Godot 4 game and deploys it to GitHub Pages."* |
