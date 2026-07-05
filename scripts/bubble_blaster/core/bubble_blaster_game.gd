@@ -7,17 +7,20 @@ const SLINGSHOT_TEX = preload("res://assets/sprites/bubble_blaster/sling_shot.pn
 
 const RIGHT_ANCHOR_X: float = 1920.0
 const GRID_TOP_Y: float = 60.0
-# Slingshot sits lower-left so kids aim rightward and upward naturally.
 const SLINGSHOT_POS: Vector2 = Vector2(130.0, 760.0)
-const PROJECTILE_SPEED: float = 1400.0   # px/s
-const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5  # 24 px — avoids tunneling through bubbles
+const PROJECTILE_SPEED: float = 1400.0
+const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5
 
 @onready var grid_root: Node2D = $GridRoot
 
 var _grid: HexGrid
-var cells: Dictionary = {}  # Vector2i(col, row) → color index (int)
+var cells: Dictionary = {}    # Vector2i → color index (int)
+var sprites: Dictionary = {}  # Vector2i → Bubble node
 var _level_data: BubbleLevelData
 var _state: State = State.AIMING
+
+var _cluster_count: int = 0  # x: distinct same-color clusters at round start (par base)
+var _shots_fired: int = 0    # for par rating in step 8
 
 var _slingshot: Sprite2D
 var _aim_line: Line2D
@@ -32,11 +35,12 @@ func _ready() -> void:
 	_grid.setup(RIGHT_ANCHOR_X, GRID_TOP_Y)
 	_level_data = _make_level_data(1)
 	_generate_blob_board(_level_data)
+	_compute_cluster_count()
 	_spawn_bubble_sprites()
 	_build_slingshot()
 	_build_aim_line()
 
-# ─── Slingshot + aim line setup ───────────────────────────────────────────────
+# ─── Slingshot + aim line ─────────────────────────────────────────────────────
 
 func _build_slingshot() -> void:
 	_slingshot = Sprite2D.new()
@@ -71,7 +75,6 @@ func _input(event: InputEvent) -> void:
 
 func _update_aim(touch_pos: Vector2) -> void:
 	var raw := touch_pos - SLINGSHOT_POS
-	# Force x > 0 so the shot always travels toward the grid on the right.
 	if raw.x < 10.0:
 		raw.x = 10.0
 	_aim_dir = raw.normalized()
@@ -89,7 +92,7 @@ func _fire() -> void:
 	_projectile.position = SLINGSHOT_POS
 	add_child(_projectile)
 
-# ─── Projectile movement (manual substep, no physics engine) ─────────────────
+# ─── Projectile movement ──────────────────────────────────────────────────────
 
 func _process(delta: float) -> void:
 	if _state != State.FIRING or not is_instance_valid(_projectile):
@@ -105,19 +108,16 @@ func _process(delta: float) -> void:
 func _check_hit() -> bool:
 	var pos := _projectile.position
 
-	# Back wall: projectile reached col 0's x band — snap there.
 	if pos.x >= RIGHT_ANCHOR_X - HexGrid.BUBBLE_R:
 		var cell := _grid.world_to_grid(pos)
 		cell.x = 0
 		_snap(cell)
 		return true
 
-	# Safety: went off-screen to the left.
 	if pos.x < -HexGrid.BUBBLE_R:
 		_discard_projectile()
 		return true
 
-	# Bubble collision: check every occupied cell.
 	for cell: Vector2i in cells:
 		if pos.distance_to(_grid.grid_to_world(cell)) < HexGrid.BUBBLE_D:
 			var snap_cell := _grid.world_to_grid(pos)
@@ -131,7 +131,6 @@ func _check_hit() -> bool:
 
 	return false
 
-# Fallback when world_to_grid lands on an already-occupied cell.
 func _nearest_empty_neighbor(cell: Vector2i) -> Vector2i:
 	var best := Vector2i(-1, -1)
 	var best_dist := INF
@@ -149,9 +148,11 @@ func _snap(cell: Vector2i) -> void:
 	cells[cell] = _projectile.color_index
 	_projectile.reparent(grid_root)
 	_projectile.position = _grid.grid_to_world(cell)
+	sprites[cell] = _projectile
 	_projectile = null
+	_shots_fired += 1
 	_next_color = (_next_color + 1) % 5
-	# Step 4 will insert match/cascade here before returning to AIMING.
+	await _resolve(cell)
 	_state = State.AIMING
 
 func _discard_projectile() -> void:
@@ -159,26 +160,130 @@ func _discard_projectile() -> void:
 	_projectile = null
 	_state = State.AIMING
 
+# ─── Match + cascade (step 4) ─────────────────────────────────────────────────
+
+func _resolve(landed: Vector2i) -> void:
+	# A. Same-color match from the landed cell.
+	var group := _bfs_same_color(landed)
+	if group.size() < 3:
+		return  # no match — stay as-is
+
+	# Pop animation: shrink + fade all matched bubbles in parallel.
+	var pop_tween := create_tween().set_parallel(true)
+	for cell in group:
+		var s: Bubble = sprites.get(cell)
+		if s:
+			pop_tween.tween_property(s, "scale", Vector2.ZERO, 0.22)
+			pop_tween.tween_property(s, "modulate:a", 0.0, 0.18)
+	await pop_tween.finished
+
+	for cell in group:
+		cells.erase(cell)
+		var s: Bubble = sprites.get(cell)
+		if s:
+			s.queue_free()
+		sprites.erase(cell)
+
+	# B. Floating drop: any cell not reachable from col 0 falls.
+	var floating := _find_floating()
+	if not floating.is_empty():
+		var drop_tween := create_tween().set_parallel(true)
+		for cell in floating:
+			var s: Bubble = sprites.get(cell)
+			if s:
+				drop_tween.tween_property(s, "position:y", s.position.y + 700.0, 0.45)
+				drop_tween.tween_property(s, "modulate:a", 0.0, 0.35)
+		await drop_tween.finished
+
+		for cell in floating:
+			cells.erase(cell)
+			var s: Bubble = sprites.get(cell)
+			if s:
+				s.queue_free()
+			sprites.erase(cell)
+
+	# Win check.
+	if cells.is_empty():
+		_on_win()
+
+# BFS: collect all cells connected to `start` that share its color.
+func _bfs_same_color(start: Vector2i) -> Array[Vector2i]:
+	var color: int = cells.get(start, -1)
+	var visited: Dictionary = {}
+	var queue: Array[Vector2i] = [start]
+	visited[start] = true
+	var group: Array[Vector2i] = []
+	while not queue.is_empty():
+		var curr: Vector2i = queue.pop_front()
+		group.append(curr)
+		for n in _grid.neighbors(curr):
+			if not visited.has(n) and cells.get(n, -1) == color:
+				visited[n] = true
+				queue.append(n)
+	return group
+
+# BFS from col 0 anchor; returns cells NOT reachable (floating).
+func _find_floating() -> Array[Vector2i]:
+	var reachable: Dictionary = {}
+	var queue: Array[Vector2i] = []
+	for cell: Vector2i in cells:
+		if cell.x == 0 and not reachable.has(cell):
+			reachable[cell] = true
+			queue.append(cell)
+	while not queue.is_empty():
+		var curr: Vector2i = queue.pop_front()
+		for n in _grid.neighbors(curr):
+			if not reachable.has(n) and cells.has(n):
+				reachable[n] = true
+				queue.append(n)
+	var floating: Array[Vector2i] = []
+	for cell: Vector2i in cells:
+		if not reachable.has(cell):
+			floating.append(cell)
+	return floating
+
+# Connected-components pass at round start to compute x (par base).
+func _compute_cluster_count() -> void:
+	var visited: Dictionary = {}
+	_cluster_count = 0
+	for cell: Vector2i in cells:
+		if visited.has(cell):
+			continue
+		var color: int = cells[cell]
+		var queue: Array[Vector2i] = [cell]
+		visited[cell] = true
+		while not queue.is_empty():
+			var curr: Vector2i = queue.pop_front()
+			for n in _grid.neighbors(curr):
+				if not visited.has(n) and cells.get(n, -1) == color:
+					visited[n] = true
+					queue.append(n)
+		_cluster_count += 1
+
+func _on_win() -> void:
+	# Placeholder — step 8 adds the overlay and star calculation.
+	print("Level cleared! shots=%d  clusters=%d" % [_shots_fired, _cluster_count])
+
 # ─── Level data factory ───────────────────────────────────────────────────────
 
 func _make_level_data(difficulty: int) -> BubbleLevelData:
 	var d := BubbleLevelData.new()
 	match difficulty:
-		0:  # Easy
+		0:
 			d.num_colors = 3
 			d.visible_cols = 8
 			d.total_cols = 8
 			d.bubbles_per_col = 10
 			d.blob_size_min = 6
 			d.blob_size_max = 8
-		1:  # Medium
+		1:
 			d.num_colors = 4
 			d.visible_cols = 10
 			d.total_cols = 14
 			d.bubbles_per_col = 10
 			d.blob_size_min = 4
 			d.blob_size_max = 6
-		2:  # Hard
+		2:
 			d.num_colors = 5
 			d.visible_cols = 12
 			d.total_cols = 20
@@ -191,6 +296,7 @@ func _make_level_data(difficulty: int) -> BubbleLevelData:
 
 func _generate_blob_board(data: BubbleLevelData) -> void:
 	cells.clear()
+	sprites.clear()
 	var pool: Dictionary = {}
 	for col in data.total_cols:
 		for row in data.bubbles_per_col:
@@ -229,8 +335,10 @@ func _generate_blob_board(data: BubbleLevelData) -> void:
 func _spawn_bubble_sprites() -> void:
 	for child in grid_root.get_children():
 		child.queue_free()
+	sprites.clear()
 	for cell: Vector2i in cells:
 		var bubble: Bubble = BUBBLE_SCENE.instantiate()
 		bubble.color_index = cells[cell]
 		bubble.position = _grid.grid_to_world(cell)
 		grid_root.add_child(bubble)
+		sprites[cell] = bubble
