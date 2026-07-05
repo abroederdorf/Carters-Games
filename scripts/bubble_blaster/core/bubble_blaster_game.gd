@@ -10,6 +10,9 @@ const GRID_TOP_Y: float = 60.0
 const SLINGSHOT_POS: Vector2 = Vector2(130.0, 760.0)
 const PROJECTILE_SPEED: float = 1400.0
 const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5
+const BOUNCE_TOP_Y: float = HexGrid.BUBBLE_R
+const BOUNCE_BOT_Y: float = 1080.0 - HexGrid.BUBBLE_R
+const MAX_BOUNCES: int = 4
 
 @onready var grid_root: Node2D = $GridRoot
 
@@ -23,11 +26,13 @@ var _cluster_count: int = 0  # x: distinct same-color clusters at round start (p
 var _shots_fired: int = 0    # for par rating in step 8
 
 var _slingshot: Sprite2D
-var _aim_line: Line2D
+var _aim_line: AimLine
 var _touch_id: int = -1
 var _aim_dir: Vector2 = Vector2.RIGHT
 
 var _projectile: Bubble = null
+var _proj_vel: Vector2 = Vector2.RIGHT  # live direction during flight (may bounce)
+var _proj_bounces: int = 0
 var _next_color: int = 0  # cycles 0-4; replaced by queue in step 6
 
 func _ready() -> void:
@@ -51,9 +56,7 @@ func _build_slingshot() -> void:
 	add_child(_slingshot)
 
 func _build_aim_line() -> void:
-	_aim_line = Line2D.new()
-	_aim_line.default_color = Color(1, 1, 1, 0.55)
-	_aim_line.width = 4.0
+	_aim_line = AimLine.new()
 	_aim_line.visible = false
 	add_child(_aim_line)
 
@@ -67,7 +70,7 @@ func _input(event: InputEvent) -> void:
 			_touch_id = event.index
 			_update_aim(event.position)
 		elif event.index == _touch_id:
-			_aim_line.visible = false
+			_aim_line.hide_path()
 			_touch_id = -1
 			_fire()
 	elif event is InputEventScreenDrag and event.index == _touch_id:
@@ -78,15 +81,21 @@ func _update_aim(touch_pos: Vector2) -> void:
 	if raw.x < 10.0:
 		raw.x = 10.0
 	_aim_dir = raw.normalized()
-	_aim_line.clear_points()
-	_aim_line.add_point(SLINGSHOT_POS)
-	_aim_line.add_point(SLINGSHOT_POS + _aim_dir * 400.0)
-	_aim_line.visible = true
+	var result := HexGrid.march_ray(
+		SLINGSHOT_POS, _aim_dir,
+		BOUNCE_TOP_Y, BOUNCE_BOT_Y, RIGHT_ANCHOR_X,
+		MAX_BOUNCES, SUBSTEP_PX,
+		cells, _grid
+	)
+	var has_snap: bool = result["snap_cell"] != Vector2i(-1, -1)
+	_aim_line.show_path(result["waypoints"], result["snap_world"], has_snap)
 
 # ─── Fire ─────────────────────────────────────────────────────────────────────
 
 func _fire() -> void:
 	_state = State.FIRING
+	_proj_vel = _aim_dir
+	_proj_bounces = 0
 	_projectile = BUBBLE_SCENE.instantiate()
 	_projectile.color_index = _next_color
 	_projectile.position = SLINGSHOT_POS
@@ -101,9 +110,23 @@ func _process(delta: float) -> void:
 	while travel > 0.0:
 		var step := minf(travel, SUBSTEP_PX)
 		travel -= step
-		_projectile.position += _aim_dir * step
+		_projectile.position += _proj_vel * step
+		_apply_bounce()
 		if _check_hit():
 			return
+
+func _apply_bounce() -> void:
+	if _proj_bounces >= MAX_BOUNCES:
+		return
+	var pos := _projectile.position
+	if pos.y < BOUNCE_TOP_Y:
+		_projectile.position.y = 2.0 * BOUNCE_TOP_Y - pos.y
+		_proj_vel.y = absf(_proj_vel.y)
+		_proj_bounces += 1
+	elif pos.y > BOUNCE_BOT_Y:
+		_projectile.position.y = 2.0 * BOUNCE_BOT_Y - pos.y
+		_proj_vel.y = -absf(_proj_vel.y)
+		_proj_bounces += 1
 
 func _check_hit() -> bool:
 	var pos := _projectile.position

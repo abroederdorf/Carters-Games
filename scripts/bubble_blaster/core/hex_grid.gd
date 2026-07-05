@@ -75,6 +75,93 @@ func neighbors(cell: Vector2i) -> Array[Vector2i]:
 		result.append(cell + off)
 	return result
 
+# ─── Ray-march (shared by trajectory preview and projectile bounce) ───────────
+
+# Simulate the bubble path from `start` in direction `dir`, reflecting off
+# top_y and bot_y boundaries, stopping on bubble or right-wall collision.
+# Returns { "waypoints": Array[Vector2], "snap_cell": Vector2i, "snap_world": Vector2 }.
+# snap_cell == Vector2i(-1,-1) when no valid landing slot was found.
+static func march_ray(
+		start: Vector2, dir: Vector2,
+		top_y: float, bot_y: float, right_x: float,
+		max_bounces: int, step_px: float,
+		cells: Dictionary, grid: HexGrid
+) -> Dictionary:
+	var wpts: Array[Vector2] = [start]
+	var pos := start
+	var vel := dir.normalized()
+	var bounces := 0
+	var snap_cell := Vector2i(-1, -1)
+	var snap_world := start
+
+	for _i in 10000:
+		var prev := pos
+		pos += vel * step_px
+		var stopped := false
+
+		# Top-wall bounce
+		if pos.y < top_y:
+			var t := (top_y - prev.y) / (pos.y - prev.y)
+			wpts.append(prev.lerp(pos, t))
+			pos.y = 2.0 * top_y - pos.y
+			vel.y = absf(vel.y)
+			bounces += 1
+			if bounces >= max_bounces:
+				wpts.append(pos)
+				break
+			continue
+
+		# Bottom-wall bounce
+		if pos.y > bot_y:
+			var t := (bot_y - prev.y) / (pos.y - prev.y)
+			wpts.append(prev.lerp(pos, t))
+			pos.y = 2.0 * bot_y - pos.y
+			vel.y = -absf(vel.y)
+			bounces += 1
+			if bounces >= max_bounces:
+				wpts.append(pos)
+				break
+			continue
+
+		# Right-wall snap
+		if pos.x >= right_x - BUBBLE_R:
+			var cell := grid.world_to_grid(pos)
+			cell.x = 0
+			snap_cell = cell
+			snap_world = grid.grid_to_world(cell)
+			wpts.append(snap_world)
+			stopped = true
+
+		# Bubble-collision snap
+		if not stopped:
+			for cell: Vector2i in cells:
+				if pos.distance_to(grid.grid_to_world(cell)) < BUBBLE_D:
+					var sc := grid.world_to_grid(pos)
+					if cells.has(sc):
+						var best := Vector2i(-1, -1)
+						var best_d := INF
+						for n in grid.neighbors(sc):
+							if not cells.has(n) and n.x >= 0:
+								var nd := pos.distance_to(grid.grid_to_world(n))
+								if nd < best_d:
+									best_d = nd
+									best = n
+						sc = best
+					snap_cell = sc
+					snap_world = grid.grid_to_world(sc) if sc != Vector2i(-1, -1) else pos
+					wpts.append(pos)
+					stopped = true
+					break
+
+		if stopped:
+			break
+
+	# Safety: ensure path always ends somewhere
+	if wpts.size() < 2:
+		wpts.append(pos)
+
+	return {"waypoints": wpts, "snap_cell": snap_cell, "snap_world": snap_world}
+
 # ─── Self-test: print round-trips for a handful of known cells ───────────────
 # Call this once from a debug scene or _ready() in a test node.
 static func run_round_trip_test(anchor_x: float, top_y: float) -> void:
