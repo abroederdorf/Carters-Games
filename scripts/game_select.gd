@@ -3,7 +3,7 @@ extends Control
 const SPLASH_BG = preload("res://assets/icons/splash_screen.png")
 const GONE_FISHIN_ICON = preload("res://assets/icons/Gone-Fishin_Icon.png")
 const FIND_IT_ICON = preload("res://assets/icons/Find-It_Icon.png")
-const BUBBLE_BLASTER_ICON = preload("res://assets/icons/Bubble-Blaster_icon.png")
+const BUBBLE_BLASTER_ICON = preload("res://assets/icons/Bubble-Blaster_Icon.png")
 const SOUND_ON = preload("res://assets/sprites/ui/button_sound.png")
 const SOUND_OFF = preload("res://assets/sprites/ui/button_mute.png")
 
