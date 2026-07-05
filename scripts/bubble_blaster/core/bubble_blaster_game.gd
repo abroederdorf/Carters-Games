@@ -1,32 +1,165 @@
 extends Node2D
 
-# Step 2: static grid render.
-# Populates cells via blob generator and spawns Bubble sprites at correct hex positions.
-# No interactivity — just verifies hex offsets look right before building game logic.
+enum State { AIMING, FIRING, RESOLVING }
 
 const BUBBLE_SCENE = preload("res://scenes/bubble_blaster/Bubble.tscn")
+const SLINGSHOT_TEX = preload("res://assets/sprites/bubble_blaster/sling_shot.png")
 
-# Right wall is the right edge of the 1920-wide viewport.
-# grid_to_world(col=0) → x = RIGHT_ANCHOR_X - BUBBLE_R = 1920 - 48 = 1872 (right-wall flush).
 const RIGHT_ANCHOR_X: float = 1920.0
-# origin_y chosen so row-0 even-col center lands at y=108 (comfortable top margin).
 const GRID_TOP_Y: float = 60.0
+# Slingshot sits lower-left so kids aim rightward and upward naturally.
+const SLINGSHOT_POS: Vector2 = Vector2(130.0, 760.0)
+const PROJECTILE_SPEED: float = 1400.0   # px/s
+const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5  # 24 px — avoids tunneling through bubbles
 
 @onready var grid_root: Node2D = $GridRoot
 
 var _grid: HexGrid
 var cells: Dictionary = {}  # Vector2i(col, row) → color index (int)
 var _level_data: BubbleLevelData
+var _state: State = State.AIMING
+
+var _slingshot: Sprite2D
+var _aim_line: Line2D
+var _touch_id: int = -1
+var _aim_dir: Vector2 = Vector2.RIGHT
+
+var _projectile: Bubble = null
+var _next_color: int = 0  # cycles 0-4; replaced by queue in step 6
 
 func _ready() -> void:
 	_grid = HexGrid.new()
 	_grid.setup(RIGHT_ANCHOR_X, GRID_TOP_Y)
-
-	_level_data = _make_level_data(1)  # medium — change to 0 or 2 to test Easy/Hard
+	_level_data = _make_level_data(1)
 	_generate_blob_board(_level_data)
 	_spawn_bubble_sprites()
+	_build_slingshot()
+	_build_aim_line()
 
-# ─── Level data factory ────────────────────────────────────────────────────────
+# ─── Slingshot + aim line setup ───────────────────────────────────────────────
+
+func _build_slingshot() -> void:
+	_slingshot = Sprite2D.new()
+	_slingshot.texture = SLINGSHOT_TEX
+	var tex_size := _slingshot.texture.get_size()
+	_slingshot.scale = Vector2.ONE * (140.0 / maxf(tex_size.x, tex_size.y))
+	_slingshot.position = SLINGSHOT_POS
+	add_child(_slingshot)
+
+func _build_aim_line() -> void:
+	_aim_line = Line2D.new()
+	_aim_line.default_color = Color(1, 1, 1, 0.55)
+	_aim_line.width = 4.0
+	_aim_line.visible = false
+	add_child(_aim_line)
+
+# ─── Input ────────────────────────────────────────────────────────────────────
+
+func _input(event: InputEvent) -> void:
+	if _state != State.AIMING:
+		return
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			_touch_id = event.index
+			_update_aim(event.position)
+		elif event.index == _touch_id:
+			_aim_line.visible = false
+			_touch_id = -1
+			_fire()
+	elif event is InputEventScreenDrag and event.index == _touch_id:
+		_update_aim(event.position)
+
+func _update_aim(touch_pos: Vector2) -> void:
+	var raw := touch_pos - SLINGSHOT_POS
+	# Force x > 0 so the shot always travels toward the grid on the right.
+	if raw.x < 10.0:
+		raw.x = 10.0
+	_aim_dir = raw.normalized()
+	_aim_line.clear_points()
+	_aim_line.add_point(SLINGSHOT_POS)
+	_aim_line.add_point(SLINGSHOT_POS + _aim_dir * 400.0)
+	_aim_line.visible = true
+
+# ─── Fire ─────────────────────────────────────────────────────────────────────
+
+func _fire() -> void:
+	_state = State.FIRING
+	_projectile = BUBBLE_SCENE.instantiate()
+	_projectile.color_index = _next_color
+	_projectile.position = SLINGSHOT_POS
+	add_child(_projectile)
+
+# ─── Projectile movement (manual substep, no physics engine) ─────────────────
+
+func _process(delta: float) -> void:
+	if _state != State.FIRING or not is_instance_valid(_projectile):
+		return
+	var travel := PROJECTILE_SPEED * delta
+	while travel > 0.0:
+		var step := minf(travel, SUBSTEP_PX)
+		travel -= step
+		_projectile.position += _aim_dir * step
+		if _check_hit():
+			return
+
+func _check_hit() -> bool:
+	var pos := _projectile.position
+
+	# Back wall: projectile reached col 0's x band — snap there.
+	if pos.x >= RIGHT_ANCHOR_X - HexGrid.BUBBLE_R:
+		var cell := _grid.world_to_grid(pos)
+		cell.x = 0
+		_snap(cell)
+		return true
+
+	# Safety: went off-screen to the left.
+	if pos.x < -HexGrid.BUBBLE_R:
+		_discard_projectile()
+		return true
+
+	# Bubble collision: check every occupied cell.
+	for cell: Vector2i in cells:
+		if pos.distance_to(_grid.grid_to_world(cell)) < HexGrid.BUBBLE_D:
+			var snap_cell := _grid.world_to_grid(pos)
+			if cells.has(snap_cell):
+				snap_cell = _nearest_empty_neighbor(snap_cell)
+			if snap_cell.x >= 0:
+				_snap(snap_cell)
+			else:
+				_discard_projectile()
+			return true
+
+	return false
+
+# Fallback when world_to_grid lands on an already-occupied cell.
+func _nearest_empty_neighbor(cell: Vector2i) -> Vector2i:
+	var best := Vector2i(-1, -1)
+	var best_dist := INF
+	var pos := _projectile.position
+	for n in _grid.neighbors(cell):
+		if not cells.has(n) and n.x >= 0:
+			var d := pos.distance_to(_grid.grid_to_world(n))
+			if d < best_dist:
+				best_dist = d
+				best = n
+	return best
+
+func _snap(cell: Vector2i) -> void:
+	_state = State.RESOLVING
+	cells[cell] = _projectile.color_index
+	_projectile.reparent(grid_root)
+	_projectile.position = _grid.grid_to_world(cell)
+	_projectile = null
+	_next_color = (_next_color + 1) % 5
+	# Step 4 will insert match/cascade here before returning to AIMING.
+	_state = State.AIMING
+
+func _discard_projectile() -> void:
+	_projectile.queue_free()
+	_projectile = null
+	_state = State.AIMING
+
+# ─── Level data factory ───────────────────────────────────────────────────────
 
 func _make_level_data(difficulty: int) -> BubbleLevelData:
 	var d := BubbleLevelData.new()
@@ -54,23 +187,17 @@ func _make_level_data(difficulty: int) -> BubbleLevelData:
 			d.blob_size_max = 4
 	return d
 
-# ─── Blob board generator ──────────────────────────────────────────────────────
-# Picks a random empty cell, grows a same-color blob of blob_size_min..max into
-# adjacent empties, repeats until full. Guarantees every cluster >= blob_size_min.
+# ─── Blob board generator ─────────────────────────────────────────────────────
 
 func _generate_blob_board(data: BubbleLevelData) -> void:
 	cells.clear()
-
-	# All valid positions start in the pool.
 	var pool: Dictionary = {}
 	for col in data.total_cols:
 		for row in data.bubbles_per_col:
 			pool[Vector2i(col, row)] = true
 
 	var next_color := 0
-
 	while not pool.is_empty():
-		# Grab the first available seed cell.
 		var start: Vector2i
 		for k in pool:
 			start = k
@@ -95,15 +222,13 @@ func _generate_blob_board(data: BubbleLevelData) -> void:
 
 		for c in blob:
 			cells[c] = next_color
-
 		next_color = (next_color + 1) % data.num_colors
 
-# ─── Sprite spawning ───────────────────────────────────────────────────────────
+# ─── Sprite spawning ──────────────────────────────────────────────────────────
 
 func _spawn_bubble_sprites() -> void:
 	for child in grid_root.get_children():
 		child.queue_free()
-
 	for cell: Vector2i in cells:
 		var bubble: Bubble = BUBBLE_SCENE.instantiate()
 		bubble.color_index = cells[cell]
