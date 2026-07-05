@@ -1,6 +1,6 @@
 extends Node2D
 
-enum State { AIMING, FIRING, RESOLVING }
+enum State { AIMING, FIRING, RESOLVING, OVERLAY }
 
 const BUBBLE_SCENE = preload("res://scenes/bubble_blaster/Bubble.tscn")
 const SLINGSHOT_TEX = preload("res://assets/sprites/bubble_blaster/sling_shot.png")
@@ -36,8 +36,11 @@ var _level_data: BubbleLevelData
 var _state: State = State.AIMING
 
 var _cluster_count: int = 0      # x: distinct same-color clusters at round start (par base)
-var _shots_fired: int = 0        # for par rating in step 8
+var _shots_fired: int = 0
 var _next_reserve_col: int = 0   # next hidden column index to reveal
+
+var _cells_snapshot: Dictionary = {}  # saved at round start for retry
+var _ui: BubbleBlasterUI
 
 var _slingshot: Sprite2D
 var _aim_line: AimLine
@@ -57,8 +60,9 @@ var _shots_total_gen: int = 0  # total bubbles ever generated into the queue
 func _ready() -> void:
 	_grid = HexGrid.new()
 	_grid.setup(RIGHT_ANCHOR_X, GRID_TOP_Y)
-	_level_data = _make_level_data(1)
+	_level_data = _make_level_data(BubbleBlasterState.current_difficulty)
 	_generate_blob_board(_level_data)
+	_cells_snapshot = cells.duplicate(false)
 	_compute_cluster_count()
 	_next_reserve_col = _level_data.visible_cols
 	_spawn_bubble_sprites()
@@ -66,6 +70,7 @@ func _ready() -> void:
 	_build_aim_line()
 	_init_queue()
 	_build_queue_display()
+	_build_ui()
 
 # ─── Slingshot + aim line ─────────────────────────────────────────────────────
 
@@ -128,6 +133,23 @@ func _try_swap(touch_pos: Vector2) -> bool:
 			_update_queue_display()
 			return true
 	return false
+
+# ─── UI overlay ───────────────────────────────────────────────────────────────
+
+func _build_ui() -> void:
+	_ui = BubbleBlasterUI.new()
+	add_child(_ui)
+	_ui.retry_same.connect(_on_retry_same)
+	_ui.new_game.connect(_on_new_game)
+	_ui.refill_requested.connect(_on_refill)
+	_ui.go_home.connect(_on_go_home)
+
+func _calc_stars() -> int:
+	if _shots_fired * 4 <= _cluster_count * 3:  # ≤ 0.75x
+		return 3
+	elif _shots_fired <= _cluster_count:         # ≤ x
+		return 2
+	return 1
 
 # ─── Input ────────────────────────────────────────────────────────────────────
 
@@ -253,6 +275,8 @@ func _snap(cell: Vector2i) -> void:
 		_shots_total_gen += 1
 	_update_queue_display()
 	await _resolve(cell)
+	if _state == State.OVERLAY:  # win was triggered inside _resolve
+		return
 	_check_column_reveal()
 	if _check_death_line():
 		_on_game_over()
@@ -368,16 +392,54 @@ func _compute_cluster_count() -> void:
 		_cluster_count += 1
 
 func _on_win() -> void:
-	# Placeholder — step 8 adds the overlay and star calculation.
-	print("Level cleared! shots=%d  clusters=%d" % [_shots_fired, _cluster_count])
+	_state = State.OVERLAY
+	var stars := _calc_stars()
+	BubbleBlasterState.earn_stars(stars)
+	_ui.show_win(stars, BubbleBlasterState.star_bank)
 
 func _on_out_of_ammo() -> void:
-	# Placeholder — step 8 adds the refill modal.
-	print("Out of ammo! shots=%d" % _shots_fired)
+	_state = State.OVERLAY
+	var refill_amt := _cluster_count
+	_ui.show_out_of_ammo(BubbleBlasterState.star_bank, refill_amt)
 
 func _on_game_over() -> void:
-	# Placeholder — step 8 adds the game-over overlay.
-	print("Game over! shots=%d" % _shots_fired)
+	_state = State.OVERLAY
+	_ui.show_game_over()
+
+# ─── Overlay callbacks ────────────────────────────────────────────────────────
+
+func _on_retry_same() -> void:
+	cells = _cells_snapshot.duplicate(false)
+	_compute_cluster_count()
+	_shots_fired = 0
+	_next_reserve_col = _level_data.visible_cols
+	_spawn_bubble_sprites()
+	_init_queue()
+	_update_queue_display()
+	_state = State.AIMING
+
+func _on_new_game() -> void:
+	_generate_blob_board(_level_data)
+	_cells_snapshot = cells.duplicate(false)
+	_compute_cluster_count()
+	_shots_fired = 0
+	_next_reserve_col = _level_data.visible_cols
+	_spawn_bubble_sprites()
+	_init_queue()
+	_update_queue_display()
+	_state = State.AIMING
+
+func _on_refill() -> void:
+	if BubbleBlasterState.spend_star():
+		_ammo_total += _cluster_count
+		for _i in mini(3 - _queue.size(), _ammo_total - _shots_total_gen):
+			_queue.append(_weighted_color())
+			_shots_total_gen += 1
+		_update_queue_display()
+		_state = State.AIMING
+
+func _on_go_home() -> void:
+	get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
 
 # ─── Column reveal + death line (step 7) ─────────────────────────────────────
 
