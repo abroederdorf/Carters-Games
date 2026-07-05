@@ -176,6 +176,7 @@ Planning is the one place where it pays to use the most capable AI model availab
 **How to switch models:**
 - *Claude Code (terminal):* type `/model opus` before your planning session, then `/model sonnet` when you start building
 - *Claude.ai (web):* use the model selector dropdown at the top of the conversation
+- *Antigravity CLI - (gemini terminal):* type '/model' and use the arrow keys to select the model, then hit enter
 - *Gemini (web):* use the model selector at the bottom of the chat input
 
 > The design phase is where deep reasoning matters most. Implementation is where fast iteration matters most. Match the model to the task — you'll get better plans and cheaper builds.
