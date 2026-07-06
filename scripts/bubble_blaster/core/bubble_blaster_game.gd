@@ -318,7 +318,7 @@ func _update_aim(touch_pos: Vector2) -> void:
 	# Enforce minimum angle from vertical: x must be ≥ sin(MIN_ANGLE_FROM_VERTICAL)
 	# of the total length, which caps the steepness and guarantees the ball always
 	# reaches the right wall without needing a bounce limit.
-	var min_x := sinf(deg_to_rad(MIN_ANGLE_FROM_VERTICAL)) * raw.length()
+	var min_x := sin(deg_to_rad(MIN_ANGLE_FROM_VERTICAL)) * raw.length()
 	if raw.x < min_x:
 		raw.x = min_x
 	_aim_dir = raw.normalized()
