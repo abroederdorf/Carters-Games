@@ -121,8 +121,8 @@ func _update_queue_display() -> void:
 func _weighted_color() -> int:
 	if cells.is_empty():
 		return randi() % _level_data.num_colors
-	var pool: Array[int] = cells.values()
-	return pool[randi() % pool.size()]
+	var vals := cells.values()  # untyped Array — Dictionary.values() can't be Array[int]
+	return vals[randi() % vals.size()]
 
 # Returns true if touch_pos hit a swappable preview slot and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:

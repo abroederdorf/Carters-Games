@@ -10,8 +10,8 @@ var _waypoints: Array[Vector2] = []
 var _snap_world: Vector2 = Vector2.ZERO
 var _has_snap: bool = false
 
-func show_path(waypoints: Array[Vector2], snap_world: Vector2, has_snap: bool) -> void:
-	_waypoints = waypoints
+func show_path(waypoints: Array, snap_world: Vector2, has_snap: bool) -> void:
+	_waypoints.assign(waypoints)
 	_snap_world = snap_world
 	_has_snap = has_snap
 	visible = true
