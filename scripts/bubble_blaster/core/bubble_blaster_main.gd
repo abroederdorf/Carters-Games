@@ -5,6 +5,7 @@ extends Control
 const BUBBLE_BLASTER_ICON = preload("res://assets/icons/Bubble-Blaster_Icon.png")
 const BTN_HOME = preload("res://assets/sprites/ui/button_home.png")
 const SCREEN_BG = preload("res://assets/icons/screen_settings.png")
+const STAR_FILLED = preload("res://assets/sprites/ui/star_filled.png")
 
 const DIFFICULTIES: Array[String] = ["Easy", "Medium", "Hard"]
 const DIFF_COLORS: Array[Color] = [
@@ -76,7 +77,9 @@ func _build_ui() -> void:
 	var pick_lbl := Label.new()
 	pick_lbl.text = "Choose difficulty"
 	pick_lbl.add_theme_font_size_override("font_size", 44)
-	pick_lbl.add_theme_color_override("font_color", Color(0.80, 0.80, 1.0))
+	pick_lbl.add_theme_color_override("font_color", Color(0.10, 0.06, 0.22))
+	pick_lbl.add_theme_color_override("font_outline_color", Color.WHITE)
+	pick_lbl.add_theme_constant_override("outline_size", 5)
 	pick_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(pick_lbl)
 
@@ -89,13 +92,28 @@ func _build_ui() -> void:
 		var btn := _make_diff_btn(i)
 		hbox.add_child(btn)
 
-	# Star bank display
+	# Star bank display — star icon + count
+	var bank_row := HBoxContainer.new()
+	bank_row.alignment = BoxContainer.ALIGNMENT_CENTER
+	bank_row.add_theme_constant_override("separation", 10)
+	vbox.add_child(bank_row)
+
+	var star_img := TextureRect.new()
+	star_img.texture = STAR_FILLED
+	star_img.custom_minimum_size = Vector2(48, 48)
+	star_img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	star_img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	star_img.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	bank_row.add_child(star_img)
+
 	var bank_lbl := Label.new()
-	bank_lbl.text = "Star bank: %d" % _bbs.star_bank
-	bank_lbl.add_theme_font_size_override("font_size", 38)
-	bank_lbl.add_theme_color_override("font_color", Color(1.0, 0.90, 0.40))
-	bank_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	vbox.add_child(bank_lbl)
+	bank_lbl.text = str(_bbs.star_bank)
+	bank_lbl.add_theme_font_size_override("font_size", 44)
+	bank_lbl.add_theme_color_override("font_color", Color(0.12, 0.08, 0.05))
+	bank_lbl.add_theme_color_override("font_outline_color", Color.WHITE)
+	bank_lbl.add_theme_constant_override("outline_size", 5)
+	bank_lbl.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	bank_row.add_child(bank_lbl)
 
 func _make_diff_btn(diff_idx: int) -> Button:
 	var style_n := StyleBoxFlat.new()
