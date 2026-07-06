@@ -116,7 +116,7 @@ func _build_aim_line() -> void:
 # ─── Bubble queue ─────────────────────────────────────────────────────────────
 
 func _init_queue() -> void:
-	_ammo_total = 2 * _cluster_count
+	_ammo_total = 3 * _cluster_count
 	_queue.clear()
 	var initial := mini(HOPPER_MAX + 1, _ammo_total)
 	_shots_total_gen = initial
@@ -157,12 +157,16 @@ func _update_queue_display() -> void:
 		else:
 			node.visible = false
 
-# Returns a color index weighted proportionally to colors remaining on the board.
+# Returns a color index weighted proportionally to VISIBLE colors on the board.
+# Excludes reserve columns so the hopper never shows colours the player can't yet see.
 func _weighted_color() -> int:
-	if cells.is_empty():
+	var visible_vals: Array = []
+	for c: Vector2i in cells:
+		if c.x < _next_reserve_col:
+			visible_vals.append(cells[c])
+	if visible_vals.is_empty():
 		return randi() % _level_data.num_colors
-	var vals := cells.values()  # untyped Array — Dictionary.values() can't be Array[int]
-	return vals[randi() % vals.size()]
+	return visible_vals[randi() % visible_vals.size()]
 
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:

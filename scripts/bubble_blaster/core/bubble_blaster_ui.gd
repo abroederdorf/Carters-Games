@@ -36,11 +36,11 @@ func show_win(stars: int, bank: int) -> void:
 func show_out_of_ammo(bank: int, refill_amt: int) -> void:
 	_message_lbl.text = "Out of Bubbles!"
 	if bank > 0:
-		_sub_lbl.text = "Spend 1 star for %d more bubbles?\nBank: %d" % [refill_amt, bank]
+		_sub_lbl.text = "Spend 1 star for %d more bubbles?" % refill_amt
 	else:
-		_sub_lbl.text = "No stars left — give up or retry?"
-	_set_stars(-1)
-	_set_buttons_ammo(bank > 0)
+		_sub_lbl.text = "No stars left.\nRetry or go home?"
+	_set_stars(mini(bank, 3))  # show bank as filled stars (up to 3)
+	_set_buttons_ammo(bank, refill_amt)
 	visible = true
 
 func show_game_over() -> void:
@@ -168,7 +168,7 @@ func _set_buttons_win() -> void:
 	nxt.pressed.connect(func() -> void: hide_overlay(); new_game.emit())
 	_btn_row.add_child(nxt)
 
-func _set_buttons_ammo(can_refill: bool) -> void:
+func _set_buttons_ammo(bank: int, _refill_amt: int) -> void:
 	_clear_buttons()
 	var home := _make_icon_btn(BTN_HOME, 90)
 	home.pressed.connect(func() -> void: hide_overlay(); go_home.emit())
@@ -178,8 +178,57 @@ func _set_buttons_ammo(can_refill: bool) -> void:
 	retry.pressed.connect(func() -> void: hide_overlay(); retry_same.emit())
 	_btn_row.add_child(retry)
 
-	if can_refill:
-		_refill_btn = _make_icon_btn(BTN_NEXT, 90)
+	if bank > 0:
+		# Amber button showing star icon + "−1" cost.
+		var amber_n := StyleBoxFlat.new()
+		amber_n.bg_color = Color(0.90, 0.65, 0.04)
+		amber_n.corner_radius_top_left = 20
+		amber_n.corner_radius_top_right = 20
+		amber_n.corner_radius_bottom_left = 20
+		amber_n.corner_radius_bottom_right = 20
+		amber_n.border_width_left = 3
+		amber_n.border_width_top = 3
+		amber_n.border_width_right = 3
+		amber_n.border_width_bottom = 3
+		amber_n.border_color = Color(0.65, 0.44, 0.01)
+		var amber_p := StyleBoxFlat.new()
+		amber_p.bg_color = Color(0.65, 0.44, 0.01)
+		amber_p.corner_radius_top_left = 20
+		amber_p.corner_radius_top_right = 20
+		amber_p.corner_radius_bottom_left = 20
+		amber_p.corner_radius_bottom_right = 20
+
+		_refill_btn = Button.new()
+		_refill_btn.custom_minimum_size = Vector2(160, 90)
+		_refill_btn.focus_mode = Control.FOCUS_NONE
+		_refill_btn.add_theme_stylebox_override("normal", amber_n)
+		_refill_btn.add_theme_stylebox_override("hover", amber_n)
+		_refill_btn.add_theme_stylebox_override("pressed", amber_p)
+
+		var row := HBoxContainer.new()
+		row.alignment = BoxContainer.ALIGNMENT_CENTER
+		row.add_theme_constant_override("separation", 6)
+		row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_refill_btn.add_child(row)
+
+		var star_img := TextureRect.new()
+		star_img.texture = STAR_FILLED
+		star_img.custom_minimum_size = Vector2(46, 46)
+		star_img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		star_img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		star_img.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		star_img.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		row.add_child(star_img)
+
+		var cost_lbl := Label.new()
+		cost_lbl.text = "−1"
+		cost_lbl.add_theme_font_size_override("font_size", 44)
+		cost_lbl.add_theme_color_override("font_color", Color(0.10, 0.05, 0.00))
+		cost_lbl.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		cost_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		row.add_child(cost_lbl)
+
 		_refill_btn.pressed.connect(func() -> void: hide_overlay(); refill_requested.emit())
 		_btn_row.add_child(_refill_btn)
 

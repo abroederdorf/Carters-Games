@@ -3,7 +3,7 @@ extends Control
 @onready var _bbs := get_node("/root/BubbleBlasterState")
 
 const BUBBLE_BLASTER_ICON = preload("res://assets/icons/Bubble-Blaster_Icon.png")
-const BTN_HOME = preload("res://assets/sprites/ui/button_home.png")
+const BTN_BACK = preload("res://assets/sprites/ui/button_back.png")
 const SCREEN_BG = preload("res://assets/icons/screen_settings.png")
 const STAR_FILLED = preload("res://assets/sprites/ui/star_filled.png")
 
@@ -31,18 +31,18 @@ func _build_ui() -> void:
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
 
-	# Home button
+	# Back button (top-left, matching fishing and hide-and-seek screens).
 	var home_btn := Button.new()
 	home_btn.flat = true
 	home_btn.expand_icon = true
 	home_btn.focus_mode = Control.FOCUS_NONE
-	home_btn.icon = BTN_HOME
+	home_btn.icon = BTN_BACK
 	home_btn.anchors_preset = Control.PRESET_TOP_LEFT
-	home_btn.custom_minimum_size = Vector2(80, 80)
+	home_btn.custom_minimum_size = Vector2(100, 100)
 	home_btn.offset_left = 12
 	home_btn.offset_top = 12
-	home_btn.offset_right = 92
-	home_btn.offset_bottom = 92
+	home_btn.offset_right = 112
+	home_btn.offset_bottom = 112
 	home_btn.pressed.connect(_on_home)
 	add_child(home_btn)
 
@@ -68,9 +68,9 @@ func _build_ui() -> void:
 	var title := Label.new()
 	title.text = "Bubble Blast"
 	title.add_theme_font_size_override("font_size", 72)
-	title.add_theme_color_override("font_color", Color.WHITE)
-	title.add_theme_constant_override("outline_size", 7)
-	title.add_theme_color_override("font_outline_color", Color(0.25, 0.08, 0.45))
+	title.add_theme_color_override("font_color", Color(0.04, 0.12, 0.28, 1))
+	title.add_theme_constant_override("outline_size", 8)
+	title.add_theme_color_override("font_outline_color", Color.WHITE)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(title)
 
