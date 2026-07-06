@@ -10,12 +10,17 @@ const BTN_NEXT_TEX = preload("res://assets/sprites/ui/button_next.png")
 
 const RIGHT_ANCHOR_X: float = 1920.0
 const GRID_TOP_Y: float = 60.0
-const SLINGSHOT_POS: Vector2 = Vector2(280.0, 760.0)
+const SLINGSHOT_POS: Vector2 = Vector2(200.0, 840.0)
 const PROJECTILE_SPEED: float = 1400.0
 const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5
 const BOUNCE_TOP_Y: float = HexGrid.BUBBLE_R
 const BOUNCE_BOT_Y: float = 1080.0 - HexGrid.BUBBLE_R
-const MAX_BOUNCES: int = 4
+# Minimum 25° from vertical keeps x-velocity high enough that the ball always
+# reaches the right wall within a few bounces — no bounce cap needed.
+const MIN_ANGLE_FROM_VERTICAL: float = 25.0
+
+# Left launcher panel — hopper column lives here; slingshot arm extends beyond right edge.
+const PANEL_W: float = 260.0
 
 # Current (loaded) ball — sits between the slingshot prong tips.
 # Prong tip world positions derived from the 2048×2048 sprite at scale 140/2048.
@@ -24,13 +29,14 @@ const QUEUE_SCALE_CURRENT: float = 1.0
 const SLING_PRONG_L: Vector2 = SLINGSHOT_POS + Vector2(-111.0, -183.0)
 const SLING_PRONG_R: Vector2 = SLINGSHOT_POS + Vector2(111.0, -183.0)
 
-# Hopper row: next N balls displayed below the slingshot.
-const HOPPER_Y: float = 965.0
-const HOPPER_X_START: float = 52.0
-const HOPPER_SPACING: float = 58.0
-const HOPPER_SCALE: float = 0.52
-const HOPPER_MAX: int = 10
-const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 0.7
+# Hopper: vertical column centered above the slingshot.
+# HOPPER_BOTTOM is the y-centre of slot 0 (next ball), sitting just above the fork.
+const HOPPER_X: float = PANEL_W / 2.0
+const HOPPER_BOTTOM: float = SLINGSHOT_POS.y - 270.0  # more gap between hopper and slingshot fork
+const HOPPER_SPACING_V: float = 95.0
+const HOPPER_SCALE: float = 0.80
+const HOPPER_MAX: int = 6
+const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 1.1
 
 const EMPTY_COLS: int = 6  # open columns between visible grid and death line
 
@@ -63,7 +69,6 @@ var _aim_dir: Vector2 = Vector2.RIGHT
 
 var _projectile: Bubble = null
 var _proj_vel: Vector2 = Vector2.RIGHT  # live direction during flight (may bounce)
-var _proj_bounces: int = 0
 
 # Bubble queue: queue[0] fires next; visual hopper shows first 3.
 var _queue: Array[int] = []
@@ -161,13 +166,13 @@ func _update_queue_display() -> void:
 	else:
 		cur.visible = false
 
-	# Hopper row — next balls queued up below.
+	# Hopper column — slot 0 (next) at the bottom, feeding down into the slingshot.
 	for i in HOPPER_MAX:
 		var node: Bubble = _queue_display[i + 1]
 		var qi := i + 1
 		if qi < _queue.size():
 			node.color_index = _queue[qi]
-			node.position = Vector2(HOPPER_X_START + i * HOPPER_SPACING, HOPPER_Y)
+			node.position = Vector2(HOPPER_X, HOPPER_BOTTOM - i * HOPPER_SPACING_V)
 			node.scale = Vector2.ONE * HOPPER_SCALE
 			node.visible = true
 		else:
@@ -182,7 +187,7 @@ func _weighted_color() -> int:
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:
 	for i in mini(2, _queue.size() - 1):  # only the next 2 hopper balls are swappable
-		var hpos := Vector2(HOPPER_X_START + i * HOPPER_SPACING, HOPPER_Y)
+		var hpos := Vector2(HOPPER_X, HOPPER_BOTTOM - i * HOPPER_SPACING_V)
 		if touch_pos.distance_to(hpos) < QUEUE_SWAP_RADIUS:
 			var qi := i + 1
 			var tmp := _queue[0]
@@ -230,28 +235,31 @@ func _calc_stars() -> int:
 # ─── Hopper tray background ───────────────────────────────────────────────────
 
 func _draw() -> void:
-	const PAD_X := 32.0
-	const PAD_Y := 38.0
+	const PANEL_COLOR := Color(0.04, 0.04, 0.20, 0.85)
+	const PANEL_BORDER := Color(0.25, 0.25, 0.55, 0.90)
 
-	var tray_left := HOPPER_X_START - PAD_X
-	var tray_top := HOPPER_Y - PAD_Y
-	var tray_w := (HOPPER_MAX - 1) * HOPPER_SPACING + PAD_X * 2.0
-	var tray_h := PAD_Y * 2.0
+	# Compute swap zone bounds first — panel height matches.
+	var bubble_r := HexGrid.BUBBLE_R * HOPPER_SCALE
+	const SWAP_PAD := 16.0
+	var swap_top := HOPPER_BOTTOM - HOPPER_SPACING_V - bubble_r - SWAP_PAD
+	var swap_bot := HOPPER_BOTTOM + bubble_r + SWAP_PAD
 
-	# Full tray background — dark panel behind all 10 queue slots.
-	draw_rect(Rect2(tray_left, tray_top, tray_w, tray_h), Color(0.04, 0.04, 0.20, 0.85))
+	# Left launcher panel — stops at the bottom of the swap zone.
+	draw_rect(Rect2(0.0, 0.0, PANEL_W, swap_bot), PANEL_COLOR)
+	draw_line(Vector2(PANEL_W, 0.0), Vector2(PANEL_W, swap_bot), PANEL_BORDER, 5.0)
 
-	# Swap-zone highlight (amber-yellow) — first 2 hopper slots are the only swappable picks.
-	# Divider sits halfway between ball[1] and ball[2] centres.
-	var swap_w := PAD_X + HOPPER_SPACING * 1.5  # ends between slot 2 and slot 3
-	draw_rect(Rect2(tray_left, tray_top, swap_w, tray_h), Color(0.95, 0.78, 0.05, 0.72))
+	# Right wall — same dark panel, extends beyond 1920 for wider phone screens.
+	draw_rect(Rect2(RIGHT_ANCHOR_X, 0.0, 2000.0, 1080.0), PANEL_COLOR)
+	draw_line(Vector2(RIGHT_ANCHOR_X, 0.0), Vector2(RIGHT_ANCHOR_X, 1080.0), PANEL_BORDER, 5.0)
 
-	# Vertical divider line.
-	var div_x := tray_left + swap_w
+	# Swap-zone highlight — full panel width, covers the bottom 2 hopper slots.
+	draw_rect(Rect2(0.0, swap_top, PANEL_W, swap_bot - swap_top), Color(0.95, 0.78, 0.05, 0.72))
+
+	# Thin line at top of swap zone separating it from the rest of the hopper.
 	draw_line(
-		Vector2(div_x, tray_top + 5.0),
-		Vector2(div_x, tray_top + tray_h - 5.0),
-		Color(1.0, 1.0, 1.0, 0.80),
+		Vector2(8.0, swap_top),
+		Vector2(PANEL_W - 8.0, swap_top),
+		Color(1.0, 1.0, 1.0, 0.70),
 		3.0
 	)
 
@@ -259,7 +267,7 @@ func _draw() -> void:
 	if _death_line_x > 0.0:
 		draw_dashed_line(
 			Vector2(_death_line_x, GRID_TOP_Y),
-			Vector2(_death_line_x, tray_top),
+			Vector2(_death_line_x, 1080.0),
 			Color(0.95, 0.15, 0.15, 0.65),
 			4.0, 22.0
 		)
@@ -267,7 +275,7 @@ func _draw() -> void:
 	if _tutorial_active:
 		match _tut_hint_type:
 			TutHint.SWAP:
-				var slot_pos := Vector2(HOPPER_X_START + _tut_swap_slot * HOPPER_SPACING, HOPPER_Y)
+				var slot_pos := Vector2(HOPPER_X, HOPPER_BOTTOM - _tut_swap_slot * HOPPER_SPACING_V)
 				var r := HexGrid.BUBBLE_R * HOPPER_SCALE * _tut_ring_scale
 				draw_arc(slot_pos, r, 0.0, TAU, 48, Color(1.0, 0.95, 0.1, 0.9), 5.0)
 			TutHint.TARGET:
@@ -302,13 +310,17 @@ func _input(event: InputEvent) -> void:
 
 func _update_aim(touch_pos: Vector2) -> void:
 	var raw := touch_pos - QUEUE_POS_CURRENT
-	if raw.x < 10.0:
-		raw.x = 10.0
+	# Enforce minimum angle from vertical: x must be ≥ sin(MIN_ANGLE_FROM_VERTICAL)
+	# of the total length, which caps the steepness and guarantees the ball always
+	# reaches the right wall without needing a bounce limit.
+	var min_x := sin(deg_to_rad(MIN_ANGLE_FROM_VERTICAL)) * raw.length()
+	if raw.x < min_x:
+		raw.x = min_x
 	_aim_dir = raw.normalized()
 	var result := HexGrid.march_ray(
 		QUEUE_POS_CURRENT, _aim_dir,
 		BOUNCE_TOP_Y, BOUNCE_BOT_Y, RIGHT_ANCHOR_X,
-		MAX_BOUNCES, SUBSTEP_PX,
+		20, SUBSTEP_PX,
 		cells, _grid
 	)
 	var has_snap: bool = result["snap_cell"] != Vector2i(-1, -1)
@@ -331,7 +343,6 @@ func _fire() -> void:
 		return
 	_state = State.FIRING
 	_proj_vel = _aim_dir
-	_proj_bounces = 0
 	_projectile = BUBBLE_SCENE.instantiate()
 	_projectile.color_index = _queue[0]
 	_projectile.position = QUEUE_POS_CURRENT
@@ -354,17 +365,13 @@ func _process(delta: float) -> void:
 			return
 
 func _apply_bounce() -> void:
-	if _proj_bounces >= MAX_BOUNCES:
-		return
 	var pos := _projectile.position
 	if pos.y < BOUNCE_TOP_Y:
 		_projectile.position.y = 2.0 * BOUNCE_TOP_Y - pos.y
 		_proj_vel.y = absf(_proj_vel.y)
-		_proj_bounces += 1
 	elif pos.y > BOUNCE_BOT_Y:
 		_projectile.position.y = 2.0 * BOUNCE_BOT_Y - pos.y
 		_proj_vel.y = -absf(_proj_vel.y)
-		_proj_bounces += 1
 
 func _check_hit() -> bool:
 	var pos := _projectile.position
