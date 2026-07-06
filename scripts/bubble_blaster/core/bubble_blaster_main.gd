@@ -4,6 +4,7 @@ extends Control
 
 const BUBBLE_BLASTER_ICON = preload("res://assets/icons/Bubble-Blaster_Icon.png")
 const BTN_HOME = preload("res://assets/sprites/ui/button_home.png")
+const SCREEN_BG = preload("res://assets/icons/screen_settings.png")
 
 const DIFFICULTIES: Array[String] = ["Easy", "Medium", "Hard"]
 const DIFF_COLORS: Array[Color] = [
@@ -22,8 +23,10 @@ func _ready() -> void:
 	_build_ui()
 
 func _build_ui() -> void:
-	var bg := ColorRect.new()
-	bg.color = Color(0.06, 0.04, 0.14)
+	var bg := TextureRect.new()
+	bg.texture = SCREEN_BG
+	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
 

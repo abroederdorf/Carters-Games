@@ -215,8 +215,8 @@ func _calc_stars() -> int:
 # ─── Hopper tray background ───────────────────────────────────────────────────
 
 func _draw() -> void:
-	const PAD_X := 14.0
-	const PAD_Y := 28.0
+	const PAD_X := 32.0
+	const PAD_Y := 38.0
 
 	var tray_left := HOPPER_X_START - PAD_X
 	var tray_top := HOPPER_Y - PAD_Y
@@ -226,18 +226,18 @@ func _draw() -> void:
 	# Full tray background — dark panel behind all 10 queue slots.
 	draw_rect(Rect2(tray_left, tray_top, tray_w, tray_h), Color(0.04, 0.04, 0.20, 0.85))
 
-	# Swap-zone highlight — first 2 hopper slots are the only swappable picks.
+	# Swap-zone highlight (amber-yellow) — first 2 hopper slots are the only swappable picks.
 	# Divider sits halfway between ball[1] and ball[2] centres.
 	var swap_w := PAD_X + HOPPER_SPACING * 1.5  # ends between slot 2 and slot 3
-	draw_rect(Rect2(tray_left, tray_top, swap_w, tray_h), Color(0.20, 0.40, 0.82, 0.50))
+	draw_rect(Rect2(tray_left, tray_top, swap_w, tray_h), Color(0.95, 0.78, 0.05, 0.72))
 
 	# Vertical divider line.
 	var div_x := tray_left + swap_w
 	draw_line(
 		Vector2(div_x, tray_top + 5.0),
 		Vector2(div_x, tray_top + tray_h - 5.0),
-		Color(1.0, 1.0, 1.0, 0.65),
-		2.5
+		Color(1.0, 1.0, 1.0, 0.80),
+		3.0
 	)
 
 # ─── Input ────────────────────────────────────────────────────────────────────
