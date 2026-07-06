@@ -37,8 +37,6 @@ const HOPPER_SPACING_V: float = 95.0
 const HOPPER_SCALE: float = 0.80
 const HOPPER_MAX: int = 6
 const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 1.1
-# Minimum drag distance from touch-down before a release fires the slingshot.
-const MIN_FIRE_DRAG: float = 40.0
 
 const EMPTY_COLS: int = 6  # open columns between visible grid and death line
 
@@ -67,7 +65,6 @@ var _band_l: Line2D
 var _band_r: Line2D
 var _aim_line: AimLine
 var _touch_id: int = -1
-var _touch_start: Vector2 = Vector2.ZERO
 var _aim_dir: Vector2 = Vector2.RIGHT
 
 var _projectile: Bubble = null
@@ -298,7 +295,6 @@ func _input(event: InputEvent) -> void:
 			if _tutorial_active and _tut_hint_type == TutHint.SWAP:
 				return  # block drag/fire when loaded color doesn't match any board color
 			_touch_id = event.index
-			_touch_start = event.position
 			_update_aim(event.position)
 		elif event.index == _touch_id:
 			_aim_line.hide_path()
@@ -306,8 +302,7 @@ func _input(event: InputEvent) -> void:
 			_band_r.visible = false
 			_queue_display[0].position = QUEUE_POS_CURRENT
 			_touch_id = -1
-			if event.position.distance_to(_touch_start) >= MIN_FIRE_DRAG:
-				_fire()
+			_fire()
 	elif event is InputEventScreenDrag and event.index == _touch_id:
 		_update_aim(event.position)
 
