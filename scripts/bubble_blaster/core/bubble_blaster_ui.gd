@@ -1,11 +1,14 @@
 class_name BubbleBlasterUI
 extends CanvasLayer
 
-const STAR_FILLED = preload("res://assets/sprites/ui/star_filled.png")
-const STAR_EMPTY  = preload("res://assets/sprites/ui/star_empty.png")
-const BTN_HOME    = preload("res://assets/sprites/ui/button_home.png")
-const BTN_REPLAY  = preload("res://assets/sprites/ui/button_replay.png")
-const BTN_NEXT    = preload("res://assets/sprites/ui/button_next.png")
+const STAR_FILLED  = preload("res://assets/sprites/ui/star_filled.png")
+const STAR_EMPTY   = preload("res://assets/sprites/ui/star_empty.png")
+const BTN_HOME     = preload("res://assets/sprites/ui/button_home.png")
+const BTN_REPLAY   = preload("res://assets/sprites/ui/button_replay.png")
+const BTN_NEXT     = preload("res://assets/sprites/ui/button_next.png")
+const BUBBLE_RED   = preload("res://assets/sprites/bubble_blaster/bubble_red.png")
+const BUBBLE_BLUE  = preload("res://assets/sprites/bubble_blaster/bubble_blue.png")
+const BUBBLE_GREEN = preload("res://assets/sprites/bubble_blaster/bubble_green.png")
 
 signal retry_same
 signal new_game
@@ -39,7 +42,7 @@ func show_out_of_ammo(bank: int, refill_amt: int) -> void:
 		_sub_lbl.text = "Spend 1 star for %d more bubbles?" % refill_amt
 	else:
 		_sub_lbl.text = "No stars left.\nRetry or go home?"
-	_set_stars(mini(bank, 3))  # show bank as filled stars (up to 3)
+	_set_row_bubbles()  # show bubbles instead of stars on this screen
 	_set_buttons_ammo(bank, refill_amt)
 	visible = true
 
@@ -139,6 +142,13 @@ func _set_stars(count: int) -> void:
 		else:
 			img.visible = true
 			img.texture = STAR_FILLED if i < count else STAR_EMPTY
+
+func _set_row_bubbles() -> void:
+	const BUBBLE_TEXS: Array = [BUBBLE_RED, BUBBLE_BLUE, BUBBLE_GREEN]
+	for i in 3:
+		var img: TextureRect = _star_row.get_child(i)
+		img.visible = true
+		img.texture = BUBBLE_TEXS[i]
 
 func _clear_buttons() -> void:
 	for child in _btn_row.get_children():
