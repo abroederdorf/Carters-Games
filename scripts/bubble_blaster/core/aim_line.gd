@@ -1,8 +1,8 @@
 class_name AimLine
 extends Node2D
 
-const _LINE_COLOR: Color = Color(1.0, 1.0, 1.0, 0.65)
-const _GHOST_COLOR: Color = Color(1.0, 1.0, 1.0, 0.32)
+const _LINE_COLOR: Color = Color(0.0, 0.0, 0.0, 0.82)
+const _GHOST_COLOR: Color = Color(0.0, 0.0, 0.0, 0.30)
 const _LINE_W: float = 5.0
 const _DASH: float = 18.0
 

@@ -15,14 +15,20 @@ const BOUNCE_TOP_Y: float = HexGrid.BUBBLE_R
 const BOUNCE_BOT_Y: float = 1080.0 - HexGrid.BUBBLE_R
 const MAX_BOUNCES: int = 4
 
-# Queue display layout
-const QUEUE_POS: Array[Vector2] = [
-	Vector2(90.0, 945.0),   # current bubble (large)
-	Vector2(215.0, 968.0),  # next 1 (smaller)
-	Vector2(315.0, 968.0),  # next 2 (smaller)
-]
-const QUEUE_SCALE: Array[float] = [1.0, 0.72, 0.72]
-const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R
+# Current (loaded) ball — sits between the slingshot prong tips.
+# Prong tip world positions derived from the 2048×2048 sprite at scale 140/2048.
+const QUEUE_POS_CURRENT: Vector2 = Vector2(130.0, 722.0)
+const QUEUE_SCALE_CURRENT: float = 1.0
+const SLING_PRONG_L: Vector2 = Vector2(93.0, 699.0)
+const SLING_PRONG_R: Vector2 = Vector2(167.0, 699.0)
+
+# Hopper row: next N balls displayed below the slingshot.
+const HOPPER_Y: float = 965.0
+const HOPPER_X_START: float = 52.0
+const HOPPER_SPACING: float = 58.0
+const HOPPER_SCALE: float = 0.52
+const HOPPER_MAX: int = 10
+const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 0.7
 
 # The leftmost x-coordinate a bubble may reach before it's game over.
 # Col 20 is roughly x=210 (< 280), so this is only triggered by stacking many missed shots.
@@ -44,6 +50,8 @@ var _cells_snapshot: Dictionary = {}  # saved at round start for retry
 var _ui: BubbleBlasterUI
 
 var _slingshot: Sprite2D
+var _band_l: Line2D
+var _band_r: Line2D
 var _aim_line: AimLine
 var _touch_id: int = -1
 var _aim_dir: Vector2 = Vector2.RIGHT
@@ -83,6 +91,22 @@ func _build_slingshot() -> void:
 	_slingshot.position = SLINGSHOT_POS
 	add_child(_slingshot)
 
+	# Rubber bands — drawn on top of slingshot, behind the bubble.
+	for band_pts: Array in [[SLING_PRONG_L], [SLING_PRONG_R]]:
+		var band := Line2D.new()
+		band.default_color = Color(0.95, 0.40, 0.65, 1.0)
+		band.width = 7.0
+		band.end_cap_mode = Line2D.LINE_CAP_ROUND
+		band.begin_cap_mode = Line2D.LINE_CAP_ROUND
+		band.visible = false
+		band.add_point(band_pts[0])
+		band.add_point(QUEUE_POS_CURRENT)
+		add_child(band)
+		if _band_l == null:
+			_band_l = band
+		else:
+			_band_r = band
+
 func _build_aim_line() -> void:
 	_aim_line = AimLine.new()
 	_aim_line.visible = false
@@ -99,7 +123,8 @@ func _init_queue() -> void:
 
 func _build_queue_display() -> void:
 	_queue_display.clear()
-	for _i in 3:
+	# Index 0 = current (loaded) bubble at slingshot; indices 1..HOPPER_MAX = hopper row.
+	for _i in HOPPER_MAX + 1:
 		var b: Bubble = BUBBLE_SCENE.instantiate()
 		b.visible = false
 		add_child(b)
@@ -107,12 +132,25 @@ func _build_queue_display() -> void:
 	_update_queue_display()
 
 func _update_queue_display() -> void:
-	for i in 3:
-		var node: Bubble = _queue_display[i]
-		if i < _queue.size():
-			node.color_index = _queue[i]
-			node.position = QUEUE_POS[i]
-			node.scale = Vector2.ONE * QUEUE_SCALE[i]
+	# Current ball — sits loaded in the slingshot fork.
+	var cur: Bubble = _queue_display[0]
+	if not _queue.is_empty():
+		cur.color_index = _queue[0]
+		cur.position = QUEUE_POS_CURRENT
+		cur.scale = Vector2.ONE * QUEUE_SCALE_CURRENT
+		cur.z_index = 1  # draw on top of bands
+		cur.visible = true
+	else:
+		cur.visible = false
+
+	# Hopper row — next balls queued up below.
+	for i in HOPPER_MAX:
+		var node: Bubble = _queue_display[i + 1]
+		var qi := i + 1
+		if qi < _queue.size():
+			node.color_index = _queue[qi]
+			node.position = Vector2(HOPPER_X_START + i * HOPPER_SPACING, HOPPER_Y)
+			node.scale = Vector2.ONE * HOPPER_SCALE
 			node.visible = true
 		else:
 			node.visible = false
@@ -124,13 +162,16 @@ func _weighted_color() -> int:
 	var vals := cells.values()  # untyped Array — Dictionary.values() can't be Array[int]
 	return vals[randi() % vals.size()]
 
-# Returns true if touch_pos hit a swappable preview slot and the swap was done.
+# Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:
-	for i in range(1, QUEUE_POS.size()):
-		if touch_pos.distance_to(QUEUE_POS[i]) < QUEUE_SWAP_RADIUS and i < _queue.size():
+	var shown := mini(HOPPER_MAX, _queue.size() - 1)
+	for i in shown:
+		var hpos := Vector2(HOPPER_X_START + i * HOPPER_SPACING, HOPPER_Y)
+		if touch_pos.distance_to(hpos) < QUEUE_SWAP_RADIUS:
+			var qi := i + 1
 			var tmp := _queue[0]
-			_queue[0] = _queue[i]
-			_queue[i] = tmp
+			_queue[0] = _queue[qi]
+			_queue[qi] = tmp
 			_update_queue_display()
 			return true
 	return false
@@ -183,6 +224,9 @@ func _input(event: InputEvent) -> void:
 			_update_aim(event.position)
 		elif event.index == _touch_id:
 			_aim_line.hide_path()
+			_band_l.visible = false
+			_band_r.visible = false
+			_queue_display[0].position = QUEUE_POS_CURRENT
 			_touch_id = -1
 			_fire()
 	elif event is InputEventScreenDrag and event.index == _touch_id:
@@ -201,6 +245,16 @@ func _update_aim(touch_pos: Vector2) -> void:
 	)
 	var has_snap: bool = result["snap_cell"] != Vector2i(-1, -1)
 	_aim_line.show_path(result["waypoints"], result["snap_world"], has_snap)
+
+	# Rubber bands — stretch from prong tips to the loaded-ball position.
+	# A small pull-back offset (opposite to aim) adds a tension feel.
+	var ball_pos := QUEUE_POS_CURRENT - _aim_dir * 10.0
+	_band_l.set_point_position(1, ball_pos)
+	_band_r.set_point_position(1, ball_pos)
+	_band_l.visible = true
+	_band_r.visible = true
+	# Keep the loaded bubble in sync with the slight pull-back.
+	_queue_display[0].position = ball_pos
 
 # ─── Fire ─────────────────────────────────────────────────────────────────────
 
