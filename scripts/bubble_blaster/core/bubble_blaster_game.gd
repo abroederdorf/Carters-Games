@@ -17,10 +17,10 @@ const MAX_BOUNCES: int = 4
 
 # Current (loaded) ball — sits between the slingshot prong tips.
 # Prong tip world positions derived from the 2048×2048 sprite at scale 140/2048.
-const QUEUE_POS_CURRENT: Vector2 = SLINGSHOT_POS + Vector2(0.0, -38.0)
+const QUEUE_POS_CURRENT: Vector2 = SLINGSHOT_POS + Vector2(0.0, -114.0)
 const QUEUE_SCALE_CURRENT: float = 1.0
-const SLING_PRONG_L: Vector2 = SLINGSHOT_POS + Vector2(-37.0, -61.0)
-const SLING_PRONG_R: Vector2 = SLINGSHOT_POS + Vector2(37.0, -61.0)
+const SLING_PRONG_L: Vector2 = SLINGSHOT_POS + Vector2(-111.0, -183.0)
+const SLING_PRONG_R: Vector2 = SLINGSHOT_POS + Vector2(111.0, -183.0)
 
 # Hopper row: next N balls displayed below the slingshot.
 const HOPPER_Y: float = 965.0
@@ -88,7 +88,7 @@ func _build_slingshot() -> void:
 	_slingshot = Sprite2D.new()
 	_slingshot.texture = SLINGSHOT_TEX
 	var tex_size := _slingshot.texture.get_size()
-	_slingshot.scale = Vector2.ONE * (140.0 / maxf(tex_size.x, tex_size.y))
+	_slingshot.scale = Vector2.ONE * (420.0 / maxf(tex_size.x, tex_size.y))
 	_slingshot.position = SLINGSHOT_POS
 	add_child(_slingshot)
 
@@ -166,8 +166,7 @@ func _weighted_color() -> int:
 
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:
-	var shown := mini(HOPPER_MAX, _queue.size() - 1)
-	for i in shown:
+	for i in mini(2, _queue.size() - 1):  # only the next 2 hopper balls are swappable
 		var hpos := Vector2(HOPPER_X_START + i * HOPPER_SPACING, HOPPER_Y)
 		if touch_pos.distance_to(hpos) < QUEUE_SWAP_RADIUS:
 			var qi := i + 1
@@ -213,6 +212,34 @@ func _calc_stars() -> int:
 		return 2
 	return 1
 
+# ─── Hopper tray background ───────────────────────────────────────────────────
+
+func _draw() -> void:
+	const PAD_X := 14.0
+	const PAD_Y := 28.0
+
+	var tray_left := HOPPER_X_START - PAD_X
+	var tray_top := HOPPER_Y - PAD_Y
+	var tray_w := (HOPPER_MAX - 1) * HOPPER_SPACING + PAD_X * 2.0
+	var tray_h := PAD_Y * 2.0
+
+	# Full tray background — dark panel behind all 10 queue slots.
+	draw_rect(Rect2(tray_left, tray_top, tray_w, tray_h), Color(0.04, 0.04, 0.20, 0.85))
+
+	# Swap-zone highlight — first 2 hopper slots are the only swappable picks.
+	# Divider sits halfway between ball[1] and ball[2] centres.
+	var swap_w := PAD_X + HOPPER_SPACING * 1.5  # ends between slot 2 and slot 3
+	draw_rect(Rect2(tray_left, tray_top, swap_w, tray_h), Color(0.20, 0.40, 0.82, 0.50))
+
+	# Vertical divider line.
+	var div_x := tray_left + swap_w
+	draw_line(
+		Vector2(div_x, tray_top + 5.0),
+		Vector2(div_x, tray_top + tray_h - 5.0),
+		Color(1.0, 1.0, 1.0, 0.65),
+		2.5
+	)
+
 # ─── Input ────────────────────────────────────────────────────────────────────
 
 func _input(event: InputEvent) -> void:
@@ -235,7 +262,7 @@ func _input(event: InputEvent) -> void:
 		_update_aim(event.position)
 
 func _update_aim(touch_pos: Vector2) -> void:
-	var raw := touch_pos - SLINGSHOT_POS
+	var raw := touch_pos - QUEUE_POS_CURRENT
 	if raw.x < 10.0:
 		raw.x = 10.0
 	_aim_dir = raw.normalized()
@@ -244,7 +271,7 @@ func _update_aim(touch_pos: Vector2) -> void:
 		if c.x < _next_reserve_col:
 			visible_cells[c] = cells[c]
 	var result := HexGrid.march_ray(
-		SLINGSHOT_POS, _aim_dir,
+		QUEUE_POS_CURRENT, _aim_dir,
 		BOUNCE_TOP_Y, BOUNCE_BOT_Y, RIGHT_ANCHOR_X,
 		MAX_BOUNCES, SUBSTEP_PX,
 		visible_cells, _grid
@@ -254,7 +281,7 @@ func _update_aim(touch_pos: Vector2) -> void:
 
 	# Rubber bands — stretch from prong tips to the loaded-ball position.
 	# A small pull-back offset (opposite to aim) adds a tension feel.
-	var ball_pos := QUEUE_POS_CURRENT - _aim_dir * 10.0
+	var ball_pos := QUEUE_POS_CURRENT - _aim_dir * 20.0
 	_band_l.set_point_position(1, ball_pos)
 	_band_r.set_point_position(1, ball_pos)
 	_band_l.visible = true
@@ -272,7 +299,7 @@ func _fire() -> void:
 	_proj_bounces = 0
 	_projectile = BUBBLE_SCENE.instantiate()
 	_projectile.color_index = _queue[0]
-	_projectile.position = SLINGSHOT_POS
+	_projectile.position = QUEUE_POS_CURRENT
 	add_child(_projectile)
 
 # ─── Projectile movement ──────────────────────────────────────────────────────
