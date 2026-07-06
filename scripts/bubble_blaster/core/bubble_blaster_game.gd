@@ -1,6 +1,7 @@
 extends Node2D
 
 enum State { AIMING, FIRING, RESOLVING, OVERLAY }
+enum TutHint { NONE, SWAP, TARGET }
 
 const BUBBLE_SCENE = preload("res://scenes/bubble_blaster/Bubble.tscn")
 const SLINGSHOT_TEX = preload("res://assets/sprites/bubble_blaster/sling_shot.png")
@@ -72,12 +73,11 @@ var _shots_total_gen: int = 0  # total bubbles ever generated into the queue
 
 var _tutorial_active: bool = false
 var _tutorial_hud: CanvasLayer = null
-var _tut_phase: int = 0  # 0 = swap hint, 1 = aim hint
-var _tut_hint_visible: bool = true
+var _tut_hint_type: TutHint = TutHint.NONE
+var _tut_swap_slot: int = 0        # hopper slot (0 or 1) to ring for swap hint
+var _tut_target_pos: Vector2 = Vector2.ZERO  # grid world-pos to ring for target hint
 var _tut_ring_scale: float = 1.0
 var _tut_ring_tween: Tween = null
-var _tut_arrow: Line2D = null
-var _tut_arrowhead: Polygon2D = null
 
 func _ready() -> void:
 	_grid = HexGrid.new()
@@ -264,16 +264,15 @@ func _draw() -> void:
 			4.0, 22.0
 		)
 
-	if _tutorial_active and _tut_hint_visible:
-		if _tut_phase == 0:
-			# Phase 0: ring around the red bubble in the hopper (second slot — tap to swap).
-			var hopper_red_pos := Vector2(HOPPER_X_START + HOPPER_SPACING, HOPPER_Y)
-			var r := HexGrid.BUBBLE_R * HOPPER_SCALE * _tut_ring_scale
-			draw_arc(hopper_red_pos, r, 0.0, TAU, 48, Color(1.0, 0.95, 0.1, 0.9), 5.0)
-		else:
-			# Phase 1: ring around the loaded slingshot bubble.
-			var r := HexGrid.BUBBLE_R * 2.0 * _tut_ring_scale
-			draw_arc(QUEUE_POS_CURRENT, r, 0.0, TAU, 64, Color(1.0, 0.95, 0.1, 0.9), 6.0)
+	if _tutorial_active:
+		match _tut_hint_type:
+			TutHint.SWAP:
+				var slot_pos := Vector2(HOPPER_X_START + _tut_swap_slot * HOPPER_SPACING, HOPPER_Y)
+				var r := HexGrid.BUBBLE_R * HOPPER_SCALE * _tut_ring_scale
+				draw_arc(slot_pos, r, 0.0, TAU, 48, Color(1.0, 0.95, 0.1, 0.9), 5.0)
+			TutHint.TARGET:
+				var r := HexGrid.BUBBLE_R * 1.6 * _tut_ring_scale
+				draw_arc(_tut_target_pos, r, 0.0, TAU, 48, Color(1.0, 0.95, 0.1, 0.9), 6.0)
 
 # ─── Input ────────────────────────────────────────────────────────────────────
 
@@ -283,9 +282,12 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			if _try_swap(event.position):
-				if _tutorial_active and _tut_phase == 0:
-					_advance_to_aim_hint()
+				if _tutorial_active:
+					_compute_tutorial_hint()
+					queue_redraw()
 				return
+			if _tutorial_active and _tut_hint_type == TutHint.SWAP:
+				return  # block drag/fire when loaded color doesn't match any board color
 			_touch_id = event.index
 			_update_aim(event.position)
 		elif event.index == _touch_id:
@@ -299,8 +301,6 @@ func _input(event: InputEvent) -> void:
 		_update_aim(event.position)
 
 func _update_aim(touch_pos: Vector2) -> void:
-	if _tutorial_active:
-		_hide_tutorial_hint()
 	var raw := touch_pos - QUEUE_POS_CURRENT
 	if raw.x < 10.0:
 		raw.x = 10.0
@@ -340,7 +340,7 @@ func _fire() -> void:
 # ─── Projectile movement ──────────────────────────────────────────────────────
 
 func _process(delta: float) -> void:
-	if _tutorial_active and _tut_hint_visible:
+	if _tutorial_active and _tut_hint_type != TutHint.NONE:
 		queue_redraw()
 	if _state != State.FIRING or not is_instance_valid(_projectile):
 		return
@@ -435,6 +435,9 @@ func _snap(cell: Vector2i) -> void:
 		_on_out_of_ammo()
 	else:
 		_state = State.AIMING
+		if _tutorial_active:
+			_compute_tutorial_hint()
+			queue_redraw()
 
 func _discard_projectile() -> void:
 	_projectile.queue_free()
@@ -774,56 +777,68 @@ func _spawn_bubble_sprites() -> void:
 func _start_tutorial() -> void:
 	_tutorial_active = true
 	_setup_tutorial_board()
-	_build_tutorial_hint()
+	_compute_tutorial_hint()
+	_start_ring_tween()
 	_build_tutorial_hud()
 
 func _setup_tutorial_board() -> void:
 	cells = {}
 	_reserve_queue = []
 	_reserve_queue_snapshot = []
-	for row in [3, 4, 5, 6]:
-		cells[Vector2i(0, row)] = 0  # red
+	# 1 isolated red + 3-bubble blue cluster. Player must build the red up to 3
+	# (needs 2 more shots) then pop the blue cluster (already 3, needs 1 more).
+	cells[Vector2i(0, 7)] = 0  # red — isolated
+	cells[Vector2i(0, 2)] = 1  # blue \
+	cells[Vector2i(0, 3)] = 1  # blue  } cluster of 3
+	cells[Vector2i(0, 4)] = 1  # blue /
 	_cells_snapshot = cells.duplicate(false)
 	_compute_cluster_count()
 	_spawn_bubble_sprites()
-	# Slingshot: blue. Hopper[0]: green. Hopper[1]: red (what they should tap to swap).
-	# Rest: red — refills via _weighted_color() are also red since all grid cells are red.
+	# Slingshot: green (no green on board — forces swap). Hopper[0]: blue. Hopper[1]: red.
+	# Firing is blocked whenever the loaded color has no match on the board (dynamic gate).
+	# Extra reds let the player build the isolated red up to 3.
+	# Blues fill the rest — once reds pop the player finishes the blue cluster.
 	_ammo_total = 99
 	_shots_total_gen = HOPPER_MAX + 1
 	_queue.clear()
-	_queue.append(1)  # blue — loaded in slingshot
-	_queue.append(2)  # green — first hopper slot
+	_queue.append(2)  # green — loaded in slingshot (no green on board, motivates swap)
+	_queue.append(1)  # blue — first hopper slot
 	_queue.append(0)  # red — second hopper slot (tap to swap)
-	for _i in 8:
-		_queue.append(0)  # red fill
+	_queue.append(0)  # red
+	_queue.append(0)  # red
+	for _i in 6:
+		_queue.append(1)  # blue fill
 	_update_queue_display()
 
-func _build_tutorial_hint() -> void:
-	var target := _grid.grid_to_world(Vector2i(0, 4))
-	var dir := (target - QUEUE_POS_CURRENT).normalized()
-	var arrow_start := QUEUE_POS_CURRENT + dir * (HexGrid.BUBBLE_R + 12.0)
-	var arrow_end := QUEUE_POS_CURRENT + dir * 300.0
+func _compute_tutorial_hint() -> void:
+	if not _tutorial_active or _queue.is_empty():
+		_tut_hint_type = TutHint.NONE
+		return
+	var cur_color := _queue[0]
+	var target := _find_board_cell_of_color(cur_color)
+	if target != Vector2i(-1, -1):
+		_tut_hint_type = TutHint.TARGET
+		_tut_target_pos = _grid.grid_to_world(target)
+		return
+	# Loaded color not on board — find the best swappable hopper color that IS on board.
+	for i in 2:
+		var qi := i + 1
+		if qi < _queue.size() and _find_board_cell_of_color(_queue[qi]) != Vector2i(-1, -1):
+			_tut_hint_type = TutHint.SWAP
+			_tut_swap_slot = i
+			return
+	_tut_hint_type = TutHint.NONE
 
-	_tut_arrow = Line2D.new()
-	_tut_arrow.default_color = Color(1.0, 0.95, 0.1, 0.9)
-	_tut_arrow.width = 12.0
-	_tut_arrow.end_cap_mode = Line2D.LINE_CAP_NONE
-	_tut_arrow.add_point(arrow_start)
-	_tut_arrow.add_point(arrow_end)
-	_tut_arrow.visible = false  # hidden until phase 1
-	add_child(_tut_arrow)
+func _find_board_cell_of_color(color: int) -> Vector2i:
+	for cell: Vector2i in cells:
+		if cells[cell] == color:
+			return cell
+	return Vector2i(-1, -1)
 
-	var perp := Vector2(-dir.y, dir.x)
-	_tut_arrowhead = Polygon2D.new()
-	_tut_arrowhead.color = Color(1.0, 0.95, 0.1, 0.9)
-	_tut_arrowhead.polygon = PackedVector2Array([
-		arrow_end + dir * 34.0,
-		arrow_end + perp * 20.0,
-		arrow_end - perp * 20.0,
-	])
-	_tut_arrowhead.visible = false  # hidden until phase 1
-	add_child(_tut_arrowhead)
-
+func _start_ring_tween() -> void:
+	if _tut_ring_tween:
+		_tut_ring_tween.kill()
+	_tut_ring_scale = 1.0
 	_tut_ring_tween = create_tween().set_loops()
 	_tut_ring_tween.tween_property(self, "_tut_ring_scale", 1.5, 0.75)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -849,50 +864,16 @@ func _build_tutorial_hud() -> void:
 	btn.pressed.connect(_complete_tutorial)
 	_tutorial_hud.add_child(btn)
 
-func _advance_to_aim_hint() -> void:
-	_tut_phase = 1
-	_tut_hint_visible = true  # re-show if drag had hidden it during phase 0
-	_tut_ring_scale = 1.0
-	if _tut_ring_tween:
-		_tut_ring_tween.kill()
-	if _tut_arrow:
-		_tut_arrow.visible = true
-	if _tut_arrowhead:
-		_tut_arrowhead.visible = true
-	_tut_ring_tween = create_tween().set_loops()
-	_tut_ring_tween.tween_property(self, "_tut_ring_scale", 1.5, 0.75)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	_tut_ring_tween.tween_property(self, "_tut_ring_scale", 1.0, 0.75)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-func _hide_tutorial_hint() -> void:
-	if not _tut_hint_visible:
-		return
-	_tut_hint_visible = false
-	if _tut_arrow:
-		_tut_arrow.visible = false
-	if _tut_arrowhead:
-		_tut_arrowhead.visible = false
-	if _tut_ring_tween:
-		_tut_ring_tween.kill()
-	queue_redraw()
-
 func _complete_tutorial() -> void:
 	_state = State.OVERLAY  # Block input immediately during transition
 	_tutorial_active = false
-	_tut_hint_visible = false
+	_tut_hint_type = TutHint.NONE
 	_bbs.tutorial_seen = true
 	_bbs.save()
 	if _tut_ring_tween:
 		_tut_ring_tween.kill()
-	if _tut_arrow:
-		_tut_arrow.queue_free()
-	if _tut_arrowhead:
-		_tut_arrowhead.queue_free()
 	if _tutorial_hud:
 		_tutorial_hud.queue_free()
 	_tutorial_hud = null
-	_tut_arrow = null
-	_tut_arrowhead = null
 	queue_redraw()
 	call_deferred("_on_new_game")
