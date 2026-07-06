@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bbmainscene01"]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/bubble_blaster/core/bubble_blaster_main.gd" id="1_main"]
 

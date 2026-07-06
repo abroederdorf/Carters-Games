@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bbgamescene01"]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/bubble_blaster/core/bubble_blaster_game.gd" id="1_game"]
 [ext_resource type="Texture2D" path="res://assets/sprites/bubble_blaster/bg_scene.png" id="2_bg"]
