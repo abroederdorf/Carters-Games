@@ -237,11 +237,15 @@ func _update_aim(touch_pos: Vector2) -> void:
 	if raw.x < 10.0:
 		raw.x = 10.0
 	_aim_dir = raw.normalized()
+	var visible_cells: Dictionary = {}
+	for c: Vector2i in cells:
+		if c.x < _next_reserve_col:
+			visible_cells[c] = cells[c]
 	var result := HexGrid.march_ray(
 		SLINGSHOT_POS, _aim_dir,
 		BOUNCE_TOP_Y, BOUNCE_BOT_Y, RIGHT_ANCHOR_X,
 		MAX_BOUNCES, SUBSTEP_PX,
-		cells, _grid
+		visible_cells, _grid
 	)
 	var has_snap: bool = result["snap_cell"] != Vector2i(-1, -1)
 	_aim_line.show_path(result["waypoints"], result["snap_world"], has_snap)
@@ -310,6 +314,8 @@ func _check_hit() -> bool:
 		return true
 
 	for cell: Vector2i in cells:
+		if cell.x >= _next_reserve_col:
+			continue  # reserve columns are hidden; treat as empty space
 		if pos.distance_to(_grid.grid_to_world(cell)) < HexGrid.BUBBLE_D:
 			var snap_cell := _grid.world_to_grid(pos)
 			if cells.has(snap_cell):
