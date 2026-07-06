@@ -10,7 +10,7 @@ const BTN_NEXT_TEX = preload("res://assets/sprites/ui/button_next.png")
 
 const RIGHT_ANCHOR_X: float = 1920.0
 const GRID_TOP_Y: float = 60.0
-const SLINGSHOT_POS: Vector2 = Vector2(280.0, 760.0)
+const SLINGSHOT_POS: Vector2 = Vector2(200.0, 840.0)
 const PROJECTILE_SPEED: float = 1400.0
 const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5
 const BOUNCE_TOP_Y: float = HexGrid.BUBBLE_R
@@ -19,6 +19,9 @@ const BOUNCE_BOT_Y: float = 1080.0 - HexGrid.BUBBLE_R
 # reaches the right wall within a few bounces — no bounce cap needed.
 const MIN_ANGLE_FROM_VERTICAL: float = 25.0
 
+# Left launcher panel — slingshot and hopper live here.
+const PANEL_W: float = 320.0
+
 # Current (loaded) ball — sits between the slingshot prong tips.
 # Prong tip world positions derived from the 2048×2048 sprite at scale 140/2048.
 const QUEUE_POS_CURRENT: Vector2 = SLINGSHOT_POS + Vector2(0.0, -114.0)
@@ -26,13 +29,15 @@ const QUEUE_SCALE_CURRENT: float = 1.0
 const SLING_PRONG_L: Vector2 = SLINGSHOT_POS + Vector2(-111.0, -183.0)
 const SLING_PRONG_R: Vector2 = SLINGSHOT_POS + Vector2(111.0, -183.0)
 
-# Hopper row: next N balls displayed below the slingshot.
-const HOPPER_Y: float = 965.0
-const HOPPER_X_START: float = 52.0
-const HOPPER_SPACING: float = 58.0
-const HOPPER_SCALE: float = 0.52
-const HOPPER_MAX: int = 10
-const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 0.7
+# Hopper: vertical column on the left panel, above the slingshot.
+const HOPPER_X: float = 110.0
+const HOPPER_Y_START: float = 60.0
+const HOPPER_SPACING_V: float = 95.0
+const HOPPER_SCALE: float = 0.80
+const HOPPER_MAX: int = 6
+const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 1.1
+# Minimum drag distance from touch-down before a release fires the slingshot.
+const MIN_FIRE_DRAG: float = 40.0
 
 const EMPTY_COLS: int = 6  # open columns between visible grid and death line
 
@@ -61,6 +66,7 @@ var _band_l: Line2D
 var _band_r: Line2D
 var _aim_line: AimLine
 var _touch_id: int = -1
+var _touch_start: Vector2 = Vector2.ZERO
 var _aim_dir: Vector2 = Vector2.RIGHT
 
 var _projectile: Bubble = null
@@ -162,13 +168,13 @@ func _update_queue_display() -> void:
 	else:
 		cur.visible = false
 
-	# Hopper row — next balls queued up below.
+	# Hopper column — next balls stacked vertically down the left panel.
 	for i in HOPPER_MAX:
 		var node: Bubble = _queue_display[i + 1]
 		var qi := i + 1
 		if qi < _queue.size():
 			node.color_index = _queue[qi]
-			node.position = Vector2(HOPPER_X_START + i * HOPPER_SPACING, HOPPER_Y)
+			node.position = Vector2(HOPPER_X, HOPPER_Y_START + i * HOPPER_SPACING_V)
 			node.scale = Vector2.ONE * HOPPER_SCALE
 			node.visible = true
 		else:
@@ -183,7 +189,7 @@ func _weighted_color() -> int:
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:
 	for i in mini(2, _queue.size() - 1):  # only the next 2 hopper balls are swappable
-		var hpos := Vector2(HOPPER_X_START + i * HOPPER_SPACING, HOPPER_Y)
+		var hpos := Vector2(HOPPER_X, HOPPER_Y_START + i * HOPPER_SPACING_V)
 		if touch_pos.distance_to(hpos) < QUEUE_SWAP_RADIUS:
 			var qi := i + 1
 			var tmp := _queue[0]
@@ -231,27 +237,31 @@ func _calc_stars() -> int:
 # ─── Hopper tray background ───────────────────────────────────────────────────
 
 func _draw() -> void:
-	const PAD_X := 32.0
-	const PAD_Y := 38.0
+	const PANEL_COLOR := Color(0.04, 0.04, 0.20, 0.85)
+	const PANEL_BORDER := Color(0.25, 0.25, 0.55, 0.90)
 
-	var tray_left := HOPPER_X_START - PAD_X
-	var tray_top := HOPPER_Y - PAD_Y
-	var tray_w := (HOPPER_MAX - 1) * HOPPER_SPACING + PAD_X * 2.0
-	var tray_h := PAD_Y * 2.0
+	# Left launcher panel background.
+	draw_rect(Rect2(0.0, 0.0, PANEL_W, 1080.0), PANEL_COLOR)
+	draw_line(Vector2(PANEL_W, 0.0), Vector2(PANEL_W, 1080.0), PANEL_BORDER, 5.0)
 
-	# Full tray background — dark panel behind all 10 queue slots.
-	draw_rect(Rect2(tray_left, tray_top, tray_w, tray_h), Color(0.04, 0.04, 0.20, 0.85))
+	# Right wall — same dark panel, extends beyond 1920 for wider phone screens.
+	draw_rect(Rect2(RIGHT_ANCHOR_X, 0.0, 2000.0, 1080.0), PANEL_COLOR)
+	draw_line(Vector2(RIGHT_ANCHOR_X, 0.0), Vector2(RIGHT_ANCHOR_X, 1080.0), PANEL_BORDER, 5.0)
 
-	# Swap-zone highlight (amber-yellow) — first 2 hopper slots are the only swappable picks.
-	# Divider sits halfway between ball[1] and ball[2] centres.
-	var swap_w := PAD_X + HOPPER_SPACING * 1.5  # ends between slot 2 and slot 3
-	draw_rect(Rect2(tray_left, tray_top, swap_w, tray_h), Color(0.95, 0.78, 0.05, 0.72))
+	# Swap-zone highlight (amber-yellow) — first 2 hopper slots are swappable.
+	const PAD := 18.0
+	var bubble_r := HexGrid.BUBBLE_R * HOPPER_SCALE
+	var swap_h := HOPPER_SPACING_V * 2.0 - PAD * 0.5
+	draw_rect(
+		Rect2(HOPPER_X - bubble_r - PAD, HOPPER_Y_START - PAD, bubble_r * 2.0 + PAD * 2.0, swap_h + PAD),
+		Color(0.95, 0.78, 0.05, 0.72)
+	)
 
-	# Vertical divider line.
-	var div_x := tray_left + swap_w
+	# Horizontal divider below the swap zone.
+	var div_y := HOPPER_Y_START + swap_h
 	draw_line(
-		Vector2(div_x, tray_top + 5.0),
-		Vector2(div_x, tray_top + tray_h - 5.0),
+		Vector2(HOPPER_X - bubble_r - PAD + 4.0, div_y),
+		Vector2(HOPPER_X + bubble_r + PAD - 4.0, div_y),
 		Color(1.0, 1.0, 1.0, 0.80),
 		3.0
 	)
@@ -260,7 +270,7 @@ func _draw() -> void:
 	if _death_line_x > 0.0:
 		draw_dashed_line(
 			Vector2(_death_line_x, GRID_TOP_Y),
-			Vector2(_death_line_x, tray_top),
+			Vector2(_death_line_x, 1080.0),
 			Color(0.95, 0.15, 0.15, 0.65),
 			4.0, 22.0
 		)
@@ -268,7 +278,7 @@ func _draw() -> void:
 	if _tutorial_active:
 		match _tut_hint_type:
 			TutHint.SWAP:
-				var slot_pos := Vector2(HOPPER_X_START + _tut_swap_slot * HOPPER_SPACING, HOPPER_Y)
+				var slot_pos := Vector2(HOPPER_X, HOPPER_Y_START + _tut_swap_slot * HOPPER_SPACING_V)
 				var r := HexGrid.BUBBLE_R * HOPPER_SCALE * _tut_ring_scale
 				draw_arc(slot_pos, r, 0.0, TAU, 48, Color(1.0, 0.95, 0.1, 0.9), 5.0)
 			TutHint.TARGET:
@@ -290,6 +300,7 @@ func _input(event: InputEvent) -> void:
 			if _tutorial_active and _tut_hint_type == TutHint.SWAP:
 				return  # block drag/fire when loaded color doesn't match any board color
 			_touch_id = event.index
+			_touch_start = event.position
 			_update_aim(event.position)
 		elif event.index == _touch_id:
 			_aim_line.hide_path()
@@ -297,7 +308,8 @@ func _input(event: InputEvent) -> void:
 			_band_r.visible = false
 			_queue_display[0].position = QUEUE_POS_CURRENT
 			_touch_id = -1
-			_fire()
+			if event.position.distance_to(_touch_start) >= MIN_FIRE_DRAG:
+				_fire()
 	elif event is InputEventScreenDrag and event.index == _touch_id:
 		_update_aim(event.position)
 
