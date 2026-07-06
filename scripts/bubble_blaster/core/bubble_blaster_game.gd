@@ -35,6 +35,7 @@ const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 0.7
 const DEATH_LINE_X: float = SLINGSHOT_POS.x + 150.0
 
 @onready var grid_root: Node2D = $GridRoot
+@onready var _bbs := get_node("/root/BubbleBlasterState")
 
 var _grid: HexGrid
 var cells: Dictionary = {}    # Vector2i → color index (int)
@@ -69,7 +70,7 @@ var _shots_total_gen: int = 0  # total bubbles ever generated into the queue
 func _ready() -> void:
 	_grid = HexGrid.new()
 	_grid.setup(RIGHT_ANCHOR_X, GRID_TOP_Y)
-	_level_data = _make_level_data(BubbleBlasterState.current_difficulty)
+	_level_data = _make_level_data(_bbs.current_difficulty)
 	_generate_blob_board(_level_data)
 	_cells_snapshot = cells.duplicate(false)
 	_compute_cluster_count()
@@ -474,13 +475,13 @@ func _compute_cluster_count() -> void:
 func _on_win() -> void:
 	_state = State.OVERLAY
 	var stars := _calc_stars()
-	BubbleBlasterState.earn_stars(stars)
-	_ui.show_win(stars, BubbleBlasterState.star_bank)
+	_bbs.earn_stars(stars)
+	_ui.show_win(stars, _bbs.star_bank)
 
 func _on_out_of_ammo() -> void:
 	_state = State.OVERLAY
 	var refill_amt := _cluster_count
-	_ui.show_out_of_ammo(BubbleBlasterState.star_bank, refill_amt)
+	_ui.show_out_of_ammo(_bbs.star_bank, refill_amt)
 
 func _on_game_over() -> void:
 	_state = State.OVERLAY
@@ -510,7 +511,7 @@ func _on_new_game() -> void:
 	_state = State.AIMING
 
 func _on_refill() -> void:
-	if BubbleBlasterState.spend_star():
+	if _bbs.spend_star():
 		_ammo_total += _cluster_count
 		while _shots_total_gen < _ammo_total and _queue.size() < HOPPER_MAX + 1:
 			_queue.append(_weighted_color())

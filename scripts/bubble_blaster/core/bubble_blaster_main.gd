@@ -1,5 +1,7 @@
 extends Control
 
+@onready var _bbs := get_node("/root/BubbleBlasterState")
+
 const BUBBLE_BLASTER_ICON = preload("res://assets/icons/Bubble-Blaster_Icon.png")
 const BTN_HOME = preload("res://assets/sprites/ui/button_home.png")
 
@@ -86,7 +88,7 @@ func _build_ui() -> void:
 
 	# Star bank display
 	var bank_lbl := Label.new()
-	bank_lbl.text = "Star bank: %d" % BubbleBlasterState.star_bank
+	bank_lbl.text = "Star bank: %d" % _bbs.star_bank
 	bank_lbl.add_theme_font_size_override("font_size", 38)
 	bank_lbl.add_theme_color_override("font_color", Color(1.0, 0.90, 0.40))
 	bank_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -133,7 +135,7 @@ func _make_diff_btn(diff_idx: int) -> Button:
 	return btn
 
 func _on_difficulty(diff: int) -> void:
-	BubbleBlasterState.current_difficulty = diff
+	_bbs.current_difficulty = diff
 	get_tree().change_scene_to_file("res://scenes/bubble_blaster/BubbleBlasterGame.tscn")
 
 func _on_home() -> void:
