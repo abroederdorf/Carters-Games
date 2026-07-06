@@ -132,26 +132,28 @@ static func march_ray(
 			wpts.append(snap_world)
 			stopped = true
 
-		# Bubble-collision snap
+		# Bubble-collision snap — closest hit bubble, attach to its nearest empty neighbour.
 		if not stopped:
+			var hit_c := Vector2i(-1, -1)
+			var hit_d := INF
 			for cell: Vector2i in cells:
-				if pos.distance_to(grid.grid_to_world(cell)) < BUBBLE_D:
-					var sc := grid.world_to_grid(pos)
-					if cells.has(sc):
-						var best := Vector2i(-1, -1)
-						var best_d := INF
-						for n in grid.neighbors(sc):
-							if not cells.has(n) and n.x >= 0:
-								var nd := pos.distance_to(grid.grid_to_world(n))
-								if nd < best_d:
-									best_d = nd
-									best = n
-						sc = best
-					snap_cell = sc
-					snap_world = grid.grid_to_world(sc) if sc != Vector2i(-1, -1) else pos
-					wpts.append(pos)
-					stopped = true
-					break
+				var d := pos.distance_to(grid.grid_to_world(cell))
+				if d < BUBBLE_D and d < hit_d:
+					hit_d = d
+					hit_c = cell
+			if hit_c != Vector2i(-1, -1):
+				var best := Vector2i(-1, -1)
+				var best_d := INF
+				for n in grid.neighbors(hit_c):
+					if not cells.has(n) and n.x >= 0 and n.y >= 0:
+						var nd := pos.distance_to(grid.grid_to_world(n))
+						if nd < best_d:
+							best_d = nd
+							best = n
+				snap_cell = best
+				snap_world = grid.grid_to_world(snap_cell) if snap_cell != Vector2i(-1, -1) else pos
+				wpts.append(pos)
+				stopped = true
 
 		if stopped:
 			break

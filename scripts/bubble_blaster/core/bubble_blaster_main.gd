@@ -142,15 +142,30 @@ func _make_diff_btn(diff_idx: int) -> Button:
 	btn.add_theme_stylebox_override("hover", style_n)
 	btn.add_theme_stylebox_override("pressed", style_p)
 
+	var inner := VBoxContainer.new()
+	inner.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	inner.alignment = BoxContainer.ALIGNMENT_CENTER
+	inner.add_theme_constant_override("separation", 4)
+	inner.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	btn.add_child(inner)
+
 	var lbl := Label.new()
 	lbl.text = DIFFICULTIES[diff_idx]
 	lbl.add_theme_font_size_override("font_size", 48)
 	lbl.add_theme_color_override("font_color", Color.WHITE)
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	lbl.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	lbl.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	btn.add_child(lbl)
+	inner.add_child(lbl)
+
+	var win_lbl := Label.new()
+	win_lbl.text = "Level %d" % (_bbs.wins[diff_idx] + 1)
+	win_lbl.add_theme_font_size_override("font_size", 26)
+	win_lbl.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 0.80))
+	win_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	win_lbl.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	win_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	inner.add_child(win_lbl)
 
 	btn.pressed.connect(func() -> void: _on_difficulty(diff_idx))
 	return btn
