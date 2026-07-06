@@ -116,7 +116,7 @@ func _build_aim_line() -> void:
 # ─── Bubble queue ─────────────────────────────────────────────────────────────
 
 func _init_queue() -> void:
-	_ammo_total = 3 * _cluster_count
+	_ammo_total = 2 * _cluster_count
 	_queue.clear()
 	var initial := mini(HOPPER_MAX + 1, _ammo_total)
 	_shots_total_gen = initial
