@@ -37,13 +37,12 @@ func show_win(stars: int, bank: int) -> void:
 	visible = true
 
 func show_out_of_ammo(bank: int, refill_amt: int) -> void:
-	_message_lbl.text = "Out of Bubbles!"
+	_message_lbl.text = "No Bubbles!"
+	_sub_lbl.text = ""
 	if bank > 0:
-		_sub_lbl.text = "You have %d star%s\nSpend 1 for %d more bubbles?" % [bank, "s" if bank != 1 else "", refill_amt]
 		_set_row_bubbles()
 	else:
-		_sub_lbl.text = ""
-		_set_stars(-1)  # hide the icon row
+		_set_stars(-1)
 	_set_buttons_ammo(bank, refill_amt)
 	visible = true
 

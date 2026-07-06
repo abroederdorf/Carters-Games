@@ -30,9 +30,7 @@ const HOPPER_SCALE: float = 0.52
 const HOPPER_MAX: int = 10
 const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 0.7
 
-# The leftmost x-coordinate a bubble may reach before it's game over.
-# Col 20 is roughly x=210 (< 280), so this is only triggered by stacking many missed shots.
-const DEATH_LINE_X: float = SLINGSHOT_POS.x + 150.0
+const EMPTY_COLS: int = 6  # open columns between visible grid and death line
 
 @onready var grid_root: Node2D = $GridRoot
 @onready var _bbs := get_node("/root/BubbleBlasterState")
@@ -45,7 +43,11 @@ var _state: State = State.AIMING
 
 var _cluster_count: int = 0      # x: distinct same-color clusters at round start (par base)
 var _shots_fired: int = 0
-var _next_reserve_col: int = 0   # next hidden column index to reveal
+var _death_line_x: float = 0.0  # computed per difficulty; 6 empty cols left of visible grid
+
+# Reserve columns hidden to the right, queued as {row→color} dicts, pop front on scroll.
+var _reserve_queue: Array = []
+var _reserve_queue_snapshot: Array = []
 
 var _cells_snapshot: Dictionary = {}  # saved at round start for retry
 var _ui: BubbleBlasterUI
@@ -73,14 +75,16 @@ func _ready() -> void:
 	_level_data = _make_level_data(_bbs.current_difficulty)
 	_generate_blob_board(_level_data)
 	_cells_snapshot = cells.duplicate(false)
+	_reserve_queue_snapshot = _copy_reserve_queue(_reserve_queue)
 	_compute_cluster_count()
-	_next_reserve_col = _level_data.visible_cols
+	_death_line_x = RIGHT_ANCHOR_X - (_level_data.visible_cols + EMPTY_COLS) * HexGrid.COL_W - HexGrid.BUBBLE_R
 	_spawn_bubble_sprites()
 	_build_slingshot()
 	_build_aim_line()
 	_init_queue()
 	_build_queue_display()
 	_build_ui()
+	queue_redraw()
 
 # ─── Slingshot + aim line ─────────────────────────────────────────────────────
 
@@ -96,7 +100,7 @@ func _build_slingshot() -> void:
 	for band_pts: Array in [[SLING_PRONG_L], [SLING_PRONG_R]]:
 		var band := Line2D.new()
 		band.default_color = Color(0.95, 0.40, 0.65, 1.0)
-		band.width = 7.0
+		band.width = 18.0
 		band.end_cap_mode = Line2D.LINE_CAP_ROUND
 		band.begin_cap_mode = Line2D.LINE_CAP_ROUND
 		band.visible = false
@@ -157,16 +161,11 @@ func _update_queue_display() -> void:
 		else:
 			node.visible = false
 
-# Returns a color index weighted proportionally to VISIBLE colors on the board.
-# Excludes reserve columns so the hopper never shows colours the player can't yet see.
 func _weighted_color() -> int:
-	var visible_vals: Array = []
-	for c: Vector2i in cells:
-		if c.x < _next_reserve_col:
-			visible_vals.append(cells[c])
-	if visible_vals.is_empty():
+	if cells.is_empty():
 		return randi() % _level_data.num_colors
-	return visible_vals[randi() % visible_vals.size()]
+	var vals := cells.values()
+	return vals[randi() % vals.size()]
 
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:
@@ -189,7 +188,7 @@ func _build_ui() -> void:
 	_ui.retry_same.connect(_on_retry_same)
 	_ui.new_game.connect(_on_new_game)
 	_ui.refill_requested.connect(_on_refill)
-	_ui.go_home.connect(_on_go_home)
+	_ui.go_home.connect(_on_go_difficulty_select)
 
 	# Persistent home button (top-left corner, always visible during play)
 	var hud := CanvasLayer.new()
@@ -244,6 +243,15 @@ func _draw() -> void:
 		3.0
 	)
 
+	# Danger zone — dashed red vertical line showing how far left bubbles can reach.
+	if _death_line_x > 0.0:
+		draw_dashed_line(
+			Vector2(_death_line_x, GRID_TOP_Y),
+			Vector2(_death_line_x, tray_top),
+			Color(0.95, 0.15, 0.15, 0.65),
+			4.0, 22.0
+		)
+
 # ─── Input ────────────────────────────────────────────────────────────────────
 
 func _input(event: InputEvent) -> void:
@@ -270,15 +278,11 @@ func _update_aim(touch_pos: Vector2) -> void:
 	if raw.x < 10.0:
 		raw.x = 10.0
 	_aim_dir = raw.normalized()
-	var visible_cells: Dictionary = {}
-	for c: Vector2i in cells:
-		if c.x < _next_reserve_col:
-			visible_cells[c] = cells[c]
 	var result := HexGrid.march_ray(
 		QUEUE_POS_CURRENT, _aim_dir,
 		BOUNCE_TOP_Y, BOUNCE_BOT_Y, RIGHT_ANCHOR_X,
 		MAX_BOUNCES, SUBSTEP_PX,
-		visible_cells, _grid
+		cells, _grid
 	)
 	var has_snap: bool = result["snap_cell"] != Vector2i(-1, -1)
 	_aim_line.show_path(result["waypoints"], result["snap_world"], has_snap)
@@ -346,27 +350,32 @@ func _check_hit() -> bool:
 		_discard_projectile()
 		return true
 
+	# Find the closest bubble within collision range.
+	var hit_cell := Vector2i(-1, -1)
+	var hit_dist := INF
 	for cell: Vector2i in cells:
-		if cell.x >= _next_reserve_col:
-			continue  # reserve columns are hidden; treat as empty space
-		if pos.distance_to(_grid.grid_to_world(cell)) < HexGrid.BUBBLE_D:
-			var snap_cell := _grid.world_to_grid(pos)
-			if cells.has(snap_cell):
-				snap_cell = _nearest_empty_neighbor(snap_cell)
-			if snap_cell.x >= 0:
-				_snap(snap_cell)
-			else:
-				_discard_projectile()
-			return true
+		var d := pos.distance_to(_grid.grid_to_world(cell))
+		if d < HexGrid.BUBBLE_D and d < hit_dist:
+			hit_dist = d
+			hit_cell = cell
 
-	return false
+	if hit_cell == Vector2i(-1, -1):
+		return false
+
+	# Attach to the closest empty neighbour of the bubble we actually touched.
+	var snap_cell := _nearest_empty_neighbor(hit_cell)
+	if snap_cell.x >= 0:
+		_snap(snap_cell)
+	else:
+		_discard_projectile()
+	return true
 
 func _nearest_empty_neighbor(cell: Vector2i) -> Vector2i:
 	var best := Vector2i(-1, -1)
 	var best_dist := INF
 	var pos := _projectile.position
 	for n in _grid.neighbors(cell):
-		if not cells.has(n) and n.x >= 0:
+		if not cells.has(n) and n.x >= 0 and n.y >= 0:
 			var d := pos.distance_to(_grid.grid_to_world(n))
 			if d < best_dist:
 				best_dist = d
@@ -389,7 +398,7 @@ func _snap(cell: Vector2i) -> void:
 	await _resolve(cell)
 	if _state == State.OVERLAY:  # win was triggered inside _resolve
 		return
-	_check_column_reveal()
+	await _check_scroll()
 	if _check_death_line():
 		_on_game_over()
 		return
@@ -507,6 +516,7 @@ func _on_win() -> void:
 	_state = State.OVERLAY
 	var stars := _calc_stars()
 	_bbs.earn_stars(stars)
+	_bbs.record_win(_bbs.current_difficulty)
 	_ui.show_win(stars, _bbs.star_bank)
 
 func _on_out_of_ammo() -> void:
@@ -522,9 +532,9 @@ func _on_game_over() -> void:
 
 func _on_retry_same() -> void:
 	cells = _cells_snapshot.duplicate(false)
+	_reserve_queue = _copy_reserve_queue(_reserve_queue_snapshot)
 	_compute_cluster_count()
 	_shots_fired = 0
-	_next_reserve_col = _level_data.visible_cols
 	_spawn_bubble_sprites()
 	_init_queue()
 	_update_queue_display()
@@ -533,9 +543,9 @@ func _on_retry_same() -> void:
 func _on_new_game() -> void:
 	_generate_blob_board(_level_data)
 	_cells_snapshot = cells.duplicate(false)
+	_reserve_queue_snapshot = _copy_reserve_queue(_reserve_queue)
 	_compute_cluster_count()
 	_shots_fired = 0
-	_next_reserve_col = _level_data.visible_cols
 	_spawn_bubble_sprites()
 	_init_queue()
 	_update_queue_display()
@@ -551,50 +561,88 @@ func _on_refill() -> void:
 		_state = State.AIMING
 
 func _on_go_home() -> void:
-	get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
+	get_tree().change_scene_to_file("res://scenes/bubble_blaster/BubbleBlasterMain.tscn")
 
-# ─── Column reveal + death line (step 7) ─────────────────────────────────────
+func _on_go_difficulty_select() -> void:
+	get_tree().change_scene_to_file("res://scenes/bubble_blaster/BubbleBlasterMain.tscn")
 
-# If the leftmost visible column is now clear, animate the next reserve column in.
-func _check_column_reveal() -> void:
-	if _next_reserve_col >= _level_data.total_cols:
+# ─── Scroll + death line ──────────────────────────────────────────────────────
+
+# Scroll the grid left if leftmost visible col AND extended zone are fully cleared.
+# Each scroll shifts all bubbles left one column-width and pops a reserve column from
+# the right. Multiple consecutive empty cols are handled in one batched scroll.
+func _check_scroll() -> void:
+	if _reserve_queue.is_empty():
 		return
-	var leftmost := _next_reserve_col - 1
+	var left_col := _level_data.visible_cols - 1
+	# Extended zone (left of visible window) must be clear.
 	for cell: Vector2i in cells:
-		if cell.x == leftmost:
-			return  # still occupied
-	_reveal_column(_next_reserve_col)
-	_next_reserve_col += 1
+		if cell.x > left_col:
+			return
+	# Count consecutive empty cols from leftmost visible rightward.
+	var scroll_count := 0
+	for i in mini(_reserve_queue.size(), _level_data.visible_cols):
+		var col_check := left_col - i
+		var occupied := false
+		for cell: Vector2i in cells:
+			if cell.x == col_check:
+				occupied = true
+				break
+		if occupied:
+			break
+		scroll_count += 1
+	if scroll_count > 0:
+		await _do_scroll(scroll_count)
 
-func _reveal_column(col: int) -> void:
-	# New column slides in from behind the right wall (z_index -1 = behind visible grid).
+func _do_scroll(count: int) -> void:
+	# Re-index all current cells/sprites: col += count (shift left in world).
+	var new_cells: Dictionary = {}
+	var new_sprites: Dictionary = {}
+	for cell: Vector2i in cells:
+		new_cells[Vector2i(cell.x + count, cell.y)] = cells[cell]
+	for cell: Vector2i in sprites:
+		new_sprites[Vector2i(cell.x + count, cell.y)] = sprites[cell]
+	cells = new_cells
+	sprites = new_sprites
+
+	# Animate existing sprites sliding left.
 	var tween := create_tween().set_parallel(true)
-	for cell: Vector2i in cells:
-		if cell.x != col:
-			continue
-		var sprite: Bubble = sprites.get(cell)
-		if not sprite or sprite.visible:
-			continue
-		var target_x := sprite.position.x
-		sprite.z_index = -1
-		sprite.position.x = RIGHT_ANCHOR_X - HexGrid.BUBBLE_R
-		sprite.visible = true
-		tween.tween_property(sprite, "position:x", target_x, 0.5)\
-			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
-	tween.finished.connect(func() -> void:
-		for c: Vector2i in cells:
-			if c.x == col:
-				var s: Bubble = sprites.get(c)
-				if s:
-					s.z_index = 0
-	)
+	for nc: Vector2i in sprites:
+		var s: Bubble = sprites[nc]
+		if s:
+			tween.tween_property(s, "position", _grid.grid_to_world(nc), 0.35)\
+				.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 
-# Returns true when any bubble has crossed the death line (game over).
+	# Add `count` new columns from reserve, sliding in from the right wall.
+	for i in count:
+		if _reserve_queue.is_empty():
+			break
+		var col_data: Dictionary = _reserve_queue.pop_front()
+		for row: int in col_data:
+			var nc := Vector2i(i, row)
+			var bubble: Bubble = BUBBLE_SCENE.instantiate()
+			bubble.color_index = col_data[row]
+			bubble.position = Vector2(RIGHT_ANCHOR_X - HexGrid.BUBBLE_R, _grid.grid_to_world(nc).y)
+			grid_root.add_child(bubble)
+			cells[nc] = col_data[row]
+			sprites[nc] = bubble
+			tween.tween_property(bubble, "position", _grid.grid_to_world(nc), 0.5)\
+				.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+
+	await tween.finished
+
 func _check_death_line() -> bool:
 	for cell: Vector2i in cells:
-		if _grid.grid_to_world(cell).x < DEATH_LINE_X:
+		# Trigger when left edge of bubble touches or crosses the death line.
+		if _grid.grid_to_world(cell).x - HexGrid.BUBBLE_R <= _death_line_x:
 			return true
 	return false
+
+func _copy_reserve_queue(src: Array) -> Array:
+	var out: Array = []
+	for d: Dictionary in src:
+		out.append(d.duplicate())
+	return out
 
 # ─── Level data factory ───────────────────────────────────────────────────────
 
@@ -610,14 +658,14 @@ func _make_level_data(difficulty: int) -> BubbleLevelData:
 			d.blob_size_max = 8
 		1:
 			d.num_colors = 4
-			d.visible_cols = 10
+			d.visible_cols = 8
 			d.total_cols = 14
 			d.bubbles_per_col = 10
 			d.blob_size_min = 4
 			d.blob_size_max = 6
 		2:
 			d.num_colors = 5
-			d.visible_cols = 12
+			d.visible_cols = 8
 			d.total_cols = 20
 			d.bubbles_per_col = 10
 			d.blob_size_min = 3
@@ -629,11 +677,15 @@ func _make_level_data(difficulty: int) -> BubbleLevelData:
 func _generate_blob_board(data: BubbleLevelData) -> void:
 	cells.clear()
 	sprites.clear()
+	_reserve_queue.clear()
+
 	var pool: Dictionary = {}
 	for col in data.total_cols:
 		for row in data.bubbles_per_col:
 			pool[Vector2i(col, row)] = true
 
+	# Generate blobs into a temporary dict, then split visible vs reserve.
+	var all_cells: Dictionary = {}
 	var next_color := 0
 	while not pool.is_empty():
 		var start: Vector2i
@@ -659,8 +711,18 @@ func _generate_blob_board(data: BubbleLevelData) -> void:
 						frontier.append(n)
 
 		for c in blob:
-			cells[c] = next_color
+			all_cells[c] = next_color
 		next_color = (next_color + 1) % data.num_colors
+
+	# Visible columns go into cells; reserve columns queue up for later scroll-in.
+	var num_reserve := data.total_cols - data.visible_cols
+	for _i in num_reserve:
+		_reserve_queue.append({})
+	for cell: Vector2i in all_cells:
+		if cell.x < data.visible_cols:
+			cells[cell] = all_cells[cell]
+		else:
+			_reserve_queue[cell.x - data.visible_cols][cell.y] = all_cells[cell]
 
 # ─── Sprite spawning ──────────────────────────────────────────────────────────
 
@@ -672,6 +734,5 @@ func _spawn_bubble_sprites() -> void:
 		var bubble: Bubble = BUBBLE_SCENE.instantiate()
 		bubble.color_index = cells[cell]
 		bubble.position = _grid.grid_to_world(cell)
-		bubble.visible = cell.x < _next_reserve_col
 		grid_root.add_child(bubble)
 		sprites[cell] = bubble
