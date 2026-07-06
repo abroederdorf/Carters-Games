@@ -15,7 +15,9 @@ const PROJECTILE_SPEED: float = 1400.0
 const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5
 const BOUNCE_TOP_Y: float = HexGrid.BUBBLE_R
 const BOUNCE_BOT_Y: float = 1080.0 - HexGrid.BUBBLE_R
-const MAX_BOUNCES: int = 4
+# Minimum 25° from vertical keeps x-velocity high enough that the ball always
+# reaches the right wall within a few bounces — no bounce cap needed.
+const MIN_ANGLE_FROM_VERTICAL: float = 25.0
 
 # Current (loaded) ball — sits between the slingshot prong tips.
 # Prong tip world positions derived from the 2048×2048 sprite at scale 140/2048.
@@ -63,7 +65,6 @@ var _aim_dir: Vector2 = Vector2.RIGHT
 
 var _projectile: Bubble = null
 var _proj_vel: Vector2 = Vector2.RIGHT  # live direction during flight (may bounce)
-var _proj_bounces: int = 0
 
 # Bubble queue: queue[0] fires next; visual hopper shows first 3.
 var _queue: Array[int] = []
@@ -302,13 +303,17 @@ func _input(event: InputEvent) -> void:
 
 func _update_aim(touch_pos: Vector2) -> void:
 	var raw := touch_pos - QUEUE_POS_CURRENT
-	if raw.x < 10.0:
-		raw.x = 10.0
+	# Enforce minimum angle from vertical: x must be ≥ sin(MIN_ANGLE_FROM_VERTICAL)
+	# of the total length, which caps the steepness and guarantees the ball always
+	# reaches the right wall without needing a bounce limit.
+	var min_x := sinf(deg_to_rad(MIN_ANGLE_FROM_VERTICAL)) * raw.length()
+	if raw.x < min_x:
+		raw.x = min_x
 	_aim_dir = raw.normalized()
 	var result := HexGrid.march_ray(
 		QUEUE_POS_CURRENT, _aim_dir,
 		BOUNCE_TOP_Y, BOUNCE_BOT_Y, RIGHT_ANCHOR_X,
-		MAX_BOUNCES, SUBSTEP_PX,
+		20, SUBSTEP_PX,
 		cells, _grid
 	)
 	var has_snap: bool = result["snap_cell"] != Vector2i(-1, -1)
@@ -331,7 +336,6 @@ func _fire() -> void:
 		return
 	_state = State.FIRING
 	_proj_vel = _aim_dir
-	_proj_bounces = 0
 	_projectile = BUBBLE_SCENE.instantiate()
 	_projectile.color_index = _queue[0]
 	_projectile.position = QUEUE_POS_CURRENT
@@ -354,17 +358,13 @@ func _process(delta: float) -> void:
 			return
 
 func _apply_bounce() -> void:
-	if _proj_bounces >= MAX_BOUNCES:
-		return
 	var pos := _projectile.position
 	if pos.y < BOUNCE_TOP_Y:
 		_projectile.position.y = 2.0 * BOUNCE_TOP_Y - pos.y
 		_proj_vel.y = absf(_proj_vel.y)
-		_proj_bounces += 1
 	elif pos.y > BOUNCE_BOT_Y:
 		_projectile.position.y = 2.0 * BOUNCE_BOT_Y - pos.y
 		_proj_vel.y = -absf(_proj_vel.y)
-		_proj_bounces += 1
 
 func _check_hit() -> bool:
 	var pos := _projectile.position
