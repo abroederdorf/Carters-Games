@@ -31,8 +31,8 @@ const SLING_PRONG_R: Vector2 = SLINGSHOT_POS + Vector2(111.0, -183.0)
 
 # Hopper: vertical column centered above the slingshot.
 # HOPPER_BOTTOM is the y-centre of slot 0 (next ball), sitting just above the fork.
-const HOPPER_X: float = SLINGSHOT_POS.x
-const HOPPER_BOTTOM: float = SLINGSHOT_POS.y - 220.0  # 620 — just above the prong tips
+const HOPPER_X: float = PANEL_W / 2.0
+const HOPPER_BOTTOM: float = SLINGSHOT_POS.y - 270.0  # more gap between hopper and slingshot fork
 const HOPPER_SPACING_V: float = 95.0
 const HOPPER_SCALE: float = 0.80
 const HOPPER_MAX: int = 6
