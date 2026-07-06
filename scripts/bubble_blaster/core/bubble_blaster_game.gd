@@ -19,8 +19,8 @@ const BOUNCE_BOT_Y: float = 1080.0 - HexGrid.BUBBLE_R
 # reaches the right wall within a few bounces — no bounce cap needed.
 const MIN_ANGLE_FROM_VERTICAL: float = 25.0
 
-# Left launcher panel — slingshot and hopper live here.
-const PANEL_W: float = 320.0
+# Left launcher panel — hopper column lives here; slingshot arm extends beyond right edge.
+const PANEL_W: float = 260.0
 
 # Current (loaded) ball — sits between the slingshot prong tips.
 # Prong tip world positions derived from the 2048×2048 sprite at scale 140/2048.
@@ -29,9 +29,10 @@ const QUEUE_SCALE_CURRENT: float = 1.0
 const SLING_PRONG_L: Vector2 = SLINGSHOT_POS + Vector2(-111.0, -183.0)
 const SLING_PRONG_R: Vector2 = SLINGSHOT_POS + Vector2(111.0, -183.0)
 
-# Hopper: vertical column on the left panel, above the slingshot.
-const HOPPER_X: float = 110.0
-const HOPPER_Y_START: float = 60.0
+# Hopper: vertical column centered above the slingshot.
+# HOPPER_BOTTOM is the y-centre of slot 0 (next ball), sitting just above the fork.
+const HOPPER_X: float = SLINGSHOT_POS.x
+const HOPPER_BOTTOM: float = SLINGSHOT_POS.y - 220.0  # 620 — just above the prong tips
 const HOPPER_SPACING_V: float = 95.0
 const HOPPER_SCALE: float = 0.80
 const HOPPER_MAX: int = 6
@@ -168,13 +169,13 @@ func _update_queue_display() -> void:
 	else:
 		cur.visible = false
 
-	# Hopper column — next balls stacked vertically down the left panel.
+	# Hopper column — slot 0 (next) at the bottom, feeding down into the slingshot.
 	for i in HOPPER_MAX:
 		var node: Bubble = _queue_display[i + 1]
 		var qi := i + 1
 		if qi < _queue.size():
 			node.color_index = _queue[qi]
-			node.position = Vector2(HOPPER_X, HOPPER_Y_START + i * HOPPER_SPACING_V)
+			node.position = Vector2(HOPPER_X, HOPPER_BOTTOM - i * HOPPER_SPACING_V)
 			node.scale = Vector2.ONE * HOPPER_SCALE
 			node.visible = true
 		else:
@@ -189,7 +190,7 @@ func _weighted_color() -> int:
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:
 	for i in mini(2, _queue.size() - 1):  # only the next 2 hopper balls are swappable
-		var hpos := Vector2(HOPPER_X, HOPPER_Y_START + i * HOPPER_SPACING_V)
+		var hpos := Vector2(HOPPER_X, HOPPER_BOTTOM - i * HOPPER_SPACING_V)
 		if touch_pos.distance_to(hpos) < QUEUE_SWAP_RADIUS:
 			var qi := i + 1
 			var tmp := _queue[0]
@@ -248,21 +249,18 @@ func _draw() -> void:
 	draw_rect(Rect2(RIGHT_ANCHOR_X, 0.0, 2000.0, 1080.0), PANEL_COLOR)
 	draw_line(Vector2(RIGHT_ANCHOR_X, 0.0), Vector2(RIGHT_ANCHOR_X, 1080.0), PANEL_BORDER, 5.0)
 
-	# Swap-zone highlight (amber-yellow) — first 2 hopper slots are swappable.
-	const PAD := 18.0
+	# Swap-zone highlight — full panel width, covers the bottom 2 hopper slots.
 	var bubble_r := HexGrid.BUBBLE_R * HOPPER_SCALE
-	var swap_h := HOPPER_SPACING_V * 2.0 - PAD * 0.5
-	draw_rect(
-		Rect2(HOPPER_X - bubble_r - PAD, HOPPER_Y_START - PAD, bubble_r * 2.0 + PAD * 2.0, swap_h + PAD),
-		Color(0.95, 0.78, 0.05, 0.72)
-	)
+	const SWAP_PAD := 16.0
+	var swap_top := HOPPER_BOTTOM - HOPPER_SPACING_V - bubble_r - SWAP_PAD
+	var swap_bot := HOPPER_BOTTOM + bubble_r + SWAP_PAD
+	draw_rect(Rect2(0.0, swap_top, PANEL_W, swap_bot - swap_top), Color(0.95, 0.78, 0.05, 0.72))
 
-	# Horizontal divider below the swap zone.
-	var div_y := HOPPER_Y_START + swap_h
+	# Thin line at top of swap zone separating it from the rest of the hopper.
 	draw_line(
-		Vector2(HOPPER_X - bubble_r - PAD + 4.0, div_y),
-		Vector2(HOPPER_X + bubble_r + PAD - 4.0, div_y),
-		Color(1.0, 1.0, 1.0, 0.80),
+		Vector2(8.0, swap_top),
+		Vector2(PANEL_W - 8.0, swap_top),
+		Color(1.0, 1.0, 1.0, 0.70),
 		3.0
 	)
 
@@ -278,7 +276,7 @@ func _draw() -> void:
 	if _tutorial_active:
 		match _tut_hint_type:
 			TutHint.SWAP:
-				var slot_pos := Vector2(HOPPER_X, HOPPER_Y_START + _tut_swap_slot * HOPPER_SPACING_V)
+				var slot_pos := Vector2(HOPPER_X, HOPPER_BOTTOM - _tut_swap_slot * HOPPER_SPACING_V)
 				var r := HexGrid.BUBBLE_R * HOPPER_SCALE * _tut_ring_scale
 				draw_arc(slot_pos, r, 0.0, TAU, 48, Color(1.0, 0.95, 0.1, 0.9), 5.0)
 			TutHint.TARGET:
