@@ -8,7 +8,7 @@ const BTN_HOME_TEX = preload("res://assets/sprites/ui/button_home.png")
 
 const RIGHT_ANCHOR_X: float = 1920.0
 const GRID_TOP_Y: float = 60.0
-const SLINGSHOT_POS: Vector2 = Vector2(130.0, 760.0)
+const SLINGSHOT_POS: Vector2 = Vector2(280.0, 760.0)
 const PROJECTILE_SPEED: float = 1400.0
 const SUBSTEP_PX: float = HexGrid.BUBBLE_R * 0.5
 const BOUNCE_TOP_Y: float = HexGrid.BUBBLE_R
@@ -17,10 +17,10 @@ const MAX_BOUNCES: int = 4
 
 # Current (loaded) ball — sits between the slingshot prong tips.
 # Prong tip world positions derived from the 2048×2048 sprite at scale 140/2048.
-const QUEUE_POS_CURRENT: Vector2 = Vector2(130.0, 722.0)
+const QUEUE_POS_CURRENT: Vector2 = SLINGSHOT_POS + Vector2(0.0, -38.0)
 const QUEUE_SCALE_CURRENT: float = 1.0
-const SLING_PRONG_L: Vector2 = Vector2(93.0, 699.0)
-const SLING_PRONG_R: Vector2 = Vector2(167.0, 699.0)
+const SLING_PRONG_L: Vector2 = SLINGSHOT_POS + Vector2(-37.0, -61.0)
+const SLING_PRONG_R: Vector2 = SLINGSHOT_POS + Vector2(37.0, -61.0)
 
 # Hopper row: next N balls displayed below the slingshot.
 const HOPPER_Y: float = 965.0
@@ -117,8 +117,9 @@ func _build_aim_line() -> void:
 func _init_queue() -> void:
 	_ammo_total = 2 * _cluster_count
 	_queue.clear()
-	_shots_total_gen = mini(3, _ammo_total)
-	for _i in _shots_total_gen:
+	var initial := mini(HOPPER_MAX + 1, _ammo_total)
+	_shots_total_gen = initial
+	for _i in initial:
 		_queue.append(_weighted_color())
 
 func _build_queue_display() -> void:
@@ -349,7 +350,7 @@ func _snap(cell: Vector2i) -> void:
 	_projectile = null
 	_shots_fired += 1
 	_queue.pop_front()
-	if _shots_total_gen < _ammo_total:
+	while _shots_total_gen < _ammo_total and _queue.size() < HOPPER_MAX + 1:
 		_queue.append(_weighted_color())
 		_shots_total_gen += 1
 	_update_queue_display()
@@ -511,7 +512,7 @@ func _on_new_game() -> void:
 func _on_refill() -> void:
 	if BubbleBlasterState.spend_star():
 		_ammo_total += _cluster_count
-		for _i in mini(3 - _queue.size(), _ammo_total - _shots_total_gen):
+		while _shots_total_gen < _ammo_total and _queue.size() < HOPPER_MAX + 1:
 			_queue.append(_weighted_color())
 			_shots_total_gen += 1
 		_update_queue_display()
@@ -534,6 +535,7 @@ func _check_column_reveal() -> void:
 	_next_reserve_col += 1
 
 func _reveal_column(col: int) -> void:
+	# New column slides in from behind the right wall (z_index -1 = behind visible grid).
 	var tween := create_tween().set_parallel(true)
 	for cell: Vector2i in cells:
 		if cell.x != col:
@@ -542,9 +544,18 @@ func _reveal_column(col: int) -> void:
 		if not sprite or sprite.visible:
 			continue
 		var target_x := sprite.position.x
-		sprite.position.x = target_x - 240.0  # start just off-screen to the left
+		sprite.z_index = -1
+		sprite.position.x = RIGHT_ANCHOR_X - HexGrid.BUBBLE_R
 		sprite.visible = true
-		tween.tween_property(sprite, "position:x", target_x, 0.45)
+		tween.tween_property(sprite, "position:x", target_x, 0.5)\
+			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	tween.finished.connect(func() -> void:
+		for c: Vector2i in cells:
+			if c.x == col:
+				var s: Bubble = sprites.get(c)
+				if s:
+					s.z_index = 0
+	)
 
 # Returns true when any bubble has crossed the death line (game over).
 func _check_death_line() -> bool:
