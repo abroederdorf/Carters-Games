@@ -3,6 +3,7 @@ extends Control
 const SPLASH_BG = preload("res://assets/icons/splash_screen.png")
 const GONE_FISHIN_ICON = preload("res://assets/icons/Gone-Fishin_Icon.png")
 const FIND_IT_ICON = preload("res://assets/icons/Find-It_Icon.png")
+const BUBBLE_BLASTER_ICON = preload("res://assets/icons/Bubble-Blaster_Icon.png")
 const SOUND_ON = preload("res://assets/sprites/ui/button_sound.png")
 const SOUND_OFF = preload("res://assets/sprites/ui/button_mute.png")
 
@@ -68,6 +69,15 @@ func _build_ui() -> void:
 		find_card.modulate = Color(1, 1, 1, 0.45)
 		find_card.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hbox.add_child(find_card)
+
+	var bubble_card := _make_game_card(
+		"Bubble Blast",
+		BUBBLE_BLASTER_ICON,
+		Color(0.80, 0.10, 0.10, 1),
+		Color(0.50, 0.04, 0.04, 1)
+	)
+	bubble_card.pressed.connect(_on_bubble_blaster_pressed)
+	hbox.add_child(bubble_card)
 
 	_mute_btn = Button.new()
 	_mute_btn.flat = true
@@ -137,6 +147,8 @@ func _make_game_card(title: String, icon: Texture2D, color: Color, border: Color
 	lbl.add_theme_font_size_override("font_size", 40)
 	lbl.add_theme_color_override("font_color", Color.WHITE)
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	inner.add_child(lbl)
 
@@ -145,6 +157,10 @@ func _make_game_card(title: String, icon: Texture2D, color: Color, border: Color
 func _on_fishing_pressed() -> void:
 	AudioManager.play_sfx("pop")
 	get_tree().change_scene_to_file("res://scenes/fishing/game.tscn")
+
+func _on_bubble_blaster_pressed() -> void:
+	AudioManager.play_sfx("pop")
+	get_tree().change_scene_to_file("res://scenes/bubble_blaster/BubbleBlasterMain.tscn")
 
 func _on_find_it_pressed() -> void:
 	AudioManager.play_sfx("pop")
