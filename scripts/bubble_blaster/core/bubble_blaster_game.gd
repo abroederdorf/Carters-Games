@@ -238,19 +238,21 @@ func _draw() -> void:
 	const PANEL_COLOR := Color(0.04, 0.04, 0.20, 0.85)
 	const PANEL_BORDER := Color(0.25, 0.25, 0.55, 0.90)
 
-	# Left launcher panel background.
-	draw_rect(Rect2(0.0, 0.0, PANEL_W, 1080.0), PANEL_COLOR)
-	draw_line(Vector2(PANEL_W, 0.0), Vector2(PANEL_W, 1080.0), PANEL_BORDER, 5.0)
+	# Compute swap zone bounds first — panel height matches.
+	var bubble_r := HexGrid.BUBBLE_R * HOPPER_SCALE
+	const SWAP_PAD := 16.0
+	var swap_top := HOPPER_BOTTOM - HOPPER_SPACING_V - bubble_r - SWAP_PAD
+	var swap_bot := HOPPER_BOTTOM + bubble_r + SWAP_PAD
+
+	# Left launcher panel — stops at the bottom of the swap zone.
+	draw_rect(Rect2(0.0, 0.0, PANEL_W, swap_bot), PANEL_COLOR)
+	draw_line(Vector2(PANEL_W, 0.0), Vector2(PANEL_W, swap_bot), PANEL_BORDER, 5.0)
 
 	# Right wall — same dark panel, extends beyond 1920 for wider phone screens.
 	draw_rect(Rect2(RIGHT_ANCHOR_X, 0.0, 2000.0, 1080.0), PANEL_COLOR)
 	draw_line(Vector2(RIGHT_ANCHOR_X, 0.0), Vector2(RIGHT_ANCHOR_X, 1080.0), PANEL_BORDER, 5.0)
 
 	# Swap-zone highlight — full panel width, covers the bottom 2 hopper slots.
-	var bubble_r := HexGrid.BUBBLE_R * HOPPER_SCALE
-	const SWAP_PAD := 16.0
-	var swap_top := HOPPER_BOTTOM - HOPPER_SPACING_V - bubble_r - SWAP_PAD
-	var swap_bot := HOPPER_BOTTOM + bubble_r + SWAP_PAD
 	draw_rect(Rect2(0.0, swap_top, PANEL_W, swap_bot - swap_top), Color(0.95, 0.78, 0.05, 0.72))
 
 	# Thin line at top of swap zone separating it from the rest of the hopper.
