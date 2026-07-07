@@ -39,6 +39,7 @@ const HOPPER_MAX: int = 6
 const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 1.1
 
 const EMPTY_COLS: int = 6  # open columns between visible grid and death line
+const COLOR_RAINBOW: int = 9  # sentinel — matches Bubble.TEXTURES index 9
 
 @onready var grid_root: Node2D = $GridRoot
 @onready var _bbs := get_node("/root/BubbleBlasterState")
@@ -75,6 +76,7 @@ var _queue: Array[int] = []
 var _queue_display: Array[Bubble] = []
 var _ammo_total: int = 0    # 2 × cluster_count; refills add to this (step 8)
 var _shots_total_gen: int = 0  # total bubbles ever generated into the queue
+var _rainbow_shots: Array[int] = []  # pre-planned shot indices that emit a rainbow
 
 var _tutorial_active: bool = false
 var _tutorial_hud: CanvasLayer = null
@@ -139,10 +141,26 @@ func _build_aim_line() -> void:
 func _init_queue() -> void:
 	_ammo_total = 2 * _cluster_count
 	_queue.clear()
+	_shots_total_gen = 0
+	_rainbow_shots.clear()
+	var rc := _rainbow_count()
+	for i in rc:
+		_rainbow_shots.append(int((i + 1) * _ammo_total / float(rc + 1)))
 	var initial := mini(HOPPER_MAX + 1, _ammo_total)
-	_shots_total_gen = initial
 	for _i in initial:
-		_queue.append(_weighted_color())
+		_queue.append(_next_queued_color())
+		_shots_total_gen += 1
+
+func _rainbow_count() -> int:
+	match _bbs.current_difficulty:
+		0: return 2  # Easy
+		1: return 1  # Medium
+		_: return 0  # Hard
+
+func _next_queued_color() -> int:
+	if _shots_total_gen in _rainbow_shots:
+		return COLOR_RAINBOW
+	return _weighted_color()
 
 func _build_queue_display() -> void:
 	_queue_display.clear()
@@ -195,7 +213,10 @@ func _weighted_color() -> int:
 				if not visited.has(n) and cells.get(n, -1) == color:
 					visited[n] = true
 					bfs.append(n)
-		pool.append(color)
+		if color != COLOR_RAINBOW:
+			pool.append(color)
+	if pool.is_empty():
+		return randi() % _level_data.num_colors
 	return pool[randi() % pool.size()]
 
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
@@ -442,7 +463,7 @@ func _snap(cell: Vector2i) -> void:
 	_shots_fired += 1
 	_queue.pop_front()
 	while _shots_total_gen < _ammo_total and _queue.size() < HOPPER_MAX + 1:
-		_queue.append(_weighted_color())
+		_queue.append(_next_queued_color())
 		_shots_total_gen += 1
 	_update_queue_display()
 	await _resolve(cell)
@@ -467,7 +488,64 @@ func _discard_projectile() -> void:
 
 # ─── Match + cascade (step 4) ─────────────────────────────────────────────────
 
+func _set_cell_color(cell: Vector2i, color: int) -> void:
+	cells[cell] = color
+	var s: Bubble = sprites.get(cell)
+	if s:
+		s.color_index = color
+
+func _best_neighbor_color(cell: Vector2i) -> int:
+	var visited: Dictionary = {cell: true}
+	var best_color := -1
+	var best_size := 0
+	for n in _grid.neighbors(cell):
+		if visited.has(n):
+			continue
+		var c := cells.get(n, -1)
+		if c < 0 or c == COLOR_RAINBOW:
+			continue
+		var size := 0
+		var bfs: Array[Vector2i] = [n]
+		visited[n] = true
+		while not bfs.is_empty():
+			var curr: Vector2i = bfs.pop_front()
+			size += 1
+			for nn in _grid.neighbors(curr):
+				if not visited.has(nn) and cells.get(nn, -1) == c:
+					visited[nn] = true
+					bfs.append(nn)
+		if size > best_size:
+			best_size = size
+			best_color = c
+	return best_color
+
+func _flood_adopt_rainbows(start: Vector2i, color: int) -> void:
+	var bfs: Array[Vector2i] = [start]
+	var visited: Dictionary = {start: true}
+	while not bfs.is_empty():
+		var curr: Vector2i = bfs.pop_front()
+		_set_cell_color(curr, color)
+		for n in _grid.neighbors(curr):
+			if not visited.has(n) and cells.get(n, -1) == COLOR_RAINBOW:
+				visited[n] = true
+				bfs.append(n)
+
+func _resolve_rainbows(landed: Vector2i) -> void:
+	var landed_color := cells.get(landed, -1)
+	if landed_color == COLOR_RAINBOW:
+		var adopted := _best_neighbor_color(landed)
+		if adopted >= 0:
+			_flood_adopt_rainbows(landed, adopted)
+	else:
+		for n in _grid.neighbors(landed):
+			if cells.get(n, -1) == COLOR_RAINBOW:
+				_flood_adopt_rainbows(n, landed_color)
+
 func _resolve(landed: Vector2i) -> void:
+	_resolve_rainbows(landed)
+	# If rainbow landed with no colored neighbors, it stays on board — nothing to pop yet.
+	if cells.get(landed, -1) == COLOR_RAINBOW:
+		return
 	# A. Same-color match from the landed cell.
 	var group := _bfs_same_color(landed)
 	if group.size() < 3:
@@ -806,6 +884,7 @@ func _setup_tutorial_board() -> void:
 	cells = {}
 	_reserve_queue = []
 	_reserve_queue_snapshot = []
+	_rainbow_shots.clear()
 	# 1 isolated red + 3-bubble blue cluster. Player must build the red up to 3
 	# (needs 2 more shots) then pop the blue cluster (already 3, needs 1 more).
 	cells[Vector2i(0, 7)] = 0  # red — isolated
