@@ -32,13 +32,14 @@ func _ready() -> void:
 func show_win(stars: int, bank: int) -> void:
 	_message_lbl.text = "Level Cleared!"
 	_sub_lbl.text = "Stars earned: %d" % stars
+	_sub_lbl.visible = true
 	_set_stars(stars)
 	_set_buttons_win()
 	visible = true
 
 func show_out_of_ammo(bank: int, refill_amt: int) -> void:
 	_message_lbl.text = "No Bubbles!"
-	_sub_lbl.text = ""
+	_sub_lbl.visible = false
 	if bank > 0:
 		_set_row_bubbles()
 	else:
@@ -48,7 +49,7 @@ func show_out_of_ammo(bank: int, refill_amt: int) -> void:
 
 func show_game_over() -> void:
 	_message_lbl.text = "Game Over!"
-	_sub_lbl.text = "The bubbles reached the slingshot."
+	_sub_lbl.visible = false
 	_set_stars(0)
 	_set_buttons_game_over()
 	visible = true
@@ -180,16 +181,13 @@ func _set_buttons_win() -> void:
 
 func _set_buttons_ammo(bank: int, _refill_amt: int) -> void:
 	_clear_buttons()
-	var home := _make_icon_btn(BTN_HOME, 90)
-	home.pressed.connect(func() -> void: hide_overlay(); go_home.emit())
-	_btn_row.add_child(home)
-
-	var retry := _make_icon_btn(BTN_REPLAY, 90)
-	retry.pressed.connect(func() -> void: hide_overlay(); retry_same.emit())
-	_btn_row.add_child(retry)
 
 	if bank > 0:
-		# Amber button showing star icon + "−1" cost.
+		var vbox := VBoxContainer.new()
+		vbox.add_theme_constant_override("separation", 36)
+		vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+		_btn_row.add_child(vbox)
+
 		var amber_n := StyleBoxFlat.new()
 		amber_n.bg_color = Color(0.90, 0.65, 0.04)
 		amber_n.corner_radius_top_left = 20
@@ -209,7 +207,7 @@ func _set_buttons_ammo(bank: int, _refill_amt: int) -> void:
 		amber_p.corner_radius_bottom_right = 20
 
 		_refill_btn = Button.new()
-		_refill_btn.custom_minimum_size = Vector2(160, 90)
+		_refill_btn.custom_minimum_size = Vector2(300, 90)
 		_refill_btn.focus_mode = Control.FOCUS_NONE
 		_refill_btn.add_theme_stylebox_override("normal", amber_n)
 		_refill_btn.add_theme_stylebox_override("hover", amber_n)
@@ -217,10 +215,18 @@ func _set_buttons_ammo(bank: int, _refill_amt: int) -> void:
 
 		var row := HBoxContainer.new()
 		row.alignment = BoxContainer.ALIGNMENT_CENTER
-		row.add_theme_constant_override("separation", 6)
+		row.add_theme_constant_override("separation", 8)
 		row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 		row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		_refill_btn.add_child(row)
+
+		var refill_lbl := Label.new()
+		refill_lbl.text = "Refill"
+		refill_lbl.add_theme_font_size_override("font_size", 44)
+		refill_lbl.add_theme_color_override("font_color", Color(0.10, 0.05, 0.00))
+		refill_lbl.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		refill_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		row.add_child(refill_lbl)
 
 		var star_img := TextureRect.new()
 		star_img.texture = STAR_FILLED
@@ -240,7 +246,29 @@ func _set_buttons_ammo(bank: int, _refill_amt: int) -> void:
 		row.add_child(cost_lbl)
 
 		_refill_btn.pressed.connect(func() -> void: hide_overlay(); refill_requested.emit())
-		_btn_row.add_child(_refill_btn)
+		vbox.add_child(_refill_btn)
+
+		var icon_row := HBoxContainer.new()
+		icon_row.alignment = BoxContainer.ALIGNMENT_CENTER
+		icon_row.add_theme_constant_override("separation", 28)
+		vbox.add_child(icon_row)
+
+		var home := _make_icon_btn(BTN_HOME, 80)
+		home.pressed.connect(func() -> void: hide_overlay(); go_home.emit())
+		icon_row.add_child(home)
+
+		var retry := _make_icon_btn(BTN_REPLAY, 80)
+		retry.pressed.connect(func() -> void: hide_overlay(); retry_same.emit())
+		icon_row.add_child(retry)
+
+	else:
+		var home := _make_icon_btn(BTN_HOME, 90)
+		home.pressed.connect(func() -> void: hide_overlay(); go_home.emit())
+		_btn_row.add_child(home)
+
+		var retry := _make_icon_btn(BTN_REPLAY, 90)
+		retry.pressed.connect(func() -> void: hide_overlay(); retry_same.emit())
+		_btn_row.add_child(retry)
 
 func _set_buttons_game_over() -> void:
 	_clear_buttons()
