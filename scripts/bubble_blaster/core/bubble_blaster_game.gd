@@ -58,7 +58,8 @@ var _death_line_x: float = 0.0  # computed per difficulty; 6 empty cols left of 
 var _reserve_queue: Array = []
 var _reserve_queue_snapshot: Array = []
 
-var _cells_snapshot: Dictionary = {}  # saved at round start for retry
+var _cells_snapshot: Dictionary = {}
+var _cluster_count_snapshot: int = 0  # full-board cluster count saved at round start for retry
 var _ui: BubbleBlasterUI
 
 var _slingshot: Sprite2D
@@ -93,7 +94,7 @@ func _ready() -> void:
 	_generate_blob_board(_level_data)
 	_cells_snapshot = cells.duplicate(false)
 	_reserve_queue_snapshot = _copy_reserve_queue(_reserve_queue)
-	_compute_cluster_count()
+	_cluster_count_snapshot = _cluster_count
 	_death_line_x = RIGHT_ANCHOR_X - (_level_data.visible_cols + EMPTY_COLS) * HexGrid.COL_W - HexGrid.BUBBLE_R
 	_spawn_bubble_sprites()
 	_build_slingshot()
@@ -626,19 +627,20 @@ func _find_floating() -> Array[Vector2i]:
 	return floating
 
 # Connected-components pass at round start to compute x (par base).
-func _compute_cluster_count() -> void:
+func _compute_cluster_count(src: Dictionary = {}) -> void:
+	var board := src if not src.is_empty() else cells
 	var visited: Dictionary = {}
 	_cluster_count = 0
-	for cell: Vector2i in cells:
+	for cell: Vector2i in board:
 		if visited.has(cell):
 			continue
-		var color: int = cells[cell]
+		var color: int = board[cell]
 		var queue: Array[Vector2i] = [cell]
 		visited[cell] = true
 		while not queue.is_empty():
 			var curr: Vector2i = queue.pop_front()
 			for n in _grid.neighbors(curr):
-				if not visited.has(n) and cells.get(n, -1) == color:
+				if not visited.has(n) and board.get(n, -1) == color:
 					visited[n] = true
 					queue.append(n)
 		_cluster_count += 1
@@ -667,7 +669,7 @@ func _on_game_over() -> void:
 func _on_retry_same() -> void:
 	cells = _cells_snapshot.duplicate(false)
 	_reserve_queue = _copy_reserve_queue(_reserve_queue_snapshot)
-	_compute_cluster_count()
+	_cluster_count = _cluster_count_snapshot
 	_shots_fired = 0
 	_spawn_bubble_sprites()
 	_init_queue()
@@ -678,7 +680,7 @@ func _on_new_game() -> void:
 	_generate_blob_board(_level_data)
 	_cells_snapshot = cells.duplicate(false)
 	_reserve_queue_snapshot = _copy_reserve_queue(_reserve_queue)
-	_compute_cluster_count()
+	_cluster_count_snapshot = _cluster_count
 	_shots_fired = 0
 	_spawn_bubble_sprites()
 	_init_queue()
@@ -848,6 +850,9 @@ func _generate_blob_board(data: BubbleLevelData) -> void:
 		for c in blob:
 			all_cells[c] = next_color
 		next_color = (next_color + 1) % data.num_colors
+
+	# Budget ammo from the full board (visible + reserve) so reserve columns are accounted for.
+	_compute_cluster_count(all_cells)
 
 	# Visible columns go into cells; reserve columns queue up for later scroll-in.
 	var num_reserve := data.total_cols - data.visible_cols
