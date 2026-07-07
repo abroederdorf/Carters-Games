@@ -482,15 +482,6 @@ theme_override_styles/pressed = SubResource("SBF_t3_p")
 theme_override_styles/hover = SubResource("SBF_t3_n")
 text = "Math"
 
-[node name="MenuBtnSpelling" type="Button" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox/ModeSection/ModeButtons" unique_id=1848184351]
-custom_minimum_size = Vector2(130, 130)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("SBF_t5_n")
-theme_override_styles/pressed = SubResource("SBF_t5_p")
-theme_override_styles/hover = SubResource("SBF_t5_n")
-text = "ABC"
 
 [node name="DifficultySection" type="VBoxContainer" parent="MenuScreen/MenuScroll/MenuCenter/MenuVBox" unique_id=1309912857]
 layout_mode = 2
@@ -726,15 +717,6 @@ theme_override_styles/pressed = SubResource("SBF_t3_p")
 theme_override_styles/hover = SubResource("SBF_t3_n")
 text = "Math"
 
-[node name="LBBtnSpelling" type="Button" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox/ModeSection/ModeButtons" unique_id=987246122]
-custom_minimum_size = Vector2(100, 80)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("SBF_t5_n")
-theme_override_styles/pressed = SubResource("SBF_t5_p")
-theme_override_styles/hover = SubResource("SBF_t5_n")
-text = "ABC"
 
 [node name="DifficultySection" type="VBoxContainer" parent="LeaderboardScreen/LeaderboardScroll/LeaderboardCenter/LeaderboardVBox" unique_id=744231410]
 layout_mode = 2

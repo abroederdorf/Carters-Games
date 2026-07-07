@@ -21,56 +21,7 @@ const FISH_TEXTURES = [
 
 const CAST_DURATION = 0.5
 
-const SPELL_3_PICTURE: Array[String] = [
-	"bag", "bat", "bay", "bed", "bee", "big", "bin", "bit", "boo",
-	"bow", "box", "bug", "bun", "can", "cap", "cat", "cow", "cub",
-	"day", "dig", "dog", "dot", "fan", "fat", "fed", "fin", "fog",
-	"fox", "fun", "goo", "ham", "hat", "hay", "hen", "hit", "hog",
-	"hop", "hot", "hug", "jam", "jaw", "jet", "log", "lot", "man",
-	"map", "mat", "men", "moo", "mop", "mug", "nap", "net", "not",
-	"paw", "pen", "pet", "pig", "pin", "pop", "pot", "ram", "ran",
-	"rat", "ray", "red", "row", "rub", "rug", "run", "sat", "saw",
-	"sit", "sow", "sun", "tag", "tap", "tee", "ten", "top", "tub",
-	"van", "wag", "wet", "win", "yam", "zoo"
-]
-const SPELL_4_PICTURE: Array[String] = [
-	"back", "bake", "bale", "bell", "bike", "bite", "boat", "bone",
-	"book", "bore", "buck", "cake", "cane", "cart", "chest", "coat",
-	"cone", "cook", "cool", "cope", "core", "dart", "date", "dent",
-	"dice", "dine", "dock", "dome", "duck", "face", "fake", "fart",
-	"fate", "fine", "fool", "game", "gate", "goat", "hide", "hike",
-	"hole", "home", "hope", "hose", "huck", "kick", "king", "kite",
-	"lace", "lake", "lane", "late", "lick", "like", "line", "lock",
-	"lone", "look", "luck", "mail", "make", "mane", "mate", "mice",
-	"mine", "mite", "mole", "mope", "more", "muck", "nail", "name",
-	"nice", "nine", "nose", "pace", "pack", "pail", "pale", "pick",
-	"pine", "pole", "pool", "pose", "puck", "race", "rack", "rake",
-	"rate", "rice", "ride", "ring", "rink", "rock", "rope", "rose",
-	"sack", "sail", "same", "sick", "side", "sink", "site", "sock",
-	"some", "sore", "tail", "take", "tale", "tart", "tent", "tick",
-	"tone", "tool", "tuck", "vent", "vest", "vine", "wake", "well",
-	"wide", "wine", "wing", "wool", "wore", "yell", "yuck", "zone"
-]
-const SPELL_2_SIGHT: Array[String] = [
-	"be", "by", "do", "go", "he", "hi", "is", "it", "me", "my",
-	"no", "of", "on", "so", "to", "up", "we"
-]
-const SPELL_3_SIGHT: Array[String] = [
-	"all", "and", "any", "are", "ask", "but", "did", "for", "get",
-	"got", "has", "her", "him", "his", "how", "its", "let", "may",
-	"new", "now", "off", "own", "put", "see", "she", "the", "too",
-	"try", "two", "use", "was", "who", "why", "you"
-]
-const SPELL_4_SIGHT: Array[String] = [
-	"also", "away", "been", "both", "come", "down", "each", "even",
-	"find", "from", "give", "good", "have", "here", "into", "just",
-	"kind", "know", "many", "most", "much", "next", "once", "only",
-	"over", "said", "soon", "stay", "than", "that", "them", "then",
-	"they", "this", "time", "told", "very", "well", "went", "were",
-	"what", "when", "will", "with", "your"
-]
-
-enum GameMode { FREE_PLAY, MATH, SPELLING }
+enum GameMode { FREE_PLAY, MATH }
 
 @onready var fish_layer: Node2D = $FishLayer
 @onready var predator_layer: Node2D = $PredatorLayer
@@ -105,12 +56,6 @@ var _problems_solved: int = 0
 var _math_octopus: Node2D = null
 var _math_round_resetting: bool = false
 
-var _spell_current_word: String = ""
-var _spell_missing_indices: Array[int] = []
-var _spell_filled: Dictionary = {}
-var _spell_held_letter: String = ""
-var _words_completed: int = 0
-
 func _ready() -> void:
 	get_viewport().size_changed.connect(_on_window_resized)
 	_on_window_resized()
@@ -121,8 +66,6 @@ func _ready() -> void:
 	ui.mode_selected.connect(func(m: int) -> void: _game_mode = m)
 	ui.difficulty_selected.connect(func(d: int) -> void: _difficulty = d)
 	ui.timer_selected.connect(_start_game)
-	ui.spelling_slot_tapped.connect(_on_spelling_slot_tapped)
-	ui.spelling_audio_requested.connect(func() -> void: AudioManager.play_word(_spell_current_word))
 	ui.back_to_game_select.connect(func() -> void:
 		AudioManager.stop_music()
 		get_tree().change_scene_to_file("res://scenes/GameSelect.tscn")
@@ -141,7 +84,6 @@ func _start_game(duration: float) -> void:
 	score = 0
 	fish_caught = 0
 	_problems_solved = 0
-	_words_completed = 0
 	_timer_duration = int(duration)
 	ui.update_score(0, 0)
 	ui.start_timer(duration)
@@ -154,10 +96,6 @@ func _start_game(duration: float) -> void:
 		_max_fish = 5
 		_spawn_math_fish()
 		_spawn_math_octopus()
-	elif _game_mode == GameMode.SPELLING:
-		_max_fish = 8 if _difficulty == 2 else 5
-		_spawn_math_octopus()
-		_new_spelling_round()
 	else:
 		_spawn_fish()
 		if _difficulty == 2:
@@ -259,8 +197,6 @@ func _on_hook_area_entered(area: Area2D) -> void:
 
 	if _game_mode == GameMode.MATH:
 		_handle_math_catch(area)
-	elif _game_mode == GameMode.SPELLING:
-		_handle_spelling_catch(area)
 	else:
 		_handle_free_play_catch(area)
 
@@ -321,203 +257,6 @@ func _check_math_board() -> void:
 		if fish.is_correct:
 			return
 	_new_math_round()
-
-func _new_spelling_round() -> void:
-	_spell_held_letter = ""
-	_spell_filled.clear()
-	ui.show_held_letter("")
-
-	var pool: Array[String] = []
-	match _difficulty:
-		0:
-			pool = SPELL_3_PICTURE.duplicate()
-			if not AudioManager.master_mute:
-				pool.append_array(SPELL_2_SIGHT)
-				pool.append_array(SPELL_3_SIGHT)
-		1:
-			pool = SPELL_4_PICTURE.duplicate()
-			if not AudioManager.master_mute:
-				pool.append_array(SPELL_4_SIGHT)
-		2:
-			pool = SPELL_3_PICTURE.duplicate()
-			pool.append_array(SPELL_4_PICTURE)
-			if not AudioManager.master_mute:
-				pool.append_array(SPELL_3_SIGHT)
-				pool.append_array(SPELL_4_SIGHT)
-
-	pool.erase(_spell_current_word)
-	_spell_current_word = pool.pick_random()
-
-	var word_len := _spell_current_word.length()
-	if _difficulty < 2:
-		_spell_missing_indices = [randi_range(0, word_len - 1)]
-	else:
-		_spell_missing_indices.clear()
-		for i in word_len:
-			_spell_missing_indices.append(i)
-
-	ui.show_spelling_hud(_spell_current_word, _spell_missing_indices, _spell_filled, _difficulty == 2)
-	await get_tree().create_timer(0.5).timeout
-	if game_active and _game_mode == GameMode.SPELLING:
-		AudioManager.play_word(_spell_current_word)
-
-	for fish in fish_layer.get_children():
-		fish.queue_free()
-	await get_tree().process_frame
-	if not game_active:
-		return
-	_spawn_spelling_fish()
-
-func _spawn_spelling_fish() -> void:
-	var word := _spell_current_word
-	var correct_letters: Array[String] = []
-	for idx in _spell_missing_indices:
-		if not _spell_filled.has(idx):
-			correct_letters.append(word[idx].to_upper())
-
-	var distractor_count := _max_fish - correct_letters.size()
-	var distractors := _generate_letter_distractors(correct_letters, distractor_count)
-	var all_letters: Array[String] = correct_letters.duplicate()
-	all_letters.append_array(distractors)
-	all_letters.shuffle()
-
-	var vp := get_viewport_rect()
-	var water_top := water_y_start + 30.0
-	var water_bottom := vp.size.y - 80.0
-	var slot_size := (water_bottom - water_top) / float(_max_fish)
-	var y_slots: Array[float] = []
-	for i in _max_fish:
-		y_slots.append(water_top + slot_size * i + slot_size * 0.5)
-	y_slots.shuffle()
-
-	var x_step := vp.size.x / float(_max_fish)
-	var x_slots: Array[float] = []
-	for i in _max_fish:
-		x_slots.append(x_step * i + x_step * 0.5)
-	x_slots.shuffle()
-
-	for i in all_letters.size():
-		var fish := FISH_SCENE.instantiate()
-		fish.fish_class = Fish.FishClass.LARGE
-		fish.difficulty = 0
-		fish.spell_letter = all_letters[i]
-		fish.is_correct = all_letters[i] in correct_letters
-		fish.bounces = true
-		fish.spawn_y = y_slots[i]
-		fish.spawn_x = x_slots[i]
-		fish.water_y = water_y_start
-		fish_layer.add_child(fish)
-
-func _respawn_spelling_letter(letter: String) -> void:
-	var fish := FISH_SCENE.instantiate()
-	fish.fish_class = Fish.FishClass.LARGE
-	fish.difficulty = 0
-	fish.spell_letter = letter
-	fish.is_correct = true
-	fish.bounces = true
-	var vp := get_viewport_rect()
-	fish.spawn_y = randf_range(water_y_start + 50.0, vp.size.y - 125.0)
-	fish.water_y = water_y_start
-	fish_layer.add_child(fish)
-
-func _handle_spelling_catch(area: Area2D) -> void:
-	if not area.has_method("get_caught"):
-		return
-
-	hook_active = false
-	hook.set_deferred("monitoring", false)
-	hook_sprite.hide()
-	line_2d.clear_points()
-
-	if area.is_correct:
-		if _difficulty < 2:
-			AudioManager.play_sfx("catch")
-			area.get_caught()
-			_words_completed += 1
-			ui.update_score(_words_completed, _words_completed)
-			_spell_filled[_spell_missing_indices[0]] = area.spell_letter
-			ui.update_spelling_slots(_spell_current_word, _spell_missing_indices, _spell_filled)
-			await get_tree().create_timer(0.8).timeout
-			if game_active and _game_mode == GameMode.SPELLING:
-				_new_spelling_round()
-		else:
-			if _spell_held_letter != "":
-				_respawn_spelling_letter(_spell_held_letter)
-			_spell_held_letter = area.spell_letter
-			area.get_caught()
-			ui.show_held_letter(_spell_held_letter)
-	else:
-		if is_instance_valid(_math_octopus):
-			_math_octopus.attack_target(area)
-		else:
-			area.get_eaten()
-
-func _on_spelling_slot_tapped(index: int) -> void:
-	if not game_active or _game_mode != GameMode.SPELLING or _difficulty != 2:
-		return
-	if _spell_held_letter == "" or _spell_filled.has(index):
-		return
-
-	var expected := _spell_current_word[index].to_upper()
-	if _spell_held_letter == expected:
-		_spell_filled[index] = _spell_held_letter
-		_spell_held_letter = ""
-		ui.show_held_letter("")
-		ui.update_spelling_slots(_spell_current_word, _spell_missing_indices, _spell_filled)
-		AudioManager.play_sfx("catch")
-
-		var complete := true
-		for idx in _spell_missing_indices:
-			if not _spell_filled.has(idx):
-				complete = false
-				break
-
-		if complete:
-			_words_completed += 1
-			ui.update_score(_words_completed, _words_completed)
-			await get_tree().create_timer(1.0).timeout
-			if game_active and _game_mode == GameMode.SPELLING:
-				_new_spelling_round()
-	else:
-		AudioManager.play_sfx("bite")
-		ui.flash_slot_wrong(index)
-
-func _generate_letter_distractors(correct: Array[String], count: int) -> Array[String]:
-	var similar_map := {
-		"A": ["E", "O"], "B": ["D", "P"], "C": ["G", "K"],
-		"D": ["B", "P"], "E": ["A", "I"], "F": ["V"],
-		"G": ["C", "J"], "H": ["N"], "I": ["E", "L"],
-		"J": ["G"], "K": ["C"], "L": ["I"],
-		"M": ["N", "W"], "N": ["M", "H"], "O": ["U", "A"],
-		"P": ["B", "Q"], "Q": ["G", "O"], "R": ["L"],
-		"S": ["Z", "C"], "T": ["D", "F"], "U": ["O", "V"],
-		"V": ["F", "U"], "W": ["M", "V"], "X": ["K"],
-		"Y": ["J"], "Z": ["S"]
-	}
-	var used: Array[String] = correct.duplicate()
-	var result: Array[String] = []
-
-	for correct_letter in correct:
-		if result.size() >= 2:
-			break
-		var key := correct_letter.to_upper()
-		if similar_map.has(key):
-			var candidates: Array = (similar_map[key] as Array).filter(
-				func(l: String) -> bool: return not used.has(l)
-			)
-			if not candidates.is_empty():
-				var pick: String = candidates.pick_random()
-				result.append(pick)
-				used.append(pick)
-
-	var alphabet := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	while result.size() < count:
-		var letter := str(alphabet[randi_range(0, 25)])
-		if not used.has(letter):
-			result.append(letter)
-			used.append(letter)
-
-	return result
 
 func _spawn_fish() -> void:
 	while fish_layer.get_child_count() < _max_fish:
@@ -634,16 +373,12 @@ func _on_time_up() -> void:
 	line_2d.clear_points()
 	_predator_timer.stop()
 	ui.hide_math_problem()
-	ui.hide_spelling_hud()
 	for p in predator_layer.get_children():
 		p.queue_free()
 	_math_octopus = null
 	if _game_mode == GameMode.MATH:
 		var rank := Leaderboard.save_score(_game_mode, _difficulty, _timer_duration, _problems_solved, _problems_solved)
 		ui.show_end_screen(_problems_solved, _problems_solved, _difficulty, _timer_duration, rank)
-	elif _game_mode == GameMode.SPELLING:
-		var rank := Leaderboard.save_score(_game_mode, _difficulty, _timer_duration, _words_completed, _words_completed)
-		ui.show_end_screen(_words_completed, _words_completed, _difficulty, _timer_duration, rank)
 	else:
 		var rank := Leaderboard.save_score(_game_mode, _difficulty, _timer_duration, score, fish_caught)
 		ui.show_end_screen(score, fish_caught, _difficulty, _timer_duration, rank)
@@ -655,8 +390,8 @@ func _on_window_resized() -> void:
 		_populate_environment()
 
 	var water_area = size.x * (size.y - water_y_start)
-	if _game_mode == GameMode.MATH or _game_mode == GameMode.SPELLING:
-		_max_fish = 8 if (_game_mode == GameMode.SPELLING and _difficulty == 2) else 5
+	if _game_mode == GameMode.MATH:
+		_max_fish = 5
 	else:
 		_max_fish = clamp(int(water_area / 110000.0) + 2, 4, 12)
 
