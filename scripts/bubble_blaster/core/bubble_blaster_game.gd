@@ -501,7 +501,7 @@ func _best_neighbor_color(cell: Vector2i) -> int:
 	for n in _grid.neighbors(cell):
 		if visited.has(n):
 			continue
-		var c := cells.get(n, -1)
+		var c: int = cells.get(n, -1)
 		if c < 0 or c == COLOR_RAINBOW:
 			continue
 		var size := 0
