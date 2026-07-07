@@ -34,369 +34,400 @@
 [sub_resource type="Resource" id="Resource_g7wjx"]
 script = ExtResource("1")
 id = 0
-position = Vector2(266.56766, 290.98218)
-radius = 40.0
+position = Vector2(133.284, 145.491)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_hjc15"]
 script = ExtResource("1")
 id = 1
-position = Vector2(1722.5076, 851.2602)
-radius = 40.0
+position = Vector2(861.254, 425.63)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_5kya8"]
 script = ExtResource("1")
 id = 2
-position = Vector2(747.423, 214.41107)
-radius = 40.0
+position = Vector2(373.712, 107.206)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_h7rv7"]
 script = ExtResource("1")
 id = 3
-position = Vector2(1073.739, 135.97237)
-radius = 40.0
+position = Vector2(536.87, 67.9862)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_hiov1"]
 script = ExtResource("1")
 id = 4
-position = Vector2(1446.735, 104.22324)
-radius = 40.0
+position = Vector2(723.367, 52.1116)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_fwyuc"]
 script = ExtResource("1")
 id = 5
-position = Vector2(1786.1211, 203.2055)
-radius = 40.0
+position = Vector2(893.061, 101.603)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_mw8vh"]
 script = ExtResource("1")
 id = 6
-position = Vector2(2207.6611, 1351.7745)
-radius = 40.0
+position = Vector2(1103.83, 675.887)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_yngh2"]
 script = ExtResource("1")
 id = 7
-position = Vector2(2446.2222, 192)
-radius = 40.0
+position = Vector2(1223.11, 96)
+radius = 20
+visual_scale = 0.5
 
 [sub_resource type="Resource" id="Resource_q386p"]
 script = ExtResource("1")
 id = 8
-position = Vector2(488.54114, 408.2786)
-radius = 40.0
-visual_scale = 0.8500000000000001
+position = Vector2(244.271, 204.139)
+radius = 20
+visual_scale = 0.425
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_w2d6v"]
 script = ExtResource("1")
 id = 9
-position = Vector2(820.45886, 337.31036)
-radius = 40.0
+position = Vector2(410.229, 168.655)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_bgwdc"]
 script = ExtResource("1")
 id = 10
-position = Vector2(1077.6909, 365.32416)
-radius = 40.0
+position = Vector2(538.845, 182.662)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_eibd7"]
 script = ExtResource("1")
 id = 11
-position = Vector2(1333.0554, 331.7076)
-radius = 40.0
-visual_scale = 0.8999999999999999
+position = Vector2(666.528, 165.854)
+radius = 20
+visual_scale = 0.45
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_186m4"]
 script = ExtResource("1")
 id = 12
-position = Vector2(1679.9106, 329.84006)
-radius = 40.0
+position = Vector2(839.955, 164.92)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_8o2i5"]
 script = ExtResource("1")
 id = 13
-position = Vector2(2286.2996, 318.63437)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(1143.15, 159.317)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_bo85j"]
 script = ExtResource("1")
 id = 14
-position = Vector2(2016.9952, 531.5399)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(1008.5, 265.77)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["flying"])
 
 [sub_resource type="Resource" id="Resource_pqtkv"]
 script = ExtResource("1")
 id = 15
-position = Vector2(2533.7595, 400.80826)
-radius = 40.0
+position = Vector2(1266.88, 200.404)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_exjp0"]
 script = ExtResource("1")
 id = 16
-position = Vector2(358.05807, 495.69354)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(179.029, 247.847)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_kpt4y"]
 script = ExtResource("1")
 id = 17
-position = Vector2(1713.1721, 505.0313)
-radius = 40.0
+position = Vector2(856.586, 252.516)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["sky"])
 
 [sub_resource type="Resource" id="Resource_vtbfq"]
 script = ExtResource("1")
 id = 18
-position = Vector2(851.98315, 568.52954)
-radius = 40.0
+position = Vector2(425.992, 284.265)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_6yyo6"]
 script = ExtResource("1")
 id = 19
-position = Vector2(1488.2462, 1132.5426)
-radius = 40.0
+position = Vector2(744.123, 566.271)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small"])
 
 [sub_resource type="Resource" id="Resource_hygci"]
 script = ExtResource("1")
 id = 20
-position = Vector2(2208.5305, 908.43195)
-radius = 40.0
+position = Vector2(1104.27, 454.216)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_r7nob"]
 script = ExtResource("1")
 id = 21
-position = Vector2(1011.2541, 859.8734)
-radius = 40.0
+position = Vector2(505.627, 429.937)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_qb2yu"]
 script = ExtResource("1")
 id = 22
-position = Vector2(2276.7466, 536.78033)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(1138.37, 268.39)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_4ybpn"]
 script = ExtResource("1")
 id = 23
-position = Vector2(2380.8708, 622.6903)
-radius = 40.0
+position = Vector2(1190.44, 311.345)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_eqffq"]
 script = ExtResource("1")
 id = 24
-position = Vector2(451.19803, 756.7943)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(225.599, 378.397)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_ep1ye"]
 script = ExtResource("1")
 id = 25
-position = Vector2(208.0347, 685.826)
-radius = 40.0
-visual_scale = 0.6000000000000001
+position = Vector2(104.017, 342.913)
+radius = 20
+visual_scale = 0.3
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_fpy2c"]
 script = ExtResource("1")
 id = 26
-position = Vector2(571.6939, 691.4286)
-radius = 40.0
-visual_scale = 0.7
+position = Vector2(285.847, 345.714)
+radius = 20
+visual_scale = 0.35
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_dhow2"]
 script = ExtResource("1")
 id = 27
-position = Vector2(1271.4397, 743.72107)
-radius = 40.0
-visual_scale = 0.7
+position = Vector2(635.72, 371.861)
+radius = 20
+visual_scale = 0.35
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_wlpil"]
 script = ExtResource("1")
 id = 28
-position = Vector2(1566.0142, 739.9858)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(783.007, 369.993)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_o1fs8"]
 script = ExtResource("1")
 id = 29
-position = Vector2(1856.8546, 708.2365)
-radius = 40.0
-visual_scale = 0.8500000000000001
+position = Vector2(928.427, 354.118)
+radius = 20
+visual_scale = 0.425
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_qnxer"]
 script = ExtResource("1")
 id = 30
-position = Vector2(2158.8975, 743.7212)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(1079.45, 371.861)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["large"])
 
 [sub_resource type="Resource" id="Resource_id3m6"]
 script = ExtResource("1")
 id = 31
-position = Vector2(2604.7126, 654.0769)
-radius = 40.0
+position = Vector2(1302.36, 327.038)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_7lnku"]
 script = ExtResource("1")
 id = 32
-position = Vector2(1295.3658, 1357.7968)
-radius = 40.0
+position = Vector2(647.683, 678.898)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_s88v3"]
 script = ExtResource("1")
 id = 33
-position = Vector2(818.809, 898.36926)
-radius = 40.0
-visual_scale = 0.95
+position = Vector2(409.404, 449.185)
+radius = 20
+visual_scale = 0.475
 tags = Array[String](["small", "medium", "large"])
 
 [sub_resource type="Resource" id="Resource_7sx0g"]
 script = ExtResource("1")
 id = 34
-position = Vector2(962.1445, 1055.2473)
-radius = 40.0
+position = Vector2(481.072, 527.624)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_t6brb"]
 script = ExtResource("1")
 id = 35
-position = Vector2(1798.1929, 1462.382)
-radius = 40.0
+position = Vector2(899.096, 731.191)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_opewi"]
 script = ExtResource("1")
 id = 36
-position = Vector2(1859.3743, 956.26447)
-radius = 40.0
+position = Vector2(929.687, 478.132)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium", "large"])
 
 [sub_resource type="Resource" id="Resource_rmg1w"]
 script = ExtResource("1")
 id = 37
-position = Vector2(2340.665, 1213.9924)
-radius = 40.0
+position = Vector2(1170.33, 606.996)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["small", "medium"])
 
 [sub_resource type="Resource" id="Resource_hhyqi"]
 script = ExtResource("1")
 id = 38
-position = Vector2(71.64538, 440.80945)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(35.8227, 220.405)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["tree"])
 
 [sub_resource type="Resource" id="Resource_qk2uf"]
 script = ExtResource("1")
 id = 39
-position = Vector2(155.23262, 565.938)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(77.6163, 282.969)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["tree", "flying"])
 
 [sub_resource type="Resource" id="Resource_jgflk"]
 script = ExtResource("1")
 id = 40
-position = Vector2(768.61285, 1456.4171)
-radius = 40.0
+position = Vector2(384.306, 728.209)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_wygax"]
 script = ExtResource("1")
 id = 41
-position = Vector2(514.24695, 896.14)
-radius = 40.0
+position = Vector2(257.123, 448.07)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_ky71r"]
 script = ExtResource("1")
 id = 42
-position = Vector2(82.501305, 735.5265)
-radius = 40.0
-visual_scale = 0.8999999999999999
+position = Vector2(41.2507, 367.763)
+radius = 20
+visual_scale = 0.45
 tags = Array[String](["bug", "flying"])
 
 [sub_resource type="Resource" id="Resource_v8qa4"]
 script = ExtResource("1")
 id = 43
-position = Vector2(793.45026, 1277.1285)
-radius = 40.0
+position = Vector2(396.725, 638.564)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_n4epi"]
 script = ExtResource("1")
 id = 44
-position = Vector2(275.8161, 918.5511)
-radius = 40.0
+position = Vector2(137.908, 459.276)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_pe3um"]
 script = ExtResource("1")
 id = 45
-position = Vector2(299.6547, 1088.5017)
-radius = 40.0
+position = Vector2(149.827, 544.251)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_g67q0"]
 script = ExtResource("1")
 id = 46
-position = Vector2(663.31366, 1077.2961)
-radius = 40.0
+position = Vector2(331.657, 538.648)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_x7csu"]
 script = ExtResource("1")
 id = 47
-position = Vector2(384.67456, 1286.4666)
-radius = 40.0
+position = Vector2(192.337, 643.233)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["garden"])
 
 [sub_resource type="Resource" id="Resource_ul52e"]
 script = ExtResource("1")
 id = 48
-position = Vector2(2460.4648, 1357.073)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(1230.23, 678.537)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_r50jr"]
 script = ExtResource("1")
 id = 49
-position = Vector2(2594.468, 1469.1288)
-radius = 40.0
-visual_scale = 0.7
+position = Vector2(1297.23, 734.564)
+radius = 20
+visual_scale = 0.35
 tags = Array[String](["bug"])
 
 [sub_resource type="Resource" id="Resource_xdsp0"]
