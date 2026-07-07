@@ -31,355 +31,401 @@
 [sub_resource type="Resource" id="Resource_bpcs5"]
 script = ExtResource("1_yd23t")
 id = 0
-position = Vector2(2414.29, 1328.4648)
-radius = 40.0
+position = Vector2(1207.14, 664.232)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_ot30o"]
 script = ExtResource("1_yd23t")
 id = 1
-position = Vector2(325.35037, 231.41644)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(162.675, 115.708)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["food"])
 
 [sub_resource type="Resource" id="Resource_cgfum"]
 script = ExtResource("1_yd23t")
 id = 2
-position = Vector2(2005.2867, 45.92851)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(1002.64, 22.9643)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_tqbrv"]
 script = ExtResource("1_yd23t")
 id = 3
-position = Vector2(1005.56494, 43.952347)
-radius = 40.0
-visual_scale = 0.8
+position = Vector2(502.782, 21.9762)
+radius = 20
+visual_scale = 0.4
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_oheh5"]
 script = ExtResource("1_yd23t")
 id = 4
-position = Vector2(318.00363, 1051.8008)
-radius = 40.0
+position = Vector2(159.002, 525.9)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["fridge", "food"])
 
 [sub_resource type="Resource" id="Resource_poiqd"]
 script = ExtResource("1_yd23t")
 id = 5
-position = Vector2(900.81903, 302.831)
-radius = 40.0
+position = Vector2(450.41, 151.416)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_qp0ap"]
 script = ExtResource("1_yd23t")
 id = 6
-position = Vector2(1902.4836, 162.52263)
-radius = 40.0
+position = Vector2(951.242, 81.2613)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_srexu"]
 script = ExtResource("1_yd23t")
 id = 7
-position = Vector2(877.0777, 164.49904)
-radius = 40.0
+position = Vector2(438.539, 82.2495)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_0k13d"]
 script = ExtResource("1_yd23t")
 id = 8
-position = Vector2(1947.8909, 300.85458)
-radius = 40.0
+position = Vector2(973.945, 150.427)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_ejeog"]
 script = ExtResource("1_yd23t")
 id = 9
-position = Vector2(2688.7612, 488.59088)
-radius = 40.0
-visual_scale = 0.7
+position = Vector2(1344.38, 244.295)
+radius = 20
+visual_scale = 0.35
 tags = Array[String](["shelf", "counter", "food"])
 
 [sub_resource type="Resource" id="Resource_5esea"]
 script = ExtResource("1_yd23t")
 id = 10
-position = Vector2(631.18695, 737.3551)
-radius = 40.0
+position = Vector2(315.593, 368.678)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["food"])
 
 [sub_resource type="Resource" id="Resource_ilv11"]
 script = ExtResource("1_yd23t")
 id = 11
-position = Vector2(1769.9403, 682.24335)
-radius = 40.0
+position = Vector2(884.97, 341.122)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_0dr50"]
 script = ExtResource("1_yd23t")
 id = 12
-position = Vector2(606.90216, 1353.2324)
-radius = 40.0
+position = Vector2(303.451, 676.616)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["food"])
 
 [sub_resource type="Resource" id="Resource_alp4n"]
 script = ExtResource("1_yd23t")
 id = 13
-position = Vector2(296.27988, 522.9016)
-radius = 40.0
+position = Vector2(148.14, 261.451)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["food"])
 
 [sub_resource type="Resource" id="Resource_v7jan"]
 script = ExtResource("1_yd23t")
 id = 14
-position = Vector2(78.935776, 1317.3218)
-radius = 40.0
+position = Vector2(39.4679, 658.661)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf", "food"])
 
 [sub_resource type="Resource" id="Resource_xre2i"]
 script = ExtResource("1_yd23t")
 id = 15
-position = Vector2(1768.1443, 1226.419)
-radius = 40.0
+position = Vector2(884.072, 613.21)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_vibqc"]
 script = ExtResource("1_yd23t")
 id = 16
-position = Vector2(2267.982, 902.3257)
-radius = 40.0
+position = Vector2(1133.99, 451.163)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_qymvf"]
 script = ExtResource("1_yd23t")
 id = 17
-position = Vector2(2149.4233, 1283.727)
-radius = 40.0
+position = Vector2(1074.71, 641.864)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_qvjvl"]
 script = ExtResource("1_yd23t")
 id = 18
-position = Vector2(1965.6641, 1283.7272)
-radius = 40.0
+position = Vector2(982.832, 641.864)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_s5sqj"]
 script = ExtResource("1_yd23t")
 id = 19
-position = Vector2(2341.0461, 621.70996)
-radius = 40.0
+position = Vector2(1170.52, 310.855)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["food"])
 
 [sub_resource type="Resource" id="Resource_e4wa4"]
 script = ExtResource("1_yd23t")
 id = 20
-position = Vector2(436.61325, 1353.6085)
-radius = 40.0
+position = Vector2(218.307, 676.804)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_moqea"]
 script = ExtResource("1_yd23t")
 id = 21
-position = Vector2(330.93448, 765.19354)
-radius = 40.0
+position = Vector2(165.467, 382.597)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["food"])
 
 [sub_resource type="Resource" id="Resource_0go2i"]
 script = ExtResource("1_yd23t")
 id = 22
-position = Vector2(743.89844, 1276.0885)
-radius = 40.0
+position = Vector2(371.949, 638.044)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_iytbj"]
 script = ExtResource("1_yd23t")
 id = 23
-position = Vector2(1058.909, 160)
-radius = 40.0
+position = Vector2(529.455, 80)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_uqquh"]
 script = ExtResource("1_yd23t")
 id = 24
-position = Vector2(1485.6444, 1217.252)
-radius = 40.0
+position = Vector2(742.822, 608.626)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_v2ipb"]
 script = ExtResource("1_yd23t")
 id = 25
-position = Vector2(2400.3801, 1136.229)
-radius = 40.0
+position = Vector2(1200.19, 568.115)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["floor"])
 
 [sub_resource type="Resource" id="Resource_utjib"]
 script = ExtResource("1_yd23t")
 id = 26
-position = Vector2(919.12646, 694.24023)
-radius = 40.0
+position = Vector2(459.563, 347.12)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_7cmv8"]
 script = ExtResource("1_yd23t")
 id = 27
-position = Vector2(2103.9888, 161.97617)
-radius = 40.0
+position = Vector2(1051.99, 80.9881)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_6nao3"]
 script = ExtResource("1_yd23t")
 id = 28
-position = Vector2(497.72498, 1189.5848)
-radius = 40.0
+position = Vector2(248.862, 594.792)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["floor"])
 
 [sub_resource type="Resource" id="Resource_17xof"]
 script = ExtResource("1_yd23t")
 id = 29
-position = Vector2(2672.9556, 616.4962)
-radius = 40.0
+position = Vector2(1336.48, 308.248)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_6rqmd"]
 script = ExtResource("1_yd23t")
 id = 30
-position = Vector2(1056.9752, 304.97525)
-radius = 40.0
+position = Vector2(528.488, 152.488)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_naxk4"]
 script = ExtResource("1_yd23t")
 id = 31
-position = Vector2(1039.1771, 443.30737)
-radius = 40.0
+position = Vector2(519.589, 221.654)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_elgpg"]
 script = ExtResource("1_yd23t")
 id = 32
-position = Vector2(1472.2278, 946.3656)
-radius = 40.0
+position = Vector2(736.114, 473.183)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["food"])
 
 [sub_resource type="Resource" id="Resource_kwmbh"]
 script = ExtResource("1_yd23t")
 id = 33
-position = Vector2(1744.4691, 941.303)
-radius = 40.0
+position = Vector2(872.235, 470.651)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_lyyb2"]
 script = ExtResource("1_yd23t")
 id = 34
-position = Vector2(1384.8754, 1032.2063)
-radius = 40.0
+position = Vector2(692.438, 516.103)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_vvysh"]
 script = ExtResource("1_yd23t")
 id = 35
-position = Vector2(1592.3058, 1057.8975)
-radius = 40.0
+position = Vector2(796.153, 528.949)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_nrino"]
 script = ExtResource("1_yd23t")
 id = 36
-position = Vector2(1612.0464, 705.1054)
-radius = 40.0
+position = Vector2(806.023, 352.553)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_tqf3g"]
 script = ExtResource("1_yd23t")
 id = 37
-position = Vector2(2105.9568, 439.355)
-radius = 40.0
+position = Vector2(1052.98, 219.678)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_ud1no"]
 script = ExtResource("1_yd23t")
 id = 38
-position = Vector2(2392.104, 726.39465)
-radius = 40.0
+position = Vector2(1196.05, 363.197)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_myuqk"]
 script = ExtResource("1_yd23t")
 id = 39
-position = Vector2(1102.282, 996.63574)
-radius = 40.0
+position = Vector2(551.141, 498.318)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_u8nru"]
 script = ExtResource("1_yd23t")
 id = 40
-position = Vector2(2017.1748, 991.4212)
-radius = 40.0
+position = Vector2(1008.59, 495.711)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_rphp1"]
 script = ExtResource("1_yd23t")
 id = 41
-position = Vector2(2214.7297, 694.99664)
-radius = 40.0
+position = Vector2(1107.36, 347.498)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_lj6t1"]
 script = ExtResource("1_yd23t")
 id = 42
-position = Vector2(1924.2833, 693.0203)
-radius = 40.0
+position = Vector2(962.142, 346.51)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_bjdfu"]
 script = ExtResource("1_yd23t")
 id = 43
-position = Vector2(1143.4576, 680.8034)
-radius = 40.0
+position = Vector2(571.729, 340.402)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_r8pl3"]
 script = ExtResource("1_yd23t")
 id = 44
-position = Vector2(709.19275, 866.9232)
-radius = 40.0
+position = Vector2(354.596, 433.462)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_ja4vh"]
 script = ExtResource("1_yd23t")
 id = 45
-position = Vector2(578.77966, 864.94714)
-radius = 40.0
+position = Vector2(289.39, 432.474)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_dsqv3"]
 script = ExtResource("1_yd23t")
 id = 46
-position = Vector2(304.1405, 623.8543)
-radius = 40.0
+position = Vector2(152.07, 311.927)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["fridge"])
 
 [sub_resource type="Resource" id="Resource_shxry"]
 script = ExtResource("1_yd23t")
 id = 47
-position = Vector2(2775.7236, 779.97076)
-radius = 40.0
+position = Vector2(1387.86, 389.985)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_6umom"]
 script = ExtResource("1_yd23t")
 id = 48
-position = Vector2(1617.9487, 1368.8715)
-radius = 40.0
+position = Vector2(808.974, 684.436)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["shelf"])
 
 [sub_resource type="Resource" id="Resource_v0au5"]
 script = ExtResource("1_yd23t")
 id = 49
-position = Vector2(1052.8805, 1270.063)
-radius = 40.0
+position = Vector2(526.44, 635.032)
+radius = 20
+visual_scale = 0.5
 tags = Array[String](["counter"])
 
 [sub_resource type="Resource" id="Resource_0utnx"]
