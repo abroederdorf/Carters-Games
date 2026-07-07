@@ -18,7 +18,6 @@ var pool_size = 6
 var music_enabled: bool = true
 var sfx_enabled: bool = true
 var master_mute: bool = false
-var spelling_quiet: bool = false
 var _web_audio_unlocked: bool = false
 var _music_requested: bool = false
 
@@ -75,20 +74,12 @@ func stop_music() -> void:
 	music_player.stop()
 
 func _on_music_finished() -> void:
-	if music_enabled and not master_mute and not spelling_quiet:
+	if music_enabled and not master_mute:
 		music_player.play()
-
-func toggle_spelling_quiet() -> bool:
-	spelling_quiet = !spelling_quiet
-	if spelling_quiet:
-		music_player.stop()
-	elif music_enabled and not master_mute:
-		music_player.play()
-	return spelling_quiet
 
 func play_sfx(sound_name: String) -> void:
 	print("Audio: play_sfx=", sound_name, " sfx_enabled=", sfx_enabled, " mute=", master_mute)
-	if not sfx_enabled or master_mute or spelling_quiet: return
+	if not sfx_enabled or master_mute: return
 	
 	var key = sound_name.to_lower()
 	if key == "whoosh" or key == "woosh" or key == "snap": key = "bite"
@@ -131,18 +122,3 @@ func toggle_mute() -> bool:
 
 	return master_mute
 
-func play_word(word: String) -> void:
-	if master_mute: return
-	var key := "word_" + word.to_lower()
-	if not streams.has(key):
-		var path := "res://assets/audio/spelling/%s.wav" % word.to_lower()
-		var s = load(path) as AudioStream
-		if not s:
-			return
-		streams[key] = s
-	for player in sfx_pool:
-		if not player.playing:
-			player.volume_db = 10.0
-			player.stream = streams[key]
-			player.play()
-			return

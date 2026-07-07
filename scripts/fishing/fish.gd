@@ -20,10 +20,6 @@ var math_value: int = -1:
 		if is_inside_tree(): _setup_labels()
 var is_correct: bool = false
 var spawn_y: float = -1.0
-var spell_letter: String = "":
-	set(v):
-		spell_letter = v
-		if is_inside_tree(): _setup_labels()
 var bounces: bool = false
 var spawn_x: float = -1.0
 var _faces_right: bool = false
@@ -70,7 +66,7 @@ func _ready() -> void:
 	var tex_path: String
 	var is_high_res: bool = false
 	
-	if math_value != -1 or spell_letter != "":
+	if math_value != -1:
 		tex_path = PLAIN_FISH_TEXTURES.pick_random()
 		is_high_res = true
 	else:
@@ -81,7 +77,7 @@ func _ready() -> void:
 	
 	$Sprite2D.texture = load(tex_path)
 	
-	if math_value != -1 or spell_letter != "":
+	if math_value != -1:
 		$Sprite2D.scale = Vector2.ONE * 1.2
 	elif "fish_sword" in tex_path:
 		$Sprite2D.scale = Vector2.ONE * 1.3
@@ -114,9 +110,7 @@ func _setup_labels() -> void:
 	var text_to_show = ""
 	if math_value != -1:
 		text_to_show = str(math_value)
-	elif spell_letter != "":
-		text_to_show = spell_letter.to_upper()
-	
+
 	if text_to_show == "":
 		return
 
