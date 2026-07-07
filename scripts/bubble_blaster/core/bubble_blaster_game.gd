@@ -40,6 +40,7 @@ const QUEUE_SWAP_RADIUS: float = HexGrid.BUBBLE_R * 1.1
 
 const EMPTY_COLS: int = 6  # open columns between visible grid and death line
 const COLOR_RAINBOW: int = 9  # sentinel — matches Bubble.TEXTURES index 9
+const COLOR_BLOCKER: int = 5  # orange — inert obstacle; never fired, falls when floating
 
 @onready var grid_root: Node2D = $GridRoot
 @onready var _bbs := get_node("/root/BubbleBlasterState")
@@ -58,7 +59,8 @@ var _death_line_x: float = 0.0  # computed per difficulty; 6 empty cols left of 
 var _reserve_queue: Array = []
 var _reserve_queue_snapshot: Array = []
 
-var _cells_snapshot: Dictionary = {}  # saved at round start for retry
+var _cells_snapshot: Dictionary = {}
+var _cluster_count_snapshot: int = 0  # full-board cluster count saved at round start for retry
 var _ui: BubbleBlasterUI
 
 var _slingshot: Sprite2D
@@ -93,7 +95,7 @@ func _ready() -> void:
 	_generate_blob_board(_level_data)
 	_cells_snapshot = cells.duplicate(false)
 	_reserve_queue_snapshot = _copy_reserve_queue(_reserve_queue)
-	_compute_cluster_count()
+	_cluster_count_snapshot = _cluster_count
 	_death_line_x = RIGHT_ANCHOR_X - (_level_data.visible_cols + EMPTY_COLS) * HexGrid.COL_W - HexGrid.BUBBLE_R
 	_spawn_bubble_sprites()
 	_build_slingshot()
@@ -213,7 +215,7 @@ func _weighted_color() -> int:
 				if not visited.has(n) and cells.get(n, -1) == color:
 					visited[n] = true
 					bfs.append(n)
-		if color != COLOR_RAINBOW:
+		if color != COLOR_RAINBOW and color != COLOR_BLOCKER:
 			pool.append(color)
 	if pool.is_empty():
 		return randi() % _level_data.num_colors
@@ -502,7 +504,7 @@ func _best_neighbor_color(cell: Vector2i) -> int:
 		if visited.has(n):
 			continue
 		var c: int = cells.get(n, -1)
-		if c < 0 or c == COLOR_RAINBOW:
+		if c < 0 or c == COLOR_RAINBOW or c == COLOR_BLOCKER:
 			continue
 		var size := 0
 		var bfs: Array[Vector2i] = [n]
@@ -585,8 +587,8 @@ func _resolve(landed: Vector2i) -> void:
 				s.queue_free()
 			sprites.erase(cell)
 
-	# Win check.
-	if cells.is_empty():
+	# Win check — blockers are inert; win when all clearable colors are gone.
+	if _only_clearables_gone():
 		_on_win()
 
 # BFS: collect all cells connected to `start` that share its color.
@@ -625,23 +627,31 @@ func _find_floating() -> Array[Vector2i]:
 			floating.append(cell)
 	return floating
 
+func _only_clearables_gone() -> bool:
+	for cell: Vector2i in cells:
+		if cells[cell] != COLOR_BLOCKER:
+			return false
+	return true
+
 # Connected-components pass at round start to compute x (par base).
-func _compute_cluster_count() -> void:
+func _compute_cluster_count(src: Dictionary = {}) -> void:
+	var board := src if not src.is_empty() else cells
 	var visited: Dictionary = {}
 	_cluster_count = 0
-	for cell: Vector2i in cells:
+	for cell: Vector2i in board:
 		if visited.has(cell):
 			continue
-		var color: int = cells[cell]
+		var color: int = board[cell]
 		var queue: Array[Vector2i] = [cell]
 		visited[cell] = true
 		while not queue.is_empty():
 			var curr: Vector2i = queue.pop_front()
 			for n in _grid.neighbors(curr):
-				if not visited.has(n) and cells.get(n, -1) == color:
+				if not visited.has(n) and board.get(n, -1) == color:
 					visited[n] = true
 					queue.append(n)
-		_cluster_count += 1
+		if color != COLOR_BLOCKER:
+			_cluster_count += 1
 
 func _on_win() -> void:
 	_state = State.OVERLAY
@@ -667,7 +677,7 @@ func _on_game_over() -> void:
 func _on_retry_same() -> void:
 	cells = _cells_snapshot.duplicate(false)
 	_reserve_queue = _copy_reserve_queue(_reserve_queue_snapshot)
-	_compute_cluster_count()
+	_cluster_count = _cluster_count_snapshot
 	_shots_fired = 0
 	_spawn_bubble_sprites()
 	_init_queue()
@@ -678,7 +688,7 @@ func _on_new_game() -> void:
 	_generate_blob_board(_level_data)
 	_cells_snapshot = cells.duplicate(false)
 	_reserve_queue_snapshot = _copy_reserve_queue(_reserve_queue)
-	_compute_cluster_count()
+	_cluster_count_snapshot = _cluster_count
 	_shots_fired = 0
 	_spawn_bubble_sprites()
 	_init_queue()
@@ -791,6 +801,7 @@ func _make_level_data(difficulty: int) -> BubbleLevelData:
 			d.bubbles_per_col = 10
 			d.blob_size_min = 6
 			d.blob_size_max = 8
+			d.num_blockers = 0
 		1:
 			d.num_colors = 4
 			d.visible_cols = 8
@@ -798,6 +809,7 @@ func _make_level_data(difficulty: int) -> BubbleLevelData:
 			d.bubbles_per_col = 10
 			d.blob_size_min = 4
 			d.blob_size_max = 6
+			d.num_blockers = 2
 		2:
 			d.num_colors = 5
 			d.visible_cols = 8
@@ -805,6 +817,7 @@ func _make_level_data(difficulty: int) -> BubbleLevelData:
 			d.bubbles_per_col = 10
 			d.blob_size_min = 3
 			d.blob_size_max = 4
+			d.num_blockers = randi_range(3, 5)
 	return d
 
 # ─── Blob board generator ─────────────────────────────────────────────────────
@@ -849,6 +862,12 @@ func _generate_blob_board(data: BubbleLevelData) -> void:
 			all_cells[c] = next_color
 		next_color = (next_color + 1) % data.num_colors
 
+	if data.num_blockers > 0:
+		_place_blockers(all_cells, data)
+
+	# Budget ammo from the full board (visible + reserve) so reserve columns are accounted for.
+	_compute_cluster_count(all_cells)
+
 	# Visible columns go into cells; reserve columns queue up for later scroll-in.
 	var num_reserve := data.total_cols - data.visible_cols
 	for _i in num_reserve:
@@ -858,6 +877,34 @@ func _generate_blob_board(data: BubbleLevelData) -> void:
 			cells[cell] = all_cells[cell]
 		else:
 			_reserve_queue[cell.x - data.visible_cols][cell.y] = all_cells[cell]
+
+func _place_blockers(all_cells: Dictionary, data: BubbleLevelData) -> void:
+	var last_col := data.total_cols - 1
+	match _bbs.current_difficulty:
+		1:  # Medium: 1 in visible columns, 1 in reserve columns
+			var vis: Array[Vector2i] = []
+			var res: Array[Vector2i] = []
+			for cell: Vector2i in all_cells:
+				if cell.x == last_col:
+					continue
+				if cell.x < data.visible_cols:
+					vis.append(cell)
+				else:
+					res.append(cell)
+			vis.shuffle()
+			res.shuffle()
+			if not vis.is_empty():
+				all_cells[vis[0]] = COLOR_BLOCKER
+			if not res.is_empty():
+				all_cells[res[0]] = COLOR_BLOCKER
+		_:  # Hard: num_blockers total, any column except last
+			var candidates: Array[Vector2i] = []
+			for cell: Vector2i in all_cells:
+				if cell.x != last_col:
+					candidates.append(cell)
+			candidates.shuffle()
+			for i in mini(data.num_blockers, candidates.size()):
+				all_cells[candidates[i]] = COLOR_BLOCKER
 
 # ─── Sprite spawning ──────────────────────────────────────────────────────────
 
