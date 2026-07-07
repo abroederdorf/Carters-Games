@@ -7,3 +7,4 @@ extends Resource
 @export var bubbles_per_col: int = 10
 @export var blob_size_min: int = 4         # blob generator: bigger = Easy
 @export var blob_size_max: int = 6         # smaller = Hard; both >= 3 to keep clusters poppable
+@export var num_blockers: int = 0          # inert obstacle bubbles placed at generation time
