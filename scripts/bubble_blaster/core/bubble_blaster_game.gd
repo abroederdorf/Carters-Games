@@ -181,8 +181,22 @@ func _update_queue_display() -> void:
 func _weighted_color() -> int:
 	if cells.is_empty():
 		return randi() % _level_data.num_colors
-	var vals := cells.values()
-	return vals[randi() % vals.size()]
+	var visited: Dictionary = {}
+	var pool: Array[int] = []
+	for cell: Vector2i in cells:
+		if visited.has(cell):
+			continue
+		var color: int = cells[cell]
+		var bfs: Array[Vector2i] = [cell]
+		visited[cell] = true
+		while not bfs.is_empty():
+			var curr: Vector2i = bfs.pop_front()
+			for n in _grid.neighbors(curr):
+				if not visited.has(n) and cells.get(n, -1) == color:
+					visited[n] = true
+					bfs.append(n)
+		pool.append(color)
+	return pool[randi() % pool.size()]
 
 # Returns true if touch_pos hit a hopper bubble and the swap was done.
 func _try_swap(touch_pos: Vector2) -> bool:
