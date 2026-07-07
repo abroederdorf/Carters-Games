@@ -531,7 +531,7 @@ func _flood_adopt_rainbows(start: Vector2i, color: int) -> void:
 				bfs.append(n)
 
 func _resolve_rainbows(landed: Vector2i) -> void:
-	var landed_color := cells.get(landed, -1)
+	var landed_color: int = cells.get(landed, -1)
 	if landed_color == COLOR_RAINBOW:
 		var adopted := _best_neighbor_color(landed)
 		if adopted >= 0:
