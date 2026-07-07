@@ -688,8 +688,9 @@ func _on_new_game() -> void:
 func _on_refill() -> void:
 	if _bbs.spend_star():
 		_ammo_total += _cluster_count
+		_rainbow_shots.append(_shots_total_gen)  # first bubble of every refill is a rainbow
 		while _shots_total_gen < _ammo_total and _queue.size() < HOPPER_MAX + 1:
-			_queue.append(_weighted_color())
+			_queue.append(_next_queued_color())
 			_shots_total_gen += 1
 		_update_queue_display()
 		_state = State.AIMING
