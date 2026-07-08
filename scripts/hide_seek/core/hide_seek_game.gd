@@ -181,7 +181,7 @@ func _assign_items_to_anchors(bg_size: Vector2) -> void:
 			data["pos"] = a.position
 			data["anchor_radius"] = a.radius
 			data["visual_scale"] = a.visual_scale
-			data["radius"] = a.radius * _active_items[i].base_scale * a.visual_scale * 1.5
+			data["radius"] = (229.0 / 2.0) * _active_items[i].base_scale * a.visual_scale
 		_active_item_data.append(data)
 
 
