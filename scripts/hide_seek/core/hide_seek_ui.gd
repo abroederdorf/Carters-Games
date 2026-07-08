@@ -187,7 +187,9 @@ func _build_thumb_strip(parent: Control, items: Array[HideSeekItemData]) -> void
 
 	var hbox := HBoxContainer.new()
 	hbox.add_theme_constant_override("separation", 12)
+	hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	hbox.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	hbox.alignment = BoxContainer.ALIGNMENT_CENTER
 	scroll.add_child(hbox)
 
 	for item: HideSeekItemData in items:
